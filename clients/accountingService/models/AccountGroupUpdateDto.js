@@ -1,0 +1,44 @@
+const utils = require('../utils/utils');
+
+module.exports = {
+    fields: (prefix = '', isInput = true, isArrayChild = false) => {
+        const {keyPrefix, labelPrefix} = utils.buildKeyAndLabel(prefix, isInput, isArrayChild)
+        return [
+            {
+                key: `${keyPrefix}title`,
+                label: `[${labelPrefix}title]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}description`,
+                label: `[${labelPrefix}description]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}parentAccountGroupId`,
+                label: `[${labelPrefix}parentAccountGroupId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
+                type: 'string',
+            },
+        ]
+    },
+    mapping: (bundle, prefix = '') => {
+        const {keyPrefix} = utils.buildKeyAndLabel(prefix)
+        return {
+            'title': bundle.inputData?.[`${keyPrefix}title`],
+            'description': bundle.inputData?.[`${keyPrefix}description`],
+            'parentAccountGroupId': bundle.inputData?.[`${keyPrefix}parentAccountGroupId`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
+        }
+    },
+}

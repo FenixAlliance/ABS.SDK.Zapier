@@ -1,0 +1,87 @@
+const ApplicationsApi = require('../apis/ApplicationsApi');
+const FenixAllianceABPWebApi = require('../apis/FenixAllianceABPWebApi');
+const LogsApi = require('../apis/LogsApi');
+const OAuthApplicationsApi = require('../apis/OAuthApplicationsApi');
+const PermissionsApi = require('../apis/PermissionsApi');
+const RolesApi = require('../apis/RolesApi');
+const SecurityCertificatesApi = require('../apis/SecurityCertificatesApi');
+const SecurityLogsApi = require('../apis/SecurityLogsApi');
+const WebhooksApi = require('../apis/WebhooksApi');
+const { triggerMiddleware, isTrigger, searchMiddleware, hasSearchRequisites, isSearchAction, isCreateAction } = require('../utils/utils');
+
+const actions = {
+    [ApplicationsApi.createBusinessApplicationAsync.key]: ApplicationsApi.createBusinessApplicationAsync,
+    [ApplicationsApi.deleteBusinessApplicationAsync.key]: ApplicationsApi.deleteBusinessApplicationAsync,
+    [ApplicationsApi.getBusinessApplicationByIdAsync.key]: ApplicationsApi.getBusinessApplicationByIdAsync,
+    [ApplicationsApi.getBusinessApplicationsAsync.key]: ApplicationsApi.getBusinessApplicationsAsync,
+    [ApplicationsApi.getBusinessApplicationsCountAsync.key]: ApplicationsApi.getBusinessApplicationsCountAsync,
+    [ApplicationsApi.updateBusinessApplicationAsync.key]: ApplicationsApi.updateBusinessApplicationAsync,
+    [FenixAllianceABPWebApi.forgotPasswordPost.key]: FenixAllianceABPWebApi.forgotPasswordPost,
+    [FenixAllianceABPWebApi.healthGet.key]: FenixAllianceABPWebApi.healthGet,
+    [FenixAllianceABPWebApi.helloGet.key]: FenixAllianceABPWebApi.helloGet,
+    [FenixAllianceABPWebApi.loginPost.key]: FenixAllianceABPWebApi.loginPost,
+    [FenixAllianceABPWebApi.manage2faPost.key]: FenixAllianceABPWebApi.manage2faPost,
+    [FenixAllianceABPWebApi.manageInfoGet.key]: FenixAllianceABPWebApi.manageInfoGet,
+    [FenixAllianceABPWebApi.manageInfoPost.key]: FenixAllianceABPWebApi.manageInfoPost,
+    [FenixAllianceABPWebApi.mapIdentityApi/confirmEmail.key]: FenixAllianceABPWebApi.mapIdentityApi/confirmEmail,
+    [FenixAllianceABPWebApi.refreshPost.key]: FenixAllianceABPWebApi.refreshPost,
+    [FenixAllianceABPWebApi.registerPost.key]: FenixAllianceABPWebApi.registerPost,
+    [FenixAllianceABPWebApi.resendConfirmationEmailPost.key]: FenixAllianceABPWebApi.resendConfirmationEmailPost,
+    [FenixAllianceABPWebApi.resetPasswordPost.key]: FenixAllianceABPWebApi.resetPasswordPost,
+    [FenixAllianceABPWebApi.versionGet.key]: FenixAllianceABPWebApi.versionGet,
+    [LogsApi.getLogsAsync.key]: LogsApi.getLogsAsync,
+    [LogsApi.getLogsCountAsync.key]: LogsApi.getLogsCountAsync,
+    [OAuthApplicationsApi.createOAuthApplicationAsync.key]: OAuthApplicationsApi.createOAuthApplicationAsync,
+    [OAuthApplicationsApi.deleteOAuthApplicationAsync.key]: OAuthApplicationsApi.deleteOAuthApplicationAsync,
+    [OAuthApplicationsApi.getOAuthApplicationByIdAsync.key]: OAuthApplicationsApi.getOAuthApplicationByIdAsync,
+    [OAuthApplicationsApi.getOAuthApplicationsAsync.key]: OAuthApplicationsApi.getOAuthApplicationsAsync,
+    [OAuthApplicationsApi.getOAuthApplicationsCountAsync.key]: OAuthApplicationsApi.getOAuthApplicationsCountAsync,
+    [OAuthApplicationsApi.getOAuthAuthorizationByIdAsync.key]: OAuthApplicationsApi.getOAuthAuthorizationByIdAsync,
+    [OAuthApplicationsApi.getOAuthAuthorizationsAsync.key]: OAuthApplicationsApi.getOAuthAuthorizationsAsync,
+    [OAuthApplicationsApi.getOAuthAuthorizationsCountAsync.key]: OAuthApplicationsApi.getOAuthAuthorizationsCountAsync,
+    [OAuthApplicationsApi.updateOAuthApplicationAsync.key]: OAuthApplicationsApi.updateOAuthApplicationAsync,
+    [PermissionsApi.assignPermissionToBusinessApplicationAsync.key]: PermissionsApi.assignPermissionToBusinessApplicationAsync,
+    [PermissionsApi.assignPermissionToEnrollmentAsync.key]: PermissionsApi.assignPermissionToEnrollmentAsync,
+    [PermissionsApi.assignRoleToPermissionAsync.key]: PermissionsApi.assignRoleToPermissionAsync,
+    [PermissionsApi.createPermissionAsync.key]: PermissionsApi.createPermissionAsync,
+    [PermissionsApi.deletePermissionAsync.key]: PermissionsApi.deletePermissionAsync,
+    [PermissionsApi.getApplicationsByPermissionAsync.key]: PermissionsApi.getApplicationsByPermissionAsync,
+    [PermissionsApi.getEnrollmentsByPermissionAsync.key]: PermissionsApi.getEnrollmentsByPermissionAsync,
+    [PermissionsApi.getPermissionAsync.key]: PermissionsApi.getPermissionAsync,
+    [PermissionsApi.getPermissionsAsync.key]: PermissionsApi.getPermissionsAsync,
+    [PermissionsApi.getPermissionsByEnrollmentAsync.key]: PermissionsApi.getPermissionsByEnrollmentAsync,
+    [PermissionsApi.getPermissionsCountAsync.key]: PermissionsApi.getPermissionsCountAsync,
+    [PermissionsApi.getRolesByPermissionAsync.key]: PermissionsApi.getRolesByPermissionAsync,
+    [PermissionsApi.revokePermissionFromBusinessApplicationAsync.key]: PermissionsApi.revokePermissionFromBusinessApplicationAsync,
+    [PermissionsApi.revokePermissionFromEnrollmentAsync.key]: PermissionsApi.revokePermissionFromEnrollmentAsync,
+    [PermissionsApi.revokeRoleFromPermissionAsync.key]: PermissionsApi.revokeRoleFromPermissionAsync,
+    [PermissionsApi.updatePermissionAsync.key]: PermissionsApi.updatePermissionAsync,
+    [RolesApi.assignPermissionToRoleAsync.key]: RolesApi.assignPermissionToRoleAsync,
+    [RolesApi.assignRoleToBusinessApplicationAsync.key]: RolesApi.assignRoleToBusinessApplicationAsync,
+    [RolesApi.assignRoleToEnrollmentAsync.key]: RolesApi.assignRoleToEnrollmentAsync,
+    [RolesApi.createRoleAsync.key]: RolesApi.createRoleAsync,
+    [RolesApi.deleteRoleAsync.key]: RolesApi.deleteRoleAsync,
+    [RolesApi.getApplicationsByRoleAsync.key]: RolesApi.getApplicationsByRoleAsync,
+    [RolesApi.getEnrollmentsByRoleAsync.key]: RolesApi.getEnrollmentsByRoleAsync,
+    [RolesApi.getRoleAsync.key]: RolesApi.getRoleAsync,
+    [RolesApi.getRolePermissionsAsync.key]: RolesApi.getRolePermissionsAsync,
+    [RolesApi.getRolesAsync.key]: RolesApi.getRolesAsync,
+    [RolesApi.getRolesByEnrollmentAsync.key]: RolesApi.getRolesByEnrollmentAsync,
+    [RolesApi.getRolesCountAsync.key]: RolesApi.getRolesCountAsync,
+    [RolesApi.revokePermissionFromRoleAsync.key]: RolesApi.revokePermissionFromRoleAsync,
+    [RolesApi.revokeRoleFromBusinessApplicationAsync.key]: RolesApi.revokeRoleFromBusinessApplicationAsync,
+    [RolesApi.revokeRoleFromEnrollmentAsync.key]: RolesApi.revokeRoleFromEnrollmentAsync,
+    [RolesApi.updateRoleAsync.key]: RolesApi.updateRoleAsync,
+    [SecurityCertificatesApi.getSecurityCertificatesAsync.key]: SecurityCertificatesApi.getSecurityCertificatesAsync,
+    [SecurityCertificatesApi.getSecurityCertificatesCountAsync.key]: SecurityCertificatesApi.getSecurityCertificatesCountAsync,
+    [SecurityLogsApi.getSecurityLogsAsync.key]: SecurityLogsApi.getSecurityLogsAsync,
+    [SecurityLogsApi.getSecurityLogsCountAsync.key]: SecurityLogsApi.getSecurityLogsCountAsync,
+    [WebhooksApi.getWebhookRequestsAsync.key]: WebhooksApi.getWebhookRequestsAsync,
+    [WebhooksApi.getWebhookRequestsCountAsync.key]: WebhooksApi.getWebhookRequestsCountAsync,
+}
+
+module.exports = {
+    searchActions: () => Object.entries(actions).reduce((actions, [key, value]) => isSearchAction(key) && hasSearchRequisites(value) ? {...actions, [key]: searchMiddleware(value)} : actions, {}),
+    createActions: () => Object.entries(actions).reduce((actions, [key, value]) => isCreateAction(key) ? {...actions, [key]: value} : actions, {}),
+    triggers: () => Object.entries(actions).reduce((actions, [key, value]) => isTrigger(key) ? {...actions, [key]: triggerMiddleware(value)} : actions, {}),
+}

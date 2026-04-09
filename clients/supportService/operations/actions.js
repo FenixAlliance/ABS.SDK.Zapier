@@ -1,0 +1,76 @@
+const FenixAllianceABPWebApi = require('../apis/FenixAllianceABPWebApi');
+const SupportEntitlementsApi = require('../apis/SupportEntitlementsApi');
+const SupportRequestAttachmentsApi = require('../apis/SupportRequestAttachmentsApi');
+const SupportRequestsApi = require('../apis/SupportRequestsApi');
+const SupportTicketPrioritiesApi = require('../apis/SupportTicketPrioritiesApi');
+const SupportTicketTypesApi = require('../apis/SupportTicketTypesApi');
+const SupportTicketsApi = require('../apis/SupportTicketsApi');
+const { triggerMiddleware, isTrigger, searchMiddleware, hasSearchRequisites, isSearchAction, isCreateAction } = require('../utils/utils');
+
+const actions = {
+    [FenixAllianceABPWebApi.forgotPasswordPost.key]: FenixAllianceABPWebApi.forgotPasswordPost,
+    [FenixAllianceABPWebApi.healthGet.key]: FenixAllianceABPWebApi.healthGet,
+    [FenixAllianceABPWebApi.helloGet.key]: FenixAllianceABPWebApi.helloGet,
+    [FenixAllianceABPWebApi.loginPost.key]: FenixAllianceABPWebApi.loginPost,
+    [FenixAllianceABPWebApi.manage2faPost.key]: FenixAllianceABPWebApi.manage2faPost,
+    [FenixAllianceABPWebApi.manageInfoGet.key]: FenixAllianceABPWebApi.manageInfoGet,
+    [FenixAllianceABPWebApi.manageInfoPost.key]: FenixAllianceABPWebApi.manageInfoPost,
+    [FenixAllianceABPWebApi.mapIdentityApi/confirmEmail.key]: FenixAllianceABPWebApi.mapIdentityApi/confirmEmail,
+    [FenixAllianceABPWebApi.refreshPost.key]: FenixAllianceABPWebApi.refreshPost,
+    [FenixAllianceABPWebApi.registerPost.key]: FenixAllianceABPWebApi.registerPost,
+    [FenixAllianceABPWebApi.resendConfirmationEmailPost.key]: FenixAllianceABPWebApi.resendConfirmationEmailPost,
+    [FenixAllianceABPWebApi.resetPasswordPost.key]: FenixAllianceABPWebApi.resetPasswordPost,
+    [FenixAllianceABPWebApi.versionGet.key]: FenixAllianceABPWebApi.versionGet,
+    [SupportEntitlementsApi.createSupportEntitlementAsync.key]: SupportEntitlementsApi.createSupportEntitlementAsync,
+    [SupportEntitlementsApi.deleteSupportEntitlementAsync.key]: SupportEntitlementsApi.deleteSupportEntitlementAsync,
+    [SupportEntitlementsApi.getSupportEntitlementAsync.key]: SupportEntitlementsApi.getSupportEntitlementAsync,
+    [SupportEntitlementsApi.getSupportEntitlementsAsync.key]: SupportEntitlementsApi.getSupportEntitlementsAsync,
+    [SupportEntitlementsApi.getSupportEntitlementsCountAsync.key]: SupportEntitlementsApi.getSupportEntitlementsCountAsync,
+    [SupportEntitlementsApi.updateSupportEntitlementAsync.key]: SupportEntitlementsApi.updateSupportEntitlementAsync,
+    [SupportRequestAttachmentsApi.createSupportRequestAttachmentAsync.key]: SupportRequestAttachmentsApi.createSupportRequestAttachmentAsync,
+    [SupportRequestAttachmentsApi.deleteSupportRequestAttachmentAsync.key]: SupportRequestAttachmentsApi.deleteSupportRequestAttachmentAsync,
+    [SupportRequestAttachmentsApi.getSupportRequestAttachmentAsync.key]: SupportRequestAttachmentsApi.getSupportRequestAttachmentAsync,
+    [SupportRequestAttachmentsApi.getSupportRequestAttachmentsAsync.key]: SupportRequestAttachmentsApi.getSupportRequestAttachmentsAsync,
+    [SupportRequestAttachmentsApi.getSupportRequestAttachmentsCountAsync.key]: SupportRequestAttachmentsApi.getSupportRequestAttachmentsCountAsync,
+    [SupportRequestAttachmentsApi.updateSupportRequestAttachmentAsync.key]: SupportRequestAttachmentsApi.updateSupportRequestAttachmentAsync,
+    [SupportRequestsApi.createSupportRequestAsync.key]: SupportRequestsApi.createSupportRequestAsync,
+    [SupportRequestsApi.deleteSupportRequestAsync.key]: SupportRequestsApi.deleteSupportRequestAsync,
+    [SupportRequestsApi.getSupportRequestAsync.key]: SupportRequestsApi.getSupportRequestAsync,
+    [SupportRequestsApi.getSupportRequestAttachmentByRequest.key]: SupportRequestsApi.getSupportRequestAttachmentByRequest,
+    [SupportRequestsApi.getSupportRequestAttachmentsByRequest.key]: SupportRequestsApi.getSupportRequestAttachmentsByRequest,
+    [SupportRequestsApi.getSupportRequestAttachmentsCountByRequest.key]: SupportRequestsApi.getSupportRequestAttachmentsCountByRequest,
+    [SupportRequestsApi.getSupportRequestTicketsAsync.key]: SupportRequestsApi.getSupportRequestTicketsAsync,
+    [SupportRequestsApi.getSupportRequestsAsync.key]: SupportRequestsApi.getSupportRequestsAsync,
+    [SupportRequestsApi.getSupportRequestsCountAsync.key]: SupportRequestsApi.getSupportRequestsCountAsync,
+    [SupportRequestsApi.relateSupportRequestToAttachmentAsync.key]: SupportRequestsApi.relateSupportRequestToAttachmentAsync,
+    [SupportRequestsApi.updateSupportRequestAsync.key]: SupportRequestsApi.updateSupportRequestAsync,
+    [SupportTicketPrioritiesApi.createSupportTicketPriorityAsync.key]: SupportTicketPrioritiesApi.createSupportTicketPriorityAsync,
+    [SupportTicketPrioritiesApi.deleteSupportTicketPriorityAsync.key]: SupportTicketPrioritiesApi.deleteSupportTicketPriorityAsync,
+    [SupportTicketPrioritiesApi.getSupportTicketPrioritiesAsync.key]: SupportTicketPrioritiesApi.getSupportTicketPrioritiesAsync,
+    [SupportTicketPrioritiesApi.getSupportTicketPrioritiesCountAsync.key]: SupportTicketPrioritiesApi.getSupportTicketPrioritiesCountAsync,
+    [SupportTicketPrioritiesApi.getSupportTicketPriorityAsync.key]: SupportTicketPrioritiesApi.getSupportTicketPriorityAsync,
+    [SupportTicketPrioritiesApi.updateSupportTicketPriorityAsync.key]: SupportTicketPrioritiesApi.updateSupportTicketPriorityAsync,
+    [SupportTicketTypesApi.createSupportTicketTypeAsync.key]: SupportTicketTypesApi.createSupportTicketTypeAsync,
+    [SupportTicketTypesApi.deleteSupportTicketTypeAsync.key]: SupportTicketTypesApi.deleteSupportTicketTypeAsync,
+    [SupportTicketTypesApi.getSupportTicketTypeAsync.key]: SupportTicketTypesApi.getSupportTicketTypeAsync,
+    [SupportTicketTypesApi.getSupportTicketTypesAsync.key]: SupportTicketTypesApi.getSupportTicketTypesAsync,
+    [SupportTicketTypesApi.getSupportTicketTypesCountAsync.key]: SupportTicketTypesApi.getSupportTicketTypesCountAsync,
+    [SupportTicketTypesApi.updateSupportTicketTypeAsync.key]: SupportTicketTypesApi.updateSupportTicketTypeAsync,
+    [SupportTicketsApi.createSupportTicketAsync.key]: SupportTicketsApi.createSupportTicketAsync,
+    [SupportTicketsApi.deleteSupportTicketAsync.key]: SupportTicketsApi.deleteSupportTicketAsync,
+    [SupportTicketsApi.deleteSupportTicketConversationAsync.key]: SupportTicketsApi.deleteSupportTicketConversationAsync,
+    [SupportTicketsApi.getSupportTicketAsync.key]: SupportTicketsApi.getSupportTicketAsync,
+    [SupportTicketsApi.getSupportTicketConversationAsync.key]: SupportTicketsApi.getSupportTicketConversationAsync,
+    [SupportTicketsApi.getSupportTicketConversationMessagesAsync.key]: SupportTicketsApi.getSupportTicketConversationMessagesAsync,
+    [SupportTicketsApi.getSupportTicketConversationsAsync.key]: SupportTicketsApi.getSupportTicketConversationsAsync,
+    [SupportTicketsApi.getSupportTicketsAsync.key]: SupportTicketsApi.getSupportTicketsAsync,
+    [SupportTicketsApi.getSupportTicketsCountAsync.key]: SupportTicketsApi.getSupportTicketsCountAsync,
+    [SupportTicketsApi.relateSupportTicketToConversationAsync.key]: SupportTicketsApi.relateSupportTicketToConversationAsync,
+    [SupportTicketsApi.updateSupportTicketAsync.key]: SupportTicketsApi.updateSupportTicketAsync,
+}
+
+module.exports = {
+    searchActions: () => Object.entries(actions).reduce((actions, [key, value]) => isSearchAction(key) && hasSearchRequisites(value) ? {...actions, [key]: searchMiddleware(value)} : actions, {}),
+    createActions: () => Object.entries(actions).reduce((actions, [key, value]) => isCreateAction(key) ? {...actions, [key]: value} : actions, {}),
+    triggers: () => Object.entries(actions).reduce((actions, [key, value]) => isTrigger(key) ? {...actions, [key]: triggerMiddleware(value)} : actions, {}),
+}

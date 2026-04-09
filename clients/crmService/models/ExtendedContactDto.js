@@ -1,0 +1,386 @@
+const utils = require('../utils/utils');
+const CartDto = require('../models/CartDto');
+const SimpleContactDto = require('../models/SimpleContactDto');
+const SocialProfileDto = require('../models/SocialProfileDto');
+const WalletDto = require('../models/WalletDto');
+
+module.exports = {
+    fields: (prefix = '', isInput = true, isArrayChild = false) => {
+        const {keyPrefix, labelPrefix} = utils.buildKeyAndLabel(prefix, isInput, isArrayChild)
+        return [
+            {
+                key: `${keyPrefix}id`,
+                label: `[${labelPrefix}id]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}timestamp`,
+                label: `[${labelPrefix}timestamp]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}qualifiedName`,
+                label: `[${labelPrefix}qualifiedName]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}type`,
+                label: `[${labelPrefix}type]`,
+                type: 'string',
+                choices: [
+                    'Individual',
+                    'Organization',
+                ],
+            },
+            {
+                key: `${keyPrefix}email`,
+                label: `[${labelPrefix}email]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}phone`,
+                label: `[${labelPrefix}phone]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}publicName`,
+                label: `[${labelPrefix}publicName]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}firstName`,
+                label: `[${labelPrefix}firstName]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}lastName`,
+                label: `[${labelPrefix}lastName]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}jobTitle`,
+                label: `[${labelPrefix}jobTitle]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}coverUrl`,
+                label: `[${labelPrefix}coverUrl]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}avatarUrl`,
+                label: `[${labelPrefix}avatarUrl]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}countryId`,
+                label: `[${labelPrefix}countryId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}timezoneId`,
+                label: `[${labelPrefix}timezoneId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}languageId`,
+                label: `[${labelPrefix}languageId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}socialProfileId`,
+                label: `[${labelPrefix}socialProfileId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}webUrl`,
+                label: `[${labelPrefix}webUrl]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}gitHubUrl`,
+                label: `[${labelPrefix}gitHubUrl]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}twitchUrl`,
+                label: `[${labelPrefix}twitchUrl]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}redditUrl`,
+                label: `[${labelPrefix}redditUrl]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}tikTokUrl`,
+                label: `[${labelPrefix}tikTokUrl]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}websiteUrl`,
+                label: `[${labelPrefix}websiteUrl]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}twitterUrl`,
+                label: `[${labelPrefix}twitterUrl]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}facebookUrl`,
+                label: `[${labelPrefix}facebookUrl]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}youTubeUrl`,
+                label: `[${labelPrefix}youTubeUrl]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}linkedInUrl`,
+                label: `[${labelPrefix}linkedInUrl]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}instagramUrl`,
+                label: `[${labelPrefix}instagramUrl]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}githubUsername`,
+                label: `[${labelPrefix}githubUsername]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}duns`,
+                label: `[${labelPrefix}duns]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}taxId`,
+                label: `[${labelPrefix}taxId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}about`,
+                label: `[${labelPrefix}about]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}street`,
+                label: `[${labelPrefix}street]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}cartId`,
+                label: `[${labelPrefix}cartId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}cityId`,
+                label: `[${labelPrefix}cityId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}zipCode`,
+                label: `[${labelPrefix}zipCode]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}stateId`,
+                label: `[${labelPrefix}stateId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}walletId`,
+                label: `[${labelPrefix}walletId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}faxNumber`,
+                label: `[${labelPrefix}faxNumber]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}postalCode`,
+                label: `[${labelPrefix}postalCode]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}currencyId`,
+                label: `[${labelPrefix}currencyId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}streetLine1`,
+                label: `[${labelPrefix}streetLine1]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}streetLine2`,
+                label: `[${labelPrefix}streetLine2]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}territoryId`,
+                label: `[${labelPrefix}territoryId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}mobilePhone`,
+                label: `[${labelPrefix}mobilePhone]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}annualRevenue`,
+                label: `[${labelPrefix}annualRevenue]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}relatedUserId`,
+                label: `[${labelPrefix}relatedUserId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}businessPhone`,
+                label: `[${labelPrefix}businessPhone]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}ownerContactId`,
+                label: `[${labelPrefix}ownerContactId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}relatedTenantId`,
+                label: `[${labelPrefix}relatedTenantId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}activityFeedId`,
+                label: `[${labelPrefix}activityFeedId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}parentContactId`,
+                label: `[${labelPrefix}parentContactId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}identityProvider`,
+                label: `[${labelPrefix}identityProvider]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}partnerProfileId`,
+                label: `[${labelPrefix}partnerProfileId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}primaryContactId`,
+                label: `[${labelPrefix}primaryContactId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}activeDirectoryId`,
+                label: `[${labelPrefix}activeDirectoryId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}identityProviderAccessToken`,
+                label: `[${labelPrefix}identityProviderAccessToken]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}birthday`,
+                label: `[${labelPrefix}birthday]`,
+                type: 'string',
+            },
+            ...CartDto.fields(`${keyPrefix}cart`, isInput),
+            ...WalletDto.fields(`${keyPrefix}wallet`, isInput),
+            ...SocialProfileDto.fields(`${keyPrefix}socialProfile`, isInput),
+            ...SimpleContactDto.fields(`${keyPrefix}parentContact`, isInput),
+            ...SimpleContactDto.fields(`${keyPrefix}primaryContact`, isInput),
+        ]
+    },
+    mapping: (bundle, prefix = '') => {
+        const {keyPrefix} = utils.buildKeyAndLabel(prefix)
+        return {
+            'id': bundle.inputData?.[`${keyPrefix}id`],
+            'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
+            'qualifiedName': bundle.inputData?.[`${keyPrefix}qualifiedName`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'type': bundle.inputData?.[`${keyPrefix}type`],
+            'email': bundle.inputData?.[`${keyPrefix}email`],
+            'phone': bundle.inputData?.[`${keyPrefix}phone`],
+            'publicName': bundle.inputData?.[`${keyPrefix}publicName`],
+            'firstName': bundle.inputData?.[`${keyPrefix}firstName`],
+            'lastName': bundle.inputData?.[`${keyPrefix}lastName`],
+            'jobTitle': bundle.inputData?.[`${keyPrefix}jobTitle`],
+            'coverUrl': bundle.inputData?.[`${keyPrefix}coverUrl`],
+            'avatarUrl': bundle.inputData?.[`${keyPrefix}avatarUrl`],
+            'countryId': bundle.inputData?.[`${keyPrefix}countryId`],
+            'timezoneId': bundle.inputData?.[`${keyPrefix}timezoneId`],
+            'languageId': bundle.inputData?.[`${keyPrefix}languageId`],
+            'socialProfileId': bundle.inputData?.[`${keyPrefix}socialProfileId`],
+            'webUrl': bundle.inputData?.[`${keyPrefix}webUrl`],
+            'gitHubUrl': bundle.inputData?.[`${keyPrefix}gitHubUrl`],
+            'twitchUrl': bundle.inputData?.[`${keyPrefix}twitchUrl`],
+            'redditUrl': bundle.inputData?.[`${keyPrefix}redditUrl`],
+            'tikTokUrl': bundle.inputData?.[`${keyPrefix}tikTokUrl`],
+            'websiteUrl': bundle.inputData?.[`${keyPrefix}websiteUrl`],
+            'twitterUrl': bundle.inputData?.[`${keyPrefix}twitterUrl`],
+            'facebookUrl': bundle.inputData?.[`${keyPrefix}facebookUrl`],
+            'youTubeUrl': bundle.inputData?.[`${keyPrefix}youTubeUrl`],
+            'linkedInUrl': bundle.inputData?.[`${keyPrefix}linkedInUrl`],
+            'instagramUrl': bundle.inputData?.[`${keyPrefix}instagramUrl`],
+            'githubUsername': bundle.inputData?.[`${keyPrefix}githubUsername`],
+            'duns': bundle.inputData?.[`${keyPrefix}duns`],
+            'taxId': bundle.inputData?.[`${keyPrefix}taxId`],
+            'about': bundle.inputData?.[`${keyPrefix}about`],
+            'street': bundle.inputData?.[`${keyPrefix}street`],
+            'cartId': bundle.inputData?.[`${keyPrefix}cartId`],
+            'cityId': bundle.inputData?.[`${keyPrefix}cityId`],
+            'zipCode': bundle.inputData?.[`${keyPrefix}zipCode`],
+            'stateId': bundle.inputData?.[`${keyPrefix}stateId`],
+            'walletId': bundle.inputData?.[`${keyPrefix}walletId`],
+            'faxNumber': bundle.inputData?.[`${keyPrefix}faxNumber`],
+            'postalCode': bundle.inputData?.[`${keyPrefix}postalCode`],
+            'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
+            'streetLine1': bundle.inputData?.[`${keyPrefix}streetLine1`],
+            'streetLine2': bundle.inputData?.[`${keyPrefix}streetLine2`],
+            'territoryId': bundle.inputData?.[`${keyPrefix}territoryId`],
+            'mobilePhone': bundle.inputData?.[`${keyPrefix}mobilePhone`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
+            'annualRevenue': bundle.inputData?.[`${keyPrefix}annualRevenue`],
+            'relatedUserId': bundle.inputData?.[`${keyPrefix}relatedUserId`],
+            'businessPhone': bundle.inputData?.[`${keyPrefix}businessPhone`],
+            'ownerContactId': bundle.inputData?.[`${keyPrefix}ownerContactId`],
+            'relatedTenantId': bundle.inputData?.[`${keyPrefix}relatedTenantId`],
+            'activityFeedId': bundle.inputData?.[`${keyPrefix}activityFeedId`],
+            'parentContactId': bundle.inputData?.[`${keyPrefix}parentContactId`],
+            'identityProvider': bundle.inputData?.[`${keyPrefix}identityProvider`],
+            'partnerProfileId': bundle.inputData?.[`${keyPrefix}partnerProfileId`],
+            'primaryContactId': bundle.inputData?.[`${keyPrefix}primaryContactId`],
+            'activeDirectoryId': bundle.inputData?.[`${keyPrefix}activeDirectoryId`],
+            'identityProviderAccessToken': bundle.inputData?.[`${keyPrefix}identityProviderAccessToken`],
+            'birthday': bundle.inputData?.[`${keyPrefix}birthday`],
+            'cart': utils.removeIfEmpty(CartDto.mapping(bundle, `${keyPrefix}cart`)),
+            'wallet': utils.removeIfEmpty(WalletDto.mapping(bundle, `${keyPrefix}wallet`)),
+            'socialProfile': utils.removeIfEmpty(SocialProfileDto.mapping(bundle, `${keyPrefix}socialProfile`)),
+            'parentContact': utils.removeIfEmpty(SimpleContactDto.mapping(bundle, `${keyPrefix}parentContact`)),
+            'primaryContact': utils.removeIfEmpty(SimpleContactDto.mapping(bundle, `${keyPrefix}primaryContact`)),
+        }
+    },
+}

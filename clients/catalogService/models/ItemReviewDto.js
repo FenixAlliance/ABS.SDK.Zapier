@@ -1,0 +1,50 @@
+const utils = require('../utils/utils');
+
+module.exports = {
+    fields: (prefix = '', isInput = true, isArrayChild = false) => {
+        const {keyPrefix, labelPrefix} = utils.buildKeyAndLabel(prefix, isInput, isArrayChild)
+        return [
+            {
+                key: `${keyPrefix}id`,
+                label: `[${labelPrefix}id]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}timestamp`,
+                label: `[${labelPrefix}timestamp]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}itemID`,
+                label: `[${labelPrefix}itemID]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}reviewScore`,
+                label: `[${labelPrefix}reviewScore]`,
+                type: 'number',
+            },
+            {
+                key: `${keyPrefix}reviewMessage`,
+                label: `[${labelPrefix}reviewMessage]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}socialProfileID`,
+                label: `[${labelPrefix}socialProfileID]`,
+                type: 'string',
+            },
+        ]
+    },
+    mapping: (bundle, prefix = '') => {
+        const {keyPrefix} = utils.buildKeyAndLabel(prefix)
+        return {
+            'id': bundle.inputData?.[`${keyPrefix}id`],
+            'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
+            'itemID': bundle.inputData?.[`${keyPrefix}itemID`],
+            'reviewScore': bundle.inputData?.[`${keyPrefix}reviewScore`],
+            'reviewMessage': bundle.inputData?.[`${keyPrefix}reviewMessage`],
+            'socialProfileID': bundle.inputData?.[`${keyPrefix}socialProfileID`],
+        }
+    },
+}

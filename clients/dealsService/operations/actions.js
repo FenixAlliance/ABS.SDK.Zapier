@@ -1,0 +1,62 @@
+const DealUnitFlowsApi = require('../apis/DealUnitFlowsApi');
+const DealUnitsApi = require('../apis/DealUnitsApi');
+const FenixAllianceABPWebApi = require('../apis/FenixAllianceABPWebApi');
+const SalesLiteraturesApi = require('../apis/SalesLiteraturesApi');
+const { triggerMiddleware, isTrigger, searchMiddleware, hasSearchRequisites, isSearchAction, isCreateAction } = require('../utils/utils');
+
+const actions = {
+    [DealUnitFlowsApi.createDealUnitFlowAsync.key]: DealUnitFlowsApi.createDealUnitFlowAsync,
+    [DealUnitFlowsApi.createDealUnitFlowStageAsync.key]: DealUnitFlowsApi.createDealUnitFlowStageAsync,
+    [DealUnitFlowsApi.deleteDealUnitFlowAsync.key]: DealUnitFlowsApi.deleteDealUnitFlowAsync,
+    [DealUnitFlowsApi.deleteDealUnitFlowStageAsync.key]: DealUnitFlowsApi.deleteDealUnitFlowStageAsync,
+    [DealUnitFlowsApi.getDealUnitFlowAsync.key]: DealUnitFlowsApi.getDealUnitFlowAsync,
+    [DealUnitFlowsApi.getDealUnitFlowStageAsync.key]: DealUnitFlowsApi.getDealUnitFlowStageAsync,
+    [DealUnitFlowsApi.getDealUnitFlowStagesAsync.key]: DealUnitFlowsApi.getDealUnitFlowStagesAsync,
+    [DealUnitFlowsApi.getDealUnitFlowStagesCountAsync.key]: DealUnitFlowsApi.getDealUnitFlowStagesCountAsync,
+    [DealUnitFlowsApi.getDealUnitFlowsAsync.key]: DealUnitFlowsApi.getDealUnitFlowsAsync,
+    [DealUnitFlowsApi.getDealUnitFlowsCountAsync.key]: DealUnitFlowsApi.getDealUnitFlowsCountAsync,
+    [DealUnitFlowsApi.updateDealUnitFlowAsync.key]: DealUnitFlowsApi.updateDealUnitFlowAsync,
+    [DealUnitFlowsApi.updateDealUnitFlowStageAsync.key]: DealUnitFlowsApi.updateDealUnitFlowStageAsync,
+    [DealUnitsApi.calculateDealUnitAsync.key]: DealUnitsApi.calculateDealUnitAsync,
+    [DealUnitsApi.calculateDealUnitLineAsync.key]: DealUnitsApi.calculateDealUnitLineAsync,
+    [DealUnitsApi.createDealUnitAsync.key]: DealUnitsApi.createDealUnitAsync,
+    [DealUnitsApi.createGetDealUnitLinesAsync.key]: DealUnitsApi.createGetDealUnitLinesAsync,
+    [DealUnitsApi.deleteDealUnitAsync.key]: DealUnitsApi.deleteDealUnitAsync,
+    [DealUnitsApi.deleteDealUnitPriceAsync.key]: DealUnitsApi.deleteDealUnitPriceAsync,
+    [DealUnitsApi.getDealUnitAsync.key]: DealUnitsApi.getDealUnitAsync,
+    [DealUnitsApi.getDealUnitLinesAsync.key]: DealUnitsApi.getDealUnitLinesAsync,
+    [DealUnitsApi.getDealUnitLinesCountAsync.key]: DealUnitsApi.getDealUnitLinesCountAsync,
+    [DealUnitsApi.getDealUnitPriceAsync.key]: DealUnitsApi.getDealUnitPriceAsync,
+    [DealUnitsApi.getDealUnitsAsync.key]: DealUnitsApi.getDealUnitsAsync,
+    [DealUnitsApi.getDealUnitsCountAsync.key]: DealUnitsApi.getDealUnitsCountAsync,
+    [DealUnitsApi.getExtendedDealUnitAsync.key]: DealUnitsApi.getExtendedDealUnitAsync,
+    [DealUnitsApi.getExtendedDealUnitsAsync.key]: DealUnitsApi.getExtendedDealUnitsAsync,
+    [DealUnitsApi.updateDealUnitAsync.key]: DealUnitsApi.updateDealUnitAsync,
+    [DealUnitsApi.updateDealUnitPriceAsync.key]: DealUnitsApi.updateDealUnitPriceAsync,
+    [FenixAllianceABPWebApi.forgotPasswordPost.key]: FenixAllianceABPWebApi.forgotPasswordPost,
+    [FenixAllianceABPWebApi.healthGet.key]: FenixAllianceABPWebApi.healthGet,
+    [FenixAllianceABPWebApi.helloGet.key]: FenixAllianceABPWebApi.helloGet,
+    [FenixAllianceABPWebApi.loginPost.key]: FenixAllianceABPWebApi.loginPost,
+    [FenixAllianceABPWebApi.manage2faPost.key]: FenixAllianceABPWebApi.manage2faPost,
+    [FenixAllianceABPWebApi.manageInfoGet.key]: FenixAllianceABPWebApi.manageInfoGet,
+    [FenixAllianceABPWebApi.manageInfoPost.key]: FenixAllianceABPWebApi.manageInfoPost,
+    [FenixAllianceABPWebApi.mapIdentityApi/confirmEmail.key]: FenixAllianceABPWebApi.mapIdentityApi/confirmEmail,
+    [FenixAllianceABPWebApi.refreshPost.key]: FenixAllianceABPWebApi.refreshPost,
+    [FenixAllianceABPWebApi.registerPost.key]: FenixAllianceABPWebApi.registerPost,
+    [FenixAllianceABPWebApi.resendConfirmationEmailPost.key]: FenixAllianceABPWebApi.resendConfirmationEmailPost,
+    [FenixAllianceABPWebApi.resetPasswordPost.key]: FenixAllianceABPWebApi.resetPasswordPost,
+    [FenixAllianceABPWebApi.versionGet.key]: FenixAllianceABPWebApi.versionGet,
+    [SalesLiteraturesApi.countSalesLiteraturesAsync.key]: SalesLiteraturesApi.countSalesLiteraturesAsync,
+    [SalesLiteraturesApi.createSalesLiteratureAsync.key]: SalesLiteraturesApi.createSalesLiteratureAsync,
+    [SalesLiteraturesApi.deleteSalesLiteratureAsync.key]: SalesLiteraturesApi.deleteSalesLiteratureAsync,
+    [SalesLiteraturesApi.getExtendedSalesLiteraturesAsync.key]: SalesLiteraturesApi.getExtendedSalesLiteraturesAsync,
+    [SalesLiteraturesApi.getSalesLiteratureAsync.key]: SalesLiteraturesApi.getSalesLiteratureAsync,
+    [SalesLiteraturesApi.getSalesLiteraturesAsync.key]: SalesLiteraturesApi.getSalesLiteraturesAsync,
+    [SalesLiteraturesApi.updateSalesLiteratureAsync.key]: SalesLiteraturesApi.updateSalesLiteratureAsync,
+}
+
+module.exports = {
+    searchActions: () => Object.entries(actions).reduce((actions, [key, value]) => isSearchAction(key) && hasSearchRequisites(value) ? {...actions, [key]: searchMiddleware(value)} : actions, {}),
+    createActions: () => Object.entries(actions).reduce((actions, [key, value]) => isCreateAction(key) ? {...actions, [key]: value} : actions, {}),
+    triggers: () => Object.entries(actions).reduce((actions, [key, value]) => isTrigger(key) ? {...actions, [key]: triggerMiddleware(value)} : actions, {}),
+}
