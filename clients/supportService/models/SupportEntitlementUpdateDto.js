@@ -195,11 +195,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}accountHolderID`,
-                label: `[${labelPrefix}accountHolderID]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}individualID`,
                 label: `[${labelPrefix}individualID]`,
                 type: 'string',
@@ -212,16 +207,6 @@ module.exports = {
             {
                 key: `${keyPrefix}receiverBusinessID`,
                 label: `[${labelPrefix}receiverBusinessID]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
                 type: 'string',
             },
             {
@@ -282,12 +267,9 @@ module.exports = {
             'data8Label': bundle.inputData?.[`${keyPrefix}data8Label`],
             'data9': bundle.inputData?.[`${keyPrefix}data9`],
             'data9Label': bundle.inputData?.[`${keyPrefix}data9Label`],
-            'accountHolderID': bundle.inputData?.[`${keyPrefix}accountHolderID`],
             'individualID': bundle.inputData?.[`${keyPrefix}individualID`],
             'organizationID': bundle.inputData?.[`${keyPrefix}organizationID`],
             'receiverBusinessID': bundle.inputData?.[`${keyPrefix}receiverBusinessID`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
             'paymentTokenID': bundle.inputData?.[`${keyPrefix}paymentTokenID`],
             'walletAccountID': bundle.inputData?.[`${keyPrefix}walletAccountID`],
             'securityCertificateID': bundle.inputData?.[`${keyPrefix}securityCertificateID`],

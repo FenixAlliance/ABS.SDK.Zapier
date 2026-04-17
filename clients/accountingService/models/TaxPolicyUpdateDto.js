@@ -110,16 +110,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}zero`,
                 label: `[${labelPrefix}zero]`,
                 type: 'boolean',
@@ -165,8 +155,6 @@ module.exports = {
             'customState': bundle.inputData?.[`${keyPrefix}customState`],
             'customCity': bundle.inputData?.[`${keyPrefix}customCity`],
             'cityId': bundle.inputData?.[`${keyPrefix}cityId`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'zero': bundle.inputData?.[`${keyPrefix}zero`],
             'reduced': bundle.inputData?.[`${keyPrefix}reduced`],
             'withholding': bundle.inputData?.[`${keyPrefix}withholding`],

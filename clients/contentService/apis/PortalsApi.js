@@ -1,15 +1,72 @@
 const samples = require('../samples/PortalsApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
+const Int32Envelope = require('../models/Int32Envelope');
 const Operation = require('../models/Operation');
 const PortalOptionsEnvelope = require('../models/PortalOptionsEnvelope');
 const PortalSettingsEnvelope = require('../models/PortalSettingsEnvelope');
 const WebPortalCreateDto = require('../models/WebPortalCreateDto');
 const WebPortalDtoEnvelope = require('../models/WebPortalDtoEnvelope');
+const WebPortalDtoListEnvelope = require('../models/WebPortalDtoListEnvelope');
 const WebPortalUpdateDto = require('../models/WebPortalUpdateDto');
 const utils = require('../utils/utils');
 
 module.exports = {
+    countPortalsAsync: {
+        key: 'countPortalsAsync',
+        noun: 'Portals',
+        display: {
+            label: 'Count portals',
+            description: 'Counts all portals for the specified tenant.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...Int32Envelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/Portals/Count'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'countPortalsAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['Int32EnvelopeSample']
+        }
+    },
     createWebPortalAsync: {
         key: 'createWebPortalAsync',
         noun: 'Portals',
@@ -222,6 +279,61 @@ module.exports = {
                 })
             },
             sample: samples['PortalOptionsEnvelopeSample']
+        }
+    },
+    getPortalsAsync: {
+        key: 'getPortalsAsync',
+        noun: 'Portals',
+        display: {
+            label: 'Get portals',
+            description: 'Retrieves all portals for the specified tenant.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...WebPortalDtoListEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/Portals'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getPortalsAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['WebPortalDtoListEnvelopeSample']
         }
     },
     getRootWebPortalAsync: {

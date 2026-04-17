@@ -36,16 +36,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}supportEntitlementID`,
                 label: `[${labelPrefix}supportEntitlementID]`,
                 type: 'string',
@@ -53,11 +43,6 @@ module.exports = {
             {
                 key: `${keyPrefix}contactID`,
                 label: `[${labelPrefix}contactID]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}accountHolderID`,
-                label: `[${labelPrefix}accountHolderID]`,
                 type: 'string',
             },
         ]
@@ -71,11 +56,8 @@ module.exports = {
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'approved': bundle.inputData?.[`${keyPrefix}approved`],
             'approvedTimestamp': bundle.inputData?.[`${keyPrefix}approvedTimestamp`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
             'supportEntitlementID': bundle.inputData?.[`${keyPrefix}supportEntitlementID`],
             'contactID': bundle.inputData?.[`${keyPrefix}contactID`],
-            'accountHolderID': bundle.inputData?.[`${keyPrefix}accountHolderID`],
         }
     },
 }

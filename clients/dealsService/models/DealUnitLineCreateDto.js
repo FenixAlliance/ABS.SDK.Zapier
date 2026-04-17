@@ -5,6 +5,16 @@ module.exports = {
         const {keyPrefix, labelPrefix} = utils.buildKeyAndLabel(prefix, isInput, isArrayChild)
         return [
             {
+                key: `${keyPrefix}id`,
+                label: `[${labelPrefix}id]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}timestamp`,
+                label: `[${labelPrefix}timestamp]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}closed`,
                 label: `[${labelPrefix}closed]`,
                 type: 'boolean',
@@ -32,16 +42,6 @@ module.exports = {
             {
                 key: `${keyPrefix}shippingPolicyId`,
                 label: `[${labelPrefix}shippingPolicyId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
             {
@@ -333,16 +333,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}totalProfit`,
-                label: `[${labelPrefix}totalProfit]`,
-                type: 'number',
-            },
-            {
-                key: `${keyPrefix}totalProfitCurrencyId`,
-                label: `[${labelPrefix}totalProfitCurrencyId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}totalDiscounts`,
                 label: `[${labelPrefix}totalDiscounts]`,
                 type: 'number',
@@ -350,6 +340,16 @@ module.exports = {
             {
                 key: `${keyPrefix}totalDiscountsCurrencyId`,
                 label: `[${labelPrefix}totalDiscountsCurrencyId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}totalTaxBase`,
+                label: `[${labelPrefix}totalTaxBase]`,
+                type: 'number',
+            },
+            {
+                key: `${keyPrefix}totalTaxBaseCurrencyId`,
+                label: `[${labelPrefix}totalTaxBaseCurrencyId]`,
                 type: 'string',
             },
             {
@@ -363,13 +363,13 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}totalTaxBase`,
-                label: `[${labelPrefix}totalTaxBase]`,
+                key: `${keyPrefix}totalProfit`,
+                label: `[${labelPrefix}totalProfit]`,
                 type: 'number',
             },
             {
-                key: `${keyPrefix}totalTaxBaseCurrencyId`,
-                label: `[${labelPrefix}totalTaxBaseCurrencyId]`,
+                key: `${keyPrefix}totalProfitCurrencyId`,
+                label: `[${labelPrefix}totalProfitCurrencyId]`,
                 type: 'string',
             },
             {
@@ -478,11 +478,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessProfileRecordId`,
-                label: `[${labelPrefix}businessProfileRecordId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}parentBillingItemRecordId`,
                 label: `[${labelPrefix}parentBillingItemRecordId]`,
                 type: 'string',
@@ -497,14 +492,14 @@ module.exports = {
     mapping: (bundle, prefix = '') => {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
+            'id': bundle.inputData?.[`${keyPrefix}id`],
+            'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'closed': bundle.inputData?.[`${keyPrefix}closed`],
             'itemId': bundle.inputData?.[`${keyPrefix}itemId`],
             'itemTitle': bundle.inputData?.[`${keyPrefix}itemTitle`],
             'itemShortDescription': bundle.inputData?.[`${keyPrefix}itemShortDescription`],
             'itemPrimaryImageUrl': bundle.inputData?.[`${keyPrefix}itemPrimaryImageUrl`],
             'shippingPolicyId': bundle.inputData?.[`${keyPrefix}shippingPolicyId`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'quantity': bundle.inputData?.[`${keyPrefix}quantity`],
@@ -561,14 +556,14 @@ module.exports = {
             'customGlobalDiscountsAmountCurrencyId': bundle.inputData?.[`${keyPrefix}customGlobalDiscountsAmountCurrencyId`],
             'totalDetail': bundle.inputData?.[`${keyPrefix}totalDetail`],
             'totalDetailCurrencyId': bundle.inputData?.[`${keyPrefix}totalDetailCurrencyId`],
-            'totalProfit': bundle.inputData?.[`${keyPrefix}totalProfit`],
-            'totalProfitCurrencyId': bundle.inputData?.[`${keyPrefix}totalProfitCurrencyId`],
             'totalDiscounts': bundle.inputData?.[`${keyPrefix}totalDiscounts`],
             'totalDiscountsCurrencyId': bundle.inputData?.[`${keyPrefix}totalDiscountsCurrencyId`],
-            'totalSurcharges': bundle.inputData?.[`${keyPrefix}totalSurcharges`],
-            'totalSurchargesCurrencyId': bundle.inputData?.[`${keyPrefix}totalSurchargesCurrencyId`],
             'totalTaxBase': bundle.inputData?.[`${keyPrefix}totalTaxBase`],
             'totalTaxBaseCurrencyId': bundle.inputData?.[`${keyPrefix}totalTaxBaseCurrencyId`],
+            'totalSurcharges': bundle.inputData?.[`${keyPrefix}totalSurcharges`],
+            'totalSurchargesCurrencyId': bundle.inputData?.[`${keyPrefix}totalSurchargesCurrencyId`],
+            'totalProfit': bundle.inputData?.[`${keyPrefix}totalProfit`],
+            'totalProfitCurrencyId': bundle.inputData?.[`${keyPrefix}totalProfitCurrencyId`],
             'totalShippingCost': bundle.inputData?.[`${keyPrefix}totalShippingCost`],
             'totalShippingCostCurrencyId': bundle.inputData?.[`${keyPrefix}totalShippingCostCurrencyId`],
             'totalShippingTax': bundle.inputData?.[`${keyPrefix}totalShippingTax`],
@@ -590,7 +585,6 @@ module.exports = {
             'shippingLocationId': bundle.inputData?.[`${keyPrefix}shippingLocationId`],
             'locationId': bundle.inputData?.[`${keyPrefix}locationId`],
             'quoteItemRecordId': bundle.inputData?.[`${keyPrefix}quoteItemRecordId`],
-            'businessProfileRecordId': bundle.inputData?.[`${keyPrefix}businessProfileRecordId`],
             'parentBillingItemRecordId': bundle.inputData?.[`${keyPrefix}parentBillingItemRecordId`],
             'dealUnitId': bundle.inputData?.[`${keyPrefix}dealUnitId`],
         }

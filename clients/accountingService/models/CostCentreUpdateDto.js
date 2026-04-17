@@ -29,11 +29,6 @@ module.exports = {
                 ],
             },
             {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}costCentresGroupId`,
                 label: `[${labelPrefix}costCentresGroupId]`,
                 type: 'string',
@@ -52,7 +47,6 @@ module.exports = {
             'disabled': bundle.inputData?.[`${keyPrefix}disabled`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'costCentreType': bundle.inputData?.[`${keyPrefix}costCentreType`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'costCentresGroupId': bundle.inputData?.[`${keyPrefix}costCentresGroupId`],
             'parentCostCentreId': bundle.inputData?.[`${keyPrefix}parentCostCentreId`],
         }

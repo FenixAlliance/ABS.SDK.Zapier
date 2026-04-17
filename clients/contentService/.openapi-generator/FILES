@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 README.md
 apis/BlogPostAuthorsApi.js
 apis/BlogPostCategoriesApi.js
@@ -156,6 +155,7 @@ models/WebPageUpdateDto.js
 models/WebPortalCreateDto.js
 models/WebPortalDto.js
 models/WebPortalDtoEnvelope.js
+models/WebPortalDtoListEnvelope.js
 models/WebPortalUpdateDto.js
 models/WebTemplateCreateDto.js
 models/WebTemplateDto.js
@@ -164,17 +164,4 @@ models/WebTemplateDtoListEnvelope.js
 models/WebTemplateUpdateDto.js
 operations/actions.js
 package.json
-samples/BlogPostAuthorsApi.js
-samples/BlogPostCategoriesApi.js
-samples/BlogPostTagsApi.js
-samples/BlogPostsApi.js
-samples/BusinessDomainsApi.js
-samples/FenixAllianceABPWebApi.js
-samples/PortalsApi.js
-samples/ThemesApi.js
-samples/WebContentsApi.js
-samples/WebPageCategoriesApi.js
-samples/WebPageTagsApi.js
-samples/WebPagesApi.js
-samples/WebTemplatesApi.js
 utils/utils.js

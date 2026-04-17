@@ -20,11 +20,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}priceListId`,
                 label: `[${labelPrefix}priceListId]`,
                 type: 'string',
@@ -32,11 +27,6 @@ module.exports = {
             {
                 key: `${keyPrefix}description`,
                 label: `[${labelPrefix}description]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
             {
@@ -361,10 +351,8 @@ module.exports = {
             'closed': bundle.inputData?.[`${keyPrefix}closed`],
             'title': bundle.inputData?.[`${keyPrefix}title`],
             'userId': bundle.inputData?.[`${keyPrefix}userId`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'priceListId': bundle.inputData?.[`${keyPrefix}priceListId`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'individualId': bundle.inputData?.[`${keyPrefix}individualId`],
             'paymentTermId': bundle.inputData?.[`${keyPrefix}paymentTermId`],
             'organizationId': bundle.inputData?.[`${keyPrefix}organizationId`],

@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 README.md
 apis/AntiforgeryApi.js
 apis/EmailsApi.js
@@ -72,13 +71,4 @@ models/UserUpdateDto.js
 models/WalletDto.js
 operations/actions.js
 package.json
-samples/AntiforgeryApi.js
-samples/EmailsApi.js
-samples/FenixAllianceABPWebApi.js
-samples/LicensingApi.js
-samples/MigrationsApi.js
-samples/ModulesApi.js
-samples/OptionsApi.js
-samples/TenantsApi.js
-samples/UsersApi.js
 utils/utils.js

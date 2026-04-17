@@ -37,12 +37,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
-                required: true,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}releaseDateTime`,
                 label: `[${labelPrefix}releaseDateTime]`,
                 type: 'string',
@@ -58,7 +52,6 @@ module.exports = {
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'courseID': bundle.inputData?.[`${keyPrefix}courseID`],
             'courseUnitID': bundle.inputData?.[`${keyPrefix}courseUnitID`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
             'releaseDateTime': bundle.inputData?.[`${keyPrefix}releaseDateTime`],
         }
     },

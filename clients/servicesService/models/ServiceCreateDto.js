@@ -165,11 +165,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}permalink`,
                 label: `[${labelPrefix}permalink]`,
                 type: 'string',
@@ -865,7 +860,6 @@ module.exports = {
             'pattern': bundle.inputData?.[`${keyPrefix}pattern`],
             'features': bundle.inputData?.[`${keyPrefix}features`],
             'material': bundle.inputData?.[`${keyPrefix}material`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'permalink': bundle.inputData?.[`${keyPrefix}permalink`],
             'brandName': bundle.inputData?.[`${keyPrefix}brandName`],
             'variations': bundle.inputData?.[`${keyPrefix}variations`],

@@ -21,12 +21,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                required: true,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}description`,
                 label: `[${labelPrefix}description]`,
                 type: 'string',
@@ -39,7 +33,6 @@ module.exports = {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'name': bundle.inputData?.[`${keyPrefix}name`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
         }
     },

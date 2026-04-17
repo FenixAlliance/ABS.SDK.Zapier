@@ -19,16 +19,6 @@ module.exports = {
                 label: `[${labelPrefix}fiscalAuthorityId]`,
                 type: 'string',
             },
-            {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
-                type: 'string',
-            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -37,8 +27,6 @@ module.exports = {
             'code': bundle.inputData?.[`${keyPrefix}code`],
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'fiscalAuthorityId': bundle.inputData?.[`${keyPrefix}fiscalAuthorityId`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
         }
     },
 }

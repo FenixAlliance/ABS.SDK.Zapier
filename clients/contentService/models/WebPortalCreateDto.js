@@ -35,11 +35,6 @@ module.exports = {
                 type: 'boolean',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}description`,
                 label: `[${labelPrefix}description]`,
                 type: 'string',
@@ -52,11 +47,6 @@ module.exports = {
             {
                 key: `${keyPrefix}businessDomainID`,
                 label: `[${labelPrefix}businessDomainID]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
                 type: 'string',
             },
             {
@@ -75,11 +65,9 @@ module.exports = {
             'title': bundle.inputData?.[`${keyPrefix}title`],
             'domain': bundle.inputData?.[`${keyPrefix}domain`],
             'disabled': bundle.inputData?.[`${keyPrefix}disabled`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'websiteThemeID': bundle.inputData?.[`${keyPrefix}websiteThemeID`],
             'businessDomainID': bundle.inputData?.[`${keyPrefix}businessDomainID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
             'businessPortalApplicationID': bundle.inputData?.[`${keyPrefix}businessPortalApplicationID`],
         }
     },

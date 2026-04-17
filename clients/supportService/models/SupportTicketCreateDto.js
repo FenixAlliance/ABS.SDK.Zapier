@@ -20,23 +20,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}accountHolderID`,
-                label: `[${labelPrefix}accountHolderID]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}contactID`,
                 label: `[${labelPrefix}contactID]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
                 type: 'string',
             },
             {
@@ -62,10 +47,7 @@ module.exports = {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
-            'accountHolderID': bundle.inputData?.[`${keyPrefix}accountHolderID`],
             'contactID': bundle.inputData?.[`${keyPrefix}contactID`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
             'supportTicketTypeID': bundle.inputData?.[`${keyPrefix}supportTicketTypeID`],
             'supportEntitlementID': bundle.inputData?.[`${keyPrefix}supportEntitlementID`],
             'supportPriorityID': bundle.inputData?.[`${keyPrefix}supportPriorityID`],

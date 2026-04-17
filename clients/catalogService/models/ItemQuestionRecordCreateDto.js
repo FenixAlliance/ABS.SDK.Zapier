@@ -37,12 +37,6 @@ module.exports = {
                 label: `[${labelPrefix}socialProfileID]`,
                 type: 'string',
             },
-            {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
-                required: true,
-                type: 'string',
-            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -54,7 +48,6 @@ module.exports = {
             'needsRevision': bundle.inputData?.[`${keyPrefix}needsRevision`],
             'question': bundle.inputData?.[`${keyPrefix}question`],
             'socialProfileID': bundle.inputData?.[`${keyPrefix}socialProfileID`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
         }
     },
 }

@@ -46,19 +46,9 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}currencyId`,
                 label: `[${labelPrefix}currencyId]`,
                 required: true,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
             {
@@ -97,9 +87,7 @@ module.exports = {
             'code': bundle.inputData?.[`${keyPrefix}code`],
             'path': bundle.inputData?.[`${keyPrefix}path`],
             'prefix': bundle.inputData?.[`${keyPrefix}prefix`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'accountTypeId': bundle.inputData?.[`${keyPrefix}accountTypeId`],
             'parentAccountId': bundle.inputData?.[`${keyPrefix}parentAccountId`],
             'accountCategory': bundle.inputData?.[`${keyPrefix}accountCategory`],

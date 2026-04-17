@@ -60,16 +60,6 @@ module.exports = {
                 label: `[${labelPrefix}paymentModeID]`,
                 type: 'string',
             },
-            {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
-                type: 'string',
-            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -86,8 +76,6 @@ module.exports = {
             'creditMonths': bundle.inputData?.[`${keyPrefix}creditMonths`],
             'creditYears': bundle.inputData?.[`${keyPrefix}creditYears`],
             'paymentModeID': bundle.inputData?.[`${keyPrefix}paymentModeID`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
         }
     },
 }

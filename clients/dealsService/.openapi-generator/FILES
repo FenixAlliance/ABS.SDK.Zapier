@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 README.md
 apis/DealUnitFlowsApi.js
 apis/DealUnitsApi.js
@@ -61,8 +60,4 @@ models/TwoFactorResponse.js
 models/UserDto.js
 operations/actions.js
 package.json
-samples/DealUnitFlowsApi.js
-samples/DealUnitsApi.js
-samples/FenixAllianceABPWebApi.js
-samples/SalesLiteraturesApi.js
 utils/utils.js

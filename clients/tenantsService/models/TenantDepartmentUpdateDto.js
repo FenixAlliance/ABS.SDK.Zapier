@@ -20,11 +20,6 @@ module.exports = {
                 type: 'boolean',
             },
             {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}organizationProfileID`,
                 label: `[${labelPrefix}organizationProfileID]`,
                 type: 'string',
@@ -42,7 +37,6 @@ module.exports = {
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'disabled': bundle.inputData?.[`${keyPrefix}disabled`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
             'organizationProfileID': bundle.inputData?.[`${keyPrefix}organizationProfileID`],
             'parentDepartmentID': bundle.inputData?.[`${keyPrefix}parentDepartmentID`],
         }

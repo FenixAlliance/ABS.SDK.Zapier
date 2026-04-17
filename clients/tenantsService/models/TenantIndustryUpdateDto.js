@@ -14,11 +14,6 @@ module.exports = {
                 label: `[${labelPrefix}parentBusinessIndustryID]`,
                 type: 'string',
             },
-            {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
-                type: 'string',
-            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -26,7 +21,6 @@ module.exports = {
         return {
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'parentBusinessIndustryID': bundle.inputData?.[`${keyPrefix}parentBusinessIndustryID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
         }
     },
 }

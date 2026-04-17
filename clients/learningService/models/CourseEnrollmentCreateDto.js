@@ -30,11 +30,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}courseCompletionCertificateID`,
                 label: `[${labelPrefix}courseCompletionCertificateID]`,
                 type: 'string',
@@ -49,7 +44,6 @@ module.exports = {
             'courseID': bundle.inputData?.[`${keyPrefix}courseID`],
             'courseCohortID': bundle.inputData?.[`${keyPrefix}courseCohortID`],
             'studentProfileID': bundle.inputData?.[`${keyPrefix}studentProfileID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
             'courseCompletionCertificateID': bundle.inputData?.[`${keyPrefix}courseCompletionCertificateID`],
         }
     },

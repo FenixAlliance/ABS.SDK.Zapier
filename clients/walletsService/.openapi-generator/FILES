@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 README.md
 apis/FenixAllianceABPWebApi.js
 apis/WalletsApi.js
@@ -40,6 +39,4 @@ models/WalletDto.js
 models/WalletDtoEnvelope.js
 operations/actions.js
 package.json
-samples/FenixAllianceABPWebApi.js
-samples/WalletsApi.js
 utils/utils.js

@@ -60,16 +60,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}marketingListType`,
                 label: `[${labelPrefix}marketingListType]`,
                 type: 'string',
@@ -104,8 +94,6 @@ module.exports = {
             'modifiedOn': bundle.inputData?.[`${keyPrefix}modifiedOn`],
             'lastUsedOn': bundle.inputData?.[`${keyPrefix}lastUsedOn`],
             'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'marketingListType': bundle.inputData?.[`${keyPrefix}marketingListType`],
             'marketingListTarget': bundle.inputData?.[`${keyPrefix}marketingListTarget`],
         }

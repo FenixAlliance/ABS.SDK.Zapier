@@ -48,12 +48,6 @@ module.exports = {
                 required: true,
                 type: 'string',
             },
-            {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
-                required: true,
-                type: 'string',
-            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -67,7 +61,6 @@ module.exports = {
             'contentType': bundle.inputData?.[`${keyPrefix}contentType`],
             'fileLength': bundle.inputData?.[`${keyPrefix}fileLength`],
             'courseID': bundle.inputData?.[`${keyPrefix}courseID`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
         }
     },
 }

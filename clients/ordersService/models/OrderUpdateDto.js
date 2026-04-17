@@ -5,11 +5,6 @@ module.exports = {
         const {keyPrefix, labelPrefix} = utils.buildKeyAndLabel(prefix, isInput, isArrayChild)
         return [
             {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}firstName`,
                 label: `[${labelPrefix}firstName]`,
                 type: 'string',
@@ -233,11 +228,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}individualId`,
                 label: `[${labelPrefix}individualId]`,
                 type: 'string',
@@ -307,7 +297,6 @@ module.exports = {
     mapping: (bundle, prefix = '') => {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'firstName': bundle.inputData?.[`${keyPrefix}firstName`],
             'lastName': bundle.inputData?.[`${keyPrefix}lastName`],
             'companyName': bundle.inputData?.[`${keyPrefix}companyName`],
@@ -351,7 +340,6 @@ module.exports = {
             'userId': bundle.inputData?.[`${keyPrefix}userId`],
             'forexRate': bundle.inputData?.[`${keyPrefix}forexRate`],
             'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'individualId': bundle.inputData?.[`${keyPrefix}individualId`],
             'organizationId': bundle.inputData?.[`${keyPrefix}organizationId`],
             'totalAmountInUsd': bundle.inputData?.[`${keyPrefix}totalAmountInUsd`],

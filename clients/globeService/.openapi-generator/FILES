@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 README.md
 apis/CountriesApi.js
 apis/CurrenciesApi.js
@@ -44,9 +43,4 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/CountriesApi.js
-samples/CurrenciesApi.js
-samples/FenixAllianceABPWebApi.js
-samples/LanguagesApi.js
-samples/TimezonesApi.js
 utils/utils.js

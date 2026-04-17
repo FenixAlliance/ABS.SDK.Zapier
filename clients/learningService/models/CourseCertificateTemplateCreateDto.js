@@ -21,12 +21,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
-                required: true,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}webPortalID`,
                 label: `[${labelPrefix}webPortalID]`,
                 type: 'string',
@@ -34,11 +28,6 @@ module.exports = {
             {
                 key: `${keyPrefix}websiteThemeID`,
                 label: `[${labelPrefix}websiteThemeID]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
                 type: 'string',
             },
             {
@@ -64,10 +53,8 @@ module.exports = {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'courseID': bundle.inputData?.[`${keyPrefix}courseID`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
             'webPortalID': bundle.inputData?.[`${keyPrefix}webPortalID`],
             'websiteThemeID': bundle.inputData?.[`${keyPrefix}websiteThemeID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
             'socialProfileID': bundle.inputData?.[`${keyPrefix}socialProfileID`],
             'parentWebContentID': bundle.inputData?.[`${keyPrefix}parentWebContentID`],
             'parentWebContentVersionID': bundle.inputData?.[`${keyPrefix}parentWebContentVersionID`],

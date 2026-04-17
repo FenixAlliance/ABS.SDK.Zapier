@@ -74,16 +74,6 @@ module.exports = {
                 label: `[${labelPrefix}currencyId]`,
                 type: 'string',
             },
-            {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
-                type: 'string',
-            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -103,8 +93,6 @@ module.exports = {
             'expectedResponsePercent': bundle.inputData?.[`${keyPrefix}expectedResponsePercent`],
             'marketingAreaId': bundle.inputData?.[`${keyPrefix}marketingAreaId`],
             'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
         }
     },
 }

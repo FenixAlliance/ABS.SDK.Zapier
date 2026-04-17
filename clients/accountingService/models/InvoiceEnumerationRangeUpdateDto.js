@@ -55,16 +55,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}documentType`,
                 label: `[${labelPrefix}documentType]`,
                 type: 'string',
@@ -89,8 +79,6 @@ module.exports = {
             'validFrom': bundle.inputData?.[`${keyPrefix}validFrom`],
             'validTo': bundle.inputData?.[`${keyPrefix}validTo`],
             'fiscalAuthorityId': bundle.inputData?.[`${keyPrefix}fiscalAuthorityId`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'documentType': bundle.inputData?.[`${keyPrefix}documentType`],
         }
     },

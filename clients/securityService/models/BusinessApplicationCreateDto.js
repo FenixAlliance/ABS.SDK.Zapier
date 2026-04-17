@@ -81,16 +81,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}requireHttps`,
                 label: `[${labelPrefix}requireHttps]`,
                 type: 'boolean',
@@ -220,8 +210,6 @@ module.exports = {
             'contactEmail': bundle.inputData?.[`${keyPrefix}contactEmail`],
             'privacyPolicyURL': bundle.inputData?.[`${keyPrefix}privacyPolicyURL`],
             'termsAndConditionsURL': bundle.inputData?.[`${keyPrefix}termsAndConditionsURL`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
             'requireHttps': bundle.inputData?.[`${keyPrefix}requireHttps`],
             'requireAppSecret': bundle.inputData?.[`${keyPrefix}requireAppSecret`],
             'enableClientOauthLogin': bundle.inputData?.[`${keyPrefix}enableClientOauthLogin`],

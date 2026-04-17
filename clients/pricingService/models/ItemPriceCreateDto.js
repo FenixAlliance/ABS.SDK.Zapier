@@ -26,11 +26,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}currencyId`,
                 label: `[${labelPrefix}currencyId]`,
                 type: 'string',
@@ -43,11 +38,6 @@ module.exports = {
             {
                 key: `${keyPrefix}unitGroupId`,
                 label: `[${labelPrefix}unitGroupId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
             {
@@ -79,11 +69,9 @@ module.exports = {
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'itemId': bundle.inputData?.[`${keyPrefix}itemId`],
             'unitId': bundle.inputData?.[`${keyPrefix}unitId`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
             'priceListId': bundle.inputData?.[`${keyPrefix}priceListId`],
             'unitGroupId': bundle.inputData?.[`${keyPrefix}unitGroupId`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'discountListId': bundle.inputData?.[`${keyPrefix}discountListId`],
             'roundingPolicyId': bundle.inputData?.[`${keyPrefix}roundingPolicyId`],
             'price': bundle.inputData?.[`${keyPrefix}price`],

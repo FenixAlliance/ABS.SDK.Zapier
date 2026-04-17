@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 README.md
 apis/FenixAllianceABPWebApi.js
 apis/InventoryApi.js
@@ -18,6 +17,4 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/FenixAllianceABPWebApi.js
-samples/InventoryApi.js
 utils/utils.js

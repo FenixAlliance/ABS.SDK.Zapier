@@ -50,16 +50,6 @@ module.exports = {
                 label: `[${labelPrefix}unitGroupId]`,
                 type: 'string',
             },
-            {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
-                type: 'string',
-            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -74,8 +64,6 @@ module.exports = {
             'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
             'unitId': bundle.inputData?.[`${keyPrefix}unitId`],
             'unitGroupId': bundle.inputData?.[`${keyPrefix}unitGroupId`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
         }
     },
 }

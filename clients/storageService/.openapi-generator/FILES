@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 README.md
 apis/AvatarsApi.js
 apis/BlobsApi.js
@@ -28,10 +27,4 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/AvatarsApi.js
-samples/BlobsApi.js
-samples/FenixAllianceABPWebApi.js
-samples/FilesApi.js
-samples/RadzenEditorApi.js
-samples/UploadsApi.js
 utils/utils.js

@@ -20,11 +20,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}taxId`,
                 label: `[${labelPrefix}taxId]`,
                 required: true,
@@ -140,7 +135,6 @@ module.exports = {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'contactId': bundle.inputData?.[`${keyPrefix}contactId`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'taxId': bundle.inputData?.[`${keyPrefix}taxId`],
             'phone': bundle.inputData?.[`${keyPrefix}phone`],
             'email': bundle.inputData?.[`${keyPrefix}email`],

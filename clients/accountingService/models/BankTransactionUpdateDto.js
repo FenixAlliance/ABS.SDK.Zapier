@@ -60,16 +60,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}bankProfileId`,
                 label: `[${labelPrefix}bankProfileId]`,
                 type: 'string',
@@ -95,8 +85,6 @@ module.exports = {
             'unitId': bundle.inputData?.[`${keyPrefix}unitId`],
             'transactionCategoryId': bundle.inputData?.[`${keyPrefix}transactionCategoryId`],
             'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'bankProfileId': bundle.inputData?.[`${keyPrefix}bankProfileId`],
             'bankAccountId': bundle.inputData?.[`${keyPrefix}bankAccountId`],
         }

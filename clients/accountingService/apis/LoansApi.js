@@ -5,7 +5,6 @@ const Int32Envelope = require('../models/Int32Envelope');
 const LoanApplicationCreateDto = require('../models/LoanApplicationCreateDto');
 const LoanApplicationDtoEnvelope = require('../models/LoanApplicationDtoEnvelope');
 const LoanApplicationDtoIReadOnlyListEnvelope = require('../models/LoanApplicationDtoIReadOnlyListEnvelope');
-const LoanApplicationUpdateDto = require('../models/LoanApplicationUpdateDto');
 const LoanCreateDto = require('../models/LoanCreateDto');
 const LoanDtoEnvelope = require('../models/LoanDtoEnvelope');
 const LoanDtoIReadOnlyListEnvelope = require('../models/LoanDtoIReadOnlyListEnvelope');
@@ -613,7 +612,12 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
-                ...LoanApplicationUpdateDto.fields(),
+                {
+                    key: 'body',
+                    label: '',
+                    type: 'object',
+                    required: true,
+                },
                 {
                     key: 'api-version',
                     label: '',
@@ -642,7 +646,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...LoanApplicationUpdateDto.mapping(bundle),
+                        'body': bundle.inputData?.['body'],
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

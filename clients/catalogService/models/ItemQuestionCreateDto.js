@@ -38,12 +38,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
-                required: true,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}itemID`,
                 label: `[${labelPrefix}itemID]`,
                 required: true,
@@ -60,7 +54,6 @@ module.exports = {
             'needsRevision': bundle.inputData?.[`${keyPrefix}needsRevision`],
             'question': bundle.inputData?.[`${keyPrefix}question`],
             'socialProfileID': bundle.inputData?.[`${keyPrefix}socialProfileID`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
             'itemID': bundle.inputData?.[`${keyPrefix}itemID`],
         }
     },

@@ -35,16 +35,6 @@ module.exports = {
                 type: 'number',
             },
             {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}salaryId`,
                 label: `[${labelPrefix}salaryId]`,
                 type: 'string',
@@ -80,8 +70,6 @@ module.exports = {
             'addedPercent': bundle.inputData?.[`${keyPrefix}addedPercent`],
             'addedAmount': bundle.inputData?.[`${keyPrefix}addedAmount`],
             'taxComission': bundle.inputData?.[`${keyPrefix}taxComission`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'salaryId': bundle.inputData?.[`${keyPrefix}salaryId`],
             'emisorWalletAccountId': bundle.inputData?.[`${keyPrefix}emisorWalletAccountId`],
             'receiverWalletAccountId': bundle.inputData?.[`${keyPrefix}receiverWalletAccountId`],

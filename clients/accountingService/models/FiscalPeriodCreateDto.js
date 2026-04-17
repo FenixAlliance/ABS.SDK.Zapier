@@ -30,16 +30,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}fiscalYearId`,
                 label: `[${labelPrefix}fiscalYearId]`,
                 type: 'string',
@@ -54,8 +44,6 @@ module.exports = {
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'fromDate': bundle.inputData?.[`${keyPrefix}fromDate`],
             'toDate': bundle.inputData?.[`${keyPrefix}toDate`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'fiscalYearId': bundle.inputData?.[`${keyPrefix}fiscalYearId`],
         }
     },

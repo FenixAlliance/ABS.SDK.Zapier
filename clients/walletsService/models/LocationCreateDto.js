@@ -75,11 +75,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}longitude`,
                 label: `[${labelPrefix}longitude]`,
                 type: 'number',
@@ -143,7 +138,6 @@ module.exports = {
             'stateId': bundle.inputData?.[`${keyPrefix}stateId`],
             'postalCode': bundle.inputData?.[`${keyPrefix}postalCode`],
             'countryId': bundle.inputData?.[`${keyPrefix}countryId`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'longitude': bundle.inputData?.[`${keyPrefix}longitude`],
             'latitude': bundle.inputData?.[`${keyPrefix}latitude`],
             'isRoutable': bundle.inputData?.[`${keyPrefix}isRoutable`],

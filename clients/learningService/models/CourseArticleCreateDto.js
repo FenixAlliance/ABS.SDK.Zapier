@@ -42,12 +42,6 @@ module.exports = {
                 required: true,
                 type: 'string',
             },
-            {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
-                required: true,
-                type: 'string',
-            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -60,7 +54,6 @@ module.exports = {
             'content': bundle.inputData?.[`${keyPrefix}content`],
             'courseID': bundle.inputData?.[`${keyPrefix}courseID`],
             'courseWikiID': bundle.inputData?.[`${keyPrefix}courseWikiID`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
         }
     },
 }

@@ -5,13 +5,18 @@ module.exports = {
         const {keyPrefix, labelPrefix} = utils.buildKeyAndLabel(prefix, isInput, isArrayChild)
         return [
             {
-                key: `${keyPrefix}title`,
-                label: `[${labelPrefix}title]`,
+                key: `${keyPrefix}id`,
+                label: `[${labelPrefix}id]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}userId`,
-                label: `[${labelPrefix}userId]`,
+                key: `${keyPrefix}timestamp`,
+                label: `[${labelPrefix}timestamp]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}title`,
+                label: `[${labelPrefix}title]`,
                 type: 'string',
             },
             {
@@ -95,21 +100,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}billingLocationId`,
-                label: `[${labelPrefix}billingLocationId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}shippingLocationId`,
-                label: `[${labelPrefix}shippingLocationId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}shippingMethodId`,
-                label: `[${labelPrefix}shippingMethodId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}currencyId`,
                 label: `[${labelPrefix}currencyId]`,
                 type: 'string',
@@ -155,16 +145,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}totalShippingTax`,
-                label: `[${labelPrefix}totalShippingTax]`,
-                type: 'number',
-            },
-            {
-                key: `${keyPrefix}totalShippingTaxCurrencyId`,
-                label: `[${labelPrefix}totalShippingTaxCurrencyId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}totalShippingCost`,
                 label: `[${labelPrefix}totalShippingCost]`,
                 type: 'number',
@@ -175,23 +155,13 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}totalGlobalDiscounts`,
-                label: `[${labelPrefix}totalGlobalDiscounts]`,
+                key: `${keyPrefix}totalShippingTax`,
+                label: `[${labelPrefix}totalShippingTax]`,
                 type: 'number',
             },
             {
-                key: `${keyPrefix}totalGlobalDiscountsCurrencyId`,
-                label: `[${labelPrefix}totalGlobalDiscountsCurrencyId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}totalGlobalSurcharges`,
-                label: `[${labelPrefix}totalGlobalSurcharges]`,
-                type: 'number',
-            },
-            {
-                key: `${keyPrefix}totalGlobalSurchargesCurrencyId`,
-                label: `[${labelPrefix}totalGlobalSurchargesCurrencyId]`,
+                key: `${keyPrefix}totalShippingTaxCurrencyId`,
+                label: `[${labelPrefix}totalShippingTaxCurrencyId]`,
                 type: 'string',
             },
             {
@@ -222,6 +192,26 @@ module.exports = {
             {
                 key: `${keyPrefix}totalTaxesCurrencyId`,
                 label: `[${labelPrefix}totalTaxesCurrencyId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}totalGlobalSurcharges`,
+                label: `[${labelPrefix}totalGlobalSurcharges]`,
+                type: 'number',
+            },
+            {
+                key: `${keyPrefix}totalGlobalSurchargesCurrencyId`,
+                label: `[${labelPrefix}totalGlobalSurchargesCurrencyId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}totalGlobalDiscounts`,
+                label: `[${labelPrefix}totalGlobalDiscounts]`,
+                type: 'number',
+            },
+            {
+                key: `${keyPrefix}totalGlobalDiscountsCurrencyId`,
+                label: `[${labelPrefix}totalGlobalDiscountsCurrencyId]`,
                 type: 'string',
             },
             {
@@ -258,11 +248,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}forexRate`,
                 label: `[${labelPrefix}forexRate]`,
                 type: 'number',
@@ -283,18 +268,8 @@ module.exports = {
                 type: 'boolean',
             },
             {
-                key: `${keyPrefix}accountHolderId`,
-                label: `[${labelPrefix}accountHolderId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}contactId`,
                 label: `[${labelPrefix}contactId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
             {
@@ -321,8 +296,9 @@ module.exports = {
     mapping: (bundle, prefix = '') => {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
+            'id': bundle.inputData?.[`${keyPrefix}id`],
+            'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'title': bundle.inputData?.[`${keyPrefix}title`],
-            'userId': bundle.inputData?.[`${keyPrefix}userId`],
             'priceListId': bundle.inputData?.[`${keyPrefix}priceListId`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'individualId': bundle.inputData?.[`${keyPrefix}individualId`],
@@ -339,9 +315,6 @@ module.exports = {
             'countryId': bundle.inputData?.[`${keyPrefix}countryId`],
             'stateId': bundle.inputData?.[`${keyPrefix}stateId`],
             'cityId': bundle.inputData?.[`${keyPrefix}cityId`],
-            'billingLocationId': bundle.inputData?.[`${keyPrefix}billingLocationId`],
-            'shippingLocationId': bundle.inputData?.[`${keyPrefix}shippingLocationId`],
-            'shippingMethodId': bundle.inputData?.[`${keyPrefix}shippingMethodId`],
             'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
             'totalDetail': bundle.inputData?.[`${keyPrefix}totalDetail`],
             'totalDetailCurrencyId': bundle.inputData?.[`${keyPrefix}totalDetailCurrencyId`],
@@ -351,33 +324,30 @@ module.exports = {
             'totalDiscountsCurrencyId': bundle.inputData?.[`${keyPrefix}totalDiscountsCurrencyId`],
             'totalSurcharges': bundle.inputData?.[`${keyPrefix}totalSurcharges`],
             'totalSurchargesCurrencyId': bundle.inputData?.[`${keyPrefix}totalSurchargesCurrencyId`],
-            'totalShippingTax': bundle.inputData?.[`${keyPrefix}totalShippingTax`],
-            'totalShippingTaxCurrencyId': bundle.inputData?.[`${keyPrefix}totalShippingTaxCurrencyId`],
             'totalShippingCost': bundle.inputData?.[`${keyPrefix}totalShippingCost`],
             'totalShippingCostCurrencyId': bundle.inputData?.[`${keyPrefix}totalShippingCostCurrencyId`],
-            'totalGlobalDiscounts': bundle.inputData?.[`${keyPrefix}totalGlobalDiscounts`],
-            'totalGlobalDiscountsCurrencyId': bundle.inputData?.[`${keyPrefix}totalGlobalDiscountsCurrencyId`],
-            'totalGlobalSurcharges': bundle.inputData?.[`${keyPrefix}totalGlobalSurcharges`],
-            'totalGlobalSurchargesCurrencyId': bundle.inputData?.[`${keyPrefix}totalGlobalSurchargesCurrencyId`],
+            'totalShippingTax': bundle.inputData?.[`${keyPrefix}totalShippingTax`],
+            'totalShippingTaxCurrencyId': bundle.inputData?.[`${keyPrefix}totalShippingTaxCurrencyId`],
             'totalWithheldTax': bundle.inputData?.[`${keyPrefix}totalWithheldTax`],
             'totalWithheldTaxCurrencyId': bundle.inputData?.[`${keyPrefix}totalWithheldTaxCurrencyId`],
             'totalTaxBase': bundle.inputData?.[`${keyPrefix}totalTaxBase`],
             'totalTaxBaseCurrencyId': bundle.inputData?.[`${keyPrefix}totalTaxBaseCurrencyId`],
             'totalTaxes': bundle.inputData?.[`${keyPrefix}totalTaxes`],
             'totalTaxesCurrencyId': bundle.inputData?.[`${keyPrefix}totalTaxesCurrencyId`],
+            'totalGlobalSurcharges': bundle.inputData?.[`${keyPrefix}totalGlobalSurcharges`],
+            'totalGlobalSurchargesCurrencyId': bundle.inputData?.[`${keyPrefix}totalGlobalSurchargesCurrencyId`],
+            'totalGlobalDiscounts': bundle.inputData?.[`${keyPrefix}totalGlobalDiscounts`],
+            'totalGlobalDiscountsCurrencyId': bundle.inputData?.[`${keyPrefix}totalGlobalDiscountsCurrencyId`],
             'total': bundle.inputData?.[`${keyPrefix}total`],
             'totalCurrencyId': bundle.inputData?.[`${keyPrefix}totalCurrencyId`],
             'costCalculationMethod': bundle.inputData?.[`${keyPrefix}costCalculationMethod`],
             'taxCalculationMethod': bundle.inputData?.[`${keyPrefix}taxCalculationMethod`],
             'paymentId': bundle.inputData?.[`${keyPrefix}paymentId`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'forexRate': bundle.inputData?.[`${keyPrefix}forexRate`],
             'totalAmount': bundle.inputData?.[`${keyPrefix}totalAmount`],
             'totalAmountInUSD': bundle.inputData?.[`${keyPrefix}totalAmountInUSD`],
             'closed': bundle.inputData?.[`${keyPrefix}closed`],
-            'accountHolderId': bundle.inputData?.[`${keyPrefix}accountHolderId`],
             'contactId': bundle.inputData?.[`${keyPrefix}contactId`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'receiptType': bundle.inputData?.[`${keyPrefix}receiptType`],
             'orderId': bundle.inputData?.[`${keyPrefix}orderId`],
             'invoiceId': bundle.inputData?.[`${keyPrefix}invoiceId`],

@@ -31,17 +31,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
-                required: true,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}parentItemCategoryID`,
                 label: `[${labelPrefix}parentItemCategoryID]`,
                 type: 'string',
@@ -56,8 +45,6 @@ module.exports = {
             'title': bundle.inputData?.[`${keyPrefix}title`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'imageURL': bundle.inputData?.[`${keyPrefix}imageURL`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
             'parentItemCategoryID': bundle.inputData?.[`${keyPrefix}parentItemCategoryID`],
         }
     },

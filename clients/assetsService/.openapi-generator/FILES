@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 README.md
 apis/AssetCategoriesApi.js
 apis/AssetTransfersApi.js
@@ -59,9 +58,4 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/AssetCategoriesApi.js
-samples/AssetTransfersApi.js
-samples/AssetTypesApi.js
-samples/AssetsApi.js
-samples/FenixAllianceABPWebApi.js
 utils/utils.js

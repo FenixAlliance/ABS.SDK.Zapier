@@ -74,11 +74,6 @@ module.exports = {
                 label: `[${labelPrefix}webPortalID]`,
                 type: 'string',
             },
-            {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
-                type: 'string',
-            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -98,7 +93,6 @@ module.exports = {
             'imageURL': bundle.inputData?.[`${keyPrefix}imageURL`],
             'image': bundle.inputData?.[`${keyPrefix}image`],
             'webPortalID': bundle.inputData?.[`${keyPrefix}webPortalID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
         }
     },
 }

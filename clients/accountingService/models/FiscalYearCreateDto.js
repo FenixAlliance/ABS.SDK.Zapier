@@ -30,16 +30,6 @@ module.exports = {
                 type: 'boolean',
             },
             {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}endDate`,
                 label: `[${labelPrefix}endDate]`,
                 type: 'string',
@@ -47,6 +37,11 @@ module.exports = {
             {
                 key: `${keyPrefix}startDate`,
                 label: `[${labelPrefix}startDate]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}fiscalAuthorityId`,
+                label: `[${labelPrefix}fiscalAuthorityId]`,
                 type: 'string',
             },
         ]
@@ -59,10 +54,9 @@ module.exports = {
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'closed': bundle.inputData?.[`${keyPrefix}closed`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'endDate': bundle.inputData?.[`${keyPrefix}endDate`],
             'startDate': bundle.inputData?.[`${keyPrefix}startDate`],
+            'fiscalAuthorityId': bundle.inputData?.[`${keyPrefix}fiscalAuthorityId`],
         }
     },
 }

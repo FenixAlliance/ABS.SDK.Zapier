@@ -15,12 +15,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                required: true,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}type`,
                 label: `[${labelPrefix}type]`,
                 required: true,
@@ -234,7 +228,6 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'type': bundle.inputData?.[`${keyPrefix}type`],
             'firstName': bundle.inputData?.[`${keyPrefix}firstName`],
             'lastName': bundle.inputData?.[`${keyPrefix}lastName`],

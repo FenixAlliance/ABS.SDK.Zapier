@@ -15,17 +15,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
-                required: true,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}itemID`,
                 label: `[${labelPrefix}itemID]`,
                 type: 'string',
@@ -106,11 +95,6 @@ module.exports = {
                 label: `[${labelPrefix}parentFileUploadID]`,
                 type: 'string',
             },
-            {
-                key: `${keyPrefix}accountHolderID`,
-                label: `[${labelPrefix}accountHolderID]`,
-                type: 'string',
-            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -118,8 +102,6 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
             'itemID': bundle.inputData?.[`${keyPrefix}itemID`],
             'isItemMozaicBG': bundle.inputData?.[`${keyPrefix}isItemMozaicBG`],
             'mD5Hash': bundle.inputData?.[`${keyPrefix}mD5Hash`],
@@ -136,7 +118,6 @@ module.exports = {
             'validResponse': bundle.inputData?.[`${keyPrefix}validResponse`],
             'socialProfileID': bundle.inputData?.[`${keyPrefix}socialProfileID`],
             'parentFileUploadID': bundle.inputData?.[`${keyPrefix}parentFileUploadID`],
-            'accountHolderID': bundle.inputData?.[`${keyPrefix}accountHolderID`],
         }
     },
 }

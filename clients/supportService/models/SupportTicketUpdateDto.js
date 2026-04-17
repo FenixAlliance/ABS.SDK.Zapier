@@ -10,18 +10,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}accountHolderID`,
-                label: `[${labelPrefix}accountHolderID]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}contactID`,
                 label: `[${labelPrefix}contactID]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
                 type: 'string',
             },
             {
@@ -45,9 +35,7 @@ module.exports = {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
             'description': bundle.inputData?.[`${keyPrefix}description`],
-            'accountHolderID': bundle.inputData?.[`${keyPrefix}accountHolderID`],
             'contactID': bundle.inputData?.[`${keyPrefix}contactID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
             'supportTicketTypeID': bundle.inputData?.[`${keyPrefix}supportTicketTypeID`],
             'supportEntitlementID': bundle.inputData?.[`${keyPrefix}supportEntitlementID`],
             'supportPriorityID': bundle.inputData?.[`${keyPrefix}supportPriorityID`],

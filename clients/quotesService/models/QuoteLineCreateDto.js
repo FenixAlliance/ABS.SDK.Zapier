@@ -45,16 +45,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}currencyId`,
                 label: `[${labelPrefix}currencyId]`,
                 type: 'string',
@@ -488,11 +478,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessProfileRecordId`,
-                label: `[${labelPrefix}businessProfileRecordId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}parentBillingItemRecordId`,
                 label: `[${labelPrefix}parentBillingItemRecordId]`,
                 type: 'string',
@@ -515,8 +500,6 @@ module.exports = {
             'itemShortDescription': bundle.inputData?.[`${keyPrefix}itemShortDescription`],
             'itemPrimaryImageUrl': bundle.inputData?.[`${keyPrefix}itemPrimaryImageUrl`],
             'shippingPolicyId': bundle.inputData?.[`${keyPrefix}shippingPolicyId`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'quantity': bundle.inputData?.[`${keyPrefix}quantity`],
@@ -602,7 +585,6 @@ module.exports = {
             'shippingLocationId': bundle.inputData?.[`${keyPrefix}shippingLocationId`],
             'locationId': bundle.inputData?.[`${keyPrefix}locationId`],
             'quoteItemRecordId': bundle.inputData?.[`${keyPrefix}quoteItemRecordId`],
-            'businessProfileRecordId': bundle.inputData?.[`${keyPrefix}businessProfileRecordId`],
             'parentBillingItemRecordId': bundle.inputData?.[`${keyPrefix}parentBillingItemRecordId`],
             'quoteId': bundle.inputData?.[`${keyPrefix}quoteId`],
         }

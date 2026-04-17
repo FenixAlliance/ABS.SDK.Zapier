@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 README.md
 apis/FenixAllianceABPWebApi.js
 apis/SocialFeedsApi.js
@@ -72,9 +71,4 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/FenixAllianceABPWebApi.js
-samples/SocialFeedsApi.js
-samples/SocialGroupsApi.js
-samples/SocialPostsApi.js
-samples/SocialProfilesApi.js
 utils/utils.js

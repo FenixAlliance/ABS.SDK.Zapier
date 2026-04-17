@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 README.md
 apis/ApplicationsApi.js
 apis/FenixAllianceABPWebApi.js
@@ -63,13 +62,4 @@ models/WebhookRequestDto.js
 models/WebhookRequestDtoListEnvelope.js
 operations/actions.js
 package.json
-samples/ApplicationsApi.js
-samples/FenixAllianceABPWebApi.js
-samples/LogsApi.js
-samples/OAuthApplicationsApi.js
-samples/PermissionsApi.js
-samples/RolesApi.js
-samples/SecurityCertificatesApi.js
-samples/SecurityLogsApi.js
-samples/WebhooksApi.js
 utils/utils.js

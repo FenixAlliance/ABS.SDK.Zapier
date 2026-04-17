@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 README.md
 apis/EmployeesApi.js
 apis/EmployersApi.js
@@ -41,9 +40,4 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/EmployeesApi.js
-samples/EmployersApi.js
-samples/FenixAllianceABPWebApi.js
-samples/GigsApi.js
-samples/JobOffersApi.js
 utils/utils.js

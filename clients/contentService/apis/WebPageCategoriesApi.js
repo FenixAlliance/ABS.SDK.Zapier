@@ -1,6 +1,7 @@
 const samples = require('../samples/WebPageCategoriesApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
+const Int32Envelope = require('../models/Int32Envelope');
 const WebPageCategoryCreateDto = require('../models/WebPageCategoryCreateDto');
 const WebPageCategoryDtoEnvelope = require('../models/WebPageCategoryDtoEnvelope');
 const WebPageCategoryDtoListEnvelope = require('../models/WebPageCategoryDtoListEnvelope');
@@ -8,6 +9,61 @@ const WebPageCategoryUpdateDto = require('../models/WebPageCategoryUpdateDto');
 const utils = require('../utils/utils');
 
 module.exports = {
+    countWebPageCategoriesAsync: {
+        key: 'countWebPageCategoriesAsync',
+        noun: 'WebPageCategories',
+        display: {
+            label: 'Count web page categories',
+            description: 'Counts all web page categories for the specified tenant.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...Int32Envelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/WebPageCategories/Count'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'countWebPageCategoriesAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['Int32EnvelopeSample']
+        }
+    },
     createWebPageCategoryAsync: {
         key: 'createWebPageCategoryAsync',
         noun: 'WebPageCategories',

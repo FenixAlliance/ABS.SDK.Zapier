@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 README.md
 apis/FenixAllianceABPWebApi.js
 apis/ServiceCaseTypesApi.js
@@ -56,11 +55,4 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/FenixAllianceABPWebApi.js
-samples/ServiceCaseTypesApi.js
-samples/ServiceCasesApi.js
-samples/ServiceLevelAgreementsApi.js
-samples/ServiceLevelsApi.js
-samples/ServiceQueuesApi.js
-samples/ServicesApi.js
 utils/utils.js

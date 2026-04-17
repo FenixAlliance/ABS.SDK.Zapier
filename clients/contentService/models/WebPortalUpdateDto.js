@@ -40,11 +40,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}businessPortalApplicationID`,
                 label: `[${labelPrefix}businessPortalApplicationID]`,
                 type: 'string',
@@ -61,7 +56,6 @@ module.exports = {
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'websiteThemeID': bundle.inputData?.[`${keyPrefix}websiteThemeID`],
             'businessDomainID': bundle.inputData?.[`${keyPrefix}businessDomainID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
             'businessPortalApplicationID': bundle.inputData?.[`${keyPrefix}businessPortalApplicationID`],
         }
     },

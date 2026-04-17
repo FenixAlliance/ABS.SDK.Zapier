@@ -145,18 +145,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}contactID`,
                 label: `[${labelPrefix}contactID]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
                 type: 'string',
             },
         ]
@@ -192,9 +182,7 @@ module.exports = {
             'data8Label': bundle.inputData?.[`${keyPrefix}data8Label`],
             'data9': bundle.inputData?.[`${keyPrefix}data9`],
             'data9Label': bundle.inputData?.[`${keyPrefix}data9Label`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
             'contactID': bundle.inputData?.[`${keyPrefix}contactID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
         }
     },
 }

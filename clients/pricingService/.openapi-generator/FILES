@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 README.md
 apis/DiscountListsApi.js
 apis/FenixAllianceABPWebApi.js
@@ -48,8 +47,4 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/DiscountListsApi.js
-samples/FenixAllianceABPWebApi.js
-samples/PriceListsApi.js
-samples/PricesApi.js
 utils/utils.js

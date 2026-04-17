@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 README.md
 apis/ExchangeApi.js
 apis/ExchangeVApi.js
@@ -28,8 +27,4 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/ExchangeApi.js
-samples/ExchangeVApi.js
-samples/FenixAllianceABPWebApi.js
-samples/RatesApi.js
 utils/utils.js

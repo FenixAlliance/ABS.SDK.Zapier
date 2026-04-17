@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 README.md
 apis/EmailGroupsApi.js
 apis/EmailSignaturesApi.js
@@ -69,14 +68,4 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/EmailGroupsApi.js
-samples/EmailSignaturesApi.js
-samples/EmailTemplatesApi.js
-samples/FenixAllianceABPWebApi.js
-samples/MarketingCampaignsApi.js
-samples/MarketingListsApi.js
-samples/NewslettersApi.js
-samples/SocialMediaPostsApi.js
-samples/SocialPostBucketsApi.js
-samples/TrackingPixelsApi.js
 utils/utils.js

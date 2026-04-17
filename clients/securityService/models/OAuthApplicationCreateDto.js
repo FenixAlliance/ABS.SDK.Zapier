@@ -5,6 +5,16 @@ module.exports = {
         const {keyPrefix, labelPrefix} = utils.buildKeyAndLabel(prefix, isInput, isArrayChild)
         return [
             {
+                key: `${keyPrefix}id`,
+                label: `[${labelPrefix}id]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}timestamp`,
+                label: `[${labelPrefix}timestamp]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}displayName`,
                 label: `[${labelPrefix}displayName]`,
                 required: true,
@@ -50,21 +60,13 @@ module.exports = {
                 label: `[${labelPrefix}logo]`,
                 type: 'string',
             },
-            {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
-                type: 'string',
-            },
         ]
     },
     mapping: (bundle, prefix = '') => {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
+            'id': bundle.inputData?.[`${keyPrefix}id`],
+            'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'displayName': bundle.inputData?.[`${keyPrefix}displayName`],
             'clientId': bundle.inputData?.[`${keyPrefix}clientId`],
             'clientSecret': bundle.inputData?.[`${keyPrefix}clientSecret`],
@@ -74,8 +76,6 @@ module.exports = {
             'redirectUris': bundle.inputData?.[`${keyPrefix}redirectUris`],
             'postLogoutRedirectUris': bundle.inputData?.[`${keyPrefix}postLogoutRedirectUris`],
             'logo': bundle.inputData?.[`${keyPrefix}logo`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
         }
     },
 }

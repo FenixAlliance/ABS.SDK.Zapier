@@ -119,16 +119,6 @@ module.exports = {
                 label: `[${labelPrefix}cityID]`,
                 type: 'string',
             },
-            {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
-                type: 'string',
-            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -157,8 +147,6 @@ module.exports = {
             'customState': bundle.inputData?.[`${keyPrefix}customState`],
             'customCity': bundle.inputData?.[`${keyPrefix}customCity`],
             'cityID': bundle.inputData?.[`${keyPrefix}cityID`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
         }
     },
 }

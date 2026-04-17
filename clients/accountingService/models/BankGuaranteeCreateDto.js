@@ -60,11 +60,6 @@ module.exports = {
                 type: 'integer',
             },
             {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}bankGuaranteeType`,
                 label: `[${labelPrefix}bankGuaranteeType]`,
                 type: 'string',
@@ -72,11 +67,6 @@ module.exports = {
                     'Receiving',
                     'Providing',
                 ],
-            },
-            {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
-                type: 'string',
             },
             {
                 key: `${keyPrefix}contactId`,
@@ -124,9 +114,7 @@ module.exports = {
             'startDate': bundle.inputData?.[`${keyPrefix}startDate`],
             'endDate': bundle.inputData?.[`${keyPrefix}endDate`],
             'validityInDays': bundle.inputData?.[`${keyPrefix}validityInDays`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'bankGuaranteeType': bundle.inputData?.[`${keyPrefix}bankGuaranteeType`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'contactId': bundle.inputData?.[`${keyPrefix}contactId`],
             'projectId': bundle.inputData?.[`${keyPrefix}projectId`],
             'orderId': bundle.inputData?.[`${keyPrefix}orderId`],

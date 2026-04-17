@@ -260,11 +260,6 @@ module.exports = {
                 type: 'number',
             },
             {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}permalink`,
                 label: `[${labelPrefix}permalink]`,
                 type: 'string',
@@ -383,11 +378,6 @@ module.exports = {
                 key: `${keyPrefix}questionsCount`,
                 label: `[${labelPrefix}questionsCount]`,
                 type: 'integer',
-            },
-            {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
-                type: 'string',
             },
             {
                 key: `${keyPrefix}supplierCode`,
@@ -946,7 +936,6 @@ module.exports = {
             'material': bundle.inputData?.[`${keyPrefix}material`],
             'onDiscount': bundle.inputData?.[`${keyPrefix}onDiscount`],
             'totalTax': bundle.inputData?.[`${keyPrefix}totalTax`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'permalink': bundle.inputData?.[`${keyPrefix}permalink`],
             'brandName': bundle.inputData?.[`${keyPrefix}brandName`],
             'reviewsCount': bundle.inputData?.[`${keyPrefix}reviewsCount`],
@@ -971,7 +960,6 @@ module.exports = {
             'customTaxValue': bundle.inputData?.[`${keyPrefix}customTaxValue`],
             'hasVariations': bundle.inputData?.[`${keyPrefix}hasVariations`],
             'questionsCount': bundle.inputData?.[`${keyPrefix}questionsCount`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'supplierCode': bundle.inputData?.[`${keyPrefix}supplierCode`],
             'auctionEnd': bundle.inputData?.[`${keyPrefix}auctionEnd`],
             'purchaseNote': bundle.inputData?.[`${keyPrefix}purchaseNote`],

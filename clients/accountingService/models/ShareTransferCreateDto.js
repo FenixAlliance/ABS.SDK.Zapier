@@ -39,16 +39,6 @@ module.exports = {
                 label: `[${labelPrefix}shareTransferReasonId]`,
                 type: 'string',
             },
-            {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -61,8 +51,6 @@ module.exports = {
             'newShareHolderId': bundle.inputData?.[`${keyPrefix}newShareHolderId`],
             'formerShareHolderId': bundle.inputData?.[`${keyPrefix}formerShareHolderId`],
             'shareTransferReasonId': bundle.inputData?.[`${keyPrefix}shareTransferReasonId`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
         }
     },
 }

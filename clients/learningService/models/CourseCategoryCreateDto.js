@@ -35,12 +35,6 @@ module.exports = {
                 label: `[${labelPrefix}isFeatured]`,
                 type: 'boolean',
             },
-            {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
-                required: true,
-                type: 'string',
-            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -52,7 +46,6 @@ module.exports = {
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'imageURL': bundle.inputData?.[`${keyPrefix}imageURL`],
             'isFeatured': bundle.inputData?.[`${keyPrefix}isFeatured`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
         }
     },
 }

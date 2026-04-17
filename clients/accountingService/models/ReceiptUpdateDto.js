@@ -10,11 +10,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}forexRate`,
                 label: `[${labelPrefix}forexRate]`,
                 type: 'number',
@@ -40,18 +35,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}accountHolderId`,
-                label: `[${labelPrefix}accountHolderId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}contactId`,
                 label: `[${labelPrefix}contactId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
             {
@@ -70,15 +55,12 @@ module.exports = {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
             'paymentId': bundle.inputData?.[`${keyPrefix}paymentId`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'forexRate': bundle.inputData?.[`${keyPrefix}forexRate`],
             'totalAmount': bundle.inputData?.[`${keyPrefix}totalAmount`],
             'totalAmountInUsd': bundle.inputData?.[`${keyPrefix}totalAmountInUsd`],
             'closed': bundle.inputData?.[`${keyPrefix}closed`],
             'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
-            'accountHolderId': bundle.inputData?.[`${keyPrefix}accountHolderId`],
             'contactId': bundle.inputData?.[`${keyPrefix}contactId`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'orderId': bundle.inputData?.[`${keyPrefix}orderId`],
             'invoiceId': bundle.inputData?.[`${keyPrefix}invoiceId`],
         }

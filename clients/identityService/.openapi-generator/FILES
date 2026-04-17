@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 README.md
 apis/ApplicationsApi.js
 apis/CheckerApi.js
@@ -39,10 +38,4 @@ models/UserCreateDto.js
 models/UserCreateDtoEnvelope.js
 operations/actions.js
 package.json
-samples/ApplicationsApi.js
-samples/CheckerApi.js
-samples/FenixAllianceABPWebApi.js
-samples/OAuthApi.js
-samples/ResourceApi.js
-samples/UserInfoApi.js
 utils/utils.js

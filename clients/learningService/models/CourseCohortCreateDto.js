@@ -27,12 +27,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
-                required: true,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}startDateTime`,
                 label: `[${labelPrefix}startDateTime]`,
                 type: 'string',
@@ -61,7 +55,6 @@ module.exports = {
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'courseID': bundle.inputData?.[`${keyPrefix}courseID`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
             'startDateTime': bundle.inputData?.[`${keyPrefix}startDateTime`],
             'endDateTime': bundle.inputData?.[`${keyPrefix}endDateTime`],
             'expectedStartDateTime': bundle.inputData?.[`${keyPrefix}expectedStartDateTime`],

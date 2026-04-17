@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 README.md
 apis/FenixAllianceABPWebApi.js
 apis/ProjectTimeLogsApi.js
@@ -29,7 +28,4 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/FenixAllianceABPWebApi.js
-samples/ProjectTimeLogsApi.js
-samples/TimeLogApprovalsApi.js
 utils/utils.js

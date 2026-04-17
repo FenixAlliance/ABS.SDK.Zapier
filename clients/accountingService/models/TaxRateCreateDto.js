@@ -85,11 +85,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}countryId`,
                 label: `[${labelPrefix}countryId]`,
                 type: 'string',
@@ -107,11 +102,6 @@ module.exports = {
             {
                 key: `${keyPrefix}taxPolicyId`,
                 label: `[${labelPrefix}taxPolicyId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
         ]
@@ -135,12 +125,10 @@ module.exports = {
             'cumulativeTransactionThreshold': bundle.inputData?.[`${keyPrefix}cumulativeTransactionThreshold`],
             'fiscalAuthorityId': bundle.inputData?.[`${keyPrefix}fiscalAuthorityId`],
             'fiscalYearId': bundle.inputData?.[`${keyPrefix}fiscalYearId`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'countryId': bundle.inputData?.[`${keyPrefix}countryId`],
             'taxClassId': bundle.inputData?.[`${keyPrefix}taxClassId`],
             'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
             'taxPolicyId': bundle.inputData?.[`${keyPrefix}taxPolicyId`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
         }
     },
 }

@@ -20,18 +20,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}socialPostBucketId`,
                 label: `[${labelPrefix}socialPostBucketId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
         ]
@@ -42,9 +32,7 @@ module.exports = {
             'title': bundle.inputData?.[`${keyPrefix}title`],
             'content': bundle.inputData?.[`${keyPrefix}content`],
             'featuredImageUrl': bundle.inputData?.[`${keyPrefix}featuredImageUrl`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'socialPostBucketId': bundle.inputData?.[`${keyPrefix}socialPostBucketId`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
         }
     },
 }

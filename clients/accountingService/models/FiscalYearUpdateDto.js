@@ -29,6 +29,11 @@ module.exports = {
                 label: `[${labelPrefix}startDate]`,
                 type: 'string',
             },
+            {
+                key: `${keyPrefix}fiscalAuthorityId`,
+                label: `[${labelPrefix}fiscalAuthorityId]`,
+                type: 'string',
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -39,6 +44,7 @@ module.exports = {
             'closed': bundle.inputData?.[`${keyPrefix}closed`],
             'endDate': bundle.inputData?.[`${keyPrefix}endDate`],
             'startDate': bundle.inputData?.[`${keyPrefix}startDate`],
+            'fiscalAuthorityId': bundle.inputData?.[`${keyPrefix}fiscalAuthorityId`],
         }
     },
 }

@@ -25,11 +25,6 @@ module.exports = {
                 label: `[${labelPrefix}description]`,
                 type: 'string',
             },
-            {
-                key: `${keyPrefix}tenantID`,
-                label: `[${labelPrefix}tenantID]`,
-                type: 'string',
-            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -39,7 +34,6 @@ module.exports = {
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
-            'tenantID': bundle.inputData?.[`${keyPrefix}tenantID`],
         }
     },
 }

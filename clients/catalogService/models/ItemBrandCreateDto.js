@@ -45,12 +45,6 @@ module.exports = {
                 label: `[${labelPrefix}trending]`,
                 type: 'boolean',
             },
-            {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
-                required: true,
-                type: 'string',
-            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -64,7 +58,6 @@ module.exports = {
             'websiteURL': bundle.inputData?.[`${keyPrefix}websiteURL`],
             'featured': bundle.inputData?.[`${keyPrefix}featured`],
             'trending': bundle.inputData?.[`${keyPrefix}trending`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
         }
     },
 }

@@ -3,7 +3,6 @@ const EmptyEnvelope = require('../models/EmptyEnvelope');
 const GrantCreateDto = require('../models/GrantCreateDto');
 const GrantDtoEnvelope = require('../models/GrantDtoEnvelope');
 const GrantDtoIReadOnlyListEnvelope = require('../models/GrantDtoIReadOnlyListEnvelope');
-const GrantUpdateDto = require('../models/GrantUpdateDto');
 const Int32Envelope = require('../models/Int32Envelope');
 const utils = require('../utils/utils');
 
@@ -329,7 +328,11 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
-                ...GrantUpdateDto.fields(),
+                {
+                    key: 'body',
+                    label: '',
+                    type: 'object',
+                },
             ],
             outputFields: [
                 ...EmptyEnvelope.fields('', false),
@@ -348,7 +351,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...GrantUpdateDto.mapping(bundle),
+                        'body': bundle.inputData?.['body'],
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

@@ -15,18 +15,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
-                required: true,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
-                required: true,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}businessTeamID`,
                 label: `[${labelPrefix}businessTeamID]`,
                 required: true,
@@ -45,8 +33,6 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
             'businessTeamID': bundle.inputData?.[`${keyPrefix}businessTeamID`],
             'projectID': bundle.inputData?.[`${keyPrefix}projectID`],
         }

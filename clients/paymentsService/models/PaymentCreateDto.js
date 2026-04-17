@@ -20,11 +20,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}emisorWalletId`,
                 label: `[${labelPrefix}emisorWalletId]`,
                 type: 'string',
@@ -305,11 +300,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}bankId`,
                 label: `[${labelPrefix}bankId]`,
                 type: 'string',
@@ -337,7 +327,6 @@ module.exports = {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'invoiceId': bundle.inputData?.[`${keyPrefix}invoiceId`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'emisorWalletId': bundle.inputData?.[`${keyPrefix}emisorWalletId`],
             'receiverWalletId': bundle.inputData?.[`${keyPrefix}receiverWalletId`],
             'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
@@ -389,7 +378,6 @@ module.exports = {
             'accountingEntryId': bundle.inputData?.[`${keyPrefix}accountingEntryId`],
             'paymentGatewayId': bundle.inputData?.[`${keyPrefix}paymentGatewayId`],
             'bankAccountId': bundle.inputData?.[`${keyPrefix}bankAccountId`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'bankId': bundle.inputData?.[`${keyPrefix}bankId`],
             'paymentTokenId': bundle.inputData?.[`${keyPrefix}paymentTokenId`],
             'emisorWalletAccountId': bundle.inputData?.[`${keyPrefix}emisorWalletAccountId`],
