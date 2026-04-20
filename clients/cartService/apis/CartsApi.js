@@ -67,7 +67,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/Items/{itemId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/Items/{itemId}'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -128,7 +128,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/Compare/{itemId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/Compare/{itemId}'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -189,7 +189,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/WishLists/{wishListId}/Records'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/WishLists/{wishListId}/Records'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -250,7 +250,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/WishLists/{wishListId}/Exists'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/WishLists/{wishListId}/Exists'),
                     method: 'HEAD',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -304,7 +304,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/Items'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/Items'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -359,7 +359,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/WishLists'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/WishLists'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -421,7 +421,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/Items/{itemId}/Decrease'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/Items/{itemId}/Decrease'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -487,7 +487,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/Lines/{lineId}/Decrease'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/Lines/{lineId}/Decrease'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -548,7 +548,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/WishLists/{wishListId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/WishLists/{wishListId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -614,7 +614,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/WishLists/{wishListId}/Records/{recordId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/WishLists/{wishListId}/Records/{recordId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -662,7 +662,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/ActingCart'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/ActingCart'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -716,7 +716,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -776,7 +776,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/Compare/{itemId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/Compare/{itemId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -830,7 +830,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/Compare'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/Compare'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -884,7 +884,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/Country'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/Country'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -938,7 +938,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/Currency'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/Currency'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -992,7 +992,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/Items'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/Items'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1052,7 +1052,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/Lines/{lineId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/Lines/{lineId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1106,7 +1106,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/Lines'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/Lines'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1159,7 +1159,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/WishLists'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/WishLists'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1219,7 +1219,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/WishLists/{wishListId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/WishLists/{wishListId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1284,7 +1284,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/WishLists/{wishListId}/Records/{recordId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/WishLists/{wishListId}/Records/{recordId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1343,7 +1343,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/WishLists/{wishListId}/Records'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/WishLists/{wishListId}/Records'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1391,7 +1391,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/GuestCart'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/GuestCart'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1445,7 +1445,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/BusinessCart/{tenantId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/BusinessCart/{tenantId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1493,7 +1493,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/UserCart'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/UserCart'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1558,7 +1558,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/Lines/{lineId}/Increase'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/Lines/{lineId}/Increase'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1620,7 +1620,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/Items/{itemId}/Increase'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/Items/{itemId}/Increase'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1681,7 +1681,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/Contains/{itemId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/Contains/{itemId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1741,7 +1741,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/Compare/Contains/{itemId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/Compare/Contains/{itemId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1801,7 +1801,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/WishLists/Contains/{itemId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/WishLists/Contains/{itemId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1861,7 +1861,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/Lines/{lineId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/Lines/{lineId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1921,7 +1921,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/Items/{itemId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/Items/{itemId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1981,7 +1981,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/Compare/{itemId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/Compare/{itemId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -2036,7 +2036,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/Country'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/Country'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -2092,7 +2092,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/Currency'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/Currency'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -2152,7 +2152,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/Submit'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/Submit'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -2208,7 +2208,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -2270,7 +2270,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/Lines/{lineId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/Lines/{lineId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -2332,7 +2332,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/Items/{itemId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/Items/{itemId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -2394,7 +2394,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/WishLists/{wishListId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/WishLists/{wishListId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -2455,7 +2455,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}/WishLists/{wishListId}/Exists'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/Carts/{cartId}/WishLists/{wishListId}/Exists'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

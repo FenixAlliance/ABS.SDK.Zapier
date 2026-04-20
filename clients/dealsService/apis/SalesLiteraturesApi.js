@@ -32,7 +32,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/DealsService/SalesLiteratures/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/DealsService/SalesLiteratures/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -77,7 +77,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/DealsService/SalesLiteratures'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/DealsService/SalesLiteratures'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -128,7 +128,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/DealsService/SalesLiteratures/{salesLiteratureId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/DealsService/SalesLiteratures/{salesLiteratureId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -172,7 +172,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/DealsService/SalesLiteratures/Extended'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/DealsService/SalesLiteratures/Extended'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -222,7 +222,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/DealsService/SalesLiteratures/{salesLiteratureId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/DealsService/SalesLiteratures/{salesLiteratureId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -266,7 +266,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/DealsService/SalesLiteratures'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/DealsService/SalesLiteratures'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -317,7 +317,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/DealsService/SalesLiteratures/{salesLiteratureId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/DealsService/SalesLiteratures/{salesLiteratureId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

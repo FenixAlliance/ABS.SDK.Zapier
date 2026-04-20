@@ -30,7 +30,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Migrations/Migrate'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Migrations/Migrate'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -83,7 +83,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Migrations'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Migrations'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

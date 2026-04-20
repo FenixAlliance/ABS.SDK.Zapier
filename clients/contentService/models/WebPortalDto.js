@@ -45,23 +45,23 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}websiteThemeID`,
-                label: `[${labelPrefix}websiteThemeID]`,
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessDomainID`,
-                label: `[${labelPrefix}businessDomainID]`,
+                key: `${keyPrefix}websiteThemeId`,
+                label: `[${labelPrefix}websiteThemeId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
+                key: `${keyPrefix}businessDomainId`,
+                label: `[${labelPrefix}businessDomainId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessPortalApplicationID`,
-                label: `[${labelPrefix}businessPortalApplicationID]`,
+                key: `${keyPrefix}businessPortalApplicationId`,
+                label: `[${labelPrefix}businessPortalApplicationId]`,
                 type: 'string',
             },
         ]
@@ -77,10 +77,10 @@ module.exports = {
             'disabled': bundle.inputData?.[`${keyPrefix}disabled`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
-            'websiteThemeID': bundle.inputData?.[`${keyPrefix}websiteThemeID`],
-            'businessDomainID': bundle.inputData?.[`${keyPrefix}businessDomainID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
-            'businessPortalApplicationID': bundle.inputData?.[`${keyPrefix}businessPortalApplicationID`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
+            'websiteThemeId': bundle.inputData?.[`${keyPrefix}websiteThemeId`],
+            'businessDomainId': bundle.inputData?.[`${keyPrefix}businessDomainId`],
+            'businessPortalApplicationId': bundle.inputData?.[`${keyPrefix}businessPortalApplicationId`],
         }
     },
 }

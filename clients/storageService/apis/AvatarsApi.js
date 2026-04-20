@@ -39,7 +39,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/Avatars/{socialProfileId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Avatars/{socialProfileId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -93,7 +93,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/Avatars/Contact/{contactId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Avatars/Contact/{contactId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -141,7 +141,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/Avatars/User'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Avatars/User'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -195,7 +195,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/Avatars/Tenant/{tenantId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Avatars/Tenant/{tenantId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -249,7 +249,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/Avatars/User/{userId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Avatars/User/{userId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -316,7 +316,7 @@ module.exports = {
                 const filename = bundle.inputData?.['filename'] || bundle.inputData?.['avatar'].split('/').slice(-1)[0]
                 formData.append('avatar', (await (await z.request({url: bundle.inputData?.['avatar'], method: 'GET', raw: true})).buffer()), { filename: filename })
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/Avatars/Contacts/{contactId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Avatars/Contacts/{contactId}'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -378,7 +378,7 @@ module.exports = {
                 const filename = bundle.inputData?.['filename'] || bundle.inputData?.['avatar'].split('/').slice(-1)[0]
                 formData.append('avatar', (await (await z.request({url: bundle.inputData?.['avatar'], method: 'GET', raw: true})).buffer()), { filename: filename })
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/Avatars/Tenant/{tenantId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Avatars/Tenant/{tenantId}'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -433,7 +433,7 @@ module.exports = {
                 const filename = bundle.inputData?.['filename'] || bundle.inputData?.['avatar'].split('/').slice(-1)[0]
                 formData.append('avatar', (await (await z.request({url: bundle.inputData?.['avatar'], method: 'GET', raw: true})).buffer()), { filename: filename })
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/Avatars/User'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Avatars/User'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

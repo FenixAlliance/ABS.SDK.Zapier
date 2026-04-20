@@ -47,7 +47,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/WalletsService/Wallets/{walletId}/Locations'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Locations'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -108,7 +108,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/WalletsService/Wallets/{walletId}/Locations/{locationId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Locations/{locationId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -162,7 +162,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/WalletsService/Wallets/{walletId}/Payments/Incoming'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Payments/Incoming'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -216,7 +216,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/WalletsService/Wallets/{walletId}/Payments/Incoming/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Payments/Incoming/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -270,7 +270,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/WalletsService/Wallets/{walletId}/Invoices/Incoming'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Invoices/Incoming'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -324,7 +324,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/WalletsService/Wallets/{walletId}/Invoices/Incoming/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Invoices/Incoming/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -378,7 +378,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/WalletsService/Wallets/{walletId}/Payments/Outgoing'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Payments/Outgoing'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -432,7 +432,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/WalletsService/Wallets/{walletId}/Payments/Outgoing/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Payments/Outgoing/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -486,7 +486,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/WalletsService/Wallets/{walletId}/Invoices/Outgoing'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Invoices/Outgoing'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -540,7 +540,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/WalletsService/Wallets/{walletId}/Invoices/Outgoing/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Invoices/Outgoing/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -594,7 +594,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/WalletsService/Wallets/{walletId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -648,7 +648,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/WalletsService/Wallets/{walletId}/Orders/Extended'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Orders/Extended'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -702,7 +702,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/WalletsService/Wallets/{walletId}/Invoices'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Invoices'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -756,7 +756,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/WalletsService/Wallets/{walletId}/Invoices/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Invoices/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -816,7 +816,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/WalletsService/Wallets/{walletId}/Locations/{locationId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Locations/{locationId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -870,7 +870,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/WalletsService/Wallets/{walletId}/Locations'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Locations'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -924,7 +924,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/WalletsService/Wallets/{walletId}/Locations/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Locations/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -978,7 +978,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/WalletsService/Wallets/{walletId}/Orders'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Orders'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1032,7 +1032,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/WalletsService/Wallets/{walletId}/Orders/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Orders/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1086,7 +1086,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/WalletsService/Wallets/{walletId}/Payments'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Payments'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1140,7 +1140,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/WalletsService/Wallets/{walletId}/Payments/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Payments/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1201,7 +1201,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/WalletsService/Wallets/{walletId}/Locations/{locationId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Locations/{locationId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

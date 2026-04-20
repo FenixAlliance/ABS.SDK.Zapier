@@ -36,7 +36,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/Stock'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/Stock'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

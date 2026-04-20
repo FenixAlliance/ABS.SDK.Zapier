@@ -38,7 +38,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/TimeTrackerService/TimeLogApprovals'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/TimeTrackerService/TimeLogApprovals'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -100,7 +100,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/TimeTrackerService/TimeLogApprovals/{approvalId}/Approver'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/TimeTrackerService/TimeLogApprovals/{approvalId}/Approver'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -162,7 +162,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/TimeTrackerService/TimeLogApprovals/{approvalId}/Status'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/TimeTrackerService/TimeLogApprovals/{approvalId}/Status'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

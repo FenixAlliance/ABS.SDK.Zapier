@@ -46,7 +46,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Commissions/Commissions'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Commissions/Commissions'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -103,7 +103,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Commissions/PaymentCommissions'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Commissions/PaymentCommissions'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -165,7 +165,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Commissions/Commissions/{commissionId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Commissions/Commissions/{commissionId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -226,7 +226,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Commissions/PaymentCommissions/{paymentCommissionId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Commissions/PaymentCommissions/{paymentCommissionId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -287,7 +287,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Commissions/Commissions/{commissionId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Commissions/Commissions/{commissionId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -342,7 +342,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Commissions/Commissions'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Commissions/Commissions'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -397,7 +397,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Commissions/Commissions/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Commissions/Commissions/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -458,7 +458,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Commissions/PaymentCommissions/{paymentCommissionId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Commissions/PaymentCommissions/{paymentCommissionId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -513,7 +513,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Commissions/PaymentCommissions'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Commissions/PaymentCommissions'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -568,7 +568,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Commissions/PaymentCommissions/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Commissions/PaymentCommissions/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -630,7 +630,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Commissions/Commissions/{commissionId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Commissions/Commissions/{commissionId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -693,7 +693,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Commissions/PaymentCommissions/{paymentCommissionId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Commissions/PaymentCommissions/{paymentCommissionId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

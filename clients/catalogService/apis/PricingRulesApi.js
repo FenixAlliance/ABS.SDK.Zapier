@@ -40,7 +40,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/PricingRules'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/PricingRules'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -101,7 +101,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/PricingRules/{pricingRuleId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/PricingRules/{pricingRuleId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -156,7 +156,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/PricingRules/{pricingRuleId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/PricingRules/{pricingRuleId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -210,7 +210,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/PricingRules'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/PricingRules'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -271,7 +271,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/PricingRules/Update'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/PricingRules/Update'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

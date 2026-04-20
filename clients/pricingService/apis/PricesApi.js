@@ -42,7 +42,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/Prices/{itemId}/FinalPrice'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/Prices/{itemId}/FinalPrice'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -117,7 +117,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/Prices/{itemId}/Price'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/Prices/{itemId}/Price'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -180,7 +180,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/Prices/{itemId}/TotalSavings'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/Prices/{itemId}/TotalSavings'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -240,7 +240,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/Prices/{itemId}/TotalTaxes'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/Prices/{itemId}/TotalTaxes'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

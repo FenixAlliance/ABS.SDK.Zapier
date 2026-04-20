@@ -204,7 +204,7 @@ module.exports = {
                 formData.append('id', bundle.inputData?.['id'])
                 formData.append('timestamp', bundle.inputData?.['timestamp'])
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/Uploads'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Uploads'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

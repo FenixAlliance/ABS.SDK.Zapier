@@ -40,7 +40,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/WebTemplates/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/WebTemplates/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -95,7 +95,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/WebTemplates'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/WebTemplates'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -156,7 +156,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/WebTemplates/{webTemplateId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/WebTemplates/{webTemplateId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -217,7 +217,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/WebTemplates/{webTemplateId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/WebTemplates/{webTemplateId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -272,7 +272,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/WebTemplates'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/WebTemplates'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -333,7 +333,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/WebTemplates/{webTemplateId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/WebTemplates/{webTemplateId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

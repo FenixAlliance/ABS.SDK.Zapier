@@ -37,7 +37,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Sync'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Sync'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -92,7 +92,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Sync/Me'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Sync/Me'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -153,7 +153,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Sync/User'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Sync/User'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -215,7 +215,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Sync/Tenant'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Sync/Tenant'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

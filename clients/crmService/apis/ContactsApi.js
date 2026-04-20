@@ -50,7 +50,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -112,7 +112,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/{contactId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -173,7 +173,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/Individuals/{contactId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/Individuals/{contactId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -228,7 +228,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/Individuals'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/Individuals'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -283,7 +283,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/Individuals/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/Individuals/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -344,7 +344,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/Organizations/{contactId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/Organizations/{contactId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -398,7 +398,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/Organizations'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/Organizations'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -453,7 +453,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/Organizations/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/Organizations/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -514,7 +514,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/{contactId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -575,7 +575,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/{contactId}/Avatar'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}/Avatar'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -636,7 +636,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/{contactId}/Cart'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}/Cart'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -697,7 +697,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/{contactId}/Profiles'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}/Profiles'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -758,7 +758,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/{contactId}/SocialProfile'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}/SocialProfile'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -819,7 +819,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/{contactId}/Wallet'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}/Wallet'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -874,7 +874,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -929,7 +929,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -984,7 +984,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/Individuals/Extended'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/Individuals/Extended'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1039,7 +1039,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/Organizations/Extended'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/Organizations/Extended'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1100,7 +1100,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/{contactId}/Extended'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}/Extended'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1155,7 +1155,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/Extended'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/Extended'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1216,7 +1216,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/Individuals/{contactId}/Individuals'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/Individuals/{contactId}/Individuals'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1277,7 +1277,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/Individuals/{contactId}/Organizations'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/Individuals/{contactId}/Organizations'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1338,7 +1338,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/Organizations/{contactId}/Individuals'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/Organizations/{contactId}/Individuals'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1399,7 +1399,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/Organizations/{contactId}/Organizations'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/Organizations/{contactId}/Organizations'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1465,7 +1465,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/{contactId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1521,7 +1521,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/{contactId}/Emails/Preview'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}/Emails/Preview'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1576,7 +1576,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/{contactId}/Emails/Send'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}/Emails/Send'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1638,7 +1638,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/{contactId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1707,7 +1707,7 @@ module.exports = {
                 const filename = bundle.inputData?.['filename'] || bundle.inputData?.['avatar'].split('/').slice(-1)[0]
                 formData.append('avatar', (await (await z.request({url: bundle.inputData?.['avatar'], method: 'GET', raw: true})).buffer()), { filename: filename })
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/{contactId}/Avatar'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}/Avatar'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1767,7 +1767,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/Organizations/Upsert'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/Organizations/Upsert'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1829,7 +1829,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CrmService/Contacts/Individuals/Upsert'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/Individuals/Upsert'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

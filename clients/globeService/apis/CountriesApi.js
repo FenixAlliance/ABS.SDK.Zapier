@@ -39,7 +39,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Countries/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -87,7 +87,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Countries'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -141,7 +141,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries/{countryId}/CallingCodes'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Countries/{countryId}/CallingCodes'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -201,7 +201,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries/{countryId}/States/{countryStateId}/Cities'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Countries/{countryId}/States/{countryStateId}/Cities'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -255,7 +255,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries/{countryId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Countries/{countryId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -315,7 +315,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries/{countryId}/States/{countryStateId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Countries/{countryId}/States/{countryStateId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -369,7 +369,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries/{countryId}/States'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Countries/{countryId}/States'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -423,7 +423,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries/{countryId}/Currencies'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Countries/{countryId}/Currencies'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -477,7 +477,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries/{countryId}/Timezones'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Countries/{countryId}/Timezones'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -531,7 +531,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries/{countryId}/TopLevelDomains'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Countries/{countryId}/TopLevelDomains'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -585,7 +585,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries/Search'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Countries/Search'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

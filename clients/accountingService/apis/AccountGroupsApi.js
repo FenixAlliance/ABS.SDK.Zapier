@@ -41,7 +41,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/AccountGroups'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/AccountGroups'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -102,7 +102,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/AccountGroups/{accountGroupId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/AccountGroups/{accountGroupId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -163,7 +163,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/AccountGroups/{accountGroupId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/AccountGroups/{accountGroupId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -218,7 +218,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/AccountGroups'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/AccountGroups'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -273,7 +273,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/AccountGroups/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/AccountGroups/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -335,7 +335,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/AccountGroups/{accountGroupId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/AccountGroups/{accountGroupId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

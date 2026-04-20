@@ -27,7 +27,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Antiforgery/GetAndStoreTokens'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Antiforgery/GetAndStoreTokens'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -74,7 +74,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Antiforgery/IsRequestValid'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Antiforgery/IsRequestValid'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

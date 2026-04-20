@@ -32,7 +32,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemGoogleCategories/All'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemGoogleCategories/All'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -86,7 +86,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemGoogleCategories/{itemCategoryId}/Children'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemGoogleCategories/{itemCategoryId}/Children'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -134,7 +134,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemGoogleCategories'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemGoogleCategories'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -182,7 +182,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemGoogleCategories/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemGoogleCategories/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -230,7 +230,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemGoogleCategories/tree'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemGoogleCategories/tree'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -284,7 +284,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemGoogleCategories/{itemCategoryId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemGoogleCategories/{itemCategoryId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -332,7 +332,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemGoogleCategories/Primary'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemGoogleCategories/Primary'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -386,7 +386,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemGoogleCategories/tree'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemGoogleCategories/tree'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

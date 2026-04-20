@@ -35,7 +35,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/MarketingService/TrackingPixels/{pixelId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/MarketingService/TrackingPixels/{pixelId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

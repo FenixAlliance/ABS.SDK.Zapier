@@ -47,7 +47,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Licensing/Licenses/{licenseId}/Assignments'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Licensing/Licenses/{licenseId}/Assignments'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -108,7 +108,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Licensing/Licenses/{licenseId}/Attributes'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Licensing/Licenses/{licenseId}/Attributes'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -163,7 +163,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Licensing/Licenses/{licenseId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Licensing/Licenses/{licenseId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -223,7 +223,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Licensing/Licenses/{licenseId}/Features'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Licensing/Licenses/{licenseId}/Features'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -284,7 +284,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Licensing/Licenses/{licenseId}/Quota'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Licensing/Licenses/{licenseId}/Quota'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -338,7 +338,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Licensing/Licenses'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Licensing/Licenses'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -394,7 +394,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Licensing/Licenses/Redeem'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Licensing/Licenses/Redeem'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -445,7 +445,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Licensing/Licenses/Validate'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Licensing/Licenses/Validate'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

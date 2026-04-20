@@ -150,6 +150,7 @@ module.exports = {
                     'Liquid',
                     'Html5',
                     'Markdown',
+                    'Markup',
                 ],
             },
             {
@@ -282,6 +283,16 @@ module.exports = {
                 label: `[${labelPrefix}allowSearchEngineIndexing]`,
                 type: 'boolean',
             },
+            {
+                key: `${keyPrefix}blogPostCategoryId`,
+                label: `[${labelPrefix}blogPostCategoryId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}webTemplateId`,
+                label: `[${labelPrefix}webTemplateId]`,
+                type: 'string',
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -341,6 +352,8 @@ module.exports = {
             'cornerstoneContent': bundle.inputData?.[`${keyPrefix}cornerstoneContent`],
             'isEssentialContent': bundle.inputData?.[`${keyPrefix}isEssentialContent`],
             'allowSearchEngineIndexing': bundle.inputData?.[`${keyPrefix}allowSearchEngineIndexing`],
+            'blogPostCategoryId': bundle.inputData?.[`${keyPrefix}blogPostCategoryId`],
+            'webTemplateId': bundle.inputData?.[`${keyPrefix}webTemplateId`],
         }
     },
 }

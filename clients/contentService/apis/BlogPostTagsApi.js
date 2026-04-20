@@ -41,7 +41,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/BlogPostTags/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/BlogPostTags/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -97,7 +97,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/BlogPostTags'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/BlogPostTags'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -159,7 +159,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/BlogPostTags/{blogPostTagId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/BlogPostTags/{blogPostTagId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -220,7 +220,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/BlogPostTags/{blogPostTagId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/BlogPostTags/{blogPostTagId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -275,7 +275,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/BlogPostTags'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/BlogPostTags'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -337,7 +337,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/BlogPostTags/{blogPostTagId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/BlogPostTags/{blogPostTagId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

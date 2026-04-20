@@ -26,6 +26,7 @@ module.exports = {
                     'Liquid',
                     'Html5',
                     'Markdown',
+                    'Markup',
                 ],
             },
             {
@@ -305,13 +306,13 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}blogPostCategoryID`,
-                label: `[${labelPrefix}blogPostCategoryID]`,
+                key: `${keyPrefix}blogPostCategoryId`,
+                label: `[${labelPrefix}blogPostCategoryId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}webTemplateID`,
-                label: `[${labelPrefix}webTemplateID]`,
+                key: `${keyPrefix}webTemplateId`,
+                label: `[${labelPrefix}webTemplateId]`,
                 type: 'string',
             },
         ]
@@ -378,8 +379,8 @@ module.exports = {
             'socialProfileId': bundle.inputData?.[`${keyPrefix}socialProfileId`],
             'parentWebContentId': bundle.inputData?.[`${keyPrefix}parentWebContentId`],
             'parentWebContentVersionId': bundle.inputData?.[`${keyPrefix}parentWebContentVersionId`],
-            'blogPostCategoryID': bundle.inputData?.[`${keyPrefix}blogPostCategoryID`],
-            'webTemplateID': bundle.inputData?.[`${keyPrefix}webTemplateID`],
+            'blogPostCategoryId': bundle.inputData?.[`${keyPrefix}blogPostCategoryId`],
+            'webTemplateId': bundle.inputData?.[`${keyPrefix}webTemplateId`],
         }
     },
 }

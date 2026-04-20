@@ -39,7 +39,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseForums'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseForums'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -100,7 +100,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseForums/{forumId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseForums/{forumId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -155,7 +155,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseForums/{forumId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseForums/{forumId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -208,7 +208,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseForums'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseForums'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -262,7 +262,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseForums/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseForums/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -324,7 +324,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseForums/{forumId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseForums/{forumId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

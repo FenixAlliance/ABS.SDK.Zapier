@@ -17,11 +17,7 @@ module.exports = {
             {
                 key: `${keyPrefix}title`,
                 label: `[${labelPrefix}title]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}code`,
-                label: `[${labelPrefix}code]`,
+                required: true,
                 type: 'string',
             },
             {
@@ -35,8 +31,13 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}htmlContent`,
-                label: `[${labelPrefix}htmlContent]`,
+                key: `${keyPrefix}code`,
+                label: `[${labelPrefix}code]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}markup`,
+                label: `[${labelPrefix}markup]`,
                 type: 'string',
             },
             {
@@ -55,16 +56,17 @@ module.exports = {
                     'Liquid',
                     'Html5',
                     'Markdown',
+                    'Markup',
                 ],
             },
             {
-                key: `${keyPrefix}blogPostCategoryID`,
-                label: `[${labelPrefix}blogPostCategoryID]`,
+                key: `${keyPrefix}blogPostCategoryId`,
+                label: `[${labelPrefix}blogPostCategoryId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}webTemplateID`,
-                label: `[${labelPrefix}webTemplateID]`,
+                key: `${keyPrefix}webTemplateId`,
+                label: `[${labelPrefix}webTemplateId]`,
                 type: 'string',
             },
         ]
@@ -75,14 +77,14 @@ module.exports = {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'title': bundle.inputData?.[`${keyPrefix}title`],
-            'code': bundle.inputData?.[`${keyPrefix}code`],
             'published': bundle.inputData?.[`${keyPrefix}published`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
-            'htmlContent': bundle.inputData?.[`${keyPrefix}htmlContent`],
+            'code': bundle.inputData?.[`${keyPrefix}code`],
+            'markup': bundle.inputData?.[`${keyPrefix}markup`],
             'featuredImageUrl': bundle.inputData?.[`${keyPrefix}featuredImageUrl`],
             'codeType': bundle.inputData?.[`${keyPrefix}codeType`],
-            'blogPostCategoryID': bundle.inputData?.[`${keyPrefix}blogPostCategoryID`],
-            'webTemplateID': bundle.inputData?.[`${keyPrefix}webTemplateID`],
+            'blogPostCategoryId': bundle.inputData?.[`${keyPrefix}blogPostCategoryId`],
+            'webTemplateId': bundle.inputData?.[`${keyPrefix}webTemplateId`],
         }
     },
 }

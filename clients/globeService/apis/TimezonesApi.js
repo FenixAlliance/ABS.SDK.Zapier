@@ -32,7 +32,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Timezones/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Timezones/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -86,7 +86,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Timezones/{timeZoneId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Timezones/{timeZoneId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -134,7 +134,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Timezones'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Timezones'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

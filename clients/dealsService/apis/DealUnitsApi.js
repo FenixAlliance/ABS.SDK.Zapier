@@ -43,7 +43,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/DealsService/DealUnits/{dealUnitId}/Calculate'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/DealsService/DealUnits/{dealUnitId}/Calculate'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -99,7 +99,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/DealsService/DealUnits/{dealUnitId}/Lines/{dealUnitLineId}/Calculate'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/DealsService/DealUnits/{dealUnitId}/Lines/{dealUnitLineId}/Calculate'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -144,7 +144,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/DealsService/DealUnits'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/DealsService/DealUnits'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -196,7 +196,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/DealsService/DealUnits/{dealUnitId}/Lines'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/DealsService/DealUnits/{dealUnitId}/Lines'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -247,7 +247,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/DealsService/DealUnits/{dealUnitId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/DealsService/DealUnits/{dealUnitId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -303,7 +303,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/DealsService/DealUnits/{dealUnitId}/Lines/{dealUnitLineId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/DealsService/DealUnits/{dealUnitId}/Lines/{dealUnitLineId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -353,7 +353,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/DealsService/DealUnits/{dealUnitId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/DealsService/DealUnits/{dealUnitId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -408,7 +408,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/DealsService/DealUnits/{dealUnitId}/Lines'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/DealsService/DealUnits/{dealUnitId}/Lines'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -459,7 +459,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/DealsService/DealUnits/{dealUnitId}/Lines/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/DealsService/DealUnits/{dealUnitId}/Lines/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -515,7 +515,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/DealsService/DealUnits/{dealUnitId}/Lines/{dealUnitLineId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/DealsService/DealUnits/{dealUnitId}/Lines/{dealUnitLineId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -559,7 +559,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/DealsService/DealUnits'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/DealsService/DealUnits'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -603,7 +603,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/DealsService/DealUnits/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/DealsService/DealUnits/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -653,7 +653,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/DealsService/DealUnits/{dealUnitId}/Extended'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/DealsService/DealUnits/{dealUnitId}/Extended'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -697,7 +697,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/DealsService/DealUnits/Extended'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/DealsService/DealUnits/Extended'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -748,7 +748,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/DealsService/DealUnits/{dealUnitId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/DealsService/DealUnits/{dealUnitId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -806,7 +806,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/DealsService/DealUnits/{dealUnitId}/Lines/{dealUnitLineId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/DealsService/DealUnits/{dealUnitId}/Lines/{dealUnitLineId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

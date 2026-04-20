@@ -45,7 +45,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Loans/Applications'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Loans/Applications'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -102,7 +102,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Loans'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Loans'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -164,7 +164,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Loans/Applications/{applicationId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Loans/Applications/{applicationId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -225,7 +225,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Loans/{loanId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Loans/{loanId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -286,7 +286,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Loans/Applications/{applicationId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Loans/Applications/{applicationId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -341,7 +341,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Loans/Applications'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Loans/Applications'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -396,7 +396,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Loans/Applications/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Loans/Applications/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -457,7 +457,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Loans/{loanId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Loans/{loanId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -512,7 +512,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Loans'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Loans'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -567,7 +567,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Loans/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Loans/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -634,7 +634,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Loans/Applications/{applicationId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Loans/Applications/{applicationId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -697,7 +697,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Loans/{loanId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Loans/{loanId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

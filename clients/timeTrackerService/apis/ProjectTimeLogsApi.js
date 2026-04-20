@@ -46,7 +46,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/TimeTrackerService/ProjectTimeLogs/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/TimeTrackerService/ProjectTimeLogs/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -102,7 +102,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/TimeTrackerService/ProjectTimeLogs'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/TimeTrackerService/ProjectTimeLogs'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -163,7 +163,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/TimeTrackerService/ProjectTimeLogs/{timeLogId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/TimeTrackerService/ProjectTimeLogs/{timeLogId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -224,7 +224,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/TimeTrackerService/ProjectTimeLogs'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/TimeTrackerService/ProjectTimeLogs'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -286,7 +286,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/TimeTrackerService/ProjectTimeLogs/{timeLogId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/TimeTrackerService/ProjectTimeLogs/{timeLogId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -347,7 +347,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/TimeTrackerService/ProjectTimeLogs/ForProject/{projectId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/TimeTrackerService/ProjectTimeLogs/ForProject/{projectId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -408,7 +408,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/TimeTrackerService/ProjectTimeLogs/ByResponsibleContact'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/TimeTrackerService/ProjectTimeLogs/ByResponsibleContact'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -470,7 +470,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/TimeTrackerService/ProjectTimeLogs/CreatedByContact'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/TimeTrackerService/ProjectTimeLogs/CreatedByContact'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -532,7 +532,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/TimeTrackerService/ProjectTimeLogs/{timeLogId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/TimeTrackerService/ProjectTimeLogs/{timeLogId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

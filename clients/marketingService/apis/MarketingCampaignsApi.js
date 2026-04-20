@@ -41,7 +41,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/MarketingService/MarketingCampaigns'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/MarketingService/MarketingCampaigns'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -103,7 +103,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/MarketingService/MarketingCampaigns/{marketingcampaignId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/MarketingService/MarketingCampaigns/{marketingcampaignId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -164,7 +164,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/MarketingService/MarketingCampaigns/{marketingcampaignId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/MarketingService/MarketingCampaigns/{marketingcampaignId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -218,7 +218,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/MarketingService/MarketingCampaigns'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/MarketingService/MarketingCampaigns'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -273,7 +273,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/MarketingService/MarketingCampaigns/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/MarketingService/MarketingCampaigns/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -335,7 +335,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/MarketingService/MarketingCampaigns/{marketingcampaignId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/MarketingService/MarketingCampaigns/{marketingcampaignId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

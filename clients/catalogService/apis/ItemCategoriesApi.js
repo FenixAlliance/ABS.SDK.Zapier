@@ -40,7 +40,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemCategories/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemCategories/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -96,7 +96,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemCategories'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemCategories'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -157,7 +157,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemCategories/{itemCategoryId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemCategories/{itemCategoryId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -212,7 +212,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemCategories'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemCategories'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -267,7 +267,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemCategories/{itemCategoryId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemCategories/{itemCategoryId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -327,7 +327,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemCategories/{itemCategoryId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemCategories/{itemCategoryId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

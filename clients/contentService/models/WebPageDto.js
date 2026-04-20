@@ -26,6 +26,7 @@ module.exports = {
                     'Liquid',
                     'Html5',
                     'Markdown',
+                    'Markup',
                 ],
             },
             {
