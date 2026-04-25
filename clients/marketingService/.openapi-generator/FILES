@@ -2,7 +2,7 @@ README.md
 apis/EmailGroupsApi.js
 apis/EmailSignaturesApi.js
 apis/EmailTemplatesApi.js
-apis/FenixAllianceABPWebApi.js
+apis/FenixAllianceABSWebApi.js
 apis/MarketingCampaignsApi.js
 apis/MarketingListsApi.js
 apis/NewslettersApi.js
@@ -68,4 +68,5 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
+samples/FenixAllianceABSWebApi.js
 utils/utils.js

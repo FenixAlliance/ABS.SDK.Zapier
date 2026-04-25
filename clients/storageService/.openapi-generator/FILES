@@ -1,7 +1,7 @@
 README.md
 apis/AvatarsApi.js
 apis/BlobsApi.js
-apis/FenixAllianceABPWebApi.js
+apis/FenixAllianceABSWebApi.js
 apis/FilesApi.js
 apis/RadzenEditorApi.js
 apis/UploadsApi.js
@@ -27,4 +27,5 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
+samples/FenixAllianceABSWebApi.js
 utils/utils.js

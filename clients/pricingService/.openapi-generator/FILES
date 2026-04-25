@@ -1,6 +1,6 @@
 README.md
 apis/DiscountListsApi.js
-apis/FenixAllianceABPWebApi.js
+apis/FenixAllianceABSWebApi.js
 apis/PriceListsApi.js
 apis/PricesApi.js
 authentication.js
@@ -47,4 +47,5 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
+samples/FenixAllianceABSWebApi.js
 utils/utils.js

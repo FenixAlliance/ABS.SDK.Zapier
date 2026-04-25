@@ -1,7 +1,7 @@
 README.md
 apis/AntiforgeryApi.js
 apis/EmailsApi.js
-apis/FenixAllianceABPWebApi.js
+apis/FenixAllianceABSWebApi.js
 apis/LicensingApi.js
 apis/MigrationsApi.js
 apis/ModulesApi.js
@@ -71,4 +71,5 @@ models/UserUpdateDto.js
 models/WalletDto.js
 operations/actions.js
 package.json
+samples/FenixAllianceABSWebApi.js
 utils/utils.js

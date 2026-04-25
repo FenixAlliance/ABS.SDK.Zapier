@@ -1,5 +1,5 @@
 README.md
-apis/FenixAllianceABPWebApi.js
+apis/FenixAllianceABSWebApi.js
 apis/ServiceCaseTypesApi.js
 apis/ServiceCasesApi.js
 apis/ServiceLevelAgreementsApi.js
@@ -55,4 +55,5 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
+samples/FenixAllianceABSWebApi.js
 utils/utils.js

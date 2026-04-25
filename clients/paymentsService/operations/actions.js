@@ -1,4 +1,4 @@
-const FenixAllianceABPWebApi = require('../apis/FenixAllianceABPWebApi');
+const FenixAllianceABSWebApi = require('../apis/FenixAllianceABSWebApi');
 const PaymentMethodsApi = require('../apis/PaymentMethodsApi');
 const PaymentModesApi = require('../apis/PaymentModesApi');
 const PaymentTermsApi = require('../apis/PaymentTermsApi');
@@ -6,19 +6,23 @@ const PaymentsApi = require('../apis/PaymentsApi');
 const { triggerMiddleware, isTrigger, searchMiddleware, hasSearchRequisites, isSearchAction, isCreateAction } = require('../utils/utils');
 
 const actions = {
-    [FenixAllianceABPWebApi.forgotPasswordPost.key]: FenixAllianceABPWebApi.forgotPasswordPost,
-    [FenixAllianceABPWebApi.healthGet.key]: FenixAllianceABPWebApi.healthGet,
-    [FenixAllianceABPWebApi.helloGet.key]: FenixAllianceABPWebApi.helloGet,
-    [FenixAllianceABPWebApi.loginPost.key]: FenixAllianceABPWebApi.loginPost,
-    [FenixAllianceABPWebApi.manage2faPost.key]: FenixAllianceABPWebApi.manage2faPost,
-    [FenixAllianceABPWebApi.manageInfoGet.key]: FenixAllianceABPWebApi.manageInfoGet,
-    [FenixAllianceABPWebApi.manageInfoPost.key]: FenixAllianceABPWebApi.manageInfoPost,
-    [FenixAllianceABPWebApi.mapIdentityApi/confirmEmail.key]: FenixAllianceABPWebApi.mapIdentityApi/confirmEmail,
-    [FenixAllianceABPWebApi.refreshPost.key]: FenixAllianceABPWebApi.refreshPost,
-    [FenixAllianceABPWebApi.registerPost.key]: FenixAllianceABPWebApi.registerPost,
-    [FenixAllianceABPWebApi.resendConfirmationEmailPost.key]: FenixAllianceABPWebApi.resendConfirmationEmailPost,
-    [FenixAllianceABPWebApi.resetPasswordPost.key]: FenixAllianceABPWebApi.resetPasswordPost,
-    [FenixAllianceABPWebApi.versionGet.key]: FenixAllianceABPWebApi.versionGet,
+    [FenixAllianceABSWebApi.accountLogoutPost.key]: FenixAllianceABSWebApi.accountLogoutPost,
+    [FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost.key]: FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost,
+    [FenixAllianceABSWebApi.accountManageLinkExternalLoginPost.key]: FenixAllianceABSWebApi.accountManageLinkExternalLoginPost,
+    [FenixAllianceABSWebApi.accountPerformExternalLoginPost.key]: FenixAllianceABSWebApi.accountPerformExternalLoginPost,
+    [FenixAllianceABSWebApi.forgotPasswordPost.key]: FenixAllianceABSWebApi.forgotPasswordPost,
+    [FenixAllianceABSWebApi.healthGet.key]: FenixAllianceABSWebApi.healthGet,
+    [FenixAllianceABSWebApi.helloGet.key]: FenixAllianceABSWebApi.helloGet,
+    [FenixAllianceABSWebApi.loginPost.key]: FenixAllianceABSWebApi.loginPost,
+    [FenixAllianceABSWebApi.manage2faPost.key]: FenixAllianceABSWebApi.manage2faPost,
+    [FenixAllianceABSWebApi.manageInfoGet.key]: FenixAllianceABSWebApi.manageInfoGet,
+    [FenixAllianceABSWebApi.manageInfoPost.key]: FenixAllianceABSWebApi.manageInfoPost,
+    [FenixAllianceABSWebApi.mapIdentityApi/confirmEmail.key]: FenixAllianceABSWebApi.mapIdentityApi/confirmEmail,
+    [FenixAllianceABSWebApi.refreshPost.key]: FenixAllianceABSWebApi.refreshPost,
+    [FenixAllianceABSWebApi.registerPost.key]: FenixAllianceABSWebApi.registerPost,
+    [FenixAllianceABSWebApi.resendConfirmationEmailPost.key]: FenixAllianceABSWebApi.resendConfirmationEmailPost,
+    [FenixAllianceABSWebApi.resetPasswordPost.key]: FenixAllianceABSWebApi.resetPasswordPost,
+    [FenixAllianceABSWebApi.versionGet.key]: FenixAllianceABSWebApi.versionGet,
     [PaymentMethodsApi.createPaymentMethodAsync.key]: PaymentMethodsApi.createPaymentMethodAsync,
     [PaymentMethodsApi.deletePaymentMethodAsync.key]: PaymentMethodsApi.deletePaymentMethodAsync,
     [PaymentMethodsApi.getPaymentMethodDetailsAsync.key]: PaymentMethodsApi.getPaymentMethodDetailsAsync,

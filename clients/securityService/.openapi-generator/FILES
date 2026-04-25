@@ -1,6 +1,6 @@
 README.md
 apis/ApplicationsApi.js
-apis/FenixAllianceABPWebApi.js
+apis/FenixAllianceABSWebApi.js
 apis/LogsApi.js
 apis/OAuthApplicationsApi.js
 apis/PermissionsApi.js
@@ -62,4 +62,5 @@ models/WebhookRequestDto.js
 models/WebhookRequestDtoListEnvelope.js
 operations/actions.js
 package.json
+samples/FenixAllianceABSWebApi.js
 utils/utils.js

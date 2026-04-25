@@ -1,5 +1,5 @@
 README.md
-apis/FenixAllianceABPWebApi.js
+apis/FenixAllianceABSWebApi.js
 apis/WalletsApi.js
 authentication.js
 index.js
@@ -39,4 +39,5 @@ models/WalletDto.js
 models/WalletDtoEnvelope.js
 operations/actions.js
 package.json
+samples/FenixAllianceABSWebApi.js
 utils/utils.js
