@@ -1,5 +1,5 @@
 README.md
-apis/FenixAllianceABPWebApi.js
+apis/FenixAllianceABSWebApi.js
 authentication.js
 index.js
 models/AccessTokenResponse.js
@@ -16,4 +16,5 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
+samples/FenixAllianceABSWebApi.js
 utils/utils.js

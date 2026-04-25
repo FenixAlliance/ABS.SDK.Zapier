@@ -1,7 +1,7 @@
 README.md
 apis/CartsApi.js
 apis/CompareApi.js
-apis/FenixAllianceABPWebApi.js
+apis/FenixAllianceABSWebApi.js
 apis/RecordsApi.js
 apis/WishListsApi.js
 authentication.js
@@ -50,4 +50,5 @@ models/WishListItemRecordDto.js
 models/WishListUpdateDto.js
 operations/actions.js
 package.json
+samples/FenixAllianceABSWebApi.js
 utils/utils.js

@@ -1,7 +1,7 @@
 README.md
 apis/DealUnitFlowsApi.js
 apis/DealUnitsApi.js
-apis/FenixAllianceABPWebApi.js
+apis/FenixAllianceABSWebApi.js
 apis/SalesLiteraturesApi.js
 authentication.js
 index.js
@@ -60,4 +60,5 @@ models/TwoFactorResponse.js
 models/UserDto.js
 operations/actions.js
 package.json
+samples/FenixAllianceABSWebApi.js
 utils/utils.js

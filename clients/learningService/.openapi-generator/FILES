@@ -17,7 +17,7 @@ apis/CourseUnitsApi.js
 apis/CourseUpdatesApi.js
 apis/CourseWikisApi.js
 apis/CoursesApi.js
-apis/FenixAllianceABPWebApi.js
+apis/FenixAllianceABSWebApi.js
 apis/InstructorProfilesApi.js
 apis/StudentProfilesApi.js
 authentication.js
@@ -101,4 +101,5 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
+samples/FenixAllianceABSWebApi.js
 utils/utils.js

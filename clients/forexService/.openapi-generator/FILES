@@ -1,7 +1,7 @@
 README.md
 apis/ExchangeApi.js
 apis/ExchangeVApi.js
-apis/FenixAllianceABPWebApi.js
+apis/FenixAllianceABSWebApi.js
 apis/RatesApi.js
 authentication.js
 index.js
@@ -27,4 +27,5 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
+samples/FenixAllianceABSWebApi.js
 utils/utils.js

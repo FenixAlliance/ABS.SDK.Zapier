@@ -4,7 +4,7 @@ apis/BlogPostCategoriesApi.js
 apis/BlogPostTagsApi.js
 apis/BlogPostsApi.js
 apis/BusinessDomainsApi.js
-apis/FenixAllianceABPWebApi.js
+apis/FenixAllianceABSWebApi.js
 apis/PortalsApi.js
 apis/ThemesApi.js
 apis/WebContentsApi.js
@@ -164,4 +164,5 @@ models/WebTemplateDtoListEnvelope.js
 models/WebTemplateUpdateDto.js
 operations/actions.js
 package.json
+samples/FenixAllianceABSWebApi.js
 utils/utils.js

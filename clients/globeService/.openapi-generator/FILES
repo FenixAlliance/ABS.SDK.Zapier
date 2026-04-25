@@ -1,7 +1,7 @@
 README.md
 apis/CountriesApi.js
 apis/CurrenciesApi.js
-apis/FenixAllianceABPWebApi.js
+apis/FenixAllianceABSWebApi.js
 apis/LanguagesApi.js
 apis/TimezonesApi.js
 authentication.js
@@ -43,4 +43,5 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
+samples/FenixAllianceABSWebApi.js
 utils/utils.js

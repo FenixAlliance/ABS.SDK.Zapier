@@ -1,6 +1,6 @@
 README.md
 apis/ContactsApi.js
-apis/FenixAllianceABPWebApi.js
+apis/FenixAllianceABSWebApi.js
 apis/OptionsApi.js
 apis/SyncApi.js
 authentication.js
@@ -48,4 +48,5 @@ models/WalletDto.js
 models/WalletDtoEnvelope.js
 operations/actions.js
 package.json
+samples/FenixAllianceABSWebApi.js
 utils/utils.js

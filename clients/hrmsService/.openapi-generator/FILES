@@ -1,7 +1,7 @@
 README.md
 apis/EmployeesApi.js
 apis/EmployersApi.js
-apis/FenixAllianceABPWebApi.js
+apis/FenixAllianceABSWebApi.js
 apis/GigsApi.js
 apis/JobOffersApi.js
 authentication.js
@@ -40,4 +40,5 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
+samples/FenixAllianceABSWebApi.js
 utils/utils.js
