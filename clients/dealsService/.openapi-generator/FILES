@@ -7,7 +7,6 @@ authentication.js
 index.js
 models/AccessTokenResponse.js
 models/ContactDto.js
-models/CurrencyId.js
 models/DealUnitCreateDto.js
 models/DealUnitDto.js
 models/DealUnitDtoEnvelope.js
@@ -35,14 +34,12 @@ models/ExtendedDealUnitDtoEnvelope.js
 models/ExtendedDealUnitDtoListEnvelope.js
 models/ExtendedSalesLiteratureDto.js
 models/ExtendedSalesLiteratureDtoListEnvelope.js
-models/ForexRates.js
 models/ForgotPasswordRequest.js
 models/HttpValidationProblemDetails.js
 models/InfoRequest.js
 models/InfoResponse.js
 models/Int32Envelope.js
 models/LoginRequest.js
-models/Money.js
 models/RefreshRequest.js
 models/RegisterRequest.js
 models/ResendConfirmationEmailRequest.js

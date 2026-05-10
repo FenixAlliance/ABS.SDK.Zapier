@@ -19,7 +19,12 @@ module.exports = {
         },
         operation: {
             inputFields: [
-                ....fields(),
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
                 {
                     key: 'api-version',
                     label: '',
@@ -71,7 +76,12 @@ module.exports = {
         },
         operation: {
             inputFields: [
-                ....fields(),
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
                 {
                     key: 'enumerationRangeId',
                     label: '',
@@ -127,7 +137,12 @@ module.exports = {
         },
         operation: {
             inputFields: [
-                ....fields(),
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
                 {
                     key: 'fiscalAuthorityId',
                     label: '',
@@ -304,7 +319,12 @@ module.exports = {
         },
         operation: {
             inputFields: [
-                ....fields(),
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
                 {
                     key: 'enumerationRangeId',
                     label: '',

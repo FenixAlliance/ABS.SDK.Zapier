@@ -11,7 +11,6 @@ models/Envelope.js
 models/ErrorEnvelope.js
 models/ExtendedInvoiceDto.js
 models/ExtendedInvoiceDtoListEnvelope.js
-models/ForexRates.js
 models/ForgotPasswordRequest.js
 models/HttpValidationProblemDetails.js
 models/InfoRequest.js

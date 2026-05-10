@@ -2,6 +2,7 @@ const AccountGroupsApi = require('../apis/AccountGroupsApi');
 const AccountingPeriodsApi = require('../apis/AccountingPeriodsApi');
 const AccountsApi = require('../apis/AccountsApi');
 const BankingApi = require('../apis/BankingApi');
+const BillableLineTaxesApi = require('../apis/BillableLineTaxesApi');
 const BillingProfilesApi = require('../apis/BillingProfilesApi');
 const BudgetsApi = require('../apis/BudgetsApi');
 const CommissionsApi = require('../apis/CommissionsApi');
@@ -103,6 +104,11 @@ const actions = {
     [BankingApi.updateBankAccount.key]: BankingApi.updateBankAccount,
     [BankingApi.updateBankGuarantee.key]: BankingApi.updateBankGuarantee,
     [BankingApi.updateBankTransaction.key]: BankingApi.updateBankTransaction,
+    [BillableLineTaxesApi.createBillableLineTax.key]: BillableLineTaxesApi.createBillableLineTax,
+    [BillableLineTaxesApi.deleteBillableLineTax.key]: BillableLineTaxesApi.deleteBillableLineTax,
+    [BillableLineTaxesApi.getBillableLineTaxes.key]: BillableLineTaxesApi.getBillableLineTaxes,
+    [BillableLineTaxesApi.getBillableLineTaxesCount.key]: BillableLineTaxesApi.getBillableLineTaxesCount,
+    [BillableLineTaxesApi.updateBillableLineTax.key]: BillableLineTaxesApi.updateBillableLineTax,
     [BillingProfilesApi.createBillingProfileAsync.key]: BillingProfilesApi.createBillingProfileAsync,
     [BillingProfilesApi.deleteBillingProfileAsync.key]: BillingProfilesApi.deleteBillingProfileAsync,
     [BillingProfilesApi.getBillingProfileByIdAsync.key]: BillingProfilesApi.getBillingProfileByIdAsync,

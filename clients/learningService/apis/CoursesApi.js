@@ -375,16 +375,15 @@ module.exports = {
         operation: {
             inputFields: [
                 {
-                    key: 'tenantId',
+                    key: 'courseId',
                     label: '',
                     type: 'string',
                     required: true,
                 },
                 {
-                    key: 'courseId',
+                    key: 'tenantId',
                     label: '',
                     type: 'string',
-                    required: true,
                 },
                 {
                     key: 'api-version',

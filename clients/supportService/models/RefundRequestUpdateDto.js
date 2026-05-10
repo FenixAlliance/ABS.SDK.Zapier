@@ -1,0 +1,56 @@
+const utils = require('../utils/utils');
+
+module.exports = {
+    fields: (prefix = '', isInput = true, isArrayChild = false) => {
+        const {keyPrefix, labelPrefix} = utils.buildKeyAndLabel(prefix, isInput, isArrayChild)
+        return [
+            {
+                key: `${keyPrefix}title`,
+                label: `[${labelPrefix}title]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}description`,
+                label: `[${labelPrefix}description]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}approved`,
+                label: `[${labelPrefix}approved]`,
+                type: 'boolean',
+            },
+            {
+                key: `${keyPrefix}approvedTimestamp`,
+                label: `[${labelPrefix}approvedTimestamp]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}supportEntitlementId`,
+                label: `[${labelPrefix}supportEntitlementId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}refundPolicyId`,
+                label: `[${labelPrefix}refundPolicyId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}paymentId`,
+                label: `[${labelPrefix}paymentId]`,
+                type: 'string',
+            },
+        ]
+    },
+    mapping: (bundle, prefix = '') => {
+        const {keyPrefix} = utils.buildKeyAndLabel(prefix)
+        return {
+            'title': bundle.inputData?.[`${keyPrefix}title`],
+            'description': bundle.inputData?.[`${keyPrefix}description`],
+            'approved': bundle.inputData?.[`${keyPrefix}approved`],
+            'approvedTimestamp': bundle.inputData?.[`${keyPrefix}approvedTimestamp`],
+            'supportEntitlementId': bundle.inputData?.[`${keyPrefix}supportEntitlementId`],
+            'refundPolicyId': bundle.inputData?.[`${keyPrefix}refundPolicyId`],
+            'paymentId': bundle.inputData?.[`${keyPrefix}paymentId`],
+        }
+    },
+}

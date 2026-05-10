@@ -1,16 +1,21 @@
 const CourseArticlesApi = require('../apis/CourseArticlesApi');
+const CourseAssignmentComponentsApi = require('../apis/CourseAssignmentComponentsApi');
+const CourseAssignmentTypesApi = require('../apis/CourseAssignmentTypesApi');
 const CourseAssignmentsApi = require('../apis/CourseAssignmentsApi');
 const CourseCategoriesApi = require('../apis/CourseCategoriesApi');
 const CourseCertificatesApi = require('../apis/CourseCertificatesApi');
 const CourseCohortsApi = require('../apis/CourseCohortsApi');
+const CourseContentGroupsApi = require('../apis/CourseContentGroupsApi');
 const CourseEnrollmentsApi = require('../apis/CourseEnrollmentsApi');
 const CourseFilesApi = require('../apis/CourseFilesApi');
 const CourseForumsApi = require('../apis/CourseForumsApi');
+const CourseGradingRubricsApi = require('../apis/CourseGradingRubricsApi');
 const CourseHandoutsApi = require('../apis/CourseHandoutsApi');
 const CourseLibrariesApi = require('../apis/CourseLibrariesApi');
 const CoursePagesApi = require('../apis/CoursePagesApi');
 const CourseProblemSetsApi = require('../apis/CourseProblemSetsApi');
 const CourseSectionsApi = require('../apis/CourseSectionsApi');
+const CourseTeamMembershipsApi = require('../apis/CourseTeamMembershipsApi');
 const CourseUnitComponentsApi = require('../apis/CourseUnitComponentsApi');
 const CourseUnitsApi = require('../apis/CourseUnitsApi');
 const CourseUpdatesApi = require('../apis/CourseUpdatesApi');
@@ -18,6 +23,7 @@ const CourseWikisApi = require('../apis/CourseWikisApi');
 const CoursesApi = require('../apis/CoursesApi');
 const FenixAllianceABSWebApi = require('../apis/FenixAllianceABSWebApi');
 const InstructorProfilesApi = require('../apis/InstructorProfilesApi');
+const MeApi = require('../apis/MeApi');
 const StudentProfilesApi = require('../apis/StudentProfilesApi');
 const { triggerMiddleware, isTrigger, searchMiddleware, hasSearchRequisites, isSearchAction, isCreateAction } = require('../utils/utils');
 
@@ -28,6 +34,18 @@ const actions = {
     [CourseArticlesApi.getCourseArticlesAsync.key]: CourseArticlesApi.getCourseArticlesAsync,
     [CourseArticlesApi.getCourseArticlesCountAsync.key]: CourseArticlesApi.getCourseArticlesCountAsync,
     [CourseArticlesApi.updateCourseArticleAsync.key]: CourseArticlesApi.updateCourseArticleAsync,
+    [CourseAssignmentComponentsApi.createCourseAssignmentComponentAsync.key]: CourseAssignmentComponentsApi.createCourseAssignmentComponentAsync,
+    [CourseAssignmentComponentsApi.deleteCourseAssignmentComponentAsync.key]: CourseAssignmentComponentsApi.deleteCourseAssignmentComponentAsync,
+    [CourseAssignmentComponentsApi.getCourseAssignmentComponentByIdAsync.key]: CourseAssignmentComponentsApi.getCourseAssignmentComponentByIdAsync,
+    [CourseAssignmentComponentsApi.getCourseAssignmentComponentsAsync.key]: CourseAssignmentComponentsApi.getCourseAssignmentComponentsAsync,
+    [CourseAssignmentComponentsApi.getCourseAssignmentComponentsCountAsync.key]: CourseAssignmentComponentsApi.getCourseAssignmentComponentsCountAsync,
+    [CourseAssignmentComponentsApi.updateCourseAssignmentComponentAsync.key]: CourseAssignmentComponentsApi.updateCourseAssignmentComponentAsync,
+    [CourseAssignmentTypesApi.createCourseAssignmentTypeAsync.key]: CourseAssignmentTypesApi.createCourseAssignmentTypeAsync,
+    [CourseAssignmentTypesApi.deleteCourseAssignmentTypeAsync.key]: CourseAssignmentTypesApi.deleteCourseAssignmentTypeAsync,
+    [CourseAssignmentTypesApi.getCourseAssignmentTypeByIdAsync.key]: CourseAssignmentTypesApi.getCourseAssignmentTypeByIdAsync,
+    [CourseAssignmentTypesApi.getCourseAssignmentTypesAsync.key]: CourseAssignmentTypesApi.getCourseAssignmentTypesAsync,
+    [CourseAssignmentTypesApi.getCourseAssignmentTypesCountAsync.key]: CourseAssignmentTypesApi.getCourseAssignmentTypesCountAsync,
+    [CourseAssignmentTypesApi.updateCourseAssignmentTypeAsync.key]: CourseAssignmentTypesApi.updateCourseAssignmentTypeAsync,
     [CourseAssignmentsApi.createCourseAssignmentAsync.key]: CourseAssignmentsApi.createCourseAssignmentAsync,
     [CourseAssignmentsApi.deleteCourseAssignmentAsync.key]: CourseAssignmentsApi.deleteCourseAssignmentAsync,
     [CourseAssignmentsApi.getCourseAssignmentByIdAsync.key]: CourseAssignmentsApi.getCourseAssignmentByIdAsync,
@@ -56,6 +74,14 @@ const actions = {
     [CourseCohortsApi.getCourseCohortsAsync.key]: CourseCohortsApi.getCourseCohortsAsync,
     [CourseCohortsApi.getCourseCohortsCountAsync.key]: CourseCohortsApi.getCourseCohortsCountAsync,
     [CourseCohortsApi.updateCourseCohortAsync.key]: CourseCohortsApi.updateCourseCohortAsync,
+    [CourseContentGroupsApi.createCourseContentGroupAsync.key]: CourseContentGroupsApi.createCourseContentGroupAsync,
+    [CourseContentGroupsApi.deleteCourseContentGroupAsync.key]: CourseContentGroupsApi.deleteCourseContentGroupAsync,
+    [CourseContentGroupsApi.getCourseContentGroupByIdAsync.key]: CourseContentGroupsApi.getCourseContentGroupByIdAsync,
+    [CourseContentGroupsApi.getCourseContentGroupsAsync.key]: CourseContentGroupsApi.getCourseContentGroupsAsync,
+    [CourseContentGroupsApi.getCourseContentGroupsByCourseAsync.key]: CourseContentGroupsApi.getCourseContentGroupsByCourseAsync,
+    [CourseContentGroupsApi.getCourseContentGroupsByCourseCountAsync.key]: CourseContentGroupsApi.getCourseContentGroupsByCourseCountAsync,
+    [CourseContentGroupsApi.getCourseContentGroupsCountAsync.key]: CourseContentGroupsApi.getCourseContentGroupsCountAsync,
+    [CourseContentGroupsApi.updateCourseContentGroupAsync.key]: CourseContentGroupsApi.updateCourseContentGroupAsync,
     [CourseEnrollmentsApi.createCourseEnrollmentAsync.key]: CourseEnrollmentsApi.createCourseEnrollmentAsync,
     [CourseEnrollmentsApi.deleteCourseEnrollmentAsync.key]: CourseEnrollmentsApi.deleteCourseEnrollmentAsync,
     [CourseEnrollmentsApi.getCourseEnrollmentAsync.key]: CourseEnrollmentsApi.getCourseEnrollmentAsync,
@@ -75,6 +101,12 @@ const actions = {
     [CourseForumsApi.getCourseForumsAsync.key]: CourseForumsApi.getCourseForumsAsync,
     [CourseForumsApi.getCourseForumsCountAsync.key]: CourseForumsApi.getCourseForumsCountAsync,
     [CourseForumsApi.updateCourseForumAsync.key]: CourseForumsApi.updateCourseForumAsync,
+    [CourseGradingRubricsApi.createCourseGradingRubricAsync.key]: CourseGradingRubricsApi.createCourseGradingRubricAsync,
+    [CourseGradingRubricsApi.deleteCourseGradingRubricAsync.key]: CourseGradingRubricsApi.deleteCourseGradingRubricAsync,
+    [CourseGradingRubricsApi.getCourseGradingRubricByIdAsync.key]: CourseGradingRubricsApi.getCourseGradingRubricByIdAsync,
+    [CourseGradingRubricsApi.getCourseGradingRubricsAsync.key]: CourseGradingRubricsApi.getCourseGradingRubricsAsync,
+    [CourseGradingRubricsApi.getCourseGradingRubricsCountAsync.key]: CourseGradingRubricsApi.getCourseGradingRubricsCountAsync,
+    [CourseGradingRubricsApi.updateCourseGradingRubricAsync.key]: CourseGradingRubricsApi.updateCourseGradingRubricAsync,
     [CourseHandoutsApi.createCourseHandoutAsync.key]: CourseHandoutsApi.createCourseHandoutAsync,
     [CourseHandoutsApi.deleteCourseHandoutAsync.key]: CourseHandoutsApi.deleteCourseHandoutAsync,
     [CourseHandoutsApi.getCourseHandoutByIdAsync.key]: CourseHandoutsApi.getCourseHandoutByIdAsync,
@@ -105,6 +137,12 @@ const actions = {
     [CourseSectionsApi.getCourseSectionsAsync.key]: CourseSectionsApi.getCourseSectionsAsync,
     [CourseSectionsApi.getCourseSectionsCountAsync.key]: CourseSectionsApi.getCourseSectionsCountAsync,
     [CourseSectionsApi.updateCourseSectionAsync.key]: CourseSectionsApi.updateCourseSectionAsync,
+    [CourseTeamMembershipsApi.createCourseTeamMembershipAsync.key]: CourseTeamMembershipsApi.createCourseTeamMembershipAsync,
+    [CourseTeamMembershipsApi.deleteCourseTeamMembershipAsync.key]: CourseTeamMembershipsApi.deleteCourseTeamMembershipAsync,
+    [CourseTeamMembershipsApi.getCourseTeamMembershipByIdAsync.key]: CourseTeamMembershipsApi.getCourseTeamMembershipByIdAsync,
+    [CourseTeamMembershipsApi.getCourseTeamMembershipsAsync.key]: CourseTeamMembershipsApi.getCourseTeamMembershipsAsync,
+    [CourseTeamMembershipsApi.getCourseTeamMembershipsCountAsync.key]: CourseTeamMembershipsApi.getCourseTeamMembershipsCountAsync,
+    [CourseTeamMembershipsApi.updateCourseTeamMembershipAsync.key]: CourseTeamMembershipsApi.updateCourseTeamMembershipAsync,
     [CourseUnitComponentsApi.createCourseUnitComponentAsync.key]: CourseUnitComponentsApi.createCourseUnitComponentAsync,
     [CourseUnitComponentsApi.deleteCourseUnitComponentAsync.key]: CourseUnitComponentsApi.deleteCourseUnitComponentAsync,
     [CourseUnitComponentsApi.getCourseUnitComponentByIdAsync.key]: CourseUnitComponentsApi.getCourseUnitComponentByIdAsync,
@@ -193,6 +231,21 @@ const actions = {
     [InstructorProfilesApi.apiV2LearningServiceInstructorProfilesInstructorProfileIdGet.key]: InstructorProfilesApi.apiV2LearningServiceInstructorProfilesInstructorProfileIdGet,
     [InstructorProfilesApi.apiV2LearningServiceInstructorProfilesInstructorProfileIdPut.key]: InstructorProfilesApi.apiV2LearningServiceInstructorProfilesInstructorProfileIdPut,
     [InstructorProfilesApi.apiV2LearningServiceInstructorProfilesPost.key]: InstructorProfilesApi.apiV2LearningServiceInstructorProfilesPost,
+    [MeApi.getMyAverageScoreAsync.key]: MeApi.getMyAverageScoreAsync,
+    [MeApi.getMyCertificatesAsync.key]: MeApi.getMyCertificatesAsync,
+    [MeApi.getMyCertificatesCountAsync.key]: MeApi.getMyCertificatesCountAsync,
+    [MeApi.getMyEnrollmentsAsync.key]: MeApi.getMyEnrollmentsAsync,
+    [MeApi.getMyEnrollmentsCountAsync.key]: MeApi.getMyEnrollmentsCountAsync,
+    [MeApi.getMyHoursCompletedAsync.key]: MeApi.getMyHoursCompletedAsync,
+    [MeApi.getMyInstructorCoursesAsync.key]: MeApi.getMyInstructorCoursesAsync,
+    [MeApi.getMyInstructorCoursesCountAsync.key]: MeApi.getMyInstructorCoursesCountAsync,
+    [MeApi.getMyInstructorProfilesAsync.key]: MeApi.getMyInstructorProfilesAsync,
+    [MeApi.getMyInstructorProfilesCountAsync.key]: MeApi.getMyInstructorProfilesCountAsync,
+    [MeApi.getMyPendingTaskCountAsync.key]: MeApi.getMyPendingTaskCountAsync,
+    [MeApi.getMyStudentCoursesAsync.key]: MeApi.getMyStudentCoursesAsync,
+    [MeApi.getMyStudentCoursesCountAsync.key]: MeApi.getMyStudentCoursesCountAsync,
+    [MeApi.getMyStudentProfilesAsync.key]: MeApi.getMyStudentProfilesAsync,
+    [MeApi.getMyStudentProfilesCountAsync.key]: MeApi.getMyStudentProfilesCountAsync,
     [StudentProfilesApi.apiV2LearningServiceStudentProfilesCountGet.key]: StudentProfilesApi.apiV2LearningServiceStudentProfilesCountGet,
     [StudentProfilesApi.apiV2LearningServiceStudentProfilesGet.key]: StudentProfilesApi.apiV2LearningServiceStudentProfilesGet,
     [StudentProfilesApi.apiV2LearningServiceStudentProfilesPost.key]: StudentProfilesApi.apiV2LearningServiceStudentProfilesPost,

@@ -3,6 +3,7 @@ const EmailSignaturesApi = require('../apis/EmailSignaturesApi');
 const EmailTemplatesApi = require('../apis/EmailTemplatesApi');
 const FenixAllianceABSWebApi = require('../apis/FenixAllianceABSWebApi');
 const MarketingCampaignsApi = require('../apis/MarketingCampaignsApi');
+const MarketingLeadsApi = require('../apis/MarketingLeadsApi');
 const MarketingListsApi = require('../apis/MarketingListsApi');
 const NewslettersApi = require('../apis/NewslettersApi');
 const SocialMediaPostsApi = require('../apis/SocialMediaPostsApi');
@@ -52,6 +53,12 @@ const actions = {
     [MarketingCampaignsApi.getMarketingCampaignODataAsync.key]: MarketingCampaignsApi.getMarketingCampaignODataAsync,
     [MarketingCampaignsApi.getMarketingCampaignsCountAsync.key]: MarketingCampaignsApi.getMarketingCampaignsCountAsync,
     [MarketingCampaignsApi.updateMarketingCampaignAsync.key]: MarketingCampaignsApi.updateMarketingCampaignAsync,
+    [MarketingLeadsApi.createMarketingLeadAsync.key]: MarketingLeadsApi.createMarketingLeadAsync,
+    [MarketingLeadsApi.deleteMarketingLeadAsync.key]: MarketingLeadsApi.deleteMarketingLeadAsync,
+    [MarketingLeadsApi.getMarketingLeadDetailsAsync.key]: MarketingLeadsApi.getMarketingLeadDetailsAsync,
+    [MarketingLeadsApi.getMarketingLeadsCountAsync.key]: MarketingLeadsApi.getMarketingLeadsCountAsync,
+    [MarketingLeadsApi.getMarketingLeadsODataAsync.key]: MarketingLeadsApi.getMarketingLeadsODataAsync,
+    [MarketingLeadsApi.updateMarketingLeadAsync.key]: MarketingLeadsApi.updateMarketingLeadAsync,
     [MarketingListsApi.createMarketingListAsync.key]: MarketingListsApi.createMarketingListAsync,
     [MarketingListsApi.deleteMarketingListAsync.key]: MarketingListsApi.deleteMarketingListAsync,
     [MarketingListsApi.getMarketingListDetailsAsync.key]: MarketingListsApi.getMarketingListDetailsAsync,

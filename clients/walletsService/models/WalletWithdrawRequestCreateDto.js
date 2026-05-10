@@ -1,0 +1,44 @@
+const utils = require('../utils/utils');
+
+module.exports = {
+    fields: (prefix = '', isInput = true, isArrayChild = false) => {
+        const {keyPrefix, labelPrefix} = utils.buildKeyAndLabel(prefix, isInput, isArrayChild)
+        return [
+            {
+                key: `${keyPrefix}id`,
+                label: `[${labelPrefix}id]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}timestamp`,
+                label: `[${labelPrefix}timestamp]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}requestedWithdrawAmount`,
+                label: `[${labelPrefix}requestedWithdrawAmount]`,
+                type: 'number',
+            },
+            {
+                key: `${keyPrefix}currencyId`,
+                label: `[${labelPrefix}currencyId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}bankAccountId`,
+                label: `[${labelPrefix}bankAccountId]`,
+                type: 'string',
+            },
+        ]
+    },
+    mapping: (bundle, prefix = '') => {
+        const {keyPrefix} = utils.buildKeyAndLabel(prefix)
+        return {
+            'id': bundle.inputData?.[`${keyPrefix}id`],
+            'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
+            'requestedWithdrawAmount': bundle.inputData?.[`${keyPrefix}requestedWithdrawAmount`],
+            'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
+            'bankAccountId': bundle.inputData?.[`${keyPrefix}bankAccountId`],
+        }
+    },
+}

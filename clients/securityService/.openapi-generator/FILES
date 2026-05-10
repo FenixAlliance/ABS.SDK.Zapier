@@ -62,5 +62,4 @@ models/WebhookRequestDto.js
 models/WebhookRequestDtoListEnvelope.js
 operations/actions.js
 package.json
-samples/FenixAllianceABSWebApi.js
 utils/utils.js

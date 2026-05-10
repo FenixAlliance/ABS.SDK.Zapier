@@ -1,17 +1,34 @@
 const AntiforgeryApi = require('../apis/AntiforgeryApi');
+const CartsApi = require('../apis/CartsApi');
+const ContactOptionsApi = require('../apis/ContactOptionsApi');
 const EmailsApi = require('../apis/EmailsApi');
 const FenixAllianceABSWebApi = require('../apis/FenixAllianceABSWebApi');
+const IPLookupsApi = require('../apis/IPLookupsApi');
 const LicensingApi = require('../apis/LicensingApi');
 const MigrationsApi = require('../apis/MigrationsApi');
 const ModulesApi = require('../apis/ModulesApi');
 const OptionsApi = require('../apis/OptionsApi');
+const OverviewApi = require('../apis/OverviewApi');
+const PortalsApi = require('../apis/PortalsApi');
+const TenantOptionsApi = require('../apis/TenantOptionsApi');
 const TenantsApi = require('../apis/TenantsApi');
+const UserOptionsApi = require('../apis/UserOptionsApi');
 const UsersApi = require('../apis/UsersApi');
 const { triggerMiddleware, isTrigger, searchMiddleware, hasSearchRequisites, isSearchAction, isCreateAction } = require('../utils/utils');
 
 const actions = {
     [AntiforgeryApi.getAndStoreTokens.key]: AntiforgeryApi.getAndStoreTokens,
     [AntiforgeryApi.isRequestValidAsync.key]: AntiforgeryApi.isRequestValidAsync,
+    [CartsApi.deleteSystemCart.key]: CartsApi.deleteSystemCart,
+    [CartsApi.getSystemCartById.key]: CartsApi.getSystemCartById,
+    [CartsApi.getSystemCarts.key]: CartsApi.getSystemCarts,
+    [CartsApi.getSystemCartsCount.key]: CartsApi.getSystemCartsCount,
+    [ContactOptionsApi.createSystemContactOption.key]: ContactOptionsApi.createSystemContactOption,
+    [ContactOptionsApi.deleteSystemContactOption.key]: ContactOptionsApi.deleteSystemContactOption,
+    [ContactOptionsApi.getSystemContactOptionById.key]: ContactOptionsApi.getSystemContactOptionById,
+    [ContactOptionsApi.getSystemContactOptions.key]: ContactOptionsApi.getSystemContactOptions,
+    [ContactOptionsApi.getSystemContactOptionsCount.key]: ContactOptionsApi.getSystemContactOptionsCount,
+    [ContactOptionsApi.updateSystemContactOption.key]: ContactOptionsApi.updateSystemContactOption,
     [EmailsApi.adminPreviewBasicEmailTemplate.key]: EmailsApi.adminPreviewBasicEmailTemplate,
     [EmailsApi.adminSendBasicEmail.key]: EmailsApi.adminSendBasicEmail,
     [FenixAllianceABSWebApi.accountLogoutPost.key]: FenixAllianceABSWebApi.accountLogoutPost,
@@ -31,6 +48,10 @@ const actions = {
     [FenixAllianceABSWebApi.resendConfirmationEmailPost.key]: FenixAllianceABSWebApi.resendConfirmationEmailPost,
     [FenixAllianceABSWebApi.resetPasswordPost.key]: FenixAllianceABSWebApi.resetPasswordPost,
     [FenixAllianceABSWebApi.versionGet.key]: FenixAllianceABSWebApi.versionGet,
+    [IPLookupsApi.deleteSystemIPLookup.key]: IPLookupsApi.deleteSystemIPLookup,
+    [IPLookupsApi.getSystemIPLookupById.key]: IPLookupsApi.getSystemIPLookupById,
+    [IPLookupsApi.getSystemIPLookups.key]: IPLookupsApi.getSystemIPLookups,
+    [IPLookupsApi.getSystemIPLookupsCount.key]: IPLookupsApi.getSystemIPLookupsCount,
     [LicensingApi.getLicenseAssignmentsAsync.key]: LicensingApi.getLicenseAssignmentsAsync,
     [LicensingApi.getLicenseAttributesAsync.key]: LicensingApi.getLicenseAttributesAsync,
     [LicensingApi.getLicenseByIdAsync.key]: LicensingApi.getLicenseByIdAsync,
@@ -51,6 +72,19 @@ const actions = {
     [OptionsApi.getSystemOptionsCount.key]: OptionsApi.getSystemOptionsCount,
     [OptionsApi.updateSystemOption.key]: OptionsApi.updateSystemOption,
     [OptionsApi.upsertSystemOption.key]: OptionsApi.upsertSystemOption,
+    [OverviewApi.getSystemOverview.key]: OverviewApi.getSystemOverview,
+    [PortalsApi.createSystemPortal.key]: PortalsApi.createSystemPortal,
+    [PortalsApi.deleteSystemPortal.key]: PortalsApi.deleteSystemPortal,
+    [PortalsApi.getSystemPortalById.key]: PortalsApi.getSystemPortalById,
+    [PortalsApi.getSystemPortals.key]: PortalsApi.getSystemPortals,
+    [PortalsApi.getSystemPortalsCount.key]: PortalsApi.getSystemPortalsCount,
+    [PortalsApi.updateSystemPortal.key]: PortalsApi.updateSystemPortal,
+    [TenantOptionsApi.createSystemTenantOption.key]: TenantOptionsApi.createSystemTenantOption,
+    [TenantOptionsApi.deleteSystemTenantOption.key]: TenantOptionsApi.deleteSystemTenantOption,
+    [TenantOptionsApi.getSystemTenantOptionById.key]: TenantOptionsApi.getSystemTenantOptionById,
+    [TenantOptionsApi.getSystemTenantOptions.key]: TenantOptionsApi.getSystemTenantOptions,
+    [TenantOptionsApi.getSystemTenantOptionsCount.key]: TenantOptionsApi.getSystemTenantOptionsCount,
+    [TenantOptionsApi.updateSystemTenantOption.key]: TenantOptionsApi.updateSystemTenantOption,
     [TenantsApi.adminPreviewTenantEmail.key]: TenantsApi.adminPreviewTenantEmail,
     [TenantsApi.adminSendTenantEmail.key]: TenantsApi.adminSendTenantEmail,
     [TenantsApi.createTenant.key]: TenantsApi.createTenant,
@@ -61,6 +95,12 @@ const actions = {
     [TenantsApi.getTenant.key]: TenantsApi.getTenant,
     [TenantsApi.getTenantsCount.key]: TenantsApi.getTenantsCount,
     [TenantsApi.updateTenant.key]: TenantsApi.updateTenant,
+    [UserOptionsApi.createSystemUserOption.key]: UserOptionsApi.createSystemUserOption,
+    [UserOptionsApi.deleteSystemUserOption.key]: UserOptionsApi.deleteSystemUserOption,
+    [UserOptionsApi.getSystemUserOptionById.key]: UserOptionsApi.getSystemUserOptionById,
+    [UserOptionsApi.getSystemUserOptions.key]: UserOptionsApi.getSystemUserOptions,
+    [UserOptionsApi.getSystemUserOptionsCount.key]: UserOptionsApi.getSystemUserOptionsCount,
+    [UserOptionsApi.updateSystemUserOption.key]: UserOptionsApi.updateSystemUserOption,
     [UsersApi.adminPreviewUserEmailTemplate.key]: UsersApi.adminPreviewUserEmailTemplate,
     [UsersApi.adminSendUserEmail.key]: UsersApi.adminSendUserEmail,
     [UsersApi.createAccountHolderAsync.key]: UsersApi.createAccountHolderAsync,

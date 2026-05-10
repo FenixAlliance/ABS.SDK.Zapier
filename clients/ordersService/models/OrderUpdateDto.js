@@ -5,6 +5,51 @@ module.exports = {
         const {keyPrefix, labelPrefix} = utils.buildKeyAndLabel(prefix, isInput, isArrayChild)
         return [
             {
+                key: `${keyPrefix}closed`,
+                label: `[${labelPrefix}closed]`,
+                type: 'boolean',
+            },
+            {
+                key: `${keyPrefix}title`,
+                label: `[${labelPrefix}title]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}userId`,
+                label: `[${labelPrefix}userId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}priceListId`,
+                label: `[${labelPrefix}priceListId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}description`,
+                label: `[${labelPrefix}description]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}individualId`,
+                label: `[${labelPrefix}individualId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}paymentTermId`,
+                label: `[${labelPrefix}paymentTermId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}organizationId`,
+                label: `[${labelPrefix}organizationId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}receiverTenantId`,
+                label: `[${labelPrefix}receiverTenantId]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}firstName`,
                 label: `[${labelPrefix}firstName]`,
                 type: 'string',
@@ -67,6 +112,16 @@ module.exports = {
             {
                 key: `${keyPrefix}shippingMethodId`,
                 label: `[${labelPrefix}shippingMethodId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}forexRate`,
+                label: `[${labelPrefix}forexRate]`,
+                type: 'number',
+            },
+            {
+                key: `${keyPrefix}currencyId`,
+                label: `[${labelPrefix}currencyId]`,
                 type: 'string',
             },
             {
@@ -213,31 +268,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}userId`,
-                label: `[${labelPrefix}userId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}forexRate`,
-                label: `[${labelPrefix}forexRate]`,
-                type: 'number',
-            },
-            {
-                key: `${keyPrefix}currencyId`,
-                label: `[${labelPrefix}currencyId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}individualId`,
-                label: `[${labelPrefix}individualId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}organizationId`,
-                label: `[${labelPrefix}organizationId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}totalAmountInUsd`,
                 label: `[${labelPrefix}totalAmountInUsd]`,
                 type: 'number',
@@ -246,26 +276,6 @@ module.exports = {
                 key: `${keyPrefix}totalTaxesInUsd`,
                 label: `[${labelPrefix}totalTaxesInUsd]`,
                 type: 'number',
-            },
-            {
-                key: `${keyPrefix}receiverTenantId`,
-                label: `[${labelPrefix}receiverTenantId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}closed`,
-                label: `[${labelPrefix}closed]`,
-                type: 'boolean',
-            },
-            {
-                key: `${keyPrefix}priceListId`,
-                label: `[${labelPrefix}priceListId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}paymentTermId`,
-                label: `[${labelPrefix}paymentTermId]`,
-                type: 'string',
             },
             {
                 key: `${keyPrefix}quoteStatus`,
@@ -282,21 +292,20 @@ module.exports = {
                 label: `[${labelPrefix}effectiveFrom]`,
                 type: 'string',
             },
-            {
-                key: `${keyPrefix}description`,
-                label: `[${labelPrefix}description]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}title`,
-                label: `[${labelPrefix}title]`,
-                type: 'string',
-            },
         ]
     },
     mapping: (bundle, prefix = '') => {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
+            'closed': bundle.inputData?.[`${keyPrefix}closed`],
+            'title': bundle.inputData?.[`${keyPrefix}title`],
+            'userId': bundle.inputData?.[`${keyPrefix}userId`],
+            'priceListId': bundle.inputData?.[`${keyPrefix}priceListId`],
+            'description': bundle.inputData?.[`${keyPrefix}description`],
+            'individualId': bundle.inputData?.[`${keyPrefix}individualId`],
+            'paymentTermId': bundle.inputData?.[`${keyPrefix}paymentTermId`],
+            'organizationId': bundle.inputData?.[`${keyPrefix}organizationId`],
+            'receiverTenantId': bundle.inputData?.[`${keyPrefix}receiverTenantId`],
             'firstName': bundle.inputData?.[`${keyPrefix}firstName`],
             'lastName': bundle.inputData?.[`${keyPrefix}lastName`],
             'companyName': bundle.inputData?.[`${keyPrefix}companyName`],
@@ -310,6 +319,8 @@ module.exports = {
             'billingLocationId': bundle.inputData?.[`${keyPrefix}billingLocationId`],
             'shippingLocationId': bundle.inputData?.[`${keyPrefix}shippingLocationId`],
             'shippingMethodId': bundle.inputData?.[`${keyPrefix}shippingMethodId`],
+            'forexRate': bundle.inputData?.[`${keyPrefix}forexRate`],
+            'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
             'totalDetail': bundle.inputData?.[`${keyPrefix}totalDetail`],
             'totalDetailCurrencyId': bundle.inputData?.[`${keyPrefix}totalDetailCurrencyId`],
             'totalProfit': bundle.inputData?.[`${keyPrefix}totalProfit`],
@@ -337,22 +348,11 @@ module.exports = {
             'costCalculationMethod': bundle.inputData?.[`${keyPrefix}costCalculationMethod`],
             'taxCalculationMethod': bundle.inputData?.[`${keyPrefix}taxCalculationMethod`],
             'cartId': bundle.inputData?.[`${keyPrefix}cartId`],
-            'userId': bundle.inputData?.[`${keyPrefix}userId`],
-            'forexRate': bundle.inputData?.[`${keyPrefix}forexRate`],
-            'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
-            'individualId': bundle.inputData?.[`${keyPrefix}individualId`],
-            'organizationId': bundle.inputData?.[`${keyPrefix}organizationId`],
             'totalAmountInUsd': bundle.inputData?.[`${keyPrefix}totalAmountInUsd`],
             'totalTaxesInUsd': bundle.inputData?.[`${keyPrefix}totalTaxesInUsd`],
-            'receiverTenantId': bundle.inputData?.[`${keyPrefix}receiverTenantId`],
-            'closed': bundle.inputData?.[`${keyPrefix}closed`],
-            'priceListId': bundle.inputData?.[`${keyPrefix}priceListId`],
-            'paymentTermId': bundle.inputData?.[`${keyPrefix}paymentTermId`],
             'quoteStatus': bundle.inputData?.[`${keyPrefix}quoteStatus`],
             'effectiveTo': bundle.inputData?.[`${keyPrefix}effectiveTo`],
             'effectiveFrom': bundle.inputData?.[`${keyPrefix}effectiveFrom`],
-            'description': bundle.inputData?.[`${keyPrefix}description`],
-            'title': bundle.inputData?.[`${keyPrefix}title`],
         }
     },
 }

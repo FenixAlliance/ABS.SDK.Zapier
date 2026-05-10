@@ -17,11 +17,9 @@ models/CountryDtoEnvelope.js
 models/CountrySwitchRequest.js
 models/CurrencyDto.js
 models/CurrencyDtoEnvelope.js
-models/CurrencyId.js
 models/CurrencySwitchRequest.js
 models/EmptyEnvelope.js
 models/ErrorEnvelope.js
-models/ForexRates.js
 models/ForgotPasswordRequest.js
 models/HttpValidationProblemDetails.js
 models/InfoRequest.js
@@ -35,7 +33,6 @@ models/ItemToCompareCartRecordDto.js
 models/ItemToCompareCartRecordDtoEnvelope.js
 models/ItemToCompareCartRecordDtoListEnvelope.js
 models/LoginRequest.js
-models/Money.js
 models/NewWishListRequest.js
 models/ProductToWishListRequest.js
 models/RefreshRequest.js

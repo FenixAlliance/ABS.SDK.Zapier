@@ -148,6 +148,11 @@ module.exports = {
                 type: 'number',
             },
             {
+                key: `${keyPrefix}forexRatesSnapshot`,
+                label: `[${labelPrefix}forexRatesSnapshot]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}currencyId`,
                 label: `[${labelPrefix}currencyId]`,
                 type: 'string',
@@ -457,6 +462,7 @@ module.exports = {
             'taxCalculationMethod': bundle.inputData?.[`${keyPrefix}taxCalculationMethod`],
             'costCalculationMethod': bundle.inputData?.[`${keyPrefix}costCalculationMethod`],
             'forexRate': bundle.inputData?.[`${keyPrefix}forexRate`],
+            'forexRatesSnapshot': bundle.inputData?.[`${keyPrefix}forexRatesSnapshot`],
             'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
             'totalDetail': bundle.inputData?.[`${keyPrefix}totalDetail`],
             'totalDetailCurrencyId': bundle.inputData?.[`${keyPrefix}totalDetailCurrencyId`],

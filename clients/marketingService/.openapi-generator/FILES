@@ -4,6 +4,7 @@ apis/EmailSignaturesApi.js
 apis/EmailTemplatesApi.js
 apis/FenixAllianceABSWebApi.js
 apis/MarketingCampaignsApi.js
+apis/MarketingLeadsApi.js
 apis/MarketingListsApi.js
 apis/NewslettersApi.js
 apis/SocialMediaPostsApi.js
@@ -39,6 +40,11 @@ models/MarketingCampaignCreateDto.js
 models/MarketingCampaignDto.js
 models/MarketingCampaignDtoEnvelope.js
 models/MarketingCampaignUpdateDto.js
+models/MarketingLeadCreateDto.js
+models/MarketingLeadDto.js
+models/MarketingLeadDtoEnvelope.js
+models/MarketingLeadDtoListEnvelope.js
+models/MarketingLeadUpdateDto.js
 models/MarketingListCreateDto.js
 models/MarketingListDto.js
 models/MarketingListDtoEnvelope.js
@@ -68,5 +74,5 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/FenixAllianceABSWebApi.js
+samples/MarketingLeadsApi.js
 utils/utils.js

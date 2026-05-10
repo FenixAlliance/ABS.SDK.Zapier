@@ -3,6 +3,7 @@ apis/AccountGroupsApi.js
 apis/AccountingPeriodsApi.js
 apis/AccountsApi.js
 apis/BankingApi.js
+apis/BillableLineTaxesApi.js
 apis/BillingProfilesApi.js
 apis/BudgetsApi.js
 apis/CommissionsApi.js
@@ -61,6 +62,10 @@ models/AccountingPeriodDto.js
 models/AccountingPeriodDtoEnvelope.js
 models/AccountingPeriodDtoListEnvelope.js
 models/AccountingPeriodUpdateDto.js
+models/AppliedItemTaxRecordCreateDto.js
+models/AppliedItemTaxRecordDto.js
+models/AppliedItemTaxRecordDtoIReadOnlyListEnvelope.js
+models/AppliedItemTaxRecordUpdateDto.js
 models/AppliedTaxPolicyRecordCreateDto.js
 models/AppliedTaxPolicyRecordDto.js
 models/AppliedTaxPolicyRecordDtoEnvelope.js
@@ -278,5 +283,5 @@ models/TwoFactorResponse.js
 models/UpdateLedgerDto.js
 operations/actions.js
 package.json
-samples/FenixAllianceABSWebApi.js
+samples/BillableLineTaxesApi.js
 utils/utils.js

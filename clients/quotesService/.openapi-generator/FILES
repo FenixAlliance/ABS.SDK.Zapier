@@ -6,20 +6,17 @@ index.js
 models/AccessTokenResponse.js
 models/BooleanEnvelope.js
 models/ContactDto.js
-models/CurrencyId.js
 models/EmailDispatchRequest.js
 models/EmptyEnvelope.js
 models/ErrorEnvelope.js
 models/ExtendedQuoteDto.js
 models/ExtendedQuoteDtoListEnvelope.js
-models/ForexRates.js
 models/ForgotPasswordRequest.js
 models/HttpValidationProblemDetails.js
 models/InfoRequest.js
 models/InfoResponse.js
 models/Int32Envelope.js
 models/LoginRequest.js
-models/Money.js
 models/QuoteCreateDto.js
 models/QuoteDto.js
 models/QuoteDtoEnvelope.js
@@ -42,5 +39,4 @@ models/TwoFactorResponse.js
 models/UserDto.js
 operations/actions.js
 package.json
-samples/FenixAllianceABSWebApi.js
 utils/utils.js

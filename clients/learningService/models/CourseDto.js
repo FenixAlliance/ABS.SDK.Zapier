@@ -834,6 +834,76 @@ module.exports = {
                 list: true,
                 type: 'string',
             },
+            {
+                key: `${keyPrefix}code`,
+                label: `[${labelPrefix}code]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}version`,
+                label: `[${labelPrefix}version]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}courseCategoryID`,
+                label: `[${labelPrefix}courseCategoryID]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}courseCategoryName`,
+                label: `[${labelPrefix}courseCategoryName]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}instructorProfileID`,
+                label: `[${labelPrefix}instructorProfileID]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}instructorProfileName`,
+                label: `[${labelPrefix}instructorProfileName]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}maxCourseEnrollments`,
+                label: `[${labelPrefix}maxCourseEnrollments]`,
+                type: 'integer',
+            },
+            {
+                key: `${keyPrefix}totalEffortInWeeks`,
+                label: `[${labelPrefix}totalEffortInWeeks]`,
+                type: 'integer',
+            },
+            {
+                key: `${keyPrefix}totalHoursPerWeek`,
+                label: `[${labelPrefix}totalHoursPerWeek]`,
+                type: 'integer',
+            },
+            {
+                key: `${keyPrefix}totalEffortInHours`,
+                label: `[${labelPrefix}totalEffortInHours]`,
+                type: 'integer',
+            },
+            {
+                key: `${keyPrefix}startDateTime`,
+                label: `[${labelPrefix}startDateTime]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}endDateTime`,
+                label: `[${labelPrefix}endDateTime]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}inscriptionsStartDateTime`,
+                label: `[${labelPrefix}inscriptionsStartDateTime]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}inscriptionsEndDateTime`,
+                label: `[${labelPrefix}inscriptionsEndDateTime]`,
+                type: 'string',
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -1002,6 +1072,20 @@ module.exports = {
             'selectedShipmentPolicies': bundle.inputData?.[`${keyPrefix}selectedShipmentPolicies`],
             'selectedAttributesOptions': bundle.inputData?.[`${keyPrefix}selectedAttributesOptions`],
             'selectedSellingMarginPolicies': bundle.inputData?.[`${keyPrefix}selectedSellingMarginPolicies`],
+            'code': bundle.inputData?.[`${keyPrefix}code`],
+            'version': bundle.inputData?.[`${keyPrefix}version`],
+            'courseCategoryID': bundle.inputData?.[`${keyPrefix}courseCategoryID`],
+            'courseCategoryName': bundle.inputData?.[`${keyPrefix}courseCategoryName`],
+            'instructorProfileID': bundle.inputData?.[`${keyPrefix}instructorProfileID`],
+            'instructorProfileName': bundle.inputData?.[`${keyPrefix}instructorProfileName`],
+            'maxCourseEnrollments': bundle.inputData?.[`${keyPrefix}maxCourseEnrollments`],
+            'totalEffortInWeeks': bundle.inputData?.[`${keyPrefix}totalEffortInWeeks`],
+            'totalHoursPerWeek': bundle.inputData?.[`${keyPrefix}totalHoursPerWeek`],
+            'totalEffortInHours': bundle.inputData?.[`${keyPrefix}totalEffortInHours`],
+            'startDateTime': bundle.inputData?.[`${keyPrefix}startDateTime`],
+            'endDateTime': bundle.inputData?.[`${keyPrefix}endDateTime`],
+            'inscriptionsStartDateTime': bundle.inputData?.[`${keyPrefix}inscriptionsStartDateTime`],
+            'inscriptionsEndDateTime': bundle.inputData?.[`${keyPrefix}inscriptionsEndDateTime`],
         }
     },
 }

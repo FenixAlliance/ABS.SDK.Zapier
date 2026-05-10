@@ -10,6 +10,11 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}timestamp`,
+                label: `[${labelPrefix}timestamp]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}trackingCode`,
                 label: `[${labelPrefix}trackingCode]`,
                 type: 'string',
@@ -17,6 +22,16 @@ module.exports = {
             {
                 key: `${keyPrefix}isInternational`,
                 label: `[${labelPrefix}isInternational]`,
+                type: 'boolean',
+            },
+            {
+                key: `${keyPrefix}shipped`,
+                label: `[${labelPrefix}shipped]`,
+                type: 'boolean',
+            },
+            {
+                key: `${keyPrefix}delivered`,
+                label: `[${labelPrefix}delivered]`,
                 type: 'boolean',
             },
             {
@@ -39,18 +54,53 @@ module.exports = {
                 label: `[${labelPrefix}expectedDeliveryDate]`,
                 type: 'string',
             },
+            {
+                key: `${keyPrefix}shippingTerms`,
+                label: `[${labelPrefix}shippingTerms]`,
+                type: 'string',
+                choices: [
+                    'NC',
+                    'EXW',
+                    'FCA',
+                    'FOB',
+                    'FAS',
+                    'CFR',
+                    'CIF',
+                    'CPT',
+                    'CIP',
+                    'DDP',
+                    'DAP',
+                    'DPU',
+                ],
+            },
+            {
+                key: `${keyPrefix}orderID`,
+                label: `[${labelPrefix}orderID]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}businessID`,
+                label: `[${labelPrefix}businessID]`,
+                type: 'string',
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
+            'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'trackingCode': bundle.inputData?.[`${keyPrefix}trackingCode`],
             'isInternational': bundle.inputData?.[`${keyPrefix}isInternational`],
+            'shipped': bundle.inputData?.[`${keyPrefix}shipped`],
+            'delivered': bundle.inputData?.[`${keyPrefix}delivered`],
             'shipmentTimestamp': bundle.inputData?.[`${keyPrefix}shipmentTimestamp`],
             'deliveryTimestamp': bundle.inputData?.[`${keyPrefix}deliveryTimestamp`],
             'expectedShippingDate': bundle.inputData?.[`${keyPrefix}expectedShippingDate`],
             'expectedDeliveryDate': bundle.inputData?.[`${keyPrefix}expectedDeliveryDate`],
+            'shippingTerms': bundle.inputData?.[`${keyPrefix}shippingTerms`],
+            'orderID': bundle.inputData?.[`${keyPrefix}orderID`],
+            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
         }
     },
 }
