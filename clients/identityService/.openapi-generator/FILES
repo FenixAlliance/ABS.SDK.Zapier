@@ -8,7 +8,7 @@ apis/UserInfoApi.js
 authentication.js
 index.js
 models/AccessTokenResponse.js
-models/AuthorizationResult.js
+models/AuthResult.js
 models/AuthorizationResultEnvelope.js
 models/ErrorEnvelope.js
 models/ForgotPasswordRequest.js

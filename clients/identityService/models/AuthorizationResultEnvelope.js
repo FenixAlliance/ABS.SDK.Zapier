@@ -1,5 +1,5 @@
 const utils = require('../utils/utils');
-const AuthorizationResult = require('../models/AuthorizationResult');
+const AuthResult = require('../models/AuthResult');
 
 module.exports = {
     fields: (prefix = '', isInput = true, isArrayChild = false) => {
@@ -30,7 +30,7 @@ module.exports = {
                 label: `[${labelPrefix}activityId]`,
                 type: 'string',
             },
-            ...AuthorizationResult.fields(`${keyPrefix}result`, isInput),
+            ...AuthResult.fields(`${keyPrefix}result`, isInput),
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -41,7 +41,7 @@ module.exports = {
             'correlationId': bundle.inputData?.[`${keyPrefix}correlationId`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'activityId': bundle.inputData?.[`${keyPrefix}activityId`],
-            'result': utils.removeIfEmpty(AuthorizationResult.mapping(bundle, `${keyPrefix}result`)),
+            'result': utils.removeIfEmpty(AuthResult.mapping(bundle, `${keyPrefix}result`)),
         }
     },
 }
