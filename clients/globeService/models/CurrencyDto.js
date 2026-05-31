@@ -11,6 +11,11 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}timestamp`,
+                label: `[${labelPrefix}timestamp]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}code`,
                 label: `[${labelPrefix}code]`,
                 type: 'string',
@@ -32,6 +37,7 @@ module.exports = {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
+            'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'code': bundle.inputData?.[`${keyPrefix}code`],
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'symbol': bundle.inputData?.[`${keyPrefix}symbol`],

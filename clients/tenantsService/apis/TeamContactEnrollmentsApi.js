@@ -42,7 +42,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/TenantsService/TeamContactEnrollments'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/TenantsService/TeamContactEnrollments'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -104,7 +104,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/TenantsService/TeamContactEnrollments/{tenantTeamContactEnrollmentId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/TenantsService/TeamContactEnrollments/{tenantTeamContactEnrollmentId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -165,7 +165,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/TenantsService/TeamContactEnrollments/{tenantTeamContactEnrollmentId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/TenantsService/TeamContactEnrollments/{tenantTeamContactEnrollmentId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -220,7 +220,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/TenantsService/TeamContactEnrollments'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/TenantsService/TeamContactEnrollments'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -275,7 +275,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/TenantsService/TeamContactEnrollments/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/TenantsService/TeamContactEnrollments/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -337,7 +337,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/TenantsService/TeamContactEnrollments/{tenantTeamContactEnrollmentId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/TenantsService/TeamContactEnrollments/{tenantTeamContactEnrollmentId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

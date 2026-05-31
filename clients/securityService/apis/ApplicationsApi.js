@@ -6,6 +6,8 @@ const BusinessApplicationUpdateDto = require('../models/BusinessApplicationUpdat
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
+const SecurityPermissionDtoListEnvelope = require('../models/SecurityPermissionDtoListEnvelope');
+const SecurityRoleDtoListEnvelope = require('../models/SecurityRoleDtoListEnvelope');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -42,7 +44,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/Applications'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/Applications'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -104,7 +106,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/Applications/{applicationId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/Applications/{applicationId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -165,7 +167,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/Applications/{applicationId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/Applications/{applicationId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -220,7 +222,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/Applications'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/Applications'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -275,7 +277,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/Applications/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/Applications/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -296,6 +298,128 @@ module.exports = {
                 })
             },
             sample: samples['Int32EnvelopeSample']
+        }
+    },
+    getPermissionsByApplicationAsync: {
+        key: 'getPermissionsByApplicationAsync',
+        noun: 'Applications',
+        display: {
+            label: 'Get permissions by application',
+            description: 'Retrieves all security permissions granted to a specific business application.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'applicationId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...SecurityPermissionDtoListEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/Applications/{applicationId}/Permissions'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getPermissionsByApplicationAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['SecurityPermissionDtoListEnvelopeSample']
+        }
+    },
+    getRolesByApplicationAsync: {
+        key: 'getRolesByApplicationAsync',
+        noun: 'Applications',
+        display: {
+            label: 'Get roles by application',
+            description: 'Retrieves all security roles granted to a specific business application.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'applicationId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...SecurityRoleDtoListEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/Applications/{applicationId}/Roles'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getRolesByApplicationAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['SecurityRoleDtoListEnvelopeSample']
         }
     },
     updateBusinessApplicationAsync: {
@@ -337,7 +461,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/Applications/{applicationId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/Applications/{applicationId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

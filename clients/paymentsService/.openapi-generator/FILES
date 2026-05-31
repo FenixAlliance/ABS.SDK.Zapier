@@ -1,5 +1,6 @@
 README.md
-apis/FenixAllianceABSWebApi.js
+apis/CompletionsApi.js
+apis/FenixAlliancePortalsWebsiteApi.js
 apis/PaymentMethodsApi.js
 apis/PaymentModesApi.js
 apis/PaymentTermsApi.js
@@ -42,4 +43,6 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
+samples/CompletionsApi.js
+samples/FenixAlliancePortalsWebsiteApi.js
 utils/utils.js

@@ -39,7 +39,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/BlogPostAuthors/{authorId}/BlogPosts/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/BlogPostAuthors/{authorId}/BlogPosts/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -93,7 +93,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/BlogPostAuthors/{authorId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/BlogPostAuthors/{authorId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -146,7 +146,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/BlogPostAuthors'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/BlogPostAuthors'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -201,7 +201,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/BlogPostAuthors/{authorId}/BlogPosts'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/BlogPostAuthors/{authorId}/BlogPosts'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

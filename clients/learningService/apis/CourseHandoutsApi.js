@@ -39,7 +39,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseHandouts'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseHandouts'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -100,7 +100,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseHandouts/{handoutId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseHandouts/{handoutId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -155,7 +155,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseHandouts/{handoutId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseHandouts/{handoutId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -208,7 +208,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseHandouts'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseHandouts'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -262,7 +262,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseHandouts/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseHandouts/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -324,7 +324,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseHandouts/{handoutId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseHandouts/{handoutId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

@@ -2,6 +2,7 @@ const samples = require('../samples/EmployeesApi');
 const EmployeeProfileCreateDto = require('../models/EmployeeProfileCreateDto');
 const EmployeeProfileDtoEnvelope = require('../models/EmployeeProfileDtoEnvelope');
 const EmployeeProfileDtoListEnvelope = require('../models/EmployeeProfileDtoListEnvelope');
+const EmployeeProfileUpdateDto = require('../models/EmployeeProfileUpdateDto');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
@@ -41,7 +42,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/Employees'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/Employees'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -103,7 +104,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/Employees/{employeeId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/Employees/{employeeId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -164,7 +165,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/Employees/{employeeId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/Employees/{employeeId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -219,7 +220,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/Employees'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/Employees'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -274,7 +275,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/Employees/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/Employees/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -329,18 +330,14 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
-                {
-                    key: 'body',
-                    label: '',
-                    type: 'object',
-                },
+                ...EmployeeProfileUpdateDto.fields(),
             ],
             outputFields: [
                 ...EmptyEnvelope.fields('', false),
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/Employees/{employeeId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/Employees/{employeeId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -352,7 +349,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        'body': bundle.inputData?.['body'],
+                        ...EmployeeProfileUpdateDto.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

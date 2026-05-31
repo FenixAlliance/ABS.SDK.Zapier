@@ -1,8 +1,10 @@
 README.md
+apis/CompletionsApi.js
 apis/EmailGroupsApi.js
 apis/EmailSignaturesApi.js
 apis/EmailTemplatesApi.js
-apis/FenixAllianceABSWebApi.js
+apis/FenixAlliancePortalsWebsiteApi.js
+apis/MarketingAreasApi.js
 apis/MarketingCampaignsApi.js
 apis/MarketingLeadsApi.js
 apis/MarketingListsApi.js
@@ -36,6 +38,11 @@ models/InfoRequest.js
 models/InfoResponse.js
 models/Int32Envelope.js
 models/LoginRequest.js
+models/MarketingAreaCreateDto.js
+models/MarketingAreaDto.js
+models/MarketingAreaDtoEnvelope.js
+models/MarketingAreaDtoListEnvelope.js
+models/MarketingAreaUpdateDto.js
 models/MarketingCampaignCreateDto.js
 models/MarketingCampaignDto.js
 models/MarketingCampaignDtoEnvelope.js
@@ -74,5 +81,7 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/MarketingLeadsApi.js
+samples/CompletionsApi.js
+samples/FenixAlliancePortalsWebsiteApi.js
+samples/MarketingAreasApi.js
 utils/utils.js

@@ -42,7 +42,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SupportService/SupportEntitlements'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SupportService/SupportEntitlements'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -104,7 +104,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SupportService/SupportEntitlements/{supportEntitlementId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SupportService/SupportEntitlements/{supportEntitlementId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -165,7 +165,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SupportService/SupportEntitlements/{supportEntitlementId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SupportService/SupportEntitlements/{supportEntitlementId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -220,7 +220,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SupportService/SupportEntitlements'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SupportService/SupportEntitlements'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -275,7 +275,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SupportService/SupportEntitlements/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SupportService/SupportEntitlements/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -337,7 +337,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SupportService/SupportEntitlements/{supportEntitlementId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SupportService/SupportEntitlements/{supportEntitlementId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

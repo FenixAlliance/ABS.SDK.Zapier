@@ -1,4 +1,5 @@
 const utils = require('../utils/utils');
+const ContactDto = require('../models/ContactDto');
 
 module.exports = {
     fields: (prefix = '', isInput = true, isArrayChild = false) => {
@@ -15,9 +16,24 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}authorized`,
-                label: `[${labelPrefix}authorized]`,
-                type: 'boolean',
+                key: `${keyPrefix}contactId`,
+                label: `[${labelPrefix}contactId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}type`,
+                label: `[${labelPrefix}type]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
+                type: 'string',
             },
             {
                 key: `${keyPrefix}about`,
@@ -39,6 +55,7 @@ module.exports = {
                 label: `[${labelPrefix}avatarUrl]`,
                 type: 'string',
             },
+            ...ContactDto.fields(`${keyPrefix}contact`, isInput),
             {
                 key: `${keyPrefix}qualifiedName`,
                 label: `[${labelPrefix}qualifiedName]`,
@@ -150,6 +167,11 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}authorized`,
+                label: `[${labelPrefix}authorized]`,
+                type: 'boolean',
+            },
+            {
                 key: `${keyPrefix}businessID`,
                 label: `[${labelPrefix}businessID]`,
                 type: 'string',
@@ -171,11 +193,15 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
-            'authorized': bundle.inputData?.[`${keyPrefix}authorized`],
+            'contactId': bundle.inputData?.[`${keyPrefix}contactId`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'type': bundle.inputData?.[`${keyPrefix}type`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'about': bundle.inputData?.[`${keyPrefix}about`],
             'verified': bundle.inputData?.[`${keyPrefix}verified`],
             'submitted': bundle.inputData?.[`${keyPrefix}submitted`],
             'avatarUrl': bundle.inputData?.[`${keyPrefix}avatarUrl`],
+            'contact': utils.removeIfEmpty(ContactDto.mapping(bundle, `${keyPrefix}contact`)),
             'qualifiedName': bundle.inputData?.[`${keyPrefix}qualifiedName`],
             'verificationTimestamp': bundle.inputData?.[`${keyPrefix}verificationTimestamp`],
             'data': bundle.inputData?.[`${keyPrefix}data`],
@@ -198,6 +224,7 @@ module.exports = {
             'data8Label': bundle.inputData?.[`${keyPrefix}data8Label`],
             'data9': bundle.inputData?.[`${keyPrefix}data9`],
             'data9Label': bundle.inputData?.[`${keyPrefix}data9Label`],
+            'authorized': bundle.inputData?.[`${keyPrefix}authorized`],
             'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
             'contactID': bundle.inputData?.[`${keyPrefix}contactID`],
             'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],

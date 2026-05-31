@@ -1,3 +1,4 @@
+const CompletionsApi = require('../apis/CompletionsApi');
 const CourseArticlesApi = require('../apis/CourseArticlesApi');
 const CourseAssignmentComponentsApi = require('../apis/CourseAssignmentComponentsApi');
 const CourseAssignmentTypesApi = require('../apis/CourseAssignmentTypesApi');
@@ -21,13 +22,14 @@ const CourseUnitsApi = require('../apis/CourseUnitsApi');
 const CourseUpdatesApi = require('../apis/CourseUpdatesApi');
 const CourseWikisApi = require('../apis/CourseWikisApi');
 const CoursesApi = require('../apis/CoursesApi');
-const FenixAllianceABSWebApi = require('../apis/FenixAllianceABSWebApi');
+const FenixAlliancePortalsWebsiteApi = require('../apis/FenixAlliancePortalsWebsiteApi');
 const InstructorProfilesApi = require('../apis/InstructorProfilesApi');
 const MeApi = require('../apis/MeApi');
 const StudentProfilesApi = require('../apis/StudentProfilesApi');
 const { triggerMiddleware, isTrigger, searchMiddleware, hasSearchRequisites, isSearchAction, isCreateAction } = require('../utils/utils');
 
 const actions = {
+    [CompletionsApi.apiV2AiServiceCompletionsCompleteGet.key]: CompletionsApi.apiV2AiServiceCompletionsCompleteGet,
     [CourseArticlesApi.createCourseArticleAsync.key]: CourseArticlesApi.createCourseArticleAsync,
     [CourseArticlesApi.deleteCourseArticleAsync.key]: CourseArticlesApi.deleteCourseArticleAsync,
     [CourseArticlesApi.getCourseArticleByIdAsync.key]: CourseArticlesApi.getCourseArticleByIdAsync,
@@ -65,9 +67,11 @@ const actions = {
     [CourseCertificatesApi.getCourseCertificateAsync.key]: CourseCertificatesApi.getCourseCertificateAsync,
     [CourseCertificatesApi.getCourseCertificateTemplateAsync.key]: CourseCertificatesApi.getCourseCertificateTemplateAsync,
     [CourseCertificatesApi.getCourseCertificateTemplatesAsync.key]: CourseCertificatesApi.getCourseCertificateTemplatesAsync,
+    [CourseCertificatesApi.getCourseCertificateTemplatesCountAsync.key]: CourseCertificatesApi.getCourseCertificateTemplatesCountAsync,
     [CourseCertificatesApi.getCourseCertificatesAsync.key]: CourseCertificatesApi.getCourseCertificatesAsync,
     [CourseCertificatesApi.getCourseCertificatesCountAsync.key]: CourseCertificatesApi.getCourseCertificatesCountAsync,
     [CourseCertificatesApi.updateCourseCertificateAsync.key]: CourseCertificatesApi.updateCourseCertificateAsync,
+    [CourseCertificatesApi.updateCourseCertificateTemplateAsync.key]: CourseCertificatesApi.updateCourseCertificateTemplateAsync,
     [CourseCohortsApi.createCourseCohortAsync.key]: CourseCohortsApi.createCourseCohortAsync,
     [CourseCohortsApi.deleteCourseCohortAsync.key]: CourseCohortsApi.deleteCourseCohortAsync,
     [CourseCohortsApi.getCourseCohortByIdAsync.key]: CourseCohortsApi.getCourseCohortByIdAsync,
@@ -208,23 +212,23 @@ const actions = {
     [CoursesApi.getStudentProfilesByCourseAsync.key]: CoursesApi.getStudentProfilesByCourseAsync,
     [CoursesApi.getStudentProfilesByCourseCountAsync.key]: CoursesApi.getStudentProfilesByCourseCountAsync,
     [CoursesApi.updateCourseAsync.key]: CoursesApi.updateCourseAsync,
-    [FenixAllianceABSWebApi.accountLogoutPost.key]: FenixAllianceABSWebApi.accountLogoutPost,
-    [FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost.key]: FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost,
-    [FenixAllianceABSWebApi.accountManageLinkExternalLoginPost.key]: FenixAllianceABSWebApi.accountManageLinkExternalLoginPost,
-    [FenixAllianceABSWebApi.accountPerformExternalLoginPost.key]: FenixAllianceABSWebApi.accountPerformExternalLoginPost,
-    [FenixAllianceABSWebApi.forgotPasswordPost.key]: FenixAllianceABSWebApi.forgotPasswordPost,
-    [FenixAllianceABSWebApi.healthGet.key]: FenixAllianceABSWebApi.healthGet,
-    [FenixAllianceABSWebApi.helloGet.key]: FenixAllianceABSWebApi.helloGet,
-    [FenixAllianceABSWebApi.loginPost.key]: FenixAllianceABSWebApi.loginPost,
-    [FenixAllianceABSWebApi.manage2faPost.key]: FenixAllianceABSWebApi.manage2faPost,
-    [FenixAllianceABSWebApi.manageInfoGet.key]: FenixAllianceABSWebApi.manageInfoGet,
-    [FenixAllianceABSWebApi.manageInfoPost.key]: FenixAllianceABSWebApi.manageInfoPost,
-    [FenixAllianceABSWebApi.mapIdentityApi/confirmEmail.key]: FenixAllianceABSWebApi.mapIdentityApi/confirmEmail,
-    [FenixAllianceABSWebApi.refreshPost.key]: FenixAllianceABSWebApi.refreshPost,
-    [FenixAllianceABSWebApi.registerPost.key]: FenixAllianceABSWebApi.registerPost,
-    [FenixAllianceABSWebApi.resendConfirmationEmailPost.key]: FenixAllianceABSWebApi.resendConfirmationEmailPost,
-    [FenixAllianceABSWebApi.resetPasswordPost.key]: FenixAllianceABSWebApi.resetPasswordPost,
-    [FenixAllianceABSWebApi.versionGet.key]: FenixAllianceABSWebApi.versionGet,
+    [FenixAlliancePortalsWebsiteApi.accountLogoutPost.key]: FenixAlliancePortalsWebsiteApi.accountLogoutPost,
+    [FenixAlliancePortalsWebsiteApi.accountManageDownloadPersonalDataPost.key]: FenixAlliancePortalsWebsiteApi.accountManageDownloadPersonalDataPost,
+    [FenixAlliancePortalsWebsiteApi.accountManageLinkExternalLoginPost.key]: FenixAlliancePortalsWebsiteApi.accountManageLinkExternalLoginPost,
+    [FenixAlliancePortalsWebsiteApi.accountPerformExternalLoginPost.key]: FenixAlliancePortalsWebsiteApi.accountPerformExternalLoginPost,
+    [FenixAlliancePortalsWebsiteApi.forgotPasswordPost.key]: FenixAlliancePortalsWebsiteApi.forgotPasswordPost,
+    [FenixAlliancePortalsWebsiteApi.healthGet.key]: FenixAlliancePortalsWebsiteApi.healthGet,
+    [FenixAlliancePortalsWebsiteApi.helloGet.key]: FenixAlliancePortalsWebsiteApi.helloGet,
+    [FenixAlliancePortalsWebsiteApi.loginPost.key]: FenixAlliancePortalsWebsiteApi.loginPost,
+    [FenixAlliancePortalsWebsiteApi.manage2faPost.key]: FenixAlliancePortalsWebsiteApi.manage2faPost,
+    [FenixAlliancePortalsWebsiteApi.manageInfoGet.key]: FenixAlliancePortalsWebsiteApi.manageInfoGet,
+    [FenixAlliancePortalsWebsiteApi.manageInfoPost.key]: FenixAlliancePortalsWebsiteApi.manageInfoPost,
+    [FenixAlliancePortalsWebsiteApi.mapIdentityApi/confirmEmail.key]: FenixAlliancePortalsWebsiteApi.mapIdentityApi/confirmEmail,
+    [FenixAlliancePortalsWebsiteApi.refreshPost.key]: FenixAlliancePortalsWebsiteApi.refreshPost,
+    [FenixAlliancePortalsWebsiteApi.registerPost.key]: FenixAlliancePortalsWebsiteApi.registerPost,
+    [FenixAlliancePortalsWebsiteApi.resendConfirmationEmailPost.key]: FenixAlliancePortalsWebsiteApi.resendConfirmationEmailPost,
+    [FenixAlliancePortalsWebsiteApi.resetPasswordPost.key]: FenixAlliancePortalsWebsiteApi.resetPasswordPost,
+    [FenixAlliancePortalsWebsiteApi.versionGet.key]: FenixAlliancePortalsWebsiteApi.versionGet,
     [InstructorProfilesApi.apiV2LearningServiceInstructorProfilesCountGet.key]: InstructorProfilesApi.apiV2LearningServiceInstructorProfilesCountGet,
     [InstructorProfilesApi.apiV2LearningServiceInstructorProfilesGet.key]: InstructorProfilesApi.apiV2LearningServiceInstructorProfilesGet,
     [InstructorProfilesApi.apiV2LearningServiceInstructorProfilesInstructorProfileIdDelete.key]: InstructorProfilesApi.apiV2LearningServiceInstructorProfilesInstructorProfileIdDelete,

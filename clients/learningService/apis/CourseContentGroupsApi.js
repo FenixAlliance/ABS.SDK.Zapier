@@ -38,7 +38,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseContentGroups'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseContentGroups'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -99,7 +99,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseContentGroups/{groupId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseContentGroups/{groupId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -154,7 +154,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseContentGroups/{groupId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseContentGroups/{groupId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -207,7 +207,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseContentGroups'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseContentGroups'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -261,7 +261,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/Courses/{courseId}/ContentGroups'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/Courses/{courseId}/ContentGroups'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -314,7 +314,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/Courses/{courseId}/ContentGroups/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/Courses/{courseId}/ContentGroups/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -367,7 +367,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseContentGroups/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseContentGroups/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -428,7 +428,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseContentGroups/{groupId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseContentGroups/{groupId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

@@ -42,7 +42,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Fiscals/Authorities/FiscalRegimes'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Fiscals/Authorities/FiscalRegimes'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -104,7 +104,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Fiscals/Authorities/FiscalRegimes/{regimeId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Fiscals/Authorities/FiscalRegimes/{regimeId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -171,7 +171,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Fiscals/Authorities/{fiscalAuthorityId}/FiscalRegimes/{regimeId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Fiscals/Authorities/{fiscalAuthorityId}/FiscalRegimes/{regimeId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -205,6 +205,12 @@ module.exports = {
         operation: {
             inputFields: [
                 {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
                     key: 'fiscalAuthorityId',
                     label: '',
                     type: 'string',
@@ -232,7 +238,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Fiscals/Authorities/{authorityId}/FiscalRegimes'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Fiscals/Authorities/{authorityId}/FiscalRegimes'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -240,6 +246,7 @@ module.exports = {
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
                         'fiscalAuthorityId': bundle.inputData?.['fiscalAuthorityId'],
                         'api-version': bundle.inputData?.['api-version'],
                     },
@@ -266,6 +273,12 @@ module.exports = {
         operation: {
             inputFields: [
                 {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
                     key: 'fiscalAuthorityId',
                     label: '',
                     type: 'string',
@@ -287,7 +300,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Fiscals/Authorities/{fiscalAuthorityId}/FiscalRegimes/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Fiscals/Authorities/{fiscalAuthorityId}/FiscalRegimes/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -295,6 +308,7 @@ module.exports = {
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
@@ -348,7 +362,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Fiscals/Authorities/FiscalRegimes/{regimeId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Fiscals/Authorities/FiscalRegimes/{regimeId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

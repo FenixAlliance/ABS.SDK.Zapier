@@ -3,7 +3,8 @@ const BlogPostCategoriesApi = require('../apis/BlogPostCategoriesApi');
 const BlogPostTagsApi = require('../apis/BlogPostTagsApi');
 const BlogPostsApi = require('../apis/BlogPostsApi');
 const BusinessDomainsApi = require('../apis/BusinessDomainsApi');
-const FenixAllianceABSWebApi = require('../apis/FenixAllianceABSWebApi');
+const CompletionsApi = require('../apis/CompletionsApi');
+const FenixAlliancePortalsWebsiteApi = require('../apis/FenixAlliancePortalsWebsiteApi');
 const PortalsApi = require('../apis/PortalsApi');
 const ThemesApi = require('../apis/ThemesApi');
 const WebContentsApi = require('../apis/WebContentsApi');
@@ -11,6 +12,7 @@ const WebPageCategoriesApi = require('../apis/WebPageCategoriesApi');
 const WebPageTagsApi = require('../apis/WebPageTagsApi');
 const WebPagesApi = require('../apis/WebPagesApi');
 const WebTemplatesApi = require('../apis/WebTemplatesApi');
+const WebsiteThemesApi = require('../apis/WebsiteThemesApi');
 const { triggerMiddleware, isTrigger, searchMiddleware, hasSearchRequisites, isSearchAction, isCreateAction } = require('../utils/utils');
 
 const actions = {
@@ -52,23 +54,24 @@ const actions = {
     [BusinessDomainsApi.getBusinessDomainByIdAsync.key]: BusinessDomainsApi.getBusinessDomainByIdAsync,
     [BusinessDomainsApi.getBusinessDomainsAsync.key]: BusinessDomainsApi.getBusinessDomainsAsync,
     [BusinessDomainsApi.getBusinessDomainsCountAsync.key]: BusinessDomainsApi.getBusinessDomainsCountAsync,
-    [FenixAllianceABSWebApi.accountLogoutPost.key]: FenixAllianceABSWebApi.accountLogoutPost,
-    [FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost.key]: FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost,
-    [FenixAllianceABSWebApi.accountManageLinkExternalLoginPost.key]: FenixAllianceABSWebApi.accountManageLinkExternalLoginPost,
-    [FenixAllianceABSWebApi.accountPerformExternalLoginPost.key]: FenixAllianceABSWebApi.accountPerformExternalLoginPost,
-    [FenixAllianceABSWebApi.forgotPasswordPost.key]: FenixAllianceABSWebApi.forgotPasswordPost,
-    [FenixAllianceABSWebApi.healthGet.key]: FenixAllianceABSWebApi.healthGet,
-    [FenixAllianceABSWebApi.helloGet.key]: FenixAllianceABSWebApi.helloGet,
-    [FenixAllianceABSWebApi.loginPost.key]: FenixAllianceABSWebApi.loginPost,
-    [FenixAllianceABSWebApi.manage2faPost.key]: FenixAllianceABSWebApi.manage2faPost,
-    [FenixAllianceABSWebApi.manageInfoGet.key]: FenixAllianceABSWebApi.manageInfoGet,
-    [FenixAllianceABSWebApi.manageInfoPost.key]: FenixAllianceABSWebApi.manageInfoPost,
-    [FenixAllianceABSWebApi.mapIdentityApi/confirmEmail.key]: FenixAllianceABSWebApi.mapIdentityApi/confirmEmail,
-    [FenixAllianceABSWebApi.refreshPost.key]: FenixAllianceABSWebApi.refreshPost,
-    [FenixAllianceABSWebApi.registerPost.key]: FenixAllianceABSWebApi.registerPost,
-    [FenixAllianceABSWebApi.resendConfirmationEmailPost.key]: FenixAllianceABSWebApi.resendConfirmationEmailPost,
-    [FenixAllianceABSWebApi.resetPasswordPost.key]: FenixAllianceABSWebApi.resetPasswordPost,
-    [FenixAllianceABSWebApi.versionGet.key]: FenixAllianceABSWebApi.versionGet,
+    [CompletionsApi.apiV2AiServiceCompletionsCompleteGet.key]: CompletionsApi.apiV2AiServiceCompletionsCompleteGet,
+    [FenixAlliancePortalsWebsiteApi.accountLogoutPost.key]: FenixAlliancePortalsWebsiteApi.accountLogoutPost,
+    [FenixAlliancePortalsWebsiteApi.accountManageDownloadPersonalDataPost.key]: FenixAlliancePortalsWebsiteApi.accountManageDownloadPersonalDataPost,
+    [FenixAlliancePortalsWebsiteApi.accountManageLinkExternalLoginPost.key]: FenixAlliancePortalsWebsiteApi.accountManageLinkExternalLoginPost,
+    [FenixAlliancePortalsWebsiteApi.accountPerformExternalLoginPost.key]: FenixAlliancePortalsWebsiteApi.accountPerformExternalLoginPost,
+    [FenixAlliancePortalsWebsiteApi.forgotPasswordPost.key]: FenixAlliancePortalsWebsiteApi.forgotPasswordPost,
+    [FenixAlliancePortalsWebsiteApi.healthGet.key]: FenixAlliancePortalsWebsiteApi.healthGet,
+    [FenixAlliancePortalsWebsiteApi.helloGet.key]: FenixAlliancePortalsWebsiteApi.helloGet,
+    [FenixAlliancePortalsWebsiteApi.loginPost.key]: FenixAlliancePortalsWebsiteApi.loginPost,
+    [FenixAlliancePortalsWebsiteApi.manage2faPost.key]: FenixAlliancePortalsWebsiteApi.manage2faPost,
+    [FenixAlliancePortalsWebsiteApi.manageInfoGet.key]: FenixAlliancePortalsWebsiteApi.manageInfoGet,
+    [FenixAlliancePortalsWebsiteApi.manageInfoPost.key]: FenixAlliancePortalsWebsiteApi.manageInfoPost,
+    [FenixAlliancePortalsWebsiteApi.mapIdentityApi/confirmEmail.key]: FenixAlliancePortalsWebsiteApi.mapIdentityApi/confirmEmail,
+    [FenixAlliancePortalsWebsiteApi.refreshPost.key]: FenixAlliancePortalsWebsiteApi.refreshPost,
+    [FenixAlliancePortalsWebsiteApi.registerPost.key]: FenixAlliancePortalsWebsiteApi.registerPost,
+    [FenixAlliancePortalsWebsiteApi.resendConfirmationEmailPost.key]: FenixAlliancePortalsWebsiteApi.resendConfirmationEmailPost,
+    [FenixAlliancePortalsWebsiteApi.resetPasswordPost.key]: FenixAlliancePortalsWebsiteApi.resetPasswordPost,
+    [FenixAlliancePortalsWebsiteApi.versionGet.key]: FenixAlliancePortalsWebsiteApi.versionGet,
     [PortalsApi.countPortalsAsync.key]: PortalsApi.countPortalsAsync,
     [PortalsApi.createWebPortalAsync.key]: PortalsApi.createWebPortalAsync,
     [PortalsApi.deleteWebPortalAsync.key]: PortalsApi.deleteWebPortalAsync,
@@ -122,6 +125,12 @@ const actions = {
     [WebTemplatesApi.getWebTemplateByIdAsync.key]: WebTemplatesApi.getWebTemplateByIdAsync,
     [WebTemplatesApi.getWebTemplatesAsync.key]: WebTemplatesApi.getWebTemplatesAsync,
     [WebTemplatesApi.updateWebTemplateAsync.key]: WebTemplatesApi.updateWebTemplateAsync,
+    [WebsiteThemesApi.createWebsiteThemeAsync.key]: WebsiteThemesApi.createWebsiteThemeAsync,
+    [WebsiteThemesApi.deleteWebsiteThemeAsync.key]: WebsiteThemesApi.deleteWebsiteThemeAsync,
+    [WebsiteThemesApi.getWebsiteThemeByIdAsync.key]: WebsiteThemesApi.getWebsiteThemeByIdAsync,
+    [WebsiteThemesApi.getWebsiteThemesAsync.key]: WebsiteThemesApi.getWebsiteThemesAsync,
+    [WebsiteThemesApi.getWebsiteThemesCountAsync.key]: WebsiteThemesApi.getWebsiteThemesCountAsync,
+    [WebsiteThemesApi.updateWebsiteThemeAsync.key]: WebsiteThemesApi.updateWebsiteThemeAsync,
 }
 
 module.exports = {

@@ -33,7 +33,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Applications/{appId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Applications/{appId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -97,7 +97,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Applications/{appId}/GrantedRoles/{securityRoleId}/GrantedPermissions'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Applications/{appId}/GrantedRoles/{securityRoleId}/GrantedPermissions'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -156,7 +156,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Applications/{appId}/GrantedPermissions'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Applications/{appId}/GrantedPermissions'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -215,7 +215,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Applications/{appId}/GrantedRoles'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Applications/{appId}/GrantedRoles'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -269,7 +269,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Applications/{appId}/RequiredPermissions'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Applications/{appId}/RequiredPermissions'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

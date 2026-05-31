@@ -41,7 +41,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/ServicesService/ServiceLevels/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/ServicesService/ServiceLevels/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -103,7 +103,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/ServicesService/Services/{serviceId}/ServiceLevels'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/ServicesService/Services/{serviceId}/ServiceLevels'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -171,7 +171,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/ServicesService/Services/{serviceId}/ServiceLevels/{serviceLevelId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/ServicesService/Services/{serviceId}/ServiceLevels/{serviceLevelId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -226,7 +226,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/ServicesService/ServiceLevels'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/ServicesService/ServiceLevels'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -293,7 +293,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/ServicesService/Services/{serviceId}/ServiceLevels/{serviceLevelId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/ServicesService/Services/{serviceId}/ServiceLevels/{serviceLevelId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -354,7 +354,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/ServicesService/Services/{serviceId}/ServiceLevels'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/ServicesService/Services/{serviceId}/ServiceLevels'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -415,7 +415,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/ServicesService/Services/{serviceId}/ServiceLevels/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/ServicesService/Services/{serviceId}/ServiceLevels/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -483,7 +483,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/ServicesService/Services/{serviceId}/ServiceLevels/{serviceLevelId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/ServicesService/Services/{serviceId}/ServiceLevels/{serviceLevelId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

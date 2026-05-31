@@ -52,7 +52,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/TenantsService/UnitGroups/{unitGroupId}/Units'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/TenantsService/UnitGroups/{unitGroupId}/Units'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -109,7 +109,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/TenantsService/UnitGroups'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/TenantsService/UnitGroups'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -177,7 +177,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/TenantsService/UnitGroups/{unitGroupId}/Units/{unitId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/TenantsService/UnitGroups/{unitGroupId}/Units/{unitId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -238,7 +238,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/TenantsService/UnitGroups/{unitGroupId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/TenantsService/UnitGroups/{unitGroupId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -305,7 +305,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/TenantsService/UnitGroups/{unitGroupId}/Units/{unitId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/TenantsService/UnitGroups/{unitGroupId}/Units/{unitId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -366,7 +366,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/TenantsService/UnitGroups/{unitGroupId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/TenantsService/UnitGroups/{unitGroupId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -421,7 +421,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/TenantsService/UnitGroups'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/TenantsService/UnitGroups'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -476,7 +476,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/TenantsService/UnitGroups/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/TenantsService/UnitGroups/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -537,7 +537,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/TenantsService/UnitGroups/{unitGroupId}/Units'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/TenantsService/UnitGroups/{unitGroupId}/Units'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -598,7 +598,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/TenantsService/UnitGroups/{unitGroupId}/Units/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/TenantsService/UnitGroups/{unitGroupId}/Units/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -666,7 +666,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/TenantsService/UnitGroups/{unitGroupId}/Units/{unitId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/TenantsService/UnitGroups/{unitGroupId}/Units/{unitId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -729,7 +729,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/TenantsService/UnitGroups/{unitGroupId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/TenantsService/UnitGroups/{unitGroupId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

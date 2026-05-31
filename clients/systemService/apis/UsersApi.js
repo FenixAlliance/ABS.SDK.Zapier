@@ -17,7 +17,7 @@ module.exports = {
         noun: 'Users',
         display: {
             label: 'Preview the rendered email for a user.',
-            description: 'This action is only available for users with the &#39;business_owner&#39; role (global administrators).',
+            description: 'This action is only available for global administrators.',
             hidden: false,
         },
         operation: {
@@ -44,7 +44,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Users/{userId}/Emails/Preview'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Users/{userId}/Emails/Preview'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -72,7 +72,7 @@ module.exports = {
         noun: 'Users',
         display: {
             label: 'Send an email to a user.',
-            description: 'This action is only available for users with the &#39;business_owner&#39; role (global administrators).',
+            description: 'This action is only available for global administrators.',
             hidden: false,
         },
         operation: {
@@ -100,7 +100,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Users/{userId}/Emails/Send'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Users/{userId}/Emails/Send'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -128,7 +128,7 @@ module.exports = {
         noun: 'Users',
         display: {
             label: 'Create a new user',
-            description: 'This action is only available for users with the &#39;business_owner&#39; role (global administrators).',
+            description: 'This action is only available for global administrators.',
             hidden: false,
         },
         operation: {
@@ -150,7 +150,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Users'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Users'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -178,7 +178,7 @@ module.exports = {
         noun: 'Users',
         display: {
             label: 'Delete a user',
-            description: 'This action is only available for users with the &#39;business_owner&#39; role (global administrators).',
+            description: 'This action is only available for global administrators.',
             hidden: false,
         },
         operation: {
@@ -205,7 +205,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Users/{userId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Users/{userId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -232,7 +232,7 @@ module.exports = {
         noun: 'Users',
         display: {
             label: 'Retrieve an extended user by ID',
-            description: 'This action is only available for users with the &#39;business_owner&#39; role (global administrators).',
+            description: 'This action is only available for global administrators.',
             hidden: false,
         },
         operation: {
@@ -259,7 +259,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Users/{userId}/Extended'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Users/{userId}/Extended'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -286,7 +286,7 @@ module.exports = {
         noun: 'Users',
         display: {
             label: 'Retrieve a list of extended users',
-            description: 'This action is only available for users with the &#39;business_owner&#39; role (global administrators).',
+            description: 'This action is only available for global administrators.',
             hidden: false,
         },
         operation: {
@@ -307,7 +307,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Users/Extended'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Users/Extended'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -334,7 +334,7 @@ module.exports = {
         noun: 'Users',
         display: {
             label: 'Get the count of extended users',
-            description: 'This action is only available for users with the &#39;business_owner&#39; role (global administrators).',
+            description: 'This action is only available for global administrators.',
             hidden: false,
         },
         operation: {
@@ -355,7 +355,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Users/Extended/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Users/Extended/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -382,7 +382,7 @@ module.exports = {
         noun: 'Users',
         display: {
             label: 'Retrieve a user by ID',
-            description: 'This action is only available for users with the &#39;business_owner&#39; role (global administrators).',
+            description: 'This action is only available for global administrators.',
             hidden: false,
         },
         operation: {
@@ -409,7 +409,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Users/{userId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Users/{userId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -436,7 +436,7 @@ module.exports = {
         noun: 'Users',
         display: {
             label: 'Retrieve a list of users',
-            description: 'This action is only available for users with the &#39;business_owner&#39; role (global administrators).',
+            description: 'This action is only available for global administrators.',
             hidden: false,
         },
         operation: {
@@ -457,7 +457,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Users'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Users'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -484,7 +484,7 @@ module.exports = {
         noun: 'Users',
         display: {
             label: 'Get the count of users',
-            description: 'This action is only available for users with the &#39;business_owner&#39; role (global administrators).',
+            description: 'This action is only available for global administrators.',
             hidden: false,
         },
         operation: {
@@ -505,7 +505,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Users/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Users/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -532,7 +532,7 @@ module.exports = {
         noun: 'Users',
         display: {
             label: 'Update a user',
-            description: 'This action is only available for users with the &#39;business_owner&#39; role (global administrators).',
+            description: 'This action is only available for global administrators.',
             hidden: false,
         },
         operation: {
@@ -560,7 +560,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Users/{userId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Users/{userId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

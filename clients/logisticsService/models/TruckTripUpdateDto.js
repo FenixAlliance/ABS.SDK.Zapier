@@ -1,0 +1,92 @@
+const utils = require('../utils/utils');
+
+module.exports = {
+    fields: (prefix = '', isInput = true, isArrayChild = false) => {
+        const {keyPrefix, labelPrefix} = utils.buildKeyAndLabel(prefix, isInput, isArrayChild)
+        return [
+            {
+                key: `${keyPrefix}tripNumber`,
+                label: `[${labelPrefix}tripNumber]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}containerNumber`,
+                label: `[${labelPrefix}containerNumber]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}sealNumber`,
+                label: `[${labelPrefix}sealNumber]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}departureTime`,
+                label: `[${labelPrefix}departureTime]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}arrivalTime`,
+                label: `[${labelPrefix}arrivalTime]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}distanceKm`,
+                label: `[${labelPrefix}distanceKm]`,
+                type: 'number',
+            },
+            {
+                key: `${keyPrefix}notes`,
+                label: `[${labelPrefix}notes]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}originPortId`,
+                label: `[${labelPrefix}originPortId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}originLocationId`,
+                label: `[${labelPrefix}originLocationId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}destinationPortId`,
+                label: `[${labelPrefix}destinationPortId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}destinationLocationId`,
+                label: `[${labelPrefix}destinationLocationId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}shipmentId`,
+                label: `[${labelPrefix}shipmentId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}billOfLadingId`,
+                label: `[${labelPrefix}billOfLadingId]`,
+                type: 'string',
+            },
+        ]
+    },
+    mapping: (bundle, prefix = '') => {
+        const {keyPrefix} = utils.buildKeyAndLabel(prefix)
+        return {
+            'tripNumber': bundle.inputData?.[`${keyPrefix}tripNumber`],
+            'containerNumber': bundle.inputData?.[`${keyPrefix}containerNumber`],
+            'sealNumber': bundle.inputData?.[`${keyPrefix}sealNumber`],
+            'departureTime': bundle.inputData?.[`${keyPrefix}departureTime`],
+            'arrivalTime': bundle.inputData?.[`${keyPrefix}arrivalTime`],
+            'distanceKm': bundle.inputData?.[`${keyPrefix}distanceKm`],
+            'notes': bundle.inputData?.[`${keyPrefix}notes`],
+            'originPortId': bundle.inputData?.[`${keyPrefix}originPortId`],
+            'originLocationId': bundle.inputData?.[`${keyPrefix}originLocationId`],
+            'destinationPortId': bundle.inputData?.[`${keyPrefix}destinationPortId`],
+            'destinationLocationId': bundle.inputData?.[`${keyPrefix}destinationLocationId`],
+            'shipmentId': bundle.inputData?.[`${keyPrefix}shipmentId`],
+            'billOfLadingId': bundle.inputData?.[`${keyPrefix}billOfLadingId`],
+        }
+    },
+}

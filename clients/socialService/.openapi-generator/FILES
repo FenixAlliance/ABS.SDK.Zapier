@@ -1,5 +1,6 @@
 README.md
-apis/FenixAllianceABSWebApi.js
+apis/CompletionsApi.js
+apis/FenixAlliancePortalsWebsiteApi.js
 apis/SocialFeedsApi.js
 apis/SocialGroupsApi.js
 apis/SocialPostsApi.js
@@ -22,6 +23,7 @@ models/InfoResponse.js
 models/Int32Envelope.js
 models/LoginRequest.js
 models/NotificationDto.js
+models/NotificationDtoEnvelope.js
 models/NotificationDtoListEnvelope.js
 models/PrivateMessageCreateDto.js
 models/PrivateMessageDto.js
@@ -71,4 +73,6 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
+samples/CompletionsApi.js
+samples/FenixAlliancePortalsWebsiteApi.js
 utils/utils.js

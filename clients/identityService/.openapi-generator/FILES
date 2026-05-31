@@ -1,7 +1,8 @@
 README.md
 apis/ApplicationsApi.js
 apis/CheckerApi.js
-apis/FenixAllianceABSWebApi.js
+apis/CompletionsApi.js
+apis/FenixAlliancePortalsWebsiteApi.js
 apis/OAuthApi.js
 apis/ResourceApi.js
 apis/UserInfoApi.js
@@ -9,7 +10,7 @@ authentication.js
 index.js
 models/AccessTokenResponse.js
 models/AuthResult.js
-models/AuthorizationResultEnvelope.js
+models/AuthResultEnvelope.js
 models/ErrorEnvelope.js
 models/ForgotPasswordRequest.js
 models/HttpValidationProblemDetails.js
@@ -38,4 +39,6 @@ models/UserCreateDto.js
 models/UserCreateDtoEnvelope.js
 operations/actions.js
 package.json
+samples/CompletionsApi.js
+samples/FenixAlliancePortalsWebsiteApi.js
 utils/utils.js

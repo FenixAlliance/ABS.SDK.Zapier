@@ -38,7 +38,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/Merchants/{merchantId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/Merchants/{merchantId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -86,7 +86,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/Merchants'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/Merchants'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -134,7 +134,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/Merchants/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/Merchants/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

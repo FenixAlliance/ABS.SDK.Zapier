@@ -41,7 +41,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialGroups/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialGroups/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -81,6 +81,12 @@ module.exports = {
                     required: true,
                 },
                 {
+                    key: 'socialProfileId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
                     key: 'api-version',
                     label: '',
                     type: 'string',
@@ -97,7 +103,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialGroups'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialGroups'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -106,6 +112,7 @@ module.exports = {
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
+                        'socialProfileId': bundle.inputData?.['socialProfileId'],
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
@@ -138,6 +145,12 @@ module.exports = {
                     required: true,
                 },
                 {
+                    key: 'socialProfileId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
                     key: 'socialGroupId',
                     label: '',
                     type: 'string',
@@ -159,7 +172,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialGroups/{socialGroupId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialGroups/{socialGroupId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -168,6 +181,7 @@ module.exports = {
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
+                        'socialProfileId': bundle.inputData?.['socialProfileId'],
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
@@ -220,7 +234,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialGroups/{socialGroupId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialGroups/{socialGroupId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -275,7 +289,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialGroups'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialGroups'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -315,6 +329,12 @@ module.exports = {
                     required: true,
                 },
                 {
+                    key: 'socialProfileId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
                     key: 'socialGroupId',
                     label: '',
                     type: 'string',
@@ -337,7 +357,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialGroups/{socialGroupId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialGroups/{socialGroupId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -346,6 +366,7 @@ module.exports = {
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
+                        'socialProfileId': bundle.inputData?.['socialProfileId'],
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {

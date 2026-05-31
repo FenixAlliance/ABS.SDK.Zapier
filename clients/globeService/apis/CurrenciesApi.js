@@ -32,7 +32,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Currencies/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Currencies/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -86,7 +86,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Currencies/{currencyId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Currencies/{currencyId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -134,7 +134,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Currencies'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Currencies'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

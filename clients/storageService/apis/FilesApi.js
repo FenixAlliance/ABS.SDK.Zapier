@@ -118,7 +118,7 @@ module.exports = {
                 const filename = bundle.inputData?.['filename'] || bundle.inputData?.['file'].split('/').slice(-1)[0]
                 formData.append('file', (await (await z.request({url: bundle.inputData?.['file'], method: 'GET', raw: true})).buffer()), { filename: filename })
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Files'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/Files'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -177,7 +177,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Files/{fileId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/Files/{fileId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -236,7 +236,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Files/{fileId}/Raw'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/Files/{fileId}/Raw'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -296,7 +296,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Files/{fileId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/Files/{fileId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -350,7 +350,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Files'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/Files'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -484,7 +484,7 @@ module.exports = {
                 const filename = bundle.inputData?.['filename'] || bundle.inputData?.['file'].split('/').slice(-1)[0]
                 formData.append('file', (await (await z.request({url: bundle.inputData?.['file'], method: 'GET', raw: true})).buffer()), { filename: filename })
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Files/{fileId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/Files/{fileId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

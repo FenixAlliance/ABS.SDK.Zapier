@@ -41,7 +41,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/FiscalYears'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/FiscalYears'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -103,7 +103,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/FiscalYears/{fiscalYearId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/FiscalYears/{fiscalYearId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -164,7 +164,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/FiscalYears/{fiscalYearId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/FiscalYears/{fiscalYearId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -219,7 +219,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/FiscalYears'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/FiscalYears'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -274,7 +274,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/FiscalYears/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/FiscalYears/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -336,7 +336,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/FiscalYears/{fiscalYearId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/FiscalYears/{fiscalYearId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

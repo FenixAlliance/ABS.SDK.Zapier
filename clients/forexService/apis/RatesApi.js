@@ -42,7 +42,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/ForexService/Rates/History/{currencyId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/ForexService/Rates/History/{currencyId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -96,7 +96,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/ForexService/Rates/History'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/ForexService/Rates/History'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -151,7 +151,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/ForexService/Rates/Latest/{currencyId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/ForexService/Rates/Latest/{currencyId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -199,7 +199,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/ForexService/Rates/Latest'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/ForexService/Rates/Latest'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

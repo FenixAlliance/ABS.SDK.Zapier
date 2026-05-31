@@ -46,7 +46,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/BillableLines/{billableLineId}/Taxes'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/BillableLines/{billableLineId}/Taxes'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -114,7 +114,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/BillableLines/{billableLineId}/Taxes/{taxId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/BillableLines/{billableLineId}/Taxes/{taxId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -175,7 +175,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/BillableLines/{billableLineId}/Taxes'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/BillableLines/{billableLineId}/Taxes'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -236,7 +236,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/BillableLines/{billableLineId}/Taxes/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/BillableLines/{billableLineId}/Taxes/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -304,7 +304,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/BillableLines/{billableLineId}/Taxes/{taxId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/BillableLines/{billableLineId}/Taxes/{taxId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

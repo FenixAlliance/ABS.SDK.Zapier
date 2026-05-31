@@ -42,7 +42,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/PaymentsService/PaymentTerms'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/PaymentsService/PaymentTerms'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -104,7 +104,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/PaymentsService/PaymentTerms/{paymentTermId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/PaymentsService/PaymentTerms/{paymentTermId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -165,7 +165,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/PaymentsService/PaymentTerms/{paymentTermId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/PaymentsService/PaymentTerms/{paymentTermId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -220,7 +220,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/PaymentsService/PaymentTerms'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/PaymentsService/PaymentTerms'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -275,7 +275,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/PaymentsService/PaymentTerms/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/PaymentsService/PaymentTerms/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -337,7 +337,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/PaymentsService/PaymentTerms/{paymentTermId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/PaymentsService/PaymentTerms/{paymentTermId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

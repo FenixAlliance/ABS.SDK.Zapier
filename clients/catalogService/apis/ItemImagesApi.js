@@ -40,7 +40,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemImages'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemImages'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -101,7 +101,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemImages/{itemImageId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemImages/{itemImageId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -141,6 +141,11 @@ module.exports = {
                     required: true,
                 },
                 {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                },
+                {
                     key: 'api-version',
                     label: '',
                     type: 'string',
@@ -156,7 +161,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemImages/{itemImageId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemImages/{itemImageId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -164,6 +169,7 @@ module.exports = {
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
@@ -192,7 +198,6 @@ module.exports = {
                     key: 'tenantId',
                     label: '',
                     type: 'string',
-                    required: true,
                 },
                 {
                     key: 'api-version',
@@ -210,7 +215,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemImages'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemImages'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -271,7 +276,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemImages/{itemImageId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemImages/{itemImageId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

@@ -22,7 +22,6 @@ module.exports = {
                     key: 'tenantId',
                     label: '',
                     type: 'string',
-                    required: true,
                 },
                 {
                     key: 'api-version',
@@ -40,7 +39,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemCategories/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemCategories/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -96,7 +95,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemCategories'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemCategories'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -157,7 +156,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemCategories/{itemCategoryId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemCategories/{itemCategoryId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -194,7 +193,6 @@ module.exports = {
                     key: 'tenantId',
                     label: '',
                     type: 'string',
-                    required: true,
                 },
                 {
                     key: 'api-version',
@@ -212,7 +210,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemCategories'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemCategories'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -252,6 +250,11 @@ module.exports = {
                     required: true,
                 },
                 {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                },
+                {
                     key: 'api-version',
                     label: '',
                     type: 'string',
@@ -267,7 +270,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemCategories/{itemCategoryId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemCategories/{itemCategoryId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -275,6 +278,7 @@ module.exports = {
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
@@ -327,7 +331,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemCategories/{itemCategoryId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemCategories/{itemCategoryId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

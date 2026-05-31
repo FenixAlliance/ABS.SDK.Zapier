@@ -45,7 +45,7 @@ module.exports = {
                 const filename = bundle.inputData?.['filename'] || bundle.inputData?.['file'].split('/').slice(-1)[0]
                 formData.append('file', (await (await z.request({url: bundle.inputData?.['file'], method: 'GET', raw: true})).buffer()), { filename: filename })
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/RadzenEditor/Uploads/Image'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/RadzenEditor/Uploads/Image'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -105,7 +105,7 @@ module.exports = {
                 const filename = bundle.inputData?.['filename'] || bundle.inputData?.['files'].split('/').slice(-1)[0]
                 formData.append('files', (await (await z.request({url: bundle.inputData?.['files'], method: 'GET', raw: true})).buffer()), { filename: filename })
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/RadzenEditor/Uploads/Multiple'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/RadzenEditor/Uploads/Multiple'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -171,7 +171,7 @@ module.exports = {
                 const filename = bundle.inputData?.['filename'] || bundle.inputData?.['files'].split('/').slice(-1)[0]
                 formData.append('files', (await (await z.request({url: bundle.inputData?.['files'], method: 'GET', raw: true})).buffer()), { filename: filename })
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/RadzenEditor/Uploads/{id}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/RadzenEditor/Uploads/{id}'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -231,7 +231,7 @@ module.exports = {
                 const filename = bundle.inputData?.['filename'] || bundle.inputData?.['file'].split('/').slice(-1)[0]
                 formData.append('file', (await (await z.request({url: bundle.inputData?.['file'], method: 'GET', raw: true})).buffer()), { filename: filename })
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/RadzenEditor/Uploads/Single'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/RadzenEditor/Uploads/Single'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -291,7 +291,7 @@ module.exports = {
                 const filename = bundle.inputData?.['filename'] || bundle.inputData?.['file'].split('/').slice(-1)[0]
                 formData.append('file', (await (await z.request({url: bundle.inputData?.['file'], method: 'GET', raw: true})).buffer()), { filename: filename })
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/RadzenEditor/Uploads/Specific'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/RadzenEditor/Uploads/Specific'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

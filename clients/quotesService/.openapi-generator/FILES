@@ -1,5 +1,6 @@
 README.md
-apis/FenixAllianceABSWebApi.js
+apis/CompletionsApi.js
+apis/FenixAlliancePortalsWebsiteApi.js
 apis/QuotesApi.js
 authentication.js
 index.js
@@ -39,4 +40,6 @@ models/TwoFactorResponse.js
 models/UserDto.js
 operations/actions.js
 package.json
+samples/CompletionsApi.js
+samples/FenixAlliancePortalsWebsiteApi.js
 utils/utils.js

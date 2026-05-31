@@ -50,7 +50,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Me/Followers/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Me/Followers/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -98,7 +98,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Me/Follows/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Me/Follows/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -146,7 +146,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Me/Notifications/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Me/Notifications/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -194,7 +194,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Me/Tenants/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Me/Tenants/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -242,7 +242,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Me/Addresses'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Me/Addresses'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -290,7 +290,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Me'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Me'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -337,7 +337,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Me/Avatar'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Me/Avatar'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -385,7 +385,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Me/Cart'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Me/Cart'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -433,7 +433,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Me/Enrollments'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Me/Enrollments'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -481,7 +481,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Me/Enrollments/Extended'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Me/Enrollments/Extended'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -529,7 +529,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Me/Followers'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Me/Followers'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -577,7 +577,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Me/Follows'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Me/Follows'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -625,7 +625,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Me/Invitations'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Me/Invitations'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -673,7 +673,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Me/Notifications'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Me/Notifications'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -721,7 +721,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Me/Settings'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Me/Settings'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -769,7 +769,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Me/SocialProfile'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Me/SocialProfile'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -817,7 +817,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Me/Tenants'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Me/Tenants'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -865,7 +865,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Me/Tenants/Extended'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Me/Tenants/Extended'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -913,7 +913,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Me/Wallet'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Me/Wallet'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -967,7 +967,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Me/Enrollments/{enrollmentId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Me/Enrollments/{enrollmentId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1015,7 +1015,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Me/Extended'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Me/Extended'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1068,7 +1068,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Me'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Me'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1125,7 +1125,7 @@ module.exports = {
                 const filename = bundle.inputData?.['filename'] || bundle.inputData?.['avatar'].split('/').slice(-1)[0]
                 formData.append('avatar', (await (await z.request({url: bundle.inputData?.['avatar'], method: 'GET', raw: true})).buffer()), { filename: filename })
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Me/Avatar'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Me/Avatar'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1173,7 +1173,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Me'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Me'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1223,7 +1223,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/Me/Settings'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/Me/Settings'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

@@ -1,8 +1,12 @@
-const FenixAllianceABSWebApi = require('../apis/FenixAllianceABSWebApi');
+const CompletionsApi = require('../apis/CompletionsApi');
+const FenixAlliancePortalsWebsiteApi = require('../apis/FenixAlliancePortalsWebsiteApi');
 const ItemAttachmentsApi = require('../apis/ItemAttachmentsApi');
+const ItemAttributeOptionsApi = require('../apis/ItemAttributeOptionsApi');
 const ItemAttributesApi = require('../apis/ItemAttributesApi');
 const ItemBrandsApi = require('../apis/ItemBrandsApi');
+const ItemBundlesApi = require('../apis/ItemBundlesApi');
 const ItemCategoriesApi = require('../apis/ItemCategoriesApi');
+const ItemFamiliesApi = require('../apis/ItemFamiliesApi');
 const ItemGoogleCategoriesApi = require('../apis/ItemGoogleCategoriesApi');
 const ItemImagesApi = require('../apis/ItemImagesApi');
 const ItemQuestionsApi = require('../apis/ItemQuestionsApi');
@@ -16,32 +20,38 @@ const ItemTypesApi = require('../apis/ItemTypesApi');
 const ItemWarrantyPoliciesApi = require('../apis/ItemWarrantyPoliciesApi');
 const ItemsApi = require('../apis/ItemsApi');
 const MerchantsApi = require('../apis/MerchantsApi');
-const PricingRulesApi = require('../apis/PricingRulesApi');
 const { triggerMiddleware, isTrigger, searchMiddleware, hasSearchRequisites, isSearchAction, isCreateAction } = require('../utils/utils');
 
 const actions = {
-    [FenixAllianceABSWebApi.accountLogoutPost.key]: FenixAllianceABSWebApi.accountLogoutPost,
-    [FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost.key]: FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost,
-    [FenixAllianceABSWebApi.accountManageLinkExternalLoginPost.key]: FenixAllianceABSWebApi.accountManageLinkExternalLoginPost,
-    [FenixAllianceABSWebApi.accountPerformExternalLoginPost.key]: FenixAllianceABSWebApi.accountPerformExternalLoginPost,
-    [FenixAllianceABSWebApi.forgotPasswordPost.key]: FenixAllianceABSWebApi.forgotPasswordPost,
-    [FenixAllianceABSWebApi.healthGet.key]: FenixAllianceABSWebApi.healthGet,
-    [FenixAllianceABSWebApi.helloGet.key]: FenixAllianceABSWebApi.helloGet,
-    [FenixAllianceABSWebApi.loginPost.key]: FenixAllianceABSWebApi.loginPost,
-    [FenixAllianceABSWebApi.manage2faPost.key]: FenixAllianceABSWebApi.manage2faPost,
-    [FenixAllianceABSWebApi.manageInfoGet.key]: FenixAllianceABSWebApi.manageInfoGet,
-    [FenixAllianceABSWebApi.manageInfoPost.key]: FenixAllianceABSWebApi.manageInfoPost,
-    [FenixAllianceABSWebApi.mapIdentityApi/confirmEmail.key]: FenixAllianceABSWebApi.mapIdentityApi/confirmEmail,
-    [FenixAllianceABSWebApi.refreshPost.key]: FenixAllianceABSWebApi.refreshPost,
-    [FenixAllianceABSWebApi.registerPost.key]: FenixAllianceABSWebApi.registerPost,
-    [FenixAllianceABSWebApi.resendConfirmationEmailPost.key]: FenixAllianceABSWebApi.resendConfirmationEmailPost,
-    [FenixAllianceABSWebApi.resetPasswordPost.key]: FenixAllianceABSWebApi.resetPasswordPost,
-    [FenixAllianceABSWebApi.versionGet.key]: FenixAllianceABSWebApi.versionGet,
+    [CompletionsApi.apiV2AiServiceCompletionsCompleteGet.key]: CompletionsApi.apiV2AiServiceCompletionsCompleteGet,
+    [FenixAlliancePortalsWebsiteApi.accountLogoutPost.key]: FenixAlliancePortalsWebsiteApi.accountLogoutPost,
+    [FenixAlliancePortalsWebsiteApi.accountManageDownloadPersonalDataPost.key]: FenixAlliancePortalsWebsiteApi.accountManageDownloadPersonalDataPost,
+    [FenixAlliancePortalsWebsiteApi.accountManageLinkExternalLoginPost.key]: FenixAlliancePortalsWebsiteApi.accountManageLinkExternalLoginPost,
+    [FenixAlliancePortalsWebsiteApi.accountPerformExternalLoginPost.key]: FenixAlliancePortalsWebsiteApi.accountPerformExternalLoginPost,
+    [FenixAlliancePortalsWebsiteApi.forgotPasswordPost.key]: FenixAlliancePortalsWebsiteApi.forgotPasswordPost,
+    [FenixAlliancePortalsWebsiteApi.healthGet.key]: FenixAlliancePortalsWebsiteApi.healthGet,
+    [FenixAlliancePortalsWebsiteApi.helloGet.key]: FenixAlliancePortalsWebsiteApi.helloGet,
+    [FenixAlliancePortalsWebsiteApi.loginPost.key]: FenixAlliancePortalsWebsiteApi.loginPost,
+    [FenixAlliancePortalsWebsiteApi.manage2faPost.key]: FenixAlliancePortalsWebsiteApi.manage2faPost,
+    [FenixAlliancePortalsWebsiteApi.manageInfoGet.key]: FenixAlliancePortalsWebsiteApi.manageInfoGet,
+    [FenixAlliancePortalsWebsiteApi.manageInfoPost.key]: FenixAlliancePortalsWebsiteApi.manageInfoPost,
+    [FenixAlliancePortalsWebsiteApi.mapIdentityApi/confirmEmail.key]: FenixAlliancePortalsWebsiteApi.mapIdentityApi/confirmEmail,
+    [FenixAlliancePortalsWebsiteApi.refreshPost.key]: FenixAlliancePortalsWebsiteApi.refreshPost,
+    [FenixAlliancePortalsWebsiteApi.registerPost.key]: FenixAlliancePortalsWebsiteApi.registerPost,
+    [FenixAlliancePortalsWebsiteApi.resendConfirmationEmailPost.key]: FenixAlliancePortalsWebsiteApi.resendConfirmationEmailPost,
+    [FenixAlliancePortalsWebsiteApi.resetPasswordPost.key]: FenixAlliancePortalsWebsiteApi.resetPasswordPost,
+    [FenixAlliancePortalsWebsiteApi.versionGet.key]: FenixAlliancePortalsWebsiteApi.versionGet,
     [ItemAttachmentsApi.createItemAttachmentAsync.key]: ItemAttachmentsApi.createItemAttachmentAsync,
     [ItemAttachmentsApi.deleteItemAttachmentAsync.key]: ItemAttachmentsApi.deleteItemAttachmentAsync,
     [ItemAttachmentsApi.getItemAttachmentByIdAsync.key]: ItemAttachmentsApi.getItemAttachmentByIdAsync,
     [ItemAttachmentsApi.getItemAttachmentsAsync.key]: ItemAttachmentsApi.getItemAttachmentsAsync,
     [ItemAttachmentsApi.updateItemAttachmentAsync.key]: ItemAttachmentsApi.updateItemAttachmentAsync,
+    [ItemAttributeOptionsApi.createItemAttributeOptionAsync.key]: ItemAttributeOptionsApi.createItemAttributeOptionAsync,
+    [ItemAttributeOptionsApi.deleteItemAttributeOptionAsync.key]: ItemAttributeOptionsApi.deleteItemAttributeOptionAsync,
+    [ItemAttributeOptionsApi.getItemAttributeOptionByIdAsync.key]: ItemAttributeOptionsApi.getItemAttributeOptionByIdAsync,
+    [ItemAttributeOptionsApi.getItemAttributeOptionsAsync.key]: ItemAttributeOptionsApi.getItemAttributeOptionsAsync,
+    [ItemAttributeOptionsApi.getItemAttributeOptionsCountAsync.key]: ItemAttributeOptionsApi.getItemAttributeOptionsCountAsync,
+    [ItemAttributeOptionsApi.updateItemAttributeOptionAsync.key]: ItemAttributeOptionsApi.updateItemAttributeOptionAsync,
     [ItemAttributesApi.countItemAttributesAsync.key]: ItemAttributesApi.countItemAttributesAsync,
     [ItemAttributesApi.createItemAttributeAsync.key]: ItemAttributesApi.createItemAttributeAsync,
     [ItemAttributesApi.deleteItemAttributeAsync.key]: ItemAttributesApi.deleteItemAttributeAsync,
@@ -53,12 +63,24 @@ const actions = {
     [ItemBrandsApi.getItemBrandByIdAsync.key]: ItemBrandsApi.getItemBrandByIdAsync,
     [ItemBrandsApi.getItemBrandsAsync.key]: ItemBrandsApi.getItemBrandsAsync,
     [ItemBrandsApi.updateItemBrandAsync.key]: ItemBrandsApi.updateItemBrandAsync,
+    [ItemBundlesApi.createItemBundleAsync.key]: ItemBundlesApi.createItemBundleAsync,
+    [ItemBundlesApi.deleteItemBundleAsync.key]: ItemBundlesApi.deleteItemBundleAsync,
+    [ItemBundlesApi.getItemBundleByIdAsync.key]: ItemBundlesApi.getItemBundleByIdAsync,
+    [ItemBundlesApi.getItemBundlesAsync.key]: ItemBundlesApi.getItemBundlesAsync,
+    [ItemBundlesApi.getItemBundlesCountAsync.key]: ItemBundlesApi.getItemBundlesCountAsync,
+    [ItemBundlesApi.updateItemBundleAsync.key]: ItemBundlesApi.updateItemBundleAsync,
     [ItemCategoriesApi.countItemCategoriesAsync.key]: ItemCategoriesApi.countItemCategoriesAsync,
     [ItemCategoriesApi.createItemCategoryAsync.key]: ItemCategoriesApi.createItemCategoryAsync,
     [ItemCategoriesApi.deleteItemCategoryAsync.key]: ItemCategoriesApi.deleteItemCategoryAsync,
     [ItemCategoriesApi.getItemCategoriesAsync.key]: ItemCategoriesApi.getItemCategoriesAsync,
     [ItemCategoriesApi.getItemCategoryByIdAsync.key]: ItemCategoriesApi.getItemCategoryByIdAsync,
     [ItemCategoriesApi.updateItemCategoryAsync.key]: ItemCategoriesApi.updateItemCategoryAsync,
+    [ItemFamiliesApi.createItemFamilyAsync.key]: ItemFamiliesApi.createItemFamilyAsync,
+    [ItemFamiliesApi.deleteItemFamilyAsync.key]: ItemFamiliesApi.deleteItemFamilyAsync,
+    [ItemFamiliesApi.getItemFamiliesAsync.key]: ItemFamiliesApi.getItemFamiliesAsync,
+    [ItemFamiliesApi.getItemFamiliesCountAsync.key]: ItemFamiliesApi.getItemFamiliesCountAsync,
+    [ItemFamiliesApi.getItemFamilyByIdAsync.key]: ItemFamiliesApi.getItemFamilyByIdAsync,
+    [ItemFamiliesApi.updateItemFamilyAsync.key]: ItemFamiliesApi.updateItemFamilyAsync,
     [ItemGoogleCategoriesApi.getAllItemGoogleCategoriesAsync.key]: ItemGoogleCategoriesApi.getAllItemGoogleCategoriesAsync,
     [ItemGoogleCategoriesApi.getChildrenItemGoogleCategoriesByIdAsync.key]: ItemGoogleCategoriesApi.getChildrenItemGoogleCategoriesByIdAsync,
     [ItemGoogleCategoriesApi.getItemGoogleCategoriesAsync.key]: ItemGoogleCategoriesApi.getItemGoogleCategoriesAsync,
@@ -197,11 +219,6 @@ const actions = {
     [MerchantsApi.getMerchantById.key]: MerchantsApi.getMerchantById,
     [MerchantsApi.getMerchants.key]: MerchantsApi.getMerchants,
     [MerchantsApi.getMerchantsCount.key]: MerchantsApi.getMerchantsCount,
-    [PricingRulesApi.createPricingRule.key]: PricingRulesApi.createPricingRule,
-    [PricingRulesApi.deletePricingRule.key]: PricingRulesApi.deletePricingRule,
-    [PricingRulesApi.getPricingRuleById.key]: PricingRulesApi.getPricingRuleById,
-    [PricingRulesApi.getPricingRules.key]: PricingRulesApi.getPricingRules,
-    [PricingRulesApi.updatePricingRule.key]: PricingRulesApi.updatePricingRule,
 }
 
 module.exports = {

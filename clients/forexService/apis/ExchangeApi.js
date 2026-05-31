@@ -38,7 +38,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/ForexService/Exchange/Latest'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/ForexService/Exchange/Latest'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -102,7 +102,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/ForexService/Exchange/History'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/ForexService/Exchange/History'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

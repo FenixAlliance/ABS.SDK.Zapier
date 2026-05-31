@@ -139,6 +139,12 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}requiredPermissions`,
+                label: `[${labelPrefix}requiredPermissions]`,
+                list: true,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}markedForDeletion`,
                 label: `[${labelPrefix}markedForDeletion]`,
                 type: 'boolean',
@@ -179,6 +185,7 @@ module.exports = {
             'swaggerSpecs': utils.childMapping(bundle.inputData?.[`${keyPrefix}swaggerSpecs`], `${keyPrefix}swaggerSpecs`, ISwaggerSpec),
             'url': bundle.inputData?.[`${keyPrefix}url`],
             'assemblyPaths': bundle.inputData?.[`${keyPrefix}assemblyPaths`],
+            'requiredPermissions': bundle.inputData?.[`${keyPrefix}requiredPermissions`],
             'markedForDeletion': bundle.inputData?.[`${keyPrefix}markedForDeletion`],
             'version': bundle.inputData?.[`${keyPrefix}version`],
         }

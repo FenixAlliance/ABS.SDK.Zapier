@@ -20,13 +20,13 @@ module.exports = {
         operation: {
             inputFields: [
                 {
-                    key: 'licenseId',
+                    key: 'tenantId',
                     label: '',
                     type: 'string',
                     required: true,
                 },
                 {
-                    key: 'tenantId',
+                    key: 'licenseId',
                     label: '',
                     type: 'string',
                     required: true,
@@ -47,7 +47,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Licensing/Licenses/{licenseId}/Assignments'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Licensing/Licenses/{licenseId}/Assignments'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -81,13 +81,13 @@ module.exports = {
         operation: {
             inputFields: [
                 {
-                    key: 'licenseId',
+                    key: 'tenantId',
                     label: '',
                     type: 'string',
                     required: true,
                 },
                 {
-                    key: 'tenantId',
+                    key: 'licenseId',
                     label: '',
                     type: 'string',
                     required: true,
@@ -108,7 +108,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Licensing/Licenses/{licenseId}/Attributes'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Licensing/Licenses/{licenseId}/Attributes'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -142,6 +142,12 @@ module.exports = {
         operation: {
             inputFields: [
                 {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
                     key: 'licenseId',
                     label: '',
                     type: 'string',
@@ -163,7 +169,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Licensing/Licenses/{licenseId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Licensing/Licenses/{licenseId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -171,6 +177,7 @@ module.exports = {
                         'Accept': 'application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false, application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=true, application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=false, application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=true, application/json;odata.metadata=minimal;IEEE754Compatible=false, application/json;odata.metadata=minimal;IEEE754Compatible=true, application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=false, application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=true, application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=false, application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=true, application/json;odata.metadata=full;IEEE754Compatible=false, application/json;odata.metadata=full;IEEE754Compatible=true, application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=false, application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=true, application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=true, application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=false, application/json;odata.metadata=none;IEEE754Compatible=false, application/json;odata.metadata=none;IEEE754Compatible=true, application/json;odata.streaming=true;IEEE754Compatible=false, application/json;odata.streaming=true;IEEE754Compatible=true, application/json;odata.streaming=false;IEEE754Compatible=false, application/json;odata.streaming=false;IEEE754Compatible=true, application/json;IEEE754Compatible=false, application/json;IEEE754Compatible=true, application/xml, text/plain, application/octet-stream, text/json, text/xml',
                     },
                     params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
@@ -196,13 +203,13 @@ module.exports = {
         operation: {
             inputFields: [
                 {
-                    key: 'licenseId',
+                    key: 'tenantId',
                     label: '',
                     type: 'string',
                     required: true,
                 },
                 {
-                    key: 'tenantId',
+                    key: 'licenseId',
                     label: '',
                     type: 'string',
                     required: true,
@@ -223,7 +230,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Licensing/Licenses/{licenseId}/Features'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Licensing/Licenses/{licenseId}/Features'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -257,13 +264,13 @@ module.exports = {
         operation: {
             inputFields: [
                 {
-                    key: 'licenseId',
+                    key: 'tenantId',
                     label: '',
                     type: 'string',
                     required: true,
                 },
                 {
-                    key: 'tenantId',
+                    key: 'licenseId',
                     label: '',
                     type: 'string',
                     required: true,
@@ -284,7 +291,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Licensing/Licenses/{licenseId}/Quota'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Licensing/Licenses/{licenseId}/Quota'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -338,7 +345,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Licensing/Licenses'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Licensing/Licenses'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -394,7 +401,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Licensing/Licenses/Redeem'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Licensing/Licenses/Redeem'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -445,7 +452,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Licensing/Licenses/Validate'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Licensing/Licenses/Validate'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

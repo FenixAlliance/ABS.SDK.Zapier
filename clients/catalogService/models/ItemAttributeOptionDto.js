@@ -25,6 +25,11 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}itemAttributeId`,
+                label: `[${labelPrefix}itemAttributeId]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}businessID`,
                 label: `[${labelPrefix}businessID]`,
                 type: 'string',
@@ -38,6 +43,7 @@ module.exports = {
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
+            'itemAttributeId': bundle.inputData?.[`${keyPrefix}itemAttributeId`],
             'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
         }
     },

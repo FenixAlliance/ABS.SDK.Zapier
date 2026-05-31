@@ -22,7 +22,6 @@ module.exports = {
                     key: 'tenantId',
                     label: '',
                     type: 'string',
-                    required: true,
                 },
                 {
                     key: 'api-version',
@@ -40,7 +39,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemTypes/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemTypes/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -96,7 +95,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemTypes'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemTypes'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -158,7 +157,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemTypes/{itemTypeID}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemTypes/{itemTypeID}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -198,6 +197,11 @@ module.exports = {
                     required: true,
                 },
                 {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                },
+                {
                     key: 'api-version',
                     label: '',
                     type: 'string',
@@ -213,7 +217,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemTypes/{itemTypeID}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemTypes/{itemTypeID}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -221,6 +225,7 @@ module.exports = {
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
@@ -249,7 +254,6 @@ module.exports = {
                     key: 'tenantId',
                     label: '',
                     type: 'string',
-                    required: true,
                 },
                 {
                     key: 'api-version',
@@ -267,7 +271,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemTypes'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemTypes'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -328,7 +332,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/CatalogService/ItemTypes/{itemTypeID}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemTypes/{itemTypeID}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

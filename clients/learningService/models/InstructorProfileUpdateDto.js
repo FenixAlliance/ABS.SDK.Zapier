@@ -5,19 +5,14 @@ module.exports = {
         const {keyPrefix, labelPrefix} = utils.buildKeyAndLabel(prefix, isInput, isArrayChild)
         return [
             {
-                key: `${keyPrefix}id`,
-                label: `[${labelPrefix}id]`,
+                key: `${keyPrefix}type`,
+                label: `[${labelPrefix}type]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}timestamp`,
-                label: `[${labelPrefix}timestamp]`,
+                key: `${keyPrefix}contactId`,
+                label: `[${labelPrefix}contactId]`,
                 type: 'string',
-            },
-            {
-                key: `${keyPrefix}authorized`,
-                label: `[${labelPrefix}authorized]`,
-                type: 'boolean',
             },
             {
                 key: `${keyPrefix}about`,
@@ -25,28 +20,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}verified`,
-                label: `[${labelPrefix}verified]`,
-                type: 'boolean',
-            },
-            {
-                key: `${keyPrefix}submitted`,
-                label: `[${labelPrefix}submitted]`,
-                type: 'boolean',
-            },
-            {
                 key: `${keyPrefix}avatarUrl`,
                 label: `[${labelPrefix}avatarUrl]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}qualifiedName`,
-                label: `[${labelPrefix}qualifiedName]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}verificationTimestamp`,
-                label: `[${labelPrefix}verificationTimestamp]`,
                 type: 'string',
             },
             {
@@ -149,20 +124,20 @@ module.exports = {
                 label: `[${labelPrefix}data9Label]`,
                 type: 'string',
             },
+            {
+                key: `${keyPrefix}authorized`,
+                label: `[${labelPrefix}authorized]`,
+                type: 'boolean',
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
-            'id': bundle.inputData?.[`${keyPrefix}id`],
-            'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
-            'authorized': bundle.inputData?.[`${keyPrefix}authorized`],
+            'type': bundle.inputData?.[`${keyPrefix}type`],
+            'contactId': bundle.inputData?.[`${keyPrefix}contactId`],
             'about': bundle.inputData?.[`${keyPrefix}about`],
-            'verified': bundle.inputData?.[`${keyPrefix}verified`],
-            'submitted': bundle.inputData?.[`${keyPrefix}submitted`],
             'avatarUrl': bundle.inputData?.[`${keyPrefix}avatarUrl`],
-            'qualifiedName': bundle.inputData?.[`${keyPrefix}qualifiedName`],
-            'verificationTimestamp': bundle.inputData?.[`${keyPrefix}verificationTimestamp`],
             'data': bundle.inputData?.[`${keyPrefix}data`],
             'dataLabel': bundle.inputData?.[`${keyPrefix}dataLabel`],
             'data1': bundle.inputData?.[`${keyPrefix}data1`],
@@ -183,6 +158,7 @@ module.exports = {
             'data8Label': bundle.inputData?.[`${keyPrefix}data8Label`],
             'data9': bundle.inputData?.[`${keyPrefix}data9`],
             'data9Label': bundle.inputData?.[`${keyPrefix}data9Label`],
+            'authorized': bundle.inputData?.[`${keyPrefix}authorized`],
         }
     },
 }

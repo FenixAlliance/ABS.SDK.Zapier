@@ -86,6 +86,26 @@ module.exports = {
                 type: 'number',
             },
             {
+                key: `${keyPrefix}balanceInUsd`,
+                label: `[${labelPrefix}balanceInUsd]`,
+                type: 'number',
+            },
+            {
+                key: `${keyPrefix}debitsBalanceInUsd`,
+                label: `[${labelPrefix}debitsBalanceInUsd]`,
+                type: 'number',
+            },
+            {
+                key: `${keyPrefix}creditsBalanceInUsd`,
+                label: `[${labelPrefix}creditsBalanceInUsd]`,
+                type: 'number',
+            },
+            {
+                key: `${keyPrefix}forexRate`,
+                label: `[${labelPrefix}forexRate]`,
+                type: 'number',
+            },
+            {
                 key: `${keyPrefix}parentAccountId`,
                 label: `[${labelPrefix}parentAccountId]`,
                 type: 'string',
@@ -120,6 +140,9 @@ module.exports = {
             ...Money.fields(`${keyPrefix}balanceAmount`, isInput),
             ...Money.fields(`${keyPrefix}creditsBalanceAmount`, isInput),
             ...Money.fields(`${keyPrefix}debitsBalanceAmount`, isInput),
+            ...Money.fields(`${keyPrefix}balanceAmountInUsd`, isInput),
+            ...Money.fields(`${keyPrefix}debitsBalanceAmountInUsd`, isInput),
+            ...Money.fields(`${keyPrefix}creditsBalanceAmountInUsd`, isInput),
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -141,6 +164,10 @@ module.exports = {
             'accountTypeId': bundle.inputData?.[`${keyPrefix}accountTypeId`],
             'debitsBalance': bundle.inputData?.[`${keyPrefix}debitsBalance`],
             'creditsBalance': bundle.inputData?.[`${keyPrefix}creditsBalance`],
+            'balanceInUsd': bundle.inputData?.[`${keyPrefix}balanceInUsd`],
+            'debitsBalanceInUsd': bundle.inputData?.[`${keyPrefix}debitsBalanceInUsd`],
+            'creditsBalanceInUsd': bundle.inputData?.[`${keyPrefix}creditsBalanceInUsd`],
+            'forexRate': bundle.inputData?.[`${keyPrefix}forexRate`],
             'parentAccountId': bundle.inputData?.[`${keyPrefix}parentAccountId`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
@@ -149,6 +176,9 @@ module.exports = {
             'balanceAmount': utils.removeIfEmpty(Money.mapping(bundle, `${keyPrefix}balanceAmount`)),
             'creditsBalanceAmount': utils.removeIfEmpty(Money.mapping(bundle, `${keyPrefix}creditsBalanceAmount`)),
             'debitsBalanceAmount': utils.removeIfEmpty(Money.mapping(bundle, `${keyPrefix}debitsBalanceAmount`)),
+            'balanceAmountInUsd': utils.removeIfEmpty(Money.mapping(bundle, `${keyPrefix}balanceAmountInUsd`)),
+            'debitsBalanceAmountInUsd': utils.removeIfEmpty(Money.mapping(bundle, `${keyPrefix}debitsBalanceAmountInUsd`)),
+            'creditsBalanceAmountInUsd': utils.removeIfEmpty(Money.mapping(bundle, `${keyPrefix}creditsBalanceAmountInUsd`)),
         }
     },
 }

@@ -10,6 +10,11 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}timestamp`,
+                label: `[${labelPrefix}timestamp]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}applicationType`,
                 label: `[${labelPrefix}applicationType]`,
                 type: 'string',
@@ -110,6 +115,7 @@ module.exports = {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
+            'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'applicationType': bundle.inputData?.[`${keyPrefix}applicationType`],
             'clientId': bundle.inputData?.[`${keyPrefix}clientId`],
             'concurrencyToken': bundle.inputData?.[`${keyPrefix}concurrencyToken`],

@@ -1,6 +1,7 @@
 const samples = require('../samples/CourseCertificatesApi');
 const CourseCertificateTemplateCreateDto = require('../models/CourseCertificateTemplateCreateDto');
 const CourseCertificateTemplateDto = require('../models/CourseCertificateTemplateDto');
+const CourseCertificateTemplateUpdateDto = require('../models/CourseCertificateTemplateUpdateDto');
 const CourseCompletionCertificateCreateDto = require('../models/CourseCompletionCertificateCreateDto');
 const CourseCompletionCertificateDto = require('../models/CourseCompletionCertificateDto');
 const CourseCompletionCertificateUpdateDto = require('../models/CourseCompletionCertificateUpdateDto');
@@ -40,7 +41,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseCertificates'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseCertificates'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -96,7 +97,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseCertificates/Template'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseCertificates/Template'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -157,7 +158,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseCertificates/{courseCertificateId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseCertificates/{courseCertificateId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -217,7 +218,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseCertificates/Template/{courseCertificateTemplateId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseCertificates/Template/{courseCertificateTemplateId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -278,7 +279,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseCertificates/{courseCertificateId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseCertificates/{courseCertificateId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -339,7 +340,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseCertificates/Template/{courseCertificateTemplateId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseCertificates/Template/{courseCertificateTemplateId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -393,7 +394,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseCertificates/Template'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseCertificates/Template'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -414,6 +415,60 @@ module.exports = {
                 })
             },
             sample: samples['CourseCertificateTemplateDtoSample']
+        }
+    },
+    getCourseCertificateTemplatesCountAsync: {
+        key: 'getCourseCertificateTemplatesCountAsync',
+        noun: 'CourseCertificates',
+        display: {
+            label: 'Get certificate templates count',
+            description: 'Returns the count of course certificate templates for the specified tenant.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseCertificates/Template/Count'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getCourseCertificateTemplatesCountAsync', response.json);
+                    return { data: results };
+                })
+            },
+            sample: { data: {} }
         }
     },
     getCourseCertificatesAsync: {
@@ -447,7 +502,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseCertificates'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseCertificates'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -501,7 +556,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseCertificates/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseCertificates/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -562,7 +617,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseCertificates/{courseCertificateId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseCertificates/{courseCertificateId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -580,6 +635,68 @@ module.exports = {
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
                     response.throwForStatus();
                     const results = utils.responseOptionsMiddleware(z, bundle, 'updateCourseCertificateAsync', response.json);
+                    return results;
+                })
+            },
+            sample: { data: {} }
+        }
+    },
+    updateCourseCertificateTemplateAsync: {
+        key: 'updateCourseCertificateTemplateAsync',
+        noun: 'CourseCertificates',
+        display: {
+            label: 'Update a certificate template',
+            description: 'Updates an existing course certificate template for the specified tenant.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'courseCertificateTemplateId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                ...CourseCertificateTemplateUpdateDto.fields(),
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseCertificates/Template/{courseCertificateTemplateId}'),
+                    method: 'PUT',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...CourseCertificateTemplateUpdateDto.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'updateCourseCertificateTemplateAsync', response.json);
                     return results;
                 })
             },

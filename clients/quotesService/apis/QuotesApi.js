@@ -45,7 +45,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/QuotesService/Quotes/{quoteId}/Calculate'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/QuotesService/Quotes/{quoteId}/Calculate'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -101,7 +101,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/QuotesService/Quotes/{quoteId}/Lines/{quoteLineId}/Calculate'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/QuotesService/Quotes/{quoteId}/Lines/{quoteLineId}/Calculate'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -151,7 +151,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/QuotesService/Quotes/{quoteId}/Close'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/QuotesService/Quotes/{quoteId}/Close'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -201,7 +201,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/QuotesService/Quotes/{quoteId}/Orders'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/QuotesService/Quotes/{quoteId}/Orders'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -246,7 +246,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/QuotesService/Quotes'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/QuotesService/Quotes'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -298,7 +298,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/QuotesService/Quotes/{quoteId}/Lines'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/QuotesService/Quotes/{quoteId}/Lines'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -349,7 +349,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/QuotesService/Quotes/{quoteId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/QuotesService/Quotes/{quoteId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -405,7 +405,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/QuotesService/Quotes/{quoteId}/Lines/{quoteLineId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/QuotesService/Quotes/{quoteId}/Lines/{quoteLineId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -449,7 +449,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/QuotesService/Quotes/Extended'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/QuotesService/Quotes/Extended'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -499,7 +499,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/QuotesService/Quotes/{quoteId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/QuotesService/Quotes/{quoteId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -555,7 +555,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/QuotesService/Quotes/{quoteId}/Lines/{quoteLineId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/QuotesService/Quotes/{quoteId}/Lines/{quoteLineId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -610,7 +610,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/QuotesService/Quotes/{quoteId}/Lines'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/QuotesService/Quotes/{quoteId}/Lines'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -661,7 +661,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/QuotesService/Quotes/{quoteId}/Lines/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/QuotesService/Quotes/{quoteId}/Lines/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -705,7 +705,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/QuotesService/Quotes'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/QuotesService/Quotes'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -749,7 +749,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/QuotesService/Quotes/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/QuotesService/Quotes/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -799,7 +799,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/QuotesService/Quotes/{quoteId}/Emails/Preview'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/QuotesService/Quotes/{quoteId}/Emails/Preview'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -860,7 +860,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/QuotesService/Quotes/{quoteId}/Lines/Exists'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/QuotesService/Quotes/{quoteId}/Lines/Exists'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -912,7 +912,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/QuotesService/Quotes/{quoteId}/Reopen'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/QuotesService/Quotes/{quoteId}/Reopen'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -963,7 +963,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/QuotesService/Quotes/{quoteId}/Emails/Send'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/QuotesService/Quotes/{quoteId}/Emails/Send'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1015,7 +1015,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/QuotesService/Quotes/{quoteId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/QuotesService/Quotes/{quoteId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1073,7 +1073,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/QuotesService/Quotes/{quoteId}/Lines/{quoteLineId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/QuotesService/Quotes/{quoteId}/Lines/{quoteLineId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1131,7 +1131,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/QuotesService/Quotes/{quoteId}/Lines/{quoteLineId}/Upsert'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/QuotesService/Quotes/{quoteId}/Lines/{quoteLineId}/Upsert'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

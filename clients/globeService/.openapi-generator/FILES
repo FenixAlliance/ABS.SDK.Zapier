@@ -1,8 +1,10 @@
 README.md
+apis/CompletionsApi.js
 apis/CountriesApi.js
 apis/CurrenciesApi.js
-apis/FenixAllianceABSWebApi.js
+apis/FenixAlliancePortalsWebsiteApi.js
 apis/LanguagesApi.js
+apis/MigrationsApi.js
 apis/TimezonesApi.js
 authentication.js
 index.js
@@ -25,6 +27,7 @@ models/CountryTopLevelDomainDtoListEnvelope.js
 models/CurrencyDto.js
 models/CurrencyDtoEnvelope.js
 models/CurrencyDtoListEnvelope.js
+models/Error.js
 models/ErrorEnvelope.js
 models/ForgotPasswordRequest.js
 models/HttpValidationProblemDetails.js
@@ -32,10 +35,12 @@ models/InfoRequest.js
 models/InfoResponse.js
 models/Int32Envelope.js
 models/LoginRequest.js
+models/PaymentResponse.js
 models/RefreshRequest.js
 models/RegisterRequest.js
 models/ResendConfirmationEmailRequest.js
 models/ResetPasswordRequest.js
+models/ResponseStatus.js
 models/TimezoneDto.js
 models/TimezoneDtoEnvelope.js
 models/TimezoneDtoListEnvelope.js
@@ -43,4 +48,7 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
+samples/CompletionsApi.js
+samples/FenixAlliancePortalsWebsiteApi.js
+samples/MigrationsApi.js
 utils/utils.js

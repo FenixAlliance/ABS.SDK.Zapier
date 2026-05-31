@@ -10,6 +10,11 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}timestamp`,
+                label: `[${labelPrefix}timestamp]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}concurrencyToken`,
                 label: `[${labelPrefix}concurrencyToken]`,
                 type: 'string',
@@ -60,6 +65,7 @@ module.exports = {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
+            'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'concurrencyToken': bundle.inputData?.[`${keyPrefix}concurrencyToken`],
             'creationDate': bundle.inputData?.[`${keyPrefix}creationDate`],
             'properties': bundle.inputData?.[`${keyPrefix}properties`],

@@ -56,6 +56,16 @@ module.exports = {
                 type: 'number',
             },
             {
+                key: `${keyPrefix}creditInUsd`,
+                label: `[${labelPrefix}creditInUsd]`,
+                type: 'number',
+            },
+            {
+                key: `${keyPrefix}debitInUsd`,
+                label: `[${labelPrefix}debitInUsd]`,
+                type: 'number',
+            },
+            {
                 key: `${keyPrefix}currencyId`,
                 label: `[${labelPrefix}currencyId]`,
                 type: 'string',
@@ -117,6 +127,8 @@ module.exports = {
             },
             ...Money.fields(`${keyPrefix}creditAmount`, isInput),
             ...Money.fields(`${keyPrefix}debitAmount`, isInput),
+            ...Money.fields(`${keyPrefix}creditAmountInUsd`, isInput),
+            ...Money.fields(`${keyPrefix}debitAmountInUsd`, isInput),
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -132,6 +144,8 @@ module.exports = {
             'forexRate': bundle.inputData?.[`${keyPrefix}forexRate`],
             'credit': bundle.inputData?.[`${keyPrefix}credit`],
             'debit': bundle.inputData?.[`${keyPrefix}debit`],
+            'creditInUsd': bundle.inputData?.[`${keyPrefix}creditInUsd`],
+            'debitInUsd': bundle.inputData?.[`${keyPrefix}debitInUsd`],
             'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
@@ -146,6 +160,8 @@ module.exports = {
             'parentJournalEntryId': bundle.inputData?.[`${keyPrefix}parentJournalEntryId`],
             'creditAmount': utils.removeIfEmpty(Money.mapping(bundle, `${keyPrefix}creditAmount`)),
             'debitAmount': utils.removeIfEmpty(Money.mapping(bundle, `${keyPrefix}debitAmount`)),
+            'creditAmountInUsd': utils.removeIfEmpty(Money.mapping(bundle, `${keyPrefix}creditAmountInUsd`)),
+            'debitAmountInUsd': utils.removeIfEmpty(Money.mapping(bundle, `${keyPrefix}debitAmountInUsd`)),
         }
     },
 }

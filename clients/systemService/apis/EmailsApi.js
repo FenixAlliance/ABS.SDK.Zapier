@@ -1,7 +1,7 @@
 const samples = require('../samples/EmailsApi');
+const Envelope = require('../models/Envelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const ObjectEmailDispatchRequest = require('../models/ObjectEmailDispatchRequest');
-const TenantDtoListEnvelope = require('../models/TenantDtoListEnvelope');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -31,7 +31,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Emails/Preview'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Emails/Preview'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -77,11 +77,11 @@ module.exports = {
                 ...ObjectEmailDispatchRequest.fields(),
             ],
             outputFields: [
-                ...TenantDtoListEnvelope.fields('', false),
+                ...Envelope.fields('', false),
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Emails/SendBasic'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Emails/SendBasic'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -101,7 +101,7 @@ module.exports = {
                     return results;
                 })
             },
-            sample: samples['TenantDtoListEnvelopeSample']
+            sample: samples['EnvelopeSample']
         }
     },
 }

@@ -30,7 +30,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/PaymentsService/Payments'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/PaymentsService/Payments'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -81,7 +81,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/PaymentsService/Payments/{paymentId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/PaymentsService/Payments/{paymentId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -114,6 +114,12 @@ module.exports = {
         operation: {
             inputFields: [
                 {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
                     key: 'paymentId',
                     label: '',
                     type: 'string',
@@ -125,7 +131,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/PaymentsService/Payments/{paymentId}/Details'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/PaymentsService/Payments/{paymentId}/Details'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -133,6 +139,7 @@ module.exports = {
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
                     },
@@ -157,6 +164,12 @@ module.exports = {
         operation: {
             inputFields: [
                 {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
                     key: 'paymentId',
                     label: '',
                     type: 'string',
@@ -168,7 +181,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/PaymentsService/Payments/{paymentId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/PaymentsService/Payments/{paymentId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -176,6 +189,7 @@ module.exports = {
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
                     },
@@ -211,7 +225,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/PaymentsService/Payments'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/PaymentsService/Payments'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -262,7 +276,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/PaymentsService/Payments/{paymentId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/PaymentsService/Payments/{paymentId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

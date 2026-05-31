@@ -45,7 +45,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Transactions'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Transactions'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -102,7 +102,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Transactions/Categories'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Transactions/Categories'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -164,7 +164,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Transactions/{transactionId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Transactions/{transactionId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -225,7 +225,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Transactions/Categories/{categoryId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Transactions/Categories/{categoryId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -286,7 +286,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Transactions/{transactionId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Transactions/{transactionId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -341,7 +341,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Transactions/Categories'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Transactions/Categories'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -396,7 +396,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Transactions/Categories/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Transactions/Categories/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -457,7 +457,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Transactions/Categories/{categoryId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Transactions/Categories/{categoryId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -512,7 +512,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Transactions'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Transactions'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -567,7 +567,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Transactions/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Transactions/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -629,7 +629,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Transactions/{transactionId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Transactions/{transactionId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -692,7 +692,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Transactions/Categories/{categoryId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Transactions/Categories/{categoryId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

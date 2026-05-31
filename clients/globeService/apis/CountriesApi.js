@@ -13,6 +13,120 @@ const TimezoneDtoListEnvelope = require('../models/TimezoneDtoListEnvelope');
 const utils = require('../utils/utils');
 
 module.exports = {
+    countCallingCodesByCountryAsync: {
+        key: 'countCallingCodesByCountryAsync',
+        noun: 'Countries',
+        display: {
+            label: 'Count calling codes for a country',
+            description: 'Returns the total number of calling codes for the specified country, with optional OData filtering.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'countryId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...Int32Envelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries/{countryId}/CallingCodes/Count'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'countCallingCodesByCountryAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['Int32EnvelopeSample']
+        }
+    },
+    countCitiesByStateAsync: {
+        key: 'countCitiesByStateAsync',
+        noun: 'Countries',
+        display: {
+            label: 'Count cities for a state',
+            description: 'Returns the total number of cities for the specified state, with optional OData filtering.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'countryStateId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'countryId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...Int32Envelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries/{countryId}/States/{countryStateId}/Cities/Count'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'countCitiesByStateAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['Int32EnvelopeSample']
+        }
+    },
     countCountries: {
         key: 'countCountries',
         noun: 'Countries',
@@ -39,7 +153,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Countries/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -55,6 +169,168 @@ module.exports = {
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
                     response.throwForStatus();
                     const results = utils.responseOptionsMiddleware(z, bundle, 'countCountries', response.json);
+                    return results;
+                })
+            },
+            sample: samples['Int32EnvelopeSample']
+        }
+    },
+    countCountryStatesAsync: {
+        key: 'countCountryStatesAsync',
+        noun: 'Countries',
+        display: {
+            label: 'Count states for a country',
+            description: 'Returns the total number of states or provinces for the specified country, with optional OData filtering.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'countryId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...Int32Envelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries/{countryId}/States/Count'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'countCountryStatesAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['Int32EnvelopeSample']
+        }
+    },
+    countTimezonesByCountryAsync: {
+        key: 'countTimezonesByCountryAsync',
+        noun: 'Countries',
+        display: {
+            label: 'Count timezones for a country',
+            description: 'Returns the total number of timezones for the specified country, with optional OData filtering.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'countryId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...Int32Envelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries/{countryId}/Timezones/Count'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'countTimezonesByCountryAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['Int32EnvelopeSample']
+        }
+    },
+    countTopLevelDomainsByCountryAsync: {
+        key: 'countTopLevelDomainsByCountryAsync',
+        noun: 'Countries',
+        display: {
+            label: 'Count top-level domains for a country',
+            description: 'Returns the total number of top-level domains for the specified country, with optional OData filtering.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'countryId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...Int32Envelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries/{countryId}/TopLevelDomains/Count'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'countTopLevelDomainsByCountryAsync', response.json);
                     return results;
                 })
             },
@@ -87,7 +363,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Countries'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -141,7 +417,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Countries/{countryId}/CallingCodes'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries/{countryId}/CallingCodes'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -201,7 +477,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Countries/{countryId}/States/{countryStateId}/Cities'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries/{countryId}/States/{countryStateId}/Cities'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -255,7 +531,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Countries/{countryId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries/{countryId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -315,7 +591,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Countries/{countryId}/States/{countryStateId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries/{countryId}/States/{countryStateId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -369,7 +645,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Countries/{countryId}/States'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries/{countryId}/States'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -423,7 +699,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Countries/{countryId}/Currencies'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries/{countryId}/Currencies'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -477,7 +753,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Countries/{countryId}/Timezones'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries/{countryId}/Timezones'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -531,7 +807,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Countries/{countryId}/TopLevelDomains'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries/{countryId}/TopLevelDomains'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -585,7 +861,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/GlobeService/Countries/Search'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/GlobeService/Countries/Search'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

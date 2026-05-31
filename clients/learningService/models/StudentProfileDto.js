@@ -1,4 +1,5 @@
 const utils = require('../utils/utils');
+const ContactDto = require('../models/ContactDto');
 
 module.exports = {
     fields: (prefix = '', isInput = true, isArrayChild = false) => {
@@ -12,6 +13,26 @@ module.exports = {
             {
                 key: `${keyPrefix}timestamp`,
                 label: `[${labelPrefix}timestamp]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}contactId`,
+                label: `[${labelPrefix}contactId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}type`,
+                label: `[${labelPrefix}type]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
             {
@@ -34,6 +55,7 @@ module.exports = {
                 label: `[${labelPrefix}avatarUrl]`,
                 type: 'string',
             },
+            ...ContactDto.fields(`${keyPrefix}contact`, isInput),
             {
                 key: `${keyPrefix}qualifiedName`,
                 label: `[${labelPrefix}qualifiedName]`,
@@ -166,10 +188,15 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
+            'contactId': bundle.inputData?.[`${keyPrefix}contactId`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'type': bundle.inputData?.[`${keyPrefix}type`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'about': bundle.inputData?.[`${keyPrefix}about`],
             'verified': bundle.inputData?.[`${keyPrefix}verified`],
             'submitted': bundle.inputData?.[`${keyPrefix}submitted`],
             'avatarUrl': bundle.inputData?.[`${keyPrefix}avatarUrl`],
+            'contact': utils.removeIfEmpty(ContactDto.mapping(bundle, `${keyPrefix}contact`)),
             'qualifiedName': bundle.inputData?.[`${keyPrefix}qualifiedName`],
             'verificationTimestamp': bundle.inputData?.[`${keyPrefix}verificationTimestamp`],
             'data': bundle.inputData?.[`${keyPrefix}data`],

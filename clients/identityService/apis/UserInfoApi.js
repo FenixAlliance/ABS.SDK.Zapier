@@ -27,7 +27,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/connect/userinfo'),
+                    url: utils.replacePathParameters('http://localhost/connect/userinfo'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -74,7 +74,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/connect/userinfo'),
+                    url: utils.replacePathParameters('http://localhost/connect/userinfo'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

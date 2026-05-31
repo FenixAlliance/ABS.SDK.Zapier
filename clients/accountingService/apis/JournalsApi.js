@@ -9,9 +9,144 @@ const JournalEntryCreateDto = require('../models/JournalEntryCreateDto');
 const JournalEntryDtoIReadOnlyListEnvelope = require('../models/JournalEntryDtoIReadOnlyListEnvelope');
 const JournalEntryUpdateDto = require('../models/JournalEntryUpdateDto');
 const JournalUpdateDto = require('../models/JournalUpdateDto');
+const MoneyEnvelope = require('../models/MoneyEnvelope');
 const utils = require('../utils/utils');
 
 module.exports = {
+    aggregateJournalEntryCreditsAsync: {
+        key: 'aggregateJournalEntryCreditsAsync',
+        noun: 'Journals',
+        display: {
+            label: 'Aggregate journal entry credits',
+            description: 'Returns the sum of all credit amounts for entries in the specified journal, normalized to the target currency.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'journalId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'currencyId',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...MoneyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals/{journalId}/Entries/Aggregate/Credits'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'currencyId': bundle.inputData?.['currencyId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'aggregateJournalEntryCreditsAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['MoneyEnvelopeSample']
+        }
+    },
+    aggregateJournalEntryDebitsAsync: {
+        key: 'aggregateJournalEntryDebitsAsync',
+        noun: 'Journals',
+        display: {
+            label: 'Aggregate journal entry debits',
+            description: 'Returns the sum of all debit amounts for entries in the specified journal, normalized to the target currency.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'journalId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'currencyId',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...MoneyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals/{journalId}/Entries/Aggregate/Debits'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'currencyId': bundle.inputData?.['currencyId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'aggregateJournalEntryDebitsAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['MoneyEnvelopeSample']
+        }
+    },
     countJournalsAsync: {
         key: 'countJournalsAsync',
         noun: 'Journals',
@@ -44,7 +179,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -100,7 +235,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -163,7 +298,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/{journalId}/Entries'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals/{journalId}/Entries'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -225,7 +360,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/{journalId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals/{journalId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -292,7 +427,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/{journalId}/Entries/{entryId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals/{journalId}/Entries/{entryId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -353,7 +488,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/{journalId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals/{journalId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -414,7 +549,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/{journalId}/Entries'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals/{journalId}/Entries'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -475,7 +610,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/{journalId}/Entries/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals/{journalId}/Entries/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -530,7 +665,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -592,7 +727,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/{journalId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals/{journalId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -661,7 +796,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/{journalId}/Entries/{entryId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals/{journalId}/Entries/{entryId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

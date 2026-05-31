@@ -1,4 +1,5 @@
 README.md
+apis/CompletionsApi.js
 apis/CourseArticlesApi.js
 apis/CourseAssignmentComponentsApi.js
 apis/CourseAssignmentTypesApi.js
@@ -22,7 +23,7 @@ apis/CourseUnitsApi.js
 apis/CourseUpdatesApi.js
 apis/CourseWikisApi.js
 apis/CoursesApi.js
-apis/FenixAllianceABSWebApi.js
+apis/FenixAlliancePortalsWebsiteApi.js
 apis/InstructorProfilesApi.js
 apis/MeApi.js
 apis/StudentProfilesApi.js
@@ -31,6 +32,7 @@ index.js
 models/AccessTokenResponse.js
 models/AverageDto.js
 models/AverageDtoEnvelope.js
+models/ContactDto.js
 models/CountDto.js
 models/CountDtoEnvelope.js
 models/CourseArticleCreateDto.js
@@ -50,6 +52,7 @@ models/CourseCategoryDto.js
 models/CourseCategoryUpdateDto.js
 models/CourseCertificateTemplateCreateDto.js
 models/CourseCertificateTemplateDto.js
+models/CourseCertificateTemplateUpdateDto.js
 models/CourseCohortCreateDto.js
 models/CourseCohortDto.js
 models/CourseCohortUpdateDto.js
@@ -129,10 +132,6 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/CourseAssignmentComponentsApi.js
-samples/CourseAssignmentTypesApi.js
-samples/CourseContentGroupsApi.js
-samples/CourseGradingRubricsApi.js
-samples/CourseTeamMembershipsApi.js
-samples/MeApi.js
+samples/CompletionsApi.js
+samples/FenixAlliancePortalsWebsiteApi.js
 utils/utils.js

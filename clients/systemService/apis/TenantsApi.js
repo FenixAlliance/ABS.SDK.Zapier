@@ -15,8 +15,8 @@ module.exports = {
         key: 'adminPreviewTenantEmail',
         noun: 'Tenants',
         display: {
-            label: 'Preview the rendered email for a user.',
-            description: 'This action is only available for users with the &#39;business_owner&#39; role (global administrators).',
+            label: 'Preview the rendered email for a tenant.',
+            description: 'This action is only available for global administrators.',
             hidden: false,
         },
         operation: {
@@ -43,7 +43,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Tenants/{tenantId}/Emails/Preview'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Tenants/{tenantId}/Emails/Preview'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -70,8 +70,8 @@ module.exports = {
         key: 'adminSendTenantEmail',
         noun: 'Tenants',
         display: {
-            label: 'Send an email to a user.',
-            description: 'This action is only available for users with the &#39;business_owner&#39; role (global administrators).',
+            label: 'Send an email to a tenant.',
+            description: 'This action is only available for global administrators.',
             hidden: false,
         },
         operation: {
@@ -98,7 +98,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Tenants/{tenantId}/Emails/Send'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Tenants/{tenantId}/Emails/Send'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -148,7 +148,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Tenants'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Tenants'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -203,7 +203,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Tenants/{tenantId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Tenants/{tenantId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -251,7 +251,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Tenants/Extended'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Tenants/Extended'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -299,7 +299,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Tenants'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Tenants'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -347,7 +347,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Tenants/Extended/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Tenants/Extended/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -401,7 +401,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Tenants/{tenantId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Tenants/{tenantId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -449,7 +449,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Tenants/Count'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Tenants/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -504,7 +504,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Tenants/{tenantId}'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Tenants/{tenantId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

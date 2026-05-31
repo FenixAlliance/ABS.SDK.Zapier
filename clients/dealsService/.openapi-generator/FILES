@@ -1,8 +1,8 @@
 README.md
+apis/CompletionsApi.js
 apis/DealUnitFlowsApi.js
 apis/DealUnitsApi.js
-apis/FenixAllianceABSWebApi.js
-apis/SalesLiteraturesApi.js
+apis/FenixAlliancePortalsWebsiteApi.js
 authentication.js
 index.js
 models/AccessTokenResponse.js
@@ -32,8 +32,6 @@ models/ErrorEnvelope.js
 models/ExtendedDealUnitDto.js
 models/ExtendedDealUnitDtoEnvelope.js
 models/ExtendedDealUnitDtoListEnvelope.js
-models/ExtendedSalesLiteratureDto.js
-models/ExtendedSalesLiteratureDtoListEnvelope.js
 models/ForgotPasswordRequest.js
 models/HttpValidationProblemDetails.js
 models/InfoRequest.js
@@ -44,12 +42,6 @@ models/RefreshRequest.js
 models/RegisterRequest.js
 models/ResendConfirmationEmailRequest.js
 models/ResetPasswordRequest.js
-models/SalesLiteratureCreateDto.js
-models/SalesLiteratureDto.js
-models/SalesLiteratureDtoEnvelope.js
-models/SalesLiteratureDtoListEnvelope.js
-models/SalesLiteratureTypeDto.js
-models/SalesLiteratureUpdateDto.js
 models/TenantDto.js
 models/TenantEnrollmentDto.js
 models/TwoFactorRequest.js
@@ -57,4 +49,6 @@ models/TwoFactorResponse.js
 models/UserDto.js
 operations/actions.js
 package.json
+samples/CompletionsApi.js
+samples/FenixAlliancePortalsWebsiteApi.js
 utils/utils.js

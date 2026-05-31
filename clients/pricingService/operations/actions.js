@@ -1,10 +1,14 @@
+const CompletionsApi = require('../apis/CompletionsApi');
 const DiscountListsApi = require('../apis/DiscountListsApi');
-const FenixAllianceABSWebApi = require('../apis/FenixAllianceABSWebApi');
+const FenixAlliancePortalsWebsiteApi = require('../apis/FenixAlliancePortalsWebsiteApi');
 const PriceListsApi = require('../apis/PriceListsApi');
 const PricesApi = require('../apis/PricesApi');
+const PricingRulesApi = require('../apis/PricingRulesApi');
+const RoundingPoliciesApi = require('../apis/RoundingPoliciesApi');
 const { triggerMiddleware, isTrigger, searchMiddleware, hasSearchRequisites, isSearchAction, isCreateAction } = require('../utils/utils');
 
 const actions = {
+    [CompletionsApi.apiV2AiServiceCompletionsCompleteGet.key]: CompletionsApi.apiV2AiServiceCompletionsCompleteGet,
     [DiscountListsApi.createDiscountList.key]: DiscountListsApi.createDiscountList,
     [DiscountListsApi.createDiscountListEntry.key]: DiscountListsApi.createDiscountListEntry,
     [DiscountListsApi.deleteDiscountList.key]: DiscountListsApi.deleteDiscountList,
@@ -17,23 +21,23 @@ const actions = {
     [DiscountListsApi.getDiscountListsCount.key]: DiscountListsApi.getDiscountListsCount,
     [DiscountListsApi.updateDiscountList.key]: DiscountListsApi.updateDiscountList,
     [DiscountListsApi.updateDiscountListEntry.key]: DiscountListsApi.updateDiscountListEntry,
-    [FenixAllianceABSWebApi.accountLogoutPost.key]: FenixAllianceABSWebApi.accountLogoutPost,
-    [FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost.key]: FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost,
-    [FenixAllianceABSWebApi.accountManageLinkExternalLoginPost.key]: FenixAllianceABSWebApi.accountManageLinkExternalLoginPost,
-    [FenixAllianceABSWebApi.accountPerformExternalLoginPost.key]: FenixAllianceABSWebApi.accountPerformExternalLoginPost,
-    [FenixAllianceABSWebApi.forgotPasswordPost.key]: FenixAllianceABSWebApi.forgotPasswordPost,
-    [FenixAllianceABSWebApi.healthGet.key]: FenixAllianceABSWebApi.healthGet,
-    [FenixAllianceABSWebApi.helloGet.key]: FenixAllianceABSWebApi.helloGet,
-    [FenixAllianceABSWebApi.loginPost.key]: FenixAllianceABSWebApi.loginPost,
-    [FenixAllianceABSWebApi.manage2faPost.key]: FenixAllianceABSWebApi.manage2faPost,
-    [FenixAllianceABSWebApi.manageInfoGet.key]: FenixAllianceABSWebApi.manageInfoGet,
-    [FenixAllianceABSWebApi.manageInfoPost.key]: FenixAllianceABSWebApi.manageInfoPost,
-    [FenixAllianceABSWebApi.mapIdentityApi/confirmEmail.key]: FenixAllianceABSWebApi.mapIdentityApi/confirmEmail,
-    [FenixAllianceABSWebApi.refreshPost.key]: FenixAllianceABSWebApi.refreshPost,
-    [FenixAllianceABSWebApi.registerPost.key]: FenixAllianceABSWebApi.registerPost,
-    [FenixAllianceABSWebApi.resendConfirmationEmailPost.key]: FenixAllianceABSWebApi.resendConfirmationEmailPost,
-    [FenixAllianceABSWebApi.resetPasswordPost.key]: FenixAllianceABSWebApi.resetPasswordPost,
-    [FenixAllianceABSWebApi.versionGet.key]: FenixAllianceABSWebApi.versionGet,
+    [FenixAlliancePortalsWebsiteApi.accountLogoutPost.key]: FenixAlliancePortalsWebsiteApi.accountLogoutPost,
+    [FenixAlliancePortalsWebsiteApi.accountManageDownloadPersonalDataPost.key]: FenixAlliancePortalsWebsiteApi.accountManageDownloadPersonalDataPost,
+    [FenixAlliancePortalsWebsiteApi.accountManageLinkExternalLoginPost.key]: FenixAlliancePortalsWebsiteApi.accountManageLinkExternalLoginPost,
+    [FenixAlliancePortalsWebsiteApi.accountPerformExternalLoginPost.key]: FenixAlliancePortalsWebsiteApi.accountPerformExternalLoginPost,
+    [FenixAlliancePortalsWebsiteApi.forgotPasswordPost.key]: FenixAlliancePortalsWebsiteApi.forgotPasswordPost,
+    [FenixAlliancePortalsWebsiteApi.healthGet.key]: FenixAlliancePortalsWebsiteApi.healthGet,
+    [FenixAlliancePortalsWebsiteApi.helloGet.key]: FenixAlliancePortalsWebsiteApi.helloGet,
+    [FenixAlliancePortalsWebsiteApi.loginPost.key]: FenixAlliancePortalsWebsiteApi.loginPost,
+    [FenixAlliancePortalsWebsiteApi.manage2faPost.key]: FenixAlliancePortalsWebsiteApi.manage2faPost,
+    [FenixAlliancePortalsWebsiteApi.manageInfoGet.key]: FenixAlliancePortalsWebsiteApi.manageInfoGet,
+    [FenixAlliancePortalsWebsiteApi.manageInfoPost.key]: FenixAlliancePortalsWebsiteApi.manageInfoPost,
+    [FenixAlliancePortalsWebsiteApi.mapIdentityApi/confirmEmail.key]: FenixAlliancePortalsWebsiteApi.mapIdentityApi/confirmEmail,
+    [FenixAlliancePortalsWebsiteApi.refreshPost.key]: FenixAlliancePortalsWebsiteApi.refreshPost,
+    [FenixAlliancePortalsWebsiteApi.registerPost.key]: FenixAlliancePortalsWebsiteApi.registerPost,
+    [FenixAlliancePortalsWebsiteApi.resendConfirmationEmailPost.key]: FenixAlliancePortalsWebsiteApi.resendConfirmationEmailPost,
+    [FenixAlliancePortalsWebsiteApi.resetPasswordPost.key]: FenixAlliancePortalsWebsiteApi.resetPasswordPost,
+    [FenixAlliancePortalsWebsiteApi.versionGet.key]: FenixAlliancePortalsWebsiteApi.versionGet,
     [PriceListsApi.createPriceListAsync.key]: PriceListsApi.createPriceListAsync,
     [PriceListsApi.createPriceListPricesAsync.key]: PriceListsApi.createPriceListPricesAsync,
     [PriceListsApi.deletePriceListAsync.key]: PriceListsApi.deletePriceListAsync,
@@ -49,6 +53,18 @@ const actions = {
     [PricesApi.getPrice.key]: PricesApi.getPrice,
     [PricesApi.getTotalSavingsInUsd.key]: PricesApi.getTotalSavingsInUsd,
     [PricesApi.getTotalTaxesInUsd.key]: PricesApi.getTotalTaxesInUsd,
+    [PricingRulesApi.createPricingRule.key]: PricingRulesApi.createPricingRule,
+    [PricingRulesApi.deletePricingRule.key]: PricingRulesApi.deletePricingRule,
+    [PricingRulesApi.getPricingRuleById.key]: PricingRulesApi.getPricingRuleById,
+    [PricingRulesApi.getPricingRules.key]: PricingRulesApi.getPricingRules,
+    [PricingRulesApi.getPricingRulesCountAsync.key]: PricingRulesApi.getPricingRulesCountAsync,
+    [PricingRulesApi.updatePricingRule.key]: PricingRulesApi.updatePricingRule,
+    [RoundingPoliciesApi.createRoundingPolicyAsync.key]: RoundingPoliciesApi.createRoundingPolicyAsync,
+    [RoundingPoliciesApi.deleteRoundingPolicyAsync.key]: RoundingPoliciesApi.deleteRoundingPolicyAsync,
+    [RoundingPoliciesApi.getRoundingPoliciesAsync.key]: RoundingPoliciesApi.getRoundingPoliciesAsync,
+    [RoundingPoliciesApi.getRoundingPoliciesCountAsync.key]: RoundingPoliciesApi.getRoundingPoliciesCountAsync,
+    [RoundingPoliciesApi.getRoundingPolicyByIdAsync.key]: RoundingPoliciesApi.getRoundingPolicyByIdAsync,
+    [RoundingPoliciesApi.updateRoundingPolicyAsync.key]: RoundingPoliciesApi.updateRoundingPolicyAsync,
 }
 
 module.exports = {
