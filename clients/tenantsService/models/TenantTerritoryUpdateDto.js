@@ -14,6 +14,11 @@ module.exports = {
                 label: `[${labelPrefix}description]`,
                 type: 'string',
             },
+            {
+                key: `${keyPrefix}parentTerritoryId`,
+                label: `[${labelPrefix}parentTerritoryId]`,
+                type: 'string',
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -21,6 +26,7 @@ module.exports = {
         return {
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
+            'parentTerritoryId': bundle.inputData?.[`${keyPrefix}parentTerritoryId`],
         }
     },
 }

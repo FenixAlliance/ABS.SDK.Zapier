@@ -20,23 +20,18 @@ module.exports = {
                 type: 'boolean',
             },
             {
-                key: `${keyPrefix}businessUnitQualifiedName`,
-                label: `[${labelPrefix}businessUnitQualifiedName]`,
+                key: `${keyPrefix}countryId`,
+                label: `[${labelPrefix}countryId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}countryID`,
-                label: `[${labelPrefix}countryID]`,
+                key: `${keyPrefix}organizationProfileId`,
+                label: `[${labelPrefix}organizationProfileId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}organizationProfileID`,
-                label: `[${labelPrefix}organizationProfileID]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}parentBusinessUnitID`,
-                label: `[${labelPrefix}parentBusinessUnitID]`,
+                key: `${keyPrefix}parentBusinessUnitId`,
+                label: `[${labelPrefix}parentBusinessUnitId]`,
                 type: 'string',
             },
         ]
@@ -47,10 +42,9 @@ module.exports = {
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'disabled': bundle.inputData?.[`${keyPrefix}disabled`],
-            'businessUnitQualifiedName': bundle.inputData?.[`${keyPrefix}businessUnitQualifiedName`],
-            'countryID': bundle.inputData?.[`${keyPrefix}countryID`],
-            'organizationProfileID': bundle.inputData?.[`${keyPrefix}organizationProfileID`],
-            'parentBusinessUnitID': bundle.inputData?.[`${keyPrefix}parentBusinessUnitID`],
+            'countryId': bundle.inputData?.[`${keyPrefix}countryId`],
+            'organizationProfileId': bundle.inputData?.[`${keyPrefix}organizationProfileId`],
+            'parentBusinessUnitId': bundle.inputData?.[`${keyPrefix}parentBusinessUnitId`],
         }
     },
 }

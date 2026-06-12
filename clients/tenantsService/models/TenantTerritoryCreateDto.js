@@ -25,8 +25,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}parentTerritoryID`,
-                label: `[${labelPrefix}parentTerritoryID]`,
+                key: `${keyPrefix}parentTerritoryId`,
+                label: `[${labelPrefix}parentTerritoryId]`,
                 type: 'string',
             },
         ]
@@ -38,7 +38,7 @@ module.exports = {
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
-            'parentTerritoryID': bundle.inputData?.[`${keyPrefix}parentTerritoryID`],
+            'parentTerritoryId': bundle.inputData?.[`${keyPrefix}parentTerritoryId`],
         }
     },
 }

@@ -25,8 +25,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}avatarURL`,
-                label: `[${labelPrefix}avatarURL]`,
+                key: `${keyPrefix}avatarUrl`,
+                label: `[${labelPrefix}avatarUrl]`,
                 type: 'string',
             },
             {
@@ -35,13 +35,13 @@ module.exports = {
                 type: 'boolean',
             },
             {
-                key: `${keyPrefix}businessUnitID`,
-                label: `[${labelPrefix}businessUnitID]`,
+                key: `${keyPrefix}businessUnitId`,
+                label: `[${labelPrefix}businessUnitId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}organizationProfileID`,
-                label: `[${labelPrefix}organizationProfileID]`,
+                key: `${keyPrefix}organizationProfileId`,
+                label: `[${labelPrefix}organizationProfileId]`,
                 type: 'string',
             },
         ]
@@ -53,10 +53,10 @@ module.exports = {
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
-            'avatarURL': bundle.inputData?.[`${keyPrefix}avatarURL`],
+            'avatarUrl': bundle.inputData?.[`${keyPrefix}avatarUrl`],
             'isPublic': bundle.inputData?.[`${keyPrefix}isPublic`],
-            'businessUnitID': bundle.inputData?.[`${keyPrefix}businessUnitID`],
-            'organizationProfileID': bundle.inputData?.[`${keyPrefix}organizationProfileID`],
+            'businessUnitId': bundle.inputData?.[`${keyPrefix}businessUnitId`],
+            'organizationProfileId': bundle.inputData?.[`${keyPrefix}organizationProfileId`],
         }
     },
 }

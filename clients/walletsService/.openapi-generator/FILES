@@ -28,6 +28,7 @@ models/LocationDtoEnvelope.js
 models/LocationDtoListEnvelope.js
 models/LocationUpdateDto.js
 models/LoginRequest.js
+models/Operation.js
 models/OrderDto.js
 models/OrderDtoListEnvelope.js
 models/PaymentChargebackDto.js
@@ -62,6 +63,4 @@ models/WalletWithdrawRequestDto.js
 models/WalletWithdrawRequestDtoListEnvelope.js
 operations/actions.js
 package.json
-samples/CompletionsApi.js
-samples/FenixAlliancePortalsWebsiteApi.js
 utils/utils.js

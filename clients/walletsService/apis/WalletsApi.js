@@ -12,6 +12,7 @@ const LocationCreateDto = require('../models/LocationCreateDto');
 const LocationDtoEnvelope = require('../models/LocationDtoEnvelope');
 const LocationDtoListEnvelope = require('../models/LocationDtoListEnvelope');
 const LocationUpdateDto = require('../models/LocationUpdateDto');
+const Operation = require('../models/Operation');
 const OrderDtoListEnvelope = require('../models/OrderDtoListEnvelope');
 const PaymentChargebackDtoListEnvelope = require('../models/PaymentChargebackDtoListEnvelope');
 const PaymentCreateDto = require('../models/PaymentCreateDto');
@@ -2395,6 +2396,138 @@ module.exports = {
                 })
             },
             sample: samples['Int32EnvelopeSample']
+        }
+    },
+    patchWalletBankAccountAsync: {
+        key: 'patchWalletBankAccountAsync',
+        noun: 'Wallets',
+        display: {
+            label: 'Patch Wallet Bank Account',
+            description: 'Partially update a specific bank account of a specific wallet by ID.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'walletId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'bankAccountId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/WalletsService/Wallets/{walletId}/BankAccounts/{bankAccountId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchWalletBankAccountAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
+        }
+    },
+    patchWalletTokenAsync: {
+        key: 'patchWalletTokenAsync',
+        noun: 'Wallets',
+        display: {
+            label: 'Patch Wallet Token',
+            description: 'Partially update a specific payment token of a specific wallet by ID.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'walletId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'tokenId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/WalletsService/Wallets/{walletId}/Tokens/{tokenId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchWalletTokenAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     updateWalletBankAccountAsync: {

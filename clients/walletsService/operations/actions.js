@@ -65,6 +65,8 @@ const actions = {
     [WalletsApi.getWalletWithdrawRequestsCountAsync.key]: WalletsApi.getWalletWithdrawRequestsCountAsync,
     [WalletsApi.getWalletWithdrawsAsync.key]: WalletsApi.getWalletWithdrawsAsync,
     [WalletsApi.getWalletWithdrawsCountAsync.key]: WalletsApi.getWalletWithdrawsCountAsync,
+    [WalletsApi.patchWalletBankAccountAsync.key]: WalletsApi.patchWalletBankAccountAsync,
+    [WalletsApi.patchWalletTokenAsync.key]: WalletsApi.patchWalletTokenAsync,
     [WalletsApi.updateWalletBankAccountAsync.key]: WalletsApi.updateWalletBankAccountAsync,
     [WalletsApi.updateWalletLocationAsync.key]: WalletsApi.updateWalletLocationAsync,
     [WalletsApi.updateWalletTokenAsync.key]: WalletsApi.updateWalletTokenAsync,

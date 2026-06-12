@@ -15,13 +15,13 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
             {
@@ -40,13 +40,13 @@ module.exports = {
                 type: 'boolean',
             },
             {
-                key: `${keyPrefix}organizationProfileID`,
-                label: `[${labelPrefix}organizationProfileID]`,
+                key: `${keyPrefix}organizationProfileId`,
+                label: `[${labelPrefix}organizationProfileId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}parentDepartmentID`,
-                label: `[${labelPrefix}parentDepartmentID]`,
+                key: `${keyPrefix}parentDepartmentId`,
+                label: `[${labelPrefix}parentDepartmentId]`,
                 type: 'string',
             },
         ]
@@ -56,13 +56,13 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'disabled': bundle.inputData?.[`${keyPrefix}disabled`],
-            'organizationProfileID': bundle.inputData?.[`${keyPrefix}organizationProfileID`],
-            'parentDepartmentID': bundle.inputData?.[`${keyPrefix}parentDepartmentID`],
+            'organizationProfileId': bundle.inputData?.[`${keyPrefix}organizationProfileId`],
+            'parentDepartmentId': bundle.inputData?.[`${keyPrefix}parentDepartmentId`],
         }
     },
 }

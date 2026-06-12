@@ -5,11 +5,6 @@ module.exports = {
         const {keyPrefix, labelPrefix} = utils.buildKeyAndLabel(prefix, isInput, isArrayChild)
         return [
             {
-                key: `${keyPrefix}name`,
-                label: `[${labelPrefix}name]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}employeeLowRangeValue`,
                 label: `[${labelPrefix}employeeLowRangeValue]`,
                 type: 'integer',
@@ -24,7 +19,6 @@ module.exports = {
     mapping: (bundle, prefix = '') => {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
-            'name': bundle.inputData?.[`${keyPrefix}name`],
             'employeeLowRangeValue': bundle.inputData?.[`${keyPrefix}employeeLowRangeValue`],
             'employeeHighRangeValue': bundle.inputData?.[`${keyPrefix}employeeHighRangeValue`],
         }

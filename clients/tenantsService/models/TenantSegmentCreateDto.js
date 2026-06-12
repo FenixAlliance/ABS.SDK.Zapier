@@ -15,11 +15,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}revenue`,
-                label: `[${labelPrefix}revenue]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}minEmployees`,
                 label: `[${labelPrefix}minEmployees]`,
                 type: 'number',
@@ -36,7 +31,6 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
-            'revenue': bundle.inputData?.[`${keyPrefix}revenue`],
             'minEmployees': bundle.inputData?.[`${keyPrefix}minEmployees`],
             'maxEmployees': bundle.inputData?.[`${keyPrefix}maxEmployees`],
         }

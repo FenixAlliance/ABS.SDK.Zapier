@@ -10,8 +10,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}parentBusinessIndustryID`,
-                label: `[${labelPrefix}parentBusinessIndustryID]`,
+                key: `${keyPrefix}parentBusinessIndustryId`,
+                label: `[${labelPrefix}parentBusinessIndustryId]`,
                 type: 'string',
             },
         ]
@@ -20,7 +20,7 @@ module.exports = {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
             'name': bundle.inputData?.[`${keyPrefix}name`],
-            'parentBusinessIndustryID': bundle.inputData?.[`${keyPrefix}parentBusinessIndustryID`],
+            'parentBusinessIndustryId': bundle.inputData?.[`${keyPrefix}parentBusinessIndustryId`],
         }
     },
 }

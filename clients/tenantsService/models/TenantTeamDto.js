@@ -15,13 +15,13 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
             {
@@ -35,8 +35,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}avatarURL`,
-                label: `[${labelPrefix}avatarURL]`,
+                key: `${keyPrefix}avatarUrl`,
+                label: `[${labelPrefix}avatarUrl]`,
                 type: 'string',
             },
             {
@@ -45,13 +45,13 @@ module.exports = {
                 type: 'boolean',
             },
             {
-                key: `${keyPrefix}businessUnitID`,
-                label: `[${labelPrefix}businessUnitID]`,
+                key: `${keyPrefix}businessUnitId`,
+                label: `[${labelPrefix}businessUnitId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}organizationProfileID`,
-                label: `[${labelPrefix}organizationProfileID]`,
+                key: `${keyPrefix}organizationProfileId`,
+                label: `[${labelPrefix}organizationProfileId]`,
                 type: 'string',
             },
         ]
@@ -61,14 +61,14 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
-            'avatarURL': bundle.inputData?.[`${keyPrefix}avatarURL`],
+            'avatarUrl': bundle.inputData?.[`${keyPrefix}avatarUrl`],
             'isPublic': bundle.inputData?.[`${keyPrefix}isPublic`],
-            'businessUnitID': bundle.inputData?.[`${keyPrefix}businessUnitID`],
-            'organizationProfileID': bundle.inputData?.[`${keyPrefix}organizationProfileID`],
+            'businessUnitId': bundle.inputData?.[`${keyPrefix}businessUnitId`],
+            'organizationProfileId': bundle.inputData?.[`${keyPrefix}organizationProfileId`],
         }
     },
 }

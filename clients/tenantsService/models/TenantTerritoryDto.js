@@ -15,13 +15,13 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
             {
@@ -35,8 +35,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}parentTerritoryID`,
-                label: `[${labelPrefix}parentTerritoryID]`,
+                key: `${keyPrefix}parentTerritoryId`,
+                label: `[${labelPrefix}parentTerritoryId]`,
                 type: 'string',
             },
         ]
@@ -46,11 +46,11 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
-            'parentTerritoryID': bundle.inputData?.[`${keyPrefix}parentTerritoryID`],
+            'parentTerritoryId': bundle.inputData?.[`${keyPrefix}parentTerritoryId`],
         }
     },
 }

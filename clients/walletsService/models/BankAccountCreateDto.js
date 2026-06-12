@@ -40,11 +40,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}qualifiedName`,
-                label: `[${labelPrefix}qualifiedName]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}bankId`,
                 label: `[${labelPrefix}bankId]`,
                 type: 'string',
@@ -52,6 +47,11 @@ module.exports = {
             {
                 key: `${keyPrefix}bankProfileId`,
                 label: `[${labelPrefix}bankProfileId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}walletId`,
+                label: `[${labelPrefix}walletId]`,
                 type: 'string',
             },
         ]
@@ -66,9 +66,9 @@ module.exports = {
             'swift': bundle.inputData?.[`${keyPrefix}swift`],
             'branchCode': bundle.inputData?.[`${keyPrefix}branchCode`],
             'bankAccountNumber': bundle.inputData?.[`${keyPrefix}bankAccountNumber`],
-            'qualifiedName': bundle.inputData?.[`${keyPrefix}qualifiedName`],
             'bankId': bundle.inputData?.[`${keyPrefix}bankId`],
             'bankProfileId': bundle.inputData?.[`${keyPrefix}bankProfileId`],
+            'walletId': bundle.inputData?.[`${keyPrefix}walletId`],
         }
     },
 }

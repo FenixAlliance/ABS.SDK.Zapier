@@ -15,13 +15,13 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
             {
@@ -45,18 +45,18 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}countryID`,
-                label: `[${labelPrefix}countryID]`,
+                key: `${keyPrefix}countryId`,
+                label: `[${labelPrefix}countryId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}organizationProfileID`,
-                label: `[${labelPrefix}organizationProfileID]`,
+                key: `${keyPrefix}organizationProfileId`,
+                label: `[${labelPrefix}organizationProfileId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}parentBusinessUnitID`,
-                label: `[${labelPrefix}parentBusinessUnitID]`,
+                key: `${keyPrefix}parentBusinessUnitId`,
+                label: `[${labelPrefix}parentBusinessUnitId]`,
                 type: 'string',
             },
         ]
@@ -66,15 +66,15 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'disabled': bundle.inputData?.[`${keyPrefix}disabled`],
             'businessUnitQualifiedName': bundle.inputData?.[`${keyPrefix}businessUnitQualifiedName`],
-            'countryID': bundle.inputData?.[`${keyPrefix}countryID`],
-            'organizationProfileID': bundle.inputData?.[`${keyPrefix}organizationProfileID`],
-            'parentBusinessUnitID': bundle.inputData?.[`${keyPrefix}parentBusinessUnitID`],
+            'countryId': bundle.inputData?.[`${keyPrefix}countryId`],
+            'organizationProfileId': bundle.inputData?.[`${keyPrefix}organizationProfileId`],
+            'parentBusinessUnitId': bundle.inputData?.[`${keyPrefix}parentBusinessUnitId`],
         }
     },
 }

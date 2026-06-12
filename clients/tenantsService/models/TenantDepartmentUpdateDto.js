@@ -20,13 +20,13 @@ module.exports = {
                 type: 'boolean',
             },
             {
-                key: `${keyPrefix}organizationProfileID`,
-                label: `[${labelPrefix}organizationProfileID]`,
+                key: `${keyPrefix}organizationProfileId`,
+                label: `[${labelPrefix}organizationProfileId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}parentDepartmentID`,
-                label: `[${labelPrefix}parentDepartmentID]`,
+                key: `${keyPrefix}parentDepartmentId`,
+                label: `[${labelPrefix}parentDepartmentId]`,
                 type: 'string',
             },
         ]
@@ -37,8 +37,8 @@ module.exports = {
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'disabled': bundle.inputData?.[`${keyPrefix}disabled`],
-            'organizationProfileID': bundle.inputData?.[`${keyPrefix}organizationProfileID`],
-            'parentDepartmentID': bundle.inputData?.[`${keyPrefix}parentDepartmentID`],
+            'organizationProfileId': bundle.inputData?.[`${keyPrefix}organizationProfileId`],
+            'parentDepartmentId': bundle.inputData?.[`${keyPrefix}parentDepartmentId`],
         }
     },
 }

@@ -15,11 +15,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}name`,
-                label: `[${labelPrefix}name]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}employeeLowRangeValue`,
                 label: `[${labelPrefix}employeeLowRangeValue]`,
                 type: 'integer',
@@ -36,7 +31,6 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
-            'name': bundle.inputData?.[`${keyPrefix}name`],
             'employeeLowRangeValue': bundle.inputData?.[`${keyPrefix}employeeLowRangeValue`],
             'employeeHighRangeValue': bundle.inputData?.[`${keyPrefix}employeeHighRangeValue`],
         }
