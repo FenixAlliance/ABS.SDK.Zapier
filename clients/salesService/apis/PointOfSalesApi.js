@@ -2,6 +2,7 @@ const samples = require('../samples/PointOfSalesApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
+const Operation = require('../models/Operation');
 const PointOfSaleCreateDto = require('../models/PointOfSaleCreateDto');
 const PointOfSaleDtoEnvelope = require('../models/PointOfSaleDtoEnvelope');
 const PointOfSaleDtoListEnvelope = require('../models/PointOfSaleDtoListEnvelope');
@@ -241,6 +242,62 @@ module.exports = {
                 })
             },
             sample: samples['PointOfSaleDtoListEnvelopeSample']
+        }
+    },
+    patchPointOfSaleAsync: {
+        key: 'patchPointOfSaleAsync',
+        noun: 'PointOfSales',
+        display: {
+            label: 'Patch a point of sale',
+            description: 'Partially updates an existing point of sale using a JSON Patch document.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'pointOfSaleId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/SalesService/PointOfSales/{pointOfSaleId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchPointOfSaleAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     updatePointOfSaleAsync: {

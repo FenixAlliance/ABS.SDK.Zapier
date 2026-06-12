@@ -85,8 +85,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessProfileRecordId`,
-                label: `[${labelPrefix}businessProfileRecordId]`,
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
         ]
@@ -110,7 +110,7 @@ module.exports = {
             'releaseDateTime': bundle.inputData?.[`${keyPrefix}releaseDateTime`],
             'lastModification': bundle.inputData?.[`${keyPrefix}lastModification`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
-            'businessProfileRecordId': bundle.inputData?.[`${keyPrefix}businessProfileRecordId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
         }
     },
 }

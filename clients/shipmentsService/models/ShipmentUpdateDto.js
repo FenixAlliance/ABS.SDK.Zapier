@@ -64,8 +64,8 @@ module.exports = {
                 ],
             },
             {
-                key: `${keyPrefix}orderID`,
-                label: `[${labelPrefix}orderID]`,
+                key: `${keyPrefix}orderId`,
+                label: `[${labelPrefix}orderId]`,
                 type: 'string',
             },
         ]
@@ -82,7 +82,7 @@ module.exports = {
             'expectedShippingDate': bundle.inputData?.[`${keyPrefix}expectedShippingDate`],
             'expectedDeliveryDate': bundle.inputData?.[`${keyPrefix}expectedDeliveryDate`],
             'shippingTerms': bundle.inputData?.[`${keyPrefix}shippingTerms`],
-            'orderID': bundle.inputData?.[`${keyPrefix}orderID`],
+            'orderId': bundle.inputData?.[`${keyPrefix}orderId`],
         }
     },
 }

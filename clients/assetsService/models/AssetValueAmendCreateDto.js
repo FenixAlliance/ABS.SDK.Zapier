@@ -40,13 +40,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}approvedBy`,
-                label: `[${labelPrefix}approvedBy]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}approvalDate`,
-                label: `[${labelPrefix}approvalDate]`,
+                key: `${keyPrefix}currencyId`,
+                label: `[${labelPrefix}currencyId]`,
                 type: 'string',
             },
         ]
@@ -61,8 +56,7 @@ module.exports = {
             'newValue': bundle.inputData?.[`${keyPrefix}newValue`],
             'reason': bundle.inputData?.[`${keyPrefix}reason`],
             'amendmentDate': bundle.inputData?.[`${keyPrefix}amendmentDate`],
-            'approvedBy': bundle.inputData?.[`${keyPrefix}approvedBy`],
-            'approvalDate': bundle.inputData?.[`${keyPrefix}approvalDate`],
+            'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
         }
     },
 }

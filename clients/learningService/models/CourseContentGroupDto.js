@@ -20,13 +20,18 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}courseID`,
-                label: `[${labelPrefix}courseID]`,
+                key: `${keyPrefix}courseId`,
+                label: `[${labelPrefix}courseId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
         ]
@@ -37,8 +42,9 @@ module.exports = {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'name': bundle.inputData?.[`${keyPrefix}name`],
-            'courseID': bundle.inputData?.[`${keyPrefix}courseID`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
+            'courseId': bundle.inputData?.[`${keyPrefix}courseId`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
         }
     },
 }

@@ -39,6 +39,7 @@ models/OAuthApplicationUpdateDto.js
 models/OAuthAuthorizationDto.js
 models/OAuthAuthorizationDtoEnvelope.js
 models/OAuthAuthorizationDtoListEnvelope.js
+models/Operation.js
 models/RefreshRequest.js
 models/RegisterRequest.js
 models/ResendConfirmationEmailRequest.js
@@ -63,6 +64,4 @@ models/WebhookRequestDto.js
 models/WebhookRequestDtoListEnvelope.js
 operations/actions.js
 package.json
-samples/CompletionsApi.js
-samples/FenixAlliancePortalsWebsiteApi.js
 utils/utils.js

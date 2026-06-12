@@ -16,6 +16,16 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}context`,
+                label: `[${labelPrefix}context]`,
+                type: 'string',
+                choices: [
+                    'Sales',
+                    'Purchase',
+                    'Cost',
+                ],
+            },
+            {
                 key: `${keyPrefix}startDate`,
                 label: `[${labelPrefix}startDate]`,
                 type: 'string',
@@ -40,6 +50,16 @@ module.exports = {
                 label: `[${labelPrefix}unitGroupId]`,
                 type: 'string',
             },
+            {
+                key: `${keyPrefix}partnerVisible`,
+                label: `[${labelPrefix}partnerVisible]`,
+                type: 'boolean',
+            },
+            {
+                key: `${keyPrefix}unitOfMeasureDependant`,
+                label: `[${labelPrefix}unitOfMeasureDependant]`,
+                type: 'boolean',
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -47,11 +67,14 @@ module.exports = {
         return {
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
+            'context': bundle.inputData?.[`${keyPrefix}context`],
             'startDate': bundle.inputData?.[`${keyPrefix}startDate`],
             'endDate': bundle.inputData?.[`${keyPrefix}endDate`],
             'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
             'unitId': bundle.inputData?.[`${keyPrefix}unitId`],
             'unitGroupId': bundle.inputData?.[`${keyPrefix}unitGroupId`],
+            'partnerVisible': bundle.inputData?.[`${keyPrefix}partnerVisible`],
+            'unitOfMeasureDependant': bundle.inputData?.[`${keyPrefix}unitOfMeasureDependant`],
         }
     },
 }

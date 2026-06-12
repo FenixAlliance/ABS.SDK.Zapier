@@ -5,23 +5,13 @@ module.exports = {
         const {keyPrefix, labelPrefix} = utils.buildKeyAndLabel(prefix, isInput, isArrayChild)
         return [
             {
-                key: `${keyPrefix}id`,
-                label: `[${labelPrefix}id]`,
+                key: `${keyPrefix}courseCohortId`,
+                label: `[${labelPrefix}courseCohortId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}timestamp`,
-                label: `[${labelPrefix}timestamp]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}courseCohortID`,
-                label: `[${labelPrefix}courseCohortID]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}courseCompletionCertificateID`,
-                label: `[${labelPrefix}courseCompletionCertificateID]`,
+                key: `${keyPrefix}courseCompletionCertificateId`,
+                label: `[${labelPrefix}courseCompletionCertificateId]`,
                 type: 'string',
             },
         ]
@@ -29,10 +19,8 @@ module.exports = {
     mapping: (bundle, prefix = '') => {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
-            'id': bundle.inputData?.[`${keyPrefix}id`],
-            'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
-            'courseCohortID': bundle.inputData?.[`${keyPrefix}courseCohortID`],
-            'courseCompletionCertificateID': bundle.inputData?.[`${keyPrefix}courseCompletionCertificateID`],
+            'courseCohortId': bundle.inputData?.[`${keyPrefix}courseCohortId`],
+            'courseCompletionCertificateId': bundle.inputData?.[`${keyPrefix}courseCompletionCertificateId`],
         }
     },
 }

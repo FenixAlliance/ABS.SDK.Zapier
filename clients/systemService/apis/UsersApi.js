@@ -5,6 +5,7 @@ const ErrorEnvelope = require('../models/ErrorEnvelope');
 const ExtendedUserDtoEnvelope = require('../models/ExtendedUserDtoEnvelope');
 const ExtendedUserDtoListEnvelope = require('../models/ExtendedUserDtoListEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
+const Operation = require('../models/Operation');
 const UserCreateDto = require('../models/UserCreateDto');
 const UserDtoEnvelope = require('../models/UserDtoEnvelope');
 const UserDtoListEnvelope = require('../models/UserDtoListEnvelope');
@@ -525,6 +526,66 @@ module.exports = {
                 })
             },
             sample: samples['Int32EnvelopeSample']
+        }
+    },
+    patchAccountHolderAsync: {
+        key: 'patchAccountHolderAsync',
+        noun: 'Users',
+        display: {
+            label: 'Partially update a user',
+            description: 'This action is only available for global administrators.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'userId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Users/{userId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchAccountHolderAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     updateAccountHolderAsync: {

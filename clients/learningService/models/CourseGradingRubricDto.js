@@ -30,13 +30,18 @@ module.exports = {
                 type: 'boolean',
             },
             {
-                key: `${keyPrefix}courseID`,
-                label: `[${labelPrefix}courseID]`,
+                key: `${keyPrefix}courseId`,
+                label: `[${labelPrefix}courseId]`,
                 type: 'string',
             },
             {
                 key: `${keyPrefix}tenantId`,
                 label: `[${labelPrefix}tenantId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
         ]
@@ -49,8 +54,9 @@ module.exports = {
             'title': bundle.inputData?.[`${keyPrefix}title`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'enablePoints': bundle.inputData?.[`${keyPrefix}enablePoints`],
-            'courseID': bundle.inputData?.[`${keyPrefix}courseID`],
+            'courseId': bundle.inputData?.[`${keyPrefix}courseId`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
         }
     },
 }

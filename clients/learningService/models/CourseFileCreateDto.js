@@ -43,8 +43,8 @@ module.exports = {
                 type: 'number',
             },
             {
-                key: `${keyPrefix}courseID`,
-                label: `[${labelPrefix}courseID]`,
+                key: `${keyPrefix}courseId`,
+                label: `[${labelPrefix}courseId]`,
                 required: true,
                 type: 'string',
             },
@@ -60,7 +60,7 @@ module.exports = {
             'fileUploadURL': bundle.inputData?.[`${keyPrefix}fileUploadURL`],
             'contentType': bundle.inputData?.[`${keyPrefix}contentType`],
             'fileLength': bundle.inputData?.[`${keyPrefix}fileLength`],
-            'courseID': bundle.inputData?.[`${keyPrefix}courseID`],
+            'courseId': bundle.inputData?.[`${keyPrefix}courseId`],
         }
     },
 }

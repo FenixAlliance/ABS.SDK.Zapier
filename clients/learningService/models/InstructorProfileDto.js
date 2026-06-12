@@ -171,21 +171,6 @@ module.exports = {
                 label: `[${labelPrefix}authorized]`,
                 type: 'boolean',
             },
-            {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}contactID`,
-                label: `[${labelPrefix}contactID]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
-                type: 'string',
-            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -225,9 +210,6 @@ module.exports = {
             'data9': bundle.inputData?.[`${keyPrefix}data9`],
             'data9Label': bundle.inputData?.[`${keyPrefix}data9Label`],
             'authorized': bundle.inputData?.[`${keyPrefix}authorized`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
-            'contactID': bundle.inputData?.[`${keyPrefix}contactID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
         }
     },
 }

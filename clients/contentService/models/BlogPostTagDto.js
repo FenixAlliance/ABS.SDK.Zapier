@@ -20,6 +20,11 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}type`,
+                label: `[${labelPrefix}type]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}title`,
                 label: `[${labelPrefix}title]`,
                 type: 'string',
@@ -70,18 +75,18 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}webPortalID`,
-                label: `[${labelPrefix}webPortalID]`,
+                key: `${keyPrefix}webPortalId`,
+                label: `[${labelPrefix}webPortalId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
         ]
@@ -92,6 +97,7 @@ module.exports = {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'slug': bundle.inputData?.[`${keyPrefix}slug`],
+            'type': bundle.inputData?.[`${keyPrefix}type`],
             'title': bundle.inputData?.[`${keyPrefix}title`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'seoTitle': bundle.inputData?.[`${keyPrefix}seoTitle`],
@@ -102,9 +108,9 @@ module.exports = {
             'canonicalUrl': bundle.inputData?.[`${keyPrefix}canonicalUrl`],
             'imageURL': bundle.inputData?.[`${keyPrefix}imageURL`],
             'image': bundle.inputData?.[`${keyPrefix}image`],
-            'webPortalID': bundle.inputData?.[`${keyPrefix}webPortalID`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
+            'webPortalId': bundle.inputData?.[`${keyPrefix}webPortalId`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
         }
     },
 }

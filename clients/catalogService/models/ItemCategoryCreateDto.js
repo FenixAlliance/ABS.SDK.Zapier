@@ -31,8 +31,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}parentItemCategoryID`,
-                label: `[${labelPrefix}parentItemCategoryID]`,
+                key: `${keyPrefix}parentItemCategoryId`,
+                label: `[${labelPrefix}parentItemCategoryId]`,
                 type: 'string',
             },
         ]
@@ -45,7 +45,7 @@ module.exports = {
             'title': bundle.inputData?.[`${keyPrefix}title`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'imageURL': bundle.inputData?.[`${keyPrefix}imageURL`],
-            'parentItemCategoryID': bundle.inputData?.[`${keyPrefix}parentItemCategoryID`],
+            'parentItemCategoryId': bundle.inputData?.[`${keyPrefix}parentItemCategoryId`],
         }
     },
 }

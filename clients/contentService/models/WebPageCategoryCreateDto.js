@@ -70,8 +70,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}webPortalID`,
-                label: `[${labelPrefix}webPortalID]`,
+                key: `${keyPrefix}webPortalId`,
+                label: `[${labelPrefix}webPortalId]`,
                 type: 'string',
             },
         ]
@@ -92,7 +92,7 @@ module.exports = {
             'canonicalUrl': bundle.inputData?.[`${keyPrefix}canonicalUrl`],
             'imageURL': bundle.inputData?.[`${keyPrefix}imageURL`],
             'image': bundle.inputData?.[`${keyPrefix}image`],
-            'webPortalID': bundle.inputData?.[`${keyPrefix}webPortalID`],
+            'webPortalId': bundle.inputData?.[`${keyPrefix}webPortalId`],
         }
     },
 }

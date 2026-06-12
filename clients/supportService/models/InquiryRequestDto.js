@@ -70,13 +70,13 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessProfileRecordId`,
-                label: `[${labelPrefix}businessProfileRecordId]`,
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}accountHolderId`,
-                label: `[${labelPrefix}accountHolderId]`,
+                key: `${keyPrefix}userId`,
+                label: `[${labelPrefix}userId]`,
                 type: 'string',
             },
             {
@@ -102,8 +102,8 @@ module.exports = {
             'phone': bundle.inputData?.[`${keyPrefix}phone`],
             'message': bundle.inputData?.[`${keyPrefix}message`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
-            'businessProfileRecordId': bundle.inputData?.[`${keyPrefix}businessProfileRecordId`],
-            'accountHolderId': bundle.inputData?.[`${keyPrefix}accountHolderId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
+            'userId': bundle.inputData?.[`${keyPrefix}userId`],
             'socialProfileId': bundle.inputData?.[`${keyPrefix}socialProfileId`],
         }
     },

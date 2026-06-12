@@ -70,8 +70,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}supportRequestID`,
-                label: `[${labelPrefix}supportRequestID]`,
+                key: `${keyPrefix}supportRequestId`,
+                label: `[${labelPrefix}supportRequestId]`,
                 type: 'string',
             },
         ]
@@ -92,7 +92,7 @@ module.exports = {
             'parentFileUploadId': bundle.inputData?.[`${keyPrefix}parentFileUploadId`],
             'filePath': bundle.inputData?.[`${keyPrefix}filePath`],
             'metadata': bundle.inputData?.[`${keyPrefix}metadata`],
-            'supportRequestID': bundle.inputData?.[`${keyPrefix}supportRequestID`],
+            'supportRequestId': bundle.inputData?.[`${keyPrefix}supportRequestId`],
         }
     },
 }

@@ -124,6 +124,16 @@ module.exports = {
                 label: `[${labelPrefix}isDefaultSuppingLocation]`,
                 type: 'boolean',
             },
+            {
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
+                type: 'string',
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -153,6 +163,8 @@ module.exports = {
             'isDefaultSenderAddress': bundle.inputData?.[`${keyPrefix}isDefaultSenderAddress`],
             'isDefaultReturnAddress': bundle.inputData?.[`${keyPrefix}isDefaultReturnAddress`],
             'isDefaultSuppingLocation': bundle.inputData?.[`${keyPrefix}isDefaultSuppingLocation`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
         }
     },
 }

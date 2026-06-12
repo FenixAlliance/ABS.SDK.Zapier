@@ -2,6 +2,7 @@ const samples = require('../samples/ServiceCaseTypesApi');
 const Envelope = require('../models/Envelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
+const Operation = require('../models/Operation');
 const ServiceCaseTypeCreateDto = require('../models/ServiceCaseTypeCreateDto');
 const ServiceCaseTypeDtoEnvelope = require('../models/ServiceCaseTypeDtoEnvelope');
 const ServiceCaseTypeDtoIReadOnlyListEnvelope = require('../models/ServiceCaseTypeDtoIReadOnlyListEnvelope');
@@ -296,6 +297,73 @@ module.exports = {
                 })
             },
             sample: samples['Int32EnvelopeSample']
+        }
+    },
+    patchServiceCaseTypeAsync: {
+        key: 'patchServiceCaseTypeAsync',
+        noun: 'ServiceCaseTypes',
+        display: {
+            label: 'Patch a service case type',
+            description: 'Partially updates an existing service case type using a JSON Patch document.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'serviceCaseTypeId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...Envelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/ServicesService/ServiceCaseTypes/{serviceCaseTypeId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchServiceCaseTypeAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EnvelopeSample']
         }
     },
     updateServiceCaseTypeAsync: {

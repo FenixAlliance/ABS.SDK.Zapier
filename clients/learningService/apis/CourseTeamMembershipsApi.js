@@ -2,7 +2,9 @@ const samples = require('../samples/CourseTeamMembershipsApi');
 const CourseTeamMembershipCreateDto = require('../models/CourseTeamMembershipCreateDto');
 const CourseTeamMembershipDto = require('../models/CourseTeamMembershipDto');
 const CourseTeamMembershipUpdateDto = require('../models/CourseTeamMembershipUpdateDto');
+const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
+const Operation = require('../models/Operation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -282,6 +284,73 @@ module.exports = {
                 })
             },
             sample: { data: {} }
+        }
+    },
+    patchCourseTeamMembershipAsync: {
+        key: 'patchCourseTeamMembershipAsync',
+        noun: 'CourseTeamMemberships',
+        display: {
+            label: 'Patch a course team membership',
+            description: 'Partially updates a course team membership for the specified tenant.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'membershipId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseTeamMemberships/{membershipId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchCourseTeamMembershipAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     updateCourseTeamMembershipAsync: {

@@ -3,6 +3,7 @@ const CourseFileCreateDto = require('../models/CourseFileCreateDto');
 const CourseFileDto = require('../models/CourseFileDto');
 const CourseFileUpdateDto = require('../models/CourseFileUpdateDto');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
+const Operation = require('../models/Operation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -279,6 +280,72 @@ module.exports = {
                     response.throwForStatus();
                     const results = utils.responseOptionsMiddleware(z, bundle, 'getCourseFilesCountAsync', response.json);
                     return { data: results };
+                })
+            },
+            sample: { data: {} }
+        }
+    },
+    patchCourseFileAsync: {
+        key: 'patchCourseFileAsync',
+        noun: 'CourseFiles',
+        display: {
+            label: 'Patch a course file',
+            description: 'Partially updates an existing course file for the specified tenant.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'fileId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseFiles/{fileId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchCourseFileAsync', response.json);
+                    return results;
                 })
             },
             sample: { data: {} }

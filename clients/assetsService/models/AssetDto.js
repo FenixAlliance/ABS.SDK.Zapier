@@ -25,8 +25,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessProfileRecordId`,
-                label: `[${labelPrefix}businessProfileRecordId]`,
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
             {
@@ -110,6 +110,16 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}assetTypeId`,
+                label: `[${labelPrefix}assetTypeId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}assetTypeName`,
+                label: `[${labelPrefix}assetTypeName]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}assetCategoryId`,
                 label: `[${labelPrefix}assetCategoryId]`,
                 type: 'string',
@@ -173,7 +183,7 @@ module.exports = {
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'businessName': bundle.inputData?.[`${keyPrefix}businessName`],
-            'businessProfileRecordId': bundle.inputData?.[`${keyPrefix}businessProfileRecordId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'assetClass': bundle.inputData?.[`${keyPrefix}assetClass`],
@@ -188,6 +198,8 @@ module.exports = {
             'currencyCode': bundle.inputData?.[`${keyPrefix}currencyCode`],
             'itemId': bundle.inputData?.[`${keyPrefix}itemId`],
             'itemName': bundle.inputData?.[`${keyPrefix}itemName`],
+            'assetTypeId': bundle.inputData?.[`${keyPrefix}assetTypeId`],
+            'assetTypeName': bundle.inputData?.[`${keyPrefix}assetTypeName`],
             'assetCategoryId': bundle.inputData?.[`${keyPrefix}assetCategoryId`],
             'assetCategoryName': bundle.inputData?.[`${keyPrefix}assetCategoryName`],
             'purchaseInvoiceId': bundle.inputData?.[`${keyPrefix}purchaseInvoiceId`],

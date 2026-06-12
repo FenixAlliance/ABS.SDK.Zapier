@@ -35,18 +35,23 @@ module.exports = {
                 type: 'integer',
             },
             {
-                key: `${keyPrefix}courseID`,
-                label: `[${labelPrefix}courseID]`,
+                key: `${keyPrefix}courseId`,
+                label: `[${labelPrefix}courseId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}courseUnitID`,
-                label: `[${labelPrefix}courseUnitID]`,
+                key: `${keyPrefix}courseUnitId`,
+                label: `[${labelPrefix}courseUnitId]`,
                 type: 'string',
             },
             {
                 key: `${keyPrefix}tenantId`,
                 label: `[${labelPrefix}tenantId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
         ]
@@ -60,9 +65,10 @@ module.exports = {
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'content': bundle.inputData?.[`${keyPrefix}content`],
             'order': bundle.inputData?.[`${keyPrefix}order`],
-            'courseID': bundle.inputData?.[`${keyPrefix}courseID`],
-            'courseUnitID': bundle.inputData?.[`${keyPrefix}courseUnitID`],
+            'courseId': bundle.inputData?.[`${keyPrefix}courseId`],
+            'courseUnitId': bundle.inputData?.[`${keyPrefix}courseUnitId`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
         }
     },
 }

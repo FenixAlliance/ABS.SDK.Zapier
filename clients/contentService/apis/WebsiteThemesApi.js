@@ -1,6 +1,7 @@
 const samples = require('../samples/WebsiteThemesApi');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
+const Operation = require('../models/Operation');
 const WebsiteThemeCreateDto = require('../models/WebsiteThemeCreateDto');
 const WebsiteThemeDto = require('../models/WebsiteThemeDto');
 const WebsiteThemeDtoListEnvelope = require('../models/WebsiteThemeDtoListEnvelope');
@@ -298,6 +299,72 @@ module.exports = {
                 })
             },
             sample: samples['Int32EnvelopeSample']
+        }
+    },
+    patchWebsiteThemeAsync: {
+        key: 'patchWebsiteThemeAsync',
+        noun: 'WebsiteThemes',
+        display: {
+            label: 'Patch a website theme',
+            description: 'Partially updates an existing website theme for the specified tenant.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'id',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/WebsiteThemes/{id}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchWebsiteThemeAsync', response.json);
+                    return results;
+                })
+            },
+            sample: { data: {} }
         }
     },
     updateWebsiteThemeAsync: {

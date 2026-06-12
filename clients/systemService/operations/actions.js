@@ -1,4 +1,5 @@
 const AntiforgeryApi = require('../apis/AntiforgeryApi');
+const BusinessDomainsApi = require('../apis/BusinessDomainsApi');
 const CartsApi = require('../apis/CartsApi');
 const CompletionsApi = require('../apis/CompletionsApi');
 const ContactOptionsApi = require('../apis/ContactOptionsApi');
@@ -21,6 +22,11 @@ const { triggerMiddleware, isTrigger, searchMiddleware, hasSearchRequisites, isS
 const actions = {
     [AntiforgeryApi.getAndStoreTokens.key]: AntiforgeryApi.getAndStoreTokens,
     [AntiforgeryApi.isRequestValidAsync.key]: AntiforgeryApi.isRequestValidAsync,
+    [BusinessDomainsApi.deleteSystemBusinessDomain.key]: BusinessDomainsApi.deleteSystemBusinessDomain,
+    [BusinessDomainsApi.getSystemBusinessDomainById.key]: BusinessDomainsApi.getSystemBusinessDomainById,
+    [BusinessDomainsApi.getSystemBusinessDomains.key]: BusinessDomainsApi.getSystemBusinessDomains,
+    [BusinessDomainsApi.getSystemBusinessDomainsCount.key]: BusinessDomainsApi.getSystemBusinessDomainsCount,
+    [BusinessDomainsApi.verifySystemBusinessDomain.key]: BusinessDomainsApi.verifySystemBusinessDomain,
     [CartsApi.deleteSystemCart.key]: CartsApi.deleteSystemCart,
     [CartsApi.getSystemCartById.key]: CartsApi.getSystemCartById,
     [CartsApi.getSystemCarts.key]: CartsApi.getSystemCarts,
@@ -31,6 +37,7 @@ const actions = {
     [ContactOptionsApi.getSystemContactOptionById.key]: ContactOptionsApi.getSystemContactOptionById,
     [ContactOptionsApi.getSystemContactOptions.key]: ContactOptionsApi.getSystemContactOptions,
     [ContactOptionsApi.getSystemContactOptionsCount.key]: ContactOptionsApi.getSystemContactOptionsCount,
+    [ContactOptionsApi.patchSystemContactOption.key]: ContactOptionsApi.patchSystemContactOption,
     [ContactOptionsApi.updateSystemContactOption.key]: ContactOptionsApi.updateSystemContactOption,
     [EmailsApi.adminPreviewBasicEmailTemplate.key]: EmailsApi.adminPreviewBasicEmailTemplate,
     [EmailsApi.adminSendBasicEmail.key]: EmailsApi.adminSendBasicEmail,
@@ -77,6 +84,7 @@ const actions = {
     [OptionsApi.getSystemOptionByKey.key]: OptionsApi.getSystemOptionByKey,
     [OptionsApi.getSystemOptions.key]: OptionsApi.getSystemOptions,
     [OptionsApi.getSystemOptionsCount.key]: OptionsApi.getSystemOptionsCount,
+    [OptionsApi.patchSystemOption.key]: OptionsApi.patchSystemOption,
     [OptionsApi.updateSystemOption.key]: OptionsApi.updateSystemOption,
     [OptionsApi.upsertSystemOption.key]: OptionsApi.upsertSystemOption,
     [OverviewApi.getSystemOverview.key]: OverviewApi.getSystemOverview,
@@ -85,12 +93,14 @@ const actions = {
     [PortalsApi.getSystemPortalById.key]: PortalsApi.getSystemPortalById,
     [PortalsApi.getSystemPortals.key]: PortalsApi.getSystemPortals,
     [PortalsApi.getSystemPortalsCount.key]: PortalsApi.getSystemPortalsCount,
+    [PortalsApi.patchSystemPortal.key]: PortalsApi.patchSystemPortal,
     [PortalsApi.updateSystemPortal.key]: PortalsApi.updateSystemPortal,
     [TenantOptionsApi.createSystemTenantOption.key]: TenantOptionsApi.createSystemTenantOption,
     [TenantOptionsApi.deleteSystemTenantOption.key]: TenantOptionsApi.deleteSystemTenantOption,
     [TenantOptionsApi.getSystemTenantOptionById.key]: TenantOptionsApi.getSystemTenantOptionById,
     [TenantOptionsApi.getSystemTenantOptions.key]: TenantOptionsApi.getSystemTenantOptions,
     [TenantOptionsApi.getSystemTenantOptionsCount.key]: TenantOptionsApi.getSystemTenantOptionsCount,
+    [TenantOptionsApi.patchSystemTenantOption.key]: TenantOptionsApi.patchSystemTenantOption,
     [TenantOptionsApi.updateSystemTenantOption.key]: TenantOptionsApi.updateSystemTenantOption,
     [TenantsApi.adminPreviewTenantEmail.key]: TenantsApi.adminPreviewTenantEmail,
     [TenantsApi.adminSendTenantEmail.key]: TenantsApi.adminSendTenantEmail,
@@ -101,12 +111,14 @@ const actions = {
     [TenantsApi.getExtendedTenantsCount.key]: TenantsApi.getExtendedTenantsCount,
     [TenantsApi.getTenant.key]: TenantsApi.getTenant,
     [TenantsApi.getTenantsCount.key]: TenantsApi.getTenantsCount,
+    [TenantsApi.patchTenant.key]: TenantsApi.patchTenant,
     [TenantsApi.updateTenant.key]: TenantsApi.updateTenant,
     [UserOptionsApi.createSystemUserOption.key]: UserOptionsApi.createSystemUserOption,
     [UserOptionsApi.deleteSystemUserOption.key]: UserOptionsApi.deleteSystemUserOption,
     [UserOptionsApi.getSystemUserOptionById.key]: UserOptionsApi.getSystemUserOptionById,
     [UserOptionsApi.getSystemUserOptions.key]: UserOptionsApi.getSystemUserOptions,
     [UserOptionsApi.getSystemUserOptionsCount.key]: UserOptionsApi.getSystemUserOptionsCount,
+    [UserOptionsApi.patchSystemUserOption.key]: UserOptionsApi.patchSystemUserOption,
     [UserOptionsApi.updateSystemUserOption.key]: UserOptionsApi.updateSystemUserOption,
     [UsersApi.adminPreviewUserEmailTemplate.key]: UsersApi.adminPreviewUserEmailTemplate,
     [UsersApi.adminSendUserEmail.key]: UsersApi.adminSendUserEmail,
@@ -118,6 +130,7 @@ const actions = {
     [UsersApi.getUserAsync.key]: UsersApi.getUserAsync,
     [UsersApi.getUsersAsync.key]: UsersApi.getUsersAsync,
     [UsersApi.getUsersCountAsync.key]: UsersApi.getUsersCountAsync,
+    [UsersApi.patchAccountHolderAsync.key]: UsersApi.patchAccountHolderAsync,
     [UsersApi.updateAccountHolderAsync.key]: UsersApi.updateAccountHolderAsync,
 }
 

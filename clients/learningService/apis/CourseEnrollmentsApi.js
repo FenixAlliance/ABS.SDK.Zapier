@@ -3,6 +3,7 @@ const CourseEnrollmentCreateDto = require('../models/CourseEnrollmentCreateDto')
 const CourseEnrollmentDto = require('../models/CourseEnrollmentDto');
 const CourseEnrollmentUpdateDto = require('../models/CourseEnrollmentUpdateDto');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
+const Operation = require('../models/Operation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -349,6 +350,72 @@ module.exports = {
                 })
             },
             sample: samples['CourseEnrollmentDtoSample']
+        }
+    },
+    patchCourseEnrollmentAsync: {
+        key: 'patchCourseEnrollmentAsync',
+        noun: 'CourseEnrollments',
+        display: {
+            label: 'Patch a course enrollment',
+            description: 'Partially updates an existing course enrollment for the specified tenant.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'courseEnrollmentId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseEnrollments/{courseEnrollmentId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchCourseEnrollmentAsync', response.json);
+                    return results;
+                })
+            },
+            sample: { data: {} }
         }
     },
     updateCourseEnrollmentAsync: {

@@ -284,6 +284,16 @@ module.exports = {
                 type: 'boolean',
             },
             {
+                key: `${keyPrefix}webTemplateId`,
+                label: `[${labelPrefix}webTemplateId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}parentWebContentId`,
+                label: `[${labelPrefix}parentWebContentId]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}isHomePage`,
                 label: `[${labelPrefix}isHomePage]`,
                 type: 'boolean',
@@ -392,6 +402,8 @@ module.exports = {
             'cornerstoneContent': bundle.inputData?.[`${keyPrefix}cornerstoneContent`],
             'isEssentialContent': bundle.inputData?.[`${keyPrefix}isEssentialContent`],
             'allowSearchEngineIndexing': bundle.inputData?.[`${keyPrefix}allowSearchEngineIndexing`],
+            'webTemplateId': bundle.inputData?.[`${keyPrefix}webTemplateId`],
+            'parentWebContentId': bundle.inputData?.[`${keyPrefix}parentWebContentId`],
             'isHomePage': bundle.inputData?.[`${keyPrefix}isHomePage`],
             'isStorePage': bundle.inputData?.[`${keyPrefix}isStorePage`],
             'isCartPage': bundle.inputData?.[`${keyPrefix}isCartPage`],

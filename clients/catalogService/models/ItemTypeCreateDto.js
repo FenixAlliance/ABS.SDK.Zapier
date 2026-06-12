@@ -40,14 +40,14 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}itemCategoryID`,
-                label: `[${labelPrefix}itemCategoryID]`,
+                key: `${keyPrefix}itemCategoryId`,
+                label: `[${labelPrefix}itemCategoryId]`,
                 required: true,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}itemGoogleCategoryID`,
-                label: `[${labelPrefix}itemGoogleCategoryID]`,
+                key: `${keyPrefix}itemGoogleCategoryId`,
+                label: `[${labelPrefix}itemGoogleCategoryId]`,
                 type: 'string',
             },
         ]
@@ -62,8 +62,8 @@ module.exports = {
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'imageURL': bundle.inputData?.[`${keyPrefix}imageURL`],
             'googleCategoryTaxonomy': bundle.inputData?.[`${keyPrefix}googleCategoryTaxonomy`],
-            'itemCategoryID': bundle.inputData?.[`${keyPrefix}itemCategoryID`],
-            'itemGoogleCategoryID': bundle.inputData?.[`${keyPrefix}itemGoogleCategoryID`],
+            'itemCategoryId': bundle.inputData?.[`${keyPrefix}itemCategoryId`],
+            'itemGoogleCategoryId': bundle.inputData?.[`${keyPrefix}itemGoogleCategoryId`],
         }
     },
 }

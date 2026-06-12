@@ -3,6 +3,7 @@ const CourseHandoutCreateDto = require('../models/CourseHandoutCreateDto');
 const CourseHandoutDto = require('../models/CourseHandoutDto');
 const CourseHandoutUpdateDto = require('../models/CourseHandoutUpdateDto');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
+const Operation = require('../models/Operation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -280,6 +281,72 @@ module.exports = {
                     response.throwForStatus();
                     const results = utils.responseOptionsMiddleware(z, bundle, 'getCourseHandoutsCountAsync', response.json);
                     return { data: results };
+                })
+            },
+            sample: { data: {} }
+        }
+    },
+    patchCourseHandoutAsync: {
+        key: 'patchCourseHandoutAsync',
+        noun: 'CourseHandouts',
+        display: {
+            label: 'Patch a course handout',
+            description: 'Partially updates an existing course handout.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'handoutId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseHandouts/{handoutId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchCourseHandoutAsync', response.json);
+                    return results;
                 })
             },
             sample: { data: {} }

@@ -35,6 +35,7 @@ models/ItemToCompareCartRecordDtoEnvelope.js
 models/ItemToCompareCartRecordDtoListEnvelope.js
 models/LoginRequest.js
 models/NewWishListRequest.js
+models/Operation.js
 models/ProductToWishListRequest.js
 models/RefreshRequest.js
 models/RegisterRequest.js
@@ -48,6 +49,4 @@ models/WishListItemRecordDto.js
 models/WishListUpdateDto.js
 operations/actions.js
 package.json
-samples/CompletionsApi.js
-samples/FenixAlliancePortalsWebsiteApi.js
 utils/utils.js

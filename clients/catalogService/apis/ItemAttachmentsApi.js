@@ -5,6 +5,7 @@ const ItemAttachmentCreateDto = require('../models/ItemAttachmentCreateDto');
 const ItemAttachmentDtoEnvelope = require('../models/ItemAttachmentDtoEnvelope');
 const ItemAttachmentDtoListEnvelope = require('../models/ItemAttachmentDtoListEnvelope');
 const ItemAttachmentUpdateDto = require('../models/ItemAttachmentUpdateDto');
+const Operation = require('../models/Operation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -238,6 +239,73 @@ module.exports = {
                 })
             },
             sample: samples['ItemAttachmentDtoListEnvelopeSample']
+        }
+    },
+    patchItemAttachmentAsync: {
+        key: 'patchItemAttachmentAsync',
+        noun: 'ItemAttachments',
+        display: {
+            label: 'Patch an item attachment',
+            description: 'Partially updates an existing item attachment for the specified tenant using a JSON Patch document.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'itemAttachmentId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemAttachments/{itemAttachmentId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchItemAttachmentAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     updateItemAttachmentAsync: {

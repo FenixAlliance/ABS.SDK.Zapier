@@ -20,8 +20,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessProfileRecordId`,
-                label: `[${labelPrefix}businessProfileRecordId]`,
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
         ]
@@ -32,7 +32,7 @@ module.exports = {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
-            'businessProfileRecordId': bundle.inputData?.[`${keyPrefix}businessProfileRecordId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
         }
     },
 }

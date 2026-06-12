@@ -18,6 +18,7 @@ models/InfoRequest.js
 models/InfoResponse.js
 models/Int32Envelope.js
 models/LoginRequest.js
+models/Operation.js
 models/QuoteCreateDto.js
 models/QuoteDto.js
 models/QuoteDtoEnvelope.js
@@ -40,6 +41,4 @@ models/TwoFactorResponse.js
 models/UserDto.js
 operations/actions.js
 package.json
-samples/CompletionsApi.js
-samples/FenixAlliancePortalsWebsiteApi.js
 utils/utils.js

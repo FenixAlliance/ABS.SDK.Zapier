@@ -50,8 +50,8 @@ module.exports = {
                 type: 'boolean',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
                 type: 'string',
             },
         ]
@@ -68,7 +68,7 @@ module.exports = {
             'logoURL': bundle.inputData?.[`${keyPrefix}logoURL`],
             'featured': bundle.inputData?.[`${keyPrefix}featured`],
             'trending': bundle.inputData?.[`${keyPrefix}trending`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
         }
     },
 }

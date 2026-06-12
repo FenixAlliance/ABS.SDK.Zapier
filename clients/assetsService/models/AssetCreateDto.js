@@ -85,6 +85,11 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}assetTypeId`,
+                label: `[${labelPrefix}assetTypeId]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}assetCategoryId`,
                 label: `[${labelPrefix}assetCategoryId]`,
                 type: 'string',
@@ -133,6 +138,7 @@ module.exports = {
             'purchasePrice': bundle.inputData?.[`${keyPrefix}purchasePrice`],
             'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
             'itemId': bundle.inputData?.[`${keyPrefix}itemId`],
+            'assetTypeId': bundle.inputData?.[`${keyPrefix}assetTypeId`],
             'assetCategoryId': bundle.inputData?.[`${keyPrefix}assetCategoryId`],
             'purchaseInvoiceId': bundle.inputData?.[`${keyPrefix}purchaseInvoiceId`],
             'purchaseReceiptId': bundle.inputData?.[`${keyPrefix}purchaseReceiptId`],

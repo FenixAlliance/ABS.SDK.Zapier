@@ -65,8 +65,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}itemID`,
-                label: `[${labelPrefix}itemID]`,
+                key: `${keyPrefix}itemId`,
+                label: `[${labelPrefix}itemId]`,
                 type: 'string',
             },
         ]
@@ -86,7 +86,7 @@ module.exports = {
             'validResponse': bundle.inputData?.[`${keyPrefix}validResponse`],
             'parentFileUploadId': bundle.inputData?.[`${keyPrefix}parentFileUploadId`],
             'filePath': bundle.inputData?.[`${keyPrefix}filePath`],
-            'itemID': bundle.inputData?.[`${keyPrefix}itemID`],
+            'itemId': bundle.inputData?.[`${keyPrefix}itemId`],
         }
     },
 }

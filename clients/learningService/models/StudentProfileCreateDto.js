@@ -134,11 +134,6 @@ module.exports = {
                 label: `[${labelPrefix}data9Label]`,
                 type: 'string',
             },
-            {
-                key: `${keyPrefix}contactID`,
-                label: `[${labelPrefix}contactID]`,
-                type: 'string',
-            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -170,7 +165,6 @@ module.exports = {
             'data8Label': bundle.inputData?.[`${keyPrefix}data8Label`],
             'data9': bundle.inputData?.[`${keyPrefix}data9`],
             'data9Label': bundle.inputData?.[`${keyPrefix}data9Label`],
-            'contactID': bundle.inputData?.[`${keyPrefix}contactID`],
         }
     },
 }

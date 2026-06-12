@@ -35,6 +35,16 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}context`,
+                label: `[${labelPrefix}context]`,
+                type: 'string',
+                choices: [
+                    'Sales',
+                    'Purchase',
+                    'Cost',
+                ],
+            },
+            {
                 key: `${keyPrefix}currencyId`,
                 label: `[${labelPrefix}currencyId]`,
                 type: 'string',
@@ -80,6 +90,7 @@ module.exports = {
             'startDate': bundle.inputData?.[`${keyPrefix}startDate`],
             'endDate': bundle.inputData?.[`${keyPrefix}endDate`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
+            'context': bundle.inputData?.[`${keyPrefix}context`],
             'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'unitId': bundle.inputData?.[`${keyPrefix}unitId`],

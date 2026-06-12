@@ -15,13 +15,13 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessId`,
-                label: `[${labelPrefix}businessId]`,
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessProfileRecordId`,
-                label: `[${labelPrefix}businessProfileRecordId]`,
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
             {
@@ -126,8 +126,8 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
-            'businessId': bundle.inputData?.[`${keyPrefix}businessId`],
-            'businessProfileRecordId': bundle.inputData?.[`${keyPrefix}businessProfileRecordId`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'assetId': bundle.inputData?.[`${keyPrefix}assetId`],
             'assetName': bundle.inputData?.[`${keyPrefix}assetName`],
             'isRootTransfer': bundle.inputData?.[`${keyPrefix}isRootTransfer`],

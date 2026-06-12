@@ -324,6 +324,16 @@ module.exports = {
                 label: `[${labelPrefix}paymentTokenId]`,
                 type: 'string',
             },
+            {
+                key: `${keyPrefix}emisorWalletAccountId`,
+                label: `[${labelPrefix}emisorWalletAccountId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}receiverWalletAccountId`,
+                label: `[${labelPrefix}receiverWalletAccountId]`,
+                type: 'string',
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -388,6 +398,8 @@ module.exports = {
             'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'bankId': bundle.inputData?.[`${keyPrefix}bankId`],
             'paymentTokenId': bundle.inputData?.[`${keyPrefix}paymentTokenId`],
+            'emisorWalletAccountId': bundle.inputData?.[`${keyPrefix}emisorWalletAccountId`],
+            'receiverWalletAccountId': bundle.inputData?.[`${keyPrefix}receiverWalletAccountId`],
         }
     },
 }

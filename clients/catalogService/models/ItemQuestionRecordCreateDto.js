@@ -33,8 +33,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}socialProfileID`,
-                label: `[${labelPrefix}socialProfileID]`,
+                key: `${keyPrefix}socialProfileId`,
+                label: `[${labelPrefix}socialProfileId]`,
                 type: 'string',
             },
         ]
@@ -47,7 +47,7 @@ module.exports = {
             'title': bundle.inputData?.[`${keyPrefix}title`],
             'needsRevision': bundle.inputData?.[`${keyPrefix}needsRevision`],
             'question': bundle.inputData?.[`${keyPrefix}question`],
-            'socialProfileID': bundle.inputData?.[`${keyPrefix}socialProfileID`],
+            'socialProfileId': bundle.inputData?.[`${keyPrefix}socialProfileId`],
         }
     },
 }

@@ -15,8 +15,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}supportTicketID`,
-                label: `[${labelPrefix}supportTicketID]`,
+                key: `${keyPrefix}supportTicketId`,
+                label: `[${labelPrefix}supportTicketId]`,
                 type: 'string',
             },
             {
@@ -35,8 +35,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}socialProfileID`,
-                label: `[${labelPrefix}socialProfileID]`,
+                key: `${keyPrefix}socialProfileId`,
+                label: `[${labelPrefix}socialProfileId]`,
                 type: 'string',
             },
         ]
@@ -46,11 +46,11 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
-            'supportTicketID': bundle.inputData?.[`${keyPrefix}supportTicketID`],
+            'supportTicketId': bundle.inputData?.[`${keyPrefix}supportTicketId`],
             'topic': bundle.inputData?.[`${keyPrefix}topic`],
             'closed': bundle.inputData?.[`${keyPrefix}closed`],
             'closedTimestamp': bundle.inputData?.[`${keyPrefix}closedTimestamp`],
-            'socialProfileID': bundle.inputData?.[`${keyPrefix}socialProfileID`],
+            'socialProfileId': bundle.inputData?.[`${keyPrefix}socialProfileId`],
         }
     },
 }

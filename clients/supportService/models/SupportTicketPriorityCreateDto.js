@@ -25,8 +25,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}supportEntitlementID`,
-                label: `[${labelPrefix}supportEntitlementID]`,
+                key: `${keyPrefix}supportEntitlementId`,
+                label: `[${labelPrefix}supportEntitlementId]`,
                 type: 'string',
             },
         ]
@@ -38,7 +38,7 @@ module.exports = {
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'title': bundle.inputData?.[`${keyPrefix}title`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
-            'supportEntitlementID': bundle.inputData?.[`${keyPrefix}supportEntitlementID`],
+            'supportEntitlementId': bundle.inputData?.[`${keyPrefix}supportEntitlementId`],
         }
     },
 }

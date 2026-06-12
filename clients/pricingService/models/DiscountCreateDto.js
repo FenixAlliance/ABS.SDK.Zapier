@@ -40,6 +40,11 @@ module.exports = {
                 type: 'number',
             },
             {
+                key: `${keyPrefix}itemId`,
+                label: `[${labelPrefix}itemId]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}discountListId`,
                 label: `[${labelPrefix}discountListId]`,
                 type: 'string',
@@ -56,6 +61,7 @@ module.exports = {
             'endQuantity': bundle.inputData?.[`${keyPrefix}endQuantity`],
             'percent': bundle.inputData?.[`${keyPrefix}percent`],
             'value': bundle.inputData?.[`${keyPrefix}value`],
+            'itemId': bundle.inputData?.[`${keyPrefix}itemId`],
             'discountListId': bundle.inputData?.[`${keyPrefix}discountListId`],
         }
     },

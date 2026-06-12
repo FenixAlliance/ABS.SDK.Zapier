@@ -30,18 +30,18 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}socialProfileID`,
-                label: `[${labelPrefix}socialProfileID]`,
+                key: `${keyPrefix}socialProfileId`,
+                label: `[${labelPrefix}socialProfileId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}itemID`,
-                label: `[${labelPrefix}itemID]`,
+                key: `${keyPrefix}itemId`,
+                label: `[${labelPrefix}itemId]`,
                 type: 'string',
             },
         ]
@@ -54,9 +54,9 @@ module.exports = {
             'title': bundle.inputData?.[`${keyPrefix}title`],
             'needsRevision': bundle.inputData?.[`${keyPrefix}needsRevision`],
             'question': bundle.inputData?.[`${keyPrefix}question`],
-            'socialProfileID': bundle.inputData?.[`${keyPrefix}socialProfileID`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
-            'itemID': bundle.inputData?.[`${keyPrefix}itemID`],
+            'socialProfileId': bundle.inputData?.[`${keyPrefix}socialProfileId`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'itemId': bundle.inputData?.[`${keyPrefix}itemId`],
         }
     },
 }

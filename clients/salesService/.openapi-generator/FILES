@@ -24,6 +24,7 @@ models/LoyaltyProgramDto.js
 models/LoyaltyProgramDtoEnvelope.js
 models/LoyaltyProgramDtoListEnvelope.js
 models/LoyaltyProgramUpdateDto.js
+models/Operation.js
 models/PointOfSaleCreateDto.js
 models/PointOfSaleDto.js
 models/PointOfSaleDtoEnvelope.js
@@ -49,10 +50,4 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/CompletionsApi.js
-samples/FenixAlliancePortalsWebsiteApi.js
-samples/LoyaltyProgramsApi.js
-samples/PointOfSalesApi.js
-samples/SalesLiteraturesApi.js
-samples/StoresApi.js
 utils/utils.js

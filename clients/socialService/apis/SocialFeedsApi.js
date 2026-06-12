@@ -2,6 +2,7 @@ const samples = require('../samples/SocialFeedsApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
+const Operation = require('../models/Operation');
 const SocialFeedDtoEnvelope = require('../models/SocialFeedDtoEnvelope');
 const SocialFeedDtoListEnvelope = require('../models/SocialFeedDtoListEnvelope');
 const SocialFeedPostCreateDto = require('../models/SocialFeedPostCreateDto');
@@ -499,6 +500,79 @@ module.exports = {
                 })
             },
             sample: samples['Int32EnvelopeSample']
+        }
+    },
+    patchFeedPostAsync: {
+        key: 'patchFeedPostAsync',
+        noun: 'SocialFeeds',
+        display: {
+            label: 'Patch a social feed post',
+            description: 'Partially updates an existing post in a specific social feed using a JSON Patch document.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'socialProfileId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'socialFeedId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'feedPostId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialFeeds/{socialFeedId}/Posts/{feedPostId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'socialProfileId': bundle.inputData?.['socialProfileId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchFeedPostAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     updateFeedPostAsync: {

@@ -30,13 +30,18 @@ module.exports = {
                 type: 'number',
             },
             {
-                key: `${keyPrefix}courseID`,
-                label: `[${labelPrefix}courseID]`,
+                key: `${keyPrefix}courseId`,
+                label: `[${labelPrefix}courseId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}courseUnitID`,
-                label: `[${labelPrefix}courseUnitID]`,
+                key: `${keyPrefix}courseUnitId`,
+                label: `[${labelPrefix}courseUnitId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}courseGradingRubricId`,
+                label: `[${labelPrefix}courseGradingRubricId]`,
                 type: 'string',
             },
             {
@@ -49,6 +54,11 @@ module.exports = {
                 label: `[${labelPrefix}tenantId]`,
                 type: 'string',
             },
+            {
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
+                type: 'string',
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -59,10 +69,12 @@ module.exports = {
             'title': bundle.inputData?.[`${keyPrefix}title`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'overallScore': bundle.inputData?.[`${keyPrefix}overallScore`],
-            'courseID': bundle.inputData?.[`${keyPrefix}courseID`],
-            'courseUnitID': bundle.inputData?.[`${keyPrefix}courseUnitID`],
+            'courseId': bundle.inputData?.[`${keyPrefix}courseId`],
+            'courseUnitId': bundle.inputData?.[`${keyPrefix}courseUnitId`],
+            'courseGradingRubricId': bundle.inputData?.[`${keyPrefix}courseGradingRubricId`],
             'releaseDateTime': bundle.inputData?.[`${keyPrefix}releaseDateTime`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
         }
     },
 }

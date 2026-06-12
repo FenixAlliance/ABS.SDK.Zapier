@@ -20,8 +20,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}courseContentGroupID`,
-                label: `[${labelPrefix}courseContentGroupID]`,
+                key: `${keyPrefix}courseContentGroupId`,
+                label: `[${labelPrefix}courseContentGroupId]`,
                 type: 'string',
             },
             {
@@ -37,7 +37,7 @@ module.exports = {
             'title': bundle.inputData?.[`${keyPrefix}title`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'content': bundle.inputData?.[`${keyPrefix}content`],
-            'courseContentGroupID': bundle.inputData?.[`${keyPrefix}courseContentGroupID`],
+            'courseContentGroupId': bundle.inputData?.[`${keyPrefix}courseContentGroupId`],
             'releaseDateTime': bundle.inputData?.[`${keyPrefix}releaseDateTime`],
         }
     },

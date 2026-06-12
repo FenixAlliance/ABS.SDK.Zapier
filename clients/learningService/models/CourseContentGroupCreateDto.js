@@ -21,8 +21,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}courseID`,
-                label: `[${labelPrefix}courseID]`,
+                key: `${keyPrefix}courseId`,
+                label: `[${labelPrefix}courseId]`,
                 required: true,
                 type: 'string',
             },
@@ -34,7 +34,7 @@ module.exports = {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'name': bundle.inputData?.[`${keyPrefix}name`],
-            'courseID': bundle.inputData?.[`${keyPrefix}courseID`],
+            'courseId': bundle.inputData?.[`${keyPrefix}courseId`],
         }
     },
 }

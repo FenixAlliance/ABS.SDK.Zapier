@@ -36,14 +36,14 @@ module.exports = {
                 type: 'integer',
             },
             {
-                key: `${keyPrefix}courseID`,
-                label: `[${labelPrefix}courseID]`,
+                key: `${keyPrefix}courseId`,
+                label: `[${labelPrefix}courseId]`,
                 required: true,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}courseUnitID`,
-                label: `[${labelPrefix}courseUnitID]`,
+                key: `${keyPrefix}courseUnitId`,
+                label: `[${labelPrefix}courseUnitId]`,
                 type: 'string',
             },
         ]
@@ -57,8 +57,8 @@ module.exports = {
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'content': bundle.inputData?.[`${keyPrefix}content`],
             'order': bundle.inputData?.[`${keyPrefix}order`],
-            'courseID': bundle.inputData?.[`${keyPrefix}courseID`],
-            'courseUnitID': bundle.inputData?.[`${keyPrefix}courseUnitID`],
+            'courseId': bundle.inputData?.[`${keyPrefix}courseId`],
+            'courseUnitId': bundle.inputData?.[`${keyPrefix}courseUnitId`],
         }
     },
 }

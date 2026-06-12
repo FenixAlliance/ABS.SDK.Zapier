@@ -28,12 +28,14 @@ const actions = {
     [SubscriptionPlansApi.getSubscriptionPlanByIdAsync.key]: SubscriptionPlansApi.getSubscriptionPlanByIdAsync,
     [SubscriptionPlansApi.getSubscriptionPlansAsync.key]: SubscriptionPlansApi.getSubscriptionPlansAsync,
     [SubscriptionPlansApi.getSubscriptionPlansCountAsync.key]: SubscriptionPlansApi.getSubscriptionPlansCountAsync,
+    [SubscriptionPlansApi.patchSubscriptionPlanAsync.key]: SubscriptionPlansApi.patchSubscriptionPlanAsync,
     [SubscriptionPlansApi.updateSubscriptionPlanAsync.key]: SubscriptionPlansApi.updateSubscriptionPlanAsync,
     [SubscriptionsApi.createSubscriptionAsync.key]: SubscriptionsApi.createSubscriptionAsync,
     [SubscriptionsApi.deleteSubscriptionAsync.key]: SubscriptionsApi.deleteSubscriptionAsync,
     [SubscriptionsApi.getSubscriptionByIdAsync.key]: SubscriptionsApi.getSubscriptionByIdAsync,
     [SubscriptionsApi.getSubscriptionsAsync.key]: SubscriptionsApi.getSubscriptionsAsync,
     [SubscriptionsApi.getSubscriptionsCountAsync.key]: SubscriptionsApi.getSubscriptionsCountAsync,
+    [SubscriptionsApi.patchSubscriptionAsync.key]: SubscriptionsApi.patchSubscriptionAsync,
     [SubscriptionsApi.updateSubscriptionAsync.key]: SubscriptionsApi.updateSubscriptionAsync,
 }
 

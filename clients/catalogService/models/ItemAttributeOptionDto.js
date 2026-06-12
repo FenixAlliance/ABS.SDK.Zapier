@@ -30,8 +30,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
                 type: 'string',
             },
         ]
@@ -44,7 +44,7 @@ module.exports = {
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'itemAttributeId': bundle.inputData?.[`${keyPrefix}itemAttributeId`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
         }
     },
 }

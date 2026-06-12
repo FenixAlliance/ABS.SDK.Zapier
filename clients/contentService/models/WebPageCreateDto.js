@@ -60,8 +60,18 @@ module.exports = {
                 ],
             },
             {
-                key: `${keyPrefix}webTemplateID`,
-                label: `[${labelPrefix}webTemplateID]`,
+                key: `${keyPrefix}slug`,
+                label: `[${labelPrefix}slug]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}webTemplateId`,
+                label: `[${labelPrefix}webTemplateId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}parentWebContentId`,
+                label: `[${labelPrefix}parentWebContentId]`,
                 type: 'string',
             },
         ]
@@ -78,7 +88,9 @@ module.exports = {
             'markup': bundle.inputData?.[`${keyPrefix}markup`],
             'featuredImageUrl': bundle.inputData?.[`${keyPrefix}featuredImageUrl`],
             'codeType': bundle.inputData?.[`${keyPrefix}codeType`],
-            'webTemplateID': bundle.inputData?.[`${keyPrefix}webTemplateID`],
+            'slug': bundle.inputData?.[`${keyPrefix}slug`],
+            'webTemplateId': bundle.inputData?.[`${keyPrefix}webTemplateId`],
+            'parentWebContentId': bundle.inputData?.[`${keyPrefix}parentWebContentId`],
         }
     },
 }

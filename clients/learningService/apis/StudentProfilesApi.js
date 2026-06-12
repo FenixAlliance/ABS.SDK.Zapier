@@ -1,7 +1,9 @@
 const samples = require('../samples/StudentProfilesApi');
 const AverageDto = require('../models/AverageDto');
 const CountDto = require('../models/CountDto');
+const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
+const Operation = require('../models/Operation');
 const StudentProfileCreateDto = require('../models/StudentProfileCreateDto');
 const StudentProfileDto = require('../models/StudentProfileDto');
 const StudentProfileUpdateDto = require('../models/StudentProfileUpdateDto');
@@ -413,6 +415,73 @@ module.exports = {
                 })
             },
             sample: samples['CountDtoSample']
+        }
+    },
+    apiV2LearningServiceStudentProfilesStudentProfileIdPatch: {
+        key: 'apiV2LearningServiceStudentProfilesStudentProfileIdPatch',
+        noun: 'StudentProfiles',
+        display: {
+            label: '',
+            description: '',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'studentProfileId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/StudentProfiles/{studentProfileId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'apiV2LearningServiceStudentProfilesStudentProfileIdPatch', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     apiV2LearningServiceStudentProfilesStudentProfileIdPut: {

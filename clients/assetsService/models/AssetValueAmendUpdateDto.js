@@ -19,16 +19,6 @@ module.exports = {
                 label: `[${labelPrefix}amendmentDate]`,
                 type: 'string',
             },
-            {
-                key: `${keyPrefix}approvedBy`,
-                label: `[${labelPrefix}approvedBy]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}approvalDate`,
-                label: `[${labelPrefix}approvalDate]`,
-                type: 'string',
-            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -37,8 +27,6 @@ module.exports = {
             'newValue': bundle.inputData?.[`${keyPrefix}newValue`],
             'reason': bundle.inputData?.[`${keyPrefix}reason`],
             'amendmentDate': bundle.inputData?.[`${keyPrefix}amendmentDate`],
-            'approvedBy': bundle.inputData?.[`${keyPrefix}approvedBy`],
-            'approvalDate': bundle.inputData?.[`${keyPrefix}approvalDate`],
         }
     },
 }

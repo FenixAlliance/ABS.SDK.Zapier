@@ -15,8 +15,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}itemID`,
-                label: `[${labelPrefix}itemID]`,
+                key: `${keyPrefix}itemId`,
+                label: `[${labelPrefix}itemId]`,
                 type: 'string',
             },
             {
@@ -30,8 +30,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}socialProfileID`,
-                label: `[${labelPrefix}socialProfileID]`,
+                key: `${keyPrefix}socialProfileId`,
+                label: `[${labelPrefix}socialProfileId]`,
                 type: 'string',
             },
         ]
@@ -41,10 +41,10 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
-            'itemID': bundle.inputData?.[`${keyPrefix}itemID`],
+            'itemId': bundle.inputData?.[`${keyPrefix}itemId`],
             'reviewScore': bundle.inputData?.[`${keyPrefix}reviewScore`],
             'reviewMessage': bundle.inputData?.[`${keyPrefix}reviewMessage`],
-            'socialProfileID': bundle.inputData?.[`${keyPrefix}socialProfileID`],
+            'socialProfileId': bundle.inputData?.[`${keyPrefix}socialProfileId`],
         }
     },
 }

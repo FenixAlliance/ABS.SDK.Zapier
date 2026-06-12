@@ -40,8 +40,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}receiverSocialProfileID`,
-                label: `[${labelPrefix}receiverSocialProfileID]`,
+                key: `${keyPrefix}receiverSocialProfileId`,
+                label: `[${labelPrefix}receiverSocialProfileId]`,
                 type: 'string',
             },
             {
@@ -71,7 +71,7 @@ module.exports = {
             'message': bundle.inputData?.[`${keyPrefix}message`],
             'conversationId': bundle.inputData?.[`${keyPrefix}conversationId`],
             'senderSocialProfileId': bundle.inputData?.[`${keyPrefix}senderSocialProfileId`],
-            'receiverSocialProfileID': bundle.inputData?.[`${keyPrefix}receiverSocialProfileID`],
+            'receiverSocialProfileId': bundle.inputData?.[`${keyPrefix}receiverSocialProfileId`],
             'sentTimestamp': bundle.inputData?.[`${keyPrefix}sentTimestamp`],
             'readTimestamp': bundle.inputData?.[`${keyPrefix}readTimestamp`],
             'receivedTimestamp': bundle.inputData?.[`${keyPrefix}receivedTimestamp`],

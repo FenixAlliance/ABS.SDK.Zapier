@@ -39,6 +39,11 @@ module.exports = {
                 label: `[${labelPrefix}tenantId]`,
                 type: 'string',
             },
+            {
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
+                type: 'string',
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -51,6 +56,7 @@ module.exports = {
             'imageURL': bundle.inputData?.[`${keyPrefix}imageURL`],
             'isFeatured': bundle.inputData?.[`${keyPrefix}isFeatured`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
         }
     },
 }

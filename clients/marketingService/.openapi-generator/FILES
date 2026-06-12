@@ -61,6 +61,7 @@ models/NewsletterCreateDto.js
 models/NewsletterDto.js
 models/NewsletterDtoEnvelope.js
 models/NewsletterUpdateDto.js
+models/Operation.js
 models/OrderDto.js
 models/OrderDtoEnvelope.js
 models/RefreshRequest.js
@@ -81,7 +82,4 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/CompletionsApi.js
-samples/FenixAlliancePortalsWebsiteApi.js
-samples/MarketingAreasApi.js
 utils/utils.js

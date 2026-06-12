@@ -25,23 +25,23 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}locationID`,
-                label: `[${labelPrefix}locationID]`,
+                key: `${keyPrefix}locationId`,
+                label: `[${labelPrefix}locationId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}shipmentID`,
-                label: `[${labelPrefix}shipmentID]`,
+                key: `${keyPrefix}shipmentId`,
+                label: `[${labelPrefix}shipmentId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}shippingCourierID`,
-                label: `[${labelPrefix}shippingCourierID]`,
+                key: `${keyPrefix}shippingCourierId`,
+                label: `[${labelPrefix}shippingCourierId]`,
                 type: 'string',
             },
         ]
@@ -53,10 +53,10 @@ module.exports = {
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'trackingCode': bundle.inputData?.[`${keyPrefix}trackingCode`],
             'expectedDelivery': bundle.inputData?.[`${keyPrefix}expectedDelivery`],
-            'locationID': bundle.inputData?.[`${keyPrefix}locationID`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
-            'shipmentID': bundle.inputData?.[`${keyPrefix}shipmentID`],
-            'shippingCourierID': bundle.inputData?.[`${keyPrefix}shippingCourierID`],
+            'locationId': bundle.inputData?.[`${keyPrefix}locationId`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'shipmentId': bundle.inputData?.[`${keyPrefix}shipmentId`],
+            'shippingCourierId': bundle.inputData?.[`${keyPrefix}shippingCourierId`],
         }
     },
 }

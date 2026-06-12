@@ -45,6 +45,7 @@ models/InvoiceUpdateDto.js
 models/LoginRequest.js
 models/Money.js
 models/MoneyEnvelope.js
+models/Operation.js
 models/PaymentDto.js
 models/PaymentDtoIReadOnlyListEnvelope.js
 models/RefreshRequest.js
@@ -59,6 +60,4 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/CompletionsApi.js
-samples/FenixAlliancePortalsWebsiteApi.js
 utils/utils.js

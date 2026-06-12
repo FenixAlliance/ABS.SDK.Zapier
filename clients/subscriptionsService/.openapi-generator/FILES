@@ -6,6 +6,7 @@ apis/SubscriptionsApi.js
 authentication.js
 index.js
 models/AccessTokenResponse.js
+models/EmptyEnvelope.js
 models/Envelope.js
 models/ErrorEnvelope.js
 models/ForgotPasswordRequest.js
@@ -14,6 +15,7 @@ models/InfoRequest.js
 models/InfoResponse.js
 models/Int32Envelope.js
 models/LoginRequest.js
+models/Operation.js
 models/RefreshRequest.js
 models/RegisterRequest.js
 models/ResendConfirmationEmailRequest.js
@@ -32,6 +34,4 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/CompletionsApi.js
-samples/FenixAlliancePortalsWebsiteApi.js
 utils/utils.js

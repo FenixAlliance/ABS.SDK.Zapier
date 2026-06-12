@@ -40,23 +40,48 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}courseID`,
-                label: `[${labelPrefix}courseID]`,
+                key: `${keyPrefix}courseId`,
+                label: `[${labelPrefix}courseId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}courseUnitID`,
-                label: `[${labelPrefix}courseUnitID]`,
+                key: `${keyPrefix}courseUnitId`,
+                label: `[${labelPrefix}courseUnitId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}courseSectionID`,
-                label: `[${labelPrefix}courseSectionID]`,
+                key: `${keyPrefix}courseSectionId`,
+                label: `[${labelPrefix}courseSectionId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}courseCohortId`,
+                label: `[${labelPrefix}courseCohortId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}courseAssignmentTypeId`,
+                label: `[${labelPrefix}courseAssignmentTypeId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}asignToAllCohorts`,
+                label: `[${labelPrefix}asignToAllCohorts]`,
+                type: 'boolean',
+            },
+            {
+                key: `${keyPrefix}resources`,
+                label: `[${labelPrefix}resources]`,
                 type: 'string',
             },
             {
                 key: `${keyPrefix}tenantId`,
                 label: `[${labelPrefix}tenantId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
         ]
@@ -71,10 +96,15 @@ module.exports = {
             'instructions': bundle.inputData?.[`${keyPrefix}instructions`],
             'points': bundle.inputData?.[`${keyPrefix}points`],
             'dueDateTime': bundle.inputData?.[`${keyPrefix}dueDateTime`],
-            'courseID': bundle.inputData?.[`${keyPrefix}courseID`],
-            'courseUnitID': bundle.inputData?.[`${keyPrefix}courseUnitID`],
-            'courseSectionID': bundle.inputData?.[`${keyPrefix}courseSectionID`],
+            'courseId': bundle.inputData?.[`${keyPrefix}courseId`],
+            'courseUnitId': bundle.inputData?.[`${keyPrefix}courseUnitId`],
+            'courseSectionId': bundle.inputData?.[`${keyPrefix}courseSectionId`],
+            'courseCohortId': bundle.inputData?.[`${keyPrefix}courseCohortId`],
+            'courseAssignmentTypeId': bundle.inputData?.[`${keyPrefix}courseAssignmentTypeId`],
+            'asignToAllCohorts': bundle.inputData?.[`${keyPrefix}asignToAllCohorts`],
+            'resources': bundle.inputData?.[`${keyPrefix}resources`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
         }
     },
 }

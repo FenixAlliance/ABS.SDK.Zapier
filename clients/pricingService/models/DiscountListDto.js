@@ -20,6 +20,15 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}discountListType`,
+                label: `[${labelPrefix}discountListType]`,
+                type: 'string',
+                choices: [
+                    'Amount',
+                    'Percentage',
+                ],
+            },
+            {
                 key: `${keyPrefix}currencyId`,
                 label: `[${labelPrefix}currencyId]`,
                 type: 'string',
@@ -42,6 +51,7 @@ module.exports = {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'name': bundle.inputData?.[`${keyPrefix}name`],
+            'discountListType': bundle.inputData?.[`${keyPrefix}discountListType`],
             'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],

@@ -6,6 +6,7 @@ const ItemPriceCreateDto = require('../models/ItemPriceCreateDto');
 const ItemPriceDtoEnvelope = require('../models/ItemPriceDtoEnvelope');
 const ItemPriceDtoListEnvelope = require('../models/ItemPriceDtoListEnvelope');
 const ItemPriceUpdateDto = require('../models/ItemPriceUpdateDto');
+const Operation = require('../models/Operation');
 const PriceListCreateDto = require('../models/PriceListCreateDto');
 const PriceListDtoEnvelope = require('../models/PriceListDtoEnvelope');
 const PriceListDtoListEnvelope = require('../models/PriceListDtoListEnvelope');
@@ -465,6 +466,124 @@ module.exports = {
                 })
             },
             sample: samples['Int32EnvelopeSample']
+        }
+    },
+    patchPriceListAsync: {
+        key: 'patchPriceListAsync',
+        noun: 'PriceLists',
+        display: {
+            label: 'Patches a price list',
+            description: 'Partially updates the specified price list using a JSON Patch document.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'priceListId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/PriceLists/{priceListId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchPriceListAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
+        }
+    },
+    patchPriceListPriceAsync: {
+        key: 'patchPriceListPriceAsync',
+        noun: 'PriceLists',
+        display: {
+            label: 'Patches a price list entry',
+            description: 'Partially updates the specified price entry in a price list using a JSON Patch document.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'priceListId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'priceId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/PriceLists/{priceListId}/Prices/{priceId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchPriceListPriceAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     updatePriceListAsync: {

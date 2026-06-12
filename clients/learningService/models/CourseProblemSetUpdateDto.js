@@ -20,13 +20,13 @@ module.exports = {
                 type: 'number',
             },
             {
-                key: `${keyPrefix}courseUnitID`,
-                label: `[${labelPrefix}courseUnitID]`,
+                key: `${keyPrefix}courseUnitId`,
+                label: `[${labelPrefix}courseUnitId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}courseGradingRubricID`,
-                label: `[${labelPrefix}courseGradingRubricID]`,
+                key: `${keyPrefix}courseGradingRubricId`,
+                label: `[${labelPrefix}courseGradingRubricId]`,
                 type: 'string',
             },
             {
@@ -42,8 +42,8 @@ module.exports = {
             'title': bundle.inputData?.[`${keyPrefix}title`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'overallScore': bundle.inputData?.[`${keyPrefix}overallScore`],
-            'courseUnitID': bundle.inputData?.[`${keyPrefix}courseUnitID`],
-            'courseGradingRubricID': bundle.inputData?.[`${keyPrefix}courseGradingRubricID`],
+            'courseUnitId': bundle.inputData?.[`${keyPrefix}courseUnitId`],
+            'courseGradingRubricId': bundle.inputData?.[`${keyPrefix}courseGradingRubricId`],
             'releaseDateTime': bundle.inputData?.[`${keyPrefix}releaseDateTime`],
         }
     },

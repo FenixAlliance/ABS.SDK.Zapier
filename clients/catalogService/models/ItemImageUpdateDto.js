@@ -5,8 +5,8 @@ module.exports = {
         const {keyPrefix, labelPrefix} = utils.buildKeyAndLabel(prefix, isInput, isArrayChild)
         return [
             {
-                key: `${keyPrefix}itemID`,
-                label: `[${labelPrefix}itemID]`,
+                key: `${keyPrefix}itemId`,
+                label: `[${labelPrefix}itemId]`,
                 required: true,
                 type: 'string',
             },
@@ -80,8 +80,8 @@ module.exports = {
                 type: 'boolean',
             },
             {
-                key: `${keyPrefix}parentFileUploadID`,
-                label: `[${labelPrefix}parentFileUploadID]`,
+                key: `${keyPrefix}parentFileUploadId`,
+                label: `[${labelPrefix}parentFileUploadId]`,
                 type: 'string',
             },
         ]
@@ -89,7 +89,7 @@ module.exports = {
     mapping: (bundle, prefix = '') => {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
-            'itemID': bundle.inputData?.[`${keyPrefix}itemID`],
+            'itemId': bundle.inputData?.[`${keyPrefix}itemId`],
             'isItemMozaicBG': bundle.inputData?.[`${keyPrefix}isItemMozaicBG`],
             'mD5Hash': bundle.inputData?.[`${keyPrefix}mD5Hash`],
             'metadata': bundle.inputData?.[`${keyPrefix}metadata`],
@@ -103,7 +103,7 @@ module.exports = {
             'contentType': bundle.inputData?.[`${keyPrefix}contentType`],
             'fileLength': bundle.inputData?.[`${keyPrefix}fileLength`],
             'validResponse': bundle.inputData?.[`${keyPrefix}validResponse`],
-            'parentFileUploadID': bundle.inputData?.[`${keyPrefix}parentFileUploadID`],
+            'parentFileUploadId': bundle.inputData?.[`${keyPrefix}parentFileUploadId`],
         }
     },
 }

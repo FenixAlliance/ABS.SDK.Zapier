@@ -7,7 +7,7 @@ module.exports = {
             {
                 key: `${keyPrefix}id`,
                 label: `[${labelPrefix}id]`,
-                dict: true,
+                type: 'string',
             },
             {
                 key: `${keyPrefix}timestamp`,
@@ -15,19 +15,19 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessId`,
-                label: `[${labelPrefix}businessId]`,
-                dict: true,
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
+                type: 'string',
             },
             {
-                key: `${keyPrefix}businessProfileRecordId`,
-                label: `[${labelPrefix}businessProfileRecordId]`,
-                dict: true,
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
+                type: 'string',
             },
             {
                 key: `${keyPrefix}assetId`,
                 label: `[${labelPrefix}assetId]`,
-                dict: true,
+                type: 'string',
             },
             {
                 key: `${keyPrefix}assetName`,
@@ -43,6 +43,36 @@ module.exports = {
                 key: `${keyPrefix}assetDepreciationPolicyName`,
                 label: `[${labelPrefix}assetDepreciationPolicyName]`,
                 type: 'string',
+            },
+            {
+                key: `${keyPrefix}financialBookId`,
+                label: `[${labelPrefix}financialBookId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}startDate`,
+                label: `[${labelPrefix}startDate]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}totalDepreciations`,
+                label: `[${labelPrefix}totalDepreciations]`,
+                type: 'integer',
+            },
+            {
+                key: `${keyPrefix}depreciationFrequency`,
+                label: `[${labelPrefix}depreciationFrequency]`,
+                type: 'integer',
+            },
+            {
+                key: `${keyPrefix}depreciationRate`,
+                label: `[${labelPrefix}depreciationRate]`,
+                type: 'number',
+            },
+            {
+                key: `${keyPrefix}expectedValueAUL`,
+                label: `[${labelPrefix}expectedValueAUL]`,
+                type: 'number',
             },
             {
                 key: `${keyPrefix}depreciationAmount`,
@@ -86,12 +116,18 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
-            'businessId': bundle.inputData?.[`${keyPrefix}businessId`],
-            'businessProfileRecordId': bundle.inputData?.[`${keyPrefix}businessProfileRecordId`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'assetId': bundle.inputData?.[`${keyPrefix}assetId`],
             'assetName': bundle.inputData?.[`${keyPrefix}assetName`],
             'assetDepreciationPolicyId': bundle.inputData?.[`${keyPrefix}assetDepreciationPolicyId`],
             'assetDepreciationPolicyName': bundle.inputData?.[`${keyPrefix}assetDepreciationPolicyName`],
+            'financialBookId': bundle.inputData?.[`${keyPrefix}financialBookId`],
+            'startDate': bundle.inputData?.[`${keyPrefix}startDate`],
+            'totalDepreciations': bundle.inputData?.[`${keyPrefix}totalDepreciations`],
+            'depreciationFrequency': bundle.inputData?.[`${keyPrefix}depreciationFrequency`],
+            'depreciationRate': bundle.inputData?.[`${keyPrefix}depreciationRate`],
+            'expectedValueAUL': bundle.inputData?.[`${keyPrefix}expectedValueAUL`],
             'depreciationAmount': bundle.inputData?.[`${keyPrefix}depreciationAmount`],
             'accumulatedDepreciation': bundle.inputData?.[`${keyPrefix}accumulatedDepreciation`],
             'bookValue': bundle.inputData?.[`${keyPrefix}bookValue`],

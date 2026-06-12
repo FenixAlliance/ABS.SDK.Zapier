@@ -60,6 +60,4 @@ models/WalletDto.js
 models/WalletDtoEnvelope.js
 operations/actions.js
 package.json
-samples/CompletionsApi.js
-samples/FenixAlliancePortalsWebsiteApi.js
 utils/utils.js

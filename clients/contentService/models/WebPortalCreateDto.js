@@ -40,18 +40,18 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}websiteThemeID`,
-                label: `[${labelPrefix}websiteThemeID]`,
+                key: `${keyPrefix}websiteThemeId`,
+                label: `[${labelPrefix}websiteThemeId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessDomainID`,
-                label: `[${labelPrefix}businessDomainID]`,
+                key: `${keyPrefix}businessDomainId`,
+                label: `[${labelPrefix}businessDomainId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessPortalApplicationID`,
-                label: `[${labelPrefix}businessPortalApplicationID]`,
+                key: `${keyPrefix}businessPortalApplicationId`,
+                label: `[${labelPrefix}businessPortalApplicationId]`,
                 type: 'string',
             },
         ]
@@ -66,9 +66,9 @@ module.exports = {
             'domain': bundle.inputData?.[`${keyPrefix}domain`],
             'disabled': bundle.inputData?.[`${keyPrefix}disabled`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
-            'websiteThemeID': bundle.inputData?.[`${keyPrefix}websiteThemeID`],
-            'businessDomainID': bundle.inputData?.[`${keyPrefix}businessDomainID`],
-            'businessPortalApplicationID': bundle.inputData?.[`${keyPrefix}businessPortalApplicationID`],
+            'websiteThemeId': bundle.inputData?.[`${keyPrefix}websiteThemeId`],
+            'businessDomainId': bundle.inputData?.[`${keyPrefix}businessDomainId`],
+            'businessPortalApplicationId': bundle.inputData?.[`${keyPrefix}businessPortalApplicationId`],
         }
     },
 }

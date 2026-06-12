@@ -30,18 +30,23 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}courseWikiID`,
-                label: `[${labelPrefix}courseWikiID]`,
+                key: `${keyPrefix}courseWikiId`,
+                label: `[${labelPrefix}courseWikiId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}courseID`,
-                label: `[${labelPrefix}courseID]`,
+                key: `${keyPrefix}courseId`,
+                label: `[${labelPrefix}courseId]`,
                 type: 'string',
             },
             {
                 key: `${keyPrefix}tenantId`,
                 label: `[${labelPrefix}tenantId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
         ]
@@ -54,9 +59,10 @@ module.exports = {
             'title': bundle.inputData?.[`${keyPrefix}title`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'content': bundle.inputData?.[`${keyPrefix}content`],
-            'courseWikiID': bundle.inputData?.[`${keyPrefix}courseWikiID`],
-            'courseID': bundle.inputData?.[`${keyPrefix}courseID`],
+            'courseWikiId': bundle.inputData?.[`${keyPrefix}courseWikiId`],
+            'courseId': bundle.inputData?.[`${keyPrefix}courseId`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
         }
     },
 }

@@ -25,8 +25,8 @@ module.exports = {
                 type: 'integer',
             },
             {
-                key: `${keyPrefix}courseAssignmentID`,
-                label: `[${labelPrefix}courseAssignmentID]`,
+                key: `${keyPrefix}courseAssignmentId`,
+                label: `[${labelPrefix}courseAssignmentId]`,
                 type: 'string',
             },
         ]
@@ -38,7 +38,7 @@ module.exports = {
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'content': bundle.inputData?.[`${keyPrefix}content`],
             'order': bundle.inputData?.[`${keyPrefix}order`],
-            'courseAssignmentID': bundle.inputData?.[`${keyPrefix}courseAssignmentID`],
+            'courseAssignmentId': bundle.inputData?.[`${keyPrefix}courseAssignmentId`],
         }
     },
 }

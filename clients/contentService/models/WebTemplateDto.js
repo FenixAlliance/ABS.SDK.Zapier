@@ -69,6 +69,16 @@ module.exports = {
                 label: `[${labelPrefix}order]`,
                 type: 'integer',
             },
+            {
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
+                type: 'string',
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -87,6 +97,8 @@ module.exports = {
             'razorContent': bundle.inputData?.[`${keyPrefix}razorContent`],
             'highlightImage': bundle.inputData?.[`${keyPrefix}highlightImage`],
             'order': bundle.inputData?.[`${keyPrefix}order`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
         }
     },
 }

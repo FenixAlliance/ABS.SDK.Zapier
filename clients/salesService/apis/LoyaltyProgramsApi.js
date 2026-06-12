@@ -6,6 +6,7 @@ const LoyaltyProgramCreateDto = require('../models/LoyaltyProgramCreateDto');
 const LoyaltyProgramDtoEnvelope = require('../models/LoyaltyProgramDtoEnvelope');
 const LoyaltyProgramDtoListEnvelope = require('../models/LoyaltyProgramDtoListEnvelope');
 const LoyaltyProgramUpdateDto = require('../models/LoyaltyProgramUpdateDto');
+const Operation = require('../models/Operation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -241,6 +242,62 @@ module.exports = {
                 })
             },
             sample: samples['LoyaltyProgramDtoListEnvelopeSample']
+        }
+    },
+    patchLoyaltyProgramAsync: {
+        key: 'patchLoyaltyProgramAsync',
+        noun: 'LoyaltyPrograms',
+        display: {
+            label: 'Patch a loyalty program',
+            description: 'Partially updates an existing loyalty program using a JSON Patch document.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'loyaltyProgramId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/SalesService/LoyaltyPrograms/{loyaltyProgramId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchLoyaltyProgramAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     updateLoyaltyProgramAsync: {

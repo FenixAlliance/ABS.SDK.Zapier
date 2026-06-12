@@ -40,13 +40,18 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}courseID`,
-                label: `[${labelPrefix}courseID]`,
+                key: `${keyPrefix}courseId`,
+                label: `[${labelPrefix}courseId]`,
                 type: 'string',
             },
             {
                 key: `${keyPrefix}tenantId`,
                 label: `[${labelPrefix}tenantId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
         ]
@@ -61,8 +66,9 @@ module.exports = {
             'endDateTime': bundle.inputData?.[`${keyPrefix}endDateTime`],
             'expectedStartDateTime': bundle.inputData?.[`${keyPrefix}expectedStartDateTime`],
             'expectedEndDateTime': bundle.inputData?.[`${keyPrefix}expectedEndDateTime`],
-            'courseID': bundle.inputData?.[`${keyPrefix}courseID`],
+            'courseId': bundle.inputData?.[`${keyPrefix}courseId`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
         }
     },
 }

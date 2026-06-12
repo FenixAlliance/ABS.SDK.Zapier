@@ -3,6 +3,7 @@ const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const ExtendedSalesLiteratureDtoListEnvelope = require('../models/ExtendedSalesLiteratureDtoListEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
+const Operation = require('../models/Operation');
 const SalesLiteratureCreateDto = require('../models/SalesLiteratureCreateDto');
 const SalesLiteratureDtoEnvelope = require('../models/SalesLiteratureDtoEnvelope');
 const SalesLiteratureDtoListEnvelope = require('../models/SalesLiteratureDtoListEnvelope');
@@ -286,6 +287,62 @@ module.exports = {
                 })
             },
             sample: samples['SalesLiteratureDtoListEnvelopeSample']
+        }
+    },
+    patchSalesLiteratureAsync: {
+        key: 'patchSalesLiteratureAsync',
+        noun: 'SalesLiteratures',
+        display: {
+            label: 'Patch a sales literature',
+            description: 'Partially updates an existing sales literature using a JSON Patch document.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'salesLiteratureId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/SalesService/SalesLiteratures/{salesLiteratureId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchSalesLiteratureAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     updateSalesLiteratureAsync: {

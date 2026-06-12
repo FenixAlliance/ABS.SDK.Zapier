@@ -18,6 +18,7 @@ models/LocationDtoEnvelope.js
 models/LocationDtoIReadOnlyListEnvelope.js
 models/LocationUpdateDto.js
 models/LoginRequest.js
+models/Operation.js
 models/RefreshRequest.js
 models/RegisterRequest.js
 models/ResendConfirmationEmailRequest.js
@@ -26,6 +27,4 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/CompletionsApi.js
-samples/FenixAlliancePortalsWebsiteApi.js
 utils/utils.js

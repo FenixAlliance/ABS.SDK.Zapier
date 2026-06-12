@@ -1,9 +1,11 @@
 const samples = require('../samples/MaintenanceVisitsApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
+const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
 const MaintenanceVisitCreateDto = require('../models/MaintenanceVisitCreateDto');
 const MaintenanceVisitDtoEnvelope = require('../models/MaintenanceVisitDtoEnvelope');
 const MaintenanceVisitDtoListEnvelope = require('../models/MaintenanceVisitDtoListEnvelope');
+const Operation = require('../models/Operation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -294,6 +296,73 @@ module.exports = {
                 })
             },
             sample: samples['Int32EnvelopeSample']
+        }
+    },
+    patchMaintenanceVisitAsync: {
+        key: 'patchMaintenanceVisitAsync',
+        noun: 'MaintenanceVisits',
+        display: {
+            label: 'Patch a maintenance visit',
+            description: 'Partially updates an existing maintenance visit by its unique identifier.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'maintenanceVisitId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/SupportService/MaintenanceVisits/{maintenanceVisitId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchMaintenanceVisitAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     updateMaintenanceVisitAsync: {

@@ -15,13 +15,13 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}courseID`,
-                label: `[${labelPrefix}courseID]`,
+                key: `${keyPrefix}courseId`,
+                label: `[${labelPrefix}courseId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}instructorProfileID`,
-                label: `[${labelPrefix}instructorProfileID]`,
+                key: `${keyPrefix}instructorProfileId`,
+                label: `[${labelPrefix}instructorProfileId]`,
                 type: 'string',
             },
             {
@@ -38,6 +38,11 @@ module.exports = {
                 label: `[${labelPrefix}tenantId]`,
                 type: 'string',
             },
+            {
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
+                type: 'string',
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -45,10 +50,11 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
-            'courseID': bundle.inputData?.[`${keyPrefix}courseID`],
-            'instructorProfileID': bundle.inputData?.[`${keyPrefix}instructorProfileID`],
+            'courseId': bundle.inputData?.[`${keyPrefix}courseId`],
+            'instructorProfileId': bundle.inputData?.[`${keyPrefix}instructorProfileId`],
             'courseTeamMembershipType': bundle.inputData?.[`${keyPrefix}courseTeamMembershipType`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
         }
     },
 }

@@ -115,8 +115,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}supportRequestID`,
-                label: `[${labelPrefix}supportRequestID]`,
+                key: `${keyPrefix}supportRequestId`,
+                label: `[${labelPrefix}supportRequestId]`,
                 type: 'string',
             },
         ]
@@ -146,7 +146,7 @@ module.exports = {
             'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'socialProfileId': bundle.inputData?.[`${keyPrefix}socialProfileId`],
             'folderPath': bundle.inputData?.[`${keyPrefix}folderPath`],
-            'supportRequestID': bundle.inputData?.[`${keyPrefix}supportRequestID`],
+            'supportRequestId': bundle.inputData?.[`${keyPrefix}supportRequestId`],
         }
     },
 }

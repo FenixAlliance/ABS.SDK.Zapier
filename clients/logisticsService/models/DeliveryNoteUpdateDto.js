@@ -15,13 +15,13 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}shipmentID`,
-                label: `[${labelPrefix}shipmentID]`,
+                key: `${keyPrefix}shipmentId`,
+                label: `[${labelPrefix}shipmentId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}proofOfDeliveryID`,
-                label: `[${labelPrefix}proofOfDeliveryID]`,
+                key: `${keyPrefix}proofOfDeliveryId`,
+                label: `[${labelPrefix}proofOfDeliveryId]`,
                 type: 'string',
             },
         ]
@@ -31,8 +31,8 @@ module.exports = {
         return {
             'title': bundle.inputData?.[`${keyPrefix}title`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
-            'shipmentID': bundle.inputData?.[`${keyPrefix}shipmentID`],
-            'proofOfDeliveryID': bundle.inputData?.[`${keyPrefix}proofOfDeliveryID`],
+            'shipmentId': bundle.inputData?.[`${keyPrefix}shipmentId`],
+            'proofOfDeliveryId': bundle.inputData?.[`${keyPrefix}proofOfDeliveryId`],
         }
     },
 }

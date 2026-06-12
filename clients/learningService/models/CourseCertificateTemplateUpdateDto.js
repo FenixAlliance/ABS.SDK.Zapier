@@ -5,28 +5,28 @@ module.exports = {
         const {keyPrefix, labelPrefix} = utils.buildKeyAndLabel(prefix, isInput, isArrayChild)
         return [
             {
-                key: `${keyPrefix}webPortalID`,
-                label: `[${labelPrefix}webPortalID]`,
+                key: `${keyPrefix}webPortalId`,
+                label: `[${labelPrefix}webPortalId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}websiteThemeID`,
-                label: `[${labelPrefix}websiteThemeID]`,
+                key: `${keyPrefix}websiteThemeId`,
+                label: `[${labelPrefix}websiteThemeId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}socialProfileID`,
-                label: `[${labelPrefix}socialProfileID]`,
+                key: `${keyPrefix}socialProfileId`,
+                label: `[${labelPrefix}socialProfileId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}parentWebContentID`,
-                label: `[${labelPrefix}parentWebContentID]`,
+                key: `${keyPrefix}parentWebContentId`,
+                label: `[${labelPrefix}parentWebContentId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}parentWebContentVersionID`,
-                label: `[${labelPrefix}parentWebContentVersionID]`,
+                key: `${keyPrefix}parentWebContentVersionId`,
+                label: `[${labelPrefix}parentWebContentVersionId]`,
                 type: 'string',
             },
         ]
@@ -34,11 +34,11 @@ module.exports = {
     mapping: (bundle, prefix = '') => {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
-            'webPortalID': bundle.inputData?.[`${keyPrefix}webPortalID`],
-            'websiteThemeID': bundle.inputData?.[`${keyPrefix}websiteThemeID`],
-            'socialProfileID': bundle.inputData?.[`${keyPrefix}socialProfileID`],
-            'parentWebContentID': bundle.inputData?.[`${keyPrefix}parentWebContentID`],
-            'parentWebContentVersionID': bundle.inputData?.[`${keyPrefix}parentWebContentVersionID`],
+            'webPortalId': bundle.inputData?.[`${keyPrefix}webPortalId`],
+            'websiteThemeId': bundle.inputData?.[`${keyPrefix}websiteThemeId`],
+            'socialProfileId': bundle.inputData?.[`${keyPrefix}socialProfileId`],
+            'parentWebContentId': bundle.inputData?.[`${keyPrefix}parentWebContentId`],
+            'parentWebContentVersionId': bundle.inputData?.[`${keyPrefix}parentWebContentVersionId`],
         }
     },
 }

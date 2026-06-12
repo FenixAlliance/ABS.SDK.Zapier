@@ -55,8 +55,8 @@ module.exports = {
                 type: 'number',
             },
             {
-                key: `${keyPrefix}paymentModeID`,
-                label: `[${labelPrefix}paymentModeID]`,
+                key: `${keyPrefix}paymentModeId`,
+                label: `[${labelPrefix}paymentModeId]`,
                 type: 'string',
             },
             {
@@ -84,7 +84,7 @@ module.exports = {
             'creditWeeks': bundle.inputData?.[`${keyPrefix}creditWeeks`],
             'creditMonths': bundle.inputData?.[`${keyPrefix}creditMonths`],
             'creditYears': bundle.inputData?.[`${keyPrefix}creditYears`],
-            'paymentModeID': bundle.inputData?.[`${keyPrefix}paymentModeID`],
+            'paymentModeId': bundle.inputData?.[`${keyPrefix}paymentModeId`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
         }

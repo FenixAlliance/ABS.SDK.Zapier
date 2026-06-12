@@ -15,14 +15,14 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}courseID`,
-                label: `[${labelPrefix}courseID]`,
+                key: `${keyPrefix}courseId`,
+                label: `[${labelPrefix}courseId]`,
                 required: true,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}instructorProfileID`,
-                label: `[${labelPrefix}instructorProfileID]`,
+                key: `${keyPrefix}instructorProfileId`,
+                label: `[${labelPrefix}instructorProfileId]`,
                 required: true,
                 type: 'string',
             },
@@ -42,8 +42,8 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
-            'courseID': bundle.inputData?.[`${keyPrefix}courseID`],
-            'instructorProfileID': bundle.inputData?.[`${keyPrefix}instructorProfileID`],
+            'courseId': bundle.inputData?.[`${keyPrefix}courseId`],
+            'instructorProfileId': bundle.inputData?.[`${keyPrefix}instructorProfileId`],
             'courseTeamMembershipType': bundle.inputData?.[`${keyPrefix}courseTeamMembershipType`],
         }
     },

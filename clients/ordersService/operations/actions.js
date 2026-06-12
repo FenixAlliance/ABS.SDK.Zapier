@@ -35,6 +35,8 @@ const actions = {
     [OrdersApi.getOrderLinesCount.key]: OrdersApi.getOrderLinesCount,
     [OrdersApi.getOrders.key]: OrdersApi.getOrders,
     [OrdersApi.getOrdersCount.key]: OrdersApi.getOrdersCount,
+    [OrdersApi.patchOrder.key]: OrdersApi.patchOrder,
+    [OrdersApi.patchOrderLine.key]: OrdersApi.patchOrderLine,
     [OrdersApi.previewOrderEmailTemplate.key]: OrdersApi.previewOrderEmailTemplate,
     [OrdersApi.sendOrderEmail.key]: OrdersApi.sendOrderEmail,
     [OrdersApi.submitCart.key]: OrdersApi.submitCart,

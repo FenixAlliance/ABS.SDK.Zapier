@@ -29,6 +29,7 @@ const actions = {
     [OptionsApi.getUserOptionByKey.key]: OptionsApi.getUserOptionByKey,
     [OptionsApi.getUserOptions.key]: OptionsApi.getUserOptions,
     [OptionsApi.getUserOptionsCount.key]: OptionsApi.getUserOptionsCount,
+    [OptionsApi.patchUserOption.key]: OptionsApi.patchUserOption,
     [OptionsApi.updateUserOption.key]: OptionsApi.updateUserOption,
     [OptionsApi.upsertUserOption.key]: OptionsApi.upsertUserOption,
     [UsersApi.countCurrentUserFollowersAsync.key]: UsersApi.countCurrentUserFollowersAsync,

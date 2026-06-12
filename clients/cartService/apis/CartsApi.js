@@ -16,6 +16,7 @@ const ItemToCompareCartRecordDto = require('../models/ItemToCompareCartRecordDto
 const ItemToCompareCartRecordDtoEnvelope = require('../models/ItemToCompareCartRecordDtoEnvelope');
 const ItemToCompareCartRecordDtoListEnvelope = require('../models/ItemToCompareCartRecordDtoListEnvelope');
 const NewWishListRequest = require('../models/NewWishListRequest');
+const Operation = require('../models/Operation');
 const ProductToWishListRequest = require('../models/ProductToWishListRequest');
 const WishListDto = require('../models/WishListDto');
 const WishListDtoEnvelope = require('../models/WishListDtoEnvelope');
@@ -1821,6 +1822,66 @@ module.exports = {
                 })
             },
             sample: samples['BooleanEnvelopeSample']
+        }
+    },
+    patchCartAsync: {
+        key: 'patchCartAsync',
+        noun: 'Carts',
+        display: {
+            label: 'Patch a cart',
+            description: 'Partially updates a cart using a JSON Patch document.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'cartId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/Carts/{cartId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchCartAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     removeCartLineAsync: {

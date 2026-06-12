@@ -40,8 +40,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessProfileRecordId`,
-                label: `[${labelPrefix}businessProfileRecordId]`,
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
             {
@@ -55,8 +55,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}accountHolderId`,
-                label: `[${labelPrefix}accountHolderId]`,
+                key: `${keyPrefix}userId`,
+                label: `[${labelPrefix}userId]`,
                 type: 'string',
             },
             {
@@ -76,10 +76,10 @@ module.exports = {
             'approved': bundle.inputData?.[`${keyPrefix}approved`],
             'approvedTimestamp': bundle.inputData?.[`${keyPrefix}approvedTimestamp`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
-            'businessProfileRecordId': bundle.inputData?.[`${keyPrefix}businessProfileRecordId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'supportEntitlementId': bundle.inputData?.[`${keyPrefix}supportEntitlementId`],
             'contactId': bundle.inputData?.[`${keyPrefix}contactId`],
-            'accountHolderId': bundle.inputData?.[`${keyPrefix}accountHolderId`],
+            'userId': bundle.inputData?.[`${keyPrefix}userId`],
             'returnPolicyId': bundle.inputData?.[`${keyPrefix}returnPolicyId`],
         }
     },

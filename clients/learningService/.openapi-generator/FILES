@@ -110,6 +110,7 @@ models/CourseUpdateDto.js
 models/CourseWikiCreateDto.js
 models/CourseWikiDto.js
 models/CourseWikiUpdateDto.js
+models/EmptyEnvelope.js
 models/ErrorEnvelope.js
 models/ForgotPasswordRequest.js
 models/HttpValidationProblemDetails.js
@@ -120,6 +121,7 @@ models/InstructorProfileDto.js
 models/InstructorProfileDtoIReadOnlyListEnvelope.js
 models/InstructorProfileUpdateDto.js
 models/LoginRequest.js
+models/Operation.js
 models/RefreshRequest.js
 models/RegisterRequest.js
 models/ResendConfirmationEmailRequest.js
@@ -132,6 +134,4 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/CompletionsApi.js
-samples/FenixAlliancePortalsWebsiteApi.js
 utils/utils.js

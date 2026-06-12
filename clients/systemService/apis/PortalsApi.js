@@ -2,6 +2,7 @@ const samples = require('../samples/PortalsApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
+const Operation = require('../models/Operation');
 const WebPortalCreateDto = require('../models/WebPortalCreateDto');
 const WebPortalDtoEnvelope = require('../models/WebPortalDtoEnvelope');
 const WebPortalDtoListEnvelope = require('../models/WebPortalDtoListEnvelope');
@@ -261,6 +262,66 @@ module.exports = {
                 })
             },
             sample: samples['Int32EnvelopeSample']
+        }
+    },
+    patchSystemPortal: {
+        key: 'patchSystemPortal',
+        noun: 'Portals',
+        display: {
+            label: 'Partially update a system portal',
+            description: 'Partially update an existing web portal in the system using a JSON Patch document',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'portalId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Portals/{portalId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchSystemPortal', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     updateSystemPortal: {

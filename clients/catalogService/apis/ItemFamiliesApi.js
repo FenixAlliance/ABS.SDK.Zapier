@@ -1,10 +1,12 @@
 const samples = require('../samples/ItemFamiliesApi');
+const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
 const ItemFamilyCreateDto = require('../models/ItemFamilyCreateDto');
 const ItemFamilyDtoEnvelope = require('../models/ItemFamilyDtoEnvelope');
 const ItemFamilyDtoListEnvelope = require('../models/ItemFamilyDtoListEnvelope');
 const ItemFamilyUpdateDto = require('../models/ItemFamilyUpdateDto');
+const Operation = require('../models/Operation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -291,6 +293,73 @@ module.exports = {
                 })
             },
             sample: samples['ItemFamilyDtoEnvelopeSample']
+        }
+    },
+    patchItemFamilyAsync: {
+        key: 'patchItemFamilyAsync',
+        noun: 'ItemFamilies',
+        display: {
+            label: 'Patch an item family',
+            description: 'Partially updates an existing item family for the specified tenant using a JSON Patch document.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'itemFamilyId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemFamilies/{itemFamilyId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchItemFamilyAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     updateItemFamilyAsync: {

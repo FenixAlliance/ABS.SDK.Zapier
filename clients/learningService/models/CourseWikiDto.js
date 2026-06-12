@@ -35,13 +35,18 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}courseID`,
-                label: `[${labelPrefix}courseID]`,
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}courseUnitID`,
-                label: `[${labelPrefix}courseUnitID]`,
+                key: `${keyPrefix}courseId`,
+                label: `[${labelPrefix}courseId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}courseUnitId`,
+                label: `[${labelPrefix}courseUnitId]`,
                 type: 'string',
             },
         ]
@@ -55,8 +60,9 @@ module.exports = {
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'releaseDateTime': bundle.inputData?.[`${keyPrefix}releaseDateTime`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
-            'courseID': bundle.inputData?.[`${keyPrefix}courseID`],
-            'courseUnitID': bundle.inputData?.[`${keyPrefix}courseUnitID`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
+            'courseId': bundle.inputData?.[`${keyPrefix}courseId`],
+            'courseUnitId': bundle.inputData?.[`${keyPrefix}courseUnitId`],
         }
     },
 }

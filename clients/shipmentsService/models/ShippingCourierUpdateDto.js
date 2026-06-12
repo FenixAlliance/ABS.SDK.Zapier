@@ -15,13 +15,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}countryID`,
-                label: `[${labelPrefix}countryID]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
+                key: `${keyPrefix}countryId`,
+                label: `[${labelPrefix}countryId]`,
                 type: 'string',
             },
         ]
@@ -31,8 +26,7 @@ module.exports = {
         return {
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'logoURL': bundle.inputData?.[`${keyPrefix}logoURL`],
-            'countryID': bundle.inputData?.[`${keyPrefix}countryID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
+            'countryId': bundle.inputData?.[`${keyPrefix}countryId`],
         }
     },
 }

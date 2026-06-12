@@ -5,23 +5,23 @@ module.exports = {
         const {keyPrefix, labelPrefix} = utils.buildKeyAndLabel(prefix, isInput, isArrayChild)
         return [
             {
-                key: `${keyPrefix}studentProfileID`,
-                label: `[${labelPrefix}studentProfileID]`,
+                key: `${keyPrefix}studentProfileId`,
+                label: `[${labelPrefix}studentProfileId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}courseEnrollmentID`,
-                label: `[${labelPrefix}courseEnrollmentID]`,
+                key: `${keyPrefix}courseEnrollmentId`,
+                label: `[${labelPrefix}courseEnrollmentId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}courseCompletionCertificateTemplateID`,
-                label: `[${labelPrefix}courseCompletionCertificateTemplateID]`,
+                key: `${keyPrefix}courseCompletionCertificateTemplateId`,
+                label: `[${labelPrefix}courseCompletionCertificateTemplateId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}courseID`,
-                label: `[${labelPrefix}courseID]`,
+                key: `${keyPrefix}courseId`,
+                label: `[${labelPrefix}courseId]`,
                 type: 'string',
             },
         ]
@@ -29,10 +29,10 @@ module.exports = {
     mapping: (bundle, prefix = '') => {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
-            'studentProfileID': bundle.inputData?.[`${keyPrefix}studentProfileID`],
-            'courseEnrollmentID': bundle.inputData?.[`${keyPrefix}courseEnrollmentID`],
-            'courseCompletionCertificateTemplateID': bundle.inputData?.[`${keyPrefix}courseCompletionCertificateTemplateID`],
-            'courseID': bundle.inputData?.[`${keyPrefix}courseID`],
+            'studentProfileId': bundle.inputData?.[`${keyPrefix}studentProfileId`],
+            'courseEnrollmentId': bundle.inputData?.[`${keyPrefix}courseEnrollmentId`],
+            'courseCompletionCertificateTemplateId': bundle.inputData?.[`${keyPrefix}courseCompletionCertificateTemplateId`],
+            'courseId': bundle.inputData?.[`${keyPrefix}courseId`],
         }
     },
 }

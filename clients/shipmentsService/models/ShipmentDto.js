@@ -74,13 +74,13 @@ module.exports = {
                 ],
             },
             {
-                key: `${keyPrefix}orderID`,
-                label: `[${labelPrefix}orderID]`,
+                key: `${keyPrefix}orderId`,
+                label: `[${labelPrefix}orderId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
                 type: 'string',
             },
         ]
@@ -99,8 +99,8 @@ module.exports = {
             'expectedShippingDate': bundle.inputData?.[`${keyPrefix}expectedShippingDate`],
             'expectedDeliveryDate': bundle.inputData?.[`${keyPrefix}expectedDeliveryDate`],
             'shippingTerms': bundle.inputData?.[`${keyPrefix}shippingTerms`],
-            'orderID': bundle.inputData?.[`${keyPrefix}orderID`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
+            'orderId': bundle.inputData?.[`${keyPrefix}orderId`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
         }
     },
 }

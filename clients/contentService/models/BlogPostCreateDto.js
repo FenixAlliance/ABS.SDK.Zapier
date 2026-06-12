@@ -60,6 +60,11 @@ module.exports = {
                 ],
             },
             {
+                key: `${keyPrefix}slug`,
+                label: `[${labelPrefix}slug]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}blogPostCategoryId`,
                 label: `[${labelPrefix}blogPostCategoryId]`,
                 type: 'string',
@@ -83,6 +88,7 @@ module.exports = {
             'markup': bundle.inputData?.[`${keyPrefix}markup`],
             'featuredImageUrl': bundle.inputData?.[`${keyPrefix}featuredImageUrl`],
             'codeType': bundle.inputData?.[`${keyPrefix}codeType`],
+            'slug': bundle.inputData?.[`${keyPrefix}slug`],
             'blogPostCategoryId': bundle.inputData?.[`${keyPrefix}blogPostCategoryId`],
             'webTemplateId': bundle.inputData?.[`${keyPrefix}webTemplateId`],
         }

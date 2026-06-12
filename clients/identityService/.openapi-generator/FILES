@@ -39,6 +39,4 @@ models/UserCreateDto.js
 models/UserCreateDtoEnvelope.js
 operations/actions.js
 package.json
-samples/CompletionsApi.js
-samples/FenixAlliancePortalsWebsiteApi.js
 utils/utils.js

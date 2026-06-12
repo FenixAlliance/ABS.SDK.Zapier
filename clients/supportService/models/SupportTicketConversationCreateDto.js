@@ -30,8 +30,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}socialProfileID`,
-                label: `[${labelPrefix}socialProfileID]`,
+                key: `${keyPrefix}socialProfileId`,
+                label: `[${labelPrefix}socialProfileId]`,
                 type: 'string',
             },
         ]
@@ -44,7 +44,7 @@ module.exports = {
             'topic': bundle.inputData?.[`${keyPrefix}topic`],
             'closed': bundle.inputData?.[`${keyPrefix}closed`],
             'closedTimestamp': bundle.inputData?.[`${keyPrefix}closedTimestamp`],
-            'socialProfileID': bundle.inputData?.[`${keyPrefix}socialProfileID`],
+            'socialProfileId': bundle.inputData?.[`${keyPrefix}socialProfileId`],
         }
     },
 }

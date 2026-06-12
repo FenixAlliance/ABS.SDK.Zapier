@@ -15,23 +15,23 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}courseID`,
-                label: `[${labelPrefix}courseID]`,
+                key: `${keyPrefix}courseId`,
+                label: `[${labelPrefix}courseId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}courseCohortID`,
-                label: `[${labelPrefix}courseCohortID]`,
+                key: `${keyPrefix}courseCohortId`,
+                label: `[${labelPrefix}courseCohortId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}studentProfileID`,
-                label: `[${labelPrefix}studentProfileID]`,
+                key: `${keyPrefix}studentProfileId`,
+                label: `[${labelPrefix}studentProfileId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}courseCompletionCertificateID`,
-                label: `[${labelPrefix}courseCompletionCertificateID]`,
+                key: `${keyPrefix}courseCompletionCertificateId`,
+                label: `[${labelPrefix}courseCompletionCertificateId]`,
                 type: 'string',
             },
         ]
@@ -41,10 +41,10 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
-            'courseID': bundle.inputData?.[`${keyPrefix}courseID`],
-            'courseCohortID': bundle.inputData?.[`${keyPrefix}courseCohortID`],
-            'studentProfileID': bundle.inputData?.[`${keyPrefix}studentProfileID`],
-            'courseCompletionCertificateID': bundle.inputData?.[`${keyPrefix}courseCompletionCertificateID`],
+            'courseId': bundle.inputData?.[`${keyPrefix}courseId`],
+            'courseCohortId': bundle.inputData?.[`${keyPrefix}courseCohortId`],
+            'studentProfileId': bundle.inputData?.[`${keyPrefix}studentProfileId`],
+            'courseCompletionCertificateId': bundle.inputData?.[`${keyPrefix}courseCompletionCertificateId`],
         }
     },
 }

@@ -1,7 +1,9 @@
 const samples = require('../samples/SubscriptionPlansApi');
+const EmptyEnvelope = require('../models/EmptyEnvelope');
 const Envelope = require('../models/Envelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
+const Operation = require('../models/Operation');
 const SubscriptionPlanCreateDto = require('../models/SubscriptionPlanCreateDto');
 const SubscriptionPlanDtoEnvelope = require('../models/SubscriptionPlanDtoEnvelope');
 const SubscriptionPlanDtoIReadOnlyListEnvelope = require('../models/SubscriptionPlanDtoIReadOnlyListEnvelope');
@@ -296,6 +298,73 @@ module.exports = {
                 })
             },
             sample: samples['Int32EnvelopeSample']
+        }
+    },
+    patchSubscriptionPlanAsync: {
+        key: 'patchSubscriptionPlanAsync',
+        noun: 'SubscriptionPlans',
+        display: {
+            label: 'Patch a subscription plan',
+            description: 'Patch a subscription plan',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'planId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/SubscriptionsService/SubscriptionPlans/{planId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchSubscriptionPlanAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     updateSubscriptionPlanAsync: {

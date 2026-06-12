@@ -32,6 +32,8 @@ const actions = {
     [LocationsApi.getWalletLocationAsync.key]: LocationsApi.getWalletLocationAsync,
     [LocationsApi.getWalletLocationsAsync.key]: LocationsApi.getWalletLocationsAsync,
     [LocationsApi.getWalletLocationsCountAsync.key]: LocationsApi.getWalletLocationsCountAsync,
+    [LocationsApi.patchLocationAsync.key]: LocationsApi.patchLocationAsync,
+    [LocationsApi.patchWalletLocationAsync.key]: LocationsApi.patchWalletLocationAsync,
     [LocationsApi.updateLocationAsync.key]: LocationsApi.updateLocationAsync,
     [LocationsApi.updateWalletLocationAsync.key]: LocationsApi.updateWalletLocationAsync,
 }

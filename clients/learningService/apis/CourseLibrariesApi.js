@@ -3,6 +3,7 @@ const CourseLibraryCreateDto = require('../models/CourseLibraryCreateDto');
 const CourseLibraryDto = require('../models/CourseLibraryDto');
 const CourseLibraryUpdateDto = require('../models/CourseLibraryUpdateDto');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
+const Operation = require('../models/Operation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -283,6 +284,72 @@ module.exports = {
                 })
             },
             sample: samples['CourseLibraryDtoSample']
+        }
+    },
+    patchCourseLibraryAsync: {
+        key: 'patchCourseLibraryAsync',
+        noun: 'CourseLibraries',
+        display: {
+            label: 'Patch a course library',
+            description: 'Partially updates an existing course library.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'libraryId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseLibraries/{libraryId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchCourseLibraryAsync', response.json);
+                    return results;
+                })
+            },
+            sample: { data: {} }
         }
     },
     updateCourseLibraryAsync: {

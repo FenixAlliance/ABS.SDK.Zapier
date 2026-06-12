@@ -24,6 +24,8 @@ apis/MerchantsApi.js
 authentication.js
 index.js
 models/AccessTokenResponse.js
+models/BatchStockItemUpdateRequest.js
+models/BulkProduct.js
 models/CatalogItemCreateDto.js
 models/CatalogItemDto.js
 models/CatalogItemDtoEnvelope.js
@@ -123,6 +125,7 @@ models/MerchantDtoEnvelope.js
 models/MerchantDtoListEnvelope.js
 models/Money.js
 models/MoneyEnvelope.js
+models/Operation.js
 models/PricingRuleDto.js
 models/PricingRuleDtoEnvelope.js
 models/PricingRuleDtoListEnvelope.js
@@ -135,9 +138,4 @@ models/TwoFactorResponse.js
 models/UpdateProductPrimaryImageAsync_request.js
 operations/actions.js
 package.json
-samples/CompletionsApi.js
-samples/FenixAlliancePortalsWebsiteApi.js
-samples/ItemAttributeOptionsApi.js
-samples/ItemBundlesApi.js
-samples/ItemFamiliesApi.js
 utils/utils.js

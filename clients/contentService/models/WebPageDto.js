@@ -306,8 +306,18 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}webTemplateID`,
-                label: `[${labelPrefix}webTemplateID]`,
+                key: `${keyPrefix}webTemplateId`,
+                label: `[${labelPrefix}webTemplateId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}authorName`,
+                label: `[${labelPrefix}authorName]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}authorId`,
+                label: `[${labelPrefix}authorId]`,
                 type: 'string',
             },
             {
@@ -424,7 +434,9 @@ module.exports = {
             'socialProfileId': bundle.inputData?.[`${keyPrefix}socialProfileId`],
             'parentWebContentId': bundle.inputData?.[`${keyPrefix}parentWebContentId`],
             'parentWebContentVersionId': bundle.inputData?.[`${keyPrefix}parentWebContentVersionId`],
-            'webTemplateID': bundle.inputData?.[`${keyPrefix}webTemplateID`],
+            'webTemplateId': bundle.inputData?.[`${keyPrefix}webTemplateId`],
+            'authorName': bundle.inputData?.[`${keyPrefix}authorName`],
+            'authorId': bundle.inputData?.[`${keyPrefix}authorId`],
             'isHomePage': bundle.inputData?.[`${keyPrefix}isHomePage`],
             'isStorePage': bundle.inputData?.[`${keyPrefix}isStorePage`],
             'isCartPage': bundle.inputData?.[`${keyPrefix}isCartPage`],

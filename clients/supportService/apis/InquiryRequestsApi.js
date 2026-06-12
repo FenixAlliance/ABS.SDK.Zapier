@@ -1,10 +1,12 @@
 const samples = require('../samples/InquiryRequestsApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
+const ErrorEnvelope = require('../models/ErrorEnvelope');
 const InquiryRequestCreateDto = require('../models/InquiryRequestCreateDto');
 const InquiryRequestDtoEnvelope = require('../models/InquiryRequestDtoEnvelope');
 const InquiryRequestDtoListEnvelope = require('../models/InquiryRequestDtoListEnvelope');
 const InquiryRequestUpdateDto = require('../models/InquiryRequestUpdateDto');
 const Int32Envelope = require('../models/Int32Envelope');
+const Operation = require('../models/Operation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -295,6 +297,73 @@ module.exports = {
                 })
             },
             sample: samples['Int32EnvelopeSample']
+        }
+    },
+    patchInquiryRequestAsync: {
+        key: 'patchInquiryRequestAsync',
+        noun: 'InquiryRequests',
+        display: {
+            label: 'Patch an inquiry request',
+            description: 'Partially updates an existing inquiry request by its unique identifier.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'inquiryRequestId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/SupportService/InquiryRequests/{inquiryRequestId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchInquiryRequestAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     updateInquiryRequestAsync: {

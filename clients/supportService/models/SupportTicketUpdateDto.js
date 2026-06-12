@@ -5,28 +5,44 @@ module.exports = {
         const {keyPrefix, labelPrefix} = utils.buildKeyAndLabel(prefix, isInput, isArrayChild)
         return [
             {
+                key: `${keyPrefix}title`,
+                label: `[${labelPrefix}title]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}description`,
                 label: `[${labelPrefix}description]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}contactID`,
-                label: `[${labelPrefix}contactID]`,
+                key: `${keyPrefix}supportTicketStatus`,
+                label: `[${labelPrefix}supportTicketStatus]`,
+                type: 'string',
+                choices: [
+                    'New',
+                    'OpenAndWaitingForAgent',
+                    'OpenAndWaitingForCustomer',
+                    'Closed',
+                ],
+            },
+            {
+                key: `${keyPrefix}contactId`,
+                label: `[${labelPrefix}contactId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}supportTicketTypeID`,
-                label: `[${labelPrefix}supportTicketTypeID]`,
+                key: `${keyPrefix}supportTicketTypeId`,
+                label: `[${labelPrefix}supportTicketTypeId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}supportEntitlementID`,
-                label: `[${labelPrefix}supportEntitlementID]`,
+                key: `${keyPrefix}supportEntitlementId`,
+                label: `[${labelPrefix}supportEntitlementId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}supportPriorityID`,
-                label: `[${labelPrefix}supportPriorityID]`,
+                key: `${keyPrefix}supportPriorityId`,
+                label: `[${labelPrefix}supportPriorityId]`,
                 type: 'string',
             },
         ]
@@ -34,11 +50,13 @@ module.exports = {
     mapping: (bundle, prefix = '') => {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
+            'title': bundle.inputData?.[`${keyPrefix}title`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
-            'contactID': bundle.inputData?.[`${keyPrefix}contactID`],
-            'supportTicketTypeID': bundle.inputData?.[`${keyPrefix}supportTicketTypeID`],
-            'supportEntitlementID': bundle.inputData?.[`${keyPrefix}supportEntitlementID`],
-            'supportPriorityID': bundle.inputData?.[`${keyPrefix}supportPriorityID`],
+            'supportTicketStatus': bundle.inputData?.[`${keyPrefix}supportTicketStatus`],
+            'contactId': bundle.inputData?.[`${keyPrefix}contactId`],
+            'supportTicketTypeId': bundle.inputData?.[`${keyPrefix}supportTicketTypeId`],
+            'supportEntitlementId': bundle.inputData?.[`${keyPrefix}supportEntitlementId`],
+            'supportPriorityId': bundle.inputData?.[`${keyPrefix}supportPriorityId`],
         }
     },
 }

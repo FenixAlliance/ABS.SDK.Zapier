@@ -26,8 +26,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}shippingCourierID`,
-                label: `[${labelPrefix}shippingCourierID]`,
+                key: `${keyPrefix}shippingCourierId`,
+                label: `[${labelPrefix}shippingCourierId]`,
                 type: 'string',
             },
             {
@@ -91,18 +91,18 @@ module.exports = {
                 type: 'number',
             },
             {
-                key: `${keyPrefix}currencyID`,
-                label: `[${labelPrefix}currencyID]`,
+                key: `${keyPrefix}currencyId`,
+                label: `[${labelPrefix}currencyId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}countryID`,
-                label: `[${labelPrefix}countryID]`,
+                key: `${keyPrefix}countryId`,
+                label: `[${labelPrefix}countryId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}countryStateID`,
-                label: `[${labelPrefix}countryStateID]`,
+                key: `${keyPrefix}countryStateId`,
+                label: `[${labelPrefix}countryStateId]`,
                 type: 'string',
             },
             {
@@ -116,8 +116,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}cityID`,
-                label: `[${labelPrefix}cityID]`,
+                key: `${keyPrefix}cityId`,
+                label: `[${labelPrefix}cityId]`,
                 type: 'string',
             },
         ]
@@ -129,7 +129,7 @@ module.exports = {
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'title': bundle.inputData?.[`${keyPrefix}title`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
-            'shippingCourierID': bundle.inputData?.[`${keyPrefix}shippingCourierID`],
+            'shippingCourierId': bundle.inputData?.[`${keyPrefix}shippingCourierId`],
             'isFree': bundle.inputData?.[`${keyPrefix}isFree`],
             'reduce': bundle.inputData?.[`${keyPrefix}reduce`],
             'isEnabled': bundle.inputData?.[`${keyPrefix}isEnabled`],
@@ -142,12 +142,12 @@ module.exports = {
             'years': bundle.inputData?.[`${keyPrefix}years`],
             'value': bundle.inputData?.[`${keyPrefix}value`],
             'percentage': bundle.inputData?.[`${keyPrefix}percentage`],
-            'currencyID': bundle.inputData?.[`${keyPrefix}currencyID`],
-            'countryID': bundle.inputData?.[`${keyPrefix}countryID`],
-            'countryStateID': bundle.inputData?.[`${keyPrefix}countryStateID`],
+            'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
+            'countryId': bundle.inputData?.[`${keyPrefix}countryId`],
+            'countryStateId': bundle.inputData?.[`${keyPrefix}countryStateId`],
             'customState': bundle.inputData?.[`${keyPrefix}customState`],
             'customCity': bundle.inputData?.[`${keyPrefix}customCity`],
-            'cityID': bundle.inputData?.[`${keyPrefix}cityID`],
+            'cityId': bundle.inputData?.[`${keyPrefix}cityId`],
         }
     },
 }

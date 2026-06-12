@@ -60,18 +60,18 @@ module.exports = {
                 type: 'boolean',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}parentItemCategoryID`,
-                label: `[${labelPrefix}parentItemCategoryID]`,
+                key: `${keyPrefix}parentItemCategoryId`,
+                label: `[${labelPrefix}parentItemCategoryId]`,
                 type: 'string',
             },
         ]
@@ -90,9 +90,9 @@ module.exports = {
             'enableForLicenses': bundle.inputData?.[`${keyPrefix}enableForLicenses`],
             'enableForServices': bundle.inputData?.[`${keyPrefix}enableForServices`],
             'enableForSubscriptions': bundle.inputData?.[`${keyPrefix}enableForSubscriptions`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
-            'parentItemCategoryID': bundle.inputData?.[`${keyPrefix}parentItemCategoryID`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
+            'parentItemCategoryId': bundle.inputData?.[`${keyPrefix}parentItemCategoryId`],
         }
     },
 }

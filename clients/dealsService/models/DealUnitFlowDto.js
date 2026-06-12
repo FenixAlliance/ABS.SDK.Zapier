@@ -35,8 +35,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}tenantEnrollmentId`,
-                label: `[${labelPrefix}tenantEnrollmentId]`,
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
         ]
@@ -50,7 +50,7 @@ module.exports = {
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'parentBusinessProcessId': bundle.inputData?.[`${keyPrefix}parentBusinessProcessId`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
-            'tenantEnrollmentId': bundle.inputData?.[`${keyPrefix}tenantEnrollmentId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
         }
     },
 }

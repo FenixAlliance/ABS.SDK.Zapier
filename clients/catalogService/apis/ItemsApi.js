@@ -1,4 +1,6 @@
 const samples = require('../samples/ItemsApi');
+const BatchStockItemUpdateRequest = require('../models/BatchStockItemUpdateRequest');
+const BulkProduct = require('../models/BulkProduct');
 const CatalogItemCreateDto = require('../models/CatalogItemCreateDto');
 const CatalogItemDtoEnvelope = require('../models/CatalogItemDtoEnvelope');
 const CatalogItemDtoListEnvelope = require('../models/CatalogItemDtoListEnvelope');
@@ -40,12 +42,129 @@ const ItemTypeDtoListEnvelope = require('../models/ItemTypeDtoListEnvelope');
 const ItemWarrantyPolicyDtoEnvelope = require('../models/ItemWarrantyPolicyDtoEnvelope');
 const ItemWarrantyPolicyDtoListEnvelope = require('../models/ItemWarrantyPolicyDtoListEnvelope');
 const MoneyEnvelope = require('../models/MoneyEnvelope');
+const Operation = require('../models/Operation');
 const PricingRuleDtoEnvelope = require('../models/PricingRuleDtoEnvelope');
 const PricingRuleDtoListEnvelope = require('../models/PricingRuleDtoListEnvelope');
 const utils = require('../utils/utils');
 const FormData = require('form-data');
 
 module.exports = {
+    batchUpdateStockItems: {
+        key: 'batchUpdateStockItems',
+        noun: 'Items',
+        display: {
+            label: 'Bulk-update stock items',
+            description: 'Applies a targeted bulk operation (set flags, add/remove tax policies) to many items atomically.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                ...BatchStockItemUpdateRequest.fields(),
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/Items/Batch'),
+                    method: 'POST',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...BatchStockItemUpdateRequest.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'batchUpdateStockItems', response.json);
+                    return results;
+                })
+            },
+            sample: { data: {} }
+        }
+    },
+    bulkUpsertStockItems: {
+        key: 'bulkUpsertStockItems',
+        noun: 'Items',
+        display: {
+            label: 'Bulk upsert stock items from rows',
+            description: 'Updates scalar fields of matching tenant-owned items or creates new ones, all in one transaction.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'BulkProduct',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/Items/BulkUpsert'),
+                    method: 'POST',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...BulkProduct.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'bulkUpsertStockItems', response.json);
+                    return results;
+                })
+            },
+            sample: { data: {} }
+        }
+    },
     countStockItemTagsByItemId: {
         key: 'countStockItemTagsByItemId',
         noun: 'Items',
@@ -2451,6 +2570,132 @@ module.exports = {
                 })
             },
             sample: samples['CatalogItemDtoListEnvelopeSample']
+        }
+    },
+    patchStockItem: {
+        key: 'patchStockItem',
+        noun: 'Items',
+        display: {
+            label: 'Patch a stock item',
+            description: 'Partially updates an existing stock item for the specified tenant and item ID.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'itemId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/Items/{itemId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchStockItem', response.json);
+                    return results;
+                })
+            },
+            sample: { data: {} }
+        }
+    },
+    recalculateStockItemPrices: {
+        key: 'recalculateStockItemPrices',
+        noun: 'Items',
+        display: {
+            label: 'Recalculate stock item prices',
+            description: 'Recomputes derived prices for the given tenant-owned items via the pricing service, atomically.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'request_body',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/Items/RecalculatePrices'),
+                    method: 'POST',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...request_body.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'recalculateStockItemPrices', response.json);
+                    return results;
+                })
+            },
+            sample: { data: {} }
         }
     },
     relateAttachmentToStockItem: {

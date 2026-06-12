@@ -25,6 +25,7 @@ models/LoginRequest.js
 models/NotificationDto.js
 models/NotificationDtoEnvelope.js
 models/NotificationDtoListEnvelope.js
+models/Operation.js
 models/PrivateMessageCreateDto.js
 models/PrivateMessageDto.js
 models/PrivateMessageDtoListEnvelope.js
@@ -73,6 +74,4 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/CompletionsApi.js
-samples/FenixAlliancePortalsWebsiteApi.js
 utils/utils.js

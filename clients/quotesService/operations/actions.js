@@ -37,6 +37,8 @@ const actions = {
     [QuotesApi.getQuoteLinesCount.key]: QuotesApi.getQuoteLinesCount,
     [QuotesApi.getQuotes.key]: QuotesApi.getQuotes,
     [QuotesApi.getQuotesCount.key]: QuotesApi.getQuotesCount,
+    [QuotesApi.patchQuoteAsync.key]: QuotesApi.patchQuoteAsync,
+    [QuotesApi.patchQuoteLineAsync.key]: QuotesApi.patchQuoteLineAsync,
     [QuotesApi.previewQuoteEmailTemplate.key]: QuotesApi.previewQuoteEmailTemplate,
     [QuotesApi.quoteLineExists.key]: QuotesApi.quoteLineExists,
     [QuotesApi.reopenQuote.key]: QuotesApi.reopenQuote,

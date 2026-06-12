@@ -139,11 +139,6 @@ module.exports = {
                 label: `[${labelPrefix}authorized]`,
                 type: 'boolean',
             },
-            {
-                key: `${keyPrefix}contactID`,
-                label: `[${labelPrefix}contactID]`,
-                type: 'string',
-            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -176,7 +171,6 @@ module.exports = {
             'data9': bundle.inputData?.[`${keyPrefix}data9`],
             'data9Label': bundle.inputData?.[`${keyPrefix}data9Label`],
             'authorized': bundle.inputData?.[`${keyPrefix}authorized`],
-            'contactID': bundle.inputData?.[`${keyPrefix}contactID`],
         }
     },
 }

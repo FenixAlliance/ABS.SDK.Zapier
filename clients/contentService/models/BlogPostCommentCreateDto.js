@@ -21,18 +21,18 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}ownerSocialProfileID`,
-                label: `[${labelPrefix}ownerSocialProfileID]`,
+                key: `${keyPrefix}ownerSocialProfileId`,
+                label: `[${labelPrefix}ownerSocialProfileId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}socialPostID`,
-                label: `[${labelPrefix}socialPostID]`,
+                key: `${keyPrefix}socialPostId`,
+                label: `[${labelPrefix}socialPostId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}parentCommentID`,
-                label: `[${labelPrefix}parentCommentID]`,
+                key: `${keyPrefix}parentCommentId`,
+                label: `[${labelPrefix}parentCommentId]`,
                 type: 'string',
             },
         ]
@@ -43,9 +43,9 @@ module.exports = {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'message': bundle.inputData?.[`${keyPrefix}message`],
-            'ownerSocialProfileID': bundle.inputData?.[`${keyPrefix}ownerSocialProfileID`],
-            'socialPostID': bundle.inputData?.[`${keyPrefix}socialPostID`],
-            'parentCommentID': bundle.inputData?.[`${keyPrefix}parentCommentID`],
+            'ownerSocialProfileId': bundle.inputData?.[`${keyPrefix}ownerSocialProfileId`],
+            'socialPostId': bundle.inputData?.[`${keyPrefix}socialPostId`],
+            'parentCommentId': bundle.inputData?.[`${keyPrefix}parentCommentId`],
         }
     },
 }

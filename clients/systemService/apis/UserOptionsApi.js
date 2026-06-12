@@ -2,6 +2,7 @@ const samples = require('../samples/UserOptionsApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
+const Operation = require('../models/Operation');
 const OptionCreateDto = require('../models/OptionCreateDto');
 const OptionDtoEnvelope = require('../models/OptionDtoEnvelope');
 const OptionDtoListEnvelope = require('../models/OptionDtoListEnvelope');
@@ -316,6 +317,72 @@ module.exports = {
                 })
             },
             sample: samples['Int32EnvelopeSample']
+        }
+    },
+    patchSystemUserOption: {
+        key: 'patchSystemUserOption',
+        noun: 'UserOptions',
+        display: {
+            label: 'Partially update a user option (admin)',
+            description: 'Admin endpoint to partially update an option for any user using a JSON Patch document',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'userId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'optionId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Users/{userId}/Options/{optionId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchSystemUserOption', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     updateSystemUserOption: {

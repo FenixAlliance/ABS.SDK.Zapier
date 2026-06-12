@@ -40,13 +40,13 @@ module.exports = {
                 type: 'boolean',
             },
             {
-                key: `${keyPrefix}currencyID`,
-                label: `[${labelPrefix}currencyID]`,
+                key: `${keyPrefix}currencyId`,
+                label: `[${labelPrefix}currencyId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
                 type: 'string',
             },
             {
@@ -70,8 +70,8 @@ module.exports = {
             'cost': bundle.inputData?.[`${keyPrefix}cost`],
             'taxable': bundle.inputData?.[`${keyPrefix}taxable`],
             'taxIncluded': bundle.inputData?.[`${keyPrefix}taxIncluded`],
-            'currencyID': bundle.inputData?.[`${keyPrefix}currencyID`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
+            'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'shippingClassCalculationType': bundle.inputData?.[`${keyPrefix}shippingClassCalculationType`],
         }
     },

@@ -845,8 +845,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}courseCategoryID`,
-                label: `[${labelPrefix}courseCategoryID]`,
+                key: `${keyPrefix}courseCategoryId`,
+                label: `[${labelPrefix}courseCategoryId]`,
                 type: 'string',
             },
             {
@@ -855,8 +855,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}instructorProfileID`,
-                label: `[${labelPrefix}instructorProfileID]`,
+                key: `${keyPrefix}instructorProfileId`,
+                label: `[${labelPrefix}instructorProfileId]`,
                 type: 'string',
             },
             {
@@ -1074,9 +1074,9 @@ module.exports = {
             'selectedSellingMarginPolicies': bundle.inputData?.[`${keyPrefix}selectedSellingMarginPolicies`],
             'code': bundle.inputData?.[`${keyPrefix}code`],
             'version': bundle.inputData?.[`${keyPrefix}version`],
-            'courseCategoryID': bundle.inputData?.[`${keyPrefix}courseCategoryID`],
+            'courseCategoryId': bundle.inputData?.[`${keyPrefix}courseCategoryId`],
             'courseCategoryName': bundle.inputData?.[`${keyPrefix}courseCategoryName`],
-            'instructorProfileID': bundle.inputData?.[`${keyPrefix}instructorProfileID`],
+            'instructorProfileId': bundle.inputData?.[`${keyPrefix}instructorProfileId`],
             'instructorProfileName': bundle.inputData?.[`${keyPrefix}instructorProfileName`],
             'maxCourseEnrollments': bundle.inputData?.[`${keyPrefix}maxCourseEnrollments`],
             'totalEffortInWeeks': bundle.inputData?.[`${keyPrefix}totalEffortInWeeks`],

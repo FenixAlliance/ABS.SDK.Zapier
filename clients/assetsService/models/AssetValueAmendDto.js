@@ -7,7 +7,7 @@ module.exports = {
             {
                 key: `${keyPrefix}id`,
                 label: `[${labelPrefix}id]`,
-                dict: true,
+                type: 'string',
             },
             {
                 key: `${keyPrefix}timestamp`,
@@ -15,19 +15,19 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessId`,
-                label: `[${labelPrefix}businessId]`,
-                dict: true,
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
+                type: 'string',
             },
             {
-                key: `${keyPrefix}businessProfileRecordId`,
-                label: `[${labelPrefix}businessProfileRecordId]`,
-                dict: true,
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
+                type: 'string',
             },
             {
                 key: `${keyPrefix}assetId`,
                 label: `[${labelPrefix}assetId]`,
-                dict: true,
+                type: 'string',
             },
             {
                 key: `${keyPrefix}assetName`,
@@ -60,13 +60,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}approvedBy`,
-                label: `[${labelPrefix}approvedBy]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}approvalDate`,
-                label: `[${labelPrefix}approvalDate]`,
+                key: `${keyPrefix}currencyId`,
+                label: `[${labelPrefix}currencyId]`,
                 type: 'string',
             },
         ]
@@ -76,8 +71,8 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
-            'businessId': bundle.inputData?.[`${keyPrefix}businessId`],
-            'businessProfileRecordId': bundle.inputData?.[`${keyPrefix}businessProfileRecordId`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'assetId': bundle.inputData?.[`${keyPrefix}assetId`],
             'assetName': bundle.inputData?.[`${keyPrefix}assetName`],
             'previousValue': bundle.inputData?.[`${keyPrefix}previousValue`],
@@ -85,8 +80,7 @@ module.exports = {
             'amendmentAmount': bundle.inputData?.[`${keyPrefix}amendmentAmount`],
             'reason': bundle.inputData?.[`${keyPrefix}reason`],
             'amendmentDate': bundle.inputData?.[`${keyPrefix}amendmentDate`],
-            'approvedBy': bundle.inputData?.[`${keyPrefix}approvedBy`],
-            'approvalDate': bundle.inputData?.[`${keyPrefix}approvalDate`],
+            'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
         }
     },
 }

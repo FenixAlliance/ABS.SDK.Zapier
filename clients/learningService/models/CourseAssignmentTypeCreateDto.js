@@ -41,8 +41,8 @@ module.exports = {
                 type: 'integer',
             },
             {
-                key: `${keyPrefix}courseID`,
-                label: `[${labelPrefix}courseID]`,
+                key: `${keyPrefix}courseId`,
+                label: `[${labelPrefix}courseId]`,
                 required: true,
                 type: 'string',
             },
@@ -58,7 +58,7 @@ module.exports = {
             'weight': bundle.inputData?.[`${keyPrefix}weight`],
             'quantity': bundle.inputData?.[`${keyPrefix}quantity`],
             'excluded': bundle.inputData?.[`${keyPrefix}excluded`],
-            'courseID': bundle.inputData?.[`${keyPrefix}courseID`],
+            'courseId': bundle.inputData?.[`${keyPrefix}courseId`],
         }
     },
 }

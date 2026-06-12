@@ -4,6 +4,7 @@ const ItemImageCreateDto = require('../models/ItemImageCreateDto');
 const ItemImageDtoEnvelope = require('../models/ItemImageDtoEnvelope');
 const ItemImageDtoListEnvelope = require('../models/ItemImageDtoListEnvelope');
 const ItemImageUpdateDto = require('../models/ItemImageUpdateDto');
+const Operation = require('../models/Operation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -236,6 +237,72 @@ module.exports = {
                 })
             },
             sample: samples['ItemImageDtoListEnvelopeSample']
+        }
+    },
+    patchItemImageAsync: {
+        key: 'patchItemImageAsync',
+        noun: 'ItemImages',
+        display: {
+            label: 'Patch an item image',
+            description: 'Partially updates an existing item image for the specified tenant using a JSON Patch document.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'itemImageId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/CatalogService/ItemImages/{itemImageId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchItemImageAsync', response.json);
+                    return results;
+                })
+            },
+            sample: { data: {} }
         }
     },
     updateItemImageAsync: {

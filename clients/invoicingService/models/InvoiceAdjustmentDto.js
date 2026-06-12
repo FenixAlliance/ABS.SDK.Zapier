@@ -35,6 +35,16 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}priority`,
+                label: `[${labelPrefix}priority]`,
+                type: 'integer',
+            },
+            {
+                key: `${keyPrefix}code`,
+                label: `[${labelPrefix}code]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}description`,
                 label: `[${labelPrefix}description]`,
                 type: 'string',
@@ -89,6 +99,8 @@ module.exports = {
             'invoiceId': bundle.inputData?.[`${keyPrefix}invoiceId`],
             'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
             'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
+            'priority': bundle.inputData?.[`${keyPrefix}priority`],
+            'code': bundle.inputData?.[`${keyPrefix}code`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'surchargePercent': bundle.inputData?.[`${keyPrefix}surchargePercent`],
             'surchargeAmount': bundle.inputData?.[`${keyPrefix}surchargeAmount`],

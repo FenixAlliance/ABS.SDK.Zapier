@@ -15,8 +15,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}shippingCourierID`,
-                label: `[${labelPrefix}shippingCourierID]`,
+                key: `${keyPrefix}shippingCourierId`,
+                label: `[${labelPrefix}shippingCourierId]`,
                 type: 'string',
             },
             {
@@ -100,18 +100,18 @@ module.exports = {
                 type: 'number',
             },
             {
-                key: `${keyPrefix}currencyID`,
-                label: `[${labelPrefix}currencyID]`,
+                key: `${keyPrefix}currencyId`,
+                label: `[${labelPrefix}currencyId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}countryID`,
-                label: `[${labelPrefix}countryID]`,
+                key: `${keyPrefix}countryId`,
+                label: `[${labelPrefix}countryId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}countryStateID`,
-                label: `[${labelPrefix}countryStateID]`,
+                key: `${keyPrefix}countryStateId`,
+                label: `[${labelPrefix}countryStateId]`,
                 type: 'string',
             },
             {
@@ -125,18 +125,18 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}cityID`,
-                label: `[${labelPrefix}cityID]`,
+                key: `${keyPrefix}cityId`,
+                label: `[${labelPrefix}cityId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
         ]
@@ -146,7 +146,7 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
-            'shippingCourierID': bundle.inputData?.[`${keyPrefix}shippingCourierID`],
+            'shippingCourierId': bundle.inputData?.[`${keyPrefix}shippingCourierId`],
             'type': bundle.inputData?.[`${keyPrefix}type`],
             'code': bundle.inputData?.[`${keyPrefix}code`],
             'title': bundle.inputData?.[`${keyPrefix}title`],
@@ -163,14 +163,14 @@ module.exports = {
             'years': bundle.inputData?.[`${keyPrefix}years`],
             'value': bundle.inputData?.[`${keyPrefix}value`],
             'percentage': bundle.inputData?.[`${keyPrefix}percentage`],
-            'currencyID': bundle.inputData?.[`${keyPrefix}currencyID`],
-            'countryID': bundle.inputData?.[`${keyPrefix}countryID`],
-            'countryStateID': bundle.inputData?.[`${keyPrefix}countryStateID`],
+            'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
+            'countryId': bundle.inputData?.[`${keyPrefix}countryId`],
+            'countryStateId': bundle.inputData?.[`${keyPrefix}countryStateId`],
             'customState': bundle.inputData?.[`${keyPrefix}customState`],
             'customCity': bundle.inputData?.[`${keyPrefix}customCity`],
-            'cityID': bundle.inputData?.[`${keyPrefix}cityID`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
+            'cityId': bundle.inputData?.[`${keyPrefix}cityId`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
         }
     },
 }

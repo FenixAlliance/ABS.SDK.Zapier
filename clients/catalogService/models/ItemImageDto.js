@@ -15,18 +15,18 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessID`,
-                label: `[${labelPrefix}businessID]`,
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}businessProfileRecordID`,
-                label: `[${labelPrefix}businessProfileRecordID]`,
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}itemID`,
-                label: `[${labelPrefix}itemID]`,
+                key: `${keyPrefix}itemId`,
+                label: `[${labelPrefix}itemId]`,
                 type: 'string',
             },
             {
@@ -95,18 +95,18 @@ module.exports = {
                 type: 'boolean',
             },
             {
-                key: `${keyPrefix}socialProfileID`,
-                label: `[${labelPrefix}socialProfileID]`,
+                key: `${keyPrefix}socialProfileId`,
+                label: `[${labelPrefix}socialProfileId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}parentFileUploadID`,
-                label: `[${labelPrefix}parentFileUploadID]`,
+                key: `${keyPrefix}parentFileUploadId`,
+                label: `[${labelPrefix}parentFileUploadId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}accountHolderID`,
-                label: `[${labelPrefix}accountHolderID]`,
+                key: `${keyPrefix}userId`,
+                label: `[${labelPrefix}userId]`,
                 type: 'string',
             },
         ]
@@ -116,9 +116,9 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
-            'businessID': bundle.inputData?.[`${keyPrefix}businessID`],
-            'businessProfileRecordID': bundle.inputData?.[`${keyPrefix}businessProfileRecordID`],
-            'itemID': bundle.inputData?.[`${keyPrefix}itemID`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
+            'itemId': bundle.inputData?.[`${keyPrefix}itemId`],
             'isItemMozaicBG': bundle.inputData?.[`${keyPrefix}isItemMozaicBG`],
             'mD5Hash': bundle.inputData?.[`${keyPrefix}mD5Hash`],
             'metadata': bundle.inputData?.[`${keyPrefix}metadata`],
@@ -132,9 +132,9 @@ module.exports = {
             'contentType': bundle.inputData?.[`${keyPrefix}contentType`],
             'fileLength': bundle.inputData?.[`${keyPrefix}fileLength`],
             'validResponse': bundle.inputData?.[`${keyPrefix}validResponse`],
-            'socialProfileID': bundle.inputData?.[`${keyPrefix}socialProfileID`],
-            'parentFileUploadID': bundle.inputData?.[`${keyPrefix}parentFileUploadID`],
-            'accountHolderID': bundle.inputData?.[`${keyPrefix}accountHolderID`],
+            'socialProfileId': bundle.inputData?.[`${keyPrefix}socialProfileId`],
+            'parentFileUploadId': bundle.inputData?.[`${keyPrefix}parentFileUploadId`],
+            'userId': bundle.inputData?.[`${keyPrefix}userId`],
         }
     },
 }

@@ -577,16 +577,6 @@ module.exports = {
                 label: `[${labelPrefix}cartId]`,
                 type: 'string',
             },
-            {
-                key: `${keyPrefix}itemID`,
-                label: `[${labelPrefix}itemID]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}shippingAddressID`,
-                label: `[${labelPrefix}shippingAddressID]`,
-                type: 'string',
-            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -705,8 +695,6 @@ module.exports = {
             'businessProfileRecordId': bundle.inputData?.[`${keyPrefix}businessProfileRecordId`],
             'parentBillingItemRecordId': bundle.inputData?.[`${keyPrefix}parentBillingItemRecordId`],
             'cartId': bundle.inputData?.[`${keyPrefix}cartId`],
-            'itemID': bundle.inputData?.[`${keyPrefix}itemID`],
-            'shippingAddressID': bundle.inputData?.[`${keyPrefix}shippingAddressID`],
         }
     },
 }

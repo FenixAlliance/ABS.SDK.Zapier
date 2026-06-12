@@ -37,6 +37,7 @@ models/ItemPriceUpdateDto.js
 models/LoginRequest.js
 models/Money.js
 models/MoneyEnvelope.js
+models/Operation.js
 models/PriceListCreateDto.js
 models/PriceListDto.js
 models/PriceListDtoEnvelope.js
@@ -60,8 +61,4 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/CompletionsApi.js
-samples/FenixAlliancePortalsWebsiteApi.js
-samples/PricingRulesApi.js
-samples/RoundingPoliciesApi.js
 utils/utils.js

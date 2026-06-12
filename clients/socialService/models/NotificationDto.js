@@ -30,13 +30,28 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}imageUrl`,
+                label: `[${labelPrefix}imageUrl]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}redirectUrl`,
                 label: `[${labelPrefix}redirectUrl]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}socialProfileID`,
-                label: `[${labelPrefix}socialProfileID]`,
+                key: `${keyPrefix}type`,
+                label: `[${labelPrefix}type]`,
+                type: 'string',
+                choices: [
+                    'Event',
+                    'Alert',
+                    'Log',
+                ],
+            },
+            {
+                key: `${keyPrefix}socialProfileId`,
+                label: `[${labelPrefix}socialProfileId]`,
                 type: 'string',
             },
             {
@@ -59,8 +74,10 @@ module.exports = {
             'read': bundle.inputData?.[`${keyPrefix}read`],
             'icon': bundle.inputData?.[`${keyPrefix}icon`],
             'message': bundle.inputData?.[`${keyPrefix}message`],
+            'imageUrl': bundle.inputData?.[`${keyPrefix}imageUrl`],
             'redirectUrl': bundle.inputData?.[`${keyPrefix}redirectUrl`],
-            'socialProfileID': bundle.inputData?.[`${keyPrefix}socialProfileID`],
+            'type': bundle.inputData?.[`${keyPrefix}type`],
+            'socialProfileId': bundle.inputData?.[`${keyPrefix}socialProfileId`],
             'readTimestamp': bundle.inputData?.[`${keyPrefix}readTimestamp`],
             'issuedTimestamp': bundle.inputData?.[`${keyPrefix}issuedTimestamp`],
         }
