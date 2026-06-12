@@ -289,7 +289,4 @@ models/X509Certificate2.js
 models/X509Extension.js
 operations/actions.js
 package.json
-samples/LocalizationStringsApi.js
-samples/MenuContextsApi.js
-samples/WebComponentsApi.js
 utils/utils.js

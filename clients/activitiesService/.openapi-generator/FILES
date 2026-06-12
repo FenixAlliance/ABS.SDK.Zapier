@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 README.md
 apis/ActivityFeedsApi.js
 apis/CompletionsApi.js
@@ -37,7 +36,4 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/ActivityFeedsApi.js
-samples/CompletionsApi.js
-samples/FenixAlliancePortalsWebsiteApi.js
 utils/utils.js
