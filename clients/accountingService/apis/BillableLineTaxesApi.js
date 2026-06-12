@@ -3,7 +3,9 @@ const AppliedItemTaxRecordCreateDto = require('../models/AppliedItemTaxRecordCre
 const AppliedItemTaxRecordDtoIReadOnlyListEnvelope = require('../models/AppliedItemTaxRecordDtoIReadOnlyListEnvelope');
 const AppliedItemTaxRecordUpdateDto = require('../models/AppliedItemTaxRecordUpdateDto');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
+const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
+const Operation = require('../models/Operation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -257,6 +259,79 @@ module.exports = {
                 })
             },
             sample: samples['Int32EnvelopeSample']
+        }
+    },
+    patchBillableLineTaxAsync: {
+        key: 'patchBillableLineTaxAsync',
+        noun: 'BillableLineTaxes',
+        display: {
+            label: 'Patch a billable line tax',
+            description: 'Partially updates a billable line tax.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'billableLineId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'taxId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/BillableLines/{billableLineId}/Taxes/{taxId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchBillableLineTaxAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     updateBillableLineTax: {

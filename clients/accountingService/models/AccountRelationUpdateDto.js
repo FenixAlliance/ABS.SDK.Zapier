@@ -9,12 +9,18 @@ module.exports = {
                 label: `[${labelPrefix}accountId]`,
                 type: 'string',
             },
+            {
+                key: `${keyPrefix}type`,
+                label: `[${labelPrefix}type]`,
+                type: 'string',
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
             'accountId': bundle.inputData?.[`${keyPrefix}accountId`],
+            'type': bundle.inputData?.[`${keyPrefix}type`],
         }
     },
 }

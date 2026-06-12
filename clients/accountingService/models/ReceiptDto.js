@@ -30,8 +30,8 @@ module.exports = {
                 type: 'boolean',
             },
             {
-                key: `${keyPrefix}accountHolderId`,
-                label: `[${labelPrefix}accountHolderId]`,
+                key: `${keyPrefix}userId`,
+                label: `[${labelPrefix}userId]`,
                 type: 'string',
             },
             {
@@ -73,7 +73,7 @@ module.exports = {
             'paymentId': bundle.inputData?.[`${keyPrefix}paymentId`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'closed': bundle.inputData?.[`${keyPrefix}closed`],
-            'accountHolderId': bundle.inputData?.[`${keyPrefix}accountHolderId`],
+            'userId': bundle.inputData?.[`${keyPrefix}userId`],
             'contactId': bundle.inputData?.[`${keyPrefix}contactId`],
             'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'receiptType': bundle.inputData?.[`${keyPrefix}receiptType`],

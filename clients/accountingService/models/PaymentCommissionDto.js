@@ -80,8 +80,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}paymentID`,
-                label: `[${labelPrefix}paymentID]`,
+                key: `${keyPrefix}paymentId`,
+                label: `[${labelPrefix}paymentId]`,
                 type: 'string',
             },
         ]
@@ -104,7 +104,7 @@ module.exports = {
             'receiverWalletAccountId': bundle.inputData?.[`${keyPrefix}receiverWalletAccountId`],
             'emisorContactId': bundle.inputData?.[`${keyPrefix}emisorContactId`],
             'receiverContactId': bundle.inputData?.[`${keyPrefix}receiverContactId`],
-            'paymentID': bundle.inputData?.[`${keyPrefix}paymentID`],
+            'paymentId': bundle.inputData?.[`${keyPrefix}paymentId`],
         }
     },
 }

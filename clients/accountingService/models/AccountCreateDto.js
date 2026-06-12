@@ -52,6 +52,11 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}contactId`,
+                label: `[${labelPrefix}contactId]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}accountTypeId`,
                 label: `[${labelPrefix}accountTypeId]`,
                 type: 'string',
@@ -88,6 +93,7 @@ module.exports = {
             'path': bundle.inputData?.[`${keyPrefix}path`],
             'prefix': bundle.inputData?.[`${keyPrefix}prefix`],
             'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
+            'contactId': bundle.inputData?.[`${keyPrefix}contactId`],
             'accountTypeId': bundle.inputData?.[`${keyPrefix}accountTypeId`],
             'parentAccountId': bundle.inputData?.[`${keyPrefix}parentAccountId`],
             'accountCategory': bundle.inputData?.[`${keyPrefix}accountCategory`],

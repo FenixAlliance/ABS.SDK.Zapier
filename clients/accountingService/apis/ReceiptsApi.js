@@ -1,6 +1,8 @@
 const samples = require('../samples/ReceiptsApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
+const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
+const Operation = require('../models/Operation');
 const ReceiptCreateDto = require('../models/ReceiptCreateDto');
 const ReceiptDtoEnvelope = require('../models/ReceiptDtoEnvelope');
 const ReceiptDtoIReadOnlyListEnvelope = require('../models/ReceiptDtoIReadOnlyListEnvelope');
@@ -240,6 +242,62 @@ module.exports = {
                 })
             },
             sample: samples['Int32EnvelopeSample']
+        }
+    },
+    patchReceiptAsync: {
+        key: 'patchReceiptAsync',
+        noun: 'Receipts',
+        display: {
+            label: 'Patches a receipt',
+            description: 'Partially updates the specified receipt using a JSON Patch document.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'receiptId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Receipts/{receiptId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchReceiptAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     updateReceiptAsync: {

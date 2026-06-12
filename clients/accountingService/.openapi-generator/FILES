@@ -317,10 +317,4 @@ models/TwoFactorResponse.js
 models/UpdateLedgerDto.js
 operations/actions.js
 package.json
-samples/BankProfilesApi.js
-samples/CompletionsApi.js
-samples/ExpenseClaimsApi.js
-samples/ExpenseTypesApi.js
-samples/FenixAlliancePortalsWebsiteApi.js
-samples/TaxClassesApi.js
 utils/utils.js

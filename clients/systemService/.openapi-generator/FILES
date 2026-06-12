@@ -106,5 +106,4 @@ models/WebPortalDtoListEnvelope.js
 models/WebPortalUpdateDto.js
 operations/actions.js
 package.json
-samples/BusinessDomainsApi.js
 utils/utils.js

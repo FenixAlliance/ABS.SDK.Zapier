@@ -145,8 +145,8 @@ module.exports = {
                 type: 'boolean',
             },
             {
-                key: `${keyPrefix}fiscalAuthorityID`,
-                label: `[${labelPrefix}fiscalAuthorityID]`,
+                key: `${keyPrefix}fiscalAuthorityId`,
+                label: `[${labelPrefix}fiscalAuthorityId]`,
                 type: 'string',
             },
         ]
@@ -182,7 +182,7 @@ module.exports = {
             'zero': bundle.inputData?.[`${keyPrefix}zero`],
             'reduced': bundle.inputData?.[`${keyPrefix}reduced`],
             'withholding': bundle.inputData?.[`${keyPrefix}withholding`],
-            'fiscalAuthorityID': bundle.inputData?.[`${keyPrefix}fiscalAuthorityID`],
+            'fiscalAuthorityId': bundle.inputData?.[`${keyPrefix}fiscalAuthorityId`],
         }
     },
 }

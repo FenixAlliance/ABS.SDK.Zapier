@@ -20,18 +20,18 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}parentJournalID`,
-                label: `[${labelPrefix}parentJournalID]`,
+                key: `${keyPrefix}parentJournalId`,
+                label: `[${labelPrefix}parentJournalId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}journalTypeID`,
-                label: `[${labelPrefix}journalTypeID]`,
+                key: `${keyPrefix}journalTypeId`,
+                label: `[${labelPrefix}journalTypeId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}ledgerID`,
-                label: `[${labelPrefix}ledgerID]`,
+                key: `${keyPrefix}ledgerId`,
+                label: `[${labelPrefix}ledgerId]`,
                 type: 'string',
             },
         ]
@@ -42,9 +42,9 @@ module.exports = {
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'dateTime': bundle.inputData?.[`${keyPrefix}dateTime`],
-            'parentJournalID': bundle.inputData?.[`${keyPrefix}parentJournalID`],
-            'journalTypeID': bundle.inputData?.[`${keyPrefix}journalTypeID`],
-            'ledgerID': bundle.inputData?.[`${keyPrefix}ledgerID`],
+            'parentJournalId': bundle.inputData?.[`${keyPrefix}parentJournalId`],
+            'journalTypeId': bundle.inputData?.[`${keyPrefix}journalTypeId`],
+            'ledgerId': bundle.inputData?.[`${keyPrefix}ledgerId`],
         }
     },
 }

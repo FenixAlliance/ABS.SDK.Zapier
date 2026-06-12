@@ -75,6 +75,15 @@ module.exports = {
                 type: 'boolean',
             },
             {
+                key: `${keyPrefix}taxPayerType`,
+                label: `[${labelPrefix}taxPayerType]`,
+                type: 'string',
+                choices: [
+                    'Individual',
+                    'Business',
+                ],
+            },
+            {
                 key: `${keyPrefix}countryId`,
                 label: `[${labelPrefix}countryId]`,
                 type: 'string',
@@ -123,6 +132,7 @@ module.exports = {
             'duns': bundle.inputData?.[`${keyPrefix}duns`],
             'isPublicCompany': bundle.inputData?.[`${keyPrefix}isPublicCompany`],
             'isFactaCustomer': bundle.inputData?.[`${keyPrefix}isFactaCustomer`],
+            'taxPayerType': bundle.inputData?.[`${keyPrefix}taxPayerType`],
             'countryId': bundle.inputData?.[`${keyPrefix}countryId`],
             'stateId': bundle.inputData?.[`${keyPrefix}stateId`],
             'cityId': bundle.inputData?.[`${keyPrefix}cityId`],

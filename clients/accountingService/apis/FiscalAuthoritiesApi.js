@@ -6,6 +6,7 @@ const FiscalAuthorityDtoEnvelope = require('../models/FiscalAuthorityDtoEnvelope
 const FiscalAuthorityDtoListEnvelope = require('../models/FiscalAuthorityDtoListEnvelope');
 const FiscalAuthorityUpdateDto = require('../models/FiscalAuthorityUpdateDto');
 const Int32Envelope = require('../models/Int32Envelope');
+const Operation = require('../models/Operation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -296,6 +297,73 @@ module.exports = {
                 })
             },
             sample: samples['FiscalAuthorityDtoEnvelopeSample']
+        }
+    },
+    patchFiscalAuthorityAsync: {
+        key: 'patchFiscalAuthorityAsync',
+        noun: 'FiscalAuthorities',
+        display: {
+            label: 'Patch a fiscal authority',
+            description: 'Partially updates a fiscal authority.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'authorityId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Fiscals/Authorities/{authorityId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchFiscalAuthorityAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     updateFiscalAuthority: {

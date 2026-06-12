@@ -15,16 +15,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}ledgerTypeId`,
                 label: `[${labelPrefix}ledgerTypeId]`,
                 type: 'string',
@@ -36,8 +26,6 @@ module.exports = {
         return {
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
-            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
-            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'ledgerTypeId': bundle.inputData?.[`${keyPrefix}ledgerTypeId`],
         }
     },

@@ -15,6 +15,61 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}description`,
+                label: `[${labelPrefix}description]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}price`,
+                label: `[${labelPrefix}price]`,
+                type: 'number',
+            },
+            {
+                key: `${keyPrefix}quantity`,
+                label: `[${labelPrefix}quantity]`,
+                type: 'number',
+            },
+            {
+                key: `${keyPrefix}externalDescription`,
+                label: `[${labelPrefix}externalDescription]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}basisQuantity`,
+                label: `[${labelPrefix}basisQuantity]`,
+                type: 'number',
+            },
+            {
+                key: `${keyPrefix}basisAmount`,
+                label: `[${labelPrefix}basisAmount]`,
+                type: 'number',
+            },
+            {
+                key: `${keyPrefix}percent`,
+                label: `[${labelPrefix}percent]`,
+                type: 'number',
+            },
+            {
+                key: `${keyPrefix}unitGroupId`,
+                label: `[${labelPrefix}unitGroupId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}unitId`,
+                label: `[${labelPrefix}unitId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}transactionCategoryId`,
+                label: `[${labelPrefix}transactionCategoryId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}currencyId`,
+                label: `[${labelPrefix}currencyId]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}bankProfileId`,
                 label: `[${labelPrefix}bankProfileId]`,
                 type: 'string',
@@ -31,6 +86,17 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
+            'description': bundle.inputData?.[`${keyPrefix}description`],
+            'price': bundle.inputData?.[`${keyPrefix}price`],
+            'quantity': bundle.inputData?.[`${keyPrefix}quantity`],
+            'externalDescription': bundle.inputData?.[`${keyPrefix}externalDescription`],
+            'basisQuantity': bundle.inputData?.[`${keyPrefix}basisQuantity`],
+            'basisAmount': bundle.inputData?.[`${keyPrefix}basisAmount`],
+            'percent': bundle.inputData?.[`${keyPrefix}percent`],
+            'unitGroupId': bundle.inputData?.[`${keyPrefix}unitGroupId`],
+            'unitId': bundle.inputData?.[`${keyPrefix}unitId`],
+            'transactionCategoryId': bundle.inputData?.[`${keyPrefix}transactionCategoryId`],
+            'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
             'bankProfileId': bundle.inputData?.[`${keyPrefix}bankProfileId`],
             'bankAccountId': bundle.inputData?.[`${keyPrefix}bankAccountId`],
         }

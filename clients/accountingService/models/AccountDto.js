@@ -61,6 +61,11 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}contactId`,
+                label: `[${labelPrefix}contactId]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}accountType`,
                 label: `[${labelPrefix}accountType]`,
                 type: 'string',
@@ -159,6 +164,7 @@ module.exports = {
             'prefix': bundle.inputData?.[`${keyPrefix}prefix`],
             'balance': bundle.inputData?.[`${keyPrefix}balance`],
             'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
+            'contactId': bundle.inputData?.[`${keyPrefix}contactId`],
             'accountType': bundle.inputData?.[`${keyPrefix}accountType`],
             'qualifiedName': bundle.inputData?.[`${keyPrefix}qualifiedName`],
             'accountTypeId': bundle.inputData?.[`${keyPrefix}accountTypeId`],

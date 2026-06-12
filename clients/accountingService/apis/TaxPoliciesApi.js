@@ -10,6 +10,7 @@ const ItemTaxPolicyRecordCreateDto = require('../models/ItemTaxPolicyRecordCreat
 const ItemTaxPolicyRecordDtoEnvelope = require('../models/ItemTaxPolicyRecordDtoEnvelope');
 const ItemTaxPolicyRecordDtoListEnvelope = require('../models/ItemTaxPolicyRecordDtoListEnvelope');
 const ItemTaxPolicyRecordUpdateDto = require('../models/ItemTaxPolicyRecordUpdateDto');
+const Operation = require('../models/Operation');
 const TaxPolicyCreateDto = require('../models/TaxPolicyCreateDto');
 const TaxPolicyDtoEnvelope = require('../models/TaxPolicyDtoEnvelope');
 const TaxPolicyDtoListEnvelope = require('../models/TaxPolicyDtoListEnvelope');
@@ -942,6 +943,219 @@ module.exports = {
                 })
             },
             sample: samples['TaxPolicyDtoEnvelopeSample']
+        }
+    },
+    patchAppliedTaxPolicyRecord: {
+        key: 'patchAppliedTaxPolicyRecord',
+        noun: 'TaxPolicies',
+        display: {
+            label: 'Patch an applied tax policy record',
+            description: 'Partially updates an existing applied tax policy record identified by its unique identifier.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'taxPolicyId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'appliedTaxPolicyRecordId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/TaxPolicies/{taxPolicyId}/AppliedTaxPolicyRecords/{appliedTaxPolicyRecordId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchAppliedTaxPolicyRecord', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
+        }
+    },
+    patchItemTaxPolicyRecord: {
+        key: 'patchItemTaxPolicyRecord',
+        noun: 'TaxPolicies',
+        display: {
+            label: 'Patch an item tax policy record',
+            description: 'Partially updates an existing item tax policy record identified by its unique identifier.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'taxPolicyId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'itemTaxPolicyRecordId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/TaxPolicies/{taxPolicyId}/ItemTaxPolicyRecords/{itemTaxPolicyRecordId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchItemTaxPolicyRecord', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
+        }
+    },
+    patchTaxPolicy: {
+        key: 'patchTaxPolicy',
+        noun: 'TaxPolicies',
+        display: {
+            label: 'Patch a tax policy',
+            description: 'Partially updates an existing tax policy identified by its unique identifier.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'id',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/TaxPolicies/{id}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchTaxPolicy', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     updateAppliedTaxPolicyRecord: {
