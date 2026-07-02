@@ -48,7 +48,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialProfiles/{socialProfileId}/Conversations/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles/{socialProfileId}/Conversations/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -102,7 +102,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialProfiles/{socialProfileId}/Follows/Profiles/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles/{socialProfileId}/Follows/Profiles/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -156,7 +156,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialProfiles/{socialProfileId}/Followers/Profiles/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles/{socialProfileId}/Followers/Profiles/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -210,7 +210,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialProfiles/{socialProfileId}/Followers/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles/{socialProfileId}/Followers/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -264,7 +264,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialProfiles/{socialProfileId}/Follows/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles/{socialProfileId}/Follows/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -324,7 +324,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialProfiles/{conversationId}/Messages/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles/{conversationId}/Messages/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -379,7 +379,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialProfiles/{socialProfileId}/Notifications/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles/{socialProfileId}/Notifications/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -427,7 +427,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialProfiles/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -482,7 +482,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialProfiles/{socialProfileId}/Conversations'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles/{socialProfileId}/Conversations'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -544,7 +544,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialProfiles/{conversationId}/Messages'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles/{conversationId}/Messages'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -612,7 +612,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialProfiles/{conversationId}/Messages/{messageId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles/{conversationId}/Messages/{messageId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -673,7 +673,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialProfiles/{socialProfileId}/Follows/{followedSocialProfileId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles/{socialProfileId}/Follows/{followedSocialProfileId}'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -733,7 +733,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialProfiles/{socialProfileId}/Follows/{followedSocialProfileId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles/{socialProfileId}/Follows/{followedSocialProfileId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -787,7 +787,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialProfiles/{socialProfileId}/Conversations'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles/{socialProfileId}/Conversations'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -841,7 +841,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialProfiles/{socialProfileId}/Follows/Profiles'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles/{socialProfileId}/Follows/Profiles'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -895,7 +895,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialProfiles/{socialProfileId}/Followers/Profiles'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles/{socialProfileId}/Followers/Profiles'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -949,7 +949,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialProfiles/{socialProfileId}/Followers'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles/{socialProfileId}/Followers'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1003,7 +1003,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialProfiles/{socialProfileId}/Follows'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles/{socialProfileId}/Follows'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1063,7 +1063,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialProfiles/{conversationId}/Messages'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles/{conversationId}/Messages'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1124,7 +1124,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialProfiles/{socialProfileId}/Notifications/{notificationId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles/{socialProfileId}/Notifications/{notificationId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1178,7 +1178,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialProfiles/{socialProfileId}/Notifications'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles/{socialProfileId}/Notifications'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1232,7 +1232,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialProfiles/{socialProfileId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles/{socialProfileId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1280,7 +1280,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialProfiles'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1340,7 +1340,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialProfiles/{socialProfileId}/Follows/{followedSocialProfileId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles/{socialProfileId}/Follows/{followedSocialProfileId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1407,7 +1407,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SocialService/SocialProfiles/{conversationId}/Messages/{messageId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles/{conversationId}/Messages/{messageId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

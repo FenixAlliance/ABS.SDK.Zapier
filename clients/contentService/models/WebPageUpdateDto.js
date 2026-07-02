@@ -284,6 +284,11 @@ module.exports = {
                 type: 'boolean',
             },
             {
+                key: `${keyPrefix}webPortalId`,
+                label: `[${labelPrefix}webPortalId]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}webTemplateId`,
                 label: `[${labelPrefix}webTemplateId]`,
                 type: 'string',
@@ -402,6 +407,7 @@ module.exports = {
             'cornerstoneContent': bundle.inputData?.[`${keyPrefix}cornerstoneContent`],
             'isEssentialContent': bundle.inputData?.[`${keyPrefix}isEssentialContent`],
             'allowSearchEngineIndexing': bundle.inputData?.[`${keyPrefix}allowSearchEngineIndexing`],
+            'webPortalId': bundle.inputData?.[`${keyPrefix}webPortalId`],
             'webTemplateId': bundle.inputData?.[`${keyPrefix}webTemplateId`],
             'parentWebContentId': bundle.inputData?.[`${keyPrefix}parentWebContentId`],
             'isHomePage': bundle.inputData?.[`${keyPrefix}isHomePage`],

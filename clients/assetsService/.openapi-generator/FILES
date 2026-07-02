@@ -3,8 +3,7 @@ apis/AssetCategoriesApi.js
 apis/AssetTransfersApi.js
 apis/AssetTypesApi.js
 apis/AssetsApi.js
-apis/CompletionsApi.js
-apis/FenixAlliancePortalsWebsiteApi.js
+apis/FenixAllianceABSWebApi.js
 authentication.js
 index.js
 models/AccessTokenResponse.js

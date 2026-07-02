@@ -1,7 +1,6 @@
 README.md
-apis/CompletionsApi.js
 apis/DiscountListsApi.js
-apis/FenixAlliancePortalsWebsiteApi.js
+apis/FenixAllianceABSWebApi.js
 apis/PriceListsApi.js
 apis/PricesApi.js
 apis/PricingRulesApi.js

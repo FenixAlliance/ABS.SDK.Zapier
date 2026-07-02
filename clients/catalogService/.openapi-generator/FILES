@@ -1,6 +1,5 @@
 README.md
-apis/CompletionsApi.js
-apis/FenixAlliancePortalsWebsiteApi.js
+apis/FenixAllianceABSWebApi.js
 apis/ItemAttachmentsApi.js
 apis/ItemAttributeOptionsApi.js
 apis/ItemAttributesApi.js

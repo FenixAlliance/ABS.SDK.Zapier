@@ -47,7 +47,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/ItemPickLists'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/ItemPickLists'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -110,7 +110,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -172,7 +172,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/ItemPickLists/{pickListId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/ItemPickLists/{pickListId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -239,7 +239,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries/{entryId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries/{entryId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -300,7 +300,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/ItemPickLists/{pickListId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/ItemPickLists/{pickListId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -361,7 +361,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -422,7 +422,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -489,7 +489,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries/{entryId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries/{entryId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -544,7 +544,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/ItemPickLists'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/ItemPickLists'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -599,7 +599,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/ItemPickLists/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/ItemPickLists/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -665,7 +665,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/ItemPickLists/{pickListId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/ItemPickLists/{pickListId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -738,7 +738,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries/{entryId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries/{entryId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -801,7 +801,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/ItemPickLists/{pickListId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/ItemPickLists/{pickListId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -870,7 +870,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries/{entryId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries/{entryId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

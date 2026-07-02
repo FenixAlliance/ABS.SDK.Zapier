@@ -43,7 +43,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/EmployeeAppraisalSessions'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/EmployeeAppraisalSessions'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -105,7 +105,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/EmployeeAppraisalSessions/{sessionId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/EmployeeAppraisalSessions/{sessionId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -166,7 +166,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/EmployeeAppraisalSessions/{sessionId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/EmployeeAppraisalSessions/{sessionId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -221,7 +221,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/EmployeeAppraisalSessions'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/EmployeeAppraisalSessions'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -276,7 +276,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/EmployeeAppraisalSessions/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/EmployeeAppraisalSessions/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -342,7 +342,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/EmployeeAppraisalSessions/{sessionId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/EmployeeAppraisalSessions/{sessionId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -405,7 +405,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/EmployeeAppraisalSessions/{sessionId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/EmployeeAppraisalSessions/{sessionId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

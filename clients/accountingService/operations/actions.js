@@ -1,4 +1,5 @@
 const AccountGroupsApi = require('../apis/AccountGroupsApi');
+const AccountingEntriesApi = require('../apis/AccountingEntriesApi');
 const AccountingPeriodsApi = require('../apis/AccountingPeriodsApi');
 const AccountsApi = require('../apis/AccountsApi');
 const BankProfilesApi = require('../apis/BankProfilesApi');
@@ -7,11 +8,10 @@ const BillableLineTaxesApi = require('../apis/BillableLineTaxesApi');
 const BillingProfilesApi = require('../apis/BillingProfilesApi');
 const BudgetsApi = require('../apis/BudgetsApi');
 const CommissionsApi = require('../apis/CommissionsApi');
-const CompletionsApi = require('../apis/CompletionsApi');
 const CostCentresApi = require('../apis/CostCentresApi');
 const ExpenseClaimsApi = require('../apis/ExpenseClaimsApi');
 const ExpenseTypesApi = require('../apis/ExpenseTypesApi');
-const FenixAlliancePortalsWebsiteApi = require('../apis/FenixAlliancePortalsWebsiteApi');
+const FenixAllianceABSWebApi = require('../apis/FenixAllianceABSWebApi');
 const FinancialBooksApi = require('../apis/FinancialBooksApi');
 const FiscalAuthoritiesApi = require('../apis/FiscalAuthoritiesApi');
 const FiscalAuthorityYearsApi = require('../apis/FiscalAuthorityYearsApi');
@@ -24,6 +24,7 @@ const FiscalResponsibilityRecordsApi = require('../apis/FiscalResponsibilityReco
 const FiscalYearsApi = require('../apis/FiscalYearsApi');
 const GrantsApi = require('../apis/GrantsApi');
 const InvoiceEnumerationRangesApi = require('../apis/InvoiceEnumerationRangesApi');
+const JournalEntriesApi = require('../apis/JournalEntriesApi');
 const JournalTypesApi = require('../apis/JournalTypesApi');
 const JournalsApi = require('../apis/JournalsApi');
 const LedgerTypesApi = require('../apis/LedgerTypesApi');
@@ -45,6 +46,8 @@ const actions = {
     [AccountGroupsApi.getAccountGroupsCountAsync.key]: AccountGroupsApi.getAccountGroupsCountAsync,
     [AccountGroupsApi.patchAccountGroupAsync.key]: AccountGroupsApi.patchAccountGroupAsync,
     [AccountGroupsApi.updateAccountGroup.key]: AccountGroupsApi.updateAccountGroup,
+    [AccountingEntriesApi.getCreditsSumAsync.key]: AccountingEntriesApi.getCreditsSumAsync,
+    [AccountingEntriesApi.getDebitsSumAsync.key]: AccountingEntriesApi.getDebitsSumAsync,
     [AccountingPeriodsApi.createAccountingPeriod.key]: AccountingPeriodsApi.createAccountingPeriod,
     [AccountingPeriodsApi.deleteAccountingPeriod.key]: AccountingPeriodsApi.deleteAccountingPeriod,
     [AccountingPeriodsApi.getAccountingPeriod.key]: AccountingPeriodsApi.getAccountingPeriod,
@@ -164,7 +167,6 @@ const actions = {
     [CommissionsApi.patchPaymentCommissionAsync.key]: CommissionsApi.patchPaymentCommissionAsync,
     [CommissionsApi.updateCommissionAsync.key]: CommissionsApi.updateCommissionAsync,
     [CommissionsApi.updatePaymentCommissionAsync.key]: CommissionsApi.updatePaymentCommissionAsync,
-    [CompletionsApi.apiV2AiServiceCompletionsCompleteGet.key]: CompletionsApi.apiV2AiServiceCompletionsCompleteGet,
     [CostCentresApi.createCostCentre.key]: CostCentresApi.createCostCentre,
     [CostCentresApi.createCostCentreBudget.key]: CostCentresApi.createCostCentreBudget,
     [CostCentresApi.createCostCentreGroup.key]: CostCentresApi.createCostCentreGroup,
@@ -199,23 +201,23 @@ const actions = {
     [ExpenseTypesApi.getExpenseTypesCount.key]: ExpenseTypesApi.getExpenseTypesCount,
     [ExpenseTypesApi.patchExpenseType.key]: ExpenseTypesApi.patchExpenseType,
     [ExpenseTypesApi.updateExpenseType.key]: ExpenseTypesApi.updateExpenseType,
-    [FenixAlliancePortalsWebsiteApi.accountLogoutPost.key]: FenixAlliancePortalsWebsiteApi.accountLogoutPost,
-    [FenixAlliancePortalsWebsiteApi.accountManageDownloadPersonalDataPost.key]: FenixAlliancePortalsWebsiteApi.accountManageDownloadPersonalDataPost,
-    [FenixAlliancePortalsWebsiteApi.accountManageLinkExternalLoginPost.key]: FenixAlliancePortalsWebsiteApi.accountManageLinkExternalLoginPost,
-    [FenixAlliancePortalsWebsiteApi.accountPerformExternalLoginPost.key]: FenixAlliancePortalsWebsiteApi.accountPerformExternalLoginPost,
-    [FenixAlliancePortalsWebsiteApi.forgotPasswordPost.key]: FenixAlliancePortalsWebsiteApi.forgotPasswordPost,
-    [FenixAlliancePortalsWebsiteApi.healthGet.key]: FenixAlliancePortalsWebsiteApi.healthGet,
-    [FenixAlliancePortalsWebsiteApi.helloGet.key]: FenixAlliancePortalsWebsiteApi.helloGet,
-    [FenixAlliancePortalsWebsiteApi.loginPost.key]: FenixAlliancePortalsWebsiteApi.loginPost,
-    [FenixAlliancePortalsWebsiteApi.manage2faPost.key]: FenixAlliancePortalsWebsiteApi.manage2faPost,
-    [FenixAlliancePortalsWebsiteApi.manageInfoGet.key]: FenixAlliancePortalsWebsiteApi.manageInfoGet,
-    [FenixAlliancePortalsWebsiteApi.manageInfoPost.key]: FenixAlliancePortalsWebsiteApi.manageInfoPost,
-    [FenixAlliancePortalsWebsiteApi.mapIdentityApi/confirmEmail.key]: FenixAlliancePortalsWebsiteApi.mapIdentityApi/confirmEmail,
-    [FenixAlliancePortalsWebsiteApi.refreshPost.key]: FenixAlliancePortalsWebsiteApi.refreshPost,
-    [FenixAlliancePortalsWebsiteApi.registerPost.key]: FenixAlliancePortalsWebsiteApi.registerPost,
-    [FenixAlliancePortalsWebsiteApi.resendConfirmationEmailPost.key]: FenixAlliancePortalsWebsiteApi.resendConfirmationEmailPost,
-    [FenixAlliancePortalsWebsiteApi.resetPasswordPost.key]: FenixAlliancePortalsWebsiteApi.resetPasswordPost,
-    [FenixAlliancePortalsWebsiteApi.versionGet.key]: FenixAlliancePortalsWebsiteApi.versionGet,
+    [FenixAllianceABSWebApi.accountLogoutPost.key]: FenixAllianceABSWebApi.accountLogoutPost,
+    [FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost.key]: FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost,
+    [FenixAllianceABSWebApi.accountManageLinkExternalLoginPost.key]: FenixAllianceABSWebApi.accountManageLinkExternalLoginPost,
+    [FenixAllianceABSWebApi.accountPerformExternalLoginPost.key]: FenixAllianceABSWebApi.accountPerformExternalLoginPost,
+    [FenixAllianceABSWebApi.forgotPasswordPost.key]: FenixAllianceABSWebApi.forgotPasswordPost,
+    [FenixAllianceABSWebApi.healthGet.key]: FenixAllianceABSWebApi.healthGet,
+    [FenixAllianceABSWebApi.helloGet.key]: FenixAllianceABSWebApi.helloGet,
+    [FenixAllianceABSWebApi.loginPost.key]: FenixAllianceABSWebApi.loginPost,
+    [FenixAllianceABSWebApi.manage2faPost.key]: FenixAllianceABSWebApi.manage2faPost,
+    [FenixAllianceABSWebApi.manageInfoGet.key]: FenixAllianceABSWebApi.manageInfoGet,
+    [FenixAllianceABSWebApi.manageInfoPost.key]: FenixAllianceABSWebApi.manageInfoPost,
+    [FenixAllianceABSWebApi.mapIdentityApi/confirmEmail.key]: FenixAllianceABSWebApi.mapIdentityApi/confirmEmail,
+    [FenixAllianceABSWebApi.refreshPost.key]: FenixAllianceABSWebApi.refreshPost,
+    [FenixAllianceABSWebApi.registerPost.key]: FenixAllianceABSWebApi.registerPost,
+    [FenixAllianceABSWebApi.resendConfirmationEmailPost.key]: FenixAllianceABSWebApi.resendConfirmationEmailPost,
+    [FenixAllianceABSWebApi.resetPasswordPost.key]: FenixAllianceABSWebApi.resetPasswordPost,
+    [FenixAllianceABSWebApi.versionGet.key]: FenixAllianceABSWebApi.versionGet,
     [FinancialBooksApi.createFinancialBookAsync.key]: FinancialBooksApi.createFinancialBookAsync,
     [FinancialBooksApi.deleteFinancialBookAsync.key]: FinancialBooksApi.deleteFinancialBookAsync,
     [FinancialBooksApi.getFinancialBookDetailsAsync.key]: FinancialBooksApi.getFinancialBookDetailsAsync,
@@ -299,6 +301,8 @@ const actions = {
     [InvoiceEnumerationRangesApi.getInvoiceEnumerationRangesAsync.key]: InvoiceEnumerationRangesApi.getInvoiceEnumerationRangesAsync,
     [InvoiceEnumerationRangesApi.patchInvoiceEnumerationRangeAsync.key]: InvoiceEnumerationRangesApi.patchInvoiceEnumerationRangeAsync,
     [InvoiceEnumerationRangesApi.updateInvoiceEnumerationRangeAsync.key]: InvoiceEnumerationRangesApi.updateInvoiceEnumerationRangeAsync,
+    [JournalEntriesApi.getExpensesSumAsync.key]: JournalEntriesApi.getExpensesSumAsync,
+    [JournalEntriesApi.getIncomesSumAsync.key]: JournalEntriesApi.getIncomesSumAsync,
     [JournalTypesApi.createJournalTypeAsync.key]: JournalTypesApi.createJournalTypeAsync,
     [JournalTypesApi.deleteJournalTypeAsync.key]: JournalTypesApi.deleteJournalTypeAsync,
     [JournalTypesApi.getJournalTypeDetailsAsync.key]: JournalTypesApi.getJournalTypeDetailsAsync,
@@ -377,6 +381,7 @@ const actions = {
     [SharesApi.getShareIssuance.key]: SharesApi.getShareIssuance,
     [SharesApi.getShareIssuances.key]: SharesApi.getShareIssuances,
     [SharesApi.getShareIssuancesCount.key]: SharesApi.getShareIssuancesCount,
+    [SharesApi.getShareIssuancesSum.key]: SharesApi.getShareIssuancesSum,
     [SharesApi.getShareTransfer.key]: SharesApi.getShareTransfer,
     [SharesApi.getShareTransferReason.key]: SharesApi.getShareTransferReason,
     [SharesApi.getShareTransferReasons.key]: SharesApi.getShareTransferReasons,

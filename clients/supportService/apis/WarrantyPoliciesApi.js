@@ -43,7 +43,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SupportService/WarrantyPolicies'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SupportService/WarrantyPolicies'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -105,7 +105,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SupportService/WarrantyPolicies/{warrantyPolicyId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SupportService/WarrantyPolicies/{warrantyPolicyId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -160,7 +160,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SupportService/WarrantyPolicies'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SupportService/WarrantyPolicies'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -215,7 +215,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SupportService/WarrantyPolicies/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SupportService/WarrantyPolicies/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -276,7 +276,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SupportService/WarrantyPolicies/{warrantyPolicyId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SupportService/WarrantyPolicies/{warrantyPolicyId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -342,7 +342,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SupportService/WarrantyPolicies/{warrantyPolicyId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SupportService/WarrantyPolicies/{warrantyPolicyId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -405,7 +405,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SupportService/WarrantyPolicies/{warrantyPolicyId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SupportService/WarrantyPolicies/{warrantyPolicyId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

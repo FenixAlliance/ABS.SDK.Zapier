@@ -42,7 +42,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ShipmentsService/ShippingLabels'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ShipmentsService/ShippingLabels'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -103,7 +103,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ShipmentsService/ShippingLabels/{labelId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ShipmentsService/ShippingLabels/{labelId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -164,7 +164,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ShipmentsService/ShippingLabels/{labelId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ShipmentsService/ShippingLabels/{labelId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -219,7 +219,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ShipmentsService/ShippingLabels'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ShipmentsService/ShippingLabels'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -274,7 +274,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ShipmentsService/ShippingLabels/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ShipmentsService/ShippingLabels/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -340,7 +340,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ShipmentsService/ShippingLabels/{labelId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ShipmentsService/ShippingLabels/{labelId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -402,7 +402,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ShipmentsService/ShippingLabels/{labelId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ShipmentsService/ShippingLabels/{labelId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

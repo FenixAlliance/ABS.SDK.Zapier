@@ -37,7 +37,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/OAuth/SignIn'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/OAuth/SignIn'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -90,7 +90,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/OAuth/WhoAmI'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/OAuth/WhoAmI'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -145,7 +145,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/OAuth/{applicationId}/Keys'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/OAuth/{applicationId}/Keys'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -205,7 +205,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/OAuth/{tenantId}/{applicationId}/.Well-Known/OpenId-Configuration'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/OAuth/{tenantId}/{applicationId}/.Well-Known/OpenId-Configuration'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -264,7 +264,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/OAuth/Permissions'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/OAuth/Permissions'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -315,7 +315,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/OAuth/SignIn'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/OAuth/SignIn'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -365,7 +365,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/OAuth/Token'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/OAuth/Token'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

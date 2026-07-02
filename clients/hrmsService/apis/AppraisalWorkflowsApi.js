@@ -42,7 +42,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/AppraisalWorkflows'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/AppraisalWorkflows'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -104,7 +104,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/AppraisalWorkflows/{workflowId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/AppraisalWorkflows/{workflowId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -165,7 +165,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/AppraisalWorkflows/{workflowId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/AppraisalWorkflows/{workflowId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -220,7 +220,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/AppraisalWorkflows'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/AppraisalWorkflows'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -275,7 +275,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/AppraisalWorkflows/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/AppraisalWorkflows/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -337,7 +337,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/AppraisalWorkflows/{workflowId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/AppraisalWorkflows/{workflowId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

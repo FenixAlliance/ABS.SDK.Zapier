@@ -33,7 +33,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LocationsService/Locations'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LocationsService/Locations'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -79,7 +79,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LocationsService/Locations/wallet/{walletId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LocationsService/Locations/wallet/{walletId}'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -129,7 +129,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LocationsService/Locations/{locationId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LocationsService/Locations/{locationId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -179,7 +179,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LocationsService/Locations/wallet/{walletId}/{locationId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LocationsService/Locations/wallet/{walletId}/{locationId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -228,7 +228,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LocationsService/Locations/{locationId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LocationsService/Locations/{locationId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -272,7 +272,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LocationsService/Locations'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LocationsService/Locations'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -316,7 +316,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LocationsService/Locations/count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LocationsService/Locations/count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -366,7 +366,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LocationsService/Locations/wallet/{walletId}/{locationId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LocationsService/Locations/wallet/{walletId}/{locationId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -409,7 +409,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LocationsService/Locations/wallet/{walletId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LocationsService/Locations/wallet/{walletId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -452,7 +452,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LocationsService/Locations/wallet/{walletId}/count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LocationsService/Locations/wallet/{walletId}/count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -506,7 +506,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LocationsService/Locations/{locationId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LocationsService/Locations/{locationId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -562,7 +562,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LocationsService/Locations/wallet/{walletId}/{locationId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LocationsService/Locations/wallet/{walletId}/{locationId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -613,7 +613,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LocationsService/Locations/{locationId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LocationsService/Locations/{locationId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -665,7 +665,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LocationsService/Locations/wallet/{walletId}/{locationId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LocationsService/Locations/wallet/{walletId}/{locationId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

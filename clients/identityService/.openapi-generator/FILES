@@ -1,8 +1,7 @@
 README.md
 apis/ApplicationsApi.js
 apis/CheckerApi.js
-apis/CompletionsApi.js
-apis/FenixAlliancePortalsWebsiteApi.js
+apis/FenixAllianceABSWebApi.js
 apis/OAuthApi.js
 apis/ResourceApi.js
 apis/UserInfoApi.js

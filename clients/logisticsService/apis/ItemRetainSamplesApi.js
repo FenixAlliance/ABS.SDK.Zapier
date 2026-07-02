@@ -43,7 +43,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/ItemRetainSamples'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/ItemRetainSamples'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -105,7 +105,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/ItemRetainSamples/{retainSampleId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/ItemRetainSamples/{retainSampleId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -166,7 +166,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/ItemRetainSamples/{retainSampleId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/ItemRetainSamples/{retainSampleId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -221,7 +221,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/ItemRetainSamples'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/ItemRetainSamples'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -276,7 +276,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/ItemRetainSamples/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/ItemRetainSamples/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -342,7 +342,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/ItemRetainSamples/{retainSampleId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/ItemRetainSamples/{retainSampleId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -405,7 +405,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/ItemRetainSamples/{retainSampleId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/ItemRetainSamples/{retainSampleId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

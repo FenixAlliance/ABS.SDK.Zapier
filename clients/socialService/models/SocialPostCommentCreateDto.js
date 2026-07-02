@@ -21,6 +21,20 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}bodyHtml`,
+                label: `[${labelPrefix}bodyHtml]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}bodyFormat`,
+                label: `[${labelPrefix}bodyFormat]`,
+                type: 'string',
+                choices: [
+                    'PlainText',
+                    'Html',
+                ],
+            },
+            {
                 key: `${keyPrefix}parentCommentId`,
                 label: `[${labelPrefix}parentCommentId]`,
                 type: 'string',
@@ -48,6 +62,8 @@ module.exports = {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'message': bundle.inputData?.[`${keyPrefix}message`],
+            'bodyHtml': bundle.inputData?.[`${keyPrefix}bodyHtml`],
+            'bodyFormat': bundle.inputData?.[`${keyPrefix}bodyFormat`],
             'parentCommentId': bundle.inputData?.[`${keyPrefix}parentCommentId`],
             'socialProfileId': bundle.inputData?.[`${keyPrefix}socialProfileId`],
             'socialFeedPostId': bundle.inputData?.[`${keyPrefix}socialFeedPostId`],

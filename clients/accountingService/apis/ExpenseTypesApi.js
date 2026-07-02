@@ -43,7 +43,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/ExpenseTypes'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/ExpenseTypes'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -105,7 +105,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/ExpenseTypes/{expenseTypeId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/ExpenseTypes/{expenseTypeId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -166,7 +166,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/ExpenseTypes/{expenseTypeId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/ExpenseTypes/{expenseTypeId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -221,7 +221,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/ExpenseTypes'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/ExpenseTypes'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -276,7 +276,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/ExpenseTypes/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/ExpenseTypes/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -342,7 +342,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/ExpenseTypes/{expenseTypeId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/ExpenseTypes/{expenseTypeId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -405,7 +405,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/ExpenseTypes/{expenseTypeId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/ExpenseTypes/{expenseTypeId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

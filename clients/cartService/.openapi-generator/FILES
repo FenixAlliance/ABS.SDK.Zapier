@@ -1,8 +1,7 @@
 README.md
 apis/CartsApi.js
 apis/CompareApi.js
-apis/CompletionsApi.js
-apis/FenixAlliancePortalsWebsiteApi.js
+apis/FenixAllianceABSWebApi.js
 apis/RecordsApi.js
 apis/WishListsApi.js
 authentication.js

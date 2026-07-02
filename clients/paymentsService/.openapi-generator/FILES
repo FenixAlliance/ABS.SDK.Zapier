@@ -1,6 +1,5 @@
 README.md
-apis/CompletionsApi.js
-apis/FenixAlliancePortalsWebsiteApi.js
+apis/FenixAllianceABSWebApi.js
 apis/PaymentMethodsApi.js
 apis/PaymentModesApi.js
 apis/PaymentTermsApi.js

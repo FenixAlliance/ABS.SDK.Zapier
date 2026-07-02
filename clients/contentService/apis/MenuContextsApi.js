@@ -41,7 +41,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/MenuContexts/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/MenuContexts/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -97,7 +97,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/MenuContexts'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/MenuContexts'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -159,7 +159,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/MenuContexts/{menuContextId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/MenuContexts/{menuContextId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -220,7 +220,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/MenuContexts/{menuContextId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/MenuContexts/{menuContextId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -275,7 +275,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/MenuContexts'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/MenuContexts'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -337,7 +337,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/MenuContexts/{menuContextId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/MenuContexts/{menuContextId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

@@ -43,7 +43,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/RoundingPolicies'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/RoundingPolicies'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -105,7 +105,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/RoundingPolicies/{roundingPolicyId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/RoundingPolicies/{roundingPolicyId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -160,7 +160,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/RoundingPolicies'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/RoundingPolicies'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -215,7 +215,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/RoundingPolicies/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/RoundingPolicies/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -276,7 +276,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/RoundingPolicies/{roundingPolicyId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/RoundingPolicies/{roundingPolicyId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -342,7 +342,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/RoundingPolicies/{roundingPolicyId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/RoundingPolicies/{roundingPolicyId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -405,7 +405,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/RoundingPolicies/{roundingPolicyId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/RoundingPolicies/{roundingPolicyId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

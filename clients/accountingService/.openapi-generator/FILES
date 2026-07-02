@@ -1,5 +1,6 @@
 README.md
 apis/AccountGroupsApi.js
+apis/AccountingEntriesApi.js
 apis/AccountingPeriodsApi.js
 apis/AccountsApi.js
 apis/BankProfilesApi.js
@@ -8,11 +9,10 @@ apis/BillableLineTaxesApi.js
 apis/BillingProfilesApi.js
 apis/BudgetsApi.js
 apis/CommissionsApi.js
-apis/CompletionsApi.js
 apis/CostCentresApi.js
 apis/ExpenseClaimsApi.js
 apis/ExpenseTypesApi.js
-apis/FenixAlliancePortalsWebsiteApi.js
+apis/FenixAllianceABSWebApi.js
 apis/FinancialBooksApi.js
 apis/FiscalAuthoritiesApi.js
 apis/FiscalAuthorityYearsApi.js
@@ -25,6 +25,7 @@ apis/FiscalResponsibilityRecordsApi.js
 apis/FiscalYearsApi.js
 apis/GrantsApi.js
 apis/InvoiceEnumerationRangesApi.js
+apis/JournalEntriesApi.js
 apis/JournalTypesApi.js
 apis/JournalsApi.js
 apis/LedgerTypesApi.js
@@ -140,6 +141,7 @@ models/CostCentreGroupUpdateDto.js
 models/CostCentreUpdateDto.js
 models/CreateLedgerDto.js
 models/CurrencyId.js
+models/DecimalEnvelope.js
 models/EmptyEnvelope.js
 models/ErrorEnvelope.js
 models/ExpenseClaimCreateDto.js
@@ -317,4 +319,6 @@ models/TwoFactorResponse.js
 models/UpdateLedgerDto.js
 operations/actions.js
 package.json
+samples/AccountingEntriesApi.js
+samples/JournalEntriesApi.js
 utils/utils.js

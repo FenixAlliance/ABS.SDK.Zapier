@@ -47,7 +47,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ShipmentsService/BillsOfLading'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ShipmentsService/BillsOfLading'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -110,7 +110,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ShipmentsService/BillsOfLading/{billOfLadingId}/Lines'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ShipmentsService/BillsOfLading/{billOfLadingId}/Lines'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -172,7 +172,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ShipmentsService/BillsOfLading/{billOfLadingId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ShipmentsService/BillsOfLading/{billOfLadingId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -239,7 +239,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ShipmentsService/BillsOfLading/{billOfLadingId}/Lines/{lineId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ShipmentsService/BillsOfLading/{billOfLadingId}/Lines/{lineId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -300,7 +300,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ShipmentsService/BillsOfLading/{billOfLadingId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ShipmentsService/BillsOfLading/{billOfLadingId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -367,7 +367,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ShipmentsService/BillsOfLading/{billOfLadingId}/Lines/{lineId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ShipmentsService/BillsOfLading/{billOfLadingId}/Lines/{lineId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -428,7 +428,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ShipmentsService/BillsOfLading/{billOfLadingId}/Lines'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ShipmentsService/BillsOfLading/{billOfLadingId}/Lines'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -489,7 +489,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ShipmentsService/BillsOfLading/{billOfLadingId}/Lines/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ShipmentsService/BillsOfLading/{billOfLadingId}/Lines/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -544,7 +544,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ShipmentsService/BillsOfLading'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ShipmentsService/BillsOfLading'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -599,7 +599,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ShipmentsService/BillsOfLading/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ShipmentsService/BillsOfLading/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -665,7 +665,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ShipmentsService/BillsOfLading/{billOfLadingId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ShipmentsService/BillsOfLading/{billOfLadingId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -738,7 +738,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ShipmentsService/BillsOfLading/{billOfLadingId}/Lines/{lineId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ShipmentsService/BillsOfLading/{billOfLadingId}/Lines/{lineId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -801,7 +801,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ShipmentsService/BillsOfLading/{billOfLadingId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ShipmentsService/BillsOfLading/{billOfLadingId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -870,7 +870,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ShipmentsService/BillsOfLading/{billOfLadingId}/Lines/{lineId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ShipmentsService/BillsOfLading/{billOfLadingId}/Lines/{lineId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

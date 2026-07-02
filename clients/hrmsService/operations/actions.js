@@ -1,18 +1,23 @@
 const AppraisalStagesApi = require('../apis/AppraisalStagesApi');
 const AppraisalWorkflowsApi = require('../apis/AppraisalWorkflowsApi');
-const CompletionsApi = require('../apis/CompletionsApi');
 const EmployeeAppraisalSessionsApi = require('../apis/EmployeeAppraisalSessionsApi');
 const EmployeeTypesApi = require('../apis/EmployeeTypesApi');
 const EmployeesApi = require('../apis/EmployeesApi');
 const EmployersApi = require('../apis/EmployersApi');
-const FenixAlliancePortalsWebsiteApi = require('../apis/FenixAlliancePortalsWebsiteApi');
+const FenixAllianceABSWebApi = require('../apis/FenixAllianceABSWebApi');
+const GigApplicationsApi = require('../apis/GigApplicationsApi');
 const GigsApi = require('../apis/GigsApi');
+const JobApplicantsApi = require('../apis/JobApplicantsApi');
+const JobApplicationsApi = require('../apis/JobApplicationsApi');
+const JobFieldsApi = require('../apis/JobFieldsApi');
+const JobOfferFieldsApi = require('../apis/JobOfferFieldsApi');
 const JobOffersApi = require('../apis/JobOffersApi');
 const JobTitlesApi = require('../apis/JobTitlesApi');
 const LeaveApplicationsApi = require('../apis/LeaveApplicationsApi');
 const LeaveTypesApi = require('../apis/LeaveTypesApi');
 const PayrollPeriodsApi = require('../apis/PayrollPeriodsApi');
 const PayrollsApi = require('../apis/PayrollsApi');
+const RequiredSkillsApi = require('../apis/RequiredSkillsApi');
 const SalariesApi = require('../apis/SalariesApi');
 const SchedulesApi = require('../apis/SchedulesApi');
 const ShiftsApi = require('../apis/ShiftsApi');
@@ -35,7 +40,6 @@ const actions = {
     [AppraisalWorkflowsApi.getAppraisalWorkflowsAsync.key]: AppraisalWorkflowsApi.getAppraisalWorkflowsAsync,
     [AppraisalWorkflowsApi.getAppraisalWorkflowsCountAsync.key]: AppraisalWorkflowsApi.getAppraisalWorkflowsCountAsync,
     [AppraisalWorkflowsApi.updateAppraisalWorkflowAsync.key]: AppraisalWorkflowsApi.updateAppraisalWorkflowAsync,
-    [CompletionsApi.apiV2AiServiceCompletionsCompleteGet.key]: CompletionsApi.apiV2AiServiceCompletionsCompleteGet,
     [EmployeeAppraisalSessionsApi.createEmployeeAppraisalSessionAsync.key]: EmployeeAppraisalSessionsApi.createEmployeeAppraisalSessionAsync,
     [EmployeeAppraisalSessionsApi.deleteEmployeeAppraisalSessionAsync.key]: EmployeeAppraisalSessionsApi.deleteEmployeeAppraisalSessionAsync,
     [EmployeeAppraisalSessionsApi.getEmployeeAppraisalSessionByIdAsync.key]: EmployeeAppraisalSessionsApi.getEmployeeAppraisalSessionByIdAsync,
@@ -64,23 +68,31 @@ const actions = {
     [EmployersApi.getEmployersCountAsync.key]: EmployersApi.getEmployersCountAsync,
     [EmployersApi.patchEmployerAsync.key]: EmployersApi.patchEmployerAsync,
     [EmployersApi.updateEmployerAsync.key]: EmployersApi.updateEmployerAsync,
-    [FenixAlliancePortalsWebsiteApi.accountLogoutPost.key]: FenixAlliancePortalsWebsiteApi.accountLogoutPost,
-    [FenixAlliancePortalsWebsiteApi.accountManageDownloadPersonalDataPost.key]: FenixAlliancePortalsWebsiteApi.accountManageDownloadPersonalDataPost,
-    [FenixAlliancePortalsWebsiteApi.accountManageLinkExternalLoginPost.key]: FenixAlliancePortalsWebsiteApi.accountManageLinkExternalLoginPost,
-    [FenixAlliancePortalsWebsiteApi.accountPerformExternalLoginPost.key]: FenixAlliancePortalsWebsiteApi.accountPerformExternalLoginPost,
-    [FenixAlliancePortalsWebsiteApi.forgotPasswordPost.key]: FenixAlliancePortalsWebsiteApi.forgotPasswordPost,
-    [FenixAlliancePortalsWebsiteApi.healthGet.key]: FenixAlliancePortalsWebsiteApi.healthGet,
-    [FenixAlliancePortalsWebsiteApi.helloGet.key]: FenixAlliancePortalsWebsiteApi.helloGet,
-    [FenixAlliancePortalsWebsiteApi.loginPost.key]: FenixAlliancePortalsWebsiteApi.loginPost,
-    [FenixAlliancePortalsWebsiteApi.manage2faPost.key]: FenixAlliancePortalsWebsiteApi.manage2faPost,
-    [FenixAlliancePortalsWebsiteApi.manageInfoGet.key]: FenixAlliancePortalsWebsiteApi.manageInfoGet,
-    [FenixAlliancePortalsWebsiteApi.manageInfoPost.key]: FenixAlliancePortalsWebsiteApi.manageInfoPost,
-    [FenixAlliancePortalsWebsiteApi.mapIdentityApi/confirmEmail.key]: FenixAlliancePortalsWebsiteApi.mapIdentityApi/confirmEmail,
-    [FenixAlliancePortalsWebsiteApi.refreshPost.key]: FenixAlliancePortalsWebsiteApi.refreshPost,
-    [FenixAlliancePortalsWebsiteApi.registerPost.key]: FenixAlliancePortalsWebsiteApi.registerPost,
-    [FenixAlliancePortalsWebsiteApi.resendConfirmationEmailPost.key]: FenixAlliancePortalsWebsiteApi.resendConfirmationEmailPost,
-    [FenixAlliancePortalsWebsiteApi.resetPasswordPost.key]: FenixAlliancePortalsWebsiteApi.resetPasswordPost,
-    [FenixAlliancePortalsWebsiteApi.versionGet.key]: FenixAlliancePortalsWebsiteApi.versionGet,
+    [FenixAllianceABSWebApi.accountLogoutPost.key]: FenixAllianceABSWebApi.accountLogoutPost,
+    [FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost.key]: FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost,
+    [FenixAllianceABSWebApi.accountManageLinkExternalLoginPost.key]: FenixAllianceABSWebApi.accountManageLinkExternalLoginPost,
+    [FenixAllianceABSWebApi.accountPerformExternalLoginPost.key]: FenixAllianceABSWebApi.accountPerformExternalLoginPost,
+    [FenixAllianceABSWebApi.forgotPasswordPost.key]: FenixAllianceABSWebApi.forgotPasswordPost,
+    [FenixAllianceABSWebApi.healthGet.key]: FenixAllianceABSWebApi.healthGet,
+    [FenixAllianceABSWebApi.helloGet.key]: FenixAllianceABSWebApi.helloGet,
+    [FenixAllianceABSWebApi.loginPost.key]: FenixAllianceABSWebApi.loginPost,
+    [FenixAllianceABSWebApi.manage2faPost.key]: FenixAllianceABSWebApi.manage2faPost,
+    [FenixAllianceABSWebApi.manageInfoGet.key]: FenixAllianceABSWebApi.manageInfoGet,
+    [FenixAllianceABSWebApi.manageInfoPost.key]: FenixAllianceABSWebApi.manageInfoPost,
+    [FenixAllianceABSWebApi.mapIdentityApi/confirmEmail.key]: FenixAllianceABSWebApi.mapIdentityApi/confirmEmail,
+    [FenixAllianceABSWebApi.refreshPost.key]: FenixAllianceABSWebApi.refreshPost,
+    [FenixAllianceABSWebApi.registerPost.key]: FenixAllianceABSWebApi.registerPost,
+    [FenixAllianceABSWebApi.resendConfirmationEmailPost.key]: FenixAllianceABSWebApi.resendConfirmationEmailPost,
+    [FenixAllianceABSWebApi.resetPasswordPost.key]: FenixAllianceABSWebApi.resetPasswordPost,
+    [FenixAllianceABSWebApi.versionGet.key]: FenixAllianceABSWebApi.versionGet,
+    [GigApplicationsApi.acceptGigApplicationAsync.key]: GigApplicationsApi.acceptGigApplicationAsync,
+    [GigApplicationsApi.createGigApplicationAsync.key]: GigApplicationsApi.createGigApplicationAsync,
+    [GigApplicationsApi.deleteGigApplicationAsync.key]: GigApplicationsApi.deleteGigApplicationAsync,
+    [GigApplicationsApi.getGigApplicationByIdAsync.key]: GigApplicationsApi.getGigApplicationByIdAsync,
+    [GigApplicationsApi.getGigApplicationsAsync.key]: GigApplicationsApi.getGigApplicationsAsync,
+    [GigApplicationsApi.getGigApplicationsCountAsync.key]: GigApplicationsApi.getGigApplicationsCountAsync,
+    [GigApplicationsApi.patchGigApplicationAsync.key]: GigApplicationsApi.patchGigApplicationAsync,
+    [GigApplicationsApi.updateGigApplicationAsync.key]: GigApplicationsApi.updateGigApplicationAsync,
     [GigsApi.createGigAsync.key]: GigsApi.createGigAsync,
     [GigsApi.deleteGigAsync.key]: GigsApi.deleteGigAsync,
     [GigsApi.getGigByIdAsync.key]: GigsApi.getGigByIdAsync,
@@ -88,12 +100,47 @@ const actions = {
     [GigsApi.getGigsCountAsync.key]: GigsApi.getGigsCountAsync,
     [GigsApi.patchGigAsync.key]: GigsApi.patchGigAsync,
     [GigsApi.updateGigAsync.key]: GigsApi.updateGigAsync,
+    [JobApplicantsApi.createJobApplicantAsync.key]: JobApplicantsApi.createJobApplicantAsync,
+    [JobApplicantsApi.deleteJobApplicantAsync.key]: JobApplicantsApi.deleteJobApplicantAsync,
+    [JobApplicantsApi.getJobApplicantByIdAsync.key]: JobApplicantsApi.getJobApplicantByIdAsync,
+    [JobApplicantsApi.getJobApplicantsAsync.key]: JobApplicantsApi.getJobApplicantsAsync,
+    [JobApplicantsApi.getJobApplicantsCountAsync.key]: JobApplicantsApi.getJobApplicantsCountAsync,
+    [JobApplicantsApi.patchJobApplicantAsync.key]: JobApplicantsApi.patchJobApplicantAsync,
+    [JobApplicantsApi.updateJobApplicantAsync.key]: JobApplicantsApi.updateJobApplicantAsync,
+    [JobApplicationsApi.changeJobApplicationStatusAsync.key]: JobApplicationsApi.changeJobApplicationStatusAsync,
+    [JobApplicationsApi.createJobApplicationAsync.key]: JobApplicationsApi.createJobApplicationAsync,
+    [JobApplicationsApi.deleteJobApplicationAsync.key]: JobApplicationsApi.deleteJobApplicationAsync,
+    [JobApplicationsApi.getJobApplicationByIdAsync.key]: JobApplicationsApi.getJobApplicationByIdAsync,
+    [JobApplicationsApi.getJobApplicationsAsync.key]: JobApplicationsApi.getJobApplicationsAsync,
+    [JobApplicationsApi.getJobApplicationsCountAsync.key]: JobApplicationsApi.getJobApplicationsCountAsync,
+    [JobApplicationsApi.patchJobApplicationAsync.key]: JobApplicationsApi.patchJobApplicationAsync,
+    [JobApplicationsApi.updateJobApplicationAsync.key]: JobApplicationsApi.updateJobApplicationAsync,
+    [JobFieldsApi.createJobFieldAsync.key]: JobFieldsApi.createJobFieldAsync,
+    [JobFieldsApi.deleteJobFieldAsync.key]: JobFieldsApi.deleteJobFieldAsync,
+    [JobFieldsApi.getJobFieldByIdAsync.key]: JobFieldsApi.getJobFieldByIdAsync,
+    [JobFieldsApi.getJobFieldsAsync.key]: JobFieldsApi.getJobFieldsAsync,
+    [JobFieldsApi.getJobFieldsCountAsync.key]: JobFieldsApi.getJobFieldsCountAsync,
+    [JobFieldsApi.patchJobFieldAsync.key]: JobFieldsApi.patchJobFieldAsync,
+    [JobFieldsApi.updateJobFieldAsync.key]: JobFieldsApi.updateJobFieldAsync,
+    [JobOfferFieldsApi.createJobOfferFieldAsync.key]: JobOfferFieldsApi.createJobOfferFieldAsync,
+    [JobOfferFieldsApi.deleteJobOfferFieldAsync.key]: JobOfferFieldsApi.deleteJobOfferFieldAsync,
+    [JobOfferFieldsApi.getJobOfferFieldByIdAsync.key]: JobOfferFieldsApi.getJobOfferFieldByIdAsync,
+    [JobOfferFieldsApi.getJobOfferFieldsAsync.key]: JobOfferFieldsApi.getJobOfferFieldsAsync,
+    [JobOfferFieldsApi.getJobOfferFieldsCountAsync.key]: JobOfferFieldsApi.getJobOfferFieldsCountAsync,
+    [JobOfferFieldsApi.patchJobOfferFieldAsync.key]: JobOfferFieldsApi.patchJobOfferFieldAsync,
+    [JobOfferFieldsApi.updateJobOfferFieldAsync.key]: JobOfferFieldsApi.updateJobOfferFieldAsync,
+    [JobOffersApi.closeJobOfferAsync.key]: JobOffersApi.closeJobOfferAsync,
     [JobOffersApi.createJobOfferAsync.key]: JobOffersApi.createJobOfferAsync,
     [JobOffersApi.deleteJobOfferAsync.key]: JobOffersApi.deleteJobOfferAsync,
+    [JobOffersApi.fillJobOfferAsync.key]: JobOffersApi.fillJobOfferAsync,
     [JobOffersApi.getJobOfferByIdAsync.key]: JobOffersApi.getJobOfferByIdAsync,
     [JobOffersApi.getJobOffersAsync.key]: JobOffersApi.getJobOffersAsync,
     [JobOffersApi.getJobOffersCountAsync.key]: JobOffersApi.getJobOffersCountAsync,
+    [JobOffersApi.getPublicJobOfferByIdAsync.key]: JobOffersApi.getPublicJobOfferByIdAsync,
+    [JobOffersApi.getPublicJobOffersAsync.key]: JobOffersApi.getPublicJobOffersAsync,
+    [JobOffersApi.getPublicJobOffersCountAsync.key]: JobOffersApi.getPublicJobOffersCountAsync,
     [JobOffersApi.patchJobOfferAsync.key]: JobOffersApi.patchJobOfferAsync,
+    [JobOffersApi.publishJobOfferAsync.key]: JobOffersApi.publishJobOfferAsync,
     [JobOffersApi.updateJobOfferAsync.key]: JobOffersApi.updateJobOfferAsync,
     [JobTitlesApi.createJobTitleAsync.key]: JobTitlesApi.createJobTitleAsync,
     [JobTitlesApi.deleteJobTitleAsync.key]: JobTitlesApi.deleteJobTitleAsync,
@@ -128,6 +175,13 @@ const actions = {
     [PayrollsApi.getPayrollsCountAsync.key]: PayrollsApi.getPayrollsCountAsync,
     [PayrollsApi.patchPayrollAsync.key]: PayrollsApi.patchPayrollAsync,
     [PayrollsApi.updatePayrollAsync.key]: PayrollsApi.updatePayrollAsync,
+    [RequiredSkillsApi.createRequiredSkillAsync.key]: RequiredSkillsApi.createRequiredSkillAsync,
+    [RequiredSkillsApi.deleteRequiredSkillAsync.key]: RequiredSkillsApi.deleteRequiredSkillAsync,
+    [RequiredSkillsApi.getRequiredSkillByIdAsync.key]: RequiredSkillsApi.getRequiredSkillByIdAsync,
+    [RequiredSkillsApi.getRequiredSkillsAsync.key]: RequiredSkillsApi.getRequiredSkillsAsync,
+    [RequiredSkillsApi.getRequiredSkillsCountAsync.key]: RequiredSkillsApi.getRequiredSkillsCountAsync,
+    [RequiredSkillsApi.patchRequiredSkillAsync.key]: RequiredSkillsApi.patchRequiredSkillAsync,
+    [RequiredSkillsApi.updateRequiredSkillAsync.key]: RequiredSkillsApi.updateRequiredSkillAsync,
     [SalariesApi.createSalaryAsync.key]: SalariesApi.createSalaryAsync,
     [SalariesApi.deleteSalaryAsync.key]: SalariesApi.deleteSalaryAsync,
     [SalariesApi.getSalariesAsync.key]: SalariesApi.getSalariesAsync,

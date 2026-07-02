@@ -65,6 +65,17 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}publicAccessType`,
+                label: `[${labelPrefix}publicAccessType]`,
+                type: 'string',
+                choices: [
+                    'false',
+                    'Container',
+                    'Blob',
+                    'Unknown',
+                ],
+            },
+            {
                 key: `${keyPrefix}metadata`,
                 label: `[${labelPrefix}metadata]`,
                 type: 'string',
@@ -91,6 +102,7 @@ module.exports = {
             'validResponse': bundle.inputData?.[`${keyPrefix}validResponse`],
             'parentFileUploadId': bundle.inputData?.[`${keyPrefix}parentFileUploadId`],
             'filePath': bundle.inputData?.[`${keyPrefix}filePath`],
+            'publicAccessType': bundle.inputData?.[`${keyPrefix}publicAccessType`],
             'metadata': bundle.inputData?.[`${keyPrefix}metadata`],
             'supportRequestId': bundle.inputData?.[`${keyPrefix}supportRequestId`],
         }

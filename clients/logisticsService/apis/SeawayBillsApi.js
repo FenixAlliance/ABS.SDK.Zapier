@@ -52,7 +52,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/SeawayBills/{billId}/Lines'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/SeawayBills/{billId}/Lines'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -114,7 +114,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/SeawayBills/{billId}/Cancel'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/SeawayBills/{billId}/Cancel'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -170,7 +170,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/SeawayBills'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/SeawayBills'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -232,7 +232,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/SeawayBills/{billId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/SeawayBills/{billId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -293,7 +293,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/SeawayBills/{billId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/SeawayBills/{billId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -354,7 +354,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/SeawayBills/{billId}/Lines'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/SeawayBills/{billId}/Lines'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -415,7 +415,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/SeawayBills/{billId}/Lines/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/SeawayBills/{billId}/Lines/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -470,7 +470,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/SeawayBills'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/SeawayBills'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -525,7 +525,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/SeawayBills/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/SeawayBills/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -586,7 +586,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/SeawayBills/{billId}/Issue'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/SeawayBills/{billId}/Issue'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -647,7 +647,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/SeawayBills/{billId}/MarkArrived'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/SeawayBills/{billId}/MarkArrived'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -708,7 +708,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/SeawayBills/{billId}/MarkInTransit'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/SeawayBills/{billId}/MarkInTransit'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -774,7 +774,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/SeawayBills/{billId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/SeawayBills/{billId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -847,7 +847,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/SeawayBills/{billId}/Lines/{lineId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/SeawayBills/{billId}/Lines/{lineId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -909,7 +909,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/SeawayBills/{billId}/Release'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/SeawayBills/{billId}/Release'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -976,7 +976,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/SeawayBills/{billId}/Lines/{lineId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/SeawayBills/{billId}/Lines/{lineId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1038,7 +1038,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/SeawayBills/{billId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/SeawayBills/{billId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1107,7 +1107,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/SeawayBills/{billId}/Lines/{lineId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/SeawayBills/{billId}/Lines/{lineId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

@@ -54,7 +54,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Tenants/{tenantId}/Options'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Tenants/{tenantId}/Options'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -117,7 +117,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Tenants/{tenantId}/Options/{optionId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Tenants/{tenantId}/Options/{optionId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -177,7 +177,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Tenants/{tenantId}/Options/{optionId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Tenants/{tenantId}/Options/{optionId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -236,7 +236,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Tenants/{tenantId}/Options'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Tenants/{tenantId}/Options'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -296,7 +296,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Tenants/{tenantId}/Options/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Tenants/{tenantId}/Options/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -362,7 +362,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Tenants/{tenantId}/Options/{optionId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Tenants/{tenantId}/Options/{optionId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -424,7 +424,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Tenants/{tenantId}/Options/{optionId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Tenants/{tenantId}/Options/{optionId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

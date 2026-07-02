@@ -31,7 +31,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Emails/Preview'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Emails/Preview'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -81,7 +81,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/Emails/SendBasic'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Emails/SendBasic'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

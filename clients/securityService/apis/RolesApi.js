@@ -57,7 +57,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/Roles/{securityRoleId}/Permissions/{securityPermissionId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/Roles/{securityRoleId}/Permissions/{securityPermissionId}'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -124,7 +124,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/Roles/{securityRoleId}/Applications/{applicationId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/Roles/{securityRoleId}/Applications/{applicationId}'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -191,7 +191,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/Roles/{securityRoleId}/Enrollments/{enrollmentId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/Roles/{securityRoleId}/Enrollments/{enrollmentId}'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -247,7 +247,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/Roles'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/Roles'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -309,7 +309,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/Roles/{securityRoleId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/Roles/{securityRoleId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -370,7 +370,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/Roles/{securityRoleId}/Applications'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/Roles/{securityRoleId}/Applications'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -431,7 +431,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/Roles/{securityRoleId}/Enrollments'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/Roles/{securityRoleId}/Enrollments'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -492,7 +492,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/Roles/{securityRoleId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/Roles/{securityRoleId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -553,7 +553,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/Roles/{securityRoleId}/Permissions'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/Roles/{securityRoleId}/Permissions'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -608,7 +608,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/Roles'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/Roles'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -669,7 +669,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/Roles/ByEnrollment/{enrollmentId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/Roles/ByEnrollment/{enrollmentId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -724,7 +724,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/Roles/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/Roles/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -790,7 +790,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/Roles/{securityRoleId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/Roles/{securityRoleId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -858,7 +858,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/Roles/{securityRoleId}/Permissions/{securityPermissionId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/Roles/{securityRoleId}/Permissions/{securityPermissionId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -925,7 +925,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/Roles/{securityRoleId}/Applications/{applicationId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/Roles/{securityRoleId}/Applications/{applicationId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -992,7 +992,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/Roles/{securityRoleId}/Enrollments/{enrollmentId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/Roles/{securityRoleId}/Enrollments/{enrollmentId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1054,7 +1054,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/Roles/{securityRoleId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/Roles/{securityRoleId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

@@ -37,7 +37,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/WishLists/Records'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/WishLists/Records'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -87,7 +87,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/WishLists'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/WishLists'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -142,7 +142,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/WishLists/{wishListId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/WishLists/{wishListId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -195,7 +195,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/WishLists/Records/{recordId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/WishLists/Records/{recordId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -249,7 +249,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/WishLists/{wishListId}/Details'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/WishLists/{wishListId}/Details'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -302,7 +302,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/WishLists/{wishListId}/Records'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/WishLists/{wishListId}/Records'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -355,7 +355,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/WishLists/{cartId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/WishLists/{cartId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -413,7 +413,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/WishLists/Contains'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/WishLists/Contains'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -474,7 +474,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/WishLists/{wishListId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/WishLists/{wishListId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -530,7 +530,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/WishLists/{wishListId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/WishLists/{wishListId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -584,7 +584,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/WishLists/Exists'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/WishLists/Exists'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -638,7 +638,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/CartService/WishLists/Exists'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CartService/WishLists/Exists'),
                     method: 'HEAD',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

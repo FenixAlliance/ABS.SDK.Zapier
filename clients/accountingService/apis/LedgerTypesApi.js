@@ -43,7 +43,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/LedgerTypes'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/LedgerTypes'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -105,7 +105,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/LedgerTypes/{ledgerTypeId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/LedgerTypes/{ledgerTypeId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -166,7 +166,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/LedgerTypes/{ledgerTypeId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/LedgerTypes/{ledgerTypeId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -221,7 +221,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/LedgerTypes'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/LedgerTypes'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -276,7 +276,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/LedgerTypes/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/LedgerTypes/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -342,7 +342,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/LedgerTypes/{ledgerTypeId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/LedgerTypes/{ledgerTypeId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -405,7 +405,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/LedgerTypes/{ledgerTypeId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/LedgerTypes/{ledgerTypeId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

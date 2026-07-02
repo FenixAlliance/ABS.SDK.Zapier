@@ -15,6 +15,17 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}status`,
+                label: `[${labelPrefix}status]`,
+                type: 'string',
+                choices: [
+                    'Draft',
+                    'Published',
+                    'Closed',
+                    'Filled',
+                ],
+            },
+            {
                 key: `${keyPrefix}remote`,
                 label: `[${labelPrefix}remote]`,
                 type: 'boolean',
@@ -271,6 +282,7 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
+            'status': bundle.inputData?.[`${keyPrefix}status`],
             'remote': bundle.inputData?.[`${keyPrefix}remote`],
             'expectedHireDate': bundle.inputData?.[`${keyPrefix}expectedHireDate`],
             'title': bundle.inputData?.[`${keyPrefix}title`],

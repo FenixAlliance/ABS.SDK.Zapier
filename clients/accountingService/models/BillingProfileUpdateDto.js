@@ -55,6 +55,31 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}verificationDigit`,
+                label: `[${labelPrefix}verificationDigit]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}economicActivityCode`,
+                label: `[${labelPrefix}economicActivityCode]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}economicActivityScheme`,
+                label: `[${labelPrefix}economicActivityScheme]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}isPrimary`,
+                label: `[${labelPrefix}isPrimary]`,
+                type: 'boolean',
+            },
+            {
+                key: `${keyPrefix}establishmentCode`,
+                label: `[${labelPrefix}establishmentCode]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}ticker`,
                 label: `[${labelPrefix}ticker]`,
                 type: 'string',
@@ -128,6 +153,11 @@ module.exports = {
             'postalCode': bundle.inputData?.[`${keyPrefix}postalCode`],
             'businessName': bundle.inputData?.[`${keyPrefix}businessName`],
             'commercialName': bundle.inputData?.[`${keyPrefix}commercialName`],
+            'verificationDigit': bundle.inputData?.[`${keyPrefix}verificationDigit`],
+            'economicActivityCode': bundle.inputData?.[`${keyPrefix}economicActivityCode`],
+            'economicActivityScheme': bundle.inputData?.[`${keyPrefix}economicActivityScheme`],
+            'isPrimary': bundle.inputData?.[`${keyPrefix}isPrimary`],
+            'establishmentCode': bundle.inputData?.[`${keyPrefix}establishmentCode`],
             'ticker': bundle.inputData?.[`${keyPrefix}ticker`],
             'duns': bundle.inputData?.[`${keyPrefix}duns`],
             'isPublicCompany': bundle.inputData?.[`${keyPrefix}isPublicCompany`],

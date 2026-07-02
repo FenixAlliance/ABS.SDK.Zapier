@@ -45,7 +45,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/OAuthApplications'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/OAuthApplications'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -107,7 +107,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/OAuthApplications/{applicationId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/OAuthApplications/{applicationId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -168,7 +168,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/OAuthApplications/{applicationId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/OAuthApplications/{applicationId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -223,7 +223,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/OAuthApplications'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/OAuthApplications'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -278,7 +278,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/OAuthApplications/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/OAuthApplications/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -339,7 +339,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/OAuthApplications/Authorizations/{authorizationId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/OAuthApplications/Authorizations/{authorizationId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -399,7 +399,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/OAuthApplications/Authorizations'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/OAuthApplications/Authorizations'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -460,7 +460,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/OAuthApplications/Authorizations/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/OAuthApplications/Authorizations/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -527,7 +527,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/OAuthApplications/{applicationId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/OAuthApplications/{applicationId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -590,7 +590,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SecurityService/OAuthApplications/{applicationId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SecurityService/OAuthApplications/{applicationId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

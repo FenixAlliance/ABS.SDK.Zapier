@@ -43,7 +43,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/BlockchainsService/NonFungibleTokens'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/BlockchainsService/NonFungibleTokens'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -104,7 +104,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/BlockchainsService/NonFungibleTokens/{id}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/BlockchainsService/NonFungibleTokens/{id}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -165,7 +165,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/BlockchainsService/NonFungibleTokens/{id}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/BlockchainsService/NonFungibleTokens/{id}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -221,7 +221,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/BlockchainsService/NonFungibleTokens'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/BlockchainsService/NonFungibleTokens'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -278,7 +278,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/BlockchainsService/NonFungibleTokens/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/BlockchainsService/NonFungibleTokens/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -345,7 +345,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/BlockchainsService/NonFungibleTokens/{id}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/BlockchainsService/NonFungibleTokens/{id}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -407,7 +407,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/BlockchainsService/NonFungibleTokens/{id}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/BlockchainsService/NonFungibleTokens/{id}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

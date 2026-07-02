@@ -49,7 +49,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ActivitiesService/ActivityTypes/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ActivitiesService/ActivityTypes/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -111,7 +111,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ActivitiesService/ActivityFeeds/{activityFeedId}/Activities'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ActivitiesService/ActivityFeeds/{activityFeedId}/Activities'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -168,7 +168,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ActivitiesService/ActivityTypes'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ActivitiesService/ActivityTypes'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -236,7 +236,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ActivitiesService/ActivityFeeds/{activityFeedId}/Activities/{activityId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ActivitiesService/ActivityFeeds/{activityFeedId}/Activities/{activityId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -297,7 +297,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ActivitiesService/ActivityTypes/{activityTypeId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ActivitiesService/ActivityTypes/{activityTypeId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -358,7 +358,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ActivitiesService/ActivityFeeds/{activityFeedId}/Activities'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ActivitiesService/ActivityFeeds/{activityFeedId}/Activities'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -419,7 +419,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ActivitiesService/ActivityFeeds/{activityFeedId}/Activities/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ActivitiesService/ActivityFeeds/{activityFeedId}/Activities/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -486,7 +486,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ActivitiesService/ActivityFeeds/{activityFeedId}/Activities/{activityId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ActivitiesService/ActivityFeeds/{activityFeedId}/Activities/{activityId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -547,7 +547,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ActivitiesService/ActivityFeeds/{activityFeedId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ActivitiesService/ActivityFeeds/{activityFeedId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -602,7 +602,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ActivitiesService/ActivityFeeds'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ActivitiesService/ActivityFeeds'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -657,7 +657,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ActivitiesService/ActivityFeeds/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ActivitiesService/ActivityFeeds/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -718,7 +718,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ActivitiesService/ActivityTypes/{activityTypeId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ActivitiesService/ActivityTypes/{activityTypeId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -773,7 +773,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ActivitiesService/ActivityTypes'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ActivitiesService/ActivityTypes'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -845,7 +845,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ActivitiesService/ActivityFeeds/{activityFeedId}/Activities/{activityId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ActivitiesService/ActivityFeeds/{activityFeedId}/Activities/{activityId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -912,7 +912,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ActivitiesService/ActivityTypes/{activityTypeId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ActivitiesService/ActivityTypes/{activityTypeId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -981,7 +981,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ActivitiesService/ActivityFeeds/{activityFeedId}/Activities/{activityId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ActivitiesService/ActivityFeeds/{activityFeedId}/Activities/{activityId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1044,7 +1044,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ActivitiesService/ActivityTypes/{activityTypeId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ActivitiesService/ActivityTypes/{activityTypeId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

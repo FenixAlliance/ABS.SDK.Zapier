@@ -32,7 +32,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SalesService/Stores/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SalesService/Stores/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -77,7 +77,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SalesService/Stores'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SalesService/Stores'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -128,7 +128,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SalesService/Stores/{storeId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SalesService/Stores/{storeId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -178,7 +178,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SalesService/Stores/{storeId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SalesService/Stores/{storeId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -222,7 +222,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SalesService/Stores'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SalesService/Stores'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -277,7 +277,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SalesService/Stores/{storeId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SalesService/Stores/{storeId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -329,7 +329,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SalesService/Stores/{storeId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SalesService/Stores/{storeId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

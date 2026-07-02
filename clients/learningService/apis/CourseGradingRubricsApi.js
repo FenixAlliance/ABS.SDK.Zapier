@@ -39,7 +39,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseGradingRubrics'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseGradingRubrics'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -100,7 +100,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseGradingRubrics/{rubricId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseGradingRubrics/{rubricId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -155,7 +155,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseGradingRubrics/{rubricId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseGradingRubrics/{rubricId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -208,7 +208,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseGradingRubrics'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseGradingRubrics'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -262,7 +262,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseGradingRubrics/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseGradingRubrics/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -327,7 +327,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseGradingRubrics/{rubricId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseGradingRubrics/{rubricId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -389,7 +389,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LearningService/CourseGradingRubrics/{rubricId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LearningService/CourseGradingRubrics/{rubricId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

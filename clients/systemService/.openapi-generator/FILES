@@ -2,12 +2,10 @@ README.md
 apis/AntiforgeryApi.js
 apis/BusinessDomainsApi.js
 apis/CartsApi.js
-apis/CompletionsApi.js
 apis/ContactOptionsApi.js
 apis/EmailsApi.js
-apis/FenixAlliancePortalsWebsiteApi.js
+apis/FenixAllianceABSWebApi.js
 apis/IPLookupsApi.js
-apis/LicensesApi.js
 apis/LicensingApi.js
 apis/MigrationsApi.js
 apis/ModulesApi.js
@@ -21,7 +19,6 @@ apis/UsersApi.js
 authentication.js
 index.js
 models/AccessTokenResponse.js
-models/AdditionalAttribute.js
 models/BooleanEnvelope.js
 models/BusinessDomainDto.js
 models/BusinessDomainDtoEnvelope.js
@@ -52,12 +49,6 @@ models/IValidationFailureListEnvelope.js
 models/InfoRequest.js
 models/InfoResponse.js
 models/Int32Envelope.js
-models/LicenseAttributesListEnvelope.js
-models/LicenseFeature.js
-models/LicenseKey.js
-models/LicenseKeyRequest.js
-models/LicenseValidationError.js
-models/LicenseValidationErrorListEnvelope.js
 models/LicenseValidationRequest.js
 models/LoginRequest.js
 models/Module.js
@@ -74,7 +65,6 @@ models/RegisterRequest.js
 models/ResendConfirmationEmailRequest.js
 models/ResetPasswordRequest.js
 models/SocialProfileDto.js
-models/StringEnvelope.js
 models/StringListEnvelope.js
 models/StudioModule.js
 models/StudioModuleListEnvelope.js

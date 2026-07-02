@@ -1,9 +1,9 @@
 README.md
-apis/CompletionsApi.js
+apis/BusinessRelationshipsApi.js
 apis/DepartmentsApi.js
 apis/EmployeeEnrollmentsApi.js
 apis/EnrollmentsApi.js
-apis/FenixAlliancePortalsWebsiteApi.js
+apis/FenixAllianceABSWebApi.js
 apis/IndustriesApi.js
 apis/InvitationsApi.js
 apis/OptionsApi.js
@@ -157,4 +157,5 @@ models/WebPortalDto.js
 models/WebPortalDtoListEnvelope.js
 operations/actions.js
 package.json
+samples/BusinessRelationshipsApi.js
 utils/utils.js

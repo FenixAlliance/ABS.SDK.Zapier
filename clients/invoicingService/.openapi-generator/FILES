@@ -1,11 +1,11 @@
 README.md
-apis/CompletionsApi.js
-apis/FenixAlliancePortalsWebsiteApi.js
+apis/FenixAllianceABSWebApi.js
 apis/InvoicesApi.js
 authentication.js
 index.js
 models/AccessTokenResponse.js
 models/CurrencyId.js
+models/DecimalEnvelope.js
 models/EmailDispatchRequest.js
 models/EmptyEnvelope.js
 models/Envelope.js

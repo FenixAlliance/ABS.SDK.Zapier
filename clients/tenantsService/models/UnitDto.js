@@ -20,6 +20,11 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}unECECode`,
+                label: `[${labelPrefix}unECECode]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}unitGroupId`,
                 label: `[${labelPrefix}unitGroupId]`,
                 type: 'string',
@@ -52,6 +57,7 @@ module.exports = {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'name': bundle.inputData?.[`${keyPrefix}name`],
+            'unECECode': bundle.inputData?.[`${keyPrefix}unECECode`],
             'unitGroupId': bundle.inputData?.[`${keyPrefix}unitGroupId`],
             'baseUnitAmount': bundle.inputData?.[`${keyPrefix}baseUnitAmount`],
             'baseUnitId': bundle.inputData?.[`${keyPrefix}baseUnitId`],

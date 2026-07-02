@@ -4,8 +4,7 @@ apis/BlogPostCategoriesApi.js
 apis/BlogPostTagsApi.js
 apis/BlogPostsApi.js
 apis/BusinessDomainsApi.js
-apis/CompletionsApi.js
-apis/FenixAlliancePortalsWebsiteApi.js
+apis/FenixAllianceABSWebApi.js
 apis/LocalizationStringsApi.js
 apis/MenuContextsApi.js
 apis/PortalsApi.js

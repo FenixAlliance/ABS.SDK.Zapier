@@ -58,7 +58,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/Portals/{portalId}/DomainBindings/{businessDomainId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/Portals/{portalId}/DomainBindings/{businessDomainId}'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -113,7 +113,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/Portals/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/Portals/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -169,7 +169,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/Portals'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/Portals'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -231,7 +231,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/Portals/{portalId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/Portals/{portalId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -280,7 +280,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/Portals/Current'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/Portals/Current'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -328,7 +328,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/Portals/Current/Options'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/Portals/Current/Options'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -382,7 +382,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/Portals'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/Portals'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -431,7 +431,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/Portals/Root'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/Portals/Root'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -485,7 +485,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/Portals/{portalId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/Portals/{portalId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -545,7 +545,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/Portals/{portalId}/DomainBindings'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/Portals/{portalId}/DomainBindings'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -600,7 +600,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/Portals/{portalId}/Options'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/Portals/{portalId}/Options'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -654,7 +654,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/Portals/{portalId}/Settings'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/Portals/{portalId}/Settings'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -702,7 +702,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/Portals/Initialize'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/Portals/Initialize'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -767,7 +767,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/Portals/{portalId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/Portals/{portalId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -823,7 +823,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/Portals/Search'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/Portals/Search'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -890,7 +890,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/Portals/{portalId}/DomainBindings/{businessDomainId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/Portals/{portalId}/DomainBindings/{businessDomainId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -952,7 +952,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/Portals/{portalId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/Portals/{portalId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1015,7 +1015,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/Portals/{portalId}/Settings'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/Portals/{portalId}/Settings'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

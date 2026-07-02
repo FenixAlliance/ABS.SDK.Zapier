@@ -42,7 +42,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/WebPageTags/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/WebPageTags/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -98,7 +98,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/WebPageTags'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/WebPageTags'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -160,7 +160,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/WebPageTags/{webPageTagId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/WebPageTags/{webPageTagId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -221,7 +221,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/WebPageTags/{webPageTagId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/WebPageTags/{webPageTagId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -276,7 +276,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/WebPageTags'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/WebPageTags'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -342,7 +342,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/WebPageTags/{webPageTagId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/WebPageTags/{webPageTagId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -405,7 +405,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/WebPageTags/{webPageTagId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/WebPageTags/{webPageTagId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

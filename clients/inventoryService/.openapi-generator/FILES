@@ -1,11 +1,9 @@
 README.md
-apis/CompletionsApi.js
-apis/FenixAlliancePortalsWebsiteApi.js
+apis/FenixAllianceABSWebApi.js
 apis/InventoryApi.js
 authentication.js
 index.js
 models/AccessTokenResponse.js
-models/ErrorEnvelope.js
 models/ForgotPasswordRequest.js
 models/HttpValidationProblemDetails.js
 models/InfoRequest.js

@@ -1,7 +1,6 @@
 README.md
 apis/BlockchainsApi.js
-apis/CompletionsApi.js
-apis/FenixAlliancePortalsWebsiteApi.js
+apis/FenixAllianceABSWebApi.js
 apis/NonFungibleTokensApi.js
 authentication.js
 index.js
@@ -137,4 +136,5 @@ models/X509Certificate2.js
 models/X509Extension.js
 operations/actions.js
 package.json
+samples/FenixAllianceABSWebApi.js
 utils/utils.js

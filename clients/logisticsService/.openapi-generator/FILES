@@ -1,8 +1,7 @@
 README.md
 apis/AirwayBillsApi.js
-apis/CompletionsApi.js
 apis/DeliveryNotesApi.js
-apis/FenixAlliancePortalsWebsiteApi.js
+apis/FenixAllianceABSWebApi.js
 apis/ItemPackingSlipsApi.js
 apis/ItemPickListsApi.js
 apis/ItemRestocksApi.js
@@ -26,6 +25,7 @@ models/AirwayBillDto.js
 models/AirwayBillDtoEnvelope.js
 models/AirwayBillDtoListEnvelope.js
 models/AirwayBillUpdateDto.js
+models/ContactCreateDto.js
 models/ContactDto.js
 models/DeliveryNoteCreateDto.js
 models/DeliveryNoteDto.js

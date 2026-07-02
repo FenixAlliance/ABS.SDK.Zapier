@@ -51,7 +51,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/Voyages/{voyageId}/Cancel'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/Voyages/{voyageId}/Cancel'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -112,7 +112,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/Voyages/{voyageId}/Complete'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/Voyages/{voyageId}/Complete'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -168,7 +168,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/Voyages'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/Voyages'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -231,7 +231,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/Voyages/{voyageId}/PortCalls'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/Voyages/{voyageId}/PortCalls'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -293,7 +293,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/Voyages/{voyageId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/Voyages/{voyageId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -360,7 +360,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/Voyages/{voyageId}/PortCalls/{portCallId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/Voyages/{voyageId}/PortCalls/{portCallId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -421,7 +421,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/Voyages/{voyageId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/Voyages/{voyageId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -482,7 +482,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/Voyages/{voyageId}/PortCalls'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/Voyages/{voyageId}/PortCalls'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -543,7 +543,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/Voyages/{voyageId}/PortCalls/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/Voyages/{voyageId}/PortCalls/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -598,7 +598,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/Voyages'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/Voyages'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -653,7 +653,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/Voyages/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/Voyages/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -719,7 +719,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/Voyages/{voyageId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/Voyages/{voyageId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -792,7 +792,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/Voyages/{voyageId}/PortCalls/{portCallId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/Voyages/{voyageId}/PortCalls/{portCallId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -854,7 +854,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/Voyages/{voyageId}/Start'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/Voyages/{voyageId}/Start'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -916,7 +916,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/Voyages/{voyageId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/Voyages/{voyageId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -985,7 +985,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/Voyages/{voyageId}/PortCalls/{portCallId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/Voyages/{voyageId}/PortCalls/{portCallId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

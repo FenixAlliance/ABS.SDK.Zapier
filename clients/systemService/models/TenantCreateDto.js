@@ -15,6 +15,15 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}kind`,
+                label: `[${labelPrefix}kind]`,
+                type: 'string',
+                choices: [
+                    'Organization',
+                    'Individual',
+                ],
+            },
+            {
                 key: `${keyPrefix}name`,
                 label: `[${labelPrefix}name]`,
                 required: true,
@@ -130,6 +139,7 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
+            'kind': bundle.inputData?.[`${keyPrefix}kind`],
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'legalName': bundle.inputData?.[`${keyPrefix}legalName`],
             'email': bundle.inputData?.[`${keyPrefix}email`],

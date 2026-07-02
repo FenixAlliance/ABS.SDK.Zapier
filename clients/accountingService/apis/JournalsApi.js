@@ -57,7 +57,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals/{journalId}/Entries/Aggregate/Credits'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/{journalId}/Entries/Aggregate/Credits'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -124,7 +124,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals/{journalId}/Entries/Aggregate/Debits'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/{journalId}/Entries/Aggregate/Debits'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -180,7 +180,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -236,7 +236,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -299,7 +299,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals/{journalId}/Entries'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/{journalId}/Entries'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -361,7 +361,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals/{journalId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/{journalId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -428,7 +428,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals/{journalId}/Entries/{entryId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/{journalId}/Entries/{entryId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -489,7 +489,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals/{journalId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/{journalId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -550,7 +550,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals/{journalId}/Entries'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/{journalId}/Entries'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -611,7 +611,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals/{journalId}/Entries/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/{journalId}/Entries/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -666,7 +666,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -732,7 +732,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals/{journalId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/{journalId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -805,7 +805,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals/{journalId}/Entries/{entryId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/{journalId}/Entries/{entryId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -868,7 +868,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals/{journalId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/{journalId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -937,7 +937,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/Journals/{journalId}/Entries/{entryId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/{journalId}/Entries/{entryId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

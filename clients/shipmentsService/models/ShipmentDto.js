@@ -83,6 +83,16 @@ module.exports = {
                 label: `[${labelPrefix}tenantId]`,
                 type: 'string',
             },
+            {
+                key: `${keyPrefix}sellerBillingProfileId`,
+                label: `[${labelPrefix}sellerBillingProfileId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}buyerBillingProfileId`,
+                label: `[${labelPrefix}buyerBillingProfileId]`,
+                type: 'string',
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -101,6 +111,8 @@ module.exports = {
             'shippingTerms': bundle.inputData?.[`${keyPrefix}shippingTerms`],
             'orderId': bundle.inputData?.[`${keyPrefix}orderId`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'sellerBillingProfileId': bundle.inputData?.[`${keyPrefix}sellerBillingProfileId`],
+            'buyerBillingProfileId': bundle.inputData?.[`${keyPrefix}buyerBillingProfileId`],
         }
     },
 }

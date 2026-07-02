@@ -1,7 +1,6 @@
 README.md
 apis/ApplicationsApi.js
-apis/CompletionsApi.js
-apis/FenixAlliancePortalsWebsiteApi.js
+apis/FenixAllianceABSWebApi.js
 apis/LogsApi.js
 apis/OAuthApplicationsApi.js
 apis/PermissionsApi.js

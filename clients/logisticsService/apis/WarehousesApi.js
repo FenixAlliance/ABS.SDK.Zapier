@@ -43,7 +43,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/Warehouses'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/Warehouses'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -105,7 +105,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/Warehouses/{warehouseId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/Warehouses/{warehouseId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -166,7 +166,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/Warehouses/{warehouseId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/Warehouses/{warehouseId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -221,7 +221,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/Warehouses'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/Warehouses'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -276,7 +276,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/Warehouses/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/Warehouses/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -342,7 +342,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/Warehouses/{warehouseId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/Warehouses/{warehouseId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -405,7 +405,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/Warehouses/{warehouseId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/Warehouses/{warehouseId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

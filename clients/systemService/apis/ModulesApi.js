@@ -37,7 +37,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/StudioService/Modules'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/StudioService/Modules'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -91,7 +91,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/StudioService/Modules/Data'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/StudioService/Modules/Data'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

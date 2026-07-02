@@ -45,6 +45,20 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}bodyHtml`,
+                label: `[${labelPrefix}bodyHtml]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}bodyFormat`,
+                label: `[${labelPrefix}bodyFormat]`,
+                type: 'string',
+                choices: [
+                    'PlainText',
+                    'Html',
+                ],
+            },
+            {
                 key: `${keyPrefix}socialPostId`,
                 label: `[${labelPrefix}socialPostId]`,
                 type: 'string',
@@ -62,6 +76,8 @@ module.exports = {
             'socialFeedPostId': bundle.inputData?.[`${keyPrefix}socialFeedPostId`],
             'socialProfileName': bundle.inputData?.[`${keyPrefix}socialProfileName`],
             'socialProfileAvatarUrl': bundle.inputData?.[`${keyPrefix}socialProfileAvatarUrl`],
+            'bodyHtml': bundle.inputData?.[`${keyPrefix}bodyHtml`],
+            'bodyFormat': bundle.inputData?.[`${keyPrefix}bodyFormat`],
             'socialPostId': bundle.inputData?.[`${keyPrefix}socialPostId`],
         }
     },

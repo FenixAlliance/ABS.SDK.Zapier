@@ -33,7 +33,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AssetsService/AssetTransfers'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AssetsService/AssetTransfers'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -84,7 +84,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AssetsService/AssetTransfers/{transferId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AssetsService/AssetTransfers/{transferId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -134,7 +134,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AssetsService/AssetTransfers/{transferId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AssetsService/AssetTransfers/{transferId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -178,7 +178,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AssetsService/AssetTransfers'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AssetsService/AssetTransfers'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -222,7 +222,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AssetsService/AssetTransfers/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AssetsService/AssetTransfers/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -277,7 +277,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AssetsService/AssetTransfers/{transferId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AssetsService/AssetTransfers/{transferId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -329,7 +329,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AssetsService/AssetTransfers/{transferId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AssetsService/AssetTransfers/{transferId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

@@ -48,7 +48,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/TruckDrivers/{driverId}/Activate'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/TruckDrivers/{driverId}/Activate'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -104,7 +104,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/TruckDrivers'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/TruckDrivers'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -166,7 +166,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/TruckDrivers/{driverId}/Deactivate'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/TruckDrivers/{driverId}/Deactivate'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -227,7 +227,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/TruckDrivers/{driverId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/TruckDrivers/{driverId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -288,7 +288,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/TruckDrivers/{driverId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/TruckDrivers/{driverId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -343,7 +343,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/TruckDrivers'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/TruckDrivers'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -398,7 +398,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/TruckDrivers/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/TruckDrivers/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -464,7 +464,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/TruckDrivers/{driverId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/TruckDrivers/{driverId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -527,7 +527,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/TruckDrivers/{driverId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/TruckDrivers/{driverId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

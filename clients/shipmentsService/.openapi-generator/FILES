@@ -1,7 +1,6 @@
 README.md
 apis/BillsOfLadingApi.js
-apis/CompletionsApi.js
-apis/FenixAlliancePortalsWebsiteApi.js
+apis/FenixAllianceABSWebApi.js
 apis/ItemShippingPoliciesApi.js
 apis/ShipmentsApi.js
 apis/ShippingClassesApi.js

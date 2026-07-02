@@ -1,5 +1,4 @@
 README.md
-apis/CompletionsApi.js
 apis/CourseArticlesApi.js
 apis/CourseAssignmentComponentsApi.js
 apis/CourseAssignmentTypesApi.js
@@ -23,7 +22,7 @@ apis/CourseUnitsApi.js
 apis/CourseUpdatesApi.js
 apis/CourseWikisApi.js
 apis/CoursesApi.js
-apis/FenixAlliancePortalsWebsiteApi.js
+apis/FenixAllianceABSWebApi.js
 apis/InstructorProfilesApi.js
 apis/MeApi.js
 apis/StudentProfilesApi.js
@@ -32,6 +31,7 @@ index.js
 models/AccessTokenResponse.js
 models/AverageDto.js
 models/AverageDtoEnvelope.js
+models/ContactCreateDto.js
 models/ContactDto.js
 models/CountDto.js
 models/CountDtoEnvelope.js

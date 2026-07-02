@@ -33,7 +33,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SalesService/SalesLiteratures/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SalesService/SalesLiteratures/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -78,7 +78,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SalesService/SalesLiteratures'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SalesService/SalesLiteratures'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -129,7 +129,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SalesService/SalesLiteratures/{salesLiteratureId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SalesService/SalesLiteratures/{salesLiteratureId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -173,7 +173,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SalesService/SalesLiteratures/Extended'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SalesService/SalesLiteratures/Extended'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -223,7 +223,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SalesService/SalesLiteratures/{salesLiteratureId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SalesService/SalesLiteratures/{salesLiteratureId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -267,7 +267,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SalesService/SalesLiteratures'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SalesService/SalesLiteratures'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -322,7 +322,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SalesService/SalesLiteratures/{salesLiteratureId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SalesService/SalesLiteratures/{salesLiteratureId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -374,7 +374,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SalesService/SalesLiteratures/{salesLiteratureId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SalesService/SalesLiteratures/{salesLiteratureId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

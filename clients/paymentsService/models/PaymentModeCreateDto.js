@@ -25,6 +25,11 @@ module.exports = {
                 label: `[${labelPrefix}description]`,
                 type: 'string',
             },
+            {
+                key: `${keyPrefix}paymentMeansCode`,
+                label: `[${labelPrefix}paymentMeansCode]`,
+                type: 'string',
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -34,6 +39,7 @@ module.exports = {
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
+            'paymentMeansCode': bundle.inputData?.[`${keyPrefix}paymentMeansCode`],
         }
     },
 }

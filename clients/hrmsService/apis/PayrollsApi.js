@@ -43,7 +43,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/Payrolls'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/Payrolls'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -105,7 +105,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/Payrolls/{payrollId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/Payrolls/{payrollId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -166,7 +166,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/Payrolls/{payrollId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/Payrolls/{payrollId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -221,7 +221,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/Payrolls'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/Payrolls'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -276,7 +276,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/Payrolls/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/Payrolls/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -342,7 +342,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/Payrolls/{payrollId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/Payrolls/{payrollId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -405,7 +405,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/HrmsService/Payrolls/{payrollId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/HrmsService/Payrolls/{payrollId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

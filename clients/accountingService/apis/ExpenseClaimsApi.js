@@ -43,7 +43,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/ExpenseClaims'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/ExpenseClaims'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -105,7 +105,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/ExpenseClaims/{expenseClaimId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/ExpenseClaims/{expenseClaimId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -166,7 +166,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/ExpenseClaims/{expenseClaimId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/ExpenseClaims/{expenseClaimId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -221,7 +221,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/ExpenseClaims'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/ExpenseClaims'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -276,7 +276,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/ExpenseClaims/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/ExpenseClaims/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -342,7 +342,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/ExpenseClaims/{expenseClaimId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/ExpenseClaims/{expenseClaimId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -405,7 +405,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/ExpenseClaims/{expenseClaimId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/ExpenseClaims/{expenseClaimId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

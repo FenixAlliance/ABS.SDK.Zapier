@@ -1,6 +1,8 @@
 README.md
-apis/CompletionsApi.js
-apis/FenixAlliancePortalsWebsiteApi.js
+apis/CurriculumExperiencesApi.js
+apis/CurriculumsApi.js
+apis/FenixAllianceABSWebApi.js
+apis/SkillsApi.js
 apis/SocialFeedsApi.js
 apis/SocialGroupsApi.js
 apis/SocialPostsApi.js
@@ -12,6 +14,16 @@ models/BooleanEnvelope.js
 models/ConversationCreateDto.js
 models/ConversationDto.js
 models/ConversationDtoListEnvelope.js
+models/CurriculumCreateDto.js
+models/CurriculumDto.js
+models/CurriculumDtoEnvelope.js
+models/CurriculumDtoListEnvelope.js
+models/CurriculumExperienceCreateDto.js
+models/CurriculumExperienceDto.js
+models/CurriculumExperienceDtoEnvelope.js
+models/CurriculumExperienceDtoListEnvelope.js
+models/CurriculumExperienceUpdateDto.js
+models/CurriculumUpdateDto.js
 models/EmptyEnvelope.js
 models/ErrorEnvelope.js
 models/FollowRecordDto.js
@@ -34,6 +46,11 @@ models/RefreshRequest.js
 models/RegisterRequest.js
 models/ResendConfirmationEmailRequest.js
 models/ResetPasswordRequest.js
+models/SkillCreateDto.js
+models/SkillDto.js
+models/SkillDtoEnvelope.js
+models/SkillDtoListEnvelope.js
+models/SkillUpdateDto.js
 models/SocialFeedDto.js
 models/SocialFeedDtoEnvelope.js
 models/SocialFeedDtoListEnvelope.js
@@ -74,4 +91,7 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
+samples/CurriculumExperiencesApi.js
+samples/CurriculumsApi.js
+samples/SkillsApi.js
 utils/utils.js

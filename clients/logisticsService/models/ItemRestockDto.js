@@ -34,6 +34,16 @@ module.exports = {
                 label: `[${labelPrefix}entryCount]`,
                 type: 'integer',
             },
+            {
+                key: `${keyPrefix}sellerBillingProfileId`,
+                label: `[${labelPrefix}sellerBillingProfileId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}buyerBillingProfileId`,
+                label: `[${labelPrefix}buyerBillingProfileId]`,
+                type: 'string',
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -45,6 +55,8 @@ module.exports = {
             'description': bundle.inputData?.[`${keyPrefix}description`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'entryCount': bundle.inputData?.[`${keyPrefix}entryCount`],
+            'sellerBillingProfileId': bundle.inputData?.[`${keyPrefix}sellerBillingProfileId`],
+            'buyerBillingProfileId': bundle.inputData?.[`${keyPrefix}buyerBillingProfileId`],
         }
     },
 }

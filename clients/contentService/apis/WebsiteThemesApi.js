@@ -42,7 +42,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/WebsiteThemes'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/WebsiteThemes'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -103,7 +103,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/WebsiteThemes/{id}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/WebsiteThemes/{id}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -164,7 +164,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/WebsiteThemes/{id}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/WebsiteThemes/{id}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -220,7 +220,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/WebsiteThemes'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/WebsiteThemes'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -277,7 +277,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/WebsiteThemes/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/WebsiteThemes/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -343,7 +343,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/WebsiteThemes/{id}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/WebsiteThemes/{id}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -405,7 +405,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/ContentService/WebsiteThemes/{id}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ContentService/WebsiteThemes/{id}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

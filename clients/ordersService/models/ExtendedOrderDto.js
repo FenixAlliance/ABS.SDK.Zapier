@@ -378,6 +378,16 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}sellerBillingProfileId`,
+                label: `[${labelPrefix}sellerBillingProfileId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}buyerBillingProfileId`,
+                label: `[${labelPrefix}buyerBillingProfileId]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}costCalculationMethod`,
                 label: `[${labelPrefix}costCalculationMethod]`,
                 type: 'string',
@@ -546,6 +556,8 @@ module.exports = {
             'billingLocationId': bundle.inputData?.[`${keyPrefix}billingLocationId`],
             'shippingLocationId': bundle.inputData?.[`${keyPrefix}shippingLocationId`],
             'qualifiedIdentifier': bundle.inputData?.[`${keyPrefix}qualifiedIdentifier`],
+            'sellerBillingProfileId': bundle.inputData?.[`${keyPrefix}sellerBillingProfileId`],
+            'buyerBillingProfileId': bundle.inputData?.[`${keyPrefix}buyerBillingProfileId`],
             'costCalculationMethod': bundle.inputData?.[`${keyPrefix}costCalculationMethod`],
             'freightTerms': bundle.inputData?.[`${keyPrefix}freightTerms`],
             'orderStatus': bundle.inputData?.[`${keyPrefix}orderStatus`],

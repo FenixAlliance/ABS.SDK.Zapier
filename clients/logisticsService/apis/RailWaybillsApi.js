@@ -52,7 +52,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/RailWaybills/{waybillId}/Lines'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/RailWaybills/{waybillId}/Lines'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -114,7 +114,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/RailWaybills/{waybillId}/Cancel'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/RailWaybills/{waybillId}/Cancel'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -170,7 +170,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/RailWaybills'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/RailWaybills'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -232,7 +232,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/RailWaybills/{waybillId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/RailWaybills/{waybillId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -293,7 +293,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/RailWaybills/{waybillId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/RailWaybills/{waybillId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -354,7 +354,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/RailWaybills/{waybillId}/Lines'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/RailWaybills/{waybillId}/Lines'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -415,7 +415,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/RailWaybills/{waybillId}/Lines/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/RailWaybills/{waybillId}/Lines/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -470,7 +470,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/RailWaybills'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/RailWaybills'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -525,7 +525,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/RailWaybills/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/RailWaybills/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -586,7 +586,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/RailWaybills/{waybillId}/Issue'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/RailWaybills/{waybillId}/Issue'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -647,7 +647,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/RailWaybills/{waybillId}/MarkDelivered'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/RailWaybills/{waybillId}/MarkDelivered'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -708,7 +708,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/RailWaybills/{waybillId}/MarkInTransit'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/RailWaybills/{waybillId}/MarkInTransit'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -774,7 +774,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/RailWaybills/{waybillId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/RailWaybills/{waybillId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -847,7 +847,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/RailWaybills/{waybillId}/Lines/{lineId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/RailWaybills/{waybillId}/Lines/{lineId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -915,7 +915,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/RailWaybills/{waybillId}/Lines/{lineId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/RailWaybills/{waybillId}/Lines/{lineId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -977,7 +977,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/RailWaybills/{waybillId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/RailWaybills/{waybillId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1046,7 +1046,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/LogisticsService/RailWaybills/{waybillId}/Lines/{lineId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/LogisticsService/RailWaybills/{waybillId}/Lines/{lineId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

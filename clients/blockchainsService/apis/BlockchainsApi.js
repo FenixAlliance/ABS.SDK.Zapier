@@ -48,7 +48,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/BlockchainsService/Blockchains'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/BlockchainsService/Blockchains'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -110,7 +110,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/BlockchainsService/Blockchains/{blockchainId}/Blocks'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/BlockchainsService/Blockchains/{blockchainId}/Blocks'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -171,7 +171,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/BlockchainsService/Blockchains/{id}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/BlockchainsService/Blockchains/{id}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -237,7 +237,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/BlockchainsService/Blockchains/{blockchainId}/Blocks/{blockId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/BlockchainsService/Blockchains/{blockchainId}/Blocks/{blockId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -304,7 +304,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/BlockchainsService/Blockchains/{blockchainId}/Blocks/{blockId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/BlockchainsService/Blockchains/{blockchainId}/Blocks/{blockId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -366,7 +366,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/BlockchainsService/Blockchains/{blockchainId}/Blocks'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/BlockchainsService/Blockchains/{blockchainId}/Blocks'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -429,7 +429,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/BlockchainsService/Blockchains/{blockchainId}/Blocks/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/BlockchainsService/Blockchains/{blockchainId}/Blocks/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -491,7 +491,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/BlockchainsService/Blockchains/{id}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/BlockchainsService/Blockchains/{id}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -547,7 +547,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/BlockchainsService/Blockchains'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/BlockchainsService/Blockchains'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -604,7 +604,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/BlockchainsService/Blockchains/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/BlockchainsService/Blockchains/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -671,7 +671,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/BlockchainsService/Blockchains/{id}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/BlockchainsService/Blockchains/{id}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -744,7 +744,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/BlockchainsService/Blockchains/{blockchainId}/Blocks/{blockId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/BlockchainsService/Blockchains/{blockchainId}/Blocks/{blockId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -806,7 +806,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/BlockchainsService/Blockchains/{id}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/BlockchainsService/Blockchains/{id}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -874,7 +874,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/BlockchainsService/Blockchains/{blockchainId}/Blocks/{blockId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/BlockchainsService/Blockchains/{blockchainId}/Blocks/{blockId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

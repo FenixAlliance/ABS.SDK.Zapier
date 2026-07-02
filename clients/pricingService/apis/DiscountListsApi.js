@@ -37,7 +37,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/DiscountLists'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/DiscountLists'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -89,7 +89,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/DiscountLists/{discountListId}/Discounts'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/DiscountLists/{discountListId}/Discounts'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -140,7 +140,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/DiscountLists/{discountListId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/DiscountLists/{discountListId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -196,7 +196,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/DiscountLists/{discountListId}/Discounts/{discountListEntryId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/DiscountLists/{discountListId}/Discounts/{discountListEntryId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -246,7 +246,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/DiscountLists/{discountListId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/DiscountLists/{discountListId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -296,7 +296,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/DiscountLists/{discountListId}/Discounts'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/DiscountLists/{discountListId}/Discounts'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -346,7 +346,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/DiscountLists/{discountListId}/Discounts/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/DiscountLists/{discountListId}/Discounts/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -402,7 +402,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/DiscountLists/{discountListId}/Discounts/{discountListEntryId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/DiscountLists/{discountListId}/Discounts/{discountListEntryId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -446,7 +446,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/DiscountLists'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/DiscountLists'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -490,7 +490,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/DiscountLists/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/DiscountLists/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -545,7 +545,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/DiscountLists/{discountListId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/DiscountLists/{discountListId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -607,7 +607,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/DiscountLists/{discountListId}/Discounts/{discountListEntryId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/DiscountLists/{discountListId}/Discounts/{discountListEntryId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -659,7 +659,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/DiscountLists/{discountListId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/DiscountLists/{discountListId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -717,7 +717,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/DiscountLists/{discountListId}/Discounts/{discountListEntryId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/DiscountLists/{discountListId}/Discounts/{discountListEntryId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

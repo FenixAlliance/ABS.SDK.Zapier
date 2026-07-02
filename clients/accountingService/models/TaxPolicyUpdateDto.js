@@ -125,6 +125,16 @@ module.exports = {
                 type: 'boolean',
             },
             {
+                key: `${keyPrefix}taxSchemeCode`,
+                label: `[${labelPrefix}taxSchemeCode]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}taxCategoryCode`,
+                label: `[${labelPrefix}taxCategoryCode]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}fiscalAuthorityId`,
                 label: `[${labelPrefix}fiscalAuthorityId]`,
                 type: 'string',
@@ -158,6 +168,8 @@ module.exports = {
             'zero': bundle.inputData?.[`${keyPrefix}zero`],
             'reduced': bundle.inputData?.[`${keyPrefix}reduced`],
             'withholding': bundle.inputData?.[`${keyPrefix}withholding`],
+            'taxSchemeCode': bundle.inputData?.[`${keyPrefix}taxSchemeCode`],
+            'taxCategoryCode': bundle.inputData?.[`${keyPrefix}taxCategoryCode`],
             'fiscalAuthorityId': bundle.inputData?.[`${keyPrefix}fiscalAuthorityId`],
         }
     },

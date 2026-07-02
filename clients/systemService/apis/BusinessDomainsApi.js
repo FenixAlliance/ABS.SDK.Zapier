@@ -39,7 +39,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/BusinessDomains/{businessDomainId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/BusinessDomains/{businessDomainId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -93,7 +93,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/BusinessDomains/{businessDomainId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/BusinessDomains/{businessDomainId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -141,7 +141,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/BusinessDomains'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/BusinessDomains'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -189,7 +189,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/BusinessDomains/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/BusinessDomains/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -243,7 +243,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SystemService/BusinessDomains/{businessDomainId}/Verify'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/BusinessDomains/{businessDomainId}/Verify'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

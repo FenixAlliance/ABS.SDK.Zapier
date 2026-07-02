@@ -19,6 +19,11 @@ module.exports = {
                 label: `[${labelPrefix}baseUnitId]`,
                 type: 'string',
             },
+            {
+                key: `${keyPrefix}unECECode`,
+                label: `[${labelPrefix}unECECode]`,
+                type: 'string',
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -27,6 +32,7 @@ module.exports = {
             'name': bundle.inputData?.[`${keyPrefix}name`],
             'baseUnitAmount': bundle.inputData?.[`${keyPrefix}baseUnitAmount`],
             'baseUnitId': bundle.inputData?.[`${keyPrefix}baseUnitId`],
+            'unECECode': bundle.inputData?.[`${keyPrefix}unECECode`],
         }
     },
 }

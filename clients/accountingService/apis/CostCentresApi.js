@@ -51,7 +51,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/CostCentres'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/CostCentres'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -108,7 +108,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/CostCentres/CostCentreBudgets'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/CostCentres/CostCentreBudgets'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -165,7 +165,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/CostCentres/CostCentreGroups'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/CostCentres/CostCentreGroups'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -227,7 +227,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/CostCentres/{costCentreId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/CostCentres/{costCentreId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -288,7 +288,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/CostCentres/CostCentreBudgets/{budgetId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/CostCentres/CostCentreBudgets/{budgetId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -349,7 +349,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/CostCentres/CostCentreGroups/{groupId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/CostCentres/CostCentreGroups/{groupId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -410,7 +410,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/CostCentres/{costCentreId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/CostCentres/{costCentreId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -471,7 +471,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/CostCentres/CostCentreBudgets/{budgetId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/CostCentres/CostCentreBudgets/{budgetId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -526,7 +526,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/CostCentres/CostCentreBudgets'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/CostCentres/CostCentreBudgets'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -587,7 +587,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/CostCentres/CostCentreGroups/{groupId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/CostCentres/CostCentreGroups/{groupId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -642,7 +642,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/CostCentres/CostCentreGroups'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/CostCentres/CostCentreGroups'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -697,7 +697,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/CostCentres/CostCentreGroups/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/CostCentres/CostCentreGroups/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -752,7 +752,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/CostCentres'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/CostCentres'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -807,7 +807,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/CostCentres/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/CostCentres/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -873,7 +873,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/CostCentres/{costCentreId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/CostCentres/{costCentreId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -940,7 +940,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/CostCentres/CostCentreBudgets/{budgetId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/CostCentres/CostCentreBudgets/{budgetId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1007,7 +1007,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/CostCentres/CostCentreGroups/{groupId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/CostCentres/CostCentreGroups/{groupId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1070,7 +1070,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/CostCentres/{costCentreId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/CostCentres/{costCentreId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1133,7 +1133,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/CostCentres/CostCentreBudgets/{budgetId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/CostCentres/CostCentreBudgets/{budgetId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -1196,7 +1196,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AccountingService/CostCentres/CostCentreGroups/{groupId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/CostCentres/CostCentreGroups/{groupId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

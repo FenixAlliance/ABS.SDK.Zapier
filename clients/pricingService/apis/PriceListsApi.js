@@ -37,7 +37,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/PriceLists'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/PriceLists'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -89,7 +89,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/PriceLists/{priceListId}/Prices'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/PriceLists/{priceListId}/Prices'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -140,7 +140,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/PriceLists/{priceListId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/PriceLists/{priceListId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -196,7 +196,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/PriceLists/{priceListId}/Prices/{priceId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/PriceLists/{priceListId}/Prices/{priceId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -246,7 +246,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/PriceLists/{priceListId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/PriceLists/{priceListId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -302,7 +302,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/PriceLists/{priceListId}/Prices/{priceId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/PriceLists/{priceListId}/Prices/{priceId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -357,7 +357,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/PriceLists/{priceListId}/Prices'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/PriceLists/{priceListId}/Prices'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -378,6 +378,56 @@ module.exports = {
                 })
             },
             sample: samples['ItemPriceDtoListEnvelopeSample']
+        }
+    },
+    getPriceListPricesCountAsync: {
+        key: 'getPriceListPricesCountAsync',
+        noun: 'PriceLists',
+        display: {
+            label: 'Counts prices in a price list',
+            description: 'Gets the count of price entries for a specific price list.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'priceListId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+            ],
+            outputFields: [
+                ...Int32Envelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/PriceLists/{priceListId}/Prices/Count'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getPriceListPricesCountAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['Int32EnvelopeSample']
         }
     },
     getPriceListsAsync: {
@@ -402,7 +452,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/PriceLists'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/PriceLists'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -446,7 +496,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/PriceLists/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/PriceLists/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -501,7 +551,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/PriceLists/{priceListId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/PriceLists/{priceListId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -563,7 +613,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/PriceLists/{priceListId}/Prices/{priceId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/PriceLists/{priceListId}/Prices/{priceId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -615,7 +665,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/PriceLists/{priceListId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/PriceLists/{priceListId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -673,7 +723,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/PricingService/PriceLists/{priceListId}/Prices/{priceId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/PricingService/PriceLists/{priceListId}/Prices/{priceId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

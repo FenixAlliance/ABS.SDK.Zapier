@@ -1,8 +1,7 @@
 README.md
-apis/CompletionsApi.js
 apis/DealUnitFlowsApi.js
 apis/DealUnitsApi.js
-apis/FenixAlliancePortalsWebsiteApi.js
+apis/FenixAllianceABSWebApi.js
 authentication.js
 index.js
 models/AccessTokenResponse.js

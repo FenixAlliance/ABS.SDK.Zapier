@@ -43,7 +43,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SupportService/ReturnPolicies'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SupportService/ReturnPolicies'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -105,7 +105,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SupportService/ReturnPolicies/{returnPolicyId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SupportService/ReturnPolicies/{returnPolicyId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -160,7 +160,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SupportService/ReturnPolicies'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SupportService/ReturnPolicies'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -215,7 +215,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SupportService/ReturnPolicies/Count'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SupportService/ReturnPolicies/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -276,7 +276,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SupportService/ReturnPolicies/{returnPolicyId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SupportService/ReturnPolicies/{returnPolicyId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -342,7 +342,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SupportService/ReturnPolicies/{returnPolicyId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SupportService/ReturnPolicies/{returnPolicyId}'),
                     method: 'PATCH',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -405,7 +405,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/SupportService/ReturnPolicies/{returnPolicyId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SupportService/ReturnPolicies/{returnPolicyId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

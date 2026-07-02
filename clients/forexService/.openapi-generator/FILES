@@ -1,8 +1,7 @@
 README.md
-apis/CompletionsApi.js
 apis/ExchangeApi.js
 apis/ExchangeVApi.js
-apis/FenixAlliancePortalsWebsiteApi.js
+apis/FenixAllianceABSWebApi.js
 apis/RatesApi.js
 authentication.js
 index.js

@@ -1,4 +1,5 @@
 const utils = require('../utils/utils');
+const ContactCreateDto = require('../models/ContactCreateDto');
 
 module.exports = {
     fields: (prefix = '', isInput = true, isArrayChild = false) => {
@@ -24,6 +25,7 @@ module.exports = {
                 label: `[${labelPrefix}contactId]`,
                 type: 'string',
             },
+            ...ContactCreateDto.fields(`${keyPrefix}contact`, isInput),
             {
                 key: `${keyPrefix}about`,
                 label: `[${labelPrefix}about]`,
@@ -148,6 +150,7 @@ module.exports = {
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'type': bundle.inputData?.[`${keyPrefix}type`],
             'contactId': bundle.inputData?.[`${keyPrefix}contactId`],
+            'contact': utils.removeIfEmpty(ContactCreateDto.mapping(bundle, `${keyPrefix}contact`)),
             'about': bundle.inputData?.[`${keyPrefix}about`],
             'avatarUrl': bundle.inputData?.[`${keyPrefix}avatarUrl`],
             'data': bundle.inputData?.[`${keyPrefix}data`],

@@ -65,6 +65,11 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}webPortalId`,
+                label: `[${labelPrefix}webPortalId]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}webTemplateId`,
                 label: `[${labelPrefix}webTemplateId]`,
                 type: 'string',
@@ -89,6 +94,7 @@ module.exports = {
             'featuredImageUrl': bundle.inputData?.[`${keyPrefix}featuredImageUrl`],
             'codeType': bundle.inputData?.[`${keyPrefix}codeType`],
             'slug': bundle.inputData?.[`${keyPrefix}slug`],
+            'webPortalId': bundle.inputData?.[`${keyPrefix}webPortalId`],
             'webTemplateId': bundle.inputData?.[`${keyPrefix}webTemplateId`],
             'parentWebContentId': bundle.inputData?.[`${keyPrefix}parentWebContentId`],
         }
