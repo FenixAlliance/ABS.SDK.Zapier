@@ -1,4 +1,5 @@
 const samples = require('../samples/FilesApi');
+const ByteArray = require('../models/ByteArray');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const FileUploadDtoEnvelope = require('../models/FileUploadDtoEnvelope');
@@ -33,14 +34,9 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'id',
+                    key: 'file',
                     label: '',
-                    type: 'string',
-                },
-                {
-                    key: 'timestamp',
-                    label: '',
-                    type: 'string',
+                    type: 'file',
                 },
                 {
                     key: 'notes',
@@ -93,9 +89,128 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'file',
+                    key: 'publicAccessType',
                     label: '',
-                    type: 'file',
+                    type: 'string',
+                    choices: [
+                        'false',
+                        'Container',
+                        'Blob',
+                        'Unknown',
+                    ],
+                },
+                {
+                    key: 'purpose',
+                    label: '',
+                    type: 'string',
+                    choices: [
+                        'Unknown',
+                        'IdentityAvatar',
+                        'IdentityBanner',
+                        'ProfileAsset',
+                        'EngagementInline',
+                        'EngagementAttachment',
+                        'MessageAttachment',
+                        'SocialPost',
+                        'RecordAttachment',
+                        'AiGenerated',
+                        'SystemArtifact',
+                        'Temporary',
+                    ],
+                },
+                {
+                    key: 'socialProfileId.value',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'appFile.content',
+                    label: '',
+                    type: 'ByteArray',
+                },
+                {
+                    key: 'appFile.sha256',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'appFile.createdAtUtc',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'appFile.userId.value',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'appFile.tenantId.value',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'appFile.enrollmentId.value',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'appFile.source',
+                    label: '',
+                    type: 'string',
+                    choices: [
+                        'Unknown',
+                        'HttpUpload',
+                        'Integration',
+                        'InternalProcess',
+                        'ApiClient',
+                        'WorkflowEngine',
+                    ],
+                },
+                {
+                    key: 'appFile.length',
+                    label: '',
+                    type: 'number',
+                },
+                {
+                    key: 'appFile.name',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'appFile.fileName',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'appFile.lastModified',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'appFile.size',
+                    label: '',
+                    type: 'number',
+                },
+                {
+                    key: 'appFile.contentType',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'appFile.contentDisposition',
+                    label: '',
+                    type: 'string',
+                },
+                ...object.fields(),
+                {
+                    key: 'id',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'timestamp',
+                    label: '',
+                    type: 'string',
                 },
             ],
             outputFields: [
@@ -103,8 +218,8 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const formData = new FormData()
-                formData.append('id', bundle.inputData?.['id'])
-                formData.append('timestamp', bundle.inputData?.['timestamp'])
+                const filename = bundle.inputData?.['filename'] || bundle.inputData?.['file'].split('/').slice(-1)[0]
+                formData.append('file', (await (await z.request({url: bundle.inputData?.['file'], method: 'GET', raw: true})).buffer()), { filename: filename })
                 formData.append('notes', bundle.inputData?.['notes'])
                 formData.append('title', bundle.inputData?.['title'])
                 formData.append('author', bundle.inputData?.['author'])
@@ -115,10 +230,28 @@ module.exports = {
                 formData.append('validResponse', bundle.inputData?.['validResponse'])
                 formData.append('parentFileUploadId', bundle.inputData?.['parentFileUploadId'])
                 formData.append('filePath', bundle.inputData?.['filePath'])
-                const filename = bundle.inputData?.['filename'] || bundle.inputData?.['file'].split('/').slice(-1)[0]
-                formData.append('file', (await (await z.request({url: bundle.inputData?.['file'], method: 'GET', raw: true})).buffer()), { filename: filename })
+                formData.append('publicAccessType', bundle.inputData?.['publicAccessType'])
+                formData.append('purpose', bundle.inputData?.['purpose'])
+                formData.append('socialProfileId.value', bundle.inputData?.['socialProfileId.value'])
+                formData.append('appFile.content', bundle.inputData?.['appFile.content'])
+                formData.append('appFile.sha256', bundle.inputData?.['appFile.sha256'])
+                formData.append('appFile.createdAtUtc', bundle.inputData?.['appFile.createdAtUtc'])
+                formData.append('appFile.userId.value', bundle.inputData?.['appFile.userId.value'])
+                formData.append('appFile.tenantId.value', bundle.inputData?.['appFile.tenantId.value'])
+                formData.append('appFile.enrollmentId.value', bundle.inputData?.['appFile.enrollmentId.value'])
+                formData.append('appFile.source', bundle.inputData?.['appFile.source'])
+                formData.append('appFile.length', bundle.inputData?.['appFile.length'])
+                formData.append('appFile.name', bundle.inputData?.['appFile.name'])
+                formData.append('appFile.fileName', bundle.inputData?.['appFile.fileName'])
+                formData.append('appFile.lastModified', bundle.inputData?.['appFile.lastModified'])
+                formData.append('appFile.size', bundle.inputData?.['appFile.size'])
+                formData.append('appFile.contentType', bundle.inputData?.['appFile.contentType'])
+                formData.append('appFile.contentDisposition', bundle.inputData?.['appFile.contentDisposition'])
+                formData.append('appFile.headers', bundle.inputData?.['appFile.headers'])
+                formData.append('id', bundle.inputData?.['id'])
+                formData.append('timestamp', bundle.inputData?.['timestamp'])
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/Files'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Files'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -173,11 +306,11 @@ module.exports = {
                 },
             ],
             outputFields: [
-                ...FileUploadDtoEnvelope.fields('', false),
+                ...EmptyEnvelope.fields('', false),
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/Files/{fileId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Files/{fileId}'),
                     method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -197,7 +330,7 @@ module.exports = {
                     return results;
                 })
             },
-            sample: samples['FileUploadDtoEnvelopeSample']
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     downloadFileAsync: {
@@ -236,7 +369,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/Files/{fileId}/Raw'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Files/{fileId}/Raw'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -296,7 +429,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/Files/{fileId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Files/{fileId}'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -317,6 +450,65 @@ module.exports = {
                 })
             },
             sample: samples['FileUploadDtoEnvelopeSample']
+        }
+    },
+    getFileThumbnailAsync: {
+        key: 'getFileThumbnailAsync',
+        noun: 'Files',
+        display: {
+            label: '',
+            description: '',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'fileId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Files/{fileId}/Thumbnail'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, image/png',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getFileThumbnailAsync', response.json);
+                    return { data: results };
+                })
+            },
+            sample: { data: {} }
         }
     },
     getFilesAsync: {
@@ -350,7 +542,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/Files'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Files'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -371,6 +563,59 @@ module.exports = {
                 })
             },
             sample: samples['FileUploadDtoEnvelopeSample']
+        }
+    },
+    getFilesCountAsync: {
+        key: 'getFilesCountAsync',
+        noun: 'Files',
+        display: {
+            label: '',
+            description: '',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Files/Count'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, image/png',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getFilesCountAsync', response.json);
+                    return { data: results };
+                })
+            },
+            sample: { data: {} }
         }
     },
     updateFileAsync: {
@@ -403,6 +648,11 @@ module.exports = {
                     key: 'x-api-version',
                     label: '',
                     type: 'string',
+                },
+                {
+                    key: 'file',
+                    label: '',
+                    type: 'file',
                 },
                 {
                     key: 'notes',
@@ -460,16 +710,92 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'file',
+                    key: 'appFile.content',
                     label: '',
-                    type: 'file',
+                    type: 'ByteArray',
                 },
+                {
+                    key: 'appFile.sha256',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'appFile.createdAtUtc',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'appFile.userId.value',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'appFile.tenantId.value',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'appFile.enrollmentId.value',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'appFile.source',
+                    label: '',
+                    type: 'string',
+                    choices: [
+                        'Unknown',
+                        'HttpUpload',
+                        'Integration',
+                        'InternalProcess',
+                        'ApiClient',
+                        'WorkflowEngine',
+                    ],
+                },
+                {
+                    key: 'appFile.length',
+                    label: '',
+                    type: 'number',
+                },
+                {
+                    key: 'appFile.name',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'appFile.fileName',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'appFile.lastModified',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'appFile.size',
+                    label: '',
+                    type: 'number',
+                },
+                {
+                    key: 'appFile.contentType',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'appFile.contentDisposition',
+                    label: '',
+                    type: 'string',
+                },
+                ...object.fields(),
             ],
             outputFields: [
-                ...FileUploadDtoEnvelope.fields('', false),
+                ...EmptyEnvelope.fields('', false),
             ],
             perform: async (z, bundle) => {
                 const formData = new FormData()
+                const filename = bundle.inputData?.['filename'] || bundle.inputData?.['file'].split('/').slice(-1)[0]
+                formData.append('file', (await (await z.request({url: bundle.inputData?.['file'], method: 'GET', raw: true})).buffer()), { filename: filename })
                 formData.append('notes', bundle.inputData?.['notes'])
                 formData.append('metadata', bundle.inputData?.['metadata'])
                 formData.append('title', bundle.inputData?.['title'])
@@ -481,10 +807,23 @@ module.exports = {
                 formData.append('validResponse', bundle.inputData?.['validResponse'])
                 formData.append('parentFileUploadID', bundle.inputData?.['parentFileUploadID'])
                 formData.append('filePath', bundle.inputData?.['filePath'])
-                const filename = bundle.inputData?.['filename'] || bundle.inputData?.['file'].split('/').slice(-1)[0]
-                formData.append('file', (await (await z.request({url: bundle.inputData?.['file'], method: 'GET', raw: true})).buffer()), { filename: filename })
+                formData.append('appFile.content', bundle.inputData?.['appFile.content'])
+                formData.append('appFile.sha256', bundle.inputData?.['appFile.sha256'])
+                formData.append('appFile.createdAtUtc', bundle.inputData?.['appFile.createdAtUtc'])
+                formData.append('appFile.userId.value', bundle.inputData?.['appFile.userId.value'])
+                formData.append('appFile.tenantId.value', bundle.inputData?.['appFile.tenantId.value'])
+                formData.append('appFile.enrollmentId.value', bundle.inputData?.['appFile.enrollmentId.value'])
+                formData.append('appFile.source', bundle.inputData?.['appFile.source'])
+                formData.append('appFile.length', bundle.inputData?.['appFile.length'])
+                formData.append('appFile.name', bundle.inputData?.['appFile.name'])
+                formData.append('appFile.fileName', bundle.inputData?.['appFile.fileName'])
+                formData.append('appFile.lastModified', bundle.inputData?.['appFile.lastModified'])
+                formData.append('appFile.size', bundle.inputData?.['appFile.size'])
+                formData.append('appFile.contentType', bundle.inputData?.['appFile.contentType'])
+                formData.append('appFile.contentDisposition', bundle.inputData?.['appFile.contentDisposition'])
+                formData.append('appFile.headers', bundle.inputData?.['appFile.headers'])
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/Files/{fileId}'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Files/{fileId}'),
                     method: 'PUT',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -503,7 +842,7 @@ module.exports = {
                     return results;
                 })
             },
-            sample: samples['FileUploadDtoEnvelopeSample']
+            sample: samples['EmptyEnvelopeSample']
         }
     },
 }

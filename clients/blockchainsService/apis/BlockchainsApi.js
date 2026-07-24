@@ -2,12 +2,10 @@ const samples = require('../samples/BlockchainsApi');
 const BlockchainBlockCreateDto = require('../models/BlockchainBlockCreateDto');
 const BlockchainBlockDto = require('../models/BlockchainBlockDto');
 const BlockchainBlockDtoListEnvelope = require('../models/BlockchainBlockDtoListEnvelope');
-const BlockchainBlockDtoODataQueryOptions = require('../models/BlockchainBlockDtoODataQueryOptions');
 const BlockchainBlockUpdateDto = require('../models/BlockchainBlockUpdateDto');
 const BlockchainCreateDto = require('../models/BlockchainCreateDto');
 const BlockchainDto = require('../models/BlockchainDto');
 const BlockchainDtoListEnvelope = require('../models/BlockchainDtoListEnvelope');
-const BlockchainDtoODataQueryOptions = require('../models/BlockchainDtoODataQueryOptions');
 const BlockchainUpdateDto = require('../models/BlockchainUpdateDto');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
@@ -349,7 +347,6 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
-                ....fields(),
                 {
                     key: 'api-version',
                     label: '',
@@ -375,7 +372,6 @@ module.exports = {
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
-                        'oDataQueryOptions': bundle.inputData?.['oDataQueryOptions'],
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
@@ -412,7 +408,6 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
-                ....fields(),
                 {
                     key: 'api-version',
                     label: '',
@@ -438,7 +433,6 @@ module.exports = {
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
-                        'oDataQueryOptions': bundle.inputData?.['oDataQueryOptions'],
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
@@ -530,7 +524,6 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
-                ....fields(),
                 {
                     key: 'api-version',
                     label: '',
@@ -556,7 +549,6 @@ module.exports = {
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
-                        'oDataQueryOptions': bundle.inputData?.['oDataQueryOptions'],
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
@@ -587,7 +579,6 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
-                ....fields(),
                 {
                     key: 'api-version',
                     label: '',
@@ -613,7 +604,6 @@ module.exports = {
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
-                        'oDataQueryOptions': bundle.inputData?.['oDataQueryOptions'],
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {

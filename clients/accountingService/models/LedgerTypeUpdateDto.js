@@ -16,10 +16,8 @@ module.exports = {
                 choices: [
                     'Assets',
                     'Equity',
-                    'Gains',
-                    'Losses',
                     'Revenue',
-                    'Expenses',
+                    'Expense',
                     'Liabilities',
                 ],
             },

@@ -178,10 +178,4 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/GigApplicationsApi.js
-samples/JobApplicantsApi.js
-samples/JobApplicationsApi.js
-samples/JobFieldsApi.js
-samples/JobOfferFieldsApi.js
-samples/RequiredSkillsApi.js
 utils/utils.js

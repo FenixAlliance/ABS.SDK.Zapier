@@ -1,4 +1,5 @@
 const utils = require('../utils/utils');
+const AccountingEntryCreateDto = require('../models/AccountingEntryCreateDto');
 
 module.exports = {
     fields: (prefix = '', isInput = true, isArrayChild = false) => {
@@ -15,14 +16,22 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}group`,
-                label: `[${labelPrefix}group]`,
-                type: 'boolean',
+                key: `${keyPrefix}journalId`,
+                label: `[${labelPrefix}journalId]`,
+                required: true,
+                type: 'string',
             },
             {
-                key: `${keyPrefix}opening`,
-                label: `[${labelPrefix}opening]`,
-                type: 'boolean',
+                key: `${keyPrefix}fiscalPeriodId`,
+                label: `[${labelPrefix}fiscalPeriodId]`,
+                required: true,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}transactionCurrencyId`,
+                label: `[${labelPrefix}transactionCurrencyId]`,
+                required: true,
+                type: 'string',
             },
             {
                 key: `${keyPrefix}description`,
@@ -31,54 +40,29 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}date`,
-                label: `[${labelPrefix}date]`,
-                required: true,
+                key: `${keyPrefix}sourceDocumentType`,
+                label: `[${labelPrefix}sourceDocumentType]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}debit`,
-                label: `[${labelPrefix}debit]`,
-                type: 'number',
-            },
-            {
-                key: `${keyPrefix}credit`,
-                label: `[${labelPrefix}credit]`,
-                type: 'number',
-            },
-            {
-                key: `${keyPrefix}journalId`,
-                label: `[${labelPrefix}journalId]`,
-                required: true,
+                key: `${keyPrefix}sourceDocumentId`,
+                label: `[${labelPrefix}sourceDocumentId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}currencyId`,
-                label: `[${labelPrefix}currencyId]`,
-                required: true,
+                key: `${keyPrefix}idempotencyKey`,
+                label: `[${labelPrefix}idempotencyKey]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}debitAccountId`,
-                label: `[${labelPrefix}debitAccountId]`,
-                required: true,
-                type: 'string',
+                key: `${keyPrefix}isOpeningBalance`,
+                label: `[${labelPrefix}isOpeningBalance]`,
+                type: 'boolean',
             },
             {
-                key: `${keyPrefix}creditAccountId`,
-                label: `[${labelPrefix}creditAccountId]`,
-                required: true,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}parentJournalEntryId`,
-                label: `[${labelPrefix}parentJournalEntryId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}invoiceCode`,
-                label: `[${labelPrefix}invoiceCode]`,
-                type: 'string',
+                key: `${keyPrefix}accountingEntries`,
+                label: `[${labelPrefix}accountingEntries]`,
+                children: AccountingEntryCreateDto.fields(`${keyPrefix}accountingEntries${!isInput ? '[]' : ''}`, isInput, true), 
             },
         ]
     },
@@ -87,18 +71,15 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
-            'group': bundle.inputData?.[`${keyPrefix}group`],
-            'opening': bundle.inputData?.[`${keyPrefix}opening`],
-            'description': bundle.inputData?.[`${keyPrefix}description`],
-            'date': bundle.inputData?.[`${keyPrefix}date`],
-            'debit': bundle.inputData?.[`${keyPrefix}debit`],
-            'credit': bundle.inputData?.[`${keyPrefix}credit`],
             'journalId': bundle.inputData?.[`${keyPrefix}journalId`],
-            'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
-            'debitAccountId': bundle.inputData?.[`${keyPrefix}debitAccountId`],
-            'creditAccountId': bundle.inputData?.[`${keyPrefix}creditAccountId`],
-            'parentJournalEntryId': bundle.inputData?.[`${keyPrefix}parentJournalEntryId`],
-            'invoiceCode': bundle.inputData?.[`${keyPrefix}invoiceCode`],
+            'fiscalPeriodId': bundle.inputData?.[`${keyPrefix}fiscalPeriodId`],
+            'transactionCurrencyId': bundle.inputData?.[`${keyPrefix}transactionCurrencyId`],
+            'description': bundle.inputData?.[`${keyPrefix}description`],
+            'sourceDocumentType': bundle.inputData?.[`${keyPrefix}sourceDocumentType`],
+            'sourceDocumentId': bundle.inputData?.[`${keyPrefix}sourceDocumentId`],
+            'idempotencyKey': bundle.inputData?.[`${keyPrefix}idempotencyKey`],
+            'isOpeningBalance': bundle.inputData?.[`${keyPrefix}isOpeningBalance`],
+            'accountingEntries': utils.childMapping(bundle.inputData?.[`${keyPrefix}accountingEntries`], `${keyPrefix}accountingEntries`, AccountingEntryCreateDto),
         }
     },
 }

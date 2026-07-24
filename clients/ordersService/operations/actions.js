@@ -7,6 +7,7 @@ const actions = {
     [FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost.key]: FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost,
     [FenixAllianceABSWebApi.accountManageLinkExternalLoginPost.key]: FenixAllianceABSWebApi.accountManageLinkExternalLoginPost,
     [FenixAllianceABSWebApi.accountPerformExternalLoginPost.key]: FenixAllianceABSWebApi.accountPerformExternalLoginPost,
+    [FenixAllianceABSWebApi.apiV2AIServiceAgentsAgentIdAguiPost.key]: FenixAllianceABSWebApi.apiV2AIServiceAgentsAgentIdAguiPost,
     [FenixAllianceABSWebApi.forgotPasswordPost.key]: FenixAllianceABSWebApi.forgotPasswordPost,
     [FenixAllianceABSWebApi.healthGet.key]: FenixAllianceABSWebApi.healthGet,
     [FenixAllianceABSWebApi.helloGet.key]: FenixAllianceABSWebApi.helloGet,

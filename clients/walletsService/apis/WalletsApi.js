@@ -30,6 +30,62 @@ const WalletWithdrawRequestDtoListEnvelope = require('../models/WalletWithdrawRe
 const utils = require('../utils/utils');
 
 module.exports = {
+    createLocationForWalletAsync: {
+        key: 'createLocationForWalletAsync',
+        noun: 'Wallets',
+        display: {
+            label: 'Create Wallet Location',
+            description: 'Create a new location for a specific wallet by ID.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'walletId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                ...LocationCreateDto.fields(),
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Locations'),
+                    method: 'POST',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...LocationCreateDto.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'createLocationForWalletAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
+        }
+    },
     createWalletBankAccountAsync: {
         key: 'createWalletBankAccountAsync',
         noun: 'Wallets',
@@ -80,62 +136,6 @@ module.exports = {
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
                     response.throwForStatus();
                     const results = utils.responseOptionsMiddleware(z, bundle, 'createWalletBankAccountAsync', response.json);
-                    return results;
-                })
-            },
-            sample: samples['EmptyEnvelopeSample']
-        }
-    },
-    createWalletLocationAsync: {
-        key: 'createWalletLocationAsync',
-        noun: 'Wallets',
-        display: {
-            label: 'Create Wallet Location',
-            description: 'Create a new location for a specific wallet by ID.',
-            hidden: false,
-        },
-        operation: {
-            inputFields: [
-                {
-                    key: 'walletId',
-                    label: '',
-                    type: 'string',
-                    required: true,
-                },
-                {
-                    key: 'api-version',
-                    label: '',
-                    type: 'string',
-                },
-                {
-                    key: 'x-api-version',
-                    label: '',
-                    type: 'string',
-                },
-                ...LocationCreateDto.fields(),
-            ],
-            outputFields: [
-                ...EmptyEnvelope.fields('', false),
-            ],
-            perform: async (z, bundle) => {
-                const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Locations'),
-                    method: 'POST',
-                    removeMissingValuesFrom: { params: true, body: true },
-                    headers: {
-                        'Content-Type': 'application/json, application/xml',
-                        'Accept': 'application/json, application/xml',
-                    },
-                    params: {
-                        'api-version': bundle.inputData?.['api-version'],
-                    },
-                    body: {
-                        ...LocationCreateDto.mapping(bundle),
-                    },
-                }
-                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
-                    response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'createWalletLocationAsync', response.json);
                     return results;
                 })
             },
@@ -310,6 +310,66 @@ module.exports = {
             sample: samples['EmptyEnvelopeSample']
         }
     },
+    deleteLocationForWalletAsync: {
+        key: 'deleteLocationForWalletAsync',
+        noun: 'Wallets',
+        display: {
+            label: 'Delete Wallet Location',
+            description: 'Delete a specific location of a specific wallet by ID.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'walletId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'locationId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Locations/{locationId}'),
+                    method: 'DELETE',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'deleteLocationForWalletAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
+        }
+    },
     deleteWalletBankAccountAsync: {
         key: 'deleteWalletBankAccountAsync',
         noun: 'Wallets',
@@ -364,66 +424,6 @@ module.exports = {
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
                     response.throwForStatus();
                     const results = utils.responseOptionsMiddleware(z, bundle, 'deleteWalletBankAccountAsync', response.json);
-                    return results;
-                })
-            },
-            sample: samples['EmptyEnvelopeSample']
-        }
-    },
-    deleteWalletLocationAsync: {
-        key: 'deleteWalletLocationAsync',
-        noun: 'Wallets',
-        display: {
-            label: 'Delete Wallet Location',
-            description: 'Delete a specific location of a specific wallet by ID.',
-            hidden: false,
-        },
-        operation: {
-            inputFields: [
-                {
-                    key: 'walletId',
-                    label: '',
-                    type: 'string',
-                    required: true,
-                },
-                {
-                    key: 'locationId',
-                    label: '',
-                    type: 'string',
-                    required: true,
-                },
-                {
-                    key: 'api-version',
-                    label: '',
-                    type: 'string',
-                },
-                {
-                    key: 'x-api-version',
-                    label: '',
-                    type: 'string',
-                },
-            ],
-            outputFields: [
-                ...EmptyEnvelope.fields('', false),
-            ],
-            perform: async (z, bundle) => {
-                const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Locations/{locationId}'),
-                    method: 'DELETE',
-                    removeMissingValuesFrom: { params: true, body: true },
-                    headers: {
-                        'Content-Type': '',
-                        'Accept': 'application/json, application/xml',
-                    },
-                    params: {
-                        'api-version': bundle.inputData?.['api-version'],
-                    },
-                    body: {
-                    },
-                }
-                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
-                    response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'deleteWalletLocationAsync', response.json);
                     return results;
                 })
             },
@@ -700,6 +700,174 @@ module.exports = {
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
                     response.throwForStatus();
                     const results = utils.responseOptionsMiddleware(z, bundle, 'getIncomingWalletInvoicesCountAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['Int32EnvelopeSample']
+        }
+    },
+    getLocationForWalletAsync: {
+        key: 'getLocationForWalletAsync',
+        noun: 'Wallets',
+        display: {
+            label: 'Get Wallet Location',
+            description: 'Get a specific location of a specific wallet by ID.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'walletId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'locationId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...LocationDtoEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Locations/{locationId}'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getLocationForWalletAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['LocationDtoEnvelopeSample']
+        }
+    },
+    getLocationsForWalletAsync: {
+        key: 'getLocationsForWalletAsync',
+        noun: 'Wallets',
+        display: {
+            label: 'Get Wallet Locations',
+            description: 'Get locations of a specific wallet by ID.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'walletId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...LocationDtoListEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Locations'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getLocationsForWalletAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['LocationDtoListEnvelopeSample']
+        }
+    },
+    getLocationsForWalletCountAsync: {
+        key: 'getLocationsForWalletCountAsync',
+        noun: 'Wallets',
+        display: {
+            label: 'Get Wallet Locations Count',
+            description: 'Get locations count of a specific wallet by ID.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'walletId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...Int32Envelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Locations/Count'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getLocationsForWalletCountAsync', response.json);
                     return results;
                 })
             },
@@ -1408,174 +1576,6 @@ module.exports = {
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
                     response.throwForStatus();
                     const results = utils.responseOptionsMiddleware(z, bundle, 'getWalletInvoicesCountAsync', response.json);
-                    return results;
-                })
-            },
-            sample: samples['Int32EnvelopeSample']
-        }
-    },
-    getWalletLocationAsync: {
-        key: 'getWalletLocationAsync',
-        noun: 'Wallets',
-        display: {
-            label: 'Get Wallet Location',
-            description: 'Get a specific location of a specific wallet by ID.',
-            hidden: false,
-        },
-        operation: {
-            inputFields: [
-                {
-                    key: 'walletId',
-                    label: '',
-                    type: 'string',
-                    required: true,
-                },
-                {
-                    key: 'locationId',
-                    label: '',
-                    type: 'string',
-                    required: true,
-                },
-                {
-                    key: 'api-version',
-                    label: '',
-                    type: 'string',
-                },
-                {
-                    key: 'x-api-version',
-                    label: '',
-                    type: 'string',
-                },
-            ],
-            outputFields: [
-                ...LocationDtoEnvelope.fields('', false),
-            ],
-            perform: async (z, bundle) => {
-                const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Locations/{locationId}'),
-                    method: 'GET',
-                    removeMissingValuesFrom: { params: true, body: true },
-                    headers: {
-                        'Content-Type': '',
-                        'Accept': 'application/json, application/xml',
-                    },
-                    params: {
-                        'api-version': bundle.inputData?.['api-version'],
-                    },
-                    body: {
-                    },
-                }
-                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
-                    response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'getWalletLocationAsync', response.json);
-                    return results;
-                })
-            },
-            sample: samples['LocationDtoEnvelopeSample']
-        }
-    },
-    getWalletLocationsAsync: {
-        key: 'getWalletLocationsAsync',
-        noun: 'Wallets',
-        display: {
-            label: 'Get Wallet Locations',
-            description: 'Get locations of a specific wallet by ID.',
-            hidden: false,
-        },
-        operation: {
-            inputFields: [
-                {
-                    key: 'walletId',
-                    label: '',
-                    type: 'string',
-                    required: true,
-                },
-                {
-                    key: 'api-version',
-                    label: '',
-                    type: 'string',
-                },
-                {
-                    key: 'x-api-version',
-                    label: '',
-                    type: 'string',
-                },
-            ],
-            outputFields: [
-                ...LocationDtoListEnvelope.fields('', false),
-            ],
-            perform: async (z, bundle) => {
-                const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Locations'),
-                    method: 'GET',
-                    removeMissingValuesFrom: { params: true, body: true },
-                    headers: {
-                        'Content-Type': '',
-                        'Accept': 'application/json, application/xml',
-                    },
-                    params: {
-                        'api-version': bundle.inputData?.['api-version'],
-                    },
-                    body: {
-                    },
-                }
-                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
-                    response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'getWalletLocationsAsync', response.json);
-                    return results;
-                })
-            },
-            sample: samples['LocationDtoListEnvelopeSample']
-        }
-    },
-    getWalletLocationsCountAsync: {
-        key: 'getWalletLocationsCountAsync',
-        noun: 'Wallets',
-        display: {
-            label: 'Get Wallet Locations Count',
-            description: 'Get locations count of a specific wallet by ID.',
-            hidden: false,
-        },
-        operation: {
-            inputFields: [
-                {
-                    key: 'walletId',
-                    label: '',
-                    type: 'string',
-                    required: true,
-                },
-                {
-                    key: 'api-version',
-                    label: '',
-                    type: 'string',
-                },
-                {
-                    key: 'x-api-version',
-                    label: '',
-                    type: 'string',
-                },
-            ],
-            outputFields: [
-                ...Int32Envelope.fields('', false),
-            ],
-            perform: async (z, bundle) => {
-                const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Locations/Count'),
-                    method: 'GET',
-                    removeMissingValuesFrom: { params: true, body: true },
-                    headers: {
-                        'Content-Type': '',
-                        'Accept': 'application/json, application/xml',
-                    },
-                    params: {
-                        'api-version': bundle.inputData?.['api-version'],
-                    },
-                    body: {
-                    },
-                }
-                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
-                    response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'getWalletLocationsCountAsync', response.json);
                     return results;
                 })
             },
@@ -2530,6 +2530,68 @@ module.exports = {
             sample: samples['EmptyEnvelopeSample']
         }
     },
+    updateLocationForWalletAsync: {
+        key: 'updateLocationForWalletAsync',
+        noun: 'Wallets',
+        display: {
+            label: 'Update Wallet Location',
+            description: 'Update a specific location of a specific wallet by ID.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'walletId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'locationId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                ...LocationUpdateDto.fields(),
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Locations/{locationId}'),
+                    method: 'PUT',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...LocationUpdateDto.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'updateLocationForWalletAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
+        }
+    },
     updateWalletBankAccountAsync: {
         key: 'updateWalletBankAccountAsync',
         noun: 'Wallets',
@@ -2586,68 +2648,6 @@ module.exports = {
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
                     response.throwForStatus();
                     const results = utils.responseOptionsMiddleware(z, bundle, 'updateWalletBankAccountAsync', response.json);
-                    return results;
-                })
-            },
-            sample: samples['EmptyEnvelopeSample']
-        }
-    },
-    updateWalletLocationAsync: {
-        key: 'updateWalletLocationAsync',
-        noun: 'Wallets',
-        display: {
-            label: 'Update Wallet Location',
-            description: 'Update a specific location of a specific wallet by ID.',
-            hidden: false,
-        },
-        operation: {
-            inputFields: [
-                {
-                    key: 'walletId',
-                    label: '',
-                    type: 'string',
-                    required: true,
-                },
-                {
-                    key: 'locationId',
-                    label: '',
-                    type: 'string',
-                    required: true,
-                },
-                {
-                    key: 'api-version',
-                    label: '',
-                    type: 'string',
-                },
-                {
-                    key: 'x-api-version',
-                    label: '',
-                    type: 'string',
-                },
-                ...LocationUpdateDto.fields(),
-            ],
-            outputFields: [
-                ...EmptyEnvelope.fields('', false),
-            ],
-            perform: async (z, bundle) => {
-                const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/WalletsService/Wallets/{walletId}/Locations/{locationId}'),
-                    method: 'PUT',
-                    removeMissingValuesFrom: { params: true, body: true },
-                    headers: {
-                        'Content-Type': 'application/json, application/xml',
-                        'Accept': 'application/json, application/xml',
-                    },
-                    params: {
-                        'api-version': bundle.inputData?.['api-version'],
-                    },
-                    body: {
-                        ...LocationUpdateDto.mapping(bundle),
-                    },
-                }
-                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
-                    response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'updateWalletLocationAsync', response.json);
                     return results;
                 })
             },

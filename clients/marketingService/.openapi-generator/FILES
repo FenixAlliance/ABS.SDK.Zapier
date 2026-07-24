@@ -60,6 +60,11 @@ models/MarketingListUpdateDto.js
 models/NewsletterCreateDto.js
 models/NewsletterDto.js
 models/NewsletterDtoEnvelope.js
+models/NewsletterSubscriptionCreateDto.js
+models/NewsletterSubscriptionDto.js
+models/NewsletterSubscriptionDtoEnvelope.js
+models/NewsletterSubscriptionDtoListEnvelope.js
+models/NewsletterSubscriptionUpdateDto.js
 models/NewsletterUpdateDto.js
 models/Operation.js
 models/OrderDto.js
@@ -82,5 +87,4 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/NewsletterSubscriptionsApi.js
 utils/utils.js

@@ -10,6 +10,11 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}taskCategoryId`,
+                label: `[${labelPrefix}taskCategoryId]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}displayInTimeTracker`,
                 label: `[${labelPrefix}displayInTimeTracker]`,
                 type: 'boolean',
@@ -25,6 +30,7 @@ module.exports = {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
             'title': bundle.inputData?.[`${keyPrefix}title`],
+            'taskCategoryId': bundle.inputData?.[`${keyPrefix}taskCategoryId`],
             'displayInTimeTracker': bundle.inputData?.[`${keyPrefix}displayInTimeTracker`],
             'requiresDescription': bundle.inputData?.[`${keyPrefix}requiresDescription`],
         }

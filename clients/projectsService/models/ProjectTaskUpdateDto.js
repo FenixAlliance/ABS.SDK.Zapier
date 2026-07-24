@@ -5,6 +5,16 @@ module.exports = {
         const {keyPrefix, labelPrefix} = utils.buildKeyAndLabel(prefix, isInput, isArrayChild)
         return [
             {
+                key: `${keyPrefix}title`,
+                label: `[${labelPrefix}title]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}description`,
+                label: `[${labelPrefix}description]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}startDate`,
                 label: `[${labelPrefix}startDate]`,
                 type: 'string',
@@ -19,6 +29,8 @@ module.exports = {
     mapping: (bundle, prefix = '') => {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
+            'title': bundle.inputData?.[`${keyPrefix}title`],
+            'description': bundle.inputData?.[`${keyPrefix}description`],
             'startDate': bundle.inputData?.[`${keyPrefix}startDate`],
             'dueLine': bundle.inputData?.[`${keyPrefix}dueLine`],
         }

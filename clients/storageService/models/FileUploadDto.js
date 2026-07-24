@@ -50,6 +50,16 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}storageKey`,
+                label: `[${labelPrefix}storageKey]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}storageProviderKey`,
+                label: `[${labelPrefix}storageProviderKey]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}fileName`,
                 label: `[${labelPrefix}fileName]`,
                 type: 'string',
@@ -114,6 +124,67 @@ module.exports = {
                 label: `[${labelPrefix}folderPath]`,
                 type: 'string',
             },
+            {
+                key: `${keyPrefix}scanStatus`,
+                label: `[${labelPrefix}scanStatus]`,
+                type: 'string',
+                choices: [
+                    'NotRequired',
+                    'Pending',
+                    'Clean',
+                    'Infected',
+                    'Failed',
+                    'Quarantined',
+                ],
+            },
+            {
+                key: `${keyPrefix}thumbnailStatus`,
+                label: `[${labelPrefix}thumbnailStatus]`,
+                type: 'string',
+                choices: [
+                    'NotRequired',
+                    'Pending',
+                    'Ready',
+                    'Failed',
+                    'Unsupported',
+                ],
+            },
+            {
+                key: `${keyPrefix}hasThumbnail`,
+                label: `[${labelPrefix}hasThumbnail]`,
+                type: 'boolean',
+            },
+            {
+                key: `${keyPrefix}thumbnailStorageKey`,
+                label: `[${labelPrefix}thumbnailStorageKey]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}thumbnailContentType`,
+                label: `[${labelPrefix}thumbnailContentType]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}thumbnailWidth`,
+                label: `[${labelPrefix}thumbnailWidth]`,
+                type: 'integer',
+            },
+            {
+                key: `${keyPrefix}thumbnailHeight`,
+                label: `[${labelPrefix}thumbnailHeight]`,
+                type: 'integer',
+            },
+            {
+                key: `${keyPrefix}publicAccessType`,
+                label: `[${labelPrefix}publicAccessType]`,
+                type: 'string',
+                choices: [
+                    'false',
+                    'Container',
+                    'Blob',
+                    'Unknown',
+                ],
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -128,6 +199,8 @@ module.exports = {
             'hash': bundle.inputData?.[`${keyPrefix}hash`],
             'fileUrl': bundle.inputData?.[`${keyPrefix}fileUrl`],
             'filePath': bundle.inputData?.[`${keyPrefix}filePath`],
+            'storageKey': bundle.inputData?.[`${keyPrefix}storageKey`],
+            'storageProviderKey': bundle.inputData?.[`${keyPrefix}storageProviderKey`],
             'fileName': bundle.inputData?.[`${keyPrefix}fileName`],
             'abstract': bundle.inputData?.[`${keyPrefix}abstract`],
             'keyWords': bundle.inputData?.[`${keyPrefix}keyWords`],
@@ -141,6 +214,14 @@ module.exports = {
             'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'socialProfileId': bundle.inputData?.[`${keyPrefix}socialProfileId`],
             'folderPath': bundle.inputData?.[`${keyPrefix}folderPath`],
+            'scanStatus': bundle.inputData?.[`${keyPrefix}scanStatus`],
+            'thumbnailStatus': bundle.inputData?.[`${keyPrefix}thumbnailStatus`],
+            'hasThumbnail': bundle.inputData?.[`${keyPrefix}hasThumbnail`],
+            'thumbnailStorageKey': bundle.inputData?.[`${keyPrefix}thumbnailStorageKey`],
+            'thumbnailContentType': bundle.inputData?.[`${keyPrefix}thumbnailContentType`],
+            'thumbnailWidth': bundle.inputData?.[`${keyPrefix}thumbnailWidth`],
+            'thumbnailHeight': bundle.inputData?.[`${keyPrefix}thumbnailHeight`],
+            'publicAccessType': bundle.inputData?.[`${keyPrefix}publicAccessType`],
         }
     },
 }

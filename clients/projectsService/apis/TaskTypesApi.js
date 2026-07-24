@@ -1,5 +1,7 @@
 const samples = require('../samples/TaskTypesApi');
+const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
+const Operation = require('../models/Operation');
 const TaskTypeCreateDto = require('../models/TaskTypeCreateDto');
 const TaskTypeDto = require('../models/TaskTypeDto');
 const TaskTypeUpdateDto = require('../models/TaskTypeUpdateDto');
@@ -150,6 +152,62 @@ module.exports = {
                 })
             },
             sample: samples['TaskTypeDtoSample']
+        }
+    },
+    patchTaskTypeAsync: {
+        key: 'patchTaskTypeAsync',
+        noun: 'TaskTypes',
+        display: {
+            label: 'Patches a task type',
+            description: 'Partially updates the specified task type.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'taskTypeId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ProjectsService/TaskTypes/{taskTypeId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchTaskTypeAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     updateTaskTypeAsync: {

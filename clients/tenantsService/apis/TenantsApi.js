@@ -305,6 +305,60 @@ module.exports = {
             sample: samples['SuiteLicenseFeatureDtoListEnvelopeSample']
         }
     },
+    getCartForTenantAsync: {
+        key: 'getCartForTenantAsync',
+        noun: 'Tenants',
+        display: {
+            label: 'Get a tenant&#39;s default cart',
+            description: 'Get a tenant&#39;s default cart',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...CartDtoEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/TenantsService/Tenants/{tenantId}/Cart'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getCartForTenantAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['CartDtoEnvelopeSample']
+        }
+    },
     getCurrentTenantAsync: {
         key: 'getCurrentTenantAsync',
         noun: 'Tenants',
@@ -814,60 +868,6 @@ module.exports = {
                 })
             },
             sample: samples['EmptyEnvelopeSample']
-        }
-    },
-    getTenantCartAsync: {
-        key: 'getTenantCartAsync',
-        noun: 'Tenants',
-        display: {
-            label: 'Get a tenant&#39;s default cart',
-            description: 'Get a tenant&#39;s default cart',
-            hidden: false,
-        },
-        operation: {
-            inputFields: [
-                {
-                    key: 'tenantId',
-                    label: '',
-                    type: 'string',
-                    required: true,
-                },
-                {
-                    key: 'api-version',
-                    label: '',
-                    type: 'string',
-                },
-                {
-                    key: 'x-api-version',
-                    label: '',
-                    type: 'string',
-                },
-            ],
-            outputFields: [
-                ...CartDtoEnvelope.fields('', false),
-            ],
-            perform: async (z, bundle) => {
-                const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/TenantsService/Tenants/{tenantId}/Cart'),
-                    method: 'GET',
-                    removeMissingValuesFrom: { params: true, body: true },
-                    headers: {
-                        'Content-Type': '',
-                        'Accept': 'application/json, application/xml',
-                    },
-                    params: {
-                        'api-version': bundle.inputData?.['api-version'],
-                    },
-                    body: {
-                    },
-                }
-                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
-                    response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'getTenantCartAsync', response.json);
-                    return results;
-                })
-            },
-            sample: samples['CartDtoEnvelopeSample']
         }
     },
     getTenantEnrollmentAsync: {
@@ -1758,8 +1758,64 @@ module.exports = {
             sample: samples['EmptyEnvelopeSample']
         }
     },
-    updateAvatarAsync: {
-        key: 'updateAvatarAsync',
+    updateTenantAsync: {
+        key: 'updateTenantAsync',
+        noun: 'Tenants',
+        display: {
+            label: 'Update a tenant&#39;s profile',
+            description: 'Update a tenant&#39;s profile',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                ...TenantUpdateDto.fields(),
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/TenantsService/Tenants/{tenantId}'),
+                    method: 'PUT',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...TenantUpdateDto.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'updateTenantAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
+        }
+    },
+    updateTenantAvatarAsync: {
+        key: 'updateTenantAvatarAsync',
         noun: 'Tenants',
         display: {
             label: 'Update a tenant&#39;s avatar',
@@ -1812,63 +1868,7 @@ module.exports = {
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
                     response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'updateAvatarAsync', response.json);
-                    return results;
-                })
-            },
-            sample: samples['EmptyEnvelopeSample']
-        }
-    },
-    updateTenantAsync: {
-        key: 'updateTenantAsync',
-        noun: 'Tenants',
-        display: {
-            label: 'Update a tenant&#39;s profile',
-            description: 'Update a tenant&#39;s profile',
-            hidden: false,
-        },
-        operation: {
-            inputFields: [
-                {
-                    key: 'tenantId',
-                    label: '',
-                    type: 'string',
-                    required: true,
-                },
-                {
-                    key: 'api-version',
-                    label: '',
-                    type: 'string',
-                },
-                {
-                    key: 'x-api-version',
-                    label: '',
-                    type: 'string',
-                },
-                ...TenantUpdateDto.fields(),
-            ],
-            outputFields: [
-                ...EmptyEnvelope.fields('', false),
-            ],
-            perform: async (z, bundle) => {
-                const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/TenantsService/Tenants/{tenantId}'),
-                    method: 'PUT',
-                    removeMissingValuesFrom: { params: true, body: true },
-                    headers: {
-                        'Content-Type': 'application/json, application/xml',
-                        'Accept': 'application/json, application/xml',
-                    },
-                    params: {
-                        'api-version': bundle.inputData?.['api-version'],
-                    },
-                    body: {
-                        ...TenantUpdateDto.mapping(bundle),
-                    },
-                }
-                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
-                    response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'updateTenantAsync', response.json);
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'updateTenantAvatarAsync', response.json);
                     return results;
                 })
             },

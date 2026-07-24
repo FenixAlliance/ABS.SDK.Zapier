@@ -1,7 +1,7 @@
 README.md
 apis/AccountGroupsApi.js
-apis/AccountingEntriesApi.js
 apis/AccountingPeriodsApi.js
+apis/AccountingSummaryApi.js
 apis/AccountsApi.js
 apis/BankProfilesApi.js
 apis/BankingApi.js
@@ -25,13 +25,13 @@ apis/FiscalResponsibilityRecordsApi.js
 apis/FiscalYearsApi.js
 apis/GrantsApi.js
 apis/InvoiceEnumerationRangesApi.js
-apis/JournalEntriesApi.js
 apis/JournalTypesApi.js
 apis/JournalsApi.js
 apis/LedgerTypesApi.js
 apis/LedgersApi.js
 apis/LoansApi.js
 apis/ReceiptsApi.js
+apis/ReportsApi.js
 apis/SharesApi.js
 apis/TaxClassesApi.js
 apis/TaxPoliciesApi.js
@@ -220,6 +220,7 @@ models/JournalDtoEnvelope.js
 models/JournalDtoIReadOnlyListEnvelope.js
 models/JournalEntryCreateDto.js
 models/JournalEntryDto.js
+models/JournalEntryDtoEnvelope.js
 models/JournalEntryDtoIReadOnlyListEnvelope.js
 models/JournalEntryUpdateDto.js
 models/JournalTypeCreateDto.js
@@ -268,6 +269,7 @@ models/RefreshRequest.js
 models/RegisterRequest.js
 models/ResendConfirmationEmailRequest.js
 models/ResetPasswordRequest.js
+models/ReverseJournalEntryRequest.js
 models/SeedChartOfAccountsRequest.js
 models/ShareClassCreateDto.js
 models/ShareClassDto.js
@@ -314,11 +316,14 @@ models/TransactionDto.js
 models/TransactionDtoEnvelope.js
 models/TransactionDtoListEnvelope.js
 models/TransactionUpdateDto.js
+models/TrialBalanceDto.js
+models/TrialBalanceDtoEnvelope.js
+models/TrialBalanceRowDto.js
 models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 models/UpdateLedgerDto.js
 operations/actions.js
 package.json
-samples/AccountingEntriesApi.js
-samples/JournalEntriesApi.js
+samples/AccountingSummaryApi.js
+samples/ReportsApi.js
 utils/utils.js

@@ -1,5 +1,4 @@
 const ActivityFeedsApi = require('../apis/ActivityFeedsApi');
-const ActivityRecordsApi = require('../apis/ActivityRecordsApi');
 const FenixAllianceABSWebApi = require('../apis/FenixAllianceABSWebApi');
 const { triggerMiddleware, isTrigger, searchMiddleware, hasSearchRequisites, isSearchAction, isCreateAction } = require('../utils/utils');
 
@@ -15,17 +14,18 @@ const actions = {
     [ActivityFeedsApi.getActivityFeedAsync.key]: ActivityFeedsApi.getActivityFeedAsync,
     [ActivityFeedsApi.getActivityFeedsAsync.key]: ActivityFeedsApi.getActivityFeedsAsync,
     [ActivityFeedsApi.getActivityFeedsCountAsync.key]: ActivityFeedsApi.getActivityFeedsCountAsync,
+    [ActivityFeedsApi.getActivityRecordsCountAsync.key]: ActivityFeedsApi.getActivityRecordsCountAsync,
     [ActivityFeedsApi.getActivityTypeByIdAsync.key]: ActivityFeedsApi.getActivityTypeByIdAsync,
     [ActivityFeedsApi.getActivityTypesAsync.key]: ActivityFeedsApi.getActivityTypesAsync,
     [ActivityFeedsApi.patchActivityAsync.key]: ActivityFeedsApi.patchActivityAsync,
     [ActivityFeedsApi.patchActivityTypeAsync.key]: ActivityFeedsApi.patchActivityTypeAsync,
     [ActivityFeedsApi.updateActivityAsync.key]: ActivityFeedsApi.updateActivityAsync,
     [ActivityFeedsApi.updateActivityTypeAsync.key]: ActivityFeedsApi.updateActivityTypeAsync,
-    [ActivityRecordsApi.getActivityRecordsCountAsync.key]: ActivityRecordsApi.getActivityRecordsCountAsync,
     [FenixAllianceABSWebApi.accountLogoutPost.key]: FenixAllianceABSWebApi.accountLogoutPost,
     [FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost.key]: FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost,
     [FenixAllianceABSWebApi.accountManageLinkExternalLoginPost.key]: FenixAllianceABSWebApi.accountManageLinkExternalLoginPost,
     [FenixAllianceABSWebApi.accountPerformExternalLoginPost.key]: FenixAllianceABSWebApi.accountPerformExternalLoginPost,
+    [FenixAllianceABSWebApi.apiV2AIServiceAgentsAgentIdAguiPost.key]: FenixAllianceABSWebApi.apiV2AIServiceAgentsAgentIdAguiPost,
     [FenixAllianceABSWebApi.forgotPasswordPost.key]: FenixAllianceABSWebApi.forgotPasswordPost,
     [FenixAllianceABSWebApi.healthGet.key]: FenixAllianceABSWebApi.healthGet,
     [FenixAllianceABSWebApi.helloGet.key]: FenixAllianceABSWebApi.helloGet,

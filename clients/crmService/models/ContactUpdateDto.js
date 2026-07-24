@@ -87,16 +87,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}addressLine1`,
-                label: `[${labelPrefix}addressLine1]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}addressLine2`,
-                label: `[${labelPrefix}addressLine2]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}postalCode`,
                 label: `[${labelPrefix}postalCode]`,
                 type: 'string',
@@ -241,8 +231,6 @@ module.exports = {
             'jobTitle': bundle.inputData?.[`${keyPrefix}jobTitle`],
             'countryId': bundle.inputData?.[`${keyPrefix}countryId`],
             'parentContactId': bundle.inputData?.[`${keyPrefix}parentContactId`],
-            'addressLine1': bundle.inputData?.[`${keyPrefix}addressLine1`],
-            'addressLine2': bundle.inputData?.[`${keyPrefix}addressLine2`],
             'postalCode': bundle.inputData?.[`${keyPrefix}postalCode`],
             'stateId': bundle.inputData?.[`${keyPrefix}stateId`],
             'cityId': bundle.inputData?.[`${keyPrefix}cityId`],

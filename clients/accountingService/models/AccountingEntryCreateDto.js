@@ -15,51 +15,43 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}journalEntryId`,
+                label: `[${labelPrefix}journalEntryId]`,
+                required: true,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}accountId`,
+                label: `[${labelPrefix}accountId]`,
+                required: true,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}direction`,
+                label: `[${labelPrefix}direction]`,
+                required: true,
+                type: 'string',
+                choices: [
+                    'Debit',
+                    'Credit',
+                ],
+            },
+            {
+                key: `${keyPrefix}transactionAmount`,
+                label: `[${labelPrefix}transactionAmount]`,
+                type: 'number',
+            },
+            {
+                key: `${keyPrefix}transactionCurrencyId`,
+                label: `[${labelPrefix}transactionCurrencyId]`,
+                required: true,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}description`,
                 label: `[${labelPrefix}description]`,
                 required: true,
                 type: 'string',
-            },
-            {
-                key: `${keyPrefix}date`,
-                label: `[${labelPrefix}date]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}amount`,
-                label: `[${labelPrefix}amount]`,
-                type: 'number',
-            },
-            {
-                key: `${keyPrefix}currencyId`,
-                label: `[${labelPrefix}currencyId]`,
-                required: true,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}debitAccountId`,
-                label: `[${labelPrefix}debitAccountId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}creditAccountId`,
-                label: `[${labelPrefix}creditAccountId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}journalEntryId`,
-                label: `[${labelPrefix}journalEntryId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}accountingEntryType`,
-                label: `[${labelPrefix}accountingEntryType]`,
-                type: 'string',
-                choices: [
-                    'None',
-                    'Debit',
-                    'Credit',
-                ],
             },
         ]
     },
@@ -68,14 +60,12 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
-            'description': bundle.inputData?.[`${keyPrefix}description`],
-            'date': bundle.inputData?.[`${keyPrefix}date`],
-            'amount': bundle.inputData?.[`${keyPrefix}amount`],
-            'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
-            'debitAccountId': bundle.inputData?.[`${keyPrefix}debitAccountId`],
-            'creditAccountId': bundle.inputData?.[`${keyPrefix}creditAccountId`],
             'journalEntryId': bundle.inputData?.[`${keyPrefix}journalEntryId`],
-            'accountingEntryType': bundle.inputData?.[`${keyPrefix}accountingEntryType`],
+            'accountId': bundle.inputData?.[`${keyPrefix}accountId`],
+            'direction': bundle.inputData?.[`${keyPrefix}direction`],
+            'transactionAmount': bundle.inputData?.[`${keyPrefix}transactionAmount`],
+            'transactionCurrencyId': bundle.inputData?.[`${keyPrefix}transactionCurrencyId`],
+            'description': bundle.inputData?.[`${keyPrefix}description`],
         }
     },
 }

@@ -5,7 +5,6 @@ const Int32Envelope = require('../models/Int32Envelope');
 const NonFungibleTokenCreateDto = require('../models/NonFungibleTokenCreateDto');
 const NonFungibleTokenDto = require('../models/NonFungibleTokenDto');
 const NonFungibleTokenDtoListEnvelope = require('../models/NonFungibleTokenDtoListEnvelope');
-const NonFungibleTokenDtoODataQueryOptions = require('../models/NonFungibleTokenDtoODataQueryOptions');
 const NonFungibleTokenUpdateDto = require('../models/NonFungibleTokenUpdateDto');
 const Operation = require('../models/Operation');
 const utils = require('../utils/utils');
@@ -204,7 +203,6 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
-                ....fields(),
                 {
                     key: 'api-version',
                     label: '',
@@ -230,7 +228,6 @@ module.exports = {
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
-                        'oDataQueryOptions': bundle.inputData?.['oDataQueryOptions'],
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
@@ -261,7 +258,6 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
-                ....fields(),
                 {
                     key: 'api-version',
                     label: '',
@@ -287,7 +283,6 @@ module.exports = {
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
-                        'oDataQueryOptions': bundle.inputData?.['oDataQueryOptions'],
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {

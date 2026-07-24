@@ -7,6 +7,7 @@ module.exports = {
             {
                 key: `${keyPrefix}name`,
                 label: `[${labelPrefix}name]`,
+                required: true,
                 type: 'string',
             },
             {
@@ -22,6 +23,7 @@ module.exports = {
             {
                 key: `${keyPrefix}fiscalYearId`,
                 label: `[${labelPrefix}fiscalYearId]`,
+                required: true,
                 type: 'string',
             },
         ]

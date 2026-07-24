@@ -5,14 +5,15 @@ const FormData = require('form-data');
 const FormData = require('form-data');
 const FormData = require('form-data');
 const FormData = require('form-data');
+const FormData = require('form-data');
 
 module.exports = {
-    image: {
-        key: 'image',
+    radzenUploadImage: {
+        key: 'radzenUploadImage',
         noun: 'RadzenEditor',
         display: {
-            label: 'Upload an image file',
-            description: 'Uploads an image file and returns its URL for editor embedding.',
+            label: 'Upload an editor image to tenant storage.',
+            description: '',
             hidden: false,
         },
         operation: {
@@ -21,190 +22,20 @@ module.exports = {
                     key: 'tenantId',
                     label: '',
                     type: 'string',
-                },
-                {
-                    key: 'api-version',
-                    label: '',
-                    type: 'string',
-                },
-                {
-                    key: 'x-api-version',
-                    label: '',
-                    type: 'string',
-                },
-                {
-                    key: 'file',
-                    label: '',
-                    type: 'file',
-                },
-            ],
-            outputFields: [
-            ],
-            perform: async (z, bundle) => {
-                const formData = new FormData()
-                const filename = bundle.inputData?.['filename'] || bundle.inputData?.['file'].split('/').slice(-1)[0]
-                formData.append('file', (await (await z.request({url: bundle.inputData?.['file'], method: 'GET', raw: true})).buffer()), { filename: filename })
-                const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/RadzenEditor/Uploads/Image'),
-                    method: 'POST',
-                    removeMissingValuesFrom: { params: true, body: true },
-                    headers: {
-                        
-                        'Accept': '',
-                    },
-                    params: {
-                        'tenantId': bundle.inputData?.['tenantId'],
-                        'api-version': bundle.inputData?.['api-version'],
-                    },
-                    body: formData,
-                }
-                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
-                    response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'image', response.json);
-                    return results;
-                })
-            },
-            sample: { data: {} }
-        }
-    },
-    multiple: {
-        key: 'multiple',
-        noun: 'RadzenEditor',
-        display: {
-            label: 'Upload multiple files',
-            description: 'Uploads multiple files to tenant or user storage.',
-            hidden: false,
-        },
-        operation: {
-            inputFields: [
-                {
-                    key: 'tenantId',
-                    label: '',
-                    type: 'string',
-                },
-                {
-                    key: 'api-version',
-                    label: '',
-                    type: 'string',
-                },
-                {
-                    key: 'x-api-version',
-                    label: '',
-                    type: 'string',
-                },
-                {
-                    key: 'files',
-                    label: '',
-                    type: 'string',
-                }
-            ],
-            outputFields: [
-            ],
-            perform: async (z, bundle) => {
-                const formData = new FormData()
-                const filename = bundle.inputData?.['filename'] || bundle.inputData?.['files'].split('/').slice(-1)[0]
-                formData.append('files', (await (await z.request({url: bundle.inputData?.['files'], method: 'GET', raw: true})).buffer()), { filename: filename })
-                const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/RadzenEditor/Uploads/Multiple'),
-                    method: 'POST',
-                    removeMissingValuesFrom: { params: true, body: true },
-                    headers: {
-                        
-                        'Accept': '',
-                    },
-                    params: {
-                        'tenantId': bundle.inputData?.['tenantId'],
-                        'api-version': bundle.inputData?.['api-version'],
-                    },
-                    body: formData,
-                }
-                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
-                    response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'multiple', response.json);
-                    return results;
-                })
-            },
-            sample: { data: {} }
-        }
-    },
-    post: {
-        key: 'post',
-        noun: 'RadzenEditor',
-        display: {
-            label: 'Upload files by ID',
-            description: 'Uploads files associated with a specific resource ID.',
-            hidden: false,
-        },
-        operation: {
-            inputFields: [
-                {
-                    key: 'id',
-                    label: '',
-                    type: 'integer',
                     required: true,
                 },
                 {
-                    key: 'tenantId',
+                    key: 'visibility',
                     label: '',
                     type: 'string',
                 },
                 {
-                    key: 'api-version',
+                    key: 'socialProfileId',
                     label: '',
                     type: 'string',
                 },
                 {
-                    key: 'x-api-version',
-                    label: '',
-                    type: 'string',
-                },
-                {
-                    key: 'files',
-                    label: '',
-                    type: 'string',
-                }
-            ],
-            outputFields: [
-            ],
-            perform: async (z, bundle) => {
-                const formData = new FormData()
-                const filename = bundle.inputData?.['filename'] || bundle.inputData?.['files'].split('/').slice(-1)[0]
-                formData.append('files', (await (await z.request({url: bundle.inputData?.['files'], method: 'GET', raw: true})).buffer()), { filename: filename })
-                const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/RadzenEditor/Uploads/{id}'),
-                    method: 'POST',
-                    removeMissingValuesFrom: { params: true, body: true },
-                    headers: {
-                        
-                        'Accept': '',
-                    },
-                    params: {
-                        'tenantId': bundle.inputData?.['tenantId'],
-                        'api-version': bundle.inputData?.['api-version'],
-                    },
-                    body: formData,
-                }
-                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
-                    response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'post', response.json);
-                    return results;
-                })
-            },
-            sample: { data: {} }
-        }
-    },
-    single: {
-        key: 'single',
-        noun: 'RadzenEditor',
-        display: {
-            label: 'Upload a single file',
-            description: 'Uploads a single file to tenant or user storage.',
-            hidden: false,
-        },
-        operation: {
-            inputFields: [
-                {
-                    key: 'tenantId',
+                    key: 'purpose',
                     label: '',
                     type: 'string',
                 },
@@ -231,7 +62,7 @@ module.exports = {
                 const filename = bundle.inputData?.['filename'] || bundle.inputData?.['file'].split('/').slice(-1)[0]
                 formData.append('file', (await (await z.request({url: bundle.inputData?.['file'], method: 'GET', raw: true})).buffer()), { filename: filename })
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/RadzenEditor/Uploads/Single'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/fs/radzen/tenants/{tenantId}/upload/image'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -239,32 +70,62 @@ module.exports = {
                         'Accept': '',
                     },
                     params: {
-                        'tenantId': bundle.inputData?.['tenantId'],
+                        'visibility': bundle.inputData?.['visibility'],
+                        'socialProfileId': bundle.inputData?.['socialProfileId'],
+                        'purpose': bundle.inputData?.['purpose'],
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: formData,
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
                     response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'single', response.json);
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'radzenUploadImage', response.json);
                     return results;
                 })
             },
             sample: { data: {} }
         }
     },
-    specific: {
-        key: 'specific',
+    radzenUploadImageScoped: {
+        key: 'radzenUploadImageScoped',
         noun: 'RadzenEditor',
         display: {
-            label: 'Upload a specific file',
-            description: 'Uploads a specific file to tenant or user storage.',
+            label: 'Upload an editor image scoped to a record.',
+            description: '',
             hidden: false,
         },
         operation: {
             inputFields: [
                 {
                     key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'recordType',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'recordId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'visibility',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'socialProfileId',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'purpose',
                     label: '',
                     type: 'string',
                 },
@@ -291,7 +152,7 @@ module.exports = {
                 const filename = bundle.inputData?.['filename'] || bundle.inputData?.['file'].split('/').slice(-1)[0]
                 formData.append('file', (await (await z.request({url: bundle.inputData?.['file'], method: 'GET', raw: true})).buffer()), { filename: filename })
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/RadzenEditor/Uploads/Specific'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/fs/radzen/tenants/{tenantId}/{recordType}/{recordId}/upload/image'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -299,14 +160,422 @@ module.exports = {
                         'Accept': '',
                     },
                     params: {
-                        'tenantId': bundle.inputData?.['tenantId'],
+                        'visibility': bundle.inputData?.['visibility'],
+                        'socialProfileId': bundle.inputData?.['socialProfileId'],
+                        'purpose': bundle.inputData?.['purpose'],
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: formData,
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
                     response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'specific', response.json);
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'radzenUploadImageScoped', response.json);
+                    return results;
+                })
+            },
+            sample: { data: {} }
+        }
+    },
+    radzenUploadSingle: {
+        key: 'radzenUploadSingle',
+        noun: 'RadzenEditor',
+        display: {
+            label: 'Upload a single editor file to tenant storage.',
+            description: '',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'file',
+                    label: '',
+                    type: 'file',
+                },
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const formData = new FormData()
+                const filename = bundle.inputData?.['filename'] || bundle.inputData?.['file'].split('/').slice(-1)[0]
+                formData.append('file', (await (await z.request({url: bundle.inputData?.['file'], method: 'GET', raw: true})).buffer()), { filename: filename })
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/fs/radzen/tenants/{tenantId}/upload/single'),
+                    method: 'POST',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        
+                        'Accept': '',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: formData,
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'radzenUploadSingle', response.json);
+                    return results;
+                })
+            },
+            sample: { data: {} }
+        }
+    },
+    radzenUploadSingleScoped: {
+        key: 'radzenUploadSingleScoped',
+        noun: 'RadzenEditor',
+        display: {
+            label: 'Upload a single editor file scoped to a record.',
+            description: '',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'recordType',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'recordId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'file',
+                    label: '',
+                    type: 'file',
+                },
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const formData = new FormData()
+                const filename = bundle.inputData?.['filename'] || bundle.inputData?.['file'].split('/').slice(-1)[0]
+                formData.append('file', (await (await z.request({url: bundle.inputData?.['file'], method: 'GET', raw: true})).buffer()), { filename: filename })
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/fs/radzen/tenants/{tenantId}/{recordType}/{recordId}/upload/single'),
+                    method: 'POST',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        
+                        'Accept': '',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: formData,
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'radzenUploadSingleScoped', response.json);
+                    return results;
+                })
+            },
+            sample: { data: {} }
+        }
+    },
+    radzenUploadStream: {
+        key: 'radzenUploadStream',
+        noun: 'RadzenEditor',
+        display: {
+            label: 'Chunked editor upload (not implemented).',
+            description: '',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/fs/radzen/tenants/{tenantId}/upload/stream'),
+                    method: 'PUT',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': '',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'radzenUploadStream', response.json);
+                    return results;
+                })
+            },
+            sample: { data: {} }
+        }
+    },
+    radzenUploadStreamScoped: {
+        key: 'radzenUploadStreamScoped',
+        noun: 'RadzenEditor',
+        display: {
+            label: 'Chunked editor upload scoped to a record (not implemented).',
+            description: '',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'recordType',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'recordId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/fs/radzen/tenants/{tenantId}/{recordType}/{recordId}/upload/stream'),
+                    method: 'PUT',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': '',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'radzenUploadStreamScoped', response.json);
+                    return results;
+                })
+            },
+            sample: { data: {} }
+        }
+    },
+    radzenUploadUserImage: {
+        key: 'radzenUploadUserImage',
+        noun: 'RadzenEditor',
+        display: {
+            label: 'Upload an editor image to user storage.',
+            description: '',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'visibility',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'socialProfileId',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'purpose',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'file',
+                    label: '',
+                    type: 'file',
+                },
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const formData = new FormData()
+                const filename = bundle.inputData?.['filename'] || bundle.inputData?.['file'].split('/').slice(-1)[0]
+                formData.append('file', (await (await z.request({url: bundle.inputData?.['file'], method: 'GET', raw: true})).buffer()), { filename: filename })
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/fs/radzen/users/upload/image'),
+                    method: 'POST',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        
+                        'Accept': '',
+                    },
+                    params: {
+                        'visibility': bundle.inputData?.['visibility'],
+                        'socialProfileId': bundle.inputData?.['socialProfileId'],
+                        'purpose': bundle.inputData?.['purpose'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: formData,
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'radzenUploadUserImage', response.json);
+                    return results;
+                })
+            },
+            sample: { data: {} }
+        }
+    },
+    radzenUploadUserImageScoped: {
+        key: 'radzenUploadUserImageScoped',
+        noun: 'RadzenEditor',
+        display: {
+            label: 'Upload a user editor image scoped to a record.',
+            description: '',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'recordType',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'recordId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'visibility',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'socialProfileId',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'purpose',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'file',
+                    label: '',
+                    type: 'file',
+                },
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const formData = new FormData()
+                const filename = bundle.inputData?.['filename'] || bundle.inputData?.['file'].split('/').slice(-1)[0]
+                formData.append('file', (await (await z.request({url: bundle.inputData?.['file'], method: 'GET', raw: true})).buffer()), { filename: filename })
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/fs/radzen/users/{recordType}/{recordId}/upload/image'),
+                    method: 'POST',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        
+                        'Accept': '',
+                    },
+                    params: {
+                        'visibility': bundle.inputData?.['visibility'],
+                        'socialProfileId': bundle.inputData?.['socialProfileId'],
+                        'purpose': bundle.inputData?.['purpose'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: formData,
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'radzenUploadUserImageScoped', response.json);
                     return results;
                 })
             },

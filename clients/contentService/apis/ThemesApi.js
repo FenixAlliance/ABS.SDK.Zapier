@@ -3,8 +3,8 @@ const ErrorEnvelope = require('../models/ErrorEnvelope');
 const utils = require('../utils/utils');
 
 module.exports = {
-    getLatestCurrencyRatesModelAsync: {
-        key: 'getLatestCurrencyRatesModelAsync',
+    updateThemesAsync: {
+        key: 'updateThemesAsync',
         noun: 'Themes',
         display: {
             label: 'Update base web content themes',
@@ -43,7 +43,7 @@ module.exports = {
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
                     response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'getLatestCurrencyRatesModelAsync', response.json);
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'updateThemesAsync', response.json);
                     return results;
                 })
             },

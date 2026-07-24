@@ -1,7 +1,7 @@
 const samples = require('../samples/ModulesApi');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
-const ModuleListEnvelope = require('../models/ModuleListEnvelope');
 const StudioModuleListEnvelope = require('../models/StudioModuleListEnvelope');
+const SuiteModuleListEnvelope = require('../models/SuiteModuleListEnvelope');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -87,7 +87,7 @@ module.exports = {
                 },
             ],
             outputFields: [
-                ...ModuleListEnvelope.fields('', false),
+                ...SuiteModuleListEnvelope.fields('', false),
             ],
             perform: async (z, bundle) => {
                 const options = {
@@ -111,7 +111,7 @@ module.exports = {
                     return results;
                 })
             },
-            sample: samples['ModuleListEnvelopeSample']
+            sample: samples['SuiteModuleListEnvelopeSample']
         }
     },
 }

@@ -1,6 +1,6 @@
 const AccountGroupsApi = require('../apis/AccountGroupsApi');
-const AccountingEntriesApi = require('../apis/AccountingEntriesApi');
 const AccountingPeriodsApi = require('../apis/AccountingPeriodsApi');
+const AccountingSummaryApi = require('../apis/AccountingSummaryApi');
 const AccountsApi = require('../apis/AccountsApi');
 const BankProfilesApi = require('../apis/BankProfilesApi');
 const BankingApi = require('../apis/BankingApi');
@@ -24,13 +24,13 @@ const FiscalResponsibilityRecordsApi = require('../apis/FiscalResponsibilityReco
 const FiscalYearsApi = require('../apis/FiscalYearsApi');
 const GrantsApi = require('../apis/GrantsApi');
 const InvoiceEnumerationRangesApi = require('../apis/InvoiceEnumerationRangesApi');
-const JournalEntriesApi = require('../apis/JournalEntriesApi');
 const JournalTypesApi = require('../apis/JournalTypesApi');
 const JournalsApi = require('../apis/JournalsApi');
 const LedgerTypesApi = require('../apis/LedgerTypesApi');
 const LedgersApi = require('../apis/LedgersApi');
 const LoansApi = require('../apis/LoansApi');
 const ReceiptsApi = require('../apis/ReceiptsApi');
+const ReportsApi = require('../apis/ReportsApi');
 const SharesApi = require('../apis/SharesApi');
 const TaxClassesApi = require('../apis/TaxClassesApi');
 const TaxPoliciesApi = require('../apis/TaxPoliciesApi');
@@ -46,8 +46,6 @@ const actions = {
     [AccountGroupsApi.getAccountGroupsCountAsync.key]: AccountGroupsApi.getAccountGroupsCountAsync,
     [AccountGroupsApi.patchAccountGroupAsync.key]: AccountGroupsApi.patchAccountGroupAsync,
     [AccountGroupsApi.updateAccountGroup.key]: AccountGroupsApi.updateAccountGroup,
-    [AccountingEntriesApi.getCreditsSumAsync.key]: AccountingEntriesApi.getCreditsSumAsync,
-    [AccountingEntriesApi.getDebitsSumAsync.key]: AccountingEntriesApi.getDebitsSumAsync,
     [AccountingPeriodsApi.createAccountingPeriod.key]: AccountingPeriodsApi.createAccountingPeriod,
     [AccountingPeriodsApi.deleteAccountingPeriod.key]: AccountingPeriodsApi.deleteAccountingPeriod,
     [AccountingPeriodsApi.getAccountingPeriod.key]: AccountingPeriodsApi.getAccountingPeriod,
@@ -55,6 +53,10 @@ const actions = {
     [AccountingPeriodsApi.getAccountingPeriodsCountAsync.key]: AccountingPeriodsApi.getAccountingPeriodsCountAsync,
     [AccountingPeriodsApi.patchAccountingPeriodAsync.key]: AccountingPeriodsApi.patchAccountingPeriodAsync,
     [AccountingPeriodsApi.updateAccountingPeriod.key]: AccountingPeriodsApi.updateAccountingPeriod,
+    [AccountingSummaryApi.getCreditsSumAsync.key]: AccountingSummaryApi.getCreditsSumAsync,
+    [AccountingSummaryApi.getDebitsSumAsync.key]: AccountingSummaryApi.getDebitsSumAsync,
+    [AccountingSummaryApi.getExpensesSumAsync.key]: AccountingSummaryApi.getExpensesSumAsync,
+    [AccountingSummaryApi.getIncomesSumAsync.key]: AccountingSummaryApi.getIncomesSumAsync,
     [AccountsApi.aggregateAccountsBalanceAsync.key]: AccountsApi.aggregateAccountsBalanceAsync,
     [AccountsApi.balanceAccountAsync.key]: AccountsApi.balanceAccountAsync,
     [AccountsApi.balanceRootAccountAsync.key]: AccountsApi.balanceRootAccountAsync,
@@ -205,6 +207,7 @@ const actions = {
     [FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost.key]: FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost,
     [FenixAllianceABSWebApi.accountManageLinkExternalLoginPost.key]: FenixAllianceABSWebApi.accountManageLinkExternalLoginPost,
     [FenixAllianceABSWebApi.accountPerformExternalLoginPost.key]: FenixAllianceABSWebApi.accountPerformExternalLoginPost,
+    [FenixAllianceABSWebApi.apiV2AIServiceAgentsAgentIdAguiPost.key]: FenixAllianceABSWebApi.apiV2AIServiceAgentsAgentIdAguiPost,
     [FenixAllianceABSWebApi.forgotPasswordPost.key]: FenixAllianceABSWebApi.forgotPasswordPost,
     [FenixAllianceABSWebApi.healthGet.key]: FenixAllianceABSWebApi.healthGet,
     [FenixAllianceABSWebApi.helloGet.key]: FenixAllianceABSWebApi.helloGet,
@@ -253,11 +256,13 @@ const actions = {
     [FiscalIdentificationTypesApi.getFiscalIdentificationTypesCount.key]: FiscalIdentificationTypesApi.getFiscalIdentificationTypesCount,
     [FiscalIdentificationTypesApi.patchFiscalIdentificationTypeAsync.key]: FiscalIdentificationTypesApi.patchFiscalIdentificationTypeAsync,
     [FiscalIdentificationTypesApi.updateFiscalIdentificationType.key]: FiscalIdentificationTypesApi.updateFiscalIdentificationType,
+    [FiscalPeriodsApi.closeFiscalPeriod.key]: FiscalPeriodsApi.closeFiscalPeriod,
     [FiscalPeriodsApi.createFiscalPeriod.key]: FiscalPeriodsApi.createFiscalPeriod,
     [FiscalPeriodsApi.deleteFiscalPeriod.key]: FiscalPeriodsApi.deleteFiscalPeriod,
     [FiscalPeriodsApi.getFiscalPeriod.key]: FiscalPeriodsApi.getFiscalPeriod,
     [FiscalPeriodsApi.getFiscalPeriods.key]: FiscalPeriodsApi.getFiscalPeriods,
     [FiscalPeriodsApi.getFiscalPeriodsCount.key]: FiscalPeriodsApi.getFiscalPeriodsCount,
+    [FiscalPeriodsApi.openFiscalPeriod.key]: FiscalPeriodsApi.openFiscalPeriod,
     [FiscalPeriodsApi.patchFiscalPeriodAsync.key]: FiscalPeriodsApi.patchFiscalPeriodAsync,
     [FiscalPeriodsApi.updateFiscalPeriod.key]: FiscalPeriodsApi.updateFiscalPeriod,
     [FiscalRegimesApi.createFiscalRegime.key]: FiscalRegimesApi.createFiscalRegime,
@@ -301,8 +306,6 @@ const actions = {
     [InvoiceEnumerationRangesApi.getInvoiceEnumerationRangesAsync.key]: InvoiceEnumerationRangesApi.getInvoiceEnumerationRangesAsync,
     [InvoiceEnumerationRangesApi.patchInvoiceEnumerationRangeAsync.key]: InvoiceEnumerationRangesApi.patchInvoiceEnumerationRangeAsync,
     [InvoiceEnumerationRangesApi.updateInvoiceEnumerationRangeAsync.key]: InvoiceEnumerationRangesApi.updateInvoiceEnumerationRangeAsync,
-    [JournalEntriesApi.getExpensesSumAsync.key]: JournalEntriesApi.getExpensesSumAsync,
-    [JournalEntriesApi.getIncomesSumAsync.key]: JournalEntriesApi.getIncomesSumAsync,
     [JournalTypesApi.createJournalTypeAsync.key]: JournalTypesApi.createJournalTypeAsync,
     [JournalTypesApi.deleteJournalTypeAsync.key]: JournalTypesApi.deleteJournalTypeAsync,
     [JournalTypesApi.getJournalTypeDetailsAsync.key]: JournalTypesApi.getJournalTypeDetailsAsync,
@@ -320,9 +323,12 @@ const actions = {
     [JournalsApi.getJournalDetailsAsync.key]: JournalsApi.getJournalDetailsAsync,
     [JournalsApi.getJournalEntriesAsync.key]: JournalsApi.getJournalEntriesAsync,
     [JournalsApi.getJournalEntriesCountAsync.key]: JournalsApi.getJournalEntriesCountAsync,
+    [JournalsApi.getJournalEntryDetailsAsync.key]: JournalsApi.getJournalEntryDetailsAsync,
     [JournalsApi.getJournalsAsync.key]: JournalsApi.getJournalsAsync,
     [JournalsApi.patchJournalAsync.key]: JournalsApi.patchJournalAsync,
     [JournalsApi.patchJournalEntryAsync.key]: JournalsApi.patchJournalEntryAsync,
+    [JournalsApi.postJournalEntryAsync.key]: JournalsApi.postJournalEntryAsync,
+    [JournalsApi.reverseJournalEntryAsync.key]: JournalsApi.reverseJournalEntryAsync,
     [JournalsApi.updateJournalAsync.key]: JournalsApi.updateJournalAsync,
     [JournalsApi.updateJournalEntryAsync.key]: JournalsApi.updateJournalEntryAsync,
     [LedgerTypesApi.createLedgerTypeAsync.key]: LedgerTypesApi.createLedgerTypeAsync,
@@ -367,6 +373,7 @@ const actions = {
     [ReceiptsApi.getReceiptsCountAsync.key]: ReceiptsApi.getReceiptsCountAsync,
     [ReceiptsApi.patchReceiptAsync.key]: ReceiptsApi.patchReceiptAsync,
     [ReceiptsApi.updateReceiptAsync.key]: ReceiptsApi.updateReceiptAsync,
+    [ReportsApi.getTrialBalanceAsync.key]: ReportsApi.getTrialBalanceAsync,
     [SharesApi.createShareClass.key]: SharesApi.createShareClass,
     [SharesApi.createShareIssuance.key]: SharesApi.createShareIssuance,
     [SharesApi.createShareTransfer.key]: SharesApi.createShareTransfer,

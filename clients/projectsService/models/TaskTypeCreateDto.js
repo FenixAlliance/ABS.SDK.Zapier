@@ -20,8 +20,8 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}taskCategoryID`,
-                label: `[${labelPrefix}taskCategoryID]`,
+                key: `${keyPrefix}taskCategoryId`,
+                label: `[${labelPrefix}taskCategoryId]`,
                 type: 'string',
             },
             {
@@ -42,7 +42,7 @@ module.exports = {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'title': bundle.inputData?.[`${keyPrefix}title`],
-            'taskCategoryID': bundle.inputData?.[`${keyPrefix}taskCategoryID`],
+            'taskCategoryId': bundle.inputData?.[`${keyPrefix}taskCategoryId`],
             'displayInTimeTracker': bundle.inputData?.[`${keyPrefix}displayInTimeTracker`],
             'requiresDescription': bundle.inputData?.[`${keyPrefix}requiresDescription`],
         }

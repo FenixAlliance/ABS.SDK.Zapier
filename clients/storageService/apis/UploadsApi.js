@@ -11,7 +11,7 @@ module.exports = {
         noun: 'Uploads',
         display: {
             label: 'Upload a file',
-            description: 'Uploads a file to tenant or user storage.',
+            description: 'Uploads a file to tenant or user storage, scanned and catalogued through the storage spine.',
             hidden: false,
         },
         operation: {
@@ -30,6 +30,11 @@ module.exports = {
                     key: 'x-api-version',
                     label: '',
                     type: 'string',
+                },
+                {
+                    key: 'file',
+                    label: '',
+                    type: 'file',
                 },
                 {
                     key: 'notes',
@@ -78,6 +83,41 @@ module.exports = {
                 },
                 {
                     key: 'filePath',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'publicAccessType',
+                    label: '',
+                    type: 'string',
+                    choices: [
+                        'false',
+                        'Container',
+                        'Blob',
+                        'Unknown',
+                    ],
+                },
+                {
+                    key: 'purpose',
+                    label: '',
+                    type: 'string',
+                    choices: [
+                        'Unknown',
+                        'IdentityAvatar',
+                        'IdentityBanner',
+                        'ProfileAsset',
+                        'EngagementInline',
+                        'EngagementAttachment',
+                        'MessageAttachment',
+                        'SocialPost',
+                        'RecordAttachment',
+                        'AiGenerated',
+                        'SystemArtifact',
+                        'Temporary',
+                    ],
+                },
+                {
+                    key: 'socialProfileId.value',
                     label: '',
                     type: 'string',
                 },
@@ -176,6 +216,8 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const formData = new FormData()
+                const filename = bundle.inputData?.['filename'] || bundle.inputData?.['file'].split('/').slice(-1)[0]
+                formData.append('file', (await (await z.request({url: bundle.inputData?.['file'], method: 'GET', raw: true})).buffer()), { filename: filename })
                 formData.append('notes', bundle.inputData?.['notes'])
                 formData.append('title', bundle.inputData?.['title'])
                 formData.append('author', bundle.inputData?.['author'])
@@ -186,6 +228,9 @@ module.exports = {
                 formData.append('validResponse', bundle.inputData?.['validResponse'])
                 formData.append('parentFileUploadId', bundle.inputData?.['parentFileUploadId'])
                 formData.append('filePath', bundle.inputData?.['filePath'])
+                formData.append('publicAccessType', bundle.inputData?.['publicAccessType'])
+                formData.append('purpose', bundle.inputData?.['purpose'])
+                formData.append('socialProfileId.value', bundle.inputData?.['socialProfileId.value'])
                 formData.append('appFile.content', bundle.inputData?.['appFile.content'])
                 formData.append('appFile.sha256', bundle.inputData?.['appFile.sha256'])
                 formData.append('appFile.createdAtUtc', bundle.inputData?.['appFile.createdAtUtc'])
@@ -204,7 +249,7 @@ module.exports = {
                 formData.append('id', bundle.inputData?.['id'])
                 formData.append('timestamp', bundle.inputData?.['timestamp'])
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/Uploads'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Uploads'),
                     method: 'POST',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

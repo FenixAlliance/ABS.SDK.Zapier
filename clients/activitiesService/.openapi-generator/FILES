@@ -1,6 +1,5 @@
 README.md
 apis/ActivityFeedsApi.js
-apis/ActivityRecordsApi.js
 apis/FenixAllianceABSWebApi.js
 authentication.js
 index.js
@@ -36,6 +35,4 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/ActivityRecordsApi.js
-samples/FenixAllianceABSWebApi.js
 utils/utils.js

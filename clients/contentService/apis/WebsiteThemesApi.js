@@ -5,7 +5,6 @@ const Operation = require('../models/Operation');
 const WebsiteThemeCreateDto = require('../models/WebsiteThemeCreateDto');
 const WebsiteThemeDto = require('../models/WebsiteThemeDto');
 const WebsiteThemeDtoListEnvelope = require('../models/WebsiteThemeDtoListEnvelope');
-const WebsiteThemeDtoODataQueryOptions = require('../models/WebsiteThemeDtoODataQueryOptions');
 const WebsiteThemeUpdateDto = require('../models/WebsiteThemeUpdateDto');
 const utils = require('../utils/utils');
 
@@ -203,7 +202,6 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
-                ....fields(),
                 {
                     key: 'api-version',
                     label: '',
@@ -229,7 +227,6 @@ module.exports = {
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
-                        'oDataQueryOptions': bundle.inputData?.['oDataQueryOptions'],
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
@@ -260,7 +257,6 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
-                ....fields(),
                 {
                     key: 'api-version',
                     label: '',
@@ -286,7 +282,6 @@ module.exports = {
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
-                        'oDataQueryOptions': bundle.inputData?.['oDataQueryOptions'],
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {

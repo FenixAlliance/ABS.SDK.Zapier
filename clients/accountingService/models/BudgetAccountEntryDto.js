@@ -16,14 +16,14 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}debit`,
-                label: `[${labelPrefix}debit]`,
-                type: 'number',
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
+                type: 'string',
             },
             {
-                key: `${keyPrefix}credit`,
-                label: `[${labelPrefix}credit]`,
-                type: 'number',
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
+                type: 'string',
             },
             {
                 key: `${keyPrefix}description`,
@@ -31,29 +31,9 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}forexRate`,
-                label: `[${labelPrefix}forexRate]`,
+                key: `${keyPrefix}plannedAmount`,
+                label: `[${labelPrefix}plannedAmount]`,
                 type: 'number',
-            },
-            {
-                key: `${keyPrefix}accountId`,
-                label: `[${labelPrefix}accountId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}tenantId`,
-                label: `[${labelPrefix}tenantId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}date`,
-                label: `[${labelPrefix}date]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}enrollmentId`,
-                label: `[${labelPrefix}enrollmentId]`,
-                type: 'string',
             },
             {
                 key: `${keyPrefix}currencyId`,
@@ -71,37 +51,16 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}journalEntryId`,
-                label: `[${labelPrefix}journalEntryId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}debitAccountName`,
-                label: `[${labelPrefix}debitAccountName]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}creditAccountName`,
-                label: `[${labelPrefix}creditAccountName]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}accountingEntryType`,
-                label: `[${labelPrefix}accountingEntryType]`,
-                type: 'string',
-                choices: [
-                    'None',
-                    'Debit',
-                    'Credit',
-                ],
-            },
-            ...Money.fields(`${keyPrefix}debitAmount`, isInput),
-            ...Money.fields(`${keyPrefix}creditAmount`, isInput),
-            {
                 key: `${keyPrefix}budgetId`,
                 label: `[${labelPrefix}budgetId]`,
                 type: 'string',
             },
+            {
+                key: `${keyPrefix}date`,
+                label: `[${labelPrefix}date]`,
+                type: 'string',
+            },
+            ...Money.fields(`${keyPrefix}plannedAmountMoney`, isInput),
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -109,24 +68,16 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
-            'debit': bundle.inputData?.[`${keyPrefix}debit`],
-            'credit': bundle.inputData?.[`${keyPrefix}credit`],
-            'description': bundle.inputData?.[`${keyPrefix}description`],
-            'forexRate': bundle.inputData?.[`${keyPrefix}forexRate`],
-            'accountId': bundle.inputData?.[`${keyPrefix}accountId`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
-            'date': bundle.inputData?.[`${keyPrefix}date`],
             'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
+            'description': bundle.inputData?.[`${keyPrefix}description`],
+            'plannedAmount': bundle.inputData?.[`${keyPrefix}plannedAmount`],
             'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
             'debitAccountId': bundle.inputData?.[`${keyPrefix}debitAccountId`],
             'creditAccountId': bundle.inputData?.[`${keyPrefix}creditAccountId`],
-            'journalEntryId': bundle.inputData?.[`${keyPrefix}journalEntryId`],
-            'debitAccountName': bundle.inputData?.[`${keyPrefix}debitAccountName`],
-            'creditAccountName': bundle.inputData?.[`${keyPrefix}creditAccountName`],
-            'accountingEntryType': bundle.inputData?.[`${keyPrefix}accountingEntryType`],
-            'debitAmount': utils.removeIfEmpty(Money.mapping(bundle, `${keyPrefix}debitAmount`)),
-            'creditAmount': utils.removeIfEmpty(Money.mapping(bundle, `${keyPrefix}creditAmount`)),
             'budgetId': bundle.inputData?.[`${keyPrefix}budgetId`],
+            'date': bundle.inputData?.[`${keyPrefix}date`],
+            'plannedAmountMoney': utils.removeIfEmpty(Money.mapping(bundle, `${keyPrefix}plannedAmountMoney`)),
         }
     },
 }

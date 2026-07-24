@@ -4,13 +4,19 @@ const ContactCreateDto = require('../models/ContactCreateDto');
 const ContactDto = require('../models/ContactDto');
 const ContactDtoEnvelope = require('../models/ContactDtoEnvelope');
 const ContactDtoListEnvelope = require('../models/ContactDtoListEnvelope');
+const ContactEmailCreateDto = require('../models/ContactEmailCreateDto');
+const ContactEmailDtoListEnvelope = require('../models/ContactEmailDtoListEnvelope');
+const ContactEmailUpdateDto = require('../models/ContactEmailUpdateDto');
+const ContactProfileCreateDto = require('../models/ContactProfileCreateDto');
 const ContactProfileDtoListEnvelope = require('../models/ContactProfileDtoListEnvelope');
+const ContactProfileUpdateDto = require('../models/ContactProfileUpdateDto');
 const ContactUpdateDto = require('../models/ContactUpdateDto');
 const EmailDispatchRequest = require('../models/EmailDispatchRequest');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const ExtendedContactDtoEnvelope = require('../models/ExtendedContactDtoEnvelope');
 const ExtendedContactDtoListEnvelope = require('../models/ExtendedContactDtoListEnvelope');
+const Int32Envelope = require('../models/Int32Envelope');
 const Operation = require('../models/Operation');
 const SocialProfileDtoEnvelope = require('../models/SocialProfileDtoEnvelope');
 const WalletDtoEnvelope = require('../models/WalletDtoEnvelope');
@@ -74,6 +80,130 @@ module.exports = {
             sample: samples['EmptyEnvelopeSample']
         }
     },
+    createContactEmailAsync: {
+        key: 'createContactEmailAsync',
+        noun: 'Contacts',
+        display: {
+            label: 'Add an email address to a contact',
+            description: 'Creates a new email address for the specified contact.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'contactId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                ...ContactEmailCreateDto.fields(),
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}/Emails/Addresses'),
+                    method: 'POST',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...ContactEmailCreateDto.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'createContactEmailAsync', response.json);
+                    return results;
+                })
+            },
+            sample: { data: {} }
+        }
+    },
+    createProfileForContactAsync: {
+        key: 'createProfileForContactAsync',
+        noun: 'Contacts',
+        display: {
+            label: 'Create a contact profile',
+            description: 'Creates a new profile for the specified contact.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'contactId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                ...ContactProfileCreateDto.fields(),
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}/Profiles'),
+                    method: 'POST',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...ContactProfileCreateDto.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'createProfileForContactAsync', response.json);
+                    return results;
+                })
+            },
+            sample: { data: {} }
+        }
+    },
     deleteContactAsync: {
         key: 'deleteContactAsync',
         noun: 'Contacts',
@@ -133,6 +263,138 @@ module.exports = {
                 })
             },
             sample: samples['EmptyEnvelopeSample']
+        }
+    },
+    deleteContactEmailAsync: {
+        key: 'deleteContactEmailAsync',
+        noun: 'Contacts',
+        display: {
+            label: 'Delete a contact email address',
+            description: 'Deletes an email address from the specified contact.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'contactId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'emailId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}/Emails/{emailId}'),
+                    method: 'DELETE',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'deleteContactEmailAsync', response.json);
+                    return results;
+                })
+            },
+            sample: { data: {} }
+        }
+    },
+    deleteProfileForContactAsync: {
+        key: 'deleteProfileForContactAsync',
+        noun: 'Contacts',
+        display: {
+            label: 'Delete a contact profile',
+            description: 'Deletes a profile for the specified contact.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'contactId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'profileId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}/Profiles/{profileId}'),
+                    method: 'DELETE',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'deleteProfileForContactAsync', response.json);
+                    return results;
+                })
+            },
+            sample: { data: {} }
         }
     },
     getBusinessOwnedIndividualAsync: {
@@ -659,12 +921,12 @@ module.exports = {
             sample: samples['CartDtoEnvelopeSample']
         }
     },
-    getContactProfilesAsync: {
-        key: 'getContactProfilesAsync',
+    getContactEmailsAsync: {
+        key: 'getContactEmailsAsync',
         noun: 'Contacts',
         display: {
-            label: 'Get a contact&#39;s social profiles',
-            description: 'Get a contact&#39;s social profiles',
+            label: 'Get a contact&#39;s email addresses',
+            description: 'Get all email addresses for the specified contact.',
             hidden: false,
         },
         operation: {
@@ -693,11 +955,11 @@ module.exports = {
                 },
             ],
             outputFields: [
-                ...ContactProfileDtoListEnvelope.fields('', false),
+                ...ContactEmailDtoListEnvelope.fields('', false),
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}/Profiles'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}/Emails'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -713,11 +975,72 @@ module.exports = {
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
                     response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'getContactProfilesAsync', response.json);
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getContactEmailsAsync', response.json);
                     return results;
                 })
             },
-            sample: samples['ContactProfileDtoListEnvelopeSample']
+            sample: samples['ContactEmailDtoListEnvelopeSample']
+        }
+    },
+    getContactEmailsCountAsync: {
+        key: 'getContactEmailsCountAsync',
+        noun: 'Contacts',
+        display: {
+            label: 'Get contact email addresses count',
+            description: 'Returns the count of email addresses for the specified contact.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'contactId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...Int32Envelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}/Emails/Count'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getContactEmailsCountAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['Int32EnvelopeSample']
         }
     },
     getContactSocialProfileAsync: {
@@ -1422,6 +1745,128 @@ module.exports = {
             sample: samples['ContactDtoListEnvelopeSample']
         }
     },
+    getProfilesForContactAsync: {
+        key: 'getProfilesForContactAsync',
+        noun: 'Contacts',
+        display: {
+            label: 'Get a contact&#39;s social profiles',
+            description: 'Get a contact&#39;s social profiles',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'contactId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...ContactProfileDtoListEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}/Profiles'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getProfilesForContactAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['ContactProfileDtoListEnvelopeSample']
+        }
+    },
+    getProfilesForContactCountAsync: {
+        key: 'getProfilesForContactCountAsync',
+        noun: 'Contacts',
+        display: {
+            label: 'Get contact profiles count',
+            description: 'Returns the count of profiles for the specified contact.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'contactId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...Int32Envelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}/Profiles/Count'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getProfilesForContactCountAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['Int32EnvelopeSample']
+        }
+    },
     patchContactAsync: {
         key: 'patchContactAsync',
         noun: 'Contacts',
@@ -1487,6 +1932,78 @@ module.exports = {
                 })
             },
             sample: samples['EmptyEnvelopeSample']
+        }
+    },
+    patchContactEmailAsync: {
+        key: 'patchContactEmailAsync',
+        noun: 'Contacts',
+        display: {
+            label: 'Patch a contact email address',
+            description: 'Partially updates an existing email address for the specified contact.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'contactId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'emailId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}/Emails/{emailId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchContactEmailAsync', response.json);
+                    return results;
+                })
+            },
+            sample: { data: {} }
         }
     },
     previewContactEmailTemplate: {
@@ -1729,6 +2246,142 @@ module.exports = {
             sample: samples['EmptyEnvelopeSample']
         }
     },
+    updateContactEmailAsync: {
+        key: 'updateContactEmailAsync',
+        noun: 'Contacts',
+        display: {
+            label: 'Update a contact email address',
+            description: 'Updates an existing email address for the specified contact.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'contactId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'emailId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                ...ContactEmailUpdateDto.fields(),
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}/Emails/{emailId}'),
+                    method: 'PUT',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...ContactEmailUpdateDto.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'updateContactEmailAsync', response.json);
+                    return results;
+                })
+            },
+            sample: { data: {} }
+        }
+    },
+    updateProfileForContactAsync: {
+        key: 'updateProfileForContactAsync',
+        noun: 'Contacts',
+        display: {
+            label: 'Update a contact profile',
+            description: 'Updates an existing profile for the specified contact.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'contactId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'profileId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                ...ContactProfileUpdateDto.fields(),
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}/Profiles/{profileId}'),
+                    method: 'PUT',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...ContactProfileUpdateDto.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'updateProfileForContactAsync', response.json);
+                    return results;
+                })
+            },
+            sample: { data: {} }
+        }
+    },
     upsertTenantOntoAnotherTenantContactListAsync: {
         key: 'upsertTenantOntoAnotherTenantContactListAsync',
         noun: 'Contacts',
@@ -1851,6 +2504,72 @@ module.exports = {
                 })
             },
             sample: samples['ContactDtoEnvelopeSample']
+        }
+    },
+    verifyContactEmailAsync: {
+        key: 'verifyContactEmailAsync',
+        noun: 'Contacts',
+        display: {
+            label: 'Verify a contact email address',
+            description: 'Marks an email address as verified on the specified contact.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'contactId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'emailId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/CrmService/Contacts/{contactId}/Emails/{emailId}/Verify'),
+                    method: 'POST',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'verifyContactEmailAsync', response.json);
+                    return results;
+                })
+            },
+            sample: { data: {} }
         }
     },
 }

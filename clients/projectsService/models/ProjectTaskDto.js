@@ -15,6 +15,16 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}title`,
+                label: `[${labelPrefix}title]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}description`,
+                label: `[${labelPrefix}description]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}startDate`,
                 label: `[${labelPrefix}startDate]`,
                 type: 'string',
@@ -25,13 +35,23 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}projectID`,
-                label: `[${labelPrefix}projectID]`,
+                key: `${keyPrefix}projectId`,
+                label: `[${labelPrefix}projectId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}projectTaskBucketID`,
-                label: `[${labelPrefix}projectTaskBucketID]`,
+                key: `${keyPrefix}projectTaskBucketId`,
+                label: `[${labelPrefix}projectTaskBucketId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
         ]
@@ -41,10 +61,14 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
+            'title': bundle.inputData?.[`${keyPrefix}title`],
+            'description': bundle.inputData?.[`${keyPrefix}description`],
             'startDate': bundle.inputData?.[`${keyPrefix}startDate`],
             'dueLine': bundle.inputData?.[`${keyPrefix}dueLine`],
-            'projectID': bundle.inputData?.[`${keyPrefix}projectID`],
-            'projectTaskBucketID': bundle.inputData?.[`${keyPrefix}projectTaskBucketID`],
+            'projectId': bundle.inputData?.[`${keyPrefix}projectId`],
+            'projectTaskBucketId': bundle.inputData?.[`${keyPrefix}projectTaskBucketId`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
         }
     },
 }

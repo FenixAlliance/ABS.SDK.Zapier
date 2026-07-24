@@ -5,63 +5,50 @@ module.exports = {
         const {keyPrefix, labelPrefix} = utils.buildKeyAndLabel(prefix, isInput, isArrayChild)
         return [
             {
-                key: `${keyPrefix}description`,
-                label: `[${labelPrefix}description]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}amount`,
-                label: `[${labelPrefix}amount]`,
-                type: 'number',
-            },
-            {
-                key: `${keyPrefix}date`,
-                label: `[${labelPrefix}date]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}currencyId`,
-                label: `[${labelPrefix}currencyId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}debitAccountId`,
-                label: `[${labelPrefix}debitAccountId]`,
-                type: 'string',
-            },
-            {
-                key: `${keyPrefix}creditAccountId`,
-                label: `[${labelPrefix}creditAccountId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}journalEntryId`,
                 label: `[${labelPrefix}journalEntryId]`,
                 type: 'string',
             },
             {
-                key: `${keyPrefix}accountingEntryType`,
-                label: `[${labelPrefix}accountingEntryType]`,
+                key: `${keyPrefix}accountId`,
+                label: `[${labelPrefix}accountId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}direction`,
+                label: `[${labelPrefix}direction]`,
                 type: 'string',
                 choices: [
-                    'None',
                     'Debit',
                     'Credit',
                 ],
+            },
+            {
+                key: `${keyPrefix}transactionAmount`,
+                label: `[${labelPrefix}transactionAmount]`,
+                type: 'number',
+            },
+            {
+                key: `${keyPrefix}transactionCurrencyId`,
+                label: `[${labelPrefix}transactionCurrencyId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}description`,
+                label: `[${labelPrefix}description]`,
+                type: 'string',
             },
         ]
     },
     mapping: (bundle, prefix = '') => {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
-            'description': bundle.inputData?.[`${keyPrefix}description`],
-            'amount': bundle.inputData?.[`${keyPrefix}amount`],
-            'date': bundle.inputData?.[`${keyPrefix}date`],
-            'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
-            'debitAccountId': bundle.inputData?.[`${keyPrefix}debitAccountId`],
-            'creditAccountId': bundle.inputData?.[`${keyPrefix}creditAccountId`],
             'journalEntryId': bundle.inputData?.[`${keyPrefix}journalEntryId`],
-            'accountingEntryType': bundle.inputData?.[`${keyPrefix}accountingEntryType`],
+            'accountId': bundle.inputData?.[`${keyPrefix}accountId`],
+            'direction': bundle.inputData?.[`${keyPrefix}direction`],
+            'transactionAmount': bundle.inputData?.[`${keyPrefix}transactionAmount`],
+            'transactionCurrencyId': bundle.inputData?.[`${keyPrefix}transactionCurrencyId`],
+            'description': bundle.inputData?.[`${keyPrefix}description`],
         }
     },
 }

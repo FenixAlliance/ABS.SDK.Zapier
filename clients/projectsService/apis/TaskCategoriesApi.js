@@ -1,6 +1,8 @@
 const samples = require('../samples/TaskCategoriesApi');
+const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
+const Operation = require('../models/Operation');
 const TaskCategoryCreateDto = require('../models/TaskCategoryCreateDto');
 const TaskCategoryDto = require('../models/TaskCategoryDto');
 const TaskCategoryDtoListEnvelope = require('../models/TaskCategoryDtoListEnvelope');
@@ -290,6 +292,62 @@ module.exports = {
                 })
             },
             sample: samples['TaskCategoryDtoListEnvelopeSample']
+        }
+    },
+    patchTaskCategoryAsync: {
+        key: 'patchTaskCategoryAsync',
+        noun: 'TaskCategories',
+        display: {
+            label: 'Patches a task category',
+            description: 'Partially updates the specified task category.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'taskCategoryId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ProjectsService/TaskCategories/{taskCategoryId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchTaskCategoryAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     updateTaskCategoryAsync: {

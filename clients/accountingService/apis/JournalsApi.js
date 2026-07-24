@@ -6,11 +6,13 @@ const JournalCreateDto = require('../models/JournalCreateDto');
 const JournalDtoEnvelope = require('../models/JournalDtoEnvelope');
 const JournalDtoIReadOnlyListEnvelope = require('../models/JournalDtoIReadOnlyListEnvelope');
 const JournalEntryCreateDto = require('../models/JournalEntryCreateDto');
+const JournalEntryDtoEnvelope = require('../models/JournalEntryDtoEnvelope');
 const JournalEntryDtoIReadOnlyListEnvelope = require('../models/JournalEntryDtoIReadOnlyListEnvelope');
 const JournalEntryUpdateDto = require('../models/JournalEntryUpdateDto');
 const JournalUpdateDto = require('../models/JournalUpdateDto');
 const MoneyEnvelope = require('../models/MoneyEnvelope');
 const Operation = require('../models/Operation');
+const ReverseJournalEntryRequest = require('../models/ReverseJournalEntryRequest');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -634,6 +636,73 @@ module.exports = {
             sample: samples['Int32EnvelopeSample']
         }
     },
+    getJournalEntryDetailsAsync: {
+        key: 'getJournalEntryDetailsAsync',
+        noun: 'Journals',
+        display: {
+            label: 'Get journal entry by ID',
+            description: 'Retrieves a single journal entry WITH its hydrated posting lines — each line&#39;s account, direction, description and currency facets (transaction / functional / account / USD).',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'journalId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'entryId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...JournalEntryDtoEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/{journalId}/Entries/{entryId}'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getJournalEntryDetailsAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['JournalEntryDtoEnvelopeSample']
+        }
+    },
     getJournalsAsync: {
         key: 'getJournalsAsync',
         noun: 'Journals',
@@ -823,6 +892,142 @@ module.exports = {
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
                     response.throwForStatus();
                     const results = utils.responseOptionsMiddleware(z, bundle, 'patchJournalEntryAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
+        }
+    },
+    postJournalEntryAsync: {
+        key: 'postJournalEntryAsync',
+        noun: 'Journals',
+        display: {
+            label: 'Post a draft journal entry',
+            description: 'Posts a DRAFT journal entry into its own open fiscal period. Enforces the balanced-entry invariant and the open-period gate, then seals the entry (immutable — correct via reversal, never edit/delete). An unbalanced draft or a closed period is rejected. Requires the journals_post permission.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'journalId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'entryId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/{journalId}/Entries/{entryId}/Post'),
+                    method: 'POST',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'postJournalEntryAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
+        }
+    },
+    reverseJournalEntryAsync: {
+        key: 'reverseJournalEntryAsync',
+        noun: 'Journals',
+        display: {
+            label: 'Reverse a posted journal entry',
+            description: 'Reverses a POSTED journal entry by writing a balanced compensating counter-entry into the supplied open fiscal period and marking the original Reversed — one atomic operation (append-only audit trail). Requires the journals_reverse permission.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'journalId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'entryId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                ...ReverseJournalEntryRequest.fields(),
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/{journalId}/Entries/{entryId}/Reverse'),
+                    method: 'POST',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...ReverseJournalEntryRequest.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'reverseJournalEntryAsync', response.json);
                     return results;
                 })
             },

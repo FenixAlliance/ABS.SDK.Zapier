@@ -25,8 +25,18 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}projectID`,
-                label: `[${labelPrefix}projectID]`,
+                key: `${keyPrefix}projectId`,
+                label: `[${labelPrefix}projectId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
                 type: 'string',
             },
         ]
@@ -38,7 +48,9 @@ module.exports = {
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'periodStartDate': bundle.inputData?.[`${keyPrefix}periodStartDate`],
             'periodEndDate': bundle.inputData?.[`${keyPrefix}periodEndDate`],
-            'projectID': bundle.inputData?.[`${keyPrefix}projectID`],
+            'projectId': bundle.inputData?.[`${keyPrefix}projectId`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
         }
     },
 }

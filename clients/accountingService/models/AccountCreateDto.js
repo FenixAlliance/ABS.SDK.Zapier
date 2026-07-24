@@ -79,6 +79,27 @@ module.exports = {
                     'Liabilities',
                 ],
             },
+            {
+                key: `${keyPrefix}isContra`,
+                label: `[${labelPrefix}isContra]`,
+                type: 'boolean',
+            },
+            {
+                key: `${keyPrefix}isMonetary`,
+                label: `[${labelPrefix}isMonetary]`,
+                type: 'boolean',
+            },
+            {
+                key: `${keyPrefix}incomeStatementSubType`,
+                label: `[${labelPrefix}incomeStatementSubType]`,
+                type: 'string',
+                choices: [
+                    'OperatingRevenue',
+                    'Gain',
+                    'OperatingExpense',
+                    'Loss',
+                ],
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -97,6 +118,9 @@ module.exports = {
             'accountTypeId': bundle.inputData?.[`${keyPrefix}accountTypeId`],
             'parentAccountId': bundle.inputData?.[`${keyPrefix}parentAccountId`],
             'accountCategory': bundle.inputData?.[`${keyPrefix}accountCategory`],
+            'isContra': bundle.inputData?.[`${keyPrefix}isContra`],
+            'isMonetary': bundle.inputData?.[`${keyPrefix}isMonetary`],
+            'incomeStatementSubType': bundle.inputData?.[`${keyPrefix}incomeStatementSubType`],
         }
     },
 }

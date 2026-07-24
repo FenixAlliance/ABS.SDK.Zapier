@@ -2,6 +2,7 @@ const samples = require('../samples/ProjectsApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
+const Operation = require('../models/Operation');
 const ProjectCreateDto = require('../models/ProjectCreateDto');
 const ProjectDtoEnvelope = require('../models/ProjectDtoEnvelope');
 const ProjectDtoListEnvelope = require('../models/ProjectDtoListEnvelope');
@@ -115,8 +116,8 @@ module.exports = {
             sample: samples['EmptyEnvelopeSample']
         }
     },
-    createProjectTaskAsync: {
-        key: 'createProjectTaskAsync',
+    createTaskForProjectAsync: {
+        key: 'createTaskForProjectAsync',
         noun: 'Projects',
         display: {
             label: 'Creates a project task',
@@ -160,7 +161,7 @@ module.exports = {
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
                     response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'createProjectTaskAsync', response.json);
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'createTaskForProjectAsync', response.json);
                     return results;
                 })
             },
@@ -273,8 +274,8 @@ module.exports = {
             sample: samples['EmptyEnvelopeSample']
         }
     },
-    deleteProjectTaskAsync: {
-        key: 'deleteProjectTaskAsync',
+    deleteTaskForProjectAsync: {
+        key: 'deleteTaskForProjectAsync',
         noun: 'Projects',
         display: {
             label: 'Deletes a project task',
@@ -322,7 +323,7 @@ module.exports = {
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
                     response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'deleteProjectTaskAsync', response.json);
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'deleteTaskForProjectAsync', response.json);
                     return results;
                 })
             },
@@ -529,156 +530,6 @@ module.exports = {
             sample: samples['Int32EnvelopeSample']
         }
     },
-    getProjectTasksAsync: {
-        key: 'getProjectTasksAsync',
-        noun: 'Projects',
-        display: {
-            label: 'Retrieves project tasks',
-            description: 'Gets all tasks for a specific project with OData support.',
-            hidden: false,
-        },
-        operation: {
-            inputFields: [
-                {
-                    key: 'projectId',
-                    label: '',
-                    type: 'string',
-                    required: true,
-                },
-                {
-                    key: 'tenantId',
-                    label: '',
-                    type: 'string',
-                    required: true,
-                },
-            ],
-            outputFields: [
-                ...ProjectTaskDtoListEnvelope.fields('', false),
-            ],
-            perform: async (z, bundle) => {
-                const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/ProjectsService/Projects/{projectId}/Tasks'),
-                    method: 'GET',
-                    removeMissingValuesFrom: { params: true, body: true },
-                    headers: {
-                        'Content-Type': '',
-                        'Accept': 'application/json, application/xml',
-                    },
-                    params: {
-                        'tenantId': bundle.inputData?.['tenantId'],
-                    },
-                    body: {
-                    },
-                }
-                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
-                    response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'getProjectTasksAsync', response.json);
-                    return results;
-                })
-            },
-            sample: samples['ProjectTaskDtoListEnvelopeSample']
-        }
-    },
-    getProjectTasksCountAsync: {
-        key: 'getProjectTasksCountAsync',
-        noun: 'Projects',
-        display: {
-            label: 'Counts project tasks',
-            description: 'Gets the count of tasks for a specific project.',
-            hidden: false,
-        },
-        operation: {
-            inputFields: [
-                {
-                    key: 'projectId',
-                    label: '',
-                    type: 'string',
-                    required: true,
-                },
-                {
-                    key: 'tenantId',
-                    label: '',
-                    type: 'string',
-                    required: true,
-                },
-            ],
-            outputFields: [
-                ...Int32Envelope.fields('', false),
-            ],
-            perform: async (z, bundle) => {
-                const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/ProjectsService/Projects/{projectId}/Tasks/Count'),
-                    method: 'GET',
-                    removeMissingValuesFrom: { params: true, body: true },
-                    headers: {
-                        'Content-Type': '',
-                        'Accept': 'application/json, application/xml',
-                    },
-                    params: {
-                        'tenantId': bundle.inputData?.['tenantId'],
-                    },
-                    body: {
-                    },
-                }
-                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
-                    response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'getProjectTasksCountAsync', response.json);
-                    return results;
-                })
-            },
-            sample: samples['Int32EnvelopeSample']
-        }
-    },
-    getProjectTimeLogsAsync: {
-        key: 'getProjectTimeLogsAsync',
-        noun: 'Projects',
-        display: {
-            label: 'Retrieves project time logs',
-            description: 'Gets all time log entries for a specific project with OData support.',
-            hidden: false,
-        },
-        operation: {
-            inputFields: [
-                {
-                    key: 'projectId',
-                    label: '',
-                    type: 'string',
-                    required: true,
-                },
-                {
-                    key: 'tenantId',
-                    label: '',
-                    type: 'string',
-                    required: true,
-                },
-            ],
-            outputFields: [
-                ...ProjectTimeLogDtoListEnvelope.fields('', false),
-            ],
-            perform: async (z, bundle) => {
-                const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/ProjectsService/Projects/{projectId}/TimeLogs'),
-                    method: 'GET',
-                    removeMissingValuesFrom: { params: true, body: true },
-                    headers: {
-                        'Content-Type': '',
-                        'Accept': 'application/json, application/xml',
-                    },
-                    params: {
-                        'tenantId': bundle.inputData?.['tenantId'],
-                    },
-                    body: {
-                    },
-                }
-                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
-                    response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'getProjectTimeLogsAsync', response.json);
-                    return results;
-                })
-            },
-            sample: samples['ProjectTimeLogDtoListEnvelopeSample']
-        }
-    },
     getProjectTimeLogsCountAsync: {
         key: 'getProjectTimeLogsCountAsync',
         noun: 'Projects',
@@ -817,6 +668,336 @@ module.exports = {
             sample: samples['Int32EnvelopeSample']
         }
     },
+    getTasksForProjectAsync: {
+        key: 'getTasksForProjectAsync',
+        noun: 'Projects',
+        display: {
+            label: 'Retrieves project tasks',
+            description: 'Gets all tasks for a specific project with OData support.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'projectId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+            ],
+            outputFields: [
+                ...ProjectTaskDtoListEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ProjectsService/Projects/{projectId}/Tasks'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getTasksForProjectAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['ProjectTaskDtoListEnvelopeSample']
+        }
+    },
+    getTasksForProjectCountAsync: {
+        key: 'getTasksForProjectCountAsync',
+        noun: 'Projects',
+        display: {
+            label: 'Counts project tasks',
+            description: 'Gets the count of tasks for a specific project.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'projectId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+            ],
+            outputFields: [
+                ...Int32Envelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ProjectsService/Projects/{projectId}/Tasks/Count'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getTasksForProjectCountAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['Int32EnvelopeSample']
+        }
+    },
+    getTimeLogsForProjectAsync: {
+        key: 'getTimeLogsForProjectAsync',
+        noun: 'Projects',
+        display: {
+            label: 'Retrieves project time logs',
+            description: 'Gets all time log entries for a specific project with OData support.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'projectId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+            ],
+            outputFields: [
+                ...ProjectTimeLogDtoListEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ProjectsService/Projects/{projectId}/TimeLogs'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getTimeLogsForProjectAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['ProjectTimeLogDtoListEnvelopeSample']
+        }
+    },
+    patchProjectAsync: {
+        key: 'patchProjectAsync',
+        noun: 'Projects',
+        display: {
+            label: 'Patches a project',
+            description: 'Partially updates the specified project.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'projectId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ProjectsService/Projects/{projectId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchProjectAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
+        }
+    },
+    patchProjectPeriodAsync: {
+        key: 'patchProjectPeriodAsync',
+        noun: 'Projects',
+        display: {
+            label: 'Patches a project period',
+            description: 'Partially updates the specified period for a project.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'projectId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'projectPeriodId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ProjectsService/Projects/{projectId}/Periods/{projectPeriodId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchProjectPeriodAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
+        }
+    },
+    patchTaskForProjectAsync: {
+        key: 'patchTaskForProjectAsync',
+        noun: 'Projects',
+        display: {
+            label: 'Patches a project task',
+            description: 'Partially updates the specified task in a project.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'projectId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'projectTaskId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'Operation',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/ProjectsService/Projects/{projectId}/Tasks/{projectTaskId}'),
+                    method: 'PATCH',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                    },
+                    body: {
+                        ...Operation.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'patchTaskForProjectAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
+        }
+    },
     updateProjectAsync: {
         key: 'updateProjectAsync',
         noun: 'Projects',
@@ -927,8 +1108,8 @@ module.exports = {
             sample: samples['EmptyEnvelopeSample']
         }
     },
-    updateProjectTaskAsync: {
-        key: 'updateProjectTaskAsync',
+    updateTaskForProjectAsync: {
+        key: 'updateTaskForProjectAsync',
         noun: 'Projects',
         display: {
             label: 'Updates a project task',
@@ -978,7 +1159,7 @@ module.exports = {
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
                     response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'updateProjectTaskAsync', response.json);
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'updateTaskForProjectAsync', response.json);
                     return results;
                 })
             },

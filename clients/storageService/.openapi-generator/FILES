@@ -1,8 +1,8 @@
 README.md
 apis/AvatarsApi.js
 apis/BlobsApi.js
-apis/CompletionsApi.js
-apis/FenixAlliancePortalsWebsiteApi.js
+apis/EditorAssetsApi.js
+apis/FenixAllianceABSWebApi.js
 apis/FilesApi.js
 apis/RadzenEditorApi.js
 apis/UploadsApi.js
@@ -20,6 +20,7 @@ models/HttpValidationProblemDetails.js
 models/InfoRequest.js
 models/InfoResponse.js
 models/LoginRequest.js
+models/ProblemDetails.js
 models/RefreshRequest.js
 models/RegisterRequest.js
 models/ResendConfirmationEmailRequest.js
@@ -28,4 +29,5 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
+samples/EditorAssetsApi.js
 utils/utils.js

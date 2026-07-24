@@ -5,7 +5,6 @@ authentication.js
 index.js
 models/AccessTokenResponse.js
 models/CurrencyId.js
-models/DecimalEnvelope.js
 models/EmailDispatchRequest.js
 models/EmptyEnvelope.js
 models/Envelope.js

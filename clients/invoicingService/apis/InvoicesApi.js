@@ -1,5 +1,4 @@
 const samples = require('../samples/InvoicesApi');
-const DecimalEnvelope = require('../models/DecimalEnvelope');
 const EmailDispatchRequest = require('../models/EmailDispatchRequest');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const Envelope = require('../models/Envelope');
@@ -1938,7 +1937,7 @@ module.exports = {
                 },
             ],
             outputFields: [
-                ...DecimalEnvelope.fields('', false),
+                ...MoneyEnvelope.fields('', false),
             ],
             perform: async (z, bundle) => {
                 const options = {
@@ -1961,7 +1960,7 @@ module.exports = {
                     return results;
                 })
             },
-            sample: samples['DecimalEnvelopeSample']
+            sample: samples['MoneyEnvelopeSample']
         }
     },
     getSalesInvoicesSum: {
@@ -1982,7 +1981,7 @@ module.exports = {
                 },
             ],
             outputFields: [
-                ...DecimalEnvelope.fields('', false),
+                ...MoneyEnvelope.fields('', false),
             ],
             perform: async (z, bundle) => {
                 const options = {
@@ -2005,7 +2004,7 @@ module.exports = {
                     return results;
                 })
             },
-            sample: samples['DecimalEnvelopeSample']
+            sample: samples['MoneyEnvelopeSample']
         }
     },
     patchInvoice: {

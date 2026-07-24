@@ -1,0 +1,273 @@
+const utils = require('../utils/utils');
+
+module.exports = {
+    fields: (prefix = '', isInput = true, isArrayChild = false) => {
+        const {keyPrefix, labelPrefix} = utils.buildKeyAndLabel(prefix, isInput, isArrayChild)
+        return [
+            {
+                key: `${keyPrefix}id`,
+                label: `[${labelPrefix}id]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}timestamp`,
+                label: `[${labelPrefix}timestamp]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}signed`,
+                label: `[${labelPrefix}signed]`,
+                type: 'boolean',
+            },
+            {
+                key: `${keyPrefix}url`,
+                label: `[${labelPrefix}url]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}type`,
+                label: `[${labelPrefix}type]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}title`,
+                label: `[${labelPrefix}title]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}contentType`,
+                label: `[${labelPrefix}contentType]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}fileLengthInBits`,
+                label: `[${labelPrefix}fileLengthInBits]`,
+                type: 'number',
+            },
+            {
+                key: `${keyPrefix}tenantId`,
+                label: `[${labelPrefix}tenantId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}contactId`,
+                label: `[${labelPrefix}contactId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}userId`,
+                label: `[${labelPrefix}userId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}enrollmentId`,
+                label: `[${labelPrefix}enrollmentId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}documentStandard`,
+                label: `[${labelPrefix}documentStandard]`,
+                type: 'string',
+                choices: [
+                    'None',
+                    'Ubl',
+                    'Pdf',
+                    'Xml',
+                    'Email',
+                    'Json',
+                    'Other',
+                ],
+            },
+            {
+                key: `${keyPrefix}trustDocumentType`,
+                label: `[${labelPrefix}trustDocumentType]`,
+                type: 'string',
+                choices: [
+                    'Unknown',
+                    'Invoice',
+                    'CreditNote',
+                    'DebitNote',
+                    'Contract',
+                    'Certificate',
+                    'Email',
+                    'AuthorityResponse',
+                    'Other',
+                ],
+            },
+            {
+                key: `${keyPrefix}signingStatus`,
+                label: `[${labelPrefix}signingStatus]`,
+                type: 'string',
+                choices: [
+                    'Unknown',
+                    'Draft',
+                    'Signed',
+                    'Failed',
+                    'Revoked',
+                ],
+            },
+            {
+                key: `${keyPrefix}verificationStatus`,
+                label: `[${labelPrefix}verificationStatus]`,
+                type: 'string',
+                choices: [
+                    'Unknown',
+                    'NotVerified',
+                    'Valid',
+                    'Invalid',
+                    'Expired',
+                ],
+            },
+            {
+                key: `${keyPrefix}signedAtUtc`,
+                label: `[${labelPrefix}signedAtUtc]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}correlationId`,
+                label: `[${labelPrefix}correlationId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}externalReference`,
+                label: `[${labelPrefix}externalReference]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}sourceStorageObjectId`,
+                label: `[${labelPrefix}sourceStorageObjectId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}sourceSha256`,
+                label: `[${labelPrefix}sourceSha256]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}signedStorageObjectId`,
+                label: `[${labelPrefix}signedStorageObjectId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}signedSha256`,
+                label: `[${labelPrefix}signedSha256]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}evidenceStorageObjectId`,
+                label: `[${labelPrefix}evidenceStorageObjectId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}evidenceSha256`,
+                label: `[${labelPrefix}evidenceSha256]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}primaryFileUploadId`,
+                label: `[${labelPrefix}primaryFileUploadId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}frozenSourceFileUploadId`,
+                label: `[${labelPrefix}frozenSourceFileUploadId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}signedFileUploadId`,
+                label: `[${labelPrefix}signedFileUploadId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}evidenceFileUploadId`,
+                label: `[${labelPrefix}evidenceFileUploadId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}lockState`,
+                label: `[${labelPrefix}lockState]`,
+                type: 'string',
+                choices: [
+                    'Draft',
+                    'Editable',
+                    'FrozenForSignature',
+                    'SigningInProgress',
+                    'Sealed',
+                    'Voided',
+                    'Superseded',
+                ],
+            },
+            {
+                key: `${keyPrefix}graphicalRepresentationFileUploadId`,
+                label: `[${labelPrefix}graphicalRepresentationFileUploadId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}graphicalRepresentationStorageObjectId`,
+                label: `[${labelPrefix}graphicalRepresentationStorageObjectId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}graphicalRepresentationSha256`,
+                label: `[${labelPrefix}graphicalRepresentationSha256]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}graphicalRepresentationContentType`,
+                label: `[${labelPrefix}graphicalRepresentationContentType]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}graphicalRepresentationGeneratedAtUtc`,
+                label: `[${labelPrefix}graphicalRepresentationGeneratedAtUtc]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}contactName`,
+                label: `[${labelPrefix}contactName]`,
+                type: 'string',
+            },
+        ]
+    },
+    mapping: (bundle, prefix = '') => {
+        const {keyPrefix} = utils.buildKeyAndLabel(prefix)
+        return {
+            'id': bundle.inputData?.[`${keyPrefix}id`],
+            'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
+            'signed': bundle.inputData?.[`${keyPrefix}signed`],
+            'url': bundle.inputData?.[`${keyPrefix}url`],
+            'type': bundle.inputData?.[`${keyPrefix}type`],
+            'title': bundle.inputData?.[`${keyPrefix}title`],
+            'contentType': bundle.inputData?.[`${keyPrefix}contentType`],
+            'fileLengthInBits': bundle.inputData?.[`${keyPrefix}fileLengthInBits`],
+            'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
+            'contactId': bundle.inputData?.[`${keyPrefix}contactId`],
+            'userId': bundle.inputData?.[`${keyPrefix}userId`],
+            'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
+            'documentStandard': bundle.inputData?.[`${keyPrefix}documentStandard`],
+            'trustDocumentType': bundle.inputData?.[`${keyPrefix}trustDocumentType`],
+            'signingStatus': bundle.inputData?.[`${keyPrefix}signingStatus`],
+            'verificationStatus': bundle.inputData?.[`${keyPrefix}verificationStatus`],
+            'signedAtUtc': bundle.inputData?.[`${keyPrefix}signedAtUtc`],
+            'correlationId': bundle.inputData?.[`${keyPrefix}correlationId`],
+            'externalReference': bundle.inputData?.[`${keyPrefix}externalReference`],
+            'sourceStorageObjectId': bundle.inputData?.[`${keyPrefix}sourceStorageObjectId`],
+            'sourceSha256': bundle.inputData?.[`${keyPrefix}sourceSha256`],
+            'signedStorageObjectId': bundle.inputData?.[`${keyPrefix}signedStorageObjectId`],
+            'signedSha256': bundle.inputData?.[`${keyPrefix}signedSha256`],
+            'evidenceStorageObjectId': bundle.inputData?.[`${keyPrefix}evidenceStorageObjectId`],
+            'evidenceSha256': bundle.inputData?.[`${keyPrefix}evidenceSha256`],
+            'primaryFileUploadId': bundle.inputData?.[`${keyPrefix}primaryFileUploadId`],
+            'frozenSourceFileUploadId': bundle.inputData?.[`${keyPrefix}frozenSourceFileUploadId`],
+            'signedFileUploadId': bundle.inputData?.[`${keyPrefix}signedFileUploadId`],
+            'evidenceFileUploadId': bundle.inputData?.[`${keyPrefix}evidenceFileUploadId`],
+            'lockState': bundle.inputData?.[`${keyPrefix}lockState`],
+            'graphicalRepresentationFileUploadId': bundle.inputData?.[`${keyPrefix}graphicalRepresentationFileUploadId`],
+            'graphicalRepresentationStorageObjectId': bundle.inputData?.[`${keyPrefix}graphicalRepresentationStorageObjectId`],
+            'graphicalRepresentationSha256': bundle.inputData?.[`${keyPrefix}graphicalRepresentationSha256`],
+            'graphicalRepresentationContentType': bundle.inputData?.[`${keyPrefix}graphicalRepresentationContentType`],
+            'graphicalRepresentationGeneratedAtUtc': bundle.inputData?.[`${keyPrefix}graphicalRepresentationGeneratedAtUtc`],
+            'contactName': bundle.inputData?.[`${keyPrefix}contactName`],
+        }
+    },
+}

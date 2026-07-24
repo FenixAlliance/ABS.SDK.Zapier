@@ -10,6 +10,67 @@ const Operation = require('../models/Operation');
 const utils = require('../utils/utils');
 
 module.exports = {
+    closeFiscalPeriod: {
+        key: 'closeFiscalPeriod',
+        noun: 'FiscalPeriods',
+        display: {
+            label: 'Close a fiscal period',
+            description: 'Closes a fiscal period so no further journal entries can post into it. Rejects closing a locked (hard-sealed) period.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'fiscalPeriodId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Fiscals/Authorities/FiscalPeriods/{fiscalPeriodId}/Close'),
+                    method: 'POST',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'closeFiscalPeriod', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
+        }
+    },
     createFiscalPeriod: {
         key: 'createFiscalPeriod',
         noun: 'FiscalPeriods',
@@ -340,6 +401,67 @@ module.exports = {
                 })
             },
             sample: samples['Int32EnvelopeSample']
+        }
+    },
+    openFiscalPeriod: {
+        key: 'openFiscalPeriod',
+        noun: 'FiscalPeriods',
+        display: {
+            label: 'Open a fiscal period',
+            description: 'Opens a closed fiscal period so journal entries can post into it. Rejects reopening a locked or an already-open period.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'fiscalPeriodId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Fiscals/Authorities/FiscalPeriods/{fiscalPeriodId}/Open'),
+                    method: 'POST',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'openFiscalPeriod', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     patchFiscalPeriodAsync: {

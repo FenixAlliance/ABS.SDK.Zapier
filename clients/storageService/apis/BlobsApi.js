@@ -40,7 +40,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/Blobs/Single'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Blobs/Single'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
@@ -125,7 +125,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/StorageService/Blobs'),
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Blobs'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {

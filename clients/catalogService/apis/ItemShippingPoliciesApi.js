@@ -66,8 +66,8 @@ module.exports = {
             sample: samples['Int32EnvelopeSample']
         }
     },
-    getItemShippingPoliciesAsync: {
-        key: 'getItemShippingPoliciesAsync',
+    getCatalogItemShippingPoliciesAsync: {
+        key: 'getCatalogItemShippingPoliciesAsync',
         noun: 'ItemShippingPolicies',
         display: {
             label: 'Get item shipping policies',
@@ -119,15 +119,15 @@ module.exports = {
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
                     response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'getItemShippingPoliciesAsync', response.json);
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getCatalogItemShippingPoliciesAsync', response.json);
                     return results;
                 })
             },
             sample: samples['ItemShippingPolicyDtoListEnvelopeSample']
         }
     },
-    getItemShippingPolicyByIdAsync: {
-        key: 'getItemShippingPolicyByIdAsync',
+    getCatalogItemShippingPolicyByIdAsync: {
+        key: 'getCatalogItemShippingPolicyByIdAsync',
         noun: 'ItemShippingPolicies',
         display: {
             label: 'Get item shipping policy by ID',
@@ -185,7 +185,7 @@ module.exports = {
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
                     response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'getItemShippingPolicyByIdAsync', response.json);
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getCatalogItemShippingPolicyByIdAsync', response.json);
                     return results;
                 })
             },
