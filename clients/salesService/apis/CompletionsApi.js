@@ -34,7 +34,7 @@ module.exports = {
             ],
             perform: async (z, bundle) => {
                 const options = {
-                    url: utils.replacePathParameters('http://localhost/api/v2/AiService/Completions/Complete'),
+                    url: utils.replacePathParameters('http://localhost/api/v2/IntelligenceService/Completions/Complete'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
