@@ -2,11 +2,12 @@ const samples = require('../samples/FiscalIdentificationTypesApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const FiscalIdentificationTypeCreateDto = require('../models/FiscalIdentificationTypeCreateDto');
+const FiscalIdentificationTypeDtoCollectionQueryParameters = require('../models/FiscalIdentificationTypeDtoCollectionQueryParameters');
 const FiscalIdentificationTypeDtoEnvelope = require('../models/FiscalIdentificationTypeDtoEnvelope');
 const FiscalIdentificationTypeDtoListEnvelope = require('../models/FiscalIdentificationTypeDtoListEnvelope');
 const FiscalIdentificationTypeUpdateDto = require('../models/FiscalIdentificationTypeUpdateDto');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -227,6 +228,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...FiscalIdentificationTypeDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...FiscalIdentificationTypeDtoListEnvelope.fields('', false),
@@ -237,7 +239,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -245,6 +247,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...FiscalIdentificationTypeDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -288,6 +291,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...FiscalIdentificationTypeDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -298,7 +302,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -306,6 +310,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...FiscalIdentificationTypeDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -350,7 +355,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -372,7 +377,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

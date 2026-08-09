@@ -1,8 +1,10 @@
 const samples = require('../samples/CartsApi');
+const CartDtoCollectionQueryParameters = require('../models/CartDtoCollectionQueryParameters');
 const CartDtoEnvelope = require('../models/CartDtoEnvelope');
 const CartDtoListEnvelope = require('../models/CartDtoListEnvelope');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
+const GuestCartPurgeResultDtoEnvelope = require('../models/GuestCartPurgeResultDtoEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
 const utils = require('../utils/utils');
 
@@ -135,6 +137,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CartDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...CartDtoListEnvelope.fields('', false),
@@ -145,13 +148,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CartDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -183,6 +187,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CartDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -191,6 +196,55 @@ module.exports = {
                 const options = {
                     url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Carts/Count'),
                     method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...CartDtoCollectionQueryParameters.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getSystemCartsCount', response.json);
+                    return results;
+                })
+            },
+            sample: samples['Int32EnvelopeSample']
+        }
+    },
+    purgeSystemGuestCarts: {
+        key: 'purgeSystemGuestCarts',
+        noun: 'Carts',
+        display: {
+            label: 'Purge all guest carts',
+            description: 'Deletes every guest cart, cascading its item cart records, compare records and wish lists, and returns the removed-row counts. Idempotent.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...GuestCartPurgeResultDtoEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Carts/Guests'),
+                    method: 'DELETE',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
                         'Content-Type': '',
@@ -204,11 +258,11 @@ module.exports = {
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
                     response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'getSystemCartsCount', response.json);
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'purgeSystemGuestCarts', response.json);
                     return results;
                 })
             },
-            sample: samples['Int32EnvelopeSample']
+            sample: samples['GuestCartPurgeResultDtoEnvelopeSample']
         }
     },
 }

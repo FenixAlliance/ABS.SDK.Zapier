@@ -1,8 +1,9 @@
 const samples = require('../samples/PaymentsApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const PaymentCreateDto = require('../models/PaymentCreateDto');
+const PaymentDtoCollectionQueryParameters = require('../models/PaymentDtoCollectionQueryParameters');
 const PaymentDtoListEnvelope = require('../models/PaymentDtoListEnvelope');
 const PaymentUpdateDto = require('../models/PaymentUpdateDto');
 const utils = require('../utils/utils');
@@ -220,6 +221,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...PaymentDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...PaymentDtoListEnvelope.fields('', false),
@@ -230,13 +232,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...PaymentDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -271,7 +274,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -292,7 +295,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

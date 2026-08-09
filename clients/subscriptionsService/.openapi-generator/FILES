@@ -14,13 +14,14 @@ models/InfoRequest.js
 models/InfoResponse.js
 models/Int32Envelope.js
 models/LoginRequest.js
-models/Operation.js
+models/PatchOperation.js
 models/RefreshRequest.js
 models/RegisterRequest.js
 models/ResendConfirmationEmailRequest.js
 models/ResetPasswordRequest.js
 models/SubscriptionCreateDto.js
 models/SubscriptionDto.js
+models/SubscriptionDtoCollectionQueryParameters.js
 models/SubscriptionDtoEnvelope.js
 models/SubscriptionDtoIReadOnlyListEnvelope.js
 models/SubscriptionPlanCreateDto.js

@@ -1,5 +1,6 @@
 const samples = require('../samples/AppraisalWorkflowsApi');
 const AppraisalWorkflowCreateDto = require('../models/AppraisalWorkflowCreateDto');
+const AppraisalWorkflowDtoCollectionQueryParameters = require('../models/AppraisalWorkflowDtoCollectionQueryParameters');
 const AppraisalWorkflowDtoEnvelope = require('../models/AppraisalWorkflowDtoEnvelope');
 const AppraisalWorkflowDtoListEnvelope = require('../models/AppraisalWorkflowDtoListEnvelope');
 const AppraisalWorkflowUpdateDto = require('../models/AppraisalWorkflowUpdateDto');
@@ -214,6 +215,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...AppraisalWorkflowDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...AppraisalWorkflowDtoListEnvelope.fields('', false),
@@ -224,7 +226,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -232,6 +234,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...AppraisalWorkflowDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -269,6 +272,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...AppraisalWorkflowDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -279,7 +283,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -287,6 +291,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...AppraisalWorkflowDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

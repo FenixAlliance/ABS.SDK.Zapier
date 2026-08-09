@@ -51,6 +51,11 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}receiverTenantId`,
+                label: `[${labelPrefix}receiverTenantId]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}firstName`,
                 label: `[${labelPrefix}firstName]`,
                 type: 'string',
@@ -322,11 +327,6 @@ module.exports = {
                 ],
             },
             {
-                key: `${keyPrefix}receiverTenantId`,
-                label: `[${labelPrefix}receiverTenantId]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}shippingLocationId`,
                 label: `[${labelPrefix}shippingLocationId]`,
                 type: 'string',
@@ -395,6 +395,7 @@ module.exports = {
             'individualId': bundle.inputData?.[`${keyPrefix}individualId`],
             'paymentTermId': bundle.inputData?.[`${keyPrefix}paymentTermId`],
             'organizationId': bundle.inputData?.[`${keyPrefix}organizationId`],
+            'receiverTenantId': bundle.inputData?.[`${keyPrefix}receiverTenantId`],
             'firstName': bundle.inputData?.[`${keyPrefix}firstName`],
             'lastName': bundle.inputData?.[`${keyPrefix}lastName`],
             'companyName': bundle.inputData?.[`${keyPrefix}companyName`],
@@ -443,7 +444,6 @@ module.exports = {
             'orderStatus': bundle.inputData?.[`${keyPrefix}orderStatus`],
             'quoteStatus': bundle.inputData?.[`${keyPrefix}quoteStatus`],
             'freightTerms': bundle.inputData?.[`${keyPrefix}freightTerms`],
-            'receiverTenantId': bundle.inputData?.[`${keyPrefix}receiverTenantId`],
             'shippingLocationId': bundle.inputData?.[`${keyPrefix}shippingLocationId`],
             'qualifiedIdentifier': bundle.inputData?.[`${keyPrefix}qualifiedIdentifier`],
             'totalTaxesInUsd': bundle.inputData?.[`${keyPrefix}totalTaxesInUsd`],

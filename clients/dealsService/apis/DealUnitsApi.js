@@ -1,18 +1,21 @@
 const samples = require('../samples/DealUnitsApi');
 const DealUnitCreateDto = require('../models/DealUnitCreateDto');
+const DealUnitDtoCollectionQueryParameters = require('../models/DealUnitDtoCollectionQueryParameters');
 const DealUnitDtoEnvelope = require('../models/DealUnitDtoEnvelope');
 const DealUnitDtoListEnvelope = require('../models/DealUnitDtoListEnvelope');
 const DealUnitLineCreateDto = require('../models/DealUnitLineCreateDto');
+const DealUnitLineDtoCollectionQueryParameters = require('../models/DealUnitLineDtoCollectionQueryParameters');
 const DealUnitLineDtoEnvelope = require('../models/DealUnitLineDtoEnvelope');
 const DealUnitLineDtoListEnvelope = require('../models/DealUnitLineDtoListEnvelope');
 const DealUnitLineUpdateDto = require('../models/DealUnitLineUpdateDto');
 const DealUnitUpdateDto = require('../models/DealUnitUpdateDto');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
+const ExtendedDealUnitDtoCollectionQueryParameters = require('../models/ExtendedDealUnitDtoCollectionQueryParameters');
 const ExtendedDealUnitDtoEnvelope = require('../models/ExtendedDealUnitDtoEnvelope');
 const ExtendedDealUnitDtoListEnvelope = require('../models/ExtendedDealUnitDtoListEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -403,6 +406,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...DealUnitLineDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...DealUnitLineDtoListEnvelope.fields('', false),
@@ -413,7 +417,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -421,6 +425,7 @@ module.exports = {
                         'itemId': bundle.inputData?.['itemId'],
                     },
                     body: {
+                        ...DealUnitLineDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -454,6 +459,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...DealUnitLineDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -464,13 +470,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...DealUnitLineDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -554,6 +561,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...DealUnitDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...DealUnitDtoListEnvelope.fields('', false),
@@ -564,13 +572,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...DealUnitDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -598,6 +607,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...DealUnitDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -608,13 +618,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...DealUnitDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -692,6 +703,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...ExtendedDealUnitDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ExtendedDealUnitDtoListEnvelope.fields('', false),
@@ -702,13 +714,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...ExtendedDealUnitDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -743,7 +756,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -764,7 +777,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -805,7 +818,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -826,7 +839,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

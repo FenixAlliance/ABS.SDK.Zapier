@@ -54,6 +54,16 @@ module.exports = {
                 label: `[${labelPrefix}parentJournalId]`,
                 type: 'string',
             },
+            {
+                key: `${keyPrefix}financialBookId`,
+                label: `[${labelPrefix}financialBookId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}code`,
+                label: `[${labelPrefix}code]`,
+                type: 'string',
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -69,6 +79,8 @@ module.exports = {
             'fiscalYearId': bundle.inputData?.[`${keyPrefix}fiscalYearId`],
             'journalTypeId': bundle.inputData?.[`${keyPrefix}journalTypeId`],
             'parentJournalId': bundle.inputData?.[`${keyPrefix}parentJournalId`],
+            'financialBookId': bundle.inputData?.[`${keyPrefix}financialBookId`],
+            'code': bundle.inputData?.[`${keyPrefix}code`],
         }
     },
 }

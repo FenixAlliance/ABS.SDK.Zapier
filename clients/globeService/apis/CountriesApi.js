@@ -1,14 +1,21 @@
 const samples = require('../samples/CountriesApi');
+const CityDtoCollectionQueryParameters = require('../models/CityDtoCollectionQueryParameters');
 const CityDtoListEnvelope = require('../models/CityDtoListEnvelope');
+const CountryCallingCodeDtoCollectionQueryParameters = require('../models/CountryCallingCodeDtoCollectionQueryParameters');
 const CountryCallingCodeDtoListEnvelope = require('../models/CountryCallingCodeDtoListEnvelope');
+const CountryDtoCollectionQueryParameters = require('../models/CountryDtoCollectionQueryParameters');
 const CountryDtoEnvelope = require('../models/CountryDtoEnvelope');
 const CountryDtoListEnvelope = require('../models/CountryDtoListEnvelope');
+const CountryStateDtoCollectionQueryParameters = require('../models/CountryStateDtoCollectionQueryParameters');
 const CountryStateDtoEnvelope = require('../models/CountryStateDtoEnvelope');
 const CountryStateDtoListEnvelope = require('../models/CountryStateDtoListEnvelope');
+const CountryTopLevelDomainDtoCollectionQueryParameters = require('../models/CountryTopLevelDomainDtoCollectionQueryParameters');
 const CountryTopLevelDomainDtoListEnvelope = require('../models/CountryTopLevelDomainDtoListEnvelope');
+const CurrencyDtoCollectionQueryParameters = require('../models/CurrencyDtoCollectionQueryParameters');
 const CurrencyDtoListEnvelope = require('../models/CurrencyDtoListEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
+const TimezoneDtoCollectionQueryParameters = require('../models/TimezoneDtoCollectionQueryParameters');
 const TimezoneDtoListEnvelope = require('../models/TimezoneDtoListEnvelope');
 const utils = require('../utils/utils');
 
@@ -39,6 +46,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CountryCallingCodeDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -49,13 +57,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CountryCallingCodeDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -99,6 +108,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CityDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -109,13 +119,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CityDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -147,6 +158,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CountryDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -157,13 +169,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CountryDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -201,6 +214,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CountryStateDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -211,13 +225,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CountryStateDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -255,6 +270,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...TimezoneDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -265,13 +281,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...TimezoneDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -309,6 +326,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CountryTopLevelDomainDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -319,13 +337,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CountryTopLevelDomainDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -357,6 +376,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CountryDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...CountryDtoListEnvelope.fields('', false),
@@ -367,13 +387,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CountryDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -411,6 +432,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CountryCallingCodeDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...CountryCallingCodeDtoListEnvelope.fields('', false),
@@ -421,13 +443,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CountryCallingCodeDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -471,6 +494,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CityDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...CityDtoListEnvelope.fields('', false),
@@ -481,13 +505,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CityDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -585,6 +610,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CountryStateDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...CountryStateDtoEnvelope.fields('', false),
@@ -595,13 +621,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CountryStateDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -639,6 +666,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CountryStateDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...CountryStateDtoListEnvelope.fields('', false),
@@ -649,13 +677,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CountryStateDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -693,6 +722,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CurrencyDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...CurrencyDtoListEnvelope.fields('', false),
@@ -703,13 +733,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CurrencyDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -747,6 +778,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...TimezoneDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...TimezoneDtoListEnvelope.fields('', false),
@@ -757,13 +789,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...TimezoneDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -801,6 +834,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CountryTopLevelDomainDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...CountryTopLevelDomainDtoListEnvelope.fields('', false),
@@ -811,13 +845,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CountryTopLevelDomainDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

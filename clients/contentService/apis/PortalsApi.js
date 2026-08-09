@@ -2,12 +2,14 @@ const samples = require('../samples/PortalsApi');
 const BusinessDomainDtoListEnvelope = require('../models/BusinessDomainDtoListEnvelope');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
+const ExecutionContextEnvelope = require('../models/ExecutionContextEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const PortalOptionsEnvelope = require('../models/PortalOptionsEnvelope');
 const PortalSettings = require('../models/PortalSettings');
 const PortalSettingsEnvelope = require('../models/PortalSettingsEnvelope');
 const WebPortalCreateDto = require('../models/WebPortalCreateDto');
+const WebPortalDtoCollectionQueryParameters = require('../models/WebPortalDtoCollectionQueryParameters');
 const WebPortalDtoEnvelope = require('../models/WebPortalDtoEnvelope');
 const WebPortalDtoListEnvelope = require('../models/WebPortalDtoListEnvelope');
 const WebPortalUpdateDto = require('../models/WebPortalUpdateDto');
@@ -107,6 +109,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...WebPortalDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -117,7 +120,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -125,6 +128,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...WebPortalDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -376,6 +380,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...WebPortalDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...WebPortalDtoListEnvelope.fields('', false),
@@ -386,7 +391,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -394,6 +399,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...WebPortalDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -698,7 +704,7 @@ module.exports = {
                 },
             ],
             outputFields: [
-                ...WebPortalDtoEnvelope.fields('', false),
+                ...ExecutionContextEnvelope.fields('', false),
             ],
             perform: async (z, bundle) => {
                 const options = {
@@ -721,7 +727,7 @@ module.exports = {
                     return results;
                 })
             },
-            sample: samples['WebPortalDtoEnvelopeSample']
+            sample: samples['ExecutionContextEnvelopeSample']
         }
     },
     patchWebPortalAsync: {
@@ -757,7 +763,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -779,7 +785,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

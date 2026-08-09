@@ -3,14 +3,16 @@ const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
 const ItemRestockCreateDto = require('../models/ItemRestockCreateDto');
+const ItemRestockDtoCollectionQueryParameters = require('../models/ItemRestockDtoCollectionQueryParameters');
 const ItemRestockDtoEnvelope = require('../models/ItemRestockDtoEnvelope');
 const ItemRestockDtoListEnvelope = require('../models/ItemRestockDtoListEnvelope');
 const ItemRestockEntryCreateDto = require('../models/ItemRestockEntryCreateDto');
+const ItemRestockEntryDtoCollectionQueryParameters = require('../models/ItemRestockEntryDtoCollectionQueryParameters');
 const ItemRestockEntryDtoEnvelope = require('../models/ItemRestockEntryDtoEnvelope');
 const ItemRestockEntryDtoListEnvelope = require('../models/ItemRestockEntryDtoListEnvelope');
 const ItemRestockEntryUpdateDto = require('../models/ItemRestockEntryUpdateDto');
 const ItemRestockUpdateDto = require('../models/ItemRestockUpdateDto');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -355,6 +357,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemRestockEntryDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ItemRestockEntryDtoListEnvelope.fields('', false),
@@ -365,7 +368,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -373,6 +376,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ItemRestockEntryDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -416,6 +420,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemRestockEntryDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -426,7 +431,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -434,6 +439,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ItemRestockEntryDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -538,6 +544,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemRestockDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ItemRestockDtoListEnvelope.fields('', false),
@@ -548,7 +555,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -556,6 +563,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ItemRestockDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -593,6 +601,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemRestockDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -603,7 +612,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -611,6 +620,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ItemRestockDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -655,7 +665,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -677,7 +687,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -728,7 +738,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -750,7 +760,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

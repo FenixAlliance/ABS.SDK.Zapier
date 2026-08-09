@@ -2,18 +2,22 @@ const samples = require('../samples/ProjectsApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const ProjectCreateDto = require('../models/ProjectCreateDto');
+const ProjectDtoCollectionQueryParameters = require('../models/ProjectDtoCollectionQueryParameters');
 const ProjectDtoEnvelope = require('../models/ProjectDtoEnvelope');
 const ProjectDtoListEnvelope = require('../models/ProjectDtoListEnvelope');
 const ProjectPeriodCreateDto = require('../models/ProjectPeriodCreateDto');
 const ProjectPeriodDtoListEnvelope = require('../models/ProjectPeriodDtoListEnvelope');
 const ProjectPeriodUpdateDto = require('../models/ProjectPeriodUpdateDto');
 const ProjectTaskCreateDto = require('../models/ProjectTaskCreateDto');
+const ProjectTaskDtoCollectionQueryParameters = require('../models/ProjectTaskDtoCollectionQueryParameters');
 const ProjectTaskDtoListEnvelope = require('../models/ProjectTaskDtoListEnvelope');
 const ProjectTaskUpdateDto = require('../models/ProjectTaskUpdateDto');
+const ProjectTimeLogDtoCollectionQueryParameters = require('../models/ProjectTimeLogDtoCollectionQueryParameters');
 const ProjectTimeLogDtoListEnvelope = require('../models/ProjectTimeLogDtoListEnvelope');
 const ProjectUpdateDto = require('../models/ProjectUpdateDto');
+const TaskCategoryDtoCollectionQueryParameters = require('../models/TaskCategoryDtoCollectionQueryParameters');
 const TaskCategoryDtoListEnvelope = require('../models/TaskCategoryDtoListEnvelope');
 const utils = require('../utils/utils');
 
@@ -452,6 +456,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...TaskCategoryDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...TaskCategoryDtoListEnvelope.fields('', false),
@@ -462,13 +467,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...TaskCategoryDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -502,6 +508,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...TaskCategoryDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -512,13 +519,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...TaskCategoryDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -552,6 +560,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...ProjectTimeLogDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -562,13 +571,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...ProjectTimeLogDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -596,6 +606,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...ProjectDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ProjectDtoListEnvelope.fields('', false),
@@ -606,13 +617,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...ProjectDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -640,6 +652,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...ProjectDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -650,13 +663,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...ProjectDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -690,6 +704,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...ProjectTaskDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ProjectTaskDtoListEnvelope.fields('', false),
@@ -700,13 +715,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...ProjectTaskDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -740,6 +756,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...ProjectTaskDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -750,13 +767,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...ProjectTaskDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -790,6 +808,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...ProjectTimeLogDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ProjectTimeLogDtoListEnvelope.fields('', false),
@@ -800,13 +819,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...ProjectTimeLogDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -841,7 +861,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -862,7 +882,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -903,7 +923,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -924,7 +944,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -965,7 +985,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -986,7 +1006,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

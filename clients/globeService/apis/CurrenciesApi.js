@@ -1,4 +1,5 @@
 const samples = require('../samples/CurrenciesApi');
+const CurrencyDtoCollectionQueryParameters = require('../models/CurrencyDtoCollectionQueryParameters');
 const CurrencyDtoEnvelope = require('../models/CurrencyDtoEnvelope');
 const CurrencyDtoListEnvelope = require('../models/CurrencyDtoListEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
@@ -26,6 +27,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CurrencyDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -36,13 +38,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CurrencyDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -128,6 +131,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CurrencyDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...CurrencyDtoListEnvelope.fields('', false),
@@ -138,13 +142,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CurrencyDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

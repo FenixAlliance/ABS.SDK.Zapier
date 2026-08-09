@@ -1,12 +1,13 @@
 const samples = require('../samples/ApplicationsApi');
 const BusinessApplicationCreateDto = require('../models/BusinessApplicationCreateDto');
+const BusinessApplicationDtoCollectionQueryParameters = require('../models/BusinessApplicationDtoCollectionQueryParameters');
 const BusinessApplicationDtoEnvelope = require('../models/BusinessApplicationDtoEnvelope');
 const BusinessApplicationDtoListEnvelope = require('../models/BusinessApplicationDtoListEnvelope');
 const BusinessApplicationUpdateDto = require('../models/BusinessApplicationUpdateDto');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const SecurityPermissionDtoListEnvelope = require('../models/SecurityPermissionDtoListEnvelope');
 const SecurityRoleDtoListEnvelope = require('../models/SecurityRoleDtoListEnvelope');
 const utils = require('../utils/utils');
@@ -217,6 +218,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...BusinessApplicationDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...BusinessApplicationDtoListEnvelope.fields('', false),
@@ -227,7 +229,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -235,6 +237,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...BusinessApplicationDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -272,6 +275,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...BusinessApplicationDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -282,7 +286,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -290,6 +294,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...BusinessApplicationDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -446,7 +451,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -478,7 +483,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

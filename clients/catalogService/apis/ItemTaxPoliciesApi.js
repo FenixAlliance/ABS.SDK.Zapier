@@ -1,6 +1,7 @@
 const samples = require('../samples/ItemTaxPoliciesApi');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
+const ItemTaxPolicyDtoCollectionQueryParameters = require('../models/ItemTaxPolicyDtoCollectionQueryParameters');
 const ItemTaxPolicyDtoEnvelope = require('../models/ItemTaxPolicyDtoEnvelope');
 const ItemTaxPolicyDtoListEnvelope = require('../models/ItemTaxPolicyDtoListEnvelope');
 const utils = require('../utils/utils');
@@ -36,6 +37,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemTaxPolicyDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -46,7 +48,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -55,6 +57,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ItemTaxPolicyDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -96,6 +99,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemTaxPolicyDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ItemTaxPolicyDtoListEnvelope.fields('', false),
@@ -106,7 +110,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -115,6 +119,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ItemTaxPolicyDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

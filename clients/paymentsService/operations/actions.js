@@ -1,6 +1,7 @@
 const FenixAllianceABSWebApi = require('../apis/FenixAllianceABSWebApi');
 const PaymentMethodsApi = require('../apis/PaymentMethodsApi');
 const PaymentModesApi = require('../apis/PaymentModesApi');
+const PaymentProviderRegistrationsApi = require('../apis/PaymentProviderRegistrationsApi');
 const PaymentTermsApi = require('../apis/PaymentTermsApi');
 const PaymentsApi = require('../apis/PaymentsApi');
 const { triggerMiddleware, isTrigger, searchMiddleware, hasSearchRequisites, isSearchAction, isCreateAction } = require('../utils/utils');
@@ -10,7 +11,6 @@ const actions = {
     [FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost.key]: FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost,
     [FenixAllianceABSWebApi.accountManageLinkExternalLoginPost.key]: FenixAllianceABSWebApi.accountManageLinkExternalLoginPost,
     [FenixAllianceABSWebApi.accountPerformExternalLoginPost.key]: FenixAllianceABSWebApi.accountPerformExternalLoginPost,
-    [FenixAllianceABSWebApi.apiV2AIServiceAgentsAgentIdAguiPost.key]: FenixAllianceABSWebApi.apiV2AIServiceAgentsAgentIdAguiPost,
     [FenixAllianceABSWebApi.forgotPasswordPost.key]: FenixAllianceABSWebApi.forgotPasswordPost,
     [FenixAllianceABSWebApi.healthGet.key]: FenixAllianceABSWebApi.healthGet,
     [FenixAllianceABSWebApi.helloGet.key]: FenixAllianceABSWebApi.helloGet,
@@ -38,6 +38,10 @@ const actions = {
     [PaymentModesApi.getPaymentModesCountAsync.key]: PaymentModesApi.getPaymentModesCountAsync,
     [PaymentModesApi.patchPaymentModeAsync.key]: PaymentModesApi.patchPaymentModeAsync,
     [PaymentModesApi.updatePaymentModeAsync.key]: PaymentModesApi.updatePaymentModeAsync,
+    [PaymentProviderRegistrationsApi.createAsync.key]: PaymentProviderRegistrationsApi.createAsync,
+    [PaymentProviderRegistrationsApi.getAsync.key]: PaymentProviderRegistrationsApi.getAsync,
+    [PaymentProviderRegistrationsApi.getCountAsync.key]: PaymentProviderRegistrationsApi.getCountAsync,
+    [PaymentProviderRegistrationsApi.rotateKeyAsync.key]: PaymentProviderRegistrationsApi.rotateKeyAsync,
     [PaymentTermsApi.createPaymentTermAsync.key]: PaymentTermsApi.createPaymentTermAsync,
     [PaymentTermsApi.deletePaymentTermAsync.key]: PaymentTermsApi.deletePaymentTermAsync,
     [PaymentTermsApi.getPaymentTermDetailsAsync.key]: PaymentTermsApi.getPaymentTermDetailsAsync,

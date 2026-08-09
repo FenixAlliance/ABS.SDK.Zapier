@@ -3,6 +3,7 @@ const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
 const LocalizationStringCreateDto = require('../models/LocalizationStringCreateDto');
+const LocalizationStringDtoCollectionQueryParameters = require('../models/LocalizationStringDtoCollectionQueryParameters');
 const LocalizationStringDtoEnvelope = require('../models/LocalizationStringDtoEnvelope');
 const LocalizationStringDtoListEnvelope = require('../models/LocalizationStringDtoListEnvelope');
 const LocalizationStringUpdateDto = require('../models/LocalizationStringUpdateDto');
@@ -35,6 +36,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...LocalizationStringDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -45,7 +47,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -53,6 +55,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...LocalizationStringDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -269,6 +272,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...LocalizationStringDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...LocalizationStringDtoListEnvelope.fields('', false),
@@ -279,7 +283,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -287,6 +291,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...LocalizationStringDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

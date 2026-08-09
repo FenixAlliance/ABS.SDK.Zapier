@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 README.md
 apis/CreditNotesApi.js
 apis/DebitNotesApi.js
@@ -22,10 +21,4 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/CreditNotesApi.js
-samples/DebitNotesApi.js
-samples/DespatchAdvicesApi.js
-samples/FenixAllianceABSWebApi.js
-samples/InvoicesApi.js
-samples/ReceiptAdvicesApi.js
 utils/utils.js

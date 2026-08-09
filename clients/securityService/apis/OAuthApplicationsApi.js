@@ -8,7 +8,7 @@ const OAuthApplicationDtoListEnvelope = require('../models/OAuthApplicationDtoLi
 const OAuthApplicationUpdateDto = require('../models/OAuthApplicationUpdateDto');
 const OAuthAuthorizationDtoEnvelope = require('../models/OAuthAuthorizationDtoEnvelope');
 const OAuthAuthorizationDtoListEnvelope = require('../models/OAuthAuthorizationDtoListEnvelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -507,7 +507,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -539,7 +539,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

@@ -6,8 +6,9 @@ const ErrorEnvelope = require('../models/ErrorEnvelope');
 const ExtendedTenantDtoEnvelope = require('../models/ExtendedTenantDtoEnvelope');
 const ExtendedTenantEnrollmentDtoEnvelope = require('../models/ExtendedTenantEnrollmentDtoEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
+const NotificationDtoCollectionQueryParameters = require('../models/NotificationDtoCollectionQueryParameters');
 const NotificationDtoListEnvelope = require('../models/NotificationDtoListEnvelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const SocialProfileDtoEnvelope = require('../models/SocialProfileDtoEnvelope');
 const StringListEnvelope = require('../models/StringListEnvelope');
 const SuiteLicenseAssignmentDtoListEnvelope = require('../models/SuiteLicenseAssignmentDtoListEnvelope');
@@ -1118,6 +1119,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...NotificationDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...NotificationDtoListEnvelope.fields('', false),
@@ -1128,13 +1130,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...NotificationDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1172,6 +1175,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...NotificationDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -1182,13 +1186,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...NotificationDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1605,7 +1610,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -1626,7 +1631,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

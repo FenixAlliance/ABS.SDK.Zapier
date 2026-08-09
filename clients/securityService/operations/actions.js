@@ -1,3 +1,4 @@
+const ApplicationPrincipalsApi = require('../apis/ApplicationPrincipalsApi');
 const ApplicationsApi = require('../apis/ApplicationsApi');
 const FenixAllianceABSWebApi = require('../apis/FenixAllianceABSWebApi');
 const LogsApi = require('../apis/LogsApi');
@@ -10,6 +11,15 @@ const WebhooksApi = require('../apis/WebhooksApi');
 const { triggerMiddleware, isTrigger, searchMiddleware, hasSearchRequisites, isSearchAction, isCreateAction } = require('../utils/utils');
 
 const actions = {
+    [ApplicationPrincipalsApi.disableApplicationPrincipalAsync.key]: ApplicationPrincipalsApi.disableApplicationPrincipalAsync,
+    [ApplicationPrincipalsApi.enableApplicationPrincipalAsync.key]: ApplicationPrincipalsApi.enableApplicationPrincipalAsync,
+    [ApplicationPrincipalsApi.getApplicationPrincipalAsync.key]: ApplicationPrincipalsApi.getApplicationPrincipalAsync,
+    [ApplicationPrincipalsApi.getApplicationPrincipalsAsync.key]: ApplicationPrincipalsApi.getApplicationPrincipalsAsync,
+    [ApplicationPrincipalsApi.getApplicationPrincipalsCountAsync.key]: ApplicationPrincipalsApi.getApplicationPrincipalsCountAsync,
+    [ApplicationPrincipalsApi.grantPermissionAsync.key]: ApplicationPrincipalsApi.grantPermissionAsync,
+    [ApplicationPrincipalsApi.provisionApplicationPrincipalAsync.key]: ApplicationPrincipalsApi.provisionApplicationPrincipalAsync,
+    [ApplicationPrincipalsApi.revokePermissionAsync.key]: ApplicationPrincipalsApi.revokePermissionAsync,
+    [ApplicationPrincipalsApi.suspendApplicationPrincipalAsync.key]: ApplicationPrincipalsApi.suspendApplicationPrincipalAsync,
     [ApplicationsApi.createBusinessApplicationAsync.key]: ApplicationsApi.createBusinessApplicationAsync,
     [ApplicationsApi.deleteBusinessApplicationAsync.key]: ApplicationsApi.deleteBusinessApplicationAsync,
     [ApplicationsApi.getBusinessApplicationByIdAsync.key]: ApplicationsApi.getBusinessApplicationByIdAsync,
@@ -23,7 +33,6 @@ const actions = {
     [FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost.key]: FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost,
     [FenixAllianceABSWebApi.accountManageLinkExternalLoginPost.key]: FenixAllianceABSWebApi.accountManageLinkExternalLoginPost,
     [FenixAllianceABSWebApi.accountPerformExternalLoginPost.key]: FenixAllianceABSWebApi.accountPerformExternalLoginPost,
-    [FenixAllianceABSWebApi.apiV2AIServiceAgentsAgentIdAguiPost.key]: FenixAllianceABSWebApi.apiV2AIServiceAgentsAgentIdAguiPost,
     [FenixAllianceABSWebApi.forgotPasswordPost.key]: FenixAllianceABSWebApi.forgotPasswordPost,
     [FenixAllianceABSWebApi.healthGet.key]: FenixAllianceABSWebApi.healthGet,
     [FenixAllianceABSWebApi.helloGet.key]: FenixAllianceABSWebApi.helloGet,

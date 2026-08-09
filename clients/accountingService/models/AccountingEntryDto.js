@@ -11,6 +11,11 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}timestamp`,
+                label: `[${labelPrefix}timestamp]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}tenantId`,
                 label: `[${labelPrefix}tenantId]`,
                 type: 'string',
@@ -105,11 +110,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}timestamp`,
-                label: `[${labelPrefix}timestamp]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}debit`,
                 label: `[${labelPrefix}debit]`,
                 type: 'number',
@@ -127,6 +127,7 @@ module.exports = {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
+            'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'journalEntryId': bundle.inputData?.[`${keyPrefix}journalEntryId`],
@@ -145,7 +146,6 @@ module.exports = {
             'forexRatesSnapshot': bundle.inputData?.[`${keyPrefix}forexRatesSnapshot`],
             'costCentreId': bundle.inputData?.[`${keyPrefix}costCentreId`],
             'projectId': bundle.inputData?.[`${keyPrefix}projectId`],
-            'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'debit': bundle.inputData?.[`${keyPrefix}debit`],
             'credit': bundle.inputData?.[`${keyPrefix}credit`],
             'amount': utils.removeIfEmpty(Money.mapping(bundle, `${keyPrefix}amount`)),

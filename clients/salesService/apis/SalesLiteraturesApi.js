@@ -1,10 +1,12 @@
 const samples = require('../samples/SalesLiteraturesApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
+const ExtendedSalesLiteratureDtoCollectionQueryParameters = require('../models/ExtendedSalesLiteratureDtoCollectionQueryParameters');
 const ExtendedSalesLiteratureDtoListEnvelope = require('../models/ExtendedSalesLiteratureDtoListEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const SalesLiteratureCreateDto = require('../models/SalesLiteratureCreateDto');
+const SalesLiteratureDtoCollectionQueryParameters = require('../models/SalesLiteratureDtoCollectionQueryParameters');
 const SalesLiteratureDtoEnvelope = require('../models/SalesLiteratureDtoEnvelope');
 const SalesLiteratureDtoListEnvelope = require('../models/SalesLiteratureDtoListEnvelope');
 const SalesLiteratureUpdateDto = require('../models/SalesLiteratureUpdateDto');
@@ -27,6 +29,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...SalesLiteratureDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -37,13 +40,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...SalesLiteratureDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -167,6 +171,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...ExtendedSalesLiteratureDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ExtendedSalesLiteratureDtoListEnvelope.fields('', false),
@@ -177,13 +182,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...ExtendedSalesLiteratureDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -261,6 +267,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...SalesLiteratureDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...SalesLiteratureDtoListEnvelope.fields('', false),
@@ -271,13 +278,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...SalesLiteratureDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -312,7 +320,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -333,7 +341,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

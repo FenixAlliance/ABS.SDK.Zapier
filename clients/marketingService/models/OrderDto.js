@@ -134,6 +134,15 @@ module.exports = {
                 ],
             },
             {
+                key: `${keyPrefix}costCalculationMethod`,
+                label: `[${labelPrefix}costCalculationMethod]`,
+                type: 'string',
+                choices: [
+                    'Automatic',
+                    'Custom',
+                ],
+            },
+            {
                 key: `${keyPrefix}forexRate`,
                 label: `[${labelPrefix}forexRate]`,
                 type: 'number',
@@ -384,15 +393,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}costCalculationMethod`,
-                label: `[${labelPrefix}costCalculationMethod]`,
-                type: 'string',
-                choices: [
-                    'Automatic',
-                    'Custom',
-                ],
-            },
-            {
                 key: `${keyPrefix}freightTerms`,
                 label: `[${labelPrefix}freightTerms]`,
                 type: 'string',
@@ -498,6 +498,7 @@ module.exports = {
             'cityId': bundle.inputData?.[`${keyPrefix}cityId`],
             'customerNotes': bundle.inputData?.[`${keyPrefix}customerNotes`],
             'taxCalculationMethod': bundle.inputData?.[`${keyPrefix}taxCalculationMethod`],
+            'costCalculationMethod': bundle.inputData?.[`${keyPrefix}costCalculationMethod`],
             'forexRate': bundle.inputData?.[`${keyPrefix}forexRate`],
             'forexRatesSnapshot': bundle.inputData?.[`${keyPrefix}forexRatesSnapshot`],
             'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
@@ -548,7 +549,6 @@ module.exports = {
             'qualifiedIdentifier': bundle.inputData?.[`${keyPrefix}qualifiedIdentifier`],
             'sellerBillingProfileId': bundle.inputData?.[`${keyPrefix}sellerBillingProfileId`],
             'buyerBillingProfileId': bundle.inputData?.[`${keyPrefix}buyerBillingProfileId`],
-            'costCalculationMethod': bundle.inputData?.[`${keyPrefix}costCalculationMethod`],
             'freightTerms': bundle.inputData?.[`${keyPrefix}freightTerms`],
             'orderStatus': bundle.inputData?.[`${keyPrefix}orderStatus`],
             'requestedDeliveryDate': bundle.inputData?.[`${keyPrefix}requestedDeliveryDate`],

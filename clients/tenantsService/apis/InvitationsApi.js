@@ -3,6 +3,7 @@ const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
 const TenantInvitationCreateDto = require('../models/TenantInvitationCreateDto');
+const TenantInvitationDtoCollectionQueryParameters = require('../models/TenantInvitationDtoCollectionQueryParameters');
 const TenantInvitationDtoEnvelope = require('../models/TenantInvitationDtoEnvelope');
 const TenantInvitationDtoListEnvelope = require('../models/TenantInvitationDtoListEnvelope');
 const utils = require('../utils/utils');
@@ -264,6 +265,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...TenantInvitationDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...TenantInvitationDtoListEnvelope.fields('', false),
@@ -274,7 +276,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -282,6 +284,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...TenantInvitationDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -319,6 +322,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...TenantInvitationDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -329,7 +333,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -337,6 +341,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...TenantInvitationDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

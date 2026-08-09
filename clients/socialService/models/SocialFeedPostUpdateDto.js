@@ -14,6 +14,25 @@ module.exports = {
                 label: `[${labelPrefix}message]`,
                 type: 'string',
             },
+            {
+                key: `${keyPrefix}bodyHtml`,
+                label: `[${labelPrefix}bodyHtml]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}bodyFormat`,
+                label: `[${labelPrefix}bodyFormat]`,
+                type: 'string',
+                choices: [
+                    'PlainText',
+                    'Html',
+                ],
+            },
+            {
+                key: `${keyPrefix}backgroundStyle`,
+                label: `[${labelPrefix}backgroundStyle]`,
+                type: 'string',
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -21,6 +40,9 @@ module.exports = {
         return {
             'title': bundle.inputData?.[`${keyPrefix}title`],
             'message': bundle.inputData?.[`${keyPrefix}message`],
+            'bodyHtml': bundle.inputData?.[`${keyPrefix}bodyHtml`],
+            'bodyFormat': bundle.inputData?.[`${keyPrefix}bodyFormat`],
+            'backgroundStyle': bundle.inputData?.[`${keyPrefix}backgroundStyle`],
         }
     },
 }

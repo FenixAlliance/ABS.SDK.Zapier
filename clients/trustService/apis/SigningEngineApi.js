@@ -1,6 +1,7 @@
 const samples = require('../samples/SigningEngineApi');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
+const TrustSigningProviderDescriptorDtoCollectionQueryParameters = require('../models/TrustSigningProviderDescriptorDtoCollectionQueryParameters');
 const TrustSigningProviderDescriptorDtoListEnvelope = require('../models/TrustSigningProviderDescriptorDtoListEnvelope');
 const TrustSigningReadinessDtoEnvelope = require('../models/TrustSigningReadinessDtoEnvelope');
 const TrustSigningRequestDto = require('../models/TrustSigningRequestDto');
@@ -33,6 +34,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...TrustSigningProviderDescriptorDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...TrustSigningProviderDescriptorDtoListEnvelope.fields('', false),
@@ -43,7 +45,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -51,6 +53,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...TrustSigningProviderDescriptorDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -88,6 +91,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...TrustSigningProviderDescriptorDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -98,7 +102,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -106,6 +110,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...TrustSigningProviderDescriptorDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

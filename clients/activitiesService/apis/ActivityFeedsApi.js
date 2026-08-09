@@ -1,11 +1,14 @@
 const samples = require('../samples/ActivityFeedsApi');
+const ActivityFeedDtoCollectionQueryParameters = require('../models/ActivityFeedDtoCollectionQueryParameters');
 const ActivityFeedDtoEnvelope = require('../models/ActivityFeedDtoEnvelope');
 const ActivityFeedDtoListEnvelope = require('../models/ActivityFeedDtoListEnvelope');
 const ActivityRecordCreateDto = require('../models/ActivityRecordCreateDto');
+const ActivityRecordDtoCollectionQueryParameters = require('../models/ActivityRecordDtoCollectionQueryParameters');
 const ActivityRecordDtoEnvelope = require('../models/ActivityRecordDtoEnvelope');
 const ActivityRecordDtoListEnvelope = require('../models/ActivityRecordDtoListEnvelope');
 const ActivityRecordUpdateDto = require('../models/ActivityRecordUpdateDto');
 const ActivityTypeCreateDto = require('../models/ActivityTypeCreateDto');
+const ActivityTypeDtoCollectionQueryParameters = require('../models/ActivityTypeDtoCollectionQueryParameters');
 const ActivityTypeDtoEnvelope = require('../models/ActivityTypeDtoEnvelope');
 const ActivityTypeDtoListEnvelope = require('../models/ActivityTypeDtoListEnvelope');
 const ActivityTypeUpdateDto = require('../models/ActivityTypeUpdateDto');
@@ -13,7 +16,7 @@ const EmptyEnvelope = require('../models/EmptyEnvelope');
 const Envelope = require('../models/Envelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -43,6 +46,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ActivityTypeDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -53,7 +57,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -61,6 +65,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ActivityTypeDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -352,6 +357,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ActivityRecordDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ActivityRecordDtoListEnvelope.fields('', false),
@@ -362,7 +368,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -370,6 +376,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ActivityRecordDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -413,6 +420,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ActivityRecordDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -423,7 +431,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -431,6 +439,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ActivityRecordDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -596,6 +605,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ActivityFeedDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ActivityFeedDtoListEnvelope.fields('', false),
@@ -606,7 +616,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -614,6 +624,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ActivityFeedDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -651,6 +662,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ActivityFeedDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -661,7 +673,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -669,6 +681,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ActivityFeedDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -706,6 +719,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ActivityRecordDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -716,7 +730,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -724,6 +738,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ActivityRecordDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -822,6 +837,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ActivityTypeDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ActivityTypeDtoListEnvelope.fields('', false),
@@ -832,7 +848,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -840,6 +856,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ActivityTypeDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -890,7 +907,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -912,7 +929,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -957,7 +974,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -979,7 +996,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

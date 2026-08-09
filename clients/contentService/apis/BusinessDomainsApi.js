@@ -1,5 +1,6 @@
 const samples = require('../samples/BusinessDomainsApi');
 const BusinessDomainCreateDto = require('../models/BusinessDomainCreateDto');
+const BusinessDomainDtoCollectionQueryParameters = require('../models/BusinessDomainDtoCollectionQueryParameters');
 const BusinessDomainDtoEnvelope = require('../models/BusinessDomainDtoEnvelope');
 const BusinessDomainDtoListEnvelope = require('../models/BusinessDomainDtoListEnvelope');
 const BusinessDomainUpdateDto = require('../models/BusinessDomainUpdateDto');
@@ -214,6 +215,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...BusinessDomainDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...BusinessDomainDtoListEnvelope.fields('', false),
@@ -224,7 +226,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -232,6 +234,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...BusinessDomainDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -269,6 +272,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...BusinessDomainDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -279,7 +283,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -287,6 +291,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...BusinessDomainDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

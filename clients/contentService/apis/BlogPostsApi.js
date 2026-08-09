@@ -1,18 +1,22 @@
 const samples = require('../samples/BlogPostsApi');
 const BlogPostCategoryCreateDto = require('../models/BlogPostCategoryCreateDto');
+const BlogPostCategoryDtoCollectionQueryParameters = require('../models/BlogPostCategoryDtoCollectionQueryParameters');
 const BlogPostCategoryDtoListEnvelope = require('../models/BlogPostCategoryDtoListEnvelope');
 const BlogPostCommentCreateDto = require('../models/BlogPostCommentCreateDto');
+const BlogPostCommentDtoCollectionQueryParameters = require('../models/BlogPostCommentDtoCollectionQueryParameters');
 const BlogPostCommentDtoListEnvelope = require('../models/BlogPostCommentDtoListEnvelope');
 const BlogPostCreateDto = require('../models/BlogPostCreateDto');
+const BlogPostDtoCollectionQueryParameters = require('../models/BlogPostDtoCollectionQueryParameters');
 const BlogPostDtoEnvelope = require('../models/BlogPostDtoEnvelope');
 const BlogPostDtoListEnvelope = require('../models/BlogPostDtoListEnvelope');
 const BlogPostTagCreateDto = require('../models/BlogPostTagCreateDto');
+const BlogPostTagDtoCollectionQueryParameters = require('../models/BlogPostTagDtoCollectionQueryParameters');
 const BlogPostTagDtoListEnvelope = require('../models/BlogPostTagDtoListEnvelope');
 const BlogPostUpdateDto = require('../models/BlogPostUpdateDto');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -382,6 +386,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...BlogPostDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...BlogPostDtoListEnvelope.fields('', false),
@@ -392,13 +397,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...BlogPostDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -425,6 +431,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...BlogPostDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -435,13 +442,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...BlogPostDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -469,6 +477,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...BlogPostCategoryDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...BlogPostCategoryDtoListEnvelope.fields('', false),
@@ -479,12 +488,13 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                     },
                     body: {
+                        ...BlogPostCategoryDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -512,6 +522,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...BlogPostCommentDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...BlogPostCommentDtoListEnvelope.fields('', false),
@@ -522,12 +533,13 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                     },
                     body: {
+                        ...BlogPostCommentDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -561,6 +573,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...BlogPostCommentDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...BlogPostCommentDtoListEnvelope.fields('', false),
@@ -571,12 +584,13 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                     },
                     body: {
+                        ...BlogPostCommentDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -604,6 +618,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...BlogPostTagDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...BlogPostTagDtoListEnvelope.fields('', false),
@@ -614,12 +629,13 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                     },
                     body: {
+                        ...BlogPostTagDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -654,7 +670,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -675,7 +691,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

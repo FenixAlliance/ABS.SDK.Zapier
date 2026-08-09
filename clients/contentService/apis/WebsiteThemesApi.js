@@ -1,9 +1,10 @@
 const samples = require('../samples/WebsiteThemesApi');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const WebsiteThemeCreateDto = require('../models/WebsiteThemeCreateDto');
 const WebsiteThemeDto = require('../models/WebsiteThemeDto');
+const WebsiteThemeDtoCollectionQueryParameters = require('../models/WebsiteThemeDtoCollectionQueryParameters');
 const WebsiteThemeDtoListEnvelope = require('../models/WebsiteThemeDtoListEnvelope');
 const WebsiteThemeUpdateDto = require('../models/WebsiteThemeUpdateDto');
 const utils = require('../utils/utils');
@@ -212,6 +213,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...WebsiteThemeDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...WebsiteThemeDtoListEnvelope.fields('', false),
@@ -222,7 +224,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -230,6 +232,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...WebsiteThemeDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -267,6 +270,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...WebsiteThemeDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -277,7 +281,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -285,6 +289,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...WebsiteThemeDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -329,7 +334,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -350,7 +355,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

@@ -1,6 +1,7 @@
 const samples = require('../samples/MerchantsApi');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
+const MerchantDtoCollectionQueryParameters = require('../models/MerchantDtoCollectionQueryParameters');
 const MerchantDtoEnvelope = require('../models/MerchantDtoEnvelope');
 const MerchantDtoListEnvelope = require('../models/MerchantDtoListEnvelope');
 const utils = require('../utils/utils');
@@ -80,6 +81,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...MerchantDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...MerchantDtoListEnvelope.fields('', false),
@@ -90,13 +92,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...MerchantDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -128,6 +131,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...MerchantDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -138,13 +142,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...MerchantDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

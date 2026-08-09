@@ -3,6 +3,7 @@ const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
 const MenuContextCreateDto = require('../models/MenuContextCreateDto');
+const MenuContextDtoCollectionQueryParameters = require('../models/MenuContextDtoCollectionQueryParameters');
 const MenuContextDtoEnvelope = require('../models/MenuContextDtoEnvelope');
 const MenuContextDtoListEnvelope = require('../models/MenuContextDtoListEnvelope');
 const MenuContextUpdateDto = require('../models/MenuContextUpdateDto');
@@ -35,6 +36,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...MenuContextDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -45,7 +47,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -53,6 +55,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...MenuContextDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -269,6 +272,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...MenuContextDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...MenuContextDtoListEnvelope.fields('', false),
@@ -279,7 +283,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -287,6 +291,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...MenuContextDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

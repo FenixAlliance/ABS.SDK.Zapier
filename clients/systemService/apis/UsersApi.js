@@ -2,11 +2,16 @@ const samples = require('../samples/UsersApi');
 const EmailDispatchRequest = require('../models/EmailDispatchRequest');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
+const ExtendedUserDtoCollectionQueryParameters = require('../models/ExtendedUserDtoCollectionQueryParameters');
 const ExtendedUserDtoEnvelope = require('../models/ExtendedUserDtoEnvelope');
 const ExtendedUserDtoListEnvelope = require('../models/ExtendedUserDtoListEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
+const SetUserPasswordDto = require('../models/SetUserPasswordDto');
+const UserAdminDetailDtoEnvelope = require('../models/UserAdminDetailDtoEnvelope');
+const UserAdminUpdateDto = require('../models/UserAdminUpdateDto');
 const UserCreateDto = require('../models/UserCreateDto');
+const UserDtoCollectionQueryParameters = require('../models/UserDtoCollectionQueryParameters');
 const UserDtoEnvelope = require('../models/UserDtoEnvelope');
 const UserDtoListEnvelope = require('../models/UserDtoListEnvelope');
 const UserUpdateDto = require('../models/UserUpdateDto');
@@ -302,6 +307,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ExtendedUserDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ExtendedUserDtoListEnvelope.fields('', false),
@@ -312,13 +318,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ExtendedUserDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -350,6 +357,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ExtendedUserDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -360,13 +368,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ExtendedUserDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -376,6 +385,67 @@ module.exports = {
                 })
             },
             sample: samples['Int32EnvelopeSample']
+        }
+    },
+    getUserAdminDetailAsync: {
+        key: 'getUserAdminDetailAsync',
+        noun: 'Users',
+        display: {
+            label: 'Retrieve the admin detail aggregate for a user',
+            description: 'Returns the user&#39;s orders, external logins, and — for the supplied tenant — the enrollment with its granted roles/permissions and the tenant role/permission catalogs. Global administrators only.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'userId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...UserAdminDetailDtoEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Users/{userId}/AdminDetail'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getUserAdminDetailAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['UserAdminDetailDtoEnvelopeSample']
         }
     },
     getUserAsync: {
@@ -452,6 +522,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...UserDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...UserDtoListEnvelope.fields('', false),
@@ -462,13 +533,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...UserDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -500,6 +572,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...UserDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -510,13 +583,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...UserDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -555,7 +629,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -576,12 +650,124 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
                     response.throwForStatus();
                     const results = utils.responseOptionsMiddleware(z, bundle, 'patchAccountHolderAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
+        }
+    },
+    setUserPasswordAsync: {
+        key: 'setUserPasswordAsync',
+        noun: 'Users',
+        display: {
+            label: 'Set a user&#39;s password',
+            description: 'Replaces the user&#39;s password with the supplied value. Global administrators only.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'userId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                ...SetUserPasswordDto.fields(),
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Users/{userId}/Password'),
+                    method: 'POST',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...SetUserPasswordDto.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'setUserPasswordAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
+        }
+    },
+    updateAccountHolderAdminProfileAsync: {
+        key: 'updateAccountHolderAdminProfileAsync',
+        noun: 'Users',
+        display: {
+            label: 'Update a user&#39;s admin-managed profile',
+            description: 'Updates the identity fields (email/username, re-normalized by Identity) and display fields a global administrator may change on a user, and toggles two-factor and lockout. Normalized email/username and the access-failed count are never accepted. This action is only available for global administrators.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'userId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                ...UserAdminUpdateDto.fields(),
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Users/{userId}/AdminProfile'),
+                    method: 'PUT',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...UserAdminUpdateDto.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'updateAccountHolderAdminProfileAsync', response.json);
                     return results;
                 })
             },

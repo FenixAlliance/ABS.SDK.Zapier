@@ -1,10 +1,11 @@
 const samples = require('../samples/ItemBrandsApi');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const ItemBrandCreateDto = require('../models/ItemBrandCreateDto');
+const ItemBrandDtoCollectionQueryParameters = require('../models/ItemBrandDtoCollectionQueryParameters');
 const ItemBrandDtoEnvelope = require('../models/ItemBrandDtoEnvelope');
 const ItemBrandDtoListEnvelope = require('../models/ItemBrandDtoListEnvelope');
 const ItemBrandUpdateDto = require('../models/ItemBrandUpdateDto');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -210,6 +211,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemBrandDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ItemBrandDtoListEnvelope.fields('', false),
@@ -220,7 +222,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -228,6 +230,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ItemBrandDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -272,7 +275,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -293,7 +296,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

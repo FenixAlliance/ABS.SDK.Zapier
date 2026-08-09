@@ -1,12 +1,13 @@
 const samples = require('../samples/AssetTypesApi');
 const AssetTypeCreateDto = require('../models/AssetTypeCreateDto');
+const AssetTypeDtoCollectionQueryParameters = require('../models/AssetTypeDtoCollectionQueryParameters');
 const AssetTypeDtoEnvelope = require('../models/AssetTypeDtoEnvelope');
 const AssetTypeDtoListEnvelope = require('../models/AssetTypeDtoListEnvelope');
 const AssetTypeUpdateDto = require('../models/AssetTypeUpdateDto');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -171,6 +172,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...AssetTypeDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...AssetTypeDtoListEnvelope.fields('', false),
@@ -181,13 +183,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...AssetTypeDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -215,6 +218,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...AssetTypeDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -225,13 +229,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...AssetTypeDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -266,7 +271,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -287,7 +292,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

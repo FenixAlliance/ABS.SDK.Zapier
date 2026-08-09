@@ -1,5 +1,6 @@
 const samples = require('../samples/DeliveryNotesApi');
 const DeliveryNoteCreateDto = require('../models/DeliveryNoteCreateDto');
+const DeliveryNoteDtoCollectionQueryParameters = require('../models/DeliveryNoteDtoCollectionQueryParameters');
 const DeliveryNoteDtoEnvelope = require('../models/DeliveryNoteDtoEnvelope');
 const DeliveryNoteDtoListEnvelope = require('../models/DeliveryNoteDtoListEnvelope');
 const DeliveryNoteUpdateDto = require('../models/DeliveryNoteUpdateDto');
@@ -214,6 +215,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...DeliveryNoteDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...DeliveryNoteDtoListEnvelope.fields('', false),
@@ -224,7 +226,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -232,6 +234,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...DeliveryNoteDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -269,6 +272,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...DeliveryNoteDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -279,7 +283,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -287,6 +291,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...DeliveryNoteDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

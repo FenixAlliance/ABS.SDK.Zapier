@@ -6,7 +6,7 @@ const ItemCartRecordCreateDto = require('../models/ItemCartRecordCreateDto');
 const ItemCartRecordDtoEnvelope = require('../models/ItemCartRecordDtoEnvelope');
 const ItemCartRecordDtoListEnvelope = require('../models/ItemCartRecordDtoListEnvelope');
 const ItemCartRecordUpdateDto = require('../models/ItemCartRecordUpdateDto');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -498,7 +498,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -519,7 +519,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

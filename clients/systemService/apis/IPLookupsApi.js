@@ -1,6 +1,7 @@
 const samples = require('../samples/IPLookupsApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
+const IPLookupDtoCollectionQueryParameters = require('../models/IPLookupDtoCollectionQueryParameters');
 const IPLookupDtoEnvelope = require('../models/IPLookupDtoEnvelope');
 const IPLookupDtoListEnvelope = require('../models/IPLookupDtoListEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
@@ -135,6 +136,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...IPLookupDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...IPLookupDtoListEnvelope.fields('', false),
@@ -145,13 +147,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...IPLookupDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -183,6 +186,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...IPLookupDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -193,13 +197,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...IPLookupDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

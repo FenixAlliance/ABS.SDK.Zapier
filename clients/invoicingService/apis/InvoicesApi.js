@@ -3,30 +3,37 @@ const EmailDispatchRequest = require('../models/EmailDispatchRequest');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const Envelope = require('../models/Envelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
+const ExtendedInvoiceDtoCollectionQueryParameters = require('../models/ExtendedInvoiceDtoCollectionQueryParameters');
 const ExtendedInvoiceDtoListEnvelope = require('../models/ExtendedInvoiceDtoListEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
 const InvoiceAdjustmentCreateDto = require('../models/InvoiceAdjustmentCreateDto');
+const InvoiceAdjustmentDtoCollectionQueryParameters = require('../models/InvoiceAdjustmentDtoCollectionQueryParameters');
 const InvoiceAdjustmentDtoEnvelope = require('../models/InvoiceAdjustmentDtoEnvelope');
 const InvoiceAdjustmentDtoIReadOnlyListEnvelope = require('../models/InvoiceAdjustmentDtoIReadOnlyListEnvelope');
 const InvoiceAdjustmentUpdateDto = require('../models/InvoiceAdjustmentUpdateDto');
 const InvoiceCreateDto = require('../models/InvoiceCreateDto');
+const InvoiceDtoCollectionQueryParameters = require('../models/InvoiceDtoCollectionQueryParameters');
 const InvoiceDtoEnvelope = require('../models/InvoiceDtoEnvelope');
 const InvoiceDtoListEnvelope = require('../models/InvoiceDtoListEnvelope');
 const InvoiceLineAppliedTaxCreateDto = require('../models/InvoiceLineAppliedTaxCreateDto');
+const InvoiceLineAppliedTaxDtoCollectionQueryParameters = require('../models/InvoiceLineAppliedTaxDtoCollectionQueryParameters');
 const InvoiceLineAppliedTaxDtoIReadOnlyListEnvelope = require('../models/InvoiceLineAppliedTaxDtoIReadOnlyListEnvelope');
 const InvoiceLineAppliedTaxUpdateDto = require('../models/InvoiceLineAppliedTaxUpdateDto');
 const InvoiceLineCreateDto = require('../models/InvoiceLineCreateDto');
+const InvoiceLineDtoCollectionQueryParameters = require('../models/InvoiceLineDtoCollectionQueryParameters');
 const InvoiceLineDtoEnvelope = require('../models/InvoiceLineDtoEnvelope');
 const InvoiceLineDtoIReadOnlyListEnvelope = require('../models/InvoiceLineDtoIReadOnlyListEnvelope');
 const InvoiceLineDtoListEnvelope = require('../models/InvoiceLineDtoListEnvelope');
 const InvoiceLineUpdateDto = require('../models/InvoiceLineUpdateDto');
 const InvoiceReferenceCreateDto = require('../models/InvoiceReferenceCreateDto');
+const InvoiceReferenceDtoCollectionQueryParameters = require('../models/InvoiceReferenceDtoCollectionQueryParameters');
 const InvoiceReferenceDtoEnvelope = require('../models/InvoiceReferenceDtoEnvelope');
 const InvoiceReferenceDtoIReadOnlyListEnvelope = require('../models/InvoiceReferenceDtoIReadOnlyListEnvelope');
 const InvoiceReferenceUpdateDto = require('../models/InvoiceReferenceUpdateDto');
 const InvoiceUpdateDto = require('../models/InvoiceUpdateDto');
 const MoneyEnvelope = require('../models/MoneyEnvelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
+const PaymentDtoCollectionQueryParameters = require('../models/PaymentDtoCollectionQueryParameters');
 const PaymentDtoIReadOnlyListEnvelope = require('../models/PaymentDtoIReadOnlyListEnvelope');
 const utils = require('../utils/utils');
 
@@ -1023,6 +1030,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...ExtendedInvoiceDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ExtendedInvoiceDtoListEnvelope.fields('', false),
@@ -1033,13 +1041,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...ExtendedInvoiceDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1067,6 +1076,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...ExtendedInvoiceDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -1077,13 +1087,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...ExtendedInvoiceDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1223,6 +1234,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...InvoiceAdjustmentDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...InvoiceAdjustmentDtoIReadOnlyListEnvelope.fields('', false),
@@ -1233,13 +1245,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...InvoiceAdjustmentDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1273,6 +1286,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...InvoiceAdjustmentDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -1283,13 +1297,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...InvoiceAdjustmentDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1385,6 +1400,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...InvoiceLineAppliedTaxDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...InvoiceLineAppliedTaxDtoIReadOnlyListEnvelope.fields('', false),
@@ -1395,13 +1411,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...InvoiceLineAppliedTaxDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1441,6 +1458,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...InvoiceLineAppliedTaxDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -1451,13 +1469,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...InvoiceLineAppliedTaxDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1496,6 +1515,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...InvoiceLineDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...InvoiceLineDtoListEnvelope.fields('', false),
@@ -1506,7 +1526,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -1514,6 +1534,7 @@ module.exports = {
                         'itemId': bundle.inputData?.['itemId'],
                     },
                     body: {
+                        ...InvoiceLineDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1547,6 +1568,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...InvoiceLineDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -1557,13 +1579,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...InvoiceLineDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1597,6 +1620,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...PaymentDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...PaymentDtoIReadOnlyListEnvelope.fields('', false),
@@ -1607,13 +1631,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...PaymentDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1647,6 +1672,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...PaymentDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -1657,13 +1683,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...PaymentDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1753,6 +1780,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...InvoiceReferenceDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...InvoiceReferenceDtoIReadOnlyListEnvelope.fields('', false),
@@ -1763,13 +1791,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...InvoiceReferenceDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1803,6 +1832,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...InvoiceReferenceDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -1813,13 +1843,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...InvoiceReferenceDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1847,6 +1878,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...InvoiceDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...InvoiceDtoListEnvelope.fields('', false),
@@ -1857,13 +1889,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...InvoiceDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1891,6 +1924,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...InvoiceDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -1901,13 +1935,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...InvoiceDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1935,6 +1970,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...InvoiceDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...MoneyEnvelope.fields('', false),
@@ -1945,13 +1981,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...InvoiceDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1979,6 +2016,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...InvoiceDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...MoneyEnvelope.fields('', false),
@@ -1989,13 +2027,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...InvoiceDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -2030,7 +2069,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -2051,7 +2090,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -2092,7 +2131,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -2113,7 +2152,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -2154,7 +2193,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -2175,7 +2214,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -2222,7 +2261,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -2243,7 +2282,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -2284,7 +2323,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -2305,7 +2344,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

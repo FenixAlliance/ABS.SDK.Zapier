@@ -3,6 +3,7 @@ const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
 const NewsletterSubscriptionCreateDto = require('../models/NewsletterSubscriptionCreateDto');
+const NewsletterSubscriptionDtoCollectionQueryParameters = require('../models/NewsletterSubscriptionDtoCollectionQueryParameters');
 const NewsletterSubscriptionDtoEnvelope = require('../models/NewsletterSubscriptionDtoEnvelope');
 const NewsletterSubscriptionDtoListEnvelope = require('../models/NewsletterSubscriptionDtoListEnvelope');
 const NewsletterSubscriptionUpdateDto = require('../models/NewsletterSubscriptionUpdateDto');
@@ -214,6 +215,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...NewsletterSubscriptionDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...NewsletterSubscriptionDtoListEnvelope.fields('', false),
@@ -224,7 +226,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -232,6 +234,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...NewsletterSubscriptionDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -269,6 +272,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...NewsletterSubscriptionDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -279,7 +283,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -287,6 +291,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...NewsletterSubscriptionDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

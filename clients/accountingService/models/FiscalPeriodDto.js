@@ -44,6 +44,16 @@ module.exports = {
                 label: `[${labelPrefix}fiscalYearId]`,
                 type: 'string',
             },
+            {
+                key: `${keyPrefix}status`,
+                label: `[${labelPrefix}status]`,
+                type: 'string',
+                choices: [
+                    'Open',
+                    'Closed',
+                    'Locked',
+                ],
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -57,6 +67,7 @@ module.exports = {
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'fiscalYearId': bundle.inputData?.[`${keyPrefix}fiscalYearId`],
+            'status': bundle.inputData?.[`${keyPrefix}status`],
         }
     },
 }

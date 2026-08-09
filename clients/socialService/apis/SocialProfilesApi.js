@@ -1,16 +1,22 @@
 const samples = require('../samples/SocialProfilesApi');
 const BooleanEnvelope = require('../models/BooleanEnvelope');
 const ConversationCreateDto = require('../models/ConversationCreateDto');
+const ConversationDtoCollectionQueryParameters = require('../models/ConversationDtoCollectionQueryParameters');
+const ConversationDtoEnvelope = require('../models/ConversationDtoEnvelope');
 const ConversationDtoListEnvelope = require('../models/ConversationDtoListEnvelope');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
+const FollowRecordDtoCollectionQueryParameters = require('../models/FollowRecordDtoCollectionQueryParameters');
 const FollowRecordDtoListEnvelope = require('../models/FollowRecordDtoListEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
+const NotificationDtoCollectionQueryParameters = require('../models/NotificationDtoCollectionQueryParameters');
 const NotificationDtoEnvelope = require('../models/NotificationDtoEnvelope');
 const NotificationDtoListEnvelope = require('../models/NotificationDtoListEnvelope');
 const PrivateMessageCreateDto = require('../models/PrivateMessageCreateDto');
+const PrivateMessageDtoCollectionQueryParameters = require('../models/PrivateMessageDtoCollectionQueryParameters');
 const PrivateMessageDtoListEnvelope = require('../models/PrivateMessageDtoListEnvelope');
 const PrivateMessageUpdateDto = require('../models/PrivateMessageUpdateDto');
+const SocialProfileDtoCollectionQueryParameters = require('../models/SocialProfileDtoCollectionQueryParameters');
 const SocialProfileDtoEnvelope = require('../models/SocialProfileDtoEnvelope');
 const SocialProfileDtoListEnvelope = require('../models/SocialProfileDtoListEnvelope');
 const utils = require('../utils/utils');
@@ -42,6 +48,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ConversationDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -52,13 +59,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ConversationDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -96,6 +104,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SocialProfileDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -106,13 +115,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SocialProfileDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -150,6 +160,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SocialProfileDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -160,13 +171,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SocialProfileDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -204,6 +216,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...FollowRecordDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -214,13 +227,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...FollowRecordDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -258,6 +272,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...FollowRecordDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -268,13 +283,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...FollowRecordDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -318,6 +334,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...PrivateMessageDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -328,7 +345,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -336,6 +353,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...PrivateMessageDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -373,6 +391,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...NotificationDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -383,13 +402,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...NotificationDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -421,6 +441,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SocialProfileDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -431,13 +452,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SocialProfileDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -781,6 +803,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ConversationDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ConversationDtoListEnvelope.fields('', false),
@@ -791,13 +814,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ConversationDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -835,6 +859,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SocialProfileDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...SocialProfileDtoListEnvelope.fields('', false),
@@ -845,13 +870,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SocialProfileDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -889,6 +915,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SocialProfileDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...SocialProfileDtoListEnvelope.fields('', false),
@@ -899,13 +926,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SocialProfileDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -943,6 +971,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...FollowRecordDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...FollowRecordDtoListEnvelope.fields('', false),
@@ -953,13 +982,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...FollowRecordDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -997,6 +1027,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...FollowRecordDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...FollowRecordDtoListEnvelope.fields('', false),
@@ -1007,13 +1038,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...FollowRecordDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1057,6 +1089,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...PrivateMessageDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...PrivateMessageDtoListEnvelope.fields('', false),
@@ -1067,7 +1100,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -1075,6 +1108,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...PrivateMessageDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1172,6 +1206,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...NotificationDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...NotificationDtoListEnvelope.fields('', false),
@@ -1182,13 +1217,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...NotificationDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1198,6 +1234,66 @@ module.exports = {
                 })
             },
             sample: samples['NotificationDtoListEnvelopeSample']
+        }
+    },
+    getOrCreateDirectConversationAsync: {
+        key: 'getOrCreateDirectConversationAsync',
+        noun: 'SocialProfiles',
+        display: {
+            label: 'Get or Create Direct Conversation',
+            description: 'Get or create the direct two-party conversation between the acting profile and a counterparty.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'socialProfileId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'body',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...ConversationDtoEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialProfiles/{socialProfileId}/Conversations/Direct'),
+                    method: 'POST',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        'body': bundle.inputData?.['body'],
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getOrCreateDirectConversationAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['ConversationDtoEnvelopeSample']
         }
     },
     getSocialProfileAsync: {
@@ -1274,6 +1370,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SocialProfileDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...SocialProfileDtoListEnvelope.fields('', false),
@@ -1284,13 +1381,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SocialProfileDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

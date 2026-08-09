@@ -17,7 +17,6 @@ module.exports = {
             {
                 key: `${keyPrefix}message`,
                 label: `[${labelPrefix}message]`,
-                required: true,
                 type: 'string',
             },
             {

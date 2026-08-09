@@ -1,7 +1,7 @@
 const samples = require('../samples/TaskTypesApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const TaskTypeCreateDto = require('../models/TaskTypeCreateDto');
 const TaskTypeDto = require('../models/TaskTypeDto');
 const TaskTypeUpdateDto = require('../models/TaskTypeUpdateDto');
@@ -177,7 +177,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -198,7 +198,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

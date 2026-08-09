@@ -1,6 +1,8 @@
 const samples = require('../samples/AccountingSummaryApi');
+const AccountingEntryDtoCollectionQueryParameters = require('../models/AccountingEntryDtoCollectionQueryParameters');
 const DecimalEnvelope = require('../models/DecimalEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
+const JournalEntryDtoCollectionQueryParameters = require('../models/JournalEntryDtoCollectionQueryParameters');
 const MoneyEnvelope = require('../models/MoneyEnvelope');
 const utils = require('../utils/utils');
 
@@ -31,6 +33,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...AccountingEntryDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...DecimalEnvelope.fields('', false),
@@ -41,7 +44,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -49,6 +52,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...AccountingEntryDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -86,6 +90,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...AccountingEntryDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...DecimalEnvelope.fields('', false),
@@ -96,7 +101,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -104,6 +109,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...AccountingEntryDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -141,6 +147,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...JournalEntryDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...MoneyEnvelope.fields('', false),
@@ -151,7 +158,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -159,6 +166,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...JournalEntryDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -196,6 +204,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...JournalEntryDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...MoneyEnvelope.fields('', false),
@@ -206,7 +215,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -214,6 +223,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...JournalEntryDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

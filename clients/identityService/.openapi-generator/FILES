@@ -11,6 +11,7 @@ models/AccessTokenResponse.js
 models/AuthResult.js
 models/AuthResultEnvelope.js
 models/ErrorEnvelope.js
+models/ExecutionProvenance.js
 models/ForgotPasswordRequest.js
 models/HttpValidationProblemDetails.js
 models/InfoRequest.js

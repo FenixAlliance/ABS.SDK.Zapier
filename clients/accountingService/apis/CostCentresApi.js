@@ -1,12 +1,15 @@
 const samples = require('../samples/CostCentresApi');
 const CostCentreBudgetCreateDto = require('../models/CostCentreBudgetCreateDto');
+const CostCentreBudgetDtoCollectionQueryParameters = require('../models/CostCentreBudgetDtoCollectionQueryParameters');
 const CostCentreBudgetDtoEnvelope = require('../models/CostCentreBudgetDtoEnvelope');
 const CostCentreBudgetDtoListEnvelope = require('../models/CostCentreBudgetDtoListEnvelope');
 const CostCentreBudgetUpdateDto = require('../models/CostCentreBudgetUpdateDto');
 const CostCentreCreateDto = require('../models/CostCentreCreateDto');
+const CostCentreDtoCollectionQueryParameters = require('../models/CostCentreDtoCollectionQueryParameters');
 const CostCentreDtoEnvelope = require('../models/CostCentreDtoEnvelope');
 const CostCentreDtoListEnvelope = require('../models/CostCentreDtoListEnvelope');
 const CostCentreGroupCreateDto = require('../models/CostCentreGroupCreateDto');
+const CostCentreGroupDtoCollectionQueryParameters = require('../models/CostCentreGroupDtoCollectionQueryParameters');
 const CostCentreGroupDtoEnvelope = require('../models/CostCentreGroupDtoEnvelope');
 const CostCentreGroupDtoListEnvelope = require('../models/CostCentreGroupDtoListEnvelope');
 const CostCentreGroupUpdateDto = require('../models/CostCentreGroupUpdateDto');
@@ -14,7 +17,7 @@ const CostCentreUpdateDto = require('../models/CostCentreUpdateDto');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -520,6 +523,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CostCentreBudgetDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...CostCentreBudgetDtoListEnvelope.fields('', false),
@@ -530,7 +534,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -538,6 +542,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CostCentreBudgetDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -636,6 +641,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CostCentreGroupDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...CostCentreGroupDtoListEnvelope.fields('', false),
@@ -646,7 +652,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -654,6 +660,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CostCentreGroupDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -691,6 +698,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CostCentreGroupDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -701,7 +709,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -709,6 +717,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CostCentreGroupDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -746,6 +755,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CostCentreDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...CostCentreDtoListEnvelope.fields('', false),
@@ -756,7 +766,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -764,6 +774,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CostCentreDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -801,6 +812,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CostCentreDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -811,7 +823,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -819,6 +831,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CostCentreDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -863,7 +876,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -885,7 +898,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -930,7 +943,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -952,7 +965,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -997,7 +1010,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -1019,7 +1032,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

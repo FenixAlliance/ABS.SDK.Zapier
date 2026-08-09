@@ -1,16 +1,18 @@
 const samples = require('../samples/BudgetsApi');
 const BudgetAccountEntryCreateDto = require('../models/BudgetAccountEntryCreateDto');
+const BudgetAccountEntryDtoCollectionQueryParameters = require('../models/BudgetAccountEntryDtoCollectionQueryParameters');
 const BudgetAccountEntryDtoEnvelope = require('../models/BudgetAccountEntryDtoEnvelope');
 const BudgetAccountEntryDtoIReadOnlyListEnvelope = require('../models/BudgetAccountEntryDtoIReadOnlyListEnvelope');
 const BudgetAccountEntryUpdateDto = require('../models/BudgetAccountEntryUpdateDto');
 const BudgetCreateDto = require('../models/BudgetCreateDto');
+const BudgetDtoCollectionQueryParameters = require('../models/BudgetDtoCollectionQueryParameters');
 const BudgetDtoEnvelope = require('../models/BudgetDtoEnvelope');
 const BudgetDtoIReadOnlyListEnvelope = require('../models/BudgetDtoIReadOnlyListEnvelope');
 const BudgetUpdateDto = require('../models/BudgetUpdateDto');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -294,6 +296,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...BudgetAccountEntryDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...BudgetAccountEntryDtoIReadOnlyListEnvelope.fields('', false),
@@ -304,7 +307,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -312,6 +315,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...BudgetAccountEntryDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -477,6 +481,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...BudgetDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...BudgetDtoIReadOnlyListEnvelope.fields('', false),
@@ -487,7 +492,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -495,6 +500,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...BudgetDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -532,6 +538,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...BudgetDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -542,7 +549,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -550,6 +557,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...BudgetDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -600,7 +608,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -622,7 +630,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -667,7 +675,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -689,7 +697,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

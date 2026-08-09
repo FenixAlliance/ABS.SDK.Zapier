@@ -1,6 +1,8 @@
 const samples = require('../samples/BlogPostAuthorsApi');
+const BlogAuthorDtoCollectionQueryParameters = require('../models/BlogAuthorDtoCollectionQueryParameters');
 const BlogAuthorDtoEnvelope = require('../models/BlogAuthorDtoEnvelope');
 const BlogAuthorDtoListEnvelope = require('../models/BlogAuthorDtoListEnvelope');
+const BlogPostDtoCollectionQueryParameters = require('../models/BlogPostDtoCollectionQueryParameters');
 const BlogPostDtoListEnvelope = require('../models/BlogPostDtoListEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
@@ -33,6 +35,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...BlogPostDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -43,13 +46,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...BlogPostDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -140,6 +144,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...BlogAuthorDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...BlogAuthorDtoListEnvelope.fields('', false),
@@ -150,7 +155,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -158,6 +163,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...BlogAuthorDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -195,6 +201,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...BlogPostDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...BlogPostDtoListEnvelope.fields('', false),
@@ -205,13 +212,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...BlogPostDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

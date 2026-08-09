@@ -49,6 +49,35 @@ module.exports = {
                 label: `[${labelPrefix}reactionsCount]`,
                 type: 'integer',
             },
+            {
+                key: `${keyPrefix}socialProfileType`,
+                label: `[${labelPrefix}socialProfileType]`,
+                type: 'string',
+                choices: [
+                    'User',
+                    'Tenant',
+                    'Contact',
+                ],
+            },
+            {
+                key: `${keyPrefix}bodyHtml`,
+                label: `[${labelPrefix}bodyHtml]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}bodyFormat`,
+                label: `[${labelPrefix}bodyFormat]`,
+                type: 'string',
+                choices: [
+                    'PlainText',
+                    'Html',
+                ],
+            },
+            {
+                key: `${keyPrefix}backgroundStyle`,
+                label: `[${labelPrefix}backgroundStyle]`,
+                type: 'string',
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -63,6 +92,10 @@ module.exports = {
             'socialProfileAvatarUrl': bundle.inputData?.[`${keyPrefix}socialProfileAvatarUrl`],
             'commentsCount': bundle.inputData?.[`${keyPrefix}commentsCount`],
             'reactionsCount': bundle.inputData?.[`${keyPrefix}reactionsCount`],
+            'socialProfileType': bundle.inputData?.[`${keyPrefix}socialProfileType`],
+            'bodyHtml': bundle.inputData?.[`${keyPrefix}bodyHtml`],
+            'bodyFormat': bundle.inputData?.[`${keyPrefix}bodyFormat`],
+            'backgroundStyle': bundle.inputData?.[`${keyPrefix}backgroundStyle`],
         }
     },
 }

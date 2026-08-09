@@ -1,31 +1,43 @@
 const samples = require('../samples/WalletsApi');
 const BankAccountCreateDto = require('../models/BankAccountCreateDto');
+const BankAccountDtoCollectionQueryParameters = require('../models/BankAccountDtoCollectionQueryParameters');
 const BankAccountDtoEnvelope = require('../models/BankAccountDtoEnvelope');
 const BankAccountDtoListEnvelope = require('../models/BankAccountDtoListEnvelope');
 const BankAccountUpdateDto = require('../models/BankAccountUpdateDto');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
+const ExtendedOrderDtoCollectionQueryParameters = require('../models/ExtendedOrderDtoCollectionQueryParameters');
 const ExtendedOrderDtoListEnvelope = require('../models/ExtendedOrderDtoListEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
+const InvoiceDtoCollectionQueryParameters = require('../models/InvoiceDtoCollectionQueryParameters');
 const InvoiceDtoListEnvelope = require('../models/InvoiceDtoListEnvelope');
 const LocationCreateDto = require('../models/LocationCreateDto');
+const LocationDtoCollectionQueryParameters = require('../models/LocationDtoCollectionQueryParameters');
 const LocationDtoEnvelope = require('../models/LocationDtoEnvelope');
 const LocationDtoListEnvelope = require('../models/LocationDtoListEnvelope');
 const LocationUpdateDto = require('../models/LocationUpdateDto');
-const Operation = require('../models/Operation');
+const OrderDtoCollectionQueryParameters = require('../models/OrderDtoCollectionQueryParameters');
 const OrderDtoListEnvelope = require('../models/OrderDtoListEnvelope');
+const PatchOperation = require('../models/PatchOperation');
+const PaymentChargebackDtoCollectionQueryParameters = require('../models/PaymentChargebackDtoCollectionQueryParameters');
 const PaymentChargebackDtoListEnvelope = require('../models/PaymentChargebackDtoListEnvelope');
 const PaymentCreateDto = require('../models/PaymentCreateDto');
+const PaymentDtoCollectionQueryParameters = require('../models/PaymentDtoCollectionQueryParameters');
 const PaymentDtoListEnvelope = require('../models/PaymentDtoListEnvelope');
+const PaymentRefundDtoCollectionQueryParameters = require('../models/PaymentRefundDtoCollectionQueryParameters');
 const PaymentRefundDtoListEnvelope = require('../models/PaymentRefundDtoListEnvelope');
 const PaymentTokenCreateDto = require('../models/PaymentTokenCreateDto');
+const PaymentTokenDtoCollectionQueryParameters = require('../models/PaymentTokenDtoCollectionQueryParameters');
 const PaymentTokenDtoEnvelope = require('../models/PaymentTokenDtoEnvelope');
 const PaymentTokenDtoListEnvelope = require('../models/PaymentTokenDtoListEnvelope');
 const PaymentTokenUpdateDto = require('../models/PaymentTokenUpdateDto');
+const QuoteDtoCollectionQueryParameters = require('../models/QuoteDtoCollectionQueryParameters');
 const QuoteDtoListEnvelope = require('../models/QuoteDtoListEnvelope');
 const WalletDtoEnvelope = require('../models/WalletDtoEnvelope');
+const WalletWithdrawDtoCollectionQueryParameters = require('../models/WalletWithdrawDtoCollectionQueryParameters');
 const WalletWithdrawDtoListEnvelope = require('../models/WalletWithdrawDtoListEnvelope');
 const WalletWithdrawRequestCreateDto = require('../models/WalletWithdrawRequestCreateDto');
+const WalletWithdrawRequestDtoCollectionQueryParameters = require('../models/WalletWithdrawRequestDtoCollectionQueryParameters');
 const WalletWithdrawRequestDtoListEnvelope = require('../models/WalletWithdrawRequestDtoListEnvelope');
 const utils = require('../utils/utils');
 
@@ -516,6 +528,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...PaymentDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...PaymentDtoListEnvelope.fields('', false),
@@ -526,13 +539,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...PaymentDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -570,6 +584,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...PaymentDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -580,13 +595,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...PaymentDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -624,6 +640,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...InvoiceDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...InvoiceDtoListEnvelope.fields('', false),
@@ -634,13 +651,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...InvoiceDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -678,6 +696,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...InvoiceDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -688,13 +707,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...InvoiceDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -792,6 +812,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...LocationDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...LocationDtoListEnvelope.fields('', false),
@@ -802,13 +823,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...LocationDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -846,6 +868,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...LocationDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -856,13 +879,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...LocationDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -900,6 +924,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...PaymentDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...PaymentDtoListEnvelope.fields('', false),
@@ -910,13 +935,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...PaymentDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -954,6 +980,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...PaymentDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -964,13 +991,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...PaymentDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1008,6 +1036,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...InvoiceDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...InvoiceDtoListEnvelope.fields('', false),
@@ -1018,13 +1047,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...InvoiceDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1062,6 +1092,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...InvoiceDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -1072,13 +1103,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...InvoiceDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1176,6 +1208,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...BankAccountDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...BankAccountDtoListEnvelope.fields('', false),
@@ -1186,13 +1219,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...BankAccountDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1230,6 +1264,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...BankAccountDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -1240,13 +1275,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...BankAccountDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1284,6 +1320,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...PaymentChargebackDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...PaymentChargebackDtoListEnvelope.fields('', false),
@@ -1294,13 +1331,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...PaymentChargebackDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1338,6 +1376,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...PaymentChargebackDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -1348,13 +1387,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...PaymentChargebackDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1446,6 +1486,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ExtendedOrderDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ExtendedOrderDtoListEnvelope.fields('', false),
@@ -1456,13 +1497,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ExtendedOrderDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1500,6 +1542,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...InvoiceDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...InvoiceDtoListEnvelope.fields('', false),
@@ -1510,13 +1553,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...InvoiceDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1554,6 +1598,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...InvoiceDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -1564,13 +1609,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...InvoiceDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1608,6 +1654,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...OrderDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...OrderDtoListEnvelope.fields('', false),
@@ -1618,13 +1665,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...OrderDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1662,6 +1710,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...OrderDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -1672,13 +1721,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...OrderDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1716,6 +1766,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...PaymentDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...PaymentDtoListEnvelope.fields('', false),
@@ -1726,13 +1777,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...PaymentDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1770,6 +1822,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...PaymentDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -1780,13 +1833,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...PaymentDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1824,6 +1878,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...QuoteDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...QuoteDtoListEnvelope.fields('', false),
@@ -1834,13 +1889,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...QuoteDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1878,6 +1934,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...QuoteDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -1888,13 +1945,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...QuoteDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1932,6 +1990,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...PaymentRefundDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...PaymentRefundDtoListEnvelope.fields('', false),
@@ -1942,13 +2001,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...PaymentRefundDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1986,6 +2046,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...PaymentRefundDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -1996,13 +2057,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...PaymentRefundDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -2100,6 +2162,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...PaymentTokenDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...PaymentTokenDtoListEnvelope.fields('', false),
@@ -2110,13 +2173,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...PaymentTokenDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -2154,6 +2218,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...PaymentTokenDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -2164,13 +2229,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...PaymentTokenDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -2208,6 +2274,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...WalletWithdrawRequestDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...WalletWithdrawRequestDtoListEnvelope.fields('', false),
@@ -2218,13 +2285,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...WalletWithdrawRequestDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -2262,6 +2330,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...WalletWithdrawRequestDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -2272,13 +2341,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...WalletWithdrawRequestDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -2316,6 +2386,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...WalletWithdrawDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...WalletWithdrawDtoListEnvelope.fields('', false),
@@ -2326,13 +2397,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...WalletWithdrawDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -2370,6 +2442,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...WalletWithdrawDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -2380,13 +2453,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...WalletWithdrawDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -2431,7 +2505,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -2452,7 +2526,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -2497,7 +2571,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -2518,7 +2592,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

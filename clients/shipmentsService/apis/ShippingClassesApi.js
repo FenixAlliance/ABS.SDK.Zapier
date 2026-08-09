@@ -2,8 +2,9 @@ const samples = require('../samples/ShippingClassesApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const ShippingClassCreateDto = require('../models/ShippingClassCreateDto');
+const ShippingClassDtoCollectionQueryParameters = require('../models/ShippingClassDtoCollectionQueryParameters');
 const ShippingClassDtoEnvelope = require('../models/ShippingClassDtoEnvelope');
 const ShippingClassDtoListEnvelope = require('../models/ShippingClassDtoListEnvelope');
 const ShippingClassUpdateDto = require('../models/ShippingClassUpdateDto');
@@ -213,6 +214,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ShippingClassDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ShippingClassDtoListEnvelope.fields('', false),
@@ -223,7 +225,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -231,6 +233,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ShippingClassDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -268,6 +271,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ShippingClassDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -278,7 +282,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -286,6 +290,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ShippingClassDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -330,7 +335,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -352,7 +357,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

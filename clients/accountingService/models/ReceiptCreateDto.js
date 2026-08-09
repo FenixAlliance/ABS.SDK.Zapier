@@ -15,6 +15,11 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}closed`,
+                label: `[${labelPrefix}closed]`,
+                type: 'boolean',
+            },
+            {
                 key: `${keyPrefix}title`,
                 label: `[${labelPrefix}title]`,
                 type: 'string',
@@ -98,6 +103,11 @@ module.exports = {
                 key: `${keyPrefix}cityId`,
                 label: `[${labelPrefix}cityId]`,
                 type: 'string',
+            },
+            {
+                key: `${keyPrefix}forexRate`,
+                label: `[${labelPrefix}forexRate]`,
+                type: 'number',
             },
             {
                 key: `${keyPrefix}currencyId`,
@@ -248,11 +258,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}forexRate`,
-                label: `[${labelPrefix}forexRate]`,
-                type: 'number',
-            },
-            {
                 key: `${keyPrefix}totalAmount`,
                 label: `[${labelPrefix}totalAmount]`,
                 type: 'number',
@@ -261,11 +266,6 @@ module.exports = {
                 key: `${keyPrefix}totalAmountInUSD`,
                 label: `[${labelPrefix}totalAmountInUSD]`,
                 type: 'number',
-            },
-            {
-                key: `${keyPrefix}closed`,
-                label: `[${labelPrefix}closed]`,
-                type: 'boolean',
             },
             {
                 key: `${keyPrefix}contactId`,
@@ -298,6 +298,7 @@ module.exports = {
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
+            'closed': bundle.inputData?.[`${keyPrefix}closed`],
             'title': bundle.inputData?.[`${keyPrefix}title`],
             'priceListId': bundle.inputData?.[`${keyPrefix}priceListId`],
             'description': bundle.inputData?.[`${keyPrefix}description`],
@@ -315,6 +316,7 @@ module.exports = {
             'countryId': bundle.inputData?.[`${keyPrefix}countryId`],
             'stateId': bundle.inputData?.[`${keyPrefix}stateId`],
             'cityId': bundle.inputData?.[`${keyPrefix}cityId`],
+            'forexRate': bundle.inputData?.[`${keyPrefix}forexRate`],
             'currencyId': bundle.inputData?.[`${keyPrefix}currencyId`],
             'totalDetail': bundle.inputData?.[`${keyPrefix}totalDetail`],
             'totalDetailCurrencyId': bundle.inputData?.[`${keyPrefix}totalDetailCurrencyId`],
@@ -343,10 +345,8 @@ module.exports = {
             'costCalculationMethod': bundle.inputData?.[`${keyPrefix}costCalculationMethod`],
             'taxCalculationMethod': bundle.inputData?.[`${keyPrefix}taxCalculationMethod`],
             'paymentId': bundle.inputData?.[`${keyPrefix}paymentId`],
-            'forexRate': bundle.inputData?.[`${keyPrefix}forexRate`],
             'totalAmount': bundle.inputData?.[`${keyPrefix}totalAmount`],
             'totalAmountInUSD': bundle.inputData?.[`${keyPrefix}totalAmountInUSD`],
-            'closed': bundle.inputData?.[`${keyPrefix}closed`],
             'contactId': bundle.inputData?.[`${keyPrefix}contactId`],
             'receiptType': bundle.inputData?.[`${keyPrefix}receiptType`],
             'orderId': bundle.inputData?.[`${keyPrefix}orderId`],

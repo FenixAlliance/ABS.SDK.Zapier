@@ -17,9 +17,10 @@ models/InfoRequest.js
 models/InfoResponse.js
 models/Int32Envelope.js
 models/LoginRequest.js
-models/Operation.js
+models/PatchOperation.js
 models/ProjectCreateDto.js
 models/ProjectDto.js
+models/ProjectDtoCollectionQueryParameters.js
 models/ProjectDtoEnvelope.js
 models/ProjectDtoListEnvelope.js
 models/ProjectHoursApprovalApproverUpdateDto.js
@@ -31,11 +32,13 @@ models/ProjectPeriodDtoListEnvelope.js
 models/ProjectPeriodUpdateDto.js
 models/ProjectTaskCreateDto.js
 models/ProjectTaskDto.js
+models/ProjectTaskDtoCollectionQueryParameters.js
 models/ProjectTaskDtoEnvelope.js
 models/ProjectTaskDtoListEnvelope.js
 models/ProjectTaskUpdateDto.js
 models/ProjectTimeLogCreateDto.js
 models/ProjectTimeLogDto.js
+models/ProjectTimeLogDtoCollectionQueryParameters.js
 models/ProjectTimeLogDtoEnvelope.js
 models/ProjectTimeLogDtoListEnvelope.js
 models/ProjectTimeLogUpdateDto.js
@@ -46,6 +49,7 @@ models/ResendConfirmationEmailRequest.js
 models/ResetPasswordRequest.js
 models/TaskCategoryCreateDto.js
 models/TaskCategoryDto.js
+models/TaskCategoryDtoCollectionQueryParameters.js
 models/TaskCategoryDtoListEnvelope.js
 models/TaskCategoryUpdateDto.js
 models/TaskTypeCreateDto.js
@@ -55,7 +59,4 @@ models/TwoFactorRequest.js
 models/TwoFactorResponse.js
 operations/actions.js
 package.json
-samples/ProjectTasksApi.js
-samples/TimeLogApprovalsApi.js
-samples/TimeLogsApi.js
 utils/utils.js

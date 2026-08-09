@@ -1,4 +1,5 @@
 const samples = require('../samples/UsersApi');
+const AddressDtoCollectionQueryParameters = require('../models/AddressDtoCollectionQueryParameters');
 const AddressDtoListEnvelope = require('../models/AddressDtoListEnvelope');
 const CartDtoEnvelope = require('../models/CartDtoEnvelope');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
@@ -6,11 +7,14 @@ const ErrorEnvelope = require('../models/ErrorEnvelope');
 const ExtendedTenantDtoListEnvelope = require('../models/ExtendedTenantDtoListEnvelope');
 const ExtendedTenantEnrollmentDtoListEnvelope = require('../models/ExtendedTenantEnrollmentDtoListEnvelope');
 const ExtendedUserDtoEnvelope = require('../models/ExtendedUserDtoEnvelope');
+const FollowRecordDtoCollectionQueryParameters = require('../models/FollowRecordDtoCollectionQueryParameters');
 const FollowRecordDtoListEnvelope = require('../models/FollowRecordDtoListEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
+const NotificationDtoCollectionQueryParameters = require('../models/NotificationDtoCollectionQueryParameters');
 const NotificationDtoListEnvelope = require('../models/NotificationDtoListEnvelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const SocialProfileDtoEnvelope = require('../models/SocialProfileDtoEnvelope');
+const TenantDtoCollectionQueryParameters = require('../models/TenantDtoCollectionQueryParameters');
 const TenantDtoListEnvelope = require('../models/TenantDtoListEnvelope');
 const TenantEnrollmentDtoEnvelope = require('../models/TenantEnrollmentDtoEnvelope');
 const TenantEnrollmentDtoListEnvelope = require('../models/TenantEnrollmentDtoListEnvelope');
@@ -44,6 +48,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...FollowRecordDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -54,13 +59,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml, multipart/form-data',
                         'Accept': 'application/json, application/xml, multipart/form-data',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...FollowRecordDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -92,6 +98,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...FollowRecordDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -102,13 +109,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml, multipart/form-data',
                         'Accept': 'application/json, application/xml, multipart/form-data',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...FollowRecordDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -140,6 +148,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...NotificationDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -150,13 +159,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml, multipart/form-data',
                         'Accept': 'application/json, application/xml, multipart/form-data',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...NotificationDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -188,6 +198,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...TenantDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -198,13 +209,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml, multipart/form-data',
                         'Accept': 'application/json, application/xml, multipart/form-data',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...TenantDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -236,6 +248,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...AddressDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...AddressDtoListEnvelope.fields('', false),
@@ -246,13 +259,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml, multipart/form-data',
                         'Accept': 'application/json, application/xml, multipart/form-data',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...AddressDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -523,6 +537,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...FollowRecordDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...FollowRecordDtoListEnvelope.fields('', false),
@@ -533,13 +548,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml, multipart/form-data',
                         'Accept': 'application/json, application/xml, multipart/form-data',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...FollowRecordDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -571,6 +587,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...FollowRecordDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...FollowRecordDtoListEnvelope.fields('', false),
@@ -581,13 +598,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml, multipart/form-data',
                         'Accept': 'application/json, application/xml, multipart/form-data',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...FollowRecordDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -667,6 +685,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...NotificationDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...NotificationDtoListEnvelope.fields('', false),
@@ -677,13 +696,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml, multipart/form-data',
                         'Accept': 'application/json, application/xml, multipart/form-data',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...NotificationDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -811,6 +831,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...TenantDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...TenantDtoListEnvelope.fields('', false),
@@ -821,13 +842,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml, multipart/form-data',
                         'Accept': 'application/json, application/xml, multipart/form-data',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...TenantDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1058,7 +1080,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -1079,7 +1101,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

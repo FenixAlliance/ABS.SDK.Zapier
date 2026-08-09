@@ -2,12 +2,14 @@ const samples = require('../samples/SupportTicketsApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const PrivateMessageDtoListEnvelope = require('../models/PrivateMessageDtoListEnvelope');
 const SupportTicketConversationCreateDto = require('../models/SupportTicketConversationCreateDto');
+const SupportTicketConversationDtoCollectionQueryParameters = require('../models/SupportTicketConversationDtoCollectionQueryParameters');
 const SupportTicketConversationDtoEnvelope = require('../models/SupportTicketConversationDtoEnvelope');
 const SupportTicketConversationDtoListEnvelope = require('../models/SupportTicketConversationDtoListEnvelope');
 const SupportTicketCreateDto = require('../models/SupportTicketCreateDto');
+const SupportTicketDtoCollectionQueryParameters = require('../models/SupportTicketDtoCollectionQueryParameters');
 const SupportTicketDtoEnvelope = require('../models/SupportTicketDtoEnvelope');
 const SupportTicketDtoListEnvelope = require('../models/SupportTicketDtoListEnvelope');
 const SupportTicketUpdateDto = require('../models/SupportTicketUpdateDto');
@@ -438,6 +440,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SupportTicketConversationDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...SupportTicketConversationDtoListEnvelope.fields('', false),
@@ -448,7 +451,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -456,6 +459,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SupportTicketConversationDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -493,6 +497,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SupportTicketDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...SupportTicketDtoListEnvelope.fields('', false),
@@ -503,7 +508,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -511,6 +516,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SupportTicketDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -548,6 +554,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SupportTicketDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -558,7 +565,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -566,6 +573,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SupportTicketDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -610,7 +618,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -632,7 +640,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

@@ -3,19 +3,23 @@ const DecimalEnvelope = require('../models/DecimalEnvelope');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const ShareClassCreateDto = require('../models/ShareClassCreateDto');
+const ShareClassDtoCollectionQueryParameters = require('../models/ShareClassDtoCollectionQueryParameters');
 const ShareClassDtoEnvelope = require('../models/ShareClassDtoEnvelope');
 const ShareClassDtoListEnvelope = require('../models/ShareClassDtoListEnvelope');
 const ShareClassUpdateDto = require('../models/ShareClassUpdateDto');
 const ShareIssuanceCreateDto = require('../models/ShareIssuanceCreateDto');
+const ShareIssuanceDtoCollectionQueryParameters = require('../models/ShareIssuanceDtoCollectionQueryParameters');
 const ShareIssuanceDtoEnvelope = require('../models/ShareIssuanceDtoEnvelope');
 const ShareIssuanceDtoListEnvelope = require('../models/ShareIssuanceDtoListEnvelope');
 const ShareIssuanceUpdateDto = require('../models/ShareIssuanceUpdateDto');
 const ShareTransferCreateDto = require('../models/ShareTransferCreateDto');
+const ShareTransferDtoCollectionQueryParameters = require('../models/ShareTransferDtoCollectionQueryParameters');
 const ShareTransferDtoEnvelope = require('../models/ShareTransferDtoEnvelope');
 const ShareTransferDtoListEnvelope = require('../models/ShareTransferDtoListEnvelope');
 const ShareTransferReasonCreateDto = require('../models/ShareTransferReasonCreateDto');
+const ShareTransferReasonDtoCollectionQueryParameters = require('../models/ShareTransferReasonDtoCollectionQueryParameters');
 const ShareTransferReasonDtoEnvelope = require('../models/ShareTransferReasonDtoEnvelope');
 const ShareTransferReasonDtoListEnvelope = require('../models/ShareTransferReasonDtoListEnvelope');
 const ShareTransferReasonUpdateDto = require('../models/ShareTransferReasonUpdateDto');
@@ -578,6 +582,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ShareClassDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ShareClassDtoListEnvelope.fields('', false),
@@ -588,7 +593,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -596,6 +601,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ShareClassDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -633,6 +639,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ShareClassDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -643,7 +650,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -651,6 +658,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ShareClassDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -749,6 +757,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ShareIssuanceDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ShareIssuanceDtoListEnvelope.fields('', false),
@@ -759,7 +768,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -767,6 +776,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ShareIssuanceDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -804,6 +814,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ShareIssuanceDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -814,7 +825,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -822,6 +833,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ShareIssuanceDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -859,6 +871,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ShareIssuanceDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...DecimalEnvelope.fields('', false),
@@ -869,7 +882,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -877,6 +890,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ShareIssuanceDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1036,6 +1050,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ShareTransferReasonDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ShareTransferReasonDtoListEnvelope.fields('', false),
@@ -1046,7 +1061,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -1054,6 +1069,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ShareTransferReasonDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1091,6 +1107,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ShareTransferReasonDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -1101,7 +1118,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -1109,6 +1126,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ShareTransferReasonDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1146,6 +1164,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ShareTransferDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ShareTransferDtoListEnvelope.fields('', false),
@@ -1156,7 +1175,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -1164,6 +1183,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ShareTransferDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1201,6 +1221,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ShareTransferDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -1211,7 +1232,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -1219,6 +1240,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ShareTransferDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1263,7 +1285,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -1285,7 +1307,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1330,7 +1352,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -1352,7 +1374,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1397,7 +1419,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -1419,7 +1441,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1464,7 +1486,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -1486,7 +1508,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

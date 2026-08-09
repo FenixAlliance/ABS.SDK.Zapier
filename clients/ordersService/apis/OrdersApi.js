@@ -2,17 +2,20 @@ const samples = require('../samples/OrdersApi');
 const EmailDispatchRequest = require('../models/EmailDispatchRequest');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
+const ExtendedOrderDtoCollectionQueryParameters = require('../models/ExtendedOrderDtoCollectionQueryParameters');
 const ExtendedOrderDtoListEnvelope = require('../models/ExtendedOrderDtoListEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
 const OrderCreateDto = require('../models/OrderCreateDto');
+const OrderDtoCollectionQueryParameters = require('../models/OrderDtoCollectionQueryParameters');
 const OrderDtoEnvelope = require('../models/OrderDtoEnvelope');
 const OrderDtoListEnvelope = require('../models/OrderDtoListEnvelope');
 const OrderLineCreateDto = require('../models/OrderLineCreateDto');
+const OrderLineDtoCollectionQueryParameters = require('../models/OrderLineDtoCollectionQueryParameters');
 const OrderLineDtoEnvelope = require('../models/OrderLineDtoEnvelope');
 const OrderLineDtoListEnvelope = require('../models/OrderLineDtoListEnvelope');
 const OrderLineUpdateDto = require('../models/OrderLineUpdateDto');
 const OrderUpdateDto = require('../models/OrderUpdateDto');
+const PatchOperation = require('../models/PatchOperation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -342,6 +345,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...ExtendedOrderDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ExtendedOrderDtoListEnvelope.fields('', false),
@@ -352,13 +356,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...ExtendedOrderDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -503,6 +508,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...OrderLineDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...OrderLineDtoListEnvelope.fields('', false),
@@ -513,7 +519,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -521,6 +527,7 @@ module.exports = {
                         'itemId': bundle.inputData?.['itemId'],
                     },
                     body: {
+                        ...OrderLineDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -554,6 +561,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...OrderLineDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -564,13 +572,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...OrderLineDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -598,6 +607,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...OrderDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...OrderDtoListEnvelope.fields('', false),
@@ -608,13 +618,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...OrderDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -642,6 +653,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...OrderDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -652,13 +664,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...OrderDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -693,7 +706,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -714,7 +727,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -755,7 +768,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -776,7 +789,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

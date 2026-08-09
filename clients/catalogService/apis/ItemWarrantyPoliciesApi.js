@@ -1,6 +1,7 @@
 const samples = require('../samples/ItemWarrantyPoliciesApi');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
+const ItemWarrantyPolicyDtoCollectionQueryParameters = require('../models/ItemWarrantyPolicyDtoCollectionQueryParameters');
 const ItemWarrantyPolicyDtoEnvelope = require('../models/ItemWarrantyPolicyDtoEnvelope');
 const ItemWarrantyPolicyDtoListEnvelope = require('../models/ItemWarrantyPolicyDtoListEnvelope');
 const utils = require('../utils/utils');
@@ -36,6 +37,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemWarrantyPolicyDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -46,7 +48,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -55,6 +57,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ItemWarrantyPolicyDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -96,6 +99,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemWarrantyPolicyDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ItemWarrantyPolicyDtoListEnvelope.fields('', false),
@@ -106,7 +110,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -115,6 +119,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ItemWarrantyPolicyDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

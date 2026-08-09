@@ -1,14 +1,17 @@
 const AntiforgeryApi = require('../apis/AntiforgeryApi');
+const ApplicationPrincipalsApi = require('../apis/ApplicationPrincipalsApi');
 const BusinessDomainsApi = require('../apis/BusinessDomainsApi');
 const CartsApi = require('../apis/CartsApi');
 const ContactOptionsApi = require('../apis/ContactOptionsApi');
 const EmailsApi = require('../apis/EmailsApi');
 const FenixAllianceABSWebApi = require('../apis/FenixAllianceABSWebApi');
 const IPLookupsApi = require('../apis/IPLookupsApi');
+const InboxApi = require('../apis/InboxApi');
 const LicensingApi = require('../apis/LicensingApi');
 const MigrationsApi = require('../apis/MigrationsApi');
 const ModulesApi = require('../apis/ModulesApi');
 const OptionsApi = require('../apis/OptionsApi');
+const OutboxApi = require('../apis/OutboxApi');
 const OverviewApi = require('../apis/OverviewApi');
 const PortalsApi = require('../apis/PortalsApi');
 const TenantOptionsApi = require('../apis/TenantOptionsApi');
@@ -20,6 +23,16 @@ const { triggerMiddleware, isTrigger, searchMiddleware, hasSearchRequisites, isS
 const actions = {
     [AntiforgeryApi.getAndStoreTokens.key]: AntiforgeryApi.getAndStoreTokens,
     [AntiforgeryApi.isRequestValidAsync.key]: AntiforgeryApi.isRequestValidAsync,
+    [ApplicationPrincipalsApi.disableGlobalApplicationPrincipal.key]: ApplicationPrincipalsApi.disableGlobalApplicationPrincipal,
+    [ApplicationPrincipalsApi.enableGlobalApplicationPrincipal.key]: ApplicationPrincipalsApi.enableGlobalApplicationPrincipal,
+    [ApplicationPrincipalsApi.getGlobalApplicationPrincipal.key]: ApplicationPrincipalsApi.getGlobalApplicationPrincipal,
+    [ApplicationPrincipalsApi.getGlobalApplicationPrincipals.key]: ApplicationPrincipalsApi.getGlobalApplicationPrincipals,
+    [ApplicationPrincipalsApi.getGlobalApplicationPrincipalsCount.key]: ApplicationPrincipalsApi.getGlobalApplicationPrincipalsCount,
+    [ApplicationPrincipalsApi.grantGlobalApplicationPrincipalPermission.key]: ApplicationPrincipalsApi.grantGlobalApplicationPrincipalPermission,
+    [ApplicationPrincipalsApi.provisionGlobalApplicationPrincipal.key]: ApplicationPrincipalsApi.provisionGlobalApplicationPrincipal,
+    [ApplicationPrincipalsApi.provisionPaymentsConnector.key]: ApplicationPrincipalsApi.provisionPaymentsConnector,
+    [ApplicationPrincipalsApi.revokeGlobalApplicationPrincipalPermission.key]: ApplicationPrincipalsApi.revokeGlobalApplicationPrincipalPermission,
+    [ApplicationPrincipalsApi.suspendGlobalApplicationPrincipal.key]: ApplicationPrincipalsApi.suspendGlobalApplicationPrincipal,
     [BusinessDomainsApi.deleteSystemBusinessDomain.key]: BusinessDomainsApi.deleteSystemBusinessDomain,
     [BusinessDomainsApi.getSystemBusinessDomainById.key]: BusinessDomainsApi.getSystemBusinessDomainById,
     [BusinessDomainsApi.getSystemBusinessDomains.key]: BusinessDomainsApi.getSystemBusinessDomains,
@@ -29,6 +42,7 @@ const actions = {
     [CartsApi.getSystemCartById.key]: CartsApi.getSystemCartById,
     [CartsApi.getSystemCarts.key]: CartsApi.getSystemCarts,
     [CartsApi.getSystemCartsCount.key]: CartsApi.getSystemCartsCount,
+    [CartsApi.purgeSystemGuestCarts.key]: CartsApi.purgeSystemGuestCarts,
     [ContactOptionsApi.createSystemContactOption.key]: ContactOptionsApi.createSystemContactOption,
     [ContactOptionsApi.deleteSystemContactOption.key]: ContactOptionsApi.deleteSystemContactOption,
     [ContactOptionsApi.getSystemContactOptionById.key]: ContactOptionsApi.getSystemContactOptionById,
@@ -42,7 +56,6 @@ const actions = {
     [FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost.key]: FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost,
     [FenixAllianceABSWebApi.accountManageLinkExternalLoginPost.key]: FenixAllianceABSWebApi.accountManageLinkExternalLoginPost,
     [FenixAllianceABSWebApi.accountPerformExternalLoginPost.key]: FenixAllianceABSWebApi.accountPerformExternalLoginPost,
-    [FenixAllianceABSWebApi.apiV2AIServiceAgentsAgentIdAguiPost.key]: FenixAllianceABSWebApi.apiV2AIServiceAgentsAgentIdAguiPost,
     [FenixAllianceABSWebApi.forgotPasswordPost.key]: FenixAllianceABSWebApi.forgotPasswordPost,
     [FenixAllianceABSWebApi.healthGet.key]: FenixAllianceABSWebApi.healthGet,
     [FenixAllianceABSWebApi.helloGet.key]: FenixAllianceABSWebApi.helloGet,
@@ -60,6 +73,19 @@ const actions = {
     [IPLookupsApi.getSystemIPLookupById.key]: IPLookupsApi.getSystemIPLookupById,
     [IPLookupsApi.getSystemIPLookups.key]: IPLookupsApi.getSystemIPLookups,
     [IPLookupsApi.getSystemIPLookupsCount.key]: IPLookupsApi.getSystemIPLookupsCount,
+    [InboxApi.cancelInboxMessageRetry.key]: InboxApi.cancelInboxMessageRetry,
+    [InboxApi.deadLetterInboxMessage.key]: InboxApi.deadLetterInboxMessage,
+    [InboxApi.expediteInboxMessage.key]: InboxApi.expediteInboxMessage,
+    [InboxApi.getDuplicateInboxMessages.key]: InboxApi.getDuplicateInboxMessages,
+    [InboxApi.getDuplicateInboxMessagesCount.key]: InboxApi.getDuplicateInboxMessagesCount,
+    [InboxApi.getInboxCorrelationChain.key]: InboxApi.getInboxCorrelationChain,
+    [InboxApi.getInboxHealth.key]: InboxApi.getInboxHealth,
+    [InboxApi.getInboxMessage.key]: InboxApi.getInboxMessage,
+    [InboxApi.getInboxMessages.key]: InboxApi.getInboxMessages,
+    [InboxApi.getInboxMessagesCount.key]: InboxApi.getInboxMessagesCount,
+    [InboxApi.quarantineInboxMessage.key]: InboxApi.quarantineInboxMessage,
+    [InboxApi.releaseInboxMessageLease.key]: InboxApi.releaseInboxMessageLease,
+    [InboxApi.replayInboxMessage.key]: InboxApi.replayInboxMessage,
     [LicensingApi.getAttributesForLicenseAsync.key]: LicensingApi.getAttributesForLicenseAsync,
     [LicensingApi.getFeaturesForLicenseAsync.key]: LicensingApi.getFeaturesForLicenseAsync,
     [LicensingApi.getLicenseAssignmentsAsync.key]: LicensingApi.getLicenseAssignmentsAsync,
@@ -81,6 +107,16 @@ const actions = {
     [OptionsApi.patchSystemOption.key]: OptionsApi.patchSystemOption,
     [OptionsApi.updateSystemOption.key]: OptionsApi.updateSystemOption,
     [OptionsApi.upsertSystemOption.key]: OptionsApi.upsertSystemOption,
+    [OutboxApi.cancelOutboxMessage.key]: OutboxApi.cancelOutboxMessage,
+    [OutboxApi.deadLetterOutboxMessage.key]: OutboxApi.deadLetterOutboxMessage,
+    [OutboxApi.expediteOutboxMessage.key]: OutboxApi.expediteOutboxMessage,
+    [OutboxApi.getOutboxCorrelationChain.key]: OutboxApi.getOutboxCorrelationChain,
+    [OutboxApi.getOutboxHealth.key]: OutboxApi.getOutboxHealth,
+    [OutboxApi.getOutboxMessage.key]: OutboxApi.getOutboxMessage,
+    [OutboxApi.getOutboxMessages.key]: OutboxApi.getOutboxMessages,
+    [OutboxApi.getOutboxMessagesCount.key]: OutboxApi.getOutboxMessagesCount,
+    [OutboxApi.releaseOutboxMessageLease.key]: OutboxApi.releaseOutboxMessageLease,
+    [OutboxApi.replayOutboxMessage.key]: OutboxApi.replayOutboxMessage,
     [OverviewApi.getSystemOverview.key]: OverviewApi.getSystemOverview,
     [PortalsApi.createSystemPortal.key]: PortalsApi.createSystemPortal,
     [PortalsApi.deleteSystemPortal.key]: PortalsApi.deleteSystemPortal,
@@ -104,8 +140,10 @@ const actions = {
     [TenantsApi.getAllTenants.key]: TenantsApi.getAllTenants,
     [TenantsApi.getExtendedTenantsCount.key]: TenantsApi.getExtendedTenantsCount,
     [TenantsApi.getTenant.key]: TenantsApi.getTenant,
+    [TenantsApi.getTenantModuleGrants.key]: TenantsApi.getTenantModuleGrants,
     [TenantsApi.getTenantsCount.key]: TenantsApi.getTenantsCount,
     [TenantsApi.patchTenant.key]: TenantsApi.patchTenant,
+    [TenantsApi.setTenantModuleGrants.key]: TenantsApi.setTenantModuleGrants,
     [TenantsApi.updateTenant.key]: TenantsApi.updateTenant,
     [UserOptionsApi.createSystemUserOption.key]: UserOptionsApi.createSystemUserOption,
     [UserOptionsApi.deleteSystemUserOption.key]: UserOptionsApi.deleteSystemUserOption,
@@ -121,10 +159,13 @@ const actions = {
     [UsersApi.getExtendedAccountHolderAsync.key]: UsersApi.getExtendedAccountHolderAsync,
     [UsersApi.getExtendedUsersAsync.key]: UsersApi.getExtendedUsersAsync,
     [UsersApi.getExtendedUsersCountAsync.key]: UsersApi.getExtendedUsersCountAsync,
+    [UsersApi.getUserAdminDetailAsync.key]: UsersApi.getUserAdminDetailAsync,
     [UsersApi.getUserAsync.key]: UsersApi.getUserAsync,
     [UsersApi.getUsersAsync.key]: UsersApi.getUsersAsync,
     [UsersApi.getUsersCountAsync.key]: UsersApi.getUsersCountAsync,
     [UsersApi.patchAccountHolderAsync.key]: UsersApi.patchAccountHolderAsync,
+    [UsersApi.setUserPasswordAsync.key]: UsersApi.setUserPasswordAsync,
+    [UsersApi.updateAccountHolderAdminProfileAsync.key]: UsersApi.updateAccountHolderAdminProfileAsync,
     [UsersApi.updateAccountHolderAsync.key]: UsersApi.updateAccountHolderAsync,
 }
 

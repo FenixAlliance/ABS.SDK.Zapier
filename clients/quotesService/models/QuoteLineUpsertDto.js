@@ -428,11 +428,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}forexRatesSnapshot`,
-                label: `[${labelPrefix}forexRatesSnapshot]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}totalBaseAmountInUsd`,
                 label: `[${labelPrefix}totalBaseAmountInUsd]`,
                 type: 'number',
@@ -665,7 +660,6 @@ module.exports = {
             'priceListItemId': bundle.inputData?.[`${keyPrefix}priceListItemId`],
             'unitId': bundle.inputData?.[`${keyPrefix}unitId`],
             'unitGroupId': bundle.inputData?.[`${keyPrefix}unitGroupId`],
-            'forexRatesSnapshot': bundle.inputData?.[`${keyPrefix}forexRatesSnapshot`],
             'totalBaseAmountInUsd': bundle.inputData?.[`${keyPrefix}totalBaseAmountInUsd`],
             'totalProfitInUsd': bundle.inputData?.[`${keyPrefix}totalProfitInUsd`],
             'totalDetailAmountInUsd': bundle.inputData?.[`${keyPrefix}totalDetailAmountInUsd`],

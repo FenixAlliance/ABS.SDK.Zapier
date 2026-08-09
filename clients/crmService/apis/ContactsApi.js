@@ -2,22 +2,26 @@ const samples = require('../samples/ContactsApi');
 const CartDtoEnvelope = require('../models/CartDtoEnvelope');
 const ContactCreateDto = require('../models/ContactCreateDto');
 const ContactDto = require('../models/ContactDto');
+const ContactDtoCollectionQueryParameters = require('../models/ContactDtoCollectionQueryParameters');
 const ContactDtoEnvelope = require('../models/ContactDtoEnvelope');
 const ContactDtoListEnvelope = require('../models/ContactDtoListEnvelope');
 const ContactEmailCreateDto = require('../models/ContactEmailCreateDto');
+const ContactEmailDtoCollectionQueryParameters = require('../models/ContactEmailDtoCollectionQueryParameters');
 const ContactEmailDtoListEnvelope = require('../models/ContactEmailDtoListEnvelope');
 const ContactEmailUpdateDto = require('../models/ContactEmailUpdateDto');
 const ContactProfileCreateDto = require('../models/ContactProfileCreateDto');
+const ContactProfileDtoCollectionQueryParameters = require('../models/ContactProfileDtoCollectionQueryParameters');
 const ContactProfileDtoListEnvelope = require('../models/ContactProfileDtoListEnvelope');
 const ContactProfileUpdateDto = require('../models/ContactProfileUpdateDto');
 const ContactUpdateDto = require('../models/ContactUpdateDto');
 const EmailDispatchRequest = require('../models/EmailDispatchRequest');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
+const ExtendedContactDtoCollectionQueryParameters = require('../models/ExtendedContactDtoCollectionQueryParameters');
 const ExtendedContactDtoEnvelope = require('../models/ExtendedContactDtoEnvelope');
 const ExtendedContactDtoListEnvelope = require('../models/ExtendedContactDtoListEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const SocialProfileDtoEnvelope = require('../models/SocialProfileDtoEnvelope');
 const WalletDtoEnvelope = require('../models/WalletDtoEnvelope');
 const utils = require('../utils/utils');
@@ -484,6 +488,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ContactDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ContactDtoListEnvelope.fields('', false),
@@ -494,7 +499,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -502,6 +507,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ContactDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -539,6 +545,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ContactDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ContactDtoListEnvelope.fields('', false),
@@ -549,7 +556,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -557,6 +564,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ContactDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -655,6 +663,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ContactDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -664,7 +673,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -672,6 +681,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ContactDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -709,6 +719,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ContactDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ContactDtoListEnvelope.fields('', false),
@@ -719,7 +730,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -727,6 +738,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ContactDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -953,6 +965,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ContactEmailDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ContactEmailDtoListEnvelope.fields('', false),
@@ -963,7 +976,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -971,6 +984,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ContactEmailDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1014,6 +1028,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ContactEmailDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -1024,7 +1039,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -1032,6 +1047,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ContactEmailDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1191,6 +1207,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ContactDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ContactDtoListEnvelope.fields('', false),
@@ -1201,7 +1218,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -1209,6 +1226,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ContactDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1246,6 +1264,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ContactDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ContactDtoListEnvelope.fields('', false),
@@ -1256,7 +1275,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -1264,6 +1283,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ContactDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1301,6 +1321,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ExtendedContactDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ExtendedContactDtoListEnvelope.fields('', false),
@@ -1311,7 +1332,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -1319,6 +1340,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ExtendedContactDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1356,6 +1378,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ExtendedContactDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ExtendedContactDtoListEnvelope.fields('', false),
@@ -1366,7 +1389,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -1374,6 +1397,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ExtendedContactDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1472,6 +1496,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ExtendedContactDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ExtendedContactDtoListEnvelope.fields('', false),
@@ -1482,7 +1507,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -1490,6 +1515,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ExtendedContactDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1838,6 +1864,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ContactProfileDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -1848,7 +1875,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -1856,6 +1883,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ContactProfileDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1900,7 +1928,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -1922,7 +1950,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1973,7 +2001,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -1994,7 +2022,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

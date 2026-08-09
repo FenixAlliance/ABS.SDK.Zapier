@@ -5,15 +5,18 @@ authentication.js
 index.js
 models/AccessTokenResponse.js
 models/ActivityFeedDto.js
+models/ActivityFeedDtoCollectionQueryParameters.js
 models/ActivityFeedDtoEnvelope.js
 models/ActivityFeedDtoListEnvelope.js
 models/ActivityRecordCreateDto.js
 models/ActivityRecordDto.js
+models/ActivityRecordDtoCollectionQueryParameters.js
 models/ActivityRecordDtoEnvelope.js
 models/ActivityRecordDtoListEnvelope.js
 models/ActivityRecordUpdateDto.js
 models/ActivityTypeCreateDto.js
 models/ActivityTypeDto.js
+models/ActivityTypeDtoCollectionQueryParameters.js
 models/ActivityTypeDtoEnvelope.js
 models/ActivityTypeDtoListEnvelope.js
 models/ActivityTypeUpdateDto.js
@@ -26,7 +29,7 @@ models/InfoRequest.js
 models/InfoResponse.js
 models/Int32Envelope.js
 models/LoginRequest.js
-models/Operation.js
+models/PatchOperation.js
 models/RefreshRequest.js
 models/RegisterRequest.js
 models/ResendConfirmationEmailRequest.js

@@ -3,13 +3,16 @@ const BooleanEnvelope = require('../models/BooleanEnvelope');
 const EmailDispatchRequest = require('../models/EmailDispatchRequest');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
+const ExtendedQuoteDtoCollectionQueryParameters = require('../models/ExtendedQuoteDtoCollectionQueryParameters');
 const ExtendedQuoteDtoListEnvelope = require('../models/ExtendedQuoteDtoListEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const QuoteCreateDto = require('../models/QuoteCreateDto');
+const QuoteDtoCollectionQueryParameters = require('../models/QuoteDtoCollectionQueryParameters');
 const QuoteDtoEnvelope = require('../models/QuoteDtoEnvelope');
 const QuoteDtoListEnvelope = require('../models/QuoteDtoListEnvelope');
 const QuoteLineCreateDto = require('../models/QuoteLineCreateDto');
+const QuoteLineDtoCollectionQueryParameters = require('../models/QuoteLineDtoCollectionQueryParameters');
 const QuoteLineDtoEnvelope = require('../models/QuoteLineDtoEnvelope');
 const QuoteLineDtoListEnvelope = require('../models/QuoteLineDtoListEnvelope');
 const QuoteLineUpdateDto = require('../models/QuoteLineUpdateDto');
@@ -444,6 +447,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...ExtendedQuoteDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ExtendedQuoteDtoListEnvelope.fields('', false),
@@ -454,13 +458,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...ExtendedQuoteDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -605,6 +610,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...QuoteLineDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...QuoteLineDtoListEnvelope.fields('', false),
@@ -615,7 +621,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -623,6 +629,7 @@ module.exports = {
                         'itemId': bundle.inputData?.['itemId'],
                     },
                     body: {
+                        ...QuoteLineDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -656,6 +663,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...QuoteLineDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -666,13 +674,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...QuoteLineDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -700,6 +709,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...QuoteDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...QuoteDtoListEnvelope.fields('', false),
@@ -710,13 +720,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...QuoteDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -744,6 +755,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...QuoteDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -754,13 +766,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...QuoteDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -795,7 +808,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -816,7 +829,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -857,7 +870,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -878,7 +891,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

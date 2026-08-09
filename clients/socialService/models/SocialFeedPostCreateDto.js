@@ -34,6 +34,25 @@ module.exports = {
                 label: `[${labelPrefix}socialProfileId]`,
                 type: 'string',
             },
+            {
+                key: `${keyPrefix}bodyHtml`,
+                label: `[${labelPrefix}bodyHtml]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}bodyFormat`,
+                label: `[${labelPrefix}bodyFormat]`,
+                type: 'string',
+                choices: [
+                    'PlainText',
+                    'Html',
+                ],
+            },
+            {
+                key: `${keyPrefix}backgroundStyle`,
+                label: `[${labelPrefix}backgroundStyle]`,
+                type: 'string',
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -45,6 +64,9 @@ module.exports = {
             'message': bundle.inputData?.[`${keyPrefix}message`],
             'socialFeedId': bundle.inputData?.[`${keyPrefix}socialFeedId`],
             'socialProfileId': bundle.inputData?.[`${keyPrefix}socialProfileId`],
+            'bodyHtml': bundle.inputData?.[`${keyPrefix}bodyHtml`],
+            'bodyFormat': bundle.inputData?.[`${keyPrefix}bodyFormat`],
+            'backgroundStyle': bundle.inputData?.[`${keyPrefix}backgroundStyle`],
         }
     },
 }

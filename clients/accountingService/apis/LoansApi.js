@@ -3,17 +3,20 @@ const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
 const LoanApplicationCreateDto = require('../models/LoanApplicationCreateDto');
+const LoanApplicationDtoCollectionQueryParameters = require('../models/LoanApplicationDtoCollectionQueryParameters');
 const LoanApplicationDtoEnvelope = require('../models/LoanApplicationDtoEnvelope');
 const LoanApplicationDtoIReadOnlyListEnvelope = require('../models/LoanApplicationDtoIReadOnlyListEnvelope');
 const LoanCreateDto = require('../models/LoanCreateDto');
+const LoanDtoCollectionQueryParameters = require('../models/LoanDtoCollectionQueryParameters');
 const LoanDtoEnvelope = require('../models/LoanDtoEnvelope');
 const LoanDtoIReadOnlyListEnvelope = require('../models/LoanDtoIReadOnlyListEnvelope');
 const LoanTypeCreateDto = require('../models/LoanTypeCreateDto');
+const LoanTypeDtoCollectionQueryParameters = require('../models/LoanTypeDtoCollectionQueryParameters');
 const LoanTypeDtoEnvelope = require('../models/LoanTypeDtoEnvelope');
 const LoanTypeDtoIReadOnlyListEnvelope = require('../models/LoanTypeDtoIReadOnlyListEnvelope');
 const LoanTypeUpdateDto = require('../models/LoanTypeUpdateDto');
 const LoanUpdateDto = require('../models/LoanUpdateDto');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -458,6 +461,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...LoanApplicationDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...LoanApplicationDtoIReadOnlyListEnvelope.fields('', false),
@@ -468,7 +472,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -476,6 +480,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...LoanApplicationDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -513,6 +518,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...LoanApplicationDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -523,7 +529,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -531,6 +537,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...LoanApplicationDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -690,6 +697,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...LoanTypeDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...LoanTypeDtoIReadOnlyListEnvelope.fields('', false),
@@ -700,7 +708,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -708,6 +716,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...LoanTypeDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -745,6 +754,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...LoanTypeDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -755,7 +765,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -763,6 +773,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...LoanTypeDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -800,6 +811,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...LoanDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...LoanDtoIReadOnlyListEnvelope.fields('', false),
@@ -810,7 +822,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -818,6 +830,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...LoanDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -855,6 +868,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...LoanDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -865,7 +879,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -873,6 +887,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...LoanDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -917,7 +932,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -939,7 +954,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -984,7 +999,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -1006,7 +1021,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1051,7 +1066,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -1073,7 +1088,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

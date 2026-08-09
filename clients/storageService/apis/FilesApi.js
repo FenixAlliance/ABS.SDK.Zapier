@@ -6,6 +6,8 @@ const FileUploadDtoEnvelope = require('../models/FileUploadDtoEnvelope');
 const utils = require('../utils/utils');
 const FormData = require('form-data');
 const FormData = require('form-data');
+const FormData = require('form-data');
+const FormData = require('form-data');
 
 module.exports = {
     createFileAsync: {
@@ -536,25 +538,79 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                {
+                    key: 'top',
+                    label: '',
+                    type: 'integer',
+                },
+                {
+                    key: 'skip',
+                    label: '',
+                    type: 'integer',
+                },
+                {
+                    key: 'count',
+                    label: '',
+                    type: 'boolean',
+                },
+                {
+                    key: 'filter',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'orderBy',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'search',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'select',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'expand',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'isEmpty',
+                    label: '',
+                    type: 'boolean',
+                },
             ],
             outputFields: [
                 ...FileUploadDtoEnvelope.fields('', false),
             ],
             perform: async (z, bundle) => {
+                const formData = new FormData()
+                formData.append('top', bundle.inputData?.['top'])
+                formData.append('skip', bundle.inputData?.['skip'])
+                formData.append('count', bundle.inputData?.['count'])
+                formData.append('filter', bundle.inputData?.['filter'])
+                formData.append('orderBy', bundle.inputData?.['orderBy'])
+                formData.append('search', bundle.inputData?.['search'])
+                formData.append('select', bundle.inputData?.['select'])
+                formData.append('expand', bundle.inputData?.['expand'])
+                formData.append('isEmpty', bundle.inputData?.['isEmpty'])
                 const options = {
                     url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Files'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        
                         'Accept': 'application/json, image/png',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                         'api-version': bundle.inputData?.['api-version'],
                     },
-                    body: {
-                    },
+                    body: formData,
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
                     response.throwForStatus();
@@ -590,24 +646,78 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                {
+                    key: 'top',
+                    label: '',
+                    type: 'integer',
+                },
+                {
+                    key: 'skip',
+                    label: '',
+                    type: 'integer',
+                },
+                {
+                    key: 'count',
+                    label: '',
+                    type: 'boolean',
+                },
+                {
+                    key: 'filter',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'orderBy',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'search',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'select',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'expand',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'isEmpty',
+                    label: '',
+                    type: 'boolean',
+                },
             ],
             outputFields: [
             ],
             perform: async (z, bundle) => {
+                const formData = new FormData()
+                formData.append('top', bundle.inputData?.['top'])
+                formData.append('skip', bundle.inputData?.['skip'])
+                formData.append('count', bundle.inputData?.['count'])
+                formData.append('filter', bundle.inputData?.['filter'])
+                formData.append('orderBy', bundle.inputData?.['orderBy'])
+                formData.append('search', bundle.inputData?.['search'])
+                formData.append('select', bundle.inputData?.['select'])
+                formData.append('expand', bundle.inputData?.['expand'])
+                formData.append('isEmpty', bundle.inputData?.['isEmpty'])
                 const options = {
                     url: utils.replacePathParameters('https://absuite.net/api/v2/StorageService/Files/Count'),
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        
                         'Accept': 'application/json, image/png',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                         'api-version': bundle.inputData?.['api-version'],
                     },
-                    body: {
-                    },
+                    body: formData,
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
                     response.throwForStatus();

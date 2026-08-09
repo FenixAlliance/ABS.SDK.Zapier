@@ -6,6 +6,7 @@ authentication.js
 index.js
 models/AccessTokenResponse.js
 models/AddressDto.js
+models/AddressDtoCollectionQueryParameters.js
 models/AddressDtoListEnvelope.js
 models/CartDto.js
 models/CartDtoEnvelope.js
@@ -18,6 +19,7 @@ models/ExtendedTenantEnrollmentDtoListEnvelope.js
 models/ExtendedUserDto.js
 models/ExtendedUserDtoEnvelope.js
 models/FollowRecordDto.js
+models/FollowRecordDtoCollectionQueryParameters.js
 models/FollowRecordDtoListEnvelope.js
 models/ForgotPasswordRequest.js
 models/HttpValidationProblemDetails.js
@@ -26,13 +28,15 @@ models/InfoResponse.js
 models/Int32Envelope.js
 models/LoginRequest.js
 models/NotificationDto.js
+models/NotificationDtoCollectionQueryParameters.js
 models/NotificationDtoListEnvelope.js
-models/Operation.js
 models/OptionCreateDto.js
 models/OptionDto.js
+models/OptionDtoCollectionQueryParameters.js
 models/OptionDtoEnvelope.js
 models/OptionDtoListEnvelope.js
 models/OptionUpdateDto.js
+models/PatchOperation.js
 models/RefreshRequest.js
 models/RegisterRequest.js
 models/ResendConfirmationEmailRequest.js
@@ -40,6 +44,7 @@ models/ResetPasswordRequest.js
 models/SocialProfileDto.js
 models/SocialProfileDtoEnvelope.js
 models/TenantDto.js
+models/TenantDtoCollectionQueryParameters.js
 models/TenantDtoListEnvelope.js
 models/TenantEnrollmentDto.js
 models/TenantEnrollmentDtoEnvelope.js

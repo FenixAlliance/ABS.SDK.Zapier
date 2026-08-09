@@ -1,4 +1,5 @@
 const samples = require('../samples/SecurityLogsApi');
+const BusinessSecurityLogDtoCollectionQueryParameters = require('../models/BusinessSecurityLogDtoCollectionQueryParameters');
 const BusinessSecurityLogDtoListEnvelope = require('../models/BusinessSecurityLogDtoListEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
@@ -31,6 +32,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...BusinessSecurityLogDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...BusinessSecurityLogDtoListEnvelope.fields('', false),
@@ -41,7 +43,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -49,6 +51,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...BusinessSecurityLogDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -86,6 +89,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...BusinessSecurityLogDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -96,7 +100,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -104,6 +108,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...BusinessSecurityLogDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

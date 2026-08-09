@@ -2,8 +2,9 @@ const samples = require('../samples/SocialPostBucketsApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const SocialPostBucketCreateDto = require('../models/SocialPostBucketCreateDto');
+const SocialPostBucketDtoCollectionQueryParameters = require('../models/SocialPostBucketDtoCollectionQueryParameters');
 const SocialPostBucketDtoEnvelope = require('../models/SocialPostBucketDtoEnvelope');
 const SocialPostBucketDtoListEnvelope = require('../models/SocialPostBucketDtoListEnvelope');
 const SocialPostBucketUpdateDto = require('../models/SocialPostBucketUpdateDto');
@@ -215,6 +216,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SocialPostBucketDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -225,7 +227,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -233,6 +235,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SocialPostBucketDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -270,6 +273,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SocialPostBucketDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...SocialPostBucketDtoListEnvelope.fields('', false),
@@ -280,7 +284,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -288,6 +292,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SocialPostBucketDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -332,7 +337,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -354,7 +359,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

@@ -12,6 +12,11 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}timestamp`,
+                label: `[${labelPrefix}timestamp]`,
+                type: 'string',
+            },
+            {
                 key: `${keyPrefix}tenantId`,
                 label: `[${labelPrefix}tenantId]`,
                 type: 'string',
@@ -124,11 +129,6 @@ module.exports = {
                 type: 'string',
             },
             {
-                key: `${keyPrefix}timestamp`,
-                label: `[${labelPrefix}timestamp]`,
-                type: 'string',
-            },
-            {
                 key: `${keyPrefix}debitInUsd`,
                 label: `[${labelPrefix}debitInUsd]`,
                 type: 'number',
@@ -155,12 +155,15 @@ module.exports = {
             },
             ...Money.fields(`${keyPrefix}totalDebitAmount`, isInput),
             ...Money.fields(`${keyPrefix}totalCreditAmount`, isInput),
+            ...Money.fields(`${keyPrefix}debitInUsdAmount`, isInput),
+            ...Money.fields(`${keyPrefix}creditInUsdAmount`, isInput),
         ]
     },
     mapping: (bundle, prefix = '') => {
         const {keyPrefix} = utils.buildKeyAndLabel(prefix)
         return {
             'id': bundle.inputData?.[`${keyPrefix}id`],
+            'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'tenantId': bundle.inputData?.[`${keyPrefix}tenantId`],
             'enrollmentId': bundle.inputData?.[`${keyPrefix}enrollmentId`],
             'journalId': bundle.inputData?.[`${keyPrefix}journalId`],
@@ -181,7 +184,6 @@ module.exports = {
             'postedBy': bundle.inputData?.[`${keyPrefix}postedBy`],
             'forexRate': bundle.inputData?.[`${keyPrefix}forexRate`],
             'forexRatesSnapshot': bundle.inputData?.[`${keyPrefix}forexRatesSnapshot`],
-            'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
             'debitInUsd': bundle.inputData?.[`${keyPrefix}debitInUsd`],
             'creditInUsd': bundle.inputData?.[`${keyPrefix}creditInUsd`],
             'accountingEntries': utils.childMapping(bundle.inputData?.[`${keyPrefix}accountingEntries`], `${keyPrefix}accountingEntries`, AccountingEntryDto),
@@ -189,6 +191,8 @@ module.exports = {
             'totalCredit': bundle.inputData?.[`${keyPrefix}totalCredit`],
             'totalDebitAmount': utils.removeIfEmpty(Money.mapping(bundle, `${keyPrefix}totalDebitAmount`)),
             'totalCreditAmount': utils.removeIfEmpty(Money.mapping(bundle, `${keyPrefix}totalCreditAmount`)),
+            'debitInUsdAmount': utils.removeIfEmpty(Money.mapping(bundle, `${keyPrefix}debitInUsdAmount`)),
+            'creditInUsdAmount': utils.removeIfEmpty(Money.mapping(bundle, `${keyPrefix}creditInUsdAmount`)),
         }
     },
 }

@@ -29,6 +29,7 @@ const JournalsApi = require('../apis/JournalsApi');
 const LedgerTypesApi = require('../apis/LedgerTypesApi');
 const LedgersApi = require('../apis/LedgersApi');
 const LoansApi = require('../apis/LoansApi');
+const PostingExecutionsApi = require('../apis/PostingExecutionsApi');
 const ReceiptsApi = require('../apis/ReceiptsApi');
 const ReportsApi = require('../apis/ReportsApi');
 const SharesApi = require('../apis/SharesApi');
@@ -207,7 +208,6 @@ const actions = {
     [FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost.key]: FenixAllianceABSWebApi.accountManageDownloadPersonalDataPost,
     [FenixAllianceABSWebApi.accountManageLinkExternalLoginPost.key]: FenixAllianceABSWebApi.accountManageLinkExternalLoginPost,
     [FenixAllianceABSWebApi.accountPerformExternalLoginPost.key]: FenixAllianceABSWebApi.accountPerformExternalLoginPost,
-    [FenixAllianceABSWebApi.apiV2AIServiceAgentsAgentIdAguiPost.key]: FenixAllianceABSWebApi.apiV2AIServiceAgentsAgentIdAguiPost,
     [FenixAllianceABSWebApi.forgotPasswordPost.key]: FenixAllianceABSWebApi.forgotPasswordPost,
     [FenixAllianceABSWebApi.healthGet.key]: FenixAllianceABSWebApi.healthGet,
     [FenixAllianceABSWebApi.helloGet.key]: FenixAllianceABSWebApi.helloGet,
@@ -315,6 +315,7 @@ const actions = {
     [JournalTypesApi.updateJournalTypeAsync.key]: JournalTypesApi.updateJournalTypeAsync,
     [JournalsApi.aggregateJournalEntryCreditsAsync.key]: JournalsApi.aggregateJournalEntryCreditsAsync,
     [JournalsApi.aggregateJournalEntryDebitsAsync.key]: JournalsApi.aggregateJournalEntryDebitsAsync,
+    [JournalsApi.assignJournalToBookAsync.key]: JournalsApi.assignJournalToBookAsync,
     [JournalsApi.countJournalsAsync.key]: JournalsApi.countJournalsAsync,
     [JournalsApi.createJournalAsync.key]: JournalsApi.createJournalAsync,
     [JournalsApi.createJournalEntryAsync.key]: JournalsApi.createJournalEntryAsync,
@@ -366,6 +367,8 @@ const actions = {
     [LoansApi.updateLoanApplicationAsync.key]: LoansApi.updateLoanApplicationAsync,
     [LoansApi.updateLoanAsync.key]: LoansApi.updateLoanAsync,
     [LoansApi.updateLoanTypeAsync.key]: LoansApi.updateLoanTypeAsync,
+    [PostingExecutionsApi.countPostingExecutionsAsync.key]: PostingExecutionsApi.countPostingExecutionsAsync,
+    [PostingExecutionsApi.getPostingExecutionsAsync.key]: PostingExecutionsApi.getPostingExecutionsAsync,
     [ReceiptsApi.createReceiptAsync.key]: ReceiptsApi.createReceiptAsync,
     [ReceiptsApi.deleteReceiptAsync.key]: ReceiptsApi.deleteReceiptAsync,
     [ReceiptsApi.getReceiptDetailsAsync.key]: ReceiptsApi.getReceiptDetailsAsync,

@@ -3,6 +3,7 @@ const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
 const LicenseCreateDto = require('../models/LicenseCreateDto');
 const LicenseDto = require('../models/LicenseDto');
+const LicenseDtoCollectionQueryParameters = require('../models/LicenseDtoCollectionQueryParameters');
 const LicenseDtoListEnvelope = require('../models/LicenseDtoListEnvelope');
 const LicenseUpdateDto = require('../models/LicenseUpdateDto');
 const utils = require('../utils/utils');
@@ -211,6 +212,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...LicenseDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...LicenseDtoListEnvelope.fields('', false),
@@ -221,7 +223,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -229,6 +231,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...LicenseDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -266,6 +269,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...LicenseDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -276,7 +280,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -284,6 +288,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...LicenseDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

@@ -13,11 +13,12 @@ models/InfoResponse.js
 models/Int32Envelope.js
 models/LocationCreateDto.js
 models/LocationDto.js
+models/LocationDtoCollectionQueryParameters.js
 models/LocationDtoEnvelope.js
 models/LocationDtoIReadOnlyListEnvelope.js
 models/LocationUpdateDto.js
 models/LoginRequest.js
-models/Operation.js
+models/PatchOperation.js
 models/RefreshRequest.js
 models/RegisterRequest.js
 models/ResendConfirmationEmailRequest.js

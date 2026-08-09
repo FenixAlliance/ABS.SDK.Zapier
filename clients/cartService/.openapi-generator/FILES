@@ -34,7 +34,7 @@ models/ItemToCompareCartRecordDtoEnvelope.js
 models/ItemToCompareCartRecordDtoListEnvelope.js
 models/LoginRequest.js
 models/NewWishListRequest.js
-models/Operation.js
+models/PatchOperation.js
 models/ProductToWishListRequest.js
 models/RefreshRequest.js
 models/RegisterRequest.js

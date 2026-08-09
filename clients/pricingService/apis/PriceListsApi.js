@@ -3,11 +3,13 @@ const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
 const ItemPriceCreateDto = require('../models/ItemPriceCreateDto');
+const ItemPriceDtoCollectionQueryParameters = require('../models/ItemPriceDtoCollectionQueryParameters');
 const ItemPriceDtoEnvelope = require('../models/ItemPriceDtoEnvelope');
 const ItemPriceDtoListEnvelope = require('../models/ItemPriceDtoListEnvelope');
 const ItemPriceUpdateDto = require('../models/ItemPriceUpdateDto');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const PriceListCreateDto = require('../models/PriceListCreateDto');
+const PriceListDtoCollectionQueryParameters = require('../models/PriceListDtoCollectionQueryParameters');
 const PriceListDtoEnvelope = require('../models/PriceListDtoEnvelope');
 const PriceListDtoListEnvelope = require('../models/PriceListDtoListEnvelope');
 const PriceListUpdateDto = require('../models/PriceListUpdateDto');
@@ -351,6 +353,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemPriceDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ItemPriceDtoListEnvelope.fields('', false),
@@ -361,7 +364,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -369,6 +372,7 @@ module.exports = {
                         'itemId': bundle.inputData?.['itemId'],
                     },
                     body: {
+                        ...ItemPriceDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -402,6 +406,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...ItemPriceDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -412,13 +417,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...ItemPriceDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -446,6 +452,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...PriceListDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...PriceListDtoListEnvelope.fields('', false),
@@ -456,13 +463,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...PriceListDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -490,6 +498,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...PriceListDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -500,13 +509,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...PriceListDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -541,7 +551,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -562,7 +572,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -603,7 +613,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -624,7 +634,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

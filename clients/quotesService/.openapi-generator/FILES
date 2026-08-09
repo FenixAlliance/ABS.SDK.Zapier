@@ -10,6 +10,7 @@ models/EmailDispatchRequest.js
 models/EmptyEnvelope.js
 models/ErrorEnvelope.js
 models/ExtendedQuoteDto.js
+models/ExtendedQuoteDtoCollectionQueryParameters.js
 models/ExtendedQuoteDtoListEnvelope.js
 models/ForgotPasswordRequest.js
 models/HttpValidationProblemDetails.js
@@ -17,13 +18,15 @@ models/InfoRequest.js
 models/InfoResponse.js
 models/Int32Envelope.js
 models/LoginRequest.js
-models/Operation.js
+models/PatchOperation.js
 models/QuoteCreateDto.js
 models/QuoteDto.js
+models/QuoteDtoCollectionQueryParameters.js
 models/QuoteDtoEnvelope.js
 models/QuoteDtoListEnvelope.js
 models/QuoteLineCreateDto.js
 models/QuoteLineDto.js
+models/QuoteLineDtoCollectionQueryParameters.js
 models/QuoteLineDtoEnvelope.js
 models/QuoteLineDtoListEnvelope.js
 models/QuoteLineUpdateDto.js

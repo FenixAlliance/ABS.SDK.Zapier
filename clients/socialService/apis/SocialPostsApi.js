@@ -2,26 +2,104 @@ const samples = require('../samples/SocialPostsApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
+const SocialCommentReactionDtoCollectionQueryParameters = require('../models/SocialCommentReactionDtoCollectionQueryParameters');
+const SocialCommentReactionDtoEnvelope = require('../models/SocialCommentReactionDtoEnvelope');
+const SocialCommentReactionDtoListEnvelope = require('../models/SocialCommentReactionDtoListEnvelope');
 const SocialPostAttachmentCreateDto = require('../models/SocialPostAttachmentCreateDto');
+const SocialPostAttachmentDtoCollectionQueryParameters = require('../models/SocialPostAttachmentDtoCollectionQueryParameters');
 const SocialPostAttachmentDtoEnvelope = require('../models/SocialPostAttachmentDtoEnvelope');
 const SocialPostAttachmentDtoListEnvelope = require('../models/SocialPostAttachmentDtoListEnvelope');
 const SocialPostAttachmentUpdateDto = require('../models/SocialPostAttachmentUpdateDto');
 const SocialPostCommentCreateDto = require('../models/SocialPostCommentCreateDto');
+const SocialPostCommentDtoCollectionQueryParameters = require('../models/SocialPostCommentDtoCollectionQueryParameters');
 const SocialPostCommentDtoEnvelope = require('../models/SocialPostCommentDtoEnvelope');
 const SocialPostCommentDtoListEnvelope = require('../models/SocialPostCommentDtoListEnvelope');
 const SocialPostCommentUpdateDto = require('../models/SocialPostCommentUpdateDto');
 const SocialPostCreateDto = require('../models/SocialPostCreateDto');
+const SocialPostDtoCollectionQueryParameters = require('../models/SocialPostDtoCollectionQueryParameters');
 const SocialPostDtoEnvelope = require('../models/SocialPostDtoEnvelope');
 const SocialPostDtoListEnvelope = require('../models/SocialPostDtoListEnvelope');
+const SocialPostReactionDtoCollectionQueryParameters = require('../models/SocialPostReactionDtoCollectionQueryParameters');
+const SocialPostReactionDtoEnvelope = require('../models/SocialPostReactionDtoEnvelope');
 const SocialPostUpdateDto = require('../models/SocialPostUpdateDto');
 const SocialReactionCreateDto = require('../models/SocialReactionCreateDto');
 const SocialReactionDtoEnvelope = require('../models/SocialReactionDtoEnvelope');
 const SocialReactionDtoListEnvelope = require('../models/SocialReactionDtoListEnvelope');
 const SocialReactionUpdateDto = require('../models/SocialReactionUpdateDto');
 const utils = require('../utils/utils');
+const FormData = require('form-data');
 
 module.exports = {
+    createSocialCommentReactionAsync: {
+        key: 'createSocialCommentReactionAsync',
+        noun: 'SocialPosts',
+        display: {
+            label: 'Create a social comment reaction',
+            description: 'Creates a new reaction on a specific social comment.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'socialPostId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'commentId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'socialProfileId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                ...SocialReactionCreateDto.fields(),
+            ],
+            outputFields: [
+                ...SocialCommentReactionDtoEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialPosts/{socialPostId}/Comments/{commentId}/Reactions'),
+                    method: 'POST',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'socialProfileId': bundle.inputData?.['socialProfileId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...SocialReactionCreateDto.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'createSocialCommentReactionAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['SocialCommentReactionDtoEnvelopeSample']
+        }
+    },
     createSocialPostAsync: {
         key: 'createSocialPostAsync',
         noun: 'SocialPosts',
@@ -240,7 +318,7 @@ module.exports = {
                 ...SocialReactionCreateDto.fields(),
             ],
             outputFields: [
-                ...SocialReactionDtoEnvelope.fields('', false),
+                ...SocialPostReactionDtoEnvelope.fields('', false),
             ],
             perform: async (z, bundle) => {
                 const options = {
@@ -265,7 +343,80 @@ module.exports = {
                     return results;
                 })
             },
-            sample: samples['SocialReactionDtoEnvelopeSample']
+            sample: samples['SocialPostReactionDtoEnvelopeSample']
+        }
+    },
+    deleteSocialCommentReactionAsync: {
+        key: 'deleteSocialCommentReactionAsync',
+        noun: 'SocialPosts',
+        display: {
+            label: 'Delete a social comment reaction',
+            description: 'Deletes a reaction from a specific social comment.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'socialPostId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'commentId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'reactionId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'socialProfileId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialPosts/{socialPostId}/Comments/{commentId}/Reactions/{reactionId}'),
+                    method: 'DELETE',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'socialProfileId': bundle.inputData?.['socialProfileId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'deleteSocialCommentReactionAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     deleteSocialPostAsync: {
@@ -530,6 +681,210 @@ module.exports = {
             sample: samples['EmptyEnvelopeSample']
         }
     },
+    getSocialCommentReactionAsync: {
+        key: 'getSocialCommentReactionAsync',
+        noun: 'SocialPosts',
+        display: {
+            label: 'Get social comment reaction by ID',
+            description: 'Retrieves a specific reaction from a social comment by its ID.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'socialPostId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'commentId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'reactionId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...SocialCommentReactionDtoEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialPosts/{socialPostId}/Comments/{commentId}/Reactions/{reactionId}'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getSocialCommentReactionAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['SocialCommentReactionDtoEnvelopeSample']
+        }
+    },
+    getSocialCommentReactionsAsync: {
+        key: 'getSocialCommentReactionsAsync',
+        noun: 'SocialPosts',
+        display: {
+            label: 'Get social comment reactions',
+            description: 'Retrieves a list of reactions for a specific social comment.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'socialPostId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'commentId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'socialProfileId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                ...SocialCommentReactionDtoCollectionQueryParameters.fields(),
+            ],
+            outputFields: [
+                ...SocialCommentReactionDtoListEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialPosts/{socialPostId}/Comments/{commentId}/Reactions'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'socialProfileId': bundle.inputData?.['socialProfileId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...SocialCommentReactionDtoCollectionQueryParameters.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getSocialCommentReactionsAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['SocialCommentReactionDtoListEnvelopeSample']
+        }
+    },
+    getSocialCommentReactionsCountAsync: {
+        key: 'getSocialCommentReactionsCountAsync',
+        noun: 'SocialPosts',
+        display: {
+            label: 'Count social comment reactions',
+            description: 'Returns the count of reactions for a specific social comment.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'socialPostId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'commentId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'socialProfileId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                ...SocialCommentReactionDtoCollectionQueryParameters.fields(),
+            ],
+            outputFields: [
+                ...Int32Envelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialPosts/{socialPostId}/Comments/{commentId}/Reactions/Count'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'socialProfileId': bundle.inputData?.['socialProfileId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...SocialCommentReactionDtoCollectionQueryParameters.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getSocialCommentReactionsCountAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['Int32EnvelopeSample']
+        }
+    },
     getSocialPostAsync: {
         key: 'getSocialPostAsync',
         noun: 'SocialPosts',
@@ -677,6 +1032,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SocialPostAttachmentDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...SocialPostAttachmentDtoListEnvelope.fields('', false),
@@ -687,13 +1043,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SocialPostAttachmentDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -731,6 +1088,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SocialPostAttachmentDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -741,13 +1099,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SocialPostAttachmentDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -849,6 +1208,11 @@ module.exports = {
                     required: true,
                 },
                 {
+                    key: 'parentCommentId',
+                    label: '',
+                    type: 'string',
+                },
+                {
                     key: 'api-version',
                     label: '',
                     type: 'string',
@@ -858,6 +1222,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SocialPostCommentDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...SocialPostCommentDtoListEnvelope.fields('', false),
@@ -868,14 +1233,16 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'socialProfileId': bundle.inputData?.['socialProfileId'],
+                        'parentCommentId': bundle.inputData?.['parentCommentId'],
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SocialPostCommentDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -910,6 +1277,11 @@ module.exports = {
                     required: true,
                 },
                 {
+                    key: 'parentCommentId',
+                    label: '',
+                    type: 'string',
+                },
+                {
                     key: 'api-version',
                     label: '',
                     type: 'string',
@@ -919,6 +1291,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SocialPostCommentDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -929,14 +1302,16 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'socialProfileId': bundle.inputData?.['socialProfileId'],
+                        'parentCommentId': bundle.inputData?.['parentCommentId'],
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SocialPostCommentDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1040,6 +1415,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SocialPostReactionDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...SocialReactionDtoListEnvelope.fields('', false),
@@ -1050,7 +1426,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -1058,6 +1434,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SocialPostReactionDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1101,6 +1478,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SocialPostReactionDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -1111,7 +1489,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -1119,6 +1497,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SocialPostReactionDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1156,6 +1535,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SocialPostDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...SocialPostDtoListEnvelope.fields('', false),
@@ -1166,7 +1546,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -1174,6 +1554,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SocialPostDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1211,6 +1592,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SocialPostDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -1221,7 +1603,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -1229,6 +1611,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SocialPostDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1273,7 +1656,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -1295,7 +1678,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1305,6 +1688,81 @@ module.exports = {
                 })
             },
             sample: samples['EmptyEnvelopeSample']
+        }
+    },
+    updateSocialCommentReactionAsync: {
+        key: 'updateSocialCommentReactionAsync',
+        noun: 'SocialPosts',
+        display: {
+            label: 'Update a social comment reaction',
+            description: 'Updates an existing reaction on a specific social comment.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'socialPostId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'commentId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'reactionId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'socialProfileId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                ...SocialReactionUpdateDto.fields(),
+            ],
+            outputFields: [
+                ...SocialCommentReactionDtoEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialPosts/{socialPostId}/Comments/{commentId}/Reactions/{reactionId}'),
+                    method: 'PUT',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'socialProfileId': bundle.inputData?.['socialProfileId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...SocialReactionUpdateDto.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'updateSocialCommentReactionAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['SocialCommentReactionDtoEnvelopeSample']
         }
     },
     updateSocialPostAsync: {
@@ -1549,7 +2007,7 @@ module.exports = {
                 ...SocialReactionUpdateDto.fields(),
             ],
             outputFields: [
-                ...EmptyEnvelope.fields('', false),
+                ...SocialPostReactionDtoEnvelope.fields('', false),
             ],
             perform: async (z, bundle) => {
                 const options = {
@@ -1574,7 +2032,75 @@ module.exports = {
                     return results;
                 })
             },
-            sample: samples['EmptyEnvelopeSample']
+            sample: samples['SocialPostReactionDtoEnvelopeSample']
+        }
+    },
+    uploadSocialPostImageAttachmentAsync: {
+        key: 'uploadSocialPostImageAttachmentAsync',
+        noun: 'SocialPosts',
+        display: {
+            label: 'Upload a social post image attachment',
+            description: 'Uploads an image and attaches it to a social post, storing the bytes through the storage spine.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'socialPostId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'socialProfileId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'file',
+                    label: '',
+                    type: 'file',
+                },
+            ],
+            outputFields: [
+                ...SocialPostAttachmentDtoEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const formData = new FormData()
+                const filename = bundle.inputData?.['filename'] || bundle.inputData?.['file'].split('/').slice(-1)[0]
+                formData.append('file', (await (await z.request({url: bundle.inputData?.['file'], method: 'GET', raw: true})).buffer()), { filename: filename })
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SocialService/SocialPosts/{socialPostId}/Attachments/Image'),
+                    method: 'POST',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'socialProfileId': bundle.inputData?.['socialProfileId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: formData,
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'uploadSocialPostImageAttachmentAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['SocialPostAttachmentDtoEnvelopeSample']
         }
     },
 }

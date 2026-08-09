@@ -2,8 +2,9 @@ const samples = require('../samples/ReceiptsApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const ReceiptCreateDto = require('../models/ReceiptCreateDto');
+const ReceiptDtoCollectionQueryParameters = require('../models/ReceiptDtoCollectionQueryParameters');
 const ReceiptDtoEnvelope = require('../models/ReceiptDtoEnvelope');
 const ReceiptDtoIReadOnlyListEnvelope = require('../models/ReceiptDtoIReadOnlyListEnvelope');
 const ReceiptUpdateDto = require('../models/ReceiptUpdateDto');
@@ -172,6 +173,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...ReceiptDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ReceiptDtoIReadOnlyListEnvelope.fields('', false),
@@ -182,13 +184,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...ReceiptDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -216,6 +219,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...ReceiptDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -226,13 +230,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...ReceiptDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -267,7 +272,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -288,7 +293,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

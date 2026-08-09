@@ -2,8 +2,9 @@ const samples = require('../samples/SupportTicketPrioritiesApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const SupportTicketPriorityCreateDto = require('../models/SupportTicketPriorityCreateDto');
+const SupportTicketPriorityDtoCollectionQueryParameters = require('../models/SupportTicketPriorityDtoCollectionQueryParameters');
 const SupportTicketPriorityDtoEnvelope = require('../models/SupportTicketPriorityDtoEnvelope');
 const SupportTicketPriorityDtoListEnvelope = require('../models/SupportTicketPriorityDtoListEnvelope');
 const SupportTicketPriorityUpdateDto = require('../models/SupportTicketPriorityUpdateDto');
@@ -154,6 +155,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SupportTicketPriorityDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...SupportTicketPriorityDtoListEnvelope.fields('', false),
@@ -164,7 +166,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -172,6 +174,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SupportTicketPriorityDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -209,6 +212,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SupportTicketPriorityDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -219,7 +223,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -227,6 +231,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SupportTicketPriorityDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -332,7 +337,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -354,7 +359,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

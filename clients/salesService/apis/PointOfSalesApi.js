@@ -2,8 +2,9 @@ const samples = require('../samples/PointOfSalesApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const PointOfSaleCreateDto = require('../models/PointOfSaleCreateDto');
+const PointOfSaleDtoCollectionQueryParameters = require('../models/PointOfSaleDtoCollectionQueryParameters');
 const PointOfSaleDtoEnvelope = require('../models/PointOfSaleDtoEnvelope');
 const PointOfSaleDtoListEnvelope = require('../models/PointOfSaleDtoListEnvelope');
 const PointOfSaleUpdateDto = require('../models/PointOfSaleUpdateDto');
@@ -26,6 +27,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...PointOfSaleDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -36,13 +38,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...PointOfSaleDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -216,6 +219,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...PointOfSaleDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...PointOfSaleDtoListEnvelope.fields('', false),
@@ -226,13 +230,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...PointOfSaleDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -267,7 +272,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -288,7 +293,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

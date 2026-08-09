@@ -1,17 +1,20 @@
 const samples = require('../samples/JournalsApi');
+const AssignJournalToBookRequest = require('../models/AssignJournalToBookRequest');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
 const JournalCreateDto = require('../models/JournalCreateDto');
+const JournalDtoCollectionQueryParameters = require('../models/JournalDtoCollectionQueryParameters');
 const JournalDtoEnvelope = require('../models/JournalDtoEnvelope');
 const JournalDtoIReadOnlyListEnvelope = require('../models/JournalDtoIReadOnlyListEnvelope');
 const JournalEntryCreateDto = require('../models/JournalEntryCreateDto');
+const JournalEntryDtoCollectionQueryParameters = require('../models/JournalEntryDtoCollectionQueryParameters');
 const JournalEntryDtoEnvelope = require('../models/JournalEntryDtoEnvelope');
 const JournalEntryDtoIReadOnlyListEnvelope = require('../models/JournalEntryDtoIReadOnlyListEnvelope');
 const JournalEntryUpdateDto = require('../models/JournalEntryUpdateDto');
 const JournalUpdateDto = require('../models/JournalUpdateDto');
 const MoneyEnvelope = require('../models/MoneyEnvelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const ReverseJournalEntryRequest = require('../models/ReverseJournalEntryRequest');
 const utils = require('../utils/utils');
 
@@ -53,6 +56,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...JournalEntryDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...MoneyEnvelope.fields('', false),
@@ -63,7 +67,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -72,6 +76,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...JournalEntryDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -120,6 +125,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...JournalEntryDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...MoneyEnvelope.fields('', false),
@@ -130,7 +136,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -139,6 +145,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...JournalEntryDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -148,6 +155,69 @@ module.exports = {
                 })
             },
             sample: samples['MoneyEnvelopeSample']
+        }
+    },
+    assignJournalToBookAsync: {
+        key: 'assignJournalToBookAsync',
+        noun: 'Journals',
+        display: {
+            label: 'Bind a journal to a financial book',
+            description: 'Establishes the one-way Journal↔FinancialBook binding (finish-line #5): binds an unbound journal to the supplied book and sets its book-scoped code, enforcing (Tenant, Book, Code) uniqueness. Binding an unbound journal or re-affirming the same book succeeds; a duplicate code in the book is rejected (400), and re-homing an already-bound journal to a DIFFERENT book is rejected by the aggregate. Requires the journals_update permission.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'journalId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                ...AssignJournalToBookRequest.fields(),
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/AccountingService/Journals/{journalId}/AssignToBook'),
+                    method: 'POST',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'tenantId': bundle.inputData?.['tenantId'],
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...AssignJournalToBookRequest.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'assignJournalToBookAsync', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
         }
     },
     countJournalsAsync: {
@@ -176,6 +246,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...JournalDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -186,7 +257,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -194,6 +265,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...JournalDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -546,6 +618,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...JournalEntryDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...JournalEntryDtoIReadOnlyListEnvelope.fields('', false),
@@ -556,7 +629,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -564,6 +637,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...JournalEntryDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -607,6 +681,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...JournalEntryDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -617,7 +692,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -625,6 +700,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...JournalEntryDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -729,6 +805,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...JournalDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...JournalDtoIReadOnlyListEnvelope.fields('', false),
@@ -739,7 +816,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -747,6 +824,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...JournalDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -791,7 +869,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -813,7 +891,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -864,7 +942,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -886,7 +964,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

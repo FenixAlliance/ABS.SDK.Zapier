@@ -59,6 +59,26 @@ module.exports = {
                 label: `[${labelPrefix}receivedTimestamp]`,
                 type: 'string',
             },
+            {
+                key: `${keyPrefix}socialProfileName`,
+                label: `[${labelPrefix}socialProfileName]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}socialProfileAvatarUrl`,
+                label: `[${labelPrefix}socialProfileAvatarUrl]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}socialProfileType`,
+                label: `[${labelPrefix}socialProfileType]`,
+                type: 'string',
+                choices: [
+                    'User',
+                    'Tenant',
+                    'Contact',
+                ],
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -75,6 +95,9 @@ module.exports = {
             'sentTimestamp': bundle.inputData?.[`${keyPrefix}sentTimestamp`],
             'readTimestamp': bundle.inputData?.[`${keyPrefix}readTimestamp`],
             'receivedTimestamp': bundle.inputData?.[`${keyPrefix}receivedTimestamp`],
+            'socialProfileName': bundle.inputData?.[`${keyPrefix}socialProfileName`],
+            'socialProfileAvatarUrl': bundle.inputData?.[`${keyPrefix}socialProfileAvatarUrl`],
+            'socialProfileType': bundle.inputData?.[`${keyPrefix}socialProfileType`],
         }
     },
 }

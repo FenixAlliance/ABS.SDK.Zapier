@@ -2,8 +2,9 @@ const samples = require('../samples/StoresApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const StoreCreateDto = require('../models/StoreCreateDto');
+const StoreDtoCollectionQueryParameters = require('../models/StoreDtoCollectionQueryParameters');
 const StoreDtoEnvelope = require('../models/StoreDtoEnvelope');
 const StoreDtoListEnvelope = require('../models/StoreDtoListEnvelope');
 const StoreUpdateDto = require('../models/StoreUpdateDto');
@@ -26,6 +27,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...StoreDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -36,13 +38,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...StoreDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -216,6 +219,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...StoreDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...StoreDtoListEnvelope.fields('', false),
@@ -226,13 +230,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...StoreDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -267,7 +272,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -288,7 +293,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

@@ -1,5 +1,6 @@
 const samples = require('../samples/TaxPoliciesApi');
 const AppliedTaxPolicyRecordCreateDto = require('../models/AppliedTaxPolicyRecordCreateDto');
+const AppliedTaxPolicyRecordDtoCollectionQueryParameters = require('../models/AppliedTaxPolicyRecordDtoCollectionQueryParameters');
 const AppliedTaxPolicyRecordDtoEnvelope = require('../models/AppliedTaxPolicyRecordDtoEnvelope');
 const AppliedTaxPolicyRecordDtoListEnvelope = require('../models/AppliedTaxPolicyRecordDtoListEnvelope');
 const AppliedTaxPolicyRecordUpdateDto = require('../models/AppliedTaxPolicyRecordUpdateDto');
@@ -7,11 +8,13 @@ const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
 const ItemTaxPolicyRecordCreateDto = require('../models/ItemTaxPolicyRecordCreateDto');
+const ItemTaxPolicyRecordDtoCollectionQueryParameters = require('../models/ItemTaxPolicyRecordDtoCollectionQueryParameters');
 const ItemTaxPolicyRecordDtoEnvelope = require('../models/ItemTaxPolicyRecordDtoEnvelope');
 const ItemTaxPolicyRecordDtoListEnvelope = require('../models/ItemTaxPolicyRecordDtoListEnvelope');
 const ItemTaxPolicyRecordUpdateDto = require('../models/ItemTaxPolicyRecordUpdateDto');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const TaxPolicyCreateDto = require('../models/TaxPolicyCreateDto');
+const TaxPolicyDtoCollectionQueryParameters = require('../models/TaxPolicyDtoCollectionQueryParameters');
 const TaxPolicyDtoEnvelope = require('../models/TaxPolicyDtoEnvelope');
 const TaxPolicyDtoListEnvelope = require('../models/TaxPolicyDtoListEnvelope');
 const TaxPolicyUpdateDto = require('../models/TaxPolicyUpdateDto');
@@ -495,6 +498,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...AppliedTaxPolicyRecordDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...AppliedTaxPolicyRecordDtoListEnvelope.fields('', false),
@@ -505,7 +509,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -513,6 +517,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...AppliedTaxPolicyRecordDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -556,6 +561,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...AppliedTaxPolicyRecordDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -566,7 +572,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -574,6 +580,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...AppliedTaxPolicyRecordDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -684,6 +691,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemTaxPolicyRecordDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ItemTaxPolicyRecordDtoListEnvelope.fields('', false),
@@ -694,7 +702,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -702,6 +710,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ItemTaxPolicyRecordDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -739,6 +748,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...TaxPolicyDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...TaxPolicyDtoListEnvelope.fields('', false),
@@ -749,7 +759,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -757,6 +767,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...TaxPolicyDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -800,6 +811,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...TaxPolicyDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...TaxPolicyDtoListEnvelope.fields('', false),
@@ -810,7 +822,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -818,6 +830,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...TaxPolicyDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -855,6 +868,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...TaxPolicyDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -865,7 +879,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -873,6 +887,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...TaxPolicyDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -984,7 +999,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -1006,7 +1021,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1057,7 +1072,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -1079,7 +1094,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1124,7 +1139,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -1146,7 +1161,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

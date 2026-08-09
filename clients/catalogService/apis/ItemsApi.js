@@ -2,6 +2,7 @@ const samples = require('../samples/ItemsApi');
 const BatchStockItemUpdateRequest = require('../models/BatchStockItemUpdateRequest');
 const BulkProduct = require('../models/BulkProduct');
 const CatalogItemCreateDto = require('../models/CatalogItemCreateDto');
+const CatalogItemDtoCollectionQueryParameters = require('../models/CatalogItemDtoCollectionQueryParameters');
 const CatalogItemDtoEnvelope = require('../models/CatalogItemDtoEnvelope');
 const CatalogItemDtoListEnvelope = require('../models/CatalogItemDtoListEnvelope');
 const CatalogItemUpdateDto = require('../models/CatalogItemUpdateDto');
@@ -9,40 +10,54 @@ const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
 const ItemAttachmentCreateDto = require('../models/ItemAttachmentCreateDto');
+const ItemAttachmentDtoCollectionQueryParameters = require('../models/ItemAttachmentDtoCollectionQueryParameters');
 const ItemAttachmentDtoEnvelope = require('../models/ItemAttachmentDtoEnvelope');
 const ItemAttachmentDtoListEnvelope = require('../models/ItemAttachmentDtoListEnvelope');
 const ItemAttributeOptionDtoEnvelope = require('../models/ItemAttributeOptionDtoEnvelope');
 const ItemAttributeOptionDtoListEnvelope = require('../models/ItemAttributeOptionDtoListEnvelope');
+const ItemBrandDtoCollectionQueryParameters = require('../models/ItemBrandDtoCollectionQueryParameters');
 const ItemBrandDtoEnvelope = require('../models/ItemBrandDtoEnvelope');
 const ItemBrandDtoListEnvelope = require('../models/ItemBrandDtoListEnvelope');
+const ItemCategoryDtoCollectionQueryParameters = require('../models/ItemCategoryDtoCollectionQueryParameters');
 const ItemCategoryDtoEnvelope = require('../models/ItemCategoryDtoEnvelope');
 const ItemCategoryDtoListEnvelope = require('../models/ItemCategoryDtoListEnvelope');
+const ItemGoogleCategoryDtoCollectionQueryParameters = require('../models/ItemGoogleCategoryDtoCollectionQueryParameters');
 const ItemGoogleCategoryDtoEnvelope = require('../models/ItemGoogleCategoryDtoEnvelope');
 const ItemGoogleCategoryDtoListEnvelope = require('../models/ItemGoogleCategoryDtoListEnvelope');
+const ItemImageDtoCollectionQueryParameters = require('../models/ItemImageDtoCollectionQueryParameters');
 const ItemImageDtoEnvelope = require('../models/ItemImageDtoEnvelope');
 const ItemImageDtoListEnvelope = require('../models/ItemImageDtoListEnvelope');
+const ItemQuestionDtoCollectionQueryParameters = require('../models/ItemQuestionDtoCollectionQueryParameters');
 const ItemQuestionDtoEnvelope = require('../models/ItemQuestionDtoEnvelope');
 const ItemQuestionDtoListEnvelope = require('../models/ItemQuestionDtoListEnvelope');
 const ItemQuestionRecordCreateDto = require('../models/ItemQuestionRecordCreateDto');
+const ItemRefundPolicyDtoCollectionQueryParameters = require('../models/ItemRefundPolicyDtoCollectionQueryParameters');
 const ItemRefundPolicyDtoEnvelope = require('../models/ItemRefundPolicyDtoEnvelope');
 const ItemRefundPolicyDtoListEnvelope = require('../models/ItemRefundPolicyDtoListEnvelope');
+const ItemReturnPolicyDtoCollectionQueryParameters = require('../models/ItemReturnPolicyDtoCollectionQueryParameters');
 const ItemReturnPolicyDtoEnvelope = require('../models/ItemReturnPolicyDtoEnvelope');
 const ItemReturnPolicyDtoListEnvelope = require('../models/ItemReturnPolicyDtoListEnvelope');
+const ItemReviewDtoCollectionQueryParameters = require('../models/ItemReviewDtoCollectionQueryParameters');
 const ItemReviewDtoEnvelope = require('../models/ItemReviewDtoEnvelope');
 const ItemReviewDtoListEnvelope = require('../models/ItemReviewDtoListEnvelope');
 const ItemReviewRecordCreateDto = require('../models/ItemReviewRecordCreateDto');
+const ItemShippingPolicyDtoCollectionQueryParameters = require('../models/ItemShippingPolicyDtoCollectionQueryParameters');
 const ItemShippingPolicyDtoEnvelope = require('../models/ItemShippingPolicyDtoEnvelope');
 const ItemShippingPolicyDtoListEnvelope = require('../models/ItemShippingPolicyDtoListEnvelope');
+const ItemTagDtoCollectionQueryParameters = require('../models/ItemTagDtoCollectionQueryParameters');
 const ItemTagDtoEnvelope = require('../models/ItemTagDtoEnvelope');
 const ItemTagDtoListEnvelope = require('../models/ItemTagDtoListEnvelope');
+const ItemTaxPolicyDtoCollectionQueryParameters = require('../models/ItemTaxPolicyDtoCollectionQueryParameters');
 const ItemTaxPolicyDtoEnvelope = require('../models/ItemTaxPolicyDtoEnvelope');
 const ItemTaxPolicyDtoListEnvelope = require('../models/ItemTaxPolicyDtoListEnvelope');
+const ItemTypeDtoCollectionQueryParameters = require('../models/ItemTypeDtoCollectionQueryParameters');
 const ItemTypeDtoEnvelope = require('../models/ItemTypeDtoEnvelope');
 const ItemTypeDtoListEnvelope = require('../models/ItemTypeDtoListEnvelope');
+const ItemWarrantyPolicyDtoCollectionQueryParameters = require('../models/ItemWarrantyPolicyDtoCollectionQueryParameters');
 const ItemWarrantyPolicyDtoEnvelope = require('../models/ItemWarrantyPolicyDtoEnvelope');
 const ItemWarrantyPolicyDtoListEnvelope = require('../models/ItemWarrantyPolicyDtoListEnvelope');
 const MoneyEnvelope = require('../models/MoneyEnvelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const PricingRuleDtoEnvelope = require('../models/PricingRuleDtoEnvelope');
 const PricingRuleDtoListEnvelope = require('../models/PricingRuleDtoListEnvelope');
 const utils = require('../utils/utils');
@@ -197,6 +212,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemTagDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -207,7 +223,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -215,6 +231,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ItemTagDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -251,6 +268,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CatalogItemDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -261,7 +279,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -269,6 +287,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CatalogItemDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -590,6 +609,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemAttachmentDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ItemAttachmentDtoListEnvelope.fields('', false),
@@ -600,13 +620,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ItemAttachmentDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -818,6 +839,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemBrandDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ItemBrandDtoListEnvelope.fields('', false),
@@ -828,13 +850,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ItemBrandDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -926,6 +949,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemCategoryDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ItemCategoryDtoListEnvelope.fields('', false),
@@ -936,13 +960,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ItemCategoryDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1040,6 +1065,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemGoogleCategoryDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ItemGoogleCategoryDtoListEnvelope.fields('', false),
@@ -1050,13 +1076,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ItemGoogleCategoryDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1214,6 +1241,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemImageDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ItemImageDtoListEnvelope.fields('', false),
@@ -1224,13 +1252,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ItemImageDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1442,6 +1471,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemQuestionDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ItemQuestionDtoListEnvelope.fields('', false),
@@ -1452,13 +1482,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ItemQuestionDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1496,6 +1527,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemRefundPolicyDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ItemRefundPolicyDtoListEnvelope.fields('', false),
@@ -1506,13 +1538,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ItemRefundPolicyDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1610,6 +1643,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemReturnPolicyDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ItemReturnPolicyDtoListEnvelope.fields('', false),
@@ -1620,13 +1654,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ItemReturnPolicyDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1784,6 +1819,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemReviewDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ItemReviewDtoListEnvelope.fields('', false),
@@ -1794,13 +1830,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ItemReviewDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1838,6 +1875,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemShippingPolicyDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ItemShippingPolicyDtoListEnvelope.fields('', false),
@@ -1848,13 +1886,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ItemShippingPolicyDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -2025,6 +2064,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemTagDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ItemTagDtoListEnvelope.fields('', false),
@@ -2035,7 +2075,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -2043,6 +2083,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ItemTagDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -2080,6 +2121,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemTaxPolicyDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ItemTaxPolicyDtoListEnvelope.fields('', false),
@@ -2090,13 +2132,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ItemTaxPolicyDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -2267,6 +2310,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemTypeDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ItemTypeDtoListEnvelope.fields('', false),
@@ -2277,7 +2321,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -2285,6 +2329,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ItemTypeDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -2322,6 +2367,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ItemWarrantyPolicyDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ItemWarrantyPolicyDtoListEnvelope.fields('', false),
@@ -2332,13 +2378,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ItemWarrantyPolicyDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -2435,6 +2482,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CatalogItemDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...MoneyEnvelope.fields('', false),
@@ -2445,7 +2493,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -2453,6 +2501,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CatalogItemDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -2489,6 +2538,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CatalogItemDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...MoneyEnvelope.fields('', false),
@@ -2499,7 +2549,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -2507,6 +2557,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CatalogItemDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -2543,6 +2594,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CatalogItemDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...CatalogItemDtoListEnvelope.fields('', false),
@@ -2553,7 +2605,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -2561,6 +2613,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CatalogItemDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -2605,7 +2658,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -2626,7 +2679,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

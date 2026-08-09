@@ -4,9 +4,10 @@ const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
 const LicensingCertificateCreateDto = require('../models/LicensingCertificateCreateDto');
 const LicensingCertificateDto = require('../models/LicensingCertificateDto');
+const LicensingCertificateDtoCollectionQueryParameters = require('../models/LicensingCertificateDtoCollectionQueryParameters');
 const LicensingCertificateDtoListEnvelope = require('../models/LicensingCertificateDtoListEnvelope');
 const LicensingCertificateUpdateDto = require('../models/LicensingCertificateUpdateDto');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -213,6 +214,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...LicensingCertificateDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...LicensingCertificateDtoListEnvelope.fields('', false),
@@ -223,7 +225,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -231,6 +233,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...LicensingCertificateDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -268,6 +271,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...LicensingCertificateDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -278,7 +282,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -286,6 +290,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...LicensingCertificateDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -330,7 +335,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -352,7 +357,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

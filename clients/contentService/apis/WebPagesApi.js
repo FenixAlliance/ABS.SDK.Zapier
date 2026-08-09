@@ -1,13 +1,16 @@
 const samples = require('../samples/WebPagesApi');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const WebPageCategoryCreateDto = require('../models/WebPageCategoryCreateDto');
+const WebPageCategoryDtoCollectionQueryParameters = require('../models/WebPageCategoryDtoCollectionQueryParameters');
 const WebPageCategoryDtoListEnvelope = require('../models/WebPageCategoryDtoListEnvelope');
 const WebPageCreateDto = require('../models/WebPageCreateDto');
+const WebPageDtoCollectionQueryParameters = require('../models/WebPageDtoCollectionQueryParameters');
 const WebPageDtoEnvelope = require('../models/WebPageDtoEnvelope');
 const WebPageDtoListEnvelope = require('../models/WebPageDtoListEnvelope');
 const WebPageTagCreateDto = require('../models/WebPageTagCreateDto');
+const WebPageTagDtoCollectionQueryParameters = require('../models/WebPageTagDtoCollectionQueryParameters');
 const WebPageTagDtoListEnvelope = require('../models/WebPageTagDtoListEnvelope');
 const WebPageUpdateDto = require('../models/WebPageUpdateDto');
 const utils = require('../utils/utils');
@@ -39,6 +42,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...WebPageDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -49,7 +53,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -57,6 +61,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...WebPageDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -334,6 +339,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...WebPageCategoryDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...WebPageCategoryDtoListEnvelope.fields('', false),
@@ -344,13 +350,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...WebPageCategoryDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -388,6 +395,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...WebPageTagDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...WebPageTagDtoListEnvelope.fields('', false),
@@ -398,13 +406,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...WebPageTagDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -503,6 +512,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...WebPageDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...WebPageDtoListEnvelope.fields('', false),
@@ -513,7 +523,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -521,6 +531,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...WebPageDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -565,7 +576,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -586,7 +597,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

@@ -26,6 +26,21 @@ module.exports = {
                 type: 'string',
             },
             {
+                key: `${keyPrefix}httpStatus`,
+                label: `[${labelPrefix}httpStatus]`,
+                type: 'integer',
+            },
+            {
+                key: `${keyPrefix}errorCode`,
+                label: `[${labelPrefix}errorCode]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}validationDetails`,
+                label: `[${labelPrefix}validationDetails]`,
+                type: 'object',
+            },
+            {
                 key: `${keyPrefix}activityId`,
                 label: `[${labelPrefix}activityId]`,
                 type: 'string',
@@ -44,6 +59,9 @@ module.exports = {
             'errorMessage': bundle.inputData?.[`${keyPrefix}errorMessage`],
             'correlationId': bundle.inputData?.[`${keyPrefix}correlationId`],
             'timestamp': bundle.inputData?.[`${keyPrefix}timestamp`],
+            'httpStatus': bundle.inputData?.[`${keyPrefix}httpStatus`],
+            'errorCode': bundle.inputData?.[`${keyPrefix}errorCode`],
+            'validationDetails': bundle.inputData?.[`${keyPrefix}validationDetails`],
             'activityId': bundle.inputData?.[`${keyPrefix}activityId`],
             'result': utils.childMapping(bundle.inputData?.[`${keyPrefix}result`], `${keyPrefix}result`, ServiceLevelDto),
         }

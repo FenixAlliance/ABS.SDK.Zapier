@@ -49,6 +49,16 @@ module.exports = {
                 label: `[${labelPrefix}socialProfileAvatarUrl]`,
                 type: 'string',
             },
+            {
+                key: `${keyPrefix}socialProfileType`,
+                label: `[${labelPrefix}socialProfileType]`,
+                type: 'string',
+                choices: [
+                    'User',
+                    'Tenant',
+                    'Contact',
+                ],
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -61,6 +71,7 @@ module.exports = {
             'socialProfileId': bundle.inputData?.[`${keyPrefix}socialProfileId`],
             'socialProfileName': bundle.inputData?.[`${keyPrefix}socialProfileName`],
             'socialProfileAvatarUrl': bundle.inputData?.[`${keyPrefix}socialProfileAvatarUrl`],
+            'socialProfileType': bundle.inputData?.[`${keyPrefix}socialProfileType`],
         }
     },
 }

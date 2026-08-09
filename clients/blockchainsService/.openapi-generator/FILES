@@ -7,10 +7,12 @@ index.js
 models/AccessTokenResponse.js
 models/BlockchainBlockCreateDto.js
 models/BlockchainBlockDto.js
+models/BlockchainBlockDtoCollectionQueryParameters.js
 models/BlockchainBlockDtoListEnvelope.js
 models/BlockchainBlockUpdateDto.js
 models/BlockchainCreateDto.js
 models/BlockchainDto.js
+models/BlockchainDtoCollectionQueryParameters.js
 models/BlockchainDtoListEnvelope.js
 models/BlockchainUpdateDto.js
 models/EmptyEnvelope.js
@@ -23,9 +25,10 @@ models/Int32Envelope.js
 models/LoginRequest.js
 models/NonFungibleTokenCreateDto.js
 models/NonFungibleTokenDto.js
+models/NonFungibleTokenDtoCollectionQueryParameters.js
 models/NonFungibleTokenDtoListEnvelope.js
 models/NonFungibleTokenUpdateDto.js
-models/Operation.js
+models/PatchOperation.js
 models/RefreshRequest.js
 models/RegisterRequest.js
 models/ResendConfirmationEmailRequest.js

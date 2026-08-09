@@ -185,48 +185,6 @@ module.exports = {
             sample: { data: {} }
         }
     },
-    apiV2AIServiceAgentsAgentIdAguiPost: {
-        key: 'apiV2AIServiceAgentsAgentIdAguiPost',
-        noun: 'FenixAlliance.ABS.Web',
-        display: {
-            label: '',
-            description: '',
-            hidden: false,
-        },
-        operation: {
-            inputFields: [
-                {
-                    key: 'agentId',
-                    label: '',
-                    type: 'string',
-                    required: true,
-                },
-            ],
-            outputFields: [
-            ],
-            perform: async (z, bundle) => {
-                const options = {
-                    url: utils.replacePathParameters('https://absuite.net/api/v2/AIService/Agents/{agentId}/agui'),
-                    method: 'POST',
-                    removeMissingValuesFrom: { params: true, body: true },
-                    headers: {
-                        'Content-Type': '',
-                        'Accept': '',
-                    },
-                    params: {
-                    },
-                    body: {
-                    },
-                }
-                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
-                    response.throwForStatus();
-                    const results = utils.responseOptionsMiddleware(z, bundle, 'apiV2AIServiceAgentsAgentIdAguiPost', response.json);
-                    return results;
-                })
-            },
-            sample: { data: {} }
-        }
-    },
     forgotPasswordPost: {
         key: 'forgotPasswordPost',
         noun: 'FenixAlliance.ABS.Web',

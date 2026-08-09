@@ -2,7 +2,7 @@ const samples = require('../samples/WishListsApi');
 const BooleanEnvelope = require('../models/BooleanEnvelope');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const NewWishListRequest = require('../models/NewWishListRequest');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const ProductToWishListRequest = require('../models/ProductToWishListRequest');
 const WishListDto = require('../models/WishListDto');
 const WishListItemRecordDto = require('../models/WishListItemRecordDto');
@@ -464,7 +464,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -485,7 +485,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

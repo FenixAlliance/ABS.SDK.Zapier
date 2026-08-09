@@ -2,14 +2,17 @@ const samples = require('../samples/SupportRequestsApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const SupportRequestAttachmentCreateDto = require('../models/SupportRequestAttachmentCreateDto');
+const SupportRequestAttachmentDtoCollectionQueryParameters = require('../models/SupportRequestAttachmentDtoCollectionQueryParameters');
 const SupportRequestAttachmentDtoEnvelope = require('../models/SupportRequestAttachmentDtoEnvelope');
 const SupportRequestAttachmentDtoListEnvelope = require('../models/SupportRequestAttachmentDtoListEnvelope');
 const SupportRequestCreateDto = require('../models/SupportRequestCreateDto');
+const SupportRequestDtoCollectionQueryParameters = require('../models/SupportRequestDtoCollectionQueryParameters');
 const SupportRequestDtoEnvelope = require('../models/SupportRequestDtoEnvelope');
 const SupportRequestDtoListEnvelope = require('../models/SupportRequestDtoListEnvelope');
 const SupportRequestUpdateDto = require('../models/SupportRequestUpdateDto');
+const SupportTicketDtoCollectionQueryParameters = require('../models/SupportTicketDtoCollectionQueryParameters');
 const SupportTicketDtoListEnvelope = require('../models/SupportTicketDtoListEnvelope');
 const utils = require('../utils/utils');
 
@@ -292,6 +295,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SupportRequestAttachmentDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...SupportRequestAttachmentDtoListEnvelope.fields('', false),
@@ -302,7 +306,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -310,6 +314,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SupportRequestAttachmentDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -353,6 +358,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SupportRequestAttachmentDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -363,7 +369,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -371,6 +377,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SupportRequestAttachmentDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -414,6 +421,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SupportTicketDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...SupportTicketDtoListEnvelope.fields('', false),
@@ -424,7 +432,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -432,6 +440,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SupportTicketDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -469,6 +478,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SupportRequestDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...SupportRequestDtoListEnvelope.fields('', false),
@@ -479,7 +489,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -487,6 +497,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SupportRequestDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -524,6 +535,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SupportRequestDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -534,7 +546,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -542,6 +554,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SupportRequestDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -586,7 +599,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -608,7 +621,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

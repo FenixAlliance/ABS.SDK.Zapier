@@ -1,8 +1,10 @@
 const samples = require('../samples/DealUnitFlowsApi');
 const DealUnitFlowCreateDto = require('../models/DealUnitFlowCreateDto');
+const DealUnitFlowDtoCollectionQueryParameters = require('../models/DealUnitFlowDtoCollectionQueryParameters');
 const DealUnitFlowDtoEnvelope = require('../models/DealUnitFlowDtoEnvelope');
 const DealUnitFlowDtoListEnvelope = require('../models/DealUnitFlowDtoListEnvelope');
 const DealUnitFlowStageCreateDto = require('../models/DealUnitFlowStageCreateDto');
+const DealUnitFlowStageDtoCollectionQueryParameters = require('../models/DealUnitFlowStageDtoCollectionQueryParameters');
 const DealUnitFlowStageDtoEnvelope = require('../models/DealUnitFlowStageDtoEnvelope');
 const DealUnitFlowStageDtoListEnvelope = require('../models/DealUnitFlowStageDtoListEnvelope');
 const DealUnitFlowStageUpdateDto = require('../models/DealUnitFlowStageUpdateDto');
@@ -10,7 +12,7 @@ const DealUnitFlowUpdateDto = require('../models/DealUnitFlowUpdateDto');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -346,6 +348,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...DealUnitFlowStageDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...DealUnitFlowStageDtoListEnvelope.fields('', false),
@@ -356,13 +359,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...DealUnitFlowStageDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -396,6 +400,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...DealUnitFlowStageDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -406,13 +411,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...DealUnitFlowStageDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -440,6 +446,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...DealUnitFlowDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...DealUnitFlowDtoListEnvelope.fields('', false),
@@ -450,13 +457,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...DealUnitFlowDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -484,6 +492,7 @@ module.exports = {
                     type: 'string',
                     required: true,
                 },
+                ...DealUnitFlowDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -494,13 +503,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
+                        ...DealUnitFlowDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -535,7 +545,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -556,7 +566,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -597,7 +607,7 @@ module.exports = {
                     required: true,
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -618,7 +628,7 @@ module.exports = {
                         'tenantId': bundle.inputData?.['tenantId'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

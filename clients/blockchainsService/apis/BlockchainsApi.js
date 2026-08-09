@@ -1,16 +1,18 @@
 const samples = require('../samples/BlockchainsApi');
 const BlockchainBlockCreateDto = require('../models/BlockchainBlockCreateDto');
 const BlockchainBlockDto = require('../models/BlockchainBlockDto');
+const BlockchainBlockDtoCollectionQueryParameters = require('../models/BlockchainBlockDtoCollectionQueryParameters');
 const BlockchainBlockDtoListEnvelope = require('../models/BlockchainBlockDtoListEnvelope');
 const BlockchainBlockUpdateDto = require('../models/BlockchainBlockUpdateDto');
 const BlockchainCreateDto = require('../models/BlockchainCreateDto');
 const BlockchainDto = require('../models/BlockchainDto');
+const BlockchainDtoCollectionQueryParameters = require('../models/BlockchainDtoCollectionQueryParameters');
 const BlockchainDtoListEnvelope = require('../models/BlockchainDtoListEnvelope');
 const BlockchainUpdateDto = require('../models/BlockchainUpdateDto');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -357,6 +359,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...BlockchainBlockDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...BlockchainBlockDtoListEnvelope.fields('', false),
@@ -367,7 +370,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -375,6 +378,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...BlockchainBlockDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -418,6 +422,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...BlockchainBlockDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -428,7 +433,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -436,6 +441,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...BlockchainBlockDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -534,6 +540,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...BlockchainDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...BlockchainDtoListEnvelope.fields('', false),
@@ -544,7 +551,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -552,6 +559,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...BlockchainDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -589,6 +597,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...BlockchainDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -599,7 +608,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -607,6 +616,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...BlockchainDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -651,7 +661,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -673,7 +683,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -724,7 +734,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -746,7 +756,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

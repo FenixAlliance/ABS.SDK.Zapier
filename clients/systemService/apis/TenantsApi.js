@@ -2,10 +2,14 @@ const samples = require('../samples/TenantsApi');
 const EmailDispatchRequest = require('../models/EmailDispatchRequest');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
+const ExtendedTenantDtoCollectionQueryParameters = require('../models/ExtendedTenantDtoCollectionQueryParameters');
 const ExtendedTenantDtoListEnvelope = require('../models/ExtendedTenantDtoListEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const ModuleGrantDto = require('../models/ModuleGrantDto');
+const ModuleGrantDtoListEnvelope = require('../models/ModuleGrantDtoListEnvelope');
+const PatchOperation = require('../models/PatchOperation');
 const TenantCreateDto = require('../models/TenantCreateDto');
+const TenantDtoCollectionQueryParameters = require('../models/TenantDtoCollectionQueryParameters');
 const TenantDtoEnvelope = require('../models/TenantDtoEnvelope');
 const TenantDtoListEnvelope = require('../models/TenantDtoListEnvelope');
 const TenantUpdateDto = require('../models/TenantUpdateDto');
@@ -246,6 +250,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ExtendedTenantDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...ExtendedTenantDtoListEnvelope.fields('', false),
@@ -256,13 +261,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ExtendedTenantDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -294,6 +300,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...TenantDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...TenantDtoListEnvelope.fields('', false),
@@ -304,13 +311,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...TenantDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -342,6 +350,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...ExtendedTenantDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -352,13 +361,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...ExtendedTenantDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -424,6 +434,60 @@ module.exports = {
             sample: samples['TenantDtoEnvelopeSample']
         }
     },
+    getTenantModuleGrants: {
+        key: 'getTenantModuleGrants',
+        noun: 'Tenants',
+        display: {
+            label: 'Get the per-tenant admin module grants for a specific tenant.',
+            description: 'This action is only available for global administrators.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+            ],
+            outputFields: [
+                ...ModuleGrantDtoListEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Tenants/{tenantId}/ModuleGrants'),
+                    method: 'GET',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': '',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'getTenantModuleGrants', response.json);
+                    return results;
+                })
+            },
+            sample: samples['ModuleGrantDtoListEnvelopeSample']
+        }
+    },
     getTenantsCount: {
         key: 'getTenantsCount',
         noun: 'Tenants',
@@ -444,6 +508,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...TenantDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -454,13 +519,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...TenantDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -499,7 +565,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -520,12 +586,72 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
                     response.throwForStatus();
                     const results = utils.responseOptionsMiddleware(z, bundle, 'patchTenant', response.json);
+                    return results;
+                })
+            },
+            sample: samples['EmptyEnvelopeSample']
+        }
+    },
+    setTenantModuleGrants: {
+        key: 'setTenantModuleGrants',
+        noun: 'Tenants',
+        display: {
+            label: 'Replace the per-tenant admin module grants for a specific tenant.',
+            description: 'This action is only available for global administrators. Grants supplement licensing.',
+            hidden: false,
+        },
+        operation: {
+            inputFields: [
+                {
+                    key: 'tenantId',
+                    label: '',
+                    type: 'string',
+                    required: true,
+                },
+                {
+                    key: 'api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'x-api-version',
+                    label: '',
+                    type: 'string',
+                },
+                {
+                    key: 'ModuleGrantDto',
+                    label: '',
+                    type: 'string',
+                }
+            ],
+            outputFields: [
+                ...EmptyEnvelope.fields('', false),
+            ],
+            perform: async (z, bundle) => {
+                const options = {
+                    url: utils.replacePathParameters('https://absuite.net/api/v2/SystemService/Tenants/{tenantId}/ModuleGrants'),
+                    method: 'PUT',
+                    removeMissingValuesFrom: { params: true, body: true },
+                    headers: {
+                        'Content-Type': 'application/json, application/xml',
+                        'Accept': 'application/json, application/xml',
+                    },
+                    params: {
+                        'api-version': bundle.inputData?.['api-version'],
+                    },
+                    body: {
+                        ...ModuleGrantDto.mapping(bundle),
+                    },
+                }
+                return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
+                    response.throwForStatus();
+                    const results = utils.responseOptionsMiddleware(z, bundle, 'setTenantModuleGrants', response.json);
                     return results;
                 })
             },

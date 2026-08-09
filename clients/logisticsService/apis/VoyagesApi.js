@@ -2,11 +2,13 @@ const samples = require('../samples/VoyagesApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const VoyageCreateDto = require('../models/VoyageCreateDto');
+const VoyageDtoCollectionQueryParameters = require('../models/VoyageDtoCollectionQueryParameters');
 const VoyageDtoEnvelope = require('../models/VoyageDtoEnvelope');
 const VoyageDtoListEnvelope = require('../models/VoyageDtoListEnvelope');
 const VoyagePortCallCreateDto = require('../models/VoyagePortCallCreateDto');
+const VoyagePortCallDtoCollectionQueryParameters = require('../models/VoyagePortCallDtoCollectionQueryParameters');
 const VoyagePortCallDtoListEnvelope = require('../models/VoyagePortCallDtoListEnvelope');
 const VoyagePortCallUpdateDto = require('../models/VoyagePortCallUpdateDto');
 const VoyageUpdateDto = require('../models/VoyageUpdateDto');
@@ -476,6 +478,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...VoyagePortCallDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...VoyagePortCallDtoListEnvelope.fields('', false),
@@ -486,7 +489,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -494,6 +497,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...VoyagePortCallDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -537,6 +541,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...VoyagePortCallDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -547,7 +552,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -555,6 +560,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...VoyagePortCallDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -592,6 +598,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...VoyageDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...VoyageDtoListEnvelope.fields('', false),
@@ -602,7 +609,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -610,6 +617,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...VoyageDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -647,6 +655,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...VoyageDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -657,7 +666,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -665,6 +674,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...VoyageDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -709,7 +719,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -731,7 +741,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -782,7 +792,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -804,7 +814,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

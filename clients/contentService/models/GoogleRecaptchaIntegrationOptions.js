@@ -29,6 +29,21 @@ module.exports = {
                 label: `[${labelPrefix}version]`,
                 type: 'string',
             },
+            {
+                key: `${keyPrefix}projectId`,
+                label: `[${labelPrefix}projectId]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}apiKey`,
+                label: `[${labelPrefix}apiKey]`,
+                type: 'string',
+            },
+            {
+                key: `${keyPrefix}scoreThreshold`,
+                label: `[${labelPrefix}scoreThreshold]`,
+                type: 'number',
+            },
         ]
     },
     mapping: (bundle, prefix = '') => {
@@ -39,6 +54,9 @@ module.exports = {
             'siteKey': bundle.inputData?.[`${keyPrefix}siteKey`],
             'secretKey': bundle.inputData?.[`${keyPrefix}secretKey`],
             'version': bundle.inputData?.[`${keyPrefix}version`],
+            'projectId': bundle.inputData?.[`${keyPrefix}projectId`],
+            'apiKey': bundle.inputData?.[`${keyPrefix}apiKey`],
+            'scoreThreshold': bundle.inputData?.[`${keyPrefix}scoreThreshold`],
         }
     },
 }

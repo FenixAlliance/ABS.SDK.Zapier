@@ -1,27 +1,44 @@
 const samples = require('../samples/CoursesApi');
 const CourseArticleDto = require('../models/CourseArticleDto');
+const CourseArticleDtoCollectionQueryParameters = require('../models/CourseArticleDtoCollectionQueryParameters');
 const CourseAssignmentDto = require('../models/CourseAssignmentDto');
+const CourseAssignmentDtoCollectionQueryParameters = require('../models/CourseAssignmentDtoCollectionQueryParameters');
 const CourseCategoryDto = require('../models/CourseCategoryDto');
+const CourseCategoryDtoCollectionQueryParameters = require('../models/CourseCategoryDtoCollectionQueryParameters');
 const CourseCohortDto = require('../models/CourseCohortDto');
+const CourseCohortDtoCollectionQueryParameters = require('../models/CourseCohortDtoCollectionQueryParameters');
 const CourseCreateDto = require('../models/CourseCreateDto');
 const CourseDto = require('../models/CourseDto');
+const CourseDtoCollectionQueryParameters = require('../models/CourseDtoCollectionQueryParameters');
 const CourseEnrollmentDto = require('../models/CourseEnrollmentDto');
+const CourseEnrollmentDtoCollectionQueryParameters = require('../models/CourseEnrollmentDtoCollectionQueryParameters');
 const CourseFileDto = require('../models/CourseFileDto');
+const CourseFileDtoCollectionQueryParameters = require('../models/CourseFileDtoCollectionQueryParameters');
 const CourseForumDto = require('../models/CourseForumDto');
+const CourseForumDtoCollectionQueryParameters = require('../models/CourseForumDtoCollectionQueryParameters');
 const CourseHandoutDto = require('../models/CourseHandoutDto');
+const CourseHandoutDtoCollectionQueryParameters = require('../models/CourseHandoutDtoCollectionQueryParameters');
 const CourseLibraryDto = require('../models/CourseLibraryDto');
+const CourseLibraryDtoCollectionQueryParameters = require('../models/CourseLibraryDtoCollectionQueryParameters');
 const CourseNewsDto = require('../models/CourseNewsDto');
+const CourseNewsDtoCollectionQueryParameters = require('../models/CourseNewsDtoCollectionQueryParameters');
 const CoursePageDto = require('../models/CoursePageDto');
+const CoursePageDtoCollectionQueryParameters = require('../models/CoursePageDtoCollectionQueryParameters');
 const CourseProblemSetDto = require('../models/CourseProblemSetDto');
+const CourseProblemSetDtoCollectionQueryParameters = require('../models/CourseProblemSetDtoCollectionQueryParameters');
 const CourseSectionDto = require('../models/CourseSectionDto');
+const CourseSectionDtoCollectionQueryParameters = require('../models/CourseSectionDtoCollectionQueryParameters');
 const CourseUnitComponentDto = require('../models/CourseUnitComponentDto');
+const CourseUnitComponentDtoCollectionQueryParameters = require('../models/CourseUnitComponentDtoCollectionQueryParameters');
 const CourseUnitDto = require('../models/CourseUnitDto');
+const CourseUnitDtoCollectionQueryParameters = require('../models/CourseUnitDtoCollectionQueryParameters');
 const CourseUpdateDto = require('../models/CourseUpdateDto');
 const CourseWikiDto = require('../models/CourseWikiDto');
+const CourseWikiDtoCollectionQueryParameters = require('../models/CourseWikiDtoCollectionQueryParameters');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const InstructorProfileDto = require('../models/InstructorProfileDto');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const StudentProfileDto = require('../models/StudentProfileDto');
 const utils = require('../utils/utils');
 
@@ -174,6 +191,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseArticleDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -183,13 +201,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseArticleDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -233,6 +252,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseArticleDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -242,13 +262,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseArticleDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -286,6 +307,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseAssignmentDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -295,13 +317,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseAssignmentDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -339,6 +362,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseAssignmentDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -348,13 +372,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseAssignmentDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -452,6 +477,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseCategoryDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -461,13 +487,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseCategoryDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -505,6 +532,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseCategoryDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -514,13 +542,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseCategoryDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -558,6 +587,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseCohortDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -567,13 +597,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseCohortDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -611,6 +642,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseCohortDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -620,13 +652,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseCohortDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -670,6 +703,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseEnrollmentDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -679,7 +713,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -687,6 +721,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseEnrollmentDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -724,6 +759,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseFileDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -733,13 +769,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseFileDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -777,6 +814,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseFileDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -786,13 +824,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseFileDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -830,6 +869,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseForumDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -839,13 +879,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseForumDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -883,6 +924,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseForumDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -892,13 +934,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseForumDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -936,6 +979,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseHandoutDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -945,13 +989,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseHandoutDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -989,6 +1034,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseHandoutDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -998,13 +1044,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseHandoutDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1042,6 +1089,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseLibraryDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -1051,13 +1099,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseLibraryDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1095,6 +1144,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseLibraryDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -1104,13 +1154,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseLibraryDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1148,6 +1199,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CoursePageDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -1157,13 +1209,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CoursePageDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1201,6 +1254,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CoursePageDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -1210,13 +1264,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CoursePageDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1254,6 +1309,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseProblemSetDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -1263,13 +1319,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseProblemSetDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1307,6 +1364,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseProblemSetDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -1316,13 +1374,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseProblemSetDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1360,6 +1419,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseSectionDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -1369,13 +1429,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseSectionDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1413,6 +1474,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseSectionDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -1422,13 +1484,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseSectionDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1466,6 +1529,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseUnitComponentDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -1475,13 +1539,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseUnitComponentDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1519,6 +1584,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseUnitComponentDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -1528,13 +1594,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseUnitComponentDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1578,6 +1645,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseUnitDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -1587,13 +1655,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseUnitDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1637,6 +1706,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseUnitDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -1646,13 +1716,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseUnitDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1690,6 +1761,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseNewsDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -1699,13 +1771,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseNewsDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1743,6 +1816,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseNewsDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -1752,13 +1826,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseNewsDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1796,6 +1871,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseWikiDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -1805,13 +1881,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseWikiDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1849,6 +1926,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseWikiDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -1858,13 +1936,14 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseWikiDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1902,6 +1981,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -1911,7 +1991,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -1919,6 +1999,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -1956,6 +2037,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...CourseDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
             ],
@@ -1965,7 +2047,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -1973,6 +2055,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...CourseDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -2229,7 +2312,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -2251,7 +2334,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

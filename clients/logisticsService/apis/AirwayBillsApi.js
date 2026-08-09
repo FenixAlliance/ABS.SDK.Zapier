@@ -1,13 +1,15 @@
 const samples = require('../samples/AirwayBillsApi');
 const AirwayBillCreateDto = require('../models/AirwayBillCreateDto');
+const AirwayBillDtoCollectionQueryParameters = require('../models/AirwayBillDtoCollectionQueryParameters');
 const AirwayBillDtoEnvelope = require('../models/AirwayBillDtoEnvelope');
 const AirwayBillDtoListEnvelope = require('../models/AirwayBillDtoListEnvelope');
 const AirwayBillUpdateDto = require('../models/AirwayBillUpdateDto');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
 const WaybillLineCreateDto = require('../models/WaybillLineCreateDto');
+const WaybillLineDtoCollectionQueryParameters = require('../models/WaybillLineDtoCollectionQueryParameters');
 const WaybillLineDtoListEnvelope = require('../models/WaybillLineDtoListEnvelope');
 const WaybillLineUpdateDto = require('../models/WaybillLineUpdateDto');
 const utils = require('../utils/utils');
@@ -348,6 +350,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...WaybillLineDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...WaybillLineDtoListEnvelope.fields('', false),
@@ -358,7 +361,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -366,6 +369,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...WaybillLineDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -409,6 +413,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...WaybillLineDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -419,7 +424,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -427,6 +432,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...WaybillLineDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -464,6 +470,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...AirwayBillDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...AirwayBillDtoListEnvelope.fields('', false),
@@ -474,7 +481,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -482,6 +489,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...AirwayBillDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -519,6 +527,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...AirwayBillDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -529,7 +538,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -537,6 +546,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...AirwayBillDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -825,7 +835,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -847,7 +857,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -898,7 +908,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -920,7 +930,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {

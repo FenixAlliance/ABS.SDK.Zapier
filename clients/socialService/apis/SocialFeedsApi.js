@@ -2,13 +2,16 @@ const samples = require('../samples/SocialFeedsApi');
 const EmptyEnvelope = require('../models/EmptyEnvelope');
 const ErrorEnvelope = require('../models/ErrorEnvelope');
 const Int32Envelope = require('../models/Int32Envelope');
-const Operation = require('../models/Operation');
+const PatchOperation = require('../models/PatchOperation');
+const SocialFeedDtoCollectionQueryParameters = require('../models/SocialFeedDtoCollectionQueryParameters');
 const SocialFeedDtoEnvelope = require('../models/SocialFeedDtoEnvelope');
 const SocialFeedDtoListEnvelope = require('../models/SocialFeedDtoListEnvelope');
 const SocialFeedPostCreateDto = require('../models/SocialFeedPostCreateDto');
+const SocialFeedPostDtoCollectionQueryParameters = require('../models/SocialFeedPostDtoCollectionQueryParameters');
 const SocialFeedPostDtoEnvelope = require('../models/SocialFeedPostDtoEnvelope');
 const SocialFeedPostDtoListEnvelope = require('../models/SocialFeedPostDtoListEnvelope');
 const SocialFeedPostUpdateDto = require('../models/SocialFeedPostUpdateDto');
+const StringEnvelope = require('../models/StringEnvelope');
 const utils = require('../utils/utils');
 
 module.exports = {
@@ -47,7 +50,7 @@ module.exports = {
                 ...SocialFeedPostCreateDto.fields(),
             ],
             outputFields: [
-                ...SocialFeedPostDtoEnvelope.fields('', false),
+                ...StringEnvelope.fields('', false),
             ],
             perform: async (z, bundle) => {
                 const options = {
@@ -72,7 +75,7 @@ module.exports = {
                     return results;
                 })
             },
-            sample: samples['SocialFeedPostDtoEnvelopeSample']
+            sample: samples['StringEnvelopeSample']
         }
     },
     deleteFeedPostAsync: {
@@ -168,6 +171,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SocialFeedDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...SocialFeedDtoListEnvelope.fields('', false),
@@ -178,7 +182,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -186,6 +190,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SocialFeedDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -296,6 +301,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SocialFeedPostDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...SocialFeedPostDtoListEnvelope.fields('', false),
@@ -306,7 +312,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -314,6 +320,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SocialFeedPostDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -357,6 +364,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SocialFeedPostDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -367,7 +375,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -375,6 +383,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SocialFeedPostDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -473,6 +482,7 @@ module.exports = {
                     label: '',
                     type: 'string',
                 },
+                ...SocialFeedDtoCollectionQueryParameters.fields(),
             ],
             outputFields: [
                 ...Int32Envelope.fields('', false),
@@ -483,7 +493,7 @@ module.exports = {
                     method: 'GET',
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
-                        'Content-Type': '',
+                        'Content-Type': 'application/json, application/xml',
                         'Accept': 'application/json, application/xml',
                     },
                     params: {
@@ -491,6 +501,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
+                        ...SocialFeedDtoCollectionQueryParameters.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
@@ -541,7 +552,7 @@ module.exports = {
                     type: 'string',
                 },
                 {
-                    key: 'Operation',
+                    key: 'PatchOperation',
                     label: '',
                     type: 'string',
                 }
@@ -563,7 +574,7 @@ module.exports = {
                         'api-version': bundle.inputData?.['api-version'],
                     },
                     body: {
-                        ...Operation.mapping(bundle),
+                        ...PatchOperation.mapping(bundle),
                     },
                 }
                 return z.request(utils.requestOptionsMiddleware(z, bundle, options)).then((response) => {
